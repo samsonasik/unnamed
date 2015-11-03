@@ -180,7 +180,7 @@ final class LanguageController extends BaseController
             $language = new Language([]);
         }
 
-        /**
+        /*
          * @var LanguageForm
          */
         $form = $this->languageForm;

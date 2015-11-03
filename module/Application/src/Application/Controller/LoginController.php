@@ -75,7 +75,6 @@ final class LoginController extends BaseController
          */
         if (APP_ENV !== 'development') {
             $this->UserData()->checkIdentity();
-
         }
     }
 
@@ -101,7 +100,7 @@ final class LoginController extends BaseController
     public function indexAction()
     {
         $this->getView()->setTemplate('application/login/index');
-        /**
+        /*
          * @var LoginForm
          */
         $form = $this->loginForm;
@@ -128,7 +127,7 @@ final class LoginController extends BaseController
             return $this->logoutAction();
         }
 
-        /**
+        /*
          * @var LoginForm
          */
         $form = $this->loginForm;
@@ -140,6 +139,7 @@ final class LoginController extends BaseController
          */
         if (!$form->isValid()) {
             $this->setLayoutMessages($form->getMessages(), 'error');
+
             return $this->logoutAction();
         }
 
@@ -159,6 +159,7 @@ final class LoginController extends BaseController
          */
         if ((int) $result->getIdentity()->isDisabled() === 1) {
             $this->setLayoutMessages($this->translate('LOGIN_ERROR'), 'error');
+
             return $this->logoutAction();
         }
 
@@ -170,7 +171,6 @@ final class LoginController extends BaseController
 
         $this->authService->getStorage()->write($result->getIdentity()); // puts only id in session!
         return $this->redirect()->toUrl('/');
-
     }
 
     /**
@@ -206,7 +206,7 @@ final class LoginController extends BaseController
             return $this->setLayoutMessages($this->translate('LINK_EXPIRED'), 'error');
         }
 
-        /**
+        /*
          * @var NewPasswordForm
          */
         $form = $this->newPasswordForm;
@@ -224,7 +224,6 @@ final class LoginController extends BaseController
         return $this->getView();
     }
 
-
     /**
      * @return \Zend\Http\Response
      */
@@ -232,11 +231,10 @@ final class LoginController extends BaseController
     {
         $func = $this->getFunctions();
 
-        /**
+        /*
          * @var NewPasswordForm
          */
         $form = $this->newPasswordForm;
-
 
         if ($this->getRequest()->isPost()) {
             $form->setInputFilter($form->getInputFilter());
@@ -260,9 +258,9 @@ final class LoginController extends BaseController
             } else {
                 $this->setLayoutMessages($form->getMessages(), 'error');
             }
+
             return $this->redirect()->toUrl('/login');
         }
-
     }
 
     /**
@@ -273,7 +271,7 @@ final class LoginController extends BaseController
     {
         $this->getView()->setTemplate('application/login/resetpassword');
 
-        /**
+        /*
          * @var ResetPasswordForm
          */
         $form = $this->resetPasswordForm;
@@ -317,6 +315,7 @@ final class LoginController extends BaseController
                 $this->setLayoutMessages($form->getMessages(), 'error');
             }
         }
+
         return $this->getView();
     }
 
@@ -329,6 +328,5 @@ final class LoginController extends BaseController
         $this->authService->clearIdentity();
 
         return $this->redirect()->toUrl('/');
-
     }
 }

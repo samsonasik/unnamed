@@ -57,7 +57,7 @@ final class RegistrationController extends BaseController
             return $this->redirect()->toUrl('/registration');
         }
 
-        /**
+        /*
          * @var RegistrationForm
          */
         $form = $this->registrationForm;
@@ -109,7 +109,7 @@ final class RegistrationController extends BaseController
             return $this->getView();
         }
 
-        /**
+        /*
          * @var RegistrationForm
          */
         $form = $this->registrationForm;

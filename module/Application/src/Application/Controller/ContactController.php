@@ -37,7 +37,7 @@ final class ContactController extends BaseController
     {
         $this->getView()->setTemplate('application/contact/index');
 
-        /**
+        /*
          * @var ContactForm
          */
         $form = $this->contactForm;

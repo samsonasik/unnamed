@@ -29,17 +29,17 @@ class InitMetaTagsFactory
          */
         $viewHelper = $pluginManager->getController()->getServiceLocator()->get('ViewHelperManager');
 
-        /**
+        /*
          * @var \Zend\View\Helper\Placeholder\Container
          */
         $placeholderContainer = $viewHelper->get('placeholder')->getContainer('customHead');
 
-        /**
+        /*
          * @var \Zend\View\Helper\HeadMeta
          */
         $headMeta = $viewHelper->get('HeadMeta');
 
-        /**
+        /*
          * @var \Zend\Http\PhpEnvironment\Request
          */
         $request = $pluginManager->getController()->getRequest();
@@ -49,7 +49,7 @@ class InitMetaTagsFactory
          */
         $systemsettings = $pluginManager->get('systemsettings');
 
-        /**
+        /*
          * @var InitMetaTags
          */
         $plugin = new InitMetaTags($placeholderContainer, $headMeta, $request, $systemsettings);

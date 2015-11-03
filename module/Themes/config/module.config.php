@@ -1,25 +1,25 @@
 <?php
 
 return  [
-  'router' =>  [
-    'routes' =>  [
-      'themes' =>  [
+  'router' => [
+    'routes' => [
+      'themes' => [
         'type'    => 'Literal',
-        'options' =>  [
+        'options' => [
           'route'    => '/theme',
-          'defaults' =>  [
+          'defaults' => [
             '__NAMESPACE__' => 'Themes\\Controller',
             'controller'    => 'Index',
             'action'        => 'index',
           ],
         ],
         'may_terminate' => true,
-        'child_routes'  =>  [
-          'default' =>  [
+        'child_routes'  => [
+          'default' => [
             'type'    => 'Segment',
-            'options' =>  [
+            'options' => [
               'route'       => '/[:controller[/:action]]',
-              'constraints' =>  [
+              'constraints' => [
                 'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
                 'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
               ],
@@ -29,25 +29,25 @@ return  [
       ],
     ],
   ],
-  'controllers' =>  [
-    'factories' =>  [
+  'controllers' => [
+    'factories' => [
       'Themes\\Controller\\Index' => 'Themes\\Factory\\Controller\\IndexControllerFactory',
     ],
   ],
-  'service_manager' =>  [
-    'factories' =>  [
+  'service_manager' => [
+    'factories' => [
       'initThemes'       => 'Themes\\Factory\\ThemesFactory',
       'getThemesFromDir' => 'Themes\\Factory\\GetThemesFromDir',
     ],
-    'invokables' =>  [
+    'invokables' => [
       'reloadService' => 'Themes\\Service\\ReloadService',
     ],
   ],
-  'theme' =>  [
+  'theme' => [
     'name' => 'default',
   ],
-  'view_manager' =>  [
-    'template_path_stack' =>  [
+  'view_manager' => [
+    'template_path_stack' => [
       'themes' => 'C:\\xampp\\htdocs\\unnamed\\module\\Themes\\config/../view',
     ],
   ],

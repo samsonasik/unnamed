@@ -80,13 +80,14 @@ final class UserController extends BaseController
      *
      * @return \Zend\Paginator\Paginator
      */
-    private function showUsersBasedOnTheyAccStatus($isDisabled = false) {
+    private function showUsersBasedOnTheyAccStatus($isDisabled = false)
+    {
         $table = $this->userTable;
         $query = $table->queryBuilder()
                    ->select(['u'])
                    ->from('Admin\Entity\User', 'u')
                    ->where('u.isDisabled = :isDisabled')
-                   ->setParameter(":isDisabled", (int) $isDisabled);
+                   ->setParameter(':isDisabled', (int) $isDisabled);
 
         $paginator = $table->preparePagination($query, false);
         $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));

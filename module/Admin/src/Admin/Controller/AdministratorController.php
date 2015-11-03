@@ -140,7 +140,7 @@ final class AdministratorController extends BaseController
             $administrator = new Administrator([]);
         }
 
-        /**
+        /*
          * @var AdministratorForm
          */
         $form = $this->administratorForm;

@@ -53,16 +53,16 @@ final class Image implements ImageInterface
      * @var array
      */
     private $options = [
-        'preserve_alpha' => true,
-        'alpha_color_allocate' => [255, 255, 255],
-        'alpha_transperancy' => 64,
-        'png_compression_level' => -1,
+        'preserve_alpha'         => true,
+        'alpha_color_allocate'   => [255, 255, 255],
+        'alpha_transperancy'     => 64,
+        'png_compression_level'  => -1,
         'png_compression_filter' => 'all',
-        'jpeg_quality' => 75,
-        'foreground' => [0, 0, 0],
+        'jpeg_quality'           => 75,
+        'foreground'             => [0, 0, 0],
 
         // still not used anywhere
-        'interlace' => 0,
+        'interlace'               => 0,
         'transparency_mask_color' => [0, 0, 0],
     ];
 
@@ -86,13 +86,13 @@ final class Image implements ImageInterface
      * @var array
      */
     private $pngFilterTypes = [
-        'no' => PNG_NO_FILTER,
-        'none' => PNG_FILTER_NONE,
-        'sub' => PNG_FILTER_SUB,
-        'up' => PNG_FILTER_UP,
-        'avg' => PNG_FILTER_AVG,
+        'no'    => PNG_NO_FILTER,
+        'none'  => PNG_FILTER_NONE,
+        'sub'   => PNG_FILTER_SUB,
+        'up'    => PNG_FILTER_UP,
+        'avg'   => PNG_FILTER_AVG,
         'paeth' => PNG_FILTER_PAETH,
-        'all' => PNG_ALL_FILTERS,
+        'all'   => PNG_ALL_FILTERS,
     ];
 
     /**
@@ -148,7 +148,7 @@ final class Image implements ImageInterface
         $this->createImageFromFormat();
 
         $this->imageDimensions = [
-            'width' => imagesx($this->getImageFile()),
+            'width'  => imagesx($this->getImageFile()),
             'height' => imagesy($this->getImageFile()),
         ];
 

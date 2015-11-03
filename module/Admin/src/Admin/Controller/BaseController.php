@@ -10,12 +10,12 @@
  */
 namespace Admin\Controller;
 
+use Zend\Json\Json;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Mvc\MvcEvent;
 use Zend\Session\Container;
-use Zend\View\Model\ViewModel;
-use Zend\Json\Json;
 use Zend\View\Model\JsonModel;
+use Zend\View\Model\ViewModel;
 
 class BaseController extends AbstractActionController
 {

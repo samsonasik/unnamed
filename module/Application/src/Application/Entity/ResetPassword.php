@@ -8,13 +8,12 @@
  *
  * @link       TBA
  */
-
 namespace Application\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * ResetPassword
+ * ResetPassword.
  *
  * @ORM\Entity
  * @ORM\Table(name="resetpassword")
@@ -22,7 +21,7 @@ use Doctrine\ORM\Mapping as ORM;
 final class ResetPassword
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -49,10 +48,10 @@ final class ResetPassword
      *
      * @ORM\Column(name="date", type="string", nullable=true)
      */
-    private $date = "0000-00-00 00:00:00";
+    private $date = '0000-00-00 00:00:00';
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="user", type="integer", nullable=false)
      */
@@ -83,7 +82,7 @@ final class ResetPassword
     /**
      * constructor.
      *
-     * @param  array $options
+     * @param array $options
      */
     public function __construct(array $options = [])
     {
@@ -113,7 +112,7 @@ final class ResetPassword
     /**
      * Set token.
      *
-     * @param String $token
+     * @param string $token
      */
     public function setToken($token)
     {
@@ -123,7 +122,7 @@ final class ResetPassword
     /**
      * Get token.
      *
-     * @return String
+     * @return string
      */
     public function getToken()
     {
@@ -133,7 +132,7 @@ final class ResetPassword
     /**
      * Set ip.
      *
-     * @param String $ip
+     * @param string $ip
      */
     public function setIp($ip)
     {
@@ -143,7 +142,7 @@ final class ResetPassword
     /**
      * Get ip.
      *
-     * @return String
+     * @return string
      */
     public function getIp()
     {
@@ -155,7 +154,7 @@ final class ResetPassword
      *
      * @param string $date
      */
-    public function setDate($date = "0000-00-00 00:00:00")
+    public function setDate($date = '0000-00-00 00:00:00')
     {
         $this->date = $date;
     }
@@ -173,7 +172,7 @@ final class ResetPassword
     /**
      * Set user.
      *
-     * @param Int $user
+     * @param int $user
      */
     public function setUser($user)
     {
@@ -183,7 +182,7 @@ final class ResetPassword
     /**
      * Get user.
      *
-     * @return Int
+     * @return int
      */
     public function getUser()
     {

@@ -8,13 +8,12 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * User
+ * User.
  *
  * @ORM\Entity
  * @ORM\Table(name="user")
@@ -22,7 +21,7 @@ use Doctrine\ORM\Mapping as ORM;
 final class User
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -63,17 +62,17 @@ final class User
      *
      * @ORM\Column(name="birthDate", type="string", nullable=true)
      */
-    private $birthDate = "0000-00-00";
+    private $birthDate = '0000-00-00';
 
     /**
      * @var string
      *
      * @ORM\Column(name="lastLogin", type="string", nullable=true)
      */
-    private $lastLogin = "0000-00-00 00:00:00";
+    private $lastLogin = '0000-00-00 00:00:00';
 
     /**
-     * @var boolean
+     * @var bool
      *
      * @ORM\Column(name="isDisabled", type="smallint", nullable=false)
      */
@@ -91,10 +90,10 @@ final class User
      *
      * @ORM\Column(name="registered", type="string", nullable=true)
      */
-    private $registered = "0000-00-00 00:00:00";
+    private $registered = '0000-00-00 00:00:00';
 
     /**
-     * @var boolean
+     * @var bool
      *
      * @ORM\Column(name="hideEmail", type="smallint", nullable=false)
      */
@@ -108,14 +107,14 @@ final class User
     private $ip;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="admin", type="integer", nullable=false)
      */
     private $admin = 0;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="language", type="integer", nullable=false)
      */
@@ -180,11 +179,10 @@ final class User
         $this->id = $id;
     }
 
-
     /**
      * Set name.
      *
-     * @param String $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -194,7 +192,7 @@ final class User
     /**
      * Get name.
      *
-     * @return String
+     * @return string
      */
     public function getName()
     {
@@ -204,7 +202,7 @@ final class User
     /**
      * Set surname.
      *
-     * @param String $surname
+     * @param string $surname
      */
     public function setSurname($surname)
     {
@@ -214,7 +212,7 @@ final class User
     /**
      * Get surname.
      *
-     * @return String
+     * @return string
      */
     public function getSurname()
     {
@@ -224,7 +222,7 @@ final class User
     /**
      * Set password.
      *
-     * @param String $password
+     * @param string $password
      */
     public function setPassword($password)
     {
@@ -234,7 +232,7 @@ final class User
     /**
      * Get password.
      *
-     * @return String
+     * @return string
      */
     public function getPassword()
     {
@@ -244,7 +242,7 @@ final class User
     /**
      * Set email.
      *
-     * @param String $email
+     * @param string $email
      */
     public function setEmail($email)
     {
@@ -254,7 +252,7 @@ final class User
     /**
      * Get email.
      *
-     * @return String
+     * @return string
      */
     public function getEmail()
     {
@@ -264,9 +262,9 @@ final class User
     /**
      * Set BirthDate.
      *
-     * @param String $birthDate
+     * @param string $birthDate
      */
-    public function setBirthDate($birthDate = "0000-00-00")
+    public function setBirthDate($birthDate = '0000-00-00')
     {
         $this->birthDate = $birthDate;
     }
@@ -274,7 +272,7 @@ final class User
     /**
      * Get birthDate.
      *
-     * @return String
+     * @return string
      */
     public function getBirthDate()
     {
@@ -284,9 +282,9 @@ final class User
     /**
      * Set lastLogin.
      *
-     * @param String $lastLogin
+     * @param string $lastLogin
      */
-    public function setLastLogin($lastLogin = "0000-00-00 00:00:00")
+    public function setLastLogin($lastLogin = '0000-00-00 00:00:00')
     {
         $this->lastLogin = $lastLogin;
     }
@@ -294,7 +292,7 @@ final class User
     /**
      * Get lastLogin.
      *
-     * @return String
+     * @return string
      */
     public function getLastLogin()
     {
@@ -324,7 +322,7 @@ final class User
     /**
      * Set image.
      *
-     * @param String $image
+     * @param string $image
      */
     public function setImage($image)
     {
@@ -334,7 +332,7 @@ final class User
     /**
      * Get image.
      *
-     * @return String
+     * @return string
      */
     public function getImage()
     {
@@ -344,9 +342,9 @@ final class User
     /**
      * Set registered.
      *
-     * @param String $registered
+     * @param string $registered
      */
-    public function setRegistered($registered = "0000-00-00 00:00:00")
+    public function setRegistered($registered = '0000-00-00 00:00:00')
     {
         $this->registered = $registered;
     }
@@ -354,7 +352,7 @@ final class User
     /**
      * Get registered.
      *
-     * @return String
+     * @return string
      */
     public function getRegistered()
     {
@@ -364,7 +362,7 @@ final class User
     /**
      * Set hideEmail.
      *
-     * @param Boolean $hideEmail
+     * @param bool $hideEmail
      */
     public function setHideEmail($hideEmail = false)
     {
@@ -374,7 +372,7 @@ final class User
     /**
      * Get hideEmail.
      *
-     * @return Boolean
+     * @return bool
      */
     public function getHideEmail()
     {
@@ -384,7 +382,7 @@ final class User
     /**
      * Set ip.
      *
-     * @param String $ip
+     * @param string $ip
      */
     public function setIp($ip)
     {
@@ -394,7 +392,7 @@ final class User
     /**
      * Get ip.
      *
-     * @return String
+     * @return string
      */
     public function getIp()
     {
@@ -404,7 +402,7 @@ final class User
     /**
      * Set language.
      *
-     * @param Int $language
+     * @param int $language
      */
     public function setLanguage($language = 1)
     {
@@ -414,7 +412,7 @@ final class User
     /**
      * Get language.
      *
-     * @return Int
+     * @return int
      */
     public function getLanguage()
     {
@@ -434,7 +432,7 @@ final class User
     /**
      * Get admin.
      *
-     * @return Boolean
+     * @return bool
      */
     public function getAdmin()
     {
@@ -446,6 +444,6 @@ final class User
      */
     public function getFullName()
     {
-        return $this->getName()." ".$this->getSurname();
+        return $this->getName().' '.$this->getSurname();
     }
 }

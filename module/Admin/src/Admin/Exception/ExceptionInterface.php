@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Exception;
 
 interface ExceptionInterface

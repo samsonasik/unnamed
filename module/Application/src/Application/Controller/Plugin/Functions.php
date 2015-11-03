@@ -8,13 +8,12 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller\Plugin;
 
-use Zend\Math\Rand;
-use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 use Application\Exception\InvalidArgumentException;
 use Application\Exception\RuntimeException;
+use Zend\Math\Rand;
+use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 
 final class Functions extends AbstractPlugin
 {
@@ -33,17 +32,17 @@ final class Functions extends AbstractPlugin
     public static function createPassword($password)
     {
         if (empty($password)) {
-            throw new InvalidArgumentException("Password cannot be empty");
+            throw new InvalidArgumentException('Password cannot be empty');
         }
 
         if (static::strLength($password) < 8) {
-            throw new InvalidArgumentException("Password must be atleast 8 characters long");
+            throw new InvalidArgumentException('Password must be atleast 8 characters long');
         }
 
-        $pw = password_hash($password, PASSWORD_BCRYPT, ["cost" => 13]);
+        $pw = password_hash($password, PASSWORD_BCRYPT, ['cost' => 13]);
 
         if (empty($pw)) {
-            throw new RuntimeException("Error while generating password");
+            throw new RuntimeException('Error while generating password');
         }
 
         return $pw;
@@ -84,6 +83,7 @@ final class Functions extends AbstractPlugin
         } elseif (isset($_SERVER['SERVER_PORT']) && ('443' == $_SERVER['SERVER_PORT'])) {
             $stats = true;
         }
+
         return $stats;
     }
 }

@@ -8,14 +8,13 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Model;
 
+use Admin\Entity\User;
 use Admin\Exception\RuntimeException;
 use Doctrine\ORM\EntityManager;
-use Admin\Entity\User;
-use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as PaginatorAdapter;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as PaginatorAdapter;
 use Zend\Paginator\Paginator as ZendPaginator;
 
 final class UserTable
@@ -40,7 +39,7 @@ final class UserTable
 
     /**
      * @param Query|QueryBuilder $query               A Doctrine ORM query or query builder.
-     * @param boolean            $fetchJoinCollection Whether the query joins a collection (true by default).
+     * @param bool               $fetchJoinCollection Whether the query joins a collection (true by default).
      *
      * @return Paginator
      */
@@ -77,7 +76,7 @@ final class UserTable
      * This method can disable or enable user accounts.
      *
      * @param int $userId user id
-     * @param int $state 0 - enabled, 1 - disabled
+     * @param int $state  0 - enabled, 1 - disabled
      */
     public function toggleUserState($userId = 0, $state = 0)
     {

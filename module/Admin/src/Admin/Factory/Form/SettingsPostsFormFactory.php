@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Factory\Form;
 
 use Admin\Form\SettingsPostsForm;
@@ -17,13 +16,13 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 final class SettingsPostsFormFactory
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     public function __invoke(ServiceLocatorInterface $serviceLocator)
     {
-        $config = $serviceLocator->getServiceLocator()->get("Config");
+        $config = $serviceLocator->getServiceLocator()->get('Config');
 
-        $form = new SettingsPostsForm($config['system_config']["posts"]);
+        $form = new SettingsPostsForm($config['system_config']['posts']);
 
         return $form;
     }

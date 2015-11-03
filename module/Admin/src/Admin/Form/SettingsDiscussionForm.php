@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Form;
 
 use Zend\Form\Form;
@@ -27,7 +26,7 @@ final class SettingsDiscussionForm extends Form implements InputFilterProviderIn
     public function __construct(array $config = [])
     {
         $this->config = $config;
-        parent::__construct("settings-discussion");
+        parent::__construct('settings-discussion');
     }
 
     public function init()
@@ -37,8 +36,8 @@ final class SettingsDiscussionForm extends Form implements InputFilterProviderIn
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Checkbox',
-            'name' => 'allow_comments',
+            'type'       => 'Zend\Form\Element\Checkbox',
+            'name'       => 'allow_comments',
             'attributes' => [
                 'class' => 'settings_allow_comments',
                 'value' => $this->config['allow_comments'],
@@ -51,8 +50,8 @@ final class SettingsDiscussionForm extends Form implements InputFilterProviderIn
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Checkbox',
-            'name' => 'comment_registration',
+            'type'       => 'Zend\Form\Element\Checkbox',
+            'name'       => 'comment_registration',
             'attributes' => [
                 'class' => 'settings_site_comment_registration',
                 'value' => $this->config['comment_registration'],
@@ -65,8 +64,8 @@ final class SettingsDiscussionForm extends Form implements InputFilterProviderIn
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Checkbox',
-            'name' => 'comments_notify',
+            'type'       => 'Zend\Form\Element\Checkbox',
+            'name'       => 'comments_notify',
             'attributes' => [
                 'class' => 'settings_comments_notify',
                 'value' => $this->config['comments_notify'],
@@ -79,8 +78,8 @@ final class SettingsDiscussionForm extends Form implements InputFilterProviderIn
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Checkbox',
-            'name' => 'moderation_notify',
+            'type'       => 'Zend\Form\Element\Checkbox',
+            'name'       => 'moderation_notify',
             'attributes' => [
                 'class' => 'settings_moderation_notify',
                 'value' => $this->config['moderation_notify'],
@@ -93,8 +92,8 @@ final class SettingsDiscussionForm extends Form implements InputFilterProviderIn
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Checkbox',
-            'name' => 'comment_moderation',
+            'type'       => 'Zend\Form\Element\Checkbox',
+            'name'       => 'comment_moderation',
             'attributes' => [
                 'class' => 'settings_comment_moderation',
                 'value' => $this->config['comment_moderation'],
@@ -107,8 +106,8 @@ final class SettingsDiscussionForm extends Form implements InputFilterProviderIn
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Checkbox',
-            'name' => 'show_avatars',
+            'type'       => 'Zend\Form\Element\Checkbox',
+            'name'       => 'show_avatars',
             'attributes' => [
                 'class' => 'settings_show_avatars',
                 'value' => $this->config['show_avatars'],
@@ -121,8 +120,8 @@ final class SettingsDiscussionForm extends Form implements InputFilterProviderIn
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Csrf',
-            'name' => 's',
+            'type'    => 'Zend\Form\Element\Csrf',
+            'name'    => 's',
             'options' => [
                 'csrf_options' => [
                     'timeout' => 3600,
@@ -133,10 +132,10 @@ final class SettingsDiscussionForm extends Form implements InputFilterProviderIn
 
         $this->add(
             [
-            'name' => 'submit',
+            'name'       => 'submit',
             'attributes' => [
                 'type'  => 'submit',
-                'id' => 'submitbutton',
+                'id'    => 'submitbutton',
             ],
             ]
         );
@@ -146,44 +145,44 @@ final class SettingsDiscussionForm extends Form implements InputFilterProviderIn
     {
         return [
             [
-                "name" => "allow_comments",
-                "required" => false,
-                'filters' => [
+                'name'     => 'allow_comments',
+                'required' => false,
+                'filters'  => [
                     ['name' => 'Int'],
                 ],
             ],
             [
-                "name" => "comment_registration",
-                "required" => false,
-                'filters' => [
+                'name'     => 'comment_registration',
+                'required' => false,
+                'filters'  => [
                     ['name' => 'Int'],
                 ],
             ],
             [
-                "name" => "comments_notify",
-                "required" => false,
-                'filters' => [
+                'name'     => 'comments_notify',
+                'required' => false,
+                'filters'  => [
                     ['name' => 'Int'],
                 ],
             ],
             [
-                "name" => "moderation_notify",
-                "required" => false,
-                'filters' => [
+                'name'     => 'moderation_notify',
+                'required' => false,
+                'filters'  => [
                     ['name' => 'Int'],
                 ],
             ],
             [
-                "name" => "comment_moderation",
-                "required" => false,
-                'filters' => [
+                'name'     => 'comment_moderation',
+                'required' => false,
+                'filters'  => [
                     ['name' => 'Int'],
                 ],
             ],
             [
-                "name" => "show_avatars",
-                "required" => false,
-                'filters' => [
+                'name'     => 'show_avatars',
+                'required' => false,
+                'filters'  => [
                     ['name' => 'Int'],
                 ],
             ],

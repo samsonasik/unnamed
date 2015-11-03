@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Service;
 
 use Zend\ServiceManager\AbstractFactoryInterface;
@@ -17,19 +16,19 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 final class AbstractTableFactory implements AbstractFactoryInterface
 {
     /**
-     * Determine if we can create a service with name
+     * Determine if we can create a service with name.
      *
      * @method canCreateServiceWithName
      *
-     * @param  ServiceLocatorInterface $services
-     * @param  string                  $name
-     * @param  string                  $requestedName
+     * @param ServiceLocatorInterface $services
+     * @param string                  $name
+     * @param string                  $requestedName
      *
      * @return bool
      */
     public function canCreateServiceWithName(ServiceLocatorInterface $serviceLocator, $name, $className)
     {
-        if (strpos($className, "Table") && class_exists($className)) {
+        if (strpos($className, 'Table') && class_exists($className)) {
             return true;
         }
 
@@ -37,11 +36,11 @@ final class AbstractTableFactory implements AbstractFactoryInterface
     }
 
     /**
-     * Create service with name
+     * Create service with name.
      *
      * @param ServiceLocatorInterface $serviceLocator
-     * @param string $name
-     * @param string $requestedName
+     * @param string                  $name
+     * @param string                  $requestedName
      *
      * @return object
      */

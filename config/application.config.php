@@ -14,7 +14,7 @@ if (APP_ENV === 'development') {
 }
 
 $config = [
-    'modules' => $modules,
+    'modules'                 => $modules,
     'module_listener_options' => [
         'module_paths' => [
             './module',
@@ -23,12 +23,12 @@ $config = [
         'config_glob_paths' => [
             'config/autoload/{,*.}{global,local}.php',
         ],
-        'config_cache_enabled' => (APP_ENV === 'production'),
-        'config_cache_key' => 'app_config',
+        'config_cache_enabled'     => (APP_ENV === 'production'),
+        'config_cache_key'         => 'app_config',
         'module_map_cache_enabled' => (APP_ENV === 'production'),
-        'module_map_cache_key' => 'module_map',
-        'cache_dir' => dirname(__DIR__)."/data/cache/modules",
-        'check_dependencies' => (APP_ENV !== 'production'),
+        'module_map_cache_key'     => 'module_map',
+        'cache_dir'                => dirname(__DIR__).'/data/cache/modules',
+        'check_dependencies'       => (APP_ENV !== 'production'),
     ],
 ];
 

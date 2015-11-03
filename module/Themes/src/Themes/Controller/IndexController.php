@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Themes\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
@@ -54,7 +53,7 @@ final class IndexController extends AbstractActionController
             $themeName = $request->getPost()['themeName'];
             $settings['theme']['name'] = $themeName;
             file_put_contents($filename, '<?php return '.var_export($settings, true).';');
-            $this->setLayoutMessages($this->translate("THEME_ACTIVATED"), 'success');
+            $this->setLayoutMessages($this->translate('THEME_ACTIVATED'), 'success');
             $this->reloadService->reload();
         }
 

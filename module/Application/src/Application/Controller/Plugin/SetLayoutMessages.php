@@ -8,22 +8,21 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller\Plugin;
 
 use Zend\Mvc\Controller\Plugin\AbstractPlugin;
-use Zend\View\Model\ViewModel;
 use Zend\Mvc\Controller\Plugin\FlashMessenger;
+use Zend\View\Model\ViewModel;
 
 final class SetLayoutMessages extends AbstractPlugin
 {
     /**
-     * @var FlashMessenger $flashMessenger
+     * @var FlashMessenger
      */
     private $flashMessenger = null;
 
     /**
-     * @var ViewModel $layout
+     * @var ViewModel
      */
     private $layout = null;
 
@@ -56,13 +55,13 @@ final class SetLayoutMessages extends AbstractPlugin
      * </code>
      *
      * @param array|string $message
-     * @param string $namespace determinates the message layout and color. It's also used for the flashMessenger namespace
+     * @param string       $namespace determinates the message layout and color. It's also used for the flashMessenger namespace
      */
     public function __invoke($message = [], $namespace = 'default')
     {
         $this->flashMessenger->setNamespace($namespace);
 
-        if (!in_array($namespace, ["success", "error", "warning", 'info', 'default'])) {
+        if (!in_array($namespace, ['success', 'error', 'warning', 'info', 'default'])) {
             $namespace = 'default';
         }
 

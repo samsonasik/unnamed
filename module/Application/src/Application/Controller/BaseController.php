@@ -8,13 +8,12 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
 use Zend\Mvc\MvcEvent;
 use Zend\Session\Container;
+use Zend\View\Model\ViewModel;
 
 class BaseController extends AbstractActionController
 {
@@ -31,11 +30,11 @@ class BaseController extends AbstractActionController
     public function __construct()
     {
         $this->view = new ViewModel();
-        $this->translation = new Container("translations");
+        $this->translation = new Container('translations');
 
-        if (!$this->getTranslation()->offSetExists("language")) {
-            $this->getTranslation()->offsetSet("language", 1);
-            $this->getTranslation()->offsetSet("languageName", "en");
+        if (!$this->getTranslation()->offSetExists('language')) {
+            $this->getTranslation()->offsetSet('language', 1);
+            $this->getTranslation()->offsetSet('languageName', 'en');
         }
     }
 
@@ -55,7 +54,7 @@ class BaseController extends AbstractActionController
         /*
          * Call this method only if we are not in Menu or News. Both of them calls the function by themselves
          */
-        if (($this->params('action') != "post")) {
+        if (($this->params('action') != 'post')) {
             $this->initMetaTags();
         }
     }
@@ -67,9 +66,9 @@ class BaseController extends AbstractActionController
      */
     private function initMenus()
     {
-        $menu = $this->getTable("Admin\\Model\\MenuTable")
+        $menu = $this->getTable('Admin\\Model\\MenuTable')
                      ->getEntityRepository()
-                     ->findBy(["active" => 1, "language" => $this->language()], ['parent' => "DESC"]);
+                     ->findBy(['active' => 1, 'language' => $this->language()], ['parent' => 'DESC']);
 
         if (count($menu) > 0) {
             $menus = ['menus' => [], 'submenus' => []];
@@ -78,16 +77,16 @@ class BaseController extends AbstractActionController
                 $menus['submenus'][$submenus->getParent()][] = $submenus->getId();
             }
 
-            $output = "<li role='menuitem'><a hreflang='{$this->language("languageName")}' itemprop='url' href='/'>{$this->translate("HOME")}</a></li>";
-            $output .= "<li role='menuitem'><a hreflang='{$this->language("languageName")}' itemprop='url' href='/news'>{$this->translate("NEWS")}</a></li>";
+            $output = "<li role='menuitem'><a hreflang='{$this->language('languageName')}' itemprop='url' href='/'>{$this->translate('HOME')}</a></li>";
+            $output .= "<li role='menuitem'><a hreflang='{$this->language('languageName')}' itemprop='url' href='/news'>{$this->translate('NEWS')}</a></li>";
             if ($this->UserData()->checkIdentity(false)) {
-                $output .= "<li role='menuitem'><a hreflang='{$this->language("languageName")}' itemprop='url' href='/login/logout'>{$this->translate("SIGN_OUT")}</a></li>";
+                $output .= "<li role='menuitem'><a hreflang='{$this->language('languageName')}' itemprop='url' href='/login/logout'>{$this->translate('SIGN_OUT')}</a></li>";
             } else {
-                $output .= "<li role='menuitem'><a hreflang='{$this->language("languageName")}' itemprop='url' href='/login'>{$this->translate("SIGN_IN")}</a></li>";
-                $output .= "<li role='menuitem'><a hreflang='{$this->language("languageName")}' itemprop='url' href='/registration'>{$this->translate("SIGN_UP")}</a></li>";
+                $output .= "<li role='menuitem'><a hreflang='{$this->language('languageName')}' itemprop='url' href='/login'>{$this->translate('SIGN_IN')}</a></li>";
+                $output .= "<li role='menuitem'><a hreflang='{$this->language('languageName')}' itemprop='url' href='/registration'>{$this->translate('SIGN_UP')}</a></li>";
             }
 
-            $this->getView()->menu = $this->generateMenu(0, $menus, "menubar", $output);
+            $this->getView()->menu = $this->generateMenu(0, $menus, 'menubar', $output);
         }
 
         return $this->getView();
@@ -98,26 +97,26 @@ class BaseController extends AbstractActionController
      *
      * @method generateMenu
      *
-     * @param int $parent
-     * @param array $menu
+     * @param int    $parent
+     * @param array  $menu
      * @param string $role
-     * @param string $html - add html menus that do not come from database
+     * @param string $html   - add html menus that do not come from database
      *
      * @return string generated html code
      */
-    private function generateMenu($parent = 0, array $menu = [], $ariaRole = "menubar", $html = '')
+    private function generateMenu($parent = 0, array $menu = [], $ariaRole = 'menubar', $html = '')
     {
-        $output = "";
-        if (isset($menu["submenus"][$parent])) {
+        $output = '';
+        if (isset($menu['submenus'][$parent])) {
             $output .= "<ul role='{$ariaRole}'>";
             $output .= $html;
 
             foreach ($menu['submenus'][$parent] as $id) {
-                $output .= "<li role='menuitem'><a hreflang='{$this->language("languageName")}' itemprop='url' href='/menu/post/{$menu['menus'][$id]->getMenuLink()}'><em class='fa {$menu['menus'][$id]->getClass()}'></em> {$menu['menus'][$id]->getCaption()}</a>";
-                $output .= $this->generateMenu($id, $menu, "menu");
-                $output .= "</li>";
+                $output .= "<li role='menuitem'><a hreflang='{$this->language('languageName')}' itemprop='url' href='/menu/post/{$menu['menus'][$id]->getMenuLink()}'><em class='fa {$menu['menus'][$id]->getClass()}'></em> {$menu['menus'][$id]->getCaption()}</a>";
+                $output .= $this->generateMenu($id, $menu, 'menu');
+                $output .= '</li>';
             }
-            $output .= "</ul>";
+            $output .= '</ul>';
         }
 
         return $output;
@@ -131,12 +130,12 @@ class BaseController extends AbstractActionController
      *
      * @return mixed
      */
-    final protected function language($offset = "language")
+    final protected function language($offset = 'language')
     {
         if ($this->getTranslation()->offSetExists($offset)) {
             return $this->getTranslation()->offSetGet($offset);
-        } elseif ($this->getTranslation()->offSetExists("language")) {
-            return $this->getTranslation()->offSetGet("language");
+        } elseif ($this->getTranslation()->offSetExists('language')) {
+            return $this->getTranslation()->offSetGet('language');
         } else {
             return 1;
         }
@@ -153,7 +152,7 @@ class BaseController extends AbstractActionController
     }
 
     /**
-     * Returns session holding translations id and name
+     * Returns session holding translations id and name.
      *
      * @method getTranslation
      *

@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Application\Form;
 
 use Zend\Form\Form;
@@ -29,39 +28,39 @@ final class NewPasswordForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Password',
-            'name' => 'password',
+            'type'       => 'Zend\Form\Element\Password',
+            'name'       => 'password',
             'attributes' => [
-                'required' => true,
-                'min' => 8,
-                'size' => 30,
+                'required'    => true,
+                'min'         => 8,
+                'size'        => 30,
                 'placeholder' => '1234567890',
             ],
             'options' => [
-                'label' => "Password",
+                'label' => 'Password',
             ],
             ]
         );
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Password',
-            'name' => 'repeatpw',
+            'type'       => 'Zend\Form\Element\Password',
+            'name'       => 'repeatpw',
             'attributes' => [
-                'required' => true,
-                'size' => 30,
+                'required'    => true,
+                'size'        => 30,
                 'placeholder' => '1234567890',
             ],
             'options' => [
-                'label' => "Repeat password",
+                'label' => 'Repeat password',
             ],
             ]
         );
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Csrf',
-            'name' => 's',
+            'type'    => 'Zend\Form\Element\Csrf',
+            'name'    => 's',
             'options' => [
                 'csrf_options' => [
                     'timeout' => 320,
@@ -72,10 +71,10 @@ final class NewPasswordForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'name' => 'resetpw',
+            'name'       => 'resetpw',
             'attributes' => [
                 'type'  => 'submit',
-                'id' => 'submitbutton',
+                'id'    => 'submitbutton',
             ],
             ]
         );
@@ -85,43 +84,43 @@ final class NewPasswordForm extends Form implements InputFilterProviderInterface
     {
         return [
             [
-                "name"=>"password",
+                'name'     => 'password',
                 'required' => true,
-                'filters' => [
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
                 'validators' => [
                     [
-                        'name' => 'StringLength',
+                        'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 8,
+                            'min'      => 8,
                         ],
                     ],
                     ['name' => 'NotEmpty'],
                 ],
             ],
             [
-                'name' => 'repeatpw',
+                'name'     => 'repeatpw',
                 'required' => true,
-                'filters' => [
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
                 'validators' => [
                     [
-                        'name' => 'StringLength',
+                        'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 8,
+                            'min'      => 8,
                         ],
                     ],
                     ['name' => 'NotEmpty'],
                     [
-                        'name' => 'Identical',
+                        'name'    => 'Identical',
                         'options' => [
-                            'token' => 'password',
+                            'token'   => 'password',
                             'message' => 'Passwords do not match',
                         ],
                     ],

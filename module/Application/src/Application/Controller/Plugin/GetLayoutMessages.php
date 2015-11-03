@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller\Plugin;
 
 use Zend\Mvc\Controller\Plugin\AbstractPlugin;
@@ -17,7 +16,7 @@ use Zend\Mvc\Controller\Plugin\FlashMessenger;
 final class GetLayoutMessages extends AbstractPlugin
 {
     /**
-     * @var FlashMessenger $flashMessenger
+     * @var FlashMessenger
      */
     private $flashMessenger = null;
 

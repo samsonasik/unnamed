@@ -8,13 +8,12 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Controller;
 
+use Admin\Form\SettingsDiscussionForm;
+use Admin\Form\SettingsGeneralForm;
 use Admin\Form\SettingsMailForm;
 use Admin\Form\SettingsPostsForm;
-use Admin\Form\SettingsGeneralForm;
-use Admin\Form\SettingsDiscussionForm;
 use Admin\Form\SettingsRegistrationForm;
 use Zend\Mvc\MvcEvent;
 
@@ -48,10 +47,10 @@ final class SettingsController extends BaseController
     /**
      * @method __construct
      *
-     * @param SettingsMailForm $mailForm
-     * @param SettingsPostsForm $postsForm
-     * @param SettingsGeneralForm $generalForm
-     * @param SettingsDiscussionForm $discussionForm
+     * @param SettingsMailForm         $mailForm
+     * @param SettingsPostsForm        $postsForm
+     * @param SettingsGeneralForm      $generalForm
+     * @param SettingsDiscussionForm   $discussionForm
      * @param SettingsRegistrationForm $registrationForm
      */
     public function __construct(
@@ -78,7 +77,7 @@ final class SettingsController extends BaseController
     public function onDispatch(MvcEvent $event)
     {
         parent::onDispatch($event);
-        $this->addBreadcrumb(["reference"=>"/admin/settings", "name"=>$this->translate("SETTINGS")]);
+        $this->addBreadcrumb(['reference' => '/admin/settings', 'name' => $this->translate('SETTINGS')]);
     }
 
     /**
@@ -86,7 +85,7 @@ final class SettingsController extends BaseController
      */
     protected function generalAction()
     {
-        $this->getView()->setTemplate("admin/settings/general");
+        $this->getView()->setTemplate('admin/settings/general');
 
         $this->initForm($this->generalForm);
 
@@ -98,7 +97,7 @@ final class SettingsController extends BaseController
      */
     protected function registrationAction()
     {
-        $this->getView()->setTemplate("admin/settings/registration");
+        $this->getView()->setTemplate('admin/settings/registration');
 
         $this->initForm($this->registrationForm, 'registration');
 
@@ -110,7 +109,7 @@ final class SettingsController extends BaseController
      */
     protected function mailAction()
     {
-        $this->getView()->setTemplate("admin/settings/mail");
+        $this->getView()->setTemplate('admin/settings/mail');
 
         $this->initForm($this->mailForm, 'mail');
 
@@ -122,7 +121,7 @@ final class SettingsController extends BaseController
      */
     protected function postsAction()
     {
-        $this->getView()->setTemplate("admin/settings/posts");
+        $this->getView()->setTemplate('admin/settings/posts');
 
         $this->initForm($this->postsForm, 'posts');
 
@@ -134,7 +133,7 @@ final class SettingsController extends BaseController
      */
     protected function discussionAction()
     {
-        $this->getView()->setTemplate("admin/settings/discussion");
+        $this->getView()->setTemplate('admin/settings/discussion');
 
         $this->initForm($this->discussionForm, 'discussion');
 
@@ -147,8 +146,8 @@ final class SettingsController extends BaseController
      */
     private function initForm($form, $actionKey = 'general')
     {
-        $form->get("submit")->setValue($this->translate("EDIT"));
-        $filename = "config/autoload/system.local.php";
+        $form->get('submit')->setValue($this->translate('EDIT'));
+        $filename = 'config/autoload/system.local.php';
         $settings = include $filename;
         $this->getView()->form = $form;
 
@@ -159,11 +158,11 @@ final class SettingsController extends BaseController
             if ($form->isValid()) {
                 $formData = $form->getData();
 
-                unset($formData["submit"], $formData["s"]);
-                $settings["system_config"][$actionKey] = array_merge($settings["system_config"][$actionKey], $formData);
+                unset($formData['submit'], $formData['s']);
+                $settings['system_config'][$actionKey] = array_merge($settings['system_config'][$actionKey], $formData);
 
                 file_put_contents($filename, '<?php return '.var_export($settings, true).';');
-                $this->setLayoutMessages($this->translate("SETTINGS")." ".$this->translate("SAVE_SUCCESS"), 'success');
+                $this->setLayoutMessages($this->translate('SETTINGS').' '.$this->translate('SAVE_SUCCESS'), 'success');
             } else {
                 $this->setLayoutMessages($form->getMessages(), 'error');
             }

@@ -8,12 +8,11 @@
  *
  * @link       TBA
  */
-
 namespace Application\Model;
 
+use Application\Entity\ResetPassword;
 use Application\Exception\RuntimeException;
 use Doctrine\ORM\EntityManager;
-use Application\Entity\ResetPassword;
 
 final class ResetPasswordTable
 {
@@ -40,26 +39,26 @@ final class ResetPasswordTable
      */
     public function getEntityRepository()
     {
-        return $this->entityManager->getRepository("Application\\Entity\\ResetPassword");
+        return $this->entityManager->getRepository('Application\\Entity\\ResetPassword');
     }
 
     /**
      * This method returns a single row which verifies that this is the user that needs to reset his password.
      *
-     * @param int $id user id
-     *
+     * @param int $id   user id
      * @param int $user
-     * @return ResetPassword If row is not found
      *
      * @throws \Doctrine\ORM\NoResultException
      * @throws \Doctrine\ORM\NonUniqueResultException
+     *
+     * @return ResetPassword If row is not found
      */
     public function getResetPassword($id = 0, $user = 0)
     {
         $resetPassword = $this->queryBuilder();
-        $resetPassword->select(["r"]);
+        $resetPassword->select(['r']);
         $resetPassword->from('Application\Entity\ResetPassword', 'r');
-        $resetPassword->where("r.id = :id AND r.user = :user");
+        $resetPassword->where('r.id = :id AND r.user = :user');
         $resetPassword->setParameter(':id', (int) $id);
         $resetPassword->setParameter(':user', (int) $user);
         $resetPassword = $resetPassword->getQuery()->getSingleResult();

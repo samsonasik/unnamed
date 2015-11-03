@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller\Plugin\Factory;
 
 use Application\Controller\Plugin\Functions;
@@ -16,7 +15,7 @@ use Application\Controller\Plugin\Functions;
 class FunctionsFactory
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     public function __invoke()
     {

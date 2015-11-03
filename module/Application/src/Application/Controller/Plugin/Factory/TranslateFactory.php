@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller\Plugin\Factory;
 
 use Application\Controller\Plugin\Translate;
@@ -17,7 +16,7 @@ use Zend\Mvc\Controller\PluginManager;
 final class TranslateFactory
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      *
      * @param PluginManager $pluginManager
      *
@@ -25,7 +24,7 @@ final class TranslateFactory
      */
     public function __invoke(PluginManager $pluginManager)
     {
-        $translator = $pluginManager->getController()->getServiceLocator()->get("translator")->getTranslator();
+        $translator = $pluginManager->getController()->getServiceLocator()->get('translator')->getTranslator();
 
         $plugin = new Translate($translator);
 

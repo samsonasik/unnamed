@@ -8,16 +8,15 @@
  *
  * @link       TBA
  */
-
 namespace Application\Factory;
 
-use Zend\Session\SessionManager;
 use Zend\Session\Config\SessionConfig;
+use Zend\Session\SessionManager;
 
 final class SessionFactory
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function __invoke()
     {
@@ -28,7 +27,7 @@ final class SessionFactory
             'remember_me_seconds'     => 7200, //2hrs This is also set in the login controller
             'use_cookies'             => true,
             'cache_expire'            => 180,  //3hrs
-            'cookie_path'             => "/",
+            'cookie_path'             => '/',
             'cookie_httponly'         => true,
             'name'                    => '__zpc',
             'cookie_secure'           => static::isSSL(),
@@ -57,6 +56,7 @@ final class SessionFactory
         } elseif (isset($_SERVER['SERVER_PORT']) && ('443' == $_SERVER['SERVER_PORT'])) {
             $stats = true;
         }
+
         return $stats;
     }
 }

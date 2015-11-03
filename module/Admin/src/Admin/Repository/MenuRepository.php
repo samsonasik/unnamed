@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Repository;
 
 use Doctrine\ORM\EntityRepository;
@@ -21,7 +20,8 @@ class MenuRepository extends EntityRepository
      */
     public function getMenus()
     {
-        $lang = new Container("translations");
+        $lang = new Container('translations');
+
         return $this->createQueryBuilder('m')->select('m')
                     ->where("m.active = 1 AND m.language = '{$lang->language}'")
                     ->orderBy('m.parent', 'ASC')

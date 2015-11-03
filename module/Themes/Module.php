@@ -8,11 +8,10 @@
  *
  * @link       TBA
  */
-
 namespace Themes;
 
-use Zend\EventManager\EventInterface;
 use Themes\Service\ReloadService;
+use Zend\EventManager\EventInterface;
 use Zend\ModuleManager\Feature\BootstrapListenerInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\InitProviderInterface;
@@ -34,7 +33,7 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
     {
         $moduleManager->getEventManager()->getSharedManager()->attach(
             __NAMESPACE__,
-            "dispatch",
+            'dispatch',
             function (EventInterface $e) {
                 $e->getTarget()->layout('layout/layout');
             }
@@ -53,7 +52,7 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
         $eventManager = $app->getEventManager();
         $sharedEventManager = $eventManager->getSharedManager();
 
-        $eventManager->attach("render", [$this,'loadTheme'], 100);
+        $eventManager->attach('render', [$this,'loadTheme'], 100);
         $sharedEventManager->attach(ReloadService::class, 'reload', [$this, 'reloadConfig'], 101);
     }
 
@@ -78,10 +77,10 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
      */
     public function loadTheme(EventInterface $event)
     {
-        /**
+        /*
          * Exclude modules that doesn't need a dinamicly changed layout
          */
-        if (!in_array($event->getRouteMatch()->getMatchedRouteName(), ["admin", "admin/default", "themes", "themes/default"])) {
+        if (!in_array($event->getRouteMatch()->getMatchedRouteName(), ['admin', 'admin/default', 'themes', 'themes/default'])) {
             return $this->service->get('initThemes');
         }
     }

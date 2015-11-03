@@ -8,12 +8,10 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Entity;
 
 use Admin\Exception\BadMethodCallException;
 use Admin\Exception\InvalidArgumentException;
-use Admin\Entity\GDInterface;
 
 final class GD implements GDInterface
 {
@@ -84,7 +82,7 @@ final class GD implements GDInterface
             return $this->gd['FreeType Linkage'];
         }
 
-        return null;
+        return;
     }
 
     /**

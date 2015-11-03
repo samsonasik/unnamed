@@ -8,13 +8,11 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Entity;
 
 use Admin\Exception\BadMethodCallException;
 use Admin\Exception\InvalidArgumentException;
 use Admin\Exception\RuntimeException;
-use Admin\Entity\ImageInterface;
 
 final class Image implements ImageInterface
 {
@@ -266,7 +264,7 @@ final class Image implements ImageInterface
             return $this->options[$option];
         }
 
-        return null;
+        return;
     }
 
     /**

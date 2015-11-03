@@ -8,28 +8,27 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller;
 
-use Zend\Http\PhpEnvironment\RemoteAddress;
 use Application\Exception\AuthorizationException;
+use Application\Exception\InvalidArgumentException;
+use Zend\Http\PhpEnvironment\RemoteAddress;
 use Zend\Log\Logger;
 use Zend\Log\Writer\Stream;
 use Zend\Mvc\MvcEvent;
 use Zend\ServiceManager\ServiceLocatorInterface;
-use Application\Exception\InvalidArgumentException;
 
 final class ErrorHandling
 {
     /**
      * Default destination.
      *
-     * @var string $destination
+     * @var string
      */
     private $destination = './data/logs/';
 
     /**
-     * @var Logger $logger;
+     * @var Logger;
      */
     private $logger;
 
@@ -67,6 +66,7 @@ final class ErrorHandling
         }
 
         $this->destination = rtrim(realpath($destination), DIRECTORY_SEPARATOR);
+
         return $this;
     }
 
@@ -77,10 +77,10 @@ final class ErrorHandling
      */
     private function logException(\Exception $exception)
     {
-        $log = PHP_EOL."Exception: ".$exception->getMessage();
-        $log .= PHP_EOL."Code: ".$exception->getCode();
-        $log .= PHP_EOL."File: ".$exception->getFile();
-        $log .= PHP_EOL."Trace: ".$exception->getTraceAsString();
+        $log = PHP_EOL.'Exception: '.$exception->getMessage();
+        $log .= PHP_EOL.'Code: '.$exception->getCode();
+        $log .= PHP_EOL.'File: '.$exception->getFile();
+        $log .= PHP_EOL.'Trace: '.$exception->getTraceAsString();
         $this->logger->addWriter(new Stream($this->destination.'front_end_log_'.date('F').'.txt'));
         $this->logger->err($log);
 
@@ -88,12 +88,12 @@ final class ErrorHandling
     }
 
     /**
-     * @param MvcEvent $event
+     * @param MvcEvent                $event
      * @param ServiceLocatorInterface $sm
      */
     public function logError(MvcEvent $event, ServiceLocatorInterface $sm)
     {
-        $exception = $event->getParam("exception");
+        $exception = $event->getParam('exception');
         if ($exception instanceof AuthorizationException) {
             $this->logAuthorisationError($event, $sm);
             $this->logException($exception);
@@ -104,9 +104,9 @@ final class ErrorHandling
         $event->getResponse()->setStatusCode(404);
         $event->getViewModel()->setVariables(
             [
-            'message' => '404 Not found',
-            'reason' => 'The link you have requested doesn\'t exists',
-            'exception' => ($exception !== null ? $exception->getMessage() : ""),
+            'message'   => '404 Not found',
+            'reason'    => 'The link you have requested doesn\'t exists',
+            'exception' => ($exception !== null ? $exception->getMessage() : ''),
             ]
         );
         $event->getViewModel()->setTemplate('error/index');
@@ -114,7 +114,7 @@ final class ErrorHandling
     }
 
     /**
-     * @param MvcEvent $event
+     * @param MvcEvent                $event
      * @param ServiceLocatorInterface $sm
      *
      * @return ErrorHandling
@@ -123,16 +123,16 @@ final class ErrorHandling
     {
         $remote = new RemoteAddress();
 
-        $errorMsg = " *** LOG ***
-        Controller: ".$event->getRouteMatch()->getParam('controller').",
-        Controller action: ".$event->getRouteMatch()->getParam('action').",
-        IP: ".$remote->getIpAddress().",
-        Browser string: ".$sm->get("Request")->getServer()->get('HTTP_USER_AGENT').",
-        Date: ".date("Y-m-d H:i:s", time()).",
-        Full URL: ".$sm->get("Request")->getRequestUri().",
-        User port: ".$_SERVER["REMOTE_PORT"].",
-        Remote host addr: ".gethostbyaddr($remote->getIpAddress()).",
-        Method used: ".$sm->get("Request")->getMethod()."\n";
+        $errorMsg = ' *** LOG ***
+        Controller: '.$event->getRouteMatch()->getParam('controller').',
+        Controller action: '.$event->getRouteMatch()->getParam('action').',
+        IP: '.$remote->getIpAddress().',
+        Browser string: '.$sm->get('Request')->getServer()->get('HTTP_USER_AGENT').',
+        Date: '.date('Y-m-d H:i:s', time()).',
+        Full URL: '.$sm->get('Request')->getRequestUri().',
+        User port: '.$_SERVER['REMOTE_PORT'].',
+        Remote host addr: '.gethostbyaddr($remote->getIpAddress()).',
+        Method used: '.$sm->get('Request')->getMethod()."\n";
 
         $writer = new Stream($this->destination.date('F').'.txt');
         $this->logger->addWriter($writer);

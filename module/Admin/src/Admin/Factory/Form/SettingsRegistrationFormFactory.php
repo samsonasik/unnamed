@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Factory\Form;
 
 use Admin\Form\SettingsRegistrationForm;
@@ -17,13 +16,13 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 final class SettingsRegistrationFormFactory
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     public function __invoke(ServiceLocatorInterface $serviceLocator)
     {
-        $config = $serviceLocator->getServiceLocator()->get("Config");
+        $config = $serviceLocator->getServiceLocator()->get('Config');
 
-        $form = new SettingsRegistrationForm($config['system_config']["registration"]);
+        $form = new SettingsRegistrationForm($config['system_config']['registration']);
 
         return $form;
     }

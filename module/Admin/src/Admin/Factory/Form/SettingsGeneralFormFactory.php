@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Factory\Form;
 
 use Admin\Form\SettingsGeneralForm;
@@ -17,13 +16,13 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 final class SettingsGeneralFormFactory
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     public function __invoke(ServiceLocatorInterface $serviceLocator)
     {
-        $config = $serviceLocator->getServiceLocator()->get("Config");
+        $config = $serviceLocator->getServiceLocator()->get('Config');
 
-        $form = new SettingsGeneralForm($config['system_config']["general"]);
+        $form = new SettingsGeneralForm($config['system_config']['general']);
 
         return $form;
     }

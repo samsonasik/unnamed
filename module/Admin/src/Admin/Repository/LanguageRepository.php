@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Repository;
 
 use Doctrine\ORM\EntityRepository;

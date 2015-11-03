@@ -8,13 +8,12 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Language
+ * Language.
  *
  * @ORM\Entity
  * @ORM\Table(name="language")
@@ -23,7 +22,7 @@ use Doctrine\ORM\Mapping as ORM;
 final class Language
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -39,14 +38,14 @@ final class Language
     private $name;
 
     /**
-     * @var boolean
+     * @var bool
      *
      * @ORM\Column(name="active", type="smallint", nullable=false)
      */
     private $active = 1;
 
     /**
-     * @var array $data
+     * @var array
      */
     public function exchangeArray(array $data = [])
     {
@@ -97,7 +96,6 @@ final class Language
         return $this;
     }
 
-
     /**
      * Set name.
      *
@@ -115,7 +113,7 @@ final class Language
     /**
      * Get name.
      *
-     * @return String
+     * @return string
      */
     public function getName()
     {
@@ -139,7 +137,7 @@ final class Language
     /**
      * Get active.
      *
-     * @return Boolean
+     * @return bool
      */
     public function isActive()
     {

@@ -8,12 +8,11 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Form;
 
+use Doctrine\ORM\EntityManager;
 use Zend\Form\Form;
 use Zend\InputFilter\InputFilterProviderInterface;
-use Doctrine\ORM\EntityManager;
 
 final class AdminMenuForm extends Form implements InputFilterProviderInterface
 {
@@ -27,7 +26,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
      */
     public function __construct(EntityManager $entityManager)
     {
-        parent::__construct("admin-menu");
+        parent::__construct('admin-menu');
         $this->entityManager = $entityManager;
     }
 
@@ -37,18 +36,18 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
         $this->setAttribute('role', 'form');
 
         $this->add([
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'caption',
+            'type'    => 'Zend\Form\Element\Text',
+            'name'    => 'caption',
             'options' => [
-                'label' => 'Caption',
+                'label'          => 'Caption',
                 'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\AdminMenu',
-                'property' => "caption",
+                'target_class'   => 'Admin\Entity\AdminMenu',
+                'property'       => 'caption',
             ],
             'attributes' => [
-                'required'   => "true",
-                'size'        => "40",
-                'class'      => 'admin-menu-caption',
+                'required'    => 'true',
+                'size'        => '40',
+                'class'       => 'admin-menu-caption',
                 'placeholder' => 'Caption',
             ],
         ]);
@@ -58,105 +57,105 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
             $valueOptions[$i] = $i;
         }
         $this->add([
-            'type' => 'DoctrineModule\Form\Element\ObjectSelect',
-            'name' => 'menuOrder',
+            'type'    => 'DoctrineModule\Form\Element\ObjectSelect',
+            'name'    => 'menuOrder',
             'options' => [
-                'object_manager' => $this->entityManager,
+                'object_manager'            => $this->entityManager,
                 'disable_inarray_validator' => true,
-                'target_class' => 'Admin\Entity\AdminMenu',
-                'property' => 'menuOrder',
-                'display_empty_item' => true,
-                'empty_item_label' => 'Please choose menu order (optional)',
-                'value_options' => $valueOptions,
-                'label' => 'Menu order',
+                'target_class'              => 'Admin\Entity\AdminMenu',
+                'property'                  => 'menuOrder',
+                'display_empty_item'        => true,
+                'empty_item_label'          => 'Please choose menu order (optional)',
+                'value_options'             => $valueOptions,
+                'label'                     => 'Menu order',
             ],
         ]);
 
         $this->add([
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'controller',
+            'type'    => 'Zend\Form\Element\Text',
+            'name'    => 'controller',
             'options' => [
-                'label' => 'Controller',
+                'label'          => 'Controller',
                 'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\AdminMenu',
-                'property' => "controller",
+                'target_class'   => 'Admin\Entity\AdminMenu',
+                'property'       => 'controller',
             ],
             'attributes' => [
-                'size'        => "40",
+                'size'        => '40',
                 'class'       => 'admin-menu-controller',
                 'placeholder' => 'Controller',
             ],
         ]);
 
         $this->add([
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'class',
+            'type'    => 'Zend\Form\Element\Text',
+            'name'    => 'class',
             'options' => [
-                'label' => 'CSS class',
+                'label'          => 'CSS class',
                 'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\AdminMenu',
-                'property' => "class",
+                'target_class'   => 'Admin\Entity\AdminMenu',
+                'property'       => 'class',
             ],
             'attributes' => [
-                'size'        => "40",
+                'size'        => '40',
                 'class'       => 'admin-menu-class',
                 'placeholder' => 'CSS class',
             ],
         ]);
 
         $this->add([
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'action',
+            'type'    => 'Zend\Form\Element\Text',
+            'name'    => 'action',
             'options' => [
-                'label' => 'Action',
+                'label'          => 'Action',
                 'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\AdminMenu',
-                'property' => "action",
+                'target_class'   => 'Admin\Entity\AdminMenu',
+                'property'       => 'action',
             ],
             'attributes' => [
-                'size'        => "40",
+                'size'        => '40',
                 'class'       => 'admin-menu-action',
                 'placeholder' => 'Action',
             ],
         ]);
 
         $this->add([
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'description',
+            'type'    => 'Zend\Form\Element\Text',
+            'name'    => 'description',
             'options' => [
-                'label' => 'Description',
+                'label'          => 'Description',
                 'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\AdminMenu',
-                'property' => "caption",
+                'target_class'   => 'Admin\Entity\AdminMenu',
+                'property'       => 'caption',
             ],
             'attributes' => [
-                'size'        => "40",
+                'size'        => '40',
                 'class'       => 'admin-menu-description',
                 'placeholder' => 'Description',
             ],
         ]);
 
         $this->add([
-            'type' => 'DoctrineModule\Form\Element\ObjectSelect',
-            'name' => 'parent',
+            'type'    => 'DoctrineModule\Form\Element\ObjectSelect',
+            'name'    => 'parent',
             'options' => [
-                'label' => 'Parent admin menu',
+                'label'                     => 'Parent admin menu',
                 'disable_inarray_validator' => true,
-                'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\AdminMenu',
-                'property' => "caption",
-                'display_empty_item' => true,
-                'empty_item_label' => "Select parent admin menu",
-                'is_method' => true,
-                'find_method' => [
+                'object_manager'            => $this->entityManager,
+                'target_class'              => 'Admin\Entity\AdminMenu',
+                'property'                  => 'caption',
+                'display_empty_item'        => true,
+                'empty_item_label'          => 'Select parent admin menu',
+                'is_method'                 => true,
+                'find_method'               => [
                     'name' => 'getParentMenus',
                 ],
             ],
         ]);
 
         $this->add([
-            'type' => 'Zend\Form\Element\Csrf',
-            'name' => 's',
+            'type'    => 'Zend\Form\Element\Csrf',
+            'name'    => 's',
             'options' => [
                 'csrf_options' => [
                     'timeout' => 1400,
@@ -165,11 +164,11 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
         ]);
 
         $this->add([
-            'name' => 'submit',
+            'name'       => 'submit',
             'attributes' => [
                 'type'  => 'submit',
-                'id' => 'submitbutton',
-                'value' => "Save",
+                'id'    => 'submitbutton',
+                'value' => 'Save',
             ],
         ]);
 
@@ -183,16 +182,16 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
     {
         return [
             [
-                'name' => 'id',
+                'name'     => 'id',
                 'required' => false,
-                'filters' => [
+                'filters'  => [
                     ['name' => 'Int'],
                 ],
             ],
             [
-                "name"=>"caption",
-                "required" => true,
-                'filters' => [
+                'name'     => 'caption',
+                'required' => true,
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
@@ -202,21 +201,21 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
                         'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 1,
-                            'max' => 200,
+                            'min'      => 1,
+                            'max'      => 200,
                         ],
                     ],
                 ],
             ],
             [
-                "name"=>"menuOrder",
-                "required" => false,
+                'name'     => 'menuOrder',
+                'required' => false,
                 'filters'  => [
                     ['name' => 'Int'],
                 ],
                 'validators' => [
                     [
-                        'name' => 'Regex',
+                        'name'    => 'Regex',
                         'options' => [
                             'pattern' => '/^[0-9]+$/',
                         ],
@@ -224,9 +223,9 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
                 ],
             ],
             [
-                "name"=>"controller",
-                "required" => false,
-                'filters' => [
+                'name'     => 'controller',
+                'required' => false,
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
@@ -236,16 +235,16 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
                         'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 1,
-                            'max' => 200,
+                            'min'      => 1,
+                            'max'      => 200,
                         ],
                     ],
                 ],
             ],
             [
-                "name"=>"action",
-                "required" => false,
-                'filters' => [
+                'name'     => 'action',
+                'required' => false,
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
@@ -255,16 +254,16 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
                         'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 1,
-                            'max' => 200,
+                            'min'      => 1,
+                            'max'      => 200,
                         ],
                     ],
                 ],
             ],
             [
-                "name"=>"class",
-                "required" => false,
-                'filters' => [
+                'name'     => 'class',
+                'required' => false,
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
@@ -274,16 +273,16 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
                         'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 1,
-                            'max' => 50,
+                            'min'      => 1,
+                            'max'      => 50,
                         ],
                     ],
                 ],
             ],
             [
-                "name"=>"description",
-                "required" => false,
-                'filters' => [
+                'name'     => 'description',
+                'required' => false,
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
@@ -292,21 +291,21 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
                         'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 0,
-                            'max' => 150,
+                            'min'      => 0,
+                            'max'      => 150,
                         ],
                     ],
                 ],
             ],
             [
-                "name"=>"parent",
-                "required" => false,
+                'name'     => 'parent',
+                'required' => false,
                 'filters'  => [
                     ['name' => 'Int'],
                 ],
                 'validators' => [
                     [
-                        'name' => 'Regex',
+                        'name'    => 'Regex',
                         'options' => [
                             'pattern' => '/^[0-9]+$/',
                         ],

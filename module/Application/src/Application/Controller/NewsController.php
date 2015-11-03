@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller;
 
 final class NewsController extends BaseController
@@ -20,45 +19,45 @@ final class NewsController extends BaseController
      */
     public function indexAction()
     {
-        $this->getView()->setTemplate("application/news/index");
+        $this->getView()->setTemplate('application/news/index');
 
-        $query = $this->getTable("Admin\\Model\\ContentTable");
-        $news = $query->queryBuilder()->select(["c"])
+        $query = $this->getTable('Admin\\Model\\ContentTable');
+        $news = $query->queryBuilder()->select(['c'])
                ->from('Admin\Entity\Content', 'c')
-               ->where("c.type = 1 AND c.menu = 0 AND c.language = :language")
-               ->setParameter(":language", (int) $this->language())
-               ->orderBy("c.date", "DESC");
+               ->where('c.type = 1 AND c.menu = 0 AND c.language = :language')
+               ->setParameter(':language', (int) $this->language())
+               ->orderBy('c.date', 'DESC');
 
         $paginator = $query->preparePagination($news, false);
-        $paginator->setCurrentPageNumber((int)$this->getParam('page', 1));
-        $paginator->setItemCountPerPage($this->systemSettings("posts", "news"));
+        $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));
+        $paginator->setItemCountPerPage($this->systemSettings('posts', 'news'));
         $this->getView()->news = $paginator;
 
         return $this->getView();
     }
-
 
     /**
      * @return \Zend\View\Model\ViewModel
      */
     public function postAction()
     {
-        $this->getView()->setTemplate("application/news/post");
+        $this->getView()->setTemplate('application/news/post');
 
         $escaper = new \Zend\Escaper\Escaper('utf-8');
-        $post = (string) $escaper->escapeUrl($this->getParam("post"));
-        $query = $this->getTable("Admin\\Model\\ContentTable");
-        $new = $query->queryBuilder()->select(["c.title, c.text, c.date, c.preview"])
+        $post = (string) $escaper->escapeUrl($this->getParam('post'));
+        $query = $this->getTable('Admin\\Model\\ContentTable');
+        $new = $query->queryBuilder()->select(['c.title, c.text, c.date, c.preview'])
                ->from('Admin\Entity\Content', 'c')
-               ->where("c.type = 1 AND c.menu = 0 AND c.language = :language AND c.titleLink = :titleLink")
-               ->setParameter(":language", (int) $this->language())
-               ->setParameter(":titleLink", (string) $post)
-               ->orderBy("c.date", "DESC");
+               ->where('c.type = 1 AND c.menu = 0 AND c.language = :language AND c.titleLink = :titleLink')
+               ->setParameter(':language', (int) $this->language())
+               ->setParameter(':titleLink', (string) $post)
+               ->orderBy('c.date', 'DESC');
 
         $new = $new->getQuery()->getResult();
         if ($new) {
             $this->getView()->new = $new[0];
             $this->initMetaTags($new[0]);
+
             return $this->getView();
         }
 

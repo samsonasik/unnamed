@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin;
 
 return [
@@ -17,25 +16,25 @@ return [
             'admin' => [
                 'type'    => 'Zend\Mvc\Router\Http\Literal',
                 'options' => [
-                    'route' => '/admin',
+                    'route'    => '/admin',
                     'defaults' => [
                         'controller' => 'Admin\Controller\Index',
                         'action'     => 'index',
                     ],
                 ],
                 'may_terminate' => true,
-                'child_routes' => [
+                'child_routes'  => [
                     'default' => [
                         'type'    => 'Segment',
                         'options' => [
-                            'route'    => '/[:controller[/][:action[/][[:id][:themeName]][page/:page][/search/:search]]]',
+                            'route'       => '/[:controller[/][:action[/][[:id][:themeName]][page/:page][/search/:search]]]',
                             'constraints' => [
-                                'controller' => '[a-zA-Z0-9_-]*',
-                                'action'     => '[a-zA-Z0-9_-]*',
-                                'search'     => '[a-zA-Z0-9_-]*',
-                                'id'         => '[0-9]+',
+                                'controller'        => '[a-zA-Z0-9_-]*',
+                                'action'            => '[a-zA-Z0-9_-]*',
+                                'search'            => '[a-zA-Z0-9_-]*',
+                                'id'                => '[0-9]+',
                                 'themeName'         => '[a-zA-Z0-9_-]*',
-                                'page'       => '[0-9]+',
+                                'page'              => '[0-9]+',
                             ],
                             'defaults' => [
                                 '__NAMESPACE__' => 'Admin\Controller',
@@ -79,20 +78,20 @@ return [
         ],
     ],
     'view_manager' => [
-        'template_map' => include __DIR__ . '/../template_map.php',
+        'template_map' => include __DIR__.'/../template_map.php',
     ],
     'doctrine' => [
         'driver' => [
-            __NAMESPACE__ . '_driver' => [
+            __NAMESPACE__.'_driver' => [
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
                 'paths' => [
-                    __DIR__ . '/../src/' . __NAMESPACE__ . '/Entity',
+                    __DIR__.'/../src/'.__NAMESPACE__.'/Entity',
                 ],
             ],
             'orm_default' => [
                 'drivers' => [
-                    __NAMESPACE__ . '\Entity' => __NAMESPACE__ . '_driver',
+                    __NAMESPACE__.'\Entity' => __NAMESPACE__.'_driver',
                 ],
             ],
         ],

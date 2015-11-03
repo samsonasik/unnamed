@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Application\Form;
 
 use Zend\Form\Form;
@@ -29,12 +28,12 @@ final class LoginForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Email',
-            'name' => 'email',
+            'type'       => 'Zend\Form\Element\Email',
+            'name'       => 'email',
             'attributes' => [
-                'required' => true,
-                'min' => 3,
-                'size' => 30,
+                'required'    => true,
+                'min'         => 3,
+                'size'        => 30,
                 'placeholder' => 'johnsmith@example.com',
             ],
             ]
@@ -42,12 +41,12 @@ final class LoginForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Password',
-            'name' => 'password',
+            'type'       => 'Zend\Form\Element\Password',
+            'name'       => 'password',
             'attributes' => [
-                'required' => true,
-                'min' => 8,
-                'size' => 30,
+                'required'    => true,
+                'min'         => 8,
+                'size'        => 30,
                 'placeholder' => '1234567890',
             ],
             ]
@@ -55,8 +54,8 @@ final class LoginForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Csrf',
-            'name' => 's',
+            'type'    => 'Zend\Form\Element\Csrf',
+            'name'    => 's',
             'options' => [
                 'csrf_options' => [
                     'timeout' => 600,
@@ -67,10 +66,10 @@ final class LoginForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'name' => 'login',
+            'name'       => 'login',
             'attributes' => [
                 'type'  => 'submit',
-                'id' => 'submitbutton',
+                'id'    => 'submitbutton',
             ],
             ]
         );
@@ -80,15 +79,15 @@ final class LoginForm extends Form implements InputFilterProviderInterface
     {
         return [
             [
-                "name"=>"email",
+                'name'     => 'email',
                 'required' => true,
-                'filters' => [
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
-                "validators" => [
+                'validators' => [
                     [
-                        'name' => 'EmailAddress',
+                        'name'    => 'EmailAddress',
                         'options' => [
                             'encoding' => 'UTF-8',
                             'messages' => ['emailAddressInvalidFormat' => "Email address doesn't appear to be valid."],
@@ -105,7 +104,7 @@ final class LoginForm extends Form implements InputFilterProviderInterface
                 ],
             ],
             [
-                "name"     =>"password",
+                'name'     => 'password',
                 'required' => true,
                 'filters'  => [
                     ['name' => 'StripTags'],
@@ -113,10 +112,10 @@ final class LoginForm extends Form implements InputFilterProviderInterface
                 ],
                 'validators' => [
                     [
-                        'name' => 'StringLength',
+                        'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 8,
+                            'min'      => 8,
                         ],
                     ],
                     ['name' => 'NotEmpty'],

@@ -8,14 +8,13 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Model;
 
+use Admin\Entity\Content;
 use Admin\Exception\RuntimeException;
 use Doctrine\ORM\EntityManager;
-use Admin\Entity\Content;
-use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as PaginatorAdapter;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as PaginatorAdapter;
 use Zend\Paginator\Paginator as ZendPaginator;
 
 final class ContentTable
@@ -40,7 +39,7 @@ final class ContentTable
 
     /**
      * @param Query|QueryBuilder $query               A Doctrine ORM query or query builder.
-     * @param boolean            $fetchJoinCollection Whether the query joins a collection (true by default).
+     * @param bool               $fetchJoinCollection Whether the query joins a collection (true by default).
      *
      * @return Paginator
      */
@@ -59,7 +58,7 @@ final class ContentTable
 
     /**
      * @param int $contentId content id
-     * @param int $language user language
+     * @param int $language  user language
      *
      * @throws RuntimeException If content is not found
      *
@@ -68,9 +67,9 @@ final class ContentTable
     public function getContent($contentId = 0, $language = 1)
     {
         $content = $this->queryBuilder();
-        $content->select(["c"]);
+        $content->select(['c']);
         $content->from('Admin\Entity\Content', 'c');
-        $content->where("c.id = :id AND c.language = :language");
+        $content->where('c.id = :id AND c.language = :language');
         $content->setParameter(':id', (int) $contentId);
         $content->setParameter(':language', (int) $language);
         $content = $content->getQuery()->getSingleResult();
@@ -86,7 +85,7 @@ final class ContentTable
      * Delete content based on the provided id and language.
      *
      * @param int $contentId content id
-     * @param int $language user language
+     * @param int $language  user language
      */
     public function deleteContent($contentId = 0, $language = 1)
     {
@@ -100,7 +99,7 @@ final class ContentTable
     /**
      * Save or update content based on the provided id and language.
      *
-     * @param  Content $content
+     * @param Content $content
      *
      * @return Content
      */
@@ -116,10 +115,10 @@ final class ContentTable
      * This method can disable or enable contents.
      *
      * @param int $contentId content id
-     * @param int $language user language
-     * @param  int $state 0 - deactivated, 1 - active
+     * @param int $language  user language
+     * @param int $state     0 - deactivated, 1 - active
      */
-    public function toggleActiveContent($contentId = 0,  $language = 1, $state = 0)
+    public function toggleActiveContent($contentId = 0, $language = 1, $state = 0)
     {
         $menu = $this->getContent($contentId, $language);
 

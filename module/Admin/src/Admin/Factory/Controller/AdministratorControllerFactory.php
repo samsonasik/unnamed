@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Factory\Controller;
 
 use Admin\Controller\AdministratorController;
@@ -17,7 +16,7 @@ use Zend\Mvc\Controller\ControllerManager;
 final class AdministratorControllerFactory
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     public function __invoke(ControllerManager $controllerManager)
     {

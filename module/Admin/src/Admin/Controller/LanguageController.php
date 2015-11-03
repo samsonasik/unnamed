@@ -8,14 +8,13 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Controller;
 
 use Admin\Entity\Language;
-use Admin\Form\LanguageForm;
 use Admin\Exception\RunTimeException;
-use Zend\Stdlib\Parameters;
+use Admin\Form\LanguageForm;
 use Zend\Mvc\MvcEvent;
+use Zend\Stdlib\Parameters;
 
 final class LanguageController extends BaseController
 {
@@ -46,8 +45,8 @@ final class LanguageController extends BaseController
      */
     public function onDispatch(MvcEvent $event)
     {
-        $this->addBreadcrumb(["reference"=>"/admin/language", "name"=>$this->translate("LANGUAGE")]);
-        $this->languageTable = $this->getTable("Admin\\Model\\LanguageTable");
+        $this->addBreadcrumb(['reference' => '/admin/language', 'name' => $this->translate('LANGUAGE')]);
+        $this->languageTable = $this->getTable('Admin\\Model\\LanguageTable');
 
         parent::onDispatch($event);
     }
@@ -59,15 +58,15 @@ final class LanguageController extends BaseController
      */
     public function indexAction()
     {
-        $this->getView()->setTemplate("admin/language/index");
+        $this->getView()->setTemplate('admin/language/index');
         $table = $this->languageTable;
 
         $query = $table->queryBuilder()
-                   ->select(["l"])
+                   ->select(['l'])
                    ->from('Admin\Entity\Language', 'l');
 
         $paginator = $table->preparePagination($query, false);
-        $paginator->setCurrentPageNumber((int)$this->getParam("page", 1));
+        $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));
         $paginator->setItemCountPerPage($this->systemSettings('posts', 'language'));
         $this->getView()->paginator = $paginator;
 
@@ -81,9 +80,9 @@ final class LanguageController extends BaseController
      */
     protected function addAction()
     {
-        $this->getView()->setTemplate("admin/language/add");
+        $this->getView()->setTemplate('admin/language/add');
         $this->initForm();
-        $this->addBreadcrumb(["reference"=>"/admin/language/add", "name"=>$this->translate("ADD_LANGUAGE")]);
+        $this->addBreadcrumb(['reference' => '/admin/language/add', 'name' => $this->translate('ADD_LANGUAGE')]);
 
         return $this->getView();
     }
@@ -96,10 +95,10 @@ final class LanguageController extends BaseController
      */
     protected function editAction()
     {
-        $this->getView()->setTemplate("admin/language/edit");
-        $language = $this->languageTable->getLanguage((int)$this->getParam("id", 0));
+        $this->getView()->setTemplate('admin/language/edit');
+        $language = $this->languageTable->getLanguage((int) $this->getParam('id', 0));
         $this->getView()->language = $language;
-        $this->addBreadcrumb(["reference"=>"/admin/language/edit/{$language->getId()}", "name"=>$this->translate("EDIT_LANGUAGE")." &laquo;".$language->getName()."&raquo;"]);
+        $this->addBreadcrumb(['reference' => "/admin/language/edit/{$language->getId()}", 'name' => $this->translate('EDIT_LANGUAGE').' &laquo;'.$language->getName().'&raquo;']);
         $this->initForm($language);
 
         return $this->getView();
@@ -110,8 +109,8 @@ final class LanguageController extends BaseController
      */
     protected function deleteAction()
     {
-        $this->languageTable->deleteLanguage((int)$this->getParam('id', 0));
-        $this->setLayoutMessages($this->translate("DELETE_LANGUAGE_SUCCESS"), "success");
+        $this->languageTable->deleteLanguage((int) $this->getParam('id', 0));
+        $this->setLayoutMessages($this->translate('DELETE_LANGUAGE_SUCCESS'), 'success');
     }
 
     /**
@@ -121,10 +120,10 @@ final class LanguageController extends BaseController
      */
     protected function detailAction()
     {
-        $this->getView()->setTemplate("admin/language/detail");
-        $lang = $this->languageTable->getLanguage((int)$this->getParam('id', 0));
+        $this->getView()->setTemplate('admin/language/detail');
+        $lang = $this->languageTable->getLanguage((int) $this->getParam('id', 0));
         $this->getView()->lang = $lang;
-        $this->addBreadcrumb(["reference"=>"/admin/language/detail/{$lang->getId()}", "name"=>"&laquo;". $lang->getName()."&raquo; ".$this->translate("DETAILS")]);
+        $this->addBreadcrumb(['reference' => "/admin/language/detail/{$lang->getId()}", 'name' => '&laquo;'.$lang->getName().'&raquo; '.$this->translate('DETAILS')]);
 
         return $this->getView();
     }
@@ -140,16 +139,16 @@ final class LanguageController extends BaseController
      */
     protected function translationsAction()
     {
-        $this->getView()->setTemplate("admin/language/translations");
+        $this->getView()->setTemplate('admin/language/translations');
 
-        $arr = "module/Application/languages/phpArray/".$this->language("languageName").".php";
+        $arr = 'module/Application/languages/phpArray/'.$this->language('languageName').'.php';
 
         if (!is_file($arr)) {
-            $arr = "module/Application/languages/phpArray/en.php";
+            $arr = 'module/Application/languages/phpArray/en.php';
         }
 
         if (!is_file($arr)) {
-            $arr = "data/translations/en_backup.php";
+            $arr = 'data/translations/en_backup.php';
         }
 
         if (!is_file($arr)) {
@@ -160,11 +159,11 @@ final class LanguageController extends BaseController
 
         $request = $this->getRequest();
         if ($request->isPost() && $request->getPost() instanceof Parameters) {
-            $filename = "module/Application/languages/phpArray/".$this->language("languageName").".php";
+            $filename = 'module/Application/languages/phpArray/'.$this->language('languageName').'.php';
             $arr2 = $request->getPost()->toArray();
-            unset($arr2["submit"]); // remove submit button
-            file_put_contents($filename, '<?php return ' . var_export($arr2, true).';');
-            $this->setLayoutMessages($this->translate("TRANSLATIONS_SAVE_SUCCESS"), "success");
+            unset($arr2['submit']); // remove submit button
+            file_put_contents($filename, '<?php return '.var_export($arr2, true).';');
+            $this->setLayoutMessages($this->translate('TRANSLATIONS_SAVE_SUCCESS'), 'success');
         }
 
         return $this->getView();
@@ -182,7 +181,7 @@ final class LanguageController extends BaseController
         }
 
         /**
-         * @var $form LanguageForm
+         * @var LanguageForm
          */
         $form = $this->languageForm;
         $form->bind($language);
@@ -192,8 +191,10 @@ final class LanguageController extends BaseController
             $form->setData($this->getRequest()->getPost());
             if ($form->isValid()) {
                 $this->languageTable->saveLanguage($language);
-                return $this->setLayoutMessages($this->translate("LANGUAGE")." &laquo;".$language->getName()."&raquo; ".$this->translate("SAVE_SUCCESS"), 'success');
+
+                return $this->setLayoutMessages($this->translate('LANGUAGE').' &laquo;'.$language->getName().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
             }
+
             return $this->setLayoutMessages($form->getMessages(), 'error');
         }
     }

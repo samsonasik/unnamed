@@ -8,12 +8,11 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Form;
 
+use Doctrine\ORM\EntityManager;
 use Zend\Form\Form;
 use Zend\InputFilter\InputFilterProviderInterface;
-use Doctrine\ORM\EntityManager;
 
 final class UserForm extends Form implements InputFilterProviderInterface
 {
@@ -27,7 +26,7 @@ final class UserForm extends Form implements InputFilterProviderInterface
      */
     public function __construct(EntityManager $entityManager)
     {
-        parent::__construct("user");
+        parent::__construct('user');
         $this->entityManager = $entityManager;
     }
 
@@ -38,17 +37,17 @@ final class UserForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'name',
+            'type'    => 'Zend\Form\Element\Text',
+            'name'    => 'name',
             'options' => [
-                'label' => 'Name',
+                'label'          => 'Name',
                 'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\User',
-                'property' => "name",
+                'target_class'   => 'Admin\Entity\User',
+                'property'       => 'name',
             ],
             'attributes' => [
-                'required'   => "true",
-                'size'        => "40",
+                'required'    => 'true',
+                'size'        => '40',
                 'placeholder' => 'Name',
             ],
             ]
@@ -56,16 +55,16 @@ final class UserForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'surname',
+            'type'    => 'Zend\Form\Element\Text',
+            'name'    => 'surname',
             'options' => [
-                'label' => 'Surname',
+                'label'          => 'Surname',
                 'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\User',
-                'property' => "surname",
+                'target_class'   => 'Admin\Entity\User',
+                'property'       => 'surname',
             ],
             'attributes' => [
-                'size'        => "40",
+                'size'        => '40',
                 'placeholder' => 'Surname',
             ],
             ]
@@ -73,18 +72,18 @@ final class UserForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Email',
-            'name' => 'email',
+            'type'    => 'Zend\Form\Element\Email',
+            'name'    => 'email',
             'options' => [
-                'label' => 'Email',
+                'label'          => 'Email',
                 'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\User',
-                'property' => "email",
+                'target_class'   => 'Admin\Entity\User',
+                'property'       => 'email',
             ],
             'attributes' => [
-                'required' => "true",
-                'min' => "3",
-                'size' => "30",
+                'required'    => 'true',
+                'min'         => '3',
+                'size'        => '30',
                 'placeholder' => 'johnsmith@example.com',
             ],
             ]
@@ -92,16 +91,16 @@ final class UserForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'birthDate',
+            'type'    => 'Zend\Form\Element\Text',
+            'name'    => 'birthDate',
             'options' => [
-                'label' => 'Birthdate',
+                'label'          => 'Birthdate',
                 'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\User',
-                'property' => "birthDate",
+                'target_class'   => 'Admin\Entity\User',
+                'property'       => 'birthDate',
             ],
             'attributes' => [
-                'size'        => "40",
+                'size'        => '40',
                 'class'       => 'datetimepicker',
                 'placeholder' => 'YYYY-MM-DD',
             ],
@@ -110,34 +109,34 @@ final class UserForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Checkbox',
-            'name' => 'isDisabled',
+            'type'    => 'Zend\Form\Element\Checkbox',
+            'name'    => 'isDisabled',
             'options' => [
-                'label' => 'Disabled',
+                'label'          => 'Disabled',
                 'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\User',
-                'property' => "isDisabled",
+                'target_class'   => 'Admin\Entity\User',
+                'property'       => 'isDisabled',
             ],
             ]
         );
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Checkbox',
-            'name' => 'hideEmail',
+            'type'    => 'Zend\Form\Element\Checkbox',
+            'name'    => 'hideEmail',
             'options' => [
-                'label' => 'Hide email',
+                'label'          => 'Hide email',
                 'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\User',
-                'property' => "hideEmail",
+                'target_class'   => 'Admin\Entity\User',
+                'property'       => 'hideEmail',
             ],
             ]
         );
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Csrf',
-            'name' => 's',
+            'type'    => 'Zend\Form\Element\Csrf',
+            'name'    => 's',
             'options' => [
                 'csrf_options' => [
                     'timeout' => 1400,
@@ -148,10 +147,10 @@ final class UserForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'name' => 'submit',
+            'name'       => 'submit',
             'attributes' => [
                 'type'  => 'submit',
-                'id' => 'submitbutton',
+                'id'    => 'submitbutton',
                 'value' => 'Save',
             ],
             ]
@@ -159,12 +158,12 @@ final class UserForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Hidden',
-            'name' => 'id',
+            'type'    => 'Zend\Form\Element\Hidden',
+            'name'    => 'id',
             'options' => [
                 'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\User',
-                'property' => "id",
+                'target_class'   => 'Admin\Entity\User',
+                'property'       => 'id',
             ],
             ]
         );
@@ -181,53 +180,53 @@ final class UserForm extends Form implements InputFilterProviderInterface
                 ],
             ],
             [
-                "name"=>"name",
-                "required" => true,
-                'filters' => [
-                    ['name' => 'StripTags'],
-                    ['name' => 'StringTrim'],
-                ],
-                'validators' => [
-                    ['name' => 'NotEmpty'],
-                    [
-                        'name'    => 'StringLength',
-                        'options' => [
-                            'encoding' => 'UTF-8',
-                            'min' => 1,
-                            'max' => 100,
-                        ],
-                    ],
-                ],
-            ],
-            [
-                "name"=>"surname",
-                "required" => false,
-                'filters' => [
-                    ['name' => 'StripTags'],
-                    ['name' => 'StringTrim'],
-                ],
-                'validators' => [
-                    ['name' => 'NotEmpty'],
-                    [
-                        'name'    => 'StringLength',
-                        'options' => [
-                            'encoding' => 'UTF-8',
-                            'min' => 1,
-                            'max' => 100,
-                        ],
-                    ],
-                ],
-            ],
-            [
-                "name"=>"email",
+                'name'     => 'name',
                 'required' => true,
-                'filters' => [
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
-                "validators" => [
+                'validators' => [
+                    ['name' => 'NotEmpty'],
                     [
-                        'name' => 'EmailAddress',
+                        'name'    => 'StringLength',
+                        'options' => [
+                            'encoding' => 'UTF-8',
+                            'min'      => 1,
+                            'max'      => 100,
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'name'     => 'surname',
+                'required' => false,
+                'filters'  => [
+                    ['name' => 'StripTags'],
+                    ['name' => 'StringTrim'],
+                ],
+                'validators' => [
+                    ['name' => 'NotEmpty'],
+                    [
+                        'name'    => 'StringLength',
+                        'options' => [
+                            'encoding' => 'UTF-8',
+                            'min'      => 1,
+                            'max'      => 100,
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'name'     => 'email',
+                'required' => true,
+                'filters'  => [
+                    ['name' => 'StripTags'],
+                    ['name' => 'StringTrim'],
+                ],
+                'validators' => [
+                    [
+                        'name'    => 'EmailAddress',
                         'options' => [
                             'encoding' => 'UTF-8',
                             'messages' => ['emailAddressInvalidFormat' => "Email address doesn't appear to be valid."],
@@ -244,9 +243,9 @@ final class UserForm extends Form implements InputFilterProviderInterface
                 ],
             ],
             [
-                "name"=>"birthDate",
-                "required" => false,
-                'filters' => [
+                'name'     => 'birthDate',
+                'required' => false,
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
@@ -256,21 +255,21 @@ final class UserForm extends Form implements InputFilterProviderInterface
                         'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 1,
-                            'max' => 100,
+                            'min'      => 1,
+                            'max'      => 100,
                         ],
                     ],
                 ],
             ],
             [
-                "name"=>"isDisabled",
-                "required" => false,
+                'name'     => 'isDisabled',
+                'required' => false,
                 'filters'  => [
                     ['name' => 'Int'],
                 ],
                 'validators' => [
                     [
-                        'name' => 'Regex',
+                        'name'    => 'Regex',
                         'options' => [
                             'pattern' => '/^[0-1]+$/',
                         ],
@@ -306,14 +305,14 @@ final class UserForm extends Form implements InputFilterProviderInterface
             //     ],
             // ],
             [
-                "name"=>"hideEmail",
-                "required" => false,
+                'name'     => 'hideEmail',
+                'required' => false,
                 'filters'  => [
                     ['name' => 'Int'],
                 ],
                 'validators' => [
                     [
-                        'name' => 'Regex',
+                        'name'    => 'Regex',
                         'options' => [
                             'pattern' => '/^[0-1]+$/',
                         ],

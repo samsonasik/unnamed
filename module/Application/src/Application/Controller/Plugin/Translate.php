@@ -8,16 +8,15 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller\Plugin;
 
-use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 use Zend\I18n\Translator\Translator;
+use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 
 final class Translate extends AbstractPlugin
 {
     /**
-     * @var Translator $translator
+     * @var Translator
      */
     private $translator = null;
 

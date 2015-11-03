@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Factory\Form;
 
 use Admin\Form\SettingsDiscussionForm;
@@ -17,13 +16,13 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 final class SettingsDiscussionFormFactory
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     public function __invoke(ServiceLocatorInterface $serviceLocator)
     {
-        $config = $serviceLocator->getServiceLocator()->get("Config");
+        $config = $serviceLocator->getServiceLocator()->get('Config');
 
-        $form = new SettingsDiscussionForm($config['system_config']["discussion"]);
+        $form = new SettingsDiscussionForm($config['system_config']['discussion']);
 
         return $form;
     }

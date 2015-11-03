@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Entity;
 
 interface GDInterface

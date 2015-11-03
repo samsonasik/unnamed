@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Application;
 
 return [
@@ -24,11 +23,11 @@ return [
                     ],
                 ],
                 'may_terminate' => true,
-                'child_routes' => [
+                'child_routes'  => [
                     'default' => [
                         'type'    => 'Segment',
                         'options' => [
-                            'route'    => '[:controller[/][:action[/[:id][token/:token][:post]][/page/:page][/search/:search]]]',
+                            'route'       => '[:controller[/][:action[/[:id][token/:token][:post]][/page/:page][/search/:search]]]',
                             'constraints' => [
                                 'controller' => '[a-zA-Z0-9_-]*',
                                 'action'     => '[a-zA-Z0-9_-]*',
@@ -64,16 +63,16 @@ return [
     ],
     'doctrine' => [
         'driver' => [
-            __NAMESPACE__ . '_driver' => [
+            __NAMESPACE__.'_driver' => [
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
                 'paths' => [
-                    __DIR__ . '/../src/' . __NAMESPACE__ . '/Model',
+                    __DIR__.'/../src/'.__NAMESPACE__.'/Model',
                 ],
             ],
             'orm_default' => [
                 'drivers' => [
-                    __NAMESPACE__ . '\Model' => __NAMESPACE__ . '_driver',
+                    __NAMESPACE__.'\Model' => __NAMESPACE__.'_driver',
                 ],
             ],
         ],

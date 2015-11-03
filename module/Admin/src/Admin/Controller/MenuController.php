@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Controller;
 
 use Admin\Entity\Menu;
@@ -41,8 +40,8 @@ final class MenuController extends BaseController
      */
     public function onDispatch(MvcEvent $event)
     {
-        $this->addBreadcrumb(["reference"=>"/admin/menu", "name"=>$this->translate("MENUS")]);
-        $this->menuTable = $this->getTable("Admin\\Model\\MenuTable");
+        $this->addBreadcrumb(['reference' => '/admin/menu', 'name' => $this->translate('MENUS')]);
+        $this->menuTable = $this->getTable('Admin\\Model\\MenuTable');
 
         parent::onDispatch($event);
     }
@@ -56,16 +55,14 @@ final class MenuController extends BaseController
     {
         $menu = $this->menuTable
                      ->getEntityRepository()
-                     ->findBy(["language" => $this->language()], ['parent' => "DESC"]);
+                     ->findBy(['language' => $this->language()], ['parent' => 'DESC']);
 
         $menus = ['menus' => [], 'submenus' => []];
         if (count($menu) > 0) {
-
             foreach ($menu as $submenus) {
                 $menus['menus'][$submenus->getId()] = $submenus;
                 $menus['submenus'][$submenus->getParent()][] = $submenus->getId();
             }
-
         }
 
         return $this->getMenus(0, $menus);
@@ -76,43 +73,43 @@ final class MenuController extends BaseController
      *
      * @method getMenus
      *
-     * @param int $parent
+     * @param int   $parent
      * @param array $menu
      *
      * @return string generated html code
      */
     private function getMenus($parent = 0, array $menu = [])
     {
-        $output = "";
-        if (isset($menu["submenus"][$parent])) {
+        $output = '';
+        if (isset($menu['submenus'][$parent])) {
             $escaper = new \Zend\Escaper\Escaper('utf-8');
             foreach ($menu['submenus'][$parent] as $id) {
                 $output .= "<ul class='table-row'>";
                 $output .= "<li class='table-cell flex-2'>{$menu['menus'][$id]->getCaption()}</li>";
-                $output .= "<li class='table-cell flex-b'><a title='{$this->translate('DETAILS')}' hreflang='{$this->language("languageName")}' itemprop='url' href='/admin/menu/detail/{$escaper->escapeUrl($menu['menus'][$id]->getId())}' class='btn btn-sm blue'><i class='fa fa-info'></i></a></li>";
-                $output .= "<li class='table-cell flex-b'><a title='{$this->translate('EDIT')}' hreflang='{$this->language("languageName")}' itemprop='url' href='/admin/menu/edit/{$escaper->escapeUrl($menu['menus'][$id]->getId())}' class='btn btn-sm orange'><i class='fa fa-pencil'></i></a></li>";
+                $output .= "<li class='table-cell flex-b'><a title='{$this->translate('DETAILS')}' hreflang='{$this->language('languageName')}' itemprop='url' href='/admin/menu/detail/{$escaper->escapeUrl($menu['menus'][$id]->getId())}' class='btn btn-sm blue'><i class='fa fa-info'></i></a></li>";
+                $output .= "<li class='table-cell flex-b'><a title='{$this->translate('EDIT')}' hreflang='{$this->language('languageName')}' itemprop='url' href='/admin/menu/edit/{$escaper->escapeUrl($menu['menus'][$id]->getId())}' class='btn btn-sm orange'><i class='fa fa-pencil'></i></a></li>";
                 if ($menu['menus'][$id]->isActive() == 0) {
-                    $output .= "<li class='table-cell flex-b'><a title='{$this->translate('DEACTIVATED')}' hreflang='{$this->language("languageName")}' itemprop='url' href='/admin/menu/activate/{$escaper->escapeUrl($menu['menus'][$id]->getId())}' class='btn btn-sm deactivated'><i class='fa fa-minus-square-o'></i></a></li>";
+                    $output .= "<li class='table-cell flex-b'><a title='{$this->translate('DEACTIVATED')}' hreflang='{$this->language('languageName')}' itemprop='url' href='/admin/menu/activate/{$escaper->escapeUrl($menu['menus'][$id]->getId())}' class='btn btn-sm deactivated'><i class='fa fa-minus-square-o'></i></a></li>";
                 } else {
-                    $output .= "<li class='table-cell flex-b'><a title='{$this->translate('ACTIVE')}' hreflang='{$this->language("languageName")}' itemprop='url' href='/admin/menu/deactivate/{$escaper->escapeUrl($menu['menus'][$id]->getId())}' class='btn btn-sm active'><i class='fa fa fa-check-square-o'></i></a></li>";
+                    $output .= "<li class='table-cell flex-b'><a title='{$this->translate('ACTIVE')}' hreflang='{$this->language('languageName')}' itemprop='url' href='/admin/menu/deactivate/{$escaper->escapeUrl($menu['menus'][$id]->getId())}' class='btn btn-sm active'><i class='fa fa fa-check-square-o'></i></a></li>";
                 }
                 $output .= "
                 <li class='table-cell flex-b'>
-                    <button role='button' aria-pressed='false' aria-label='{$this->translate("DELETE")}' id='{$menu['menus'][$id]->getId()}' type='button' class='btn btn-sm delete dialog_delete' title='{$this->translate("DELETE")}'><i class='fa fa-trash-o'></i></button>
+                    <button role='button' aria-pressed='false' aria-label='{$this->translate('DELETE')}' id='{$menu['menus'][$id]->getId()}' type='button' class='btn btn-sm delete dialog_delete' title='{$this->translate('DELETE')}'><i class='fa fa-trash-o'></i></button>
                         <div role='alertdialog' aria-labelledby='dialog{$menu['menus'][$id]->getId()}Title' class='delete_{$menu['menus'][$id]->getId()} dialog_hide'>
-                           <p id='dialog{$menu['menus'][$id]->getId()}Title'>{$this->translate("DELETE_CONFIRM_TEXT")} &laquo;{$menu['menus'][$id]->getCaption()}&raquo;</p>
+                           <p id='dialog{$menu['menus'][$id]->getId()}Title'>{$this->translate('DELETE_CONFIRM_TEXT')} &laquo;{$menu['menus'][$id]->getCaption()}&raquo;</p>
                             <ul>
                                 <li>
-                                    <a class='btn delete' href='/admin/menu/delete/{$escaper->escapeUrl($menu['menus'][$id]->getId())}'><i class='fa fa-trash-o'></i> {$this->translate("DELETE")}</a>
+                                    <a class='btn delete' href='/admin/menu/delete/{$escaper->escapeUrl($menu['menus'][$id]->getId())}'><i class='fa fa-trash-o'></i> {$this->translate('DELETE')}</a>
                                 </li>
                                 <li>
-                                    <button role='button' aria-pressed='false' aria-label='{$this->translate("CANCEL")}' class='btn btn-default cancel'><i class='fa fa-times'></i> {$this->translate("CANCEL")}</button>
+                                    <button role='button' aria-pressed='false' aria-label='{$this->translate('CANCEL')}' class='btn btn-default cancel'><i class='fa fa-times'></i> {$this->translate('CANCEL')}</button>
                                 </li>
                             </ul>
                         </div>
                 </li>";
 
-                $output .= "</ul>";
+                $output .= '</ul>';
                 $output .= $this->getMenus($id, $menu);
             }
         }
@@ -127,7 +124,7 @@ final class MenuController extends BaseController
      */
     public function indexAction()
     {
-        $this->getView()->setTemplate("admin/menu/index");
+        $this->getView()->setTemplate('admin/menu/index');
 
         $this->getView()->menus = $this->showMenus();
 
@@ -135,15 +132,15 @@ final class MenuController extends BaseController
     }
 
     /**
-     * This action serves for adding a new menu
+     * This action serves for adding a new menu.
      *
      * @return \Zend\View\Model\ViewModel
      */
     protected function addAction()
     {
-        $this->getView()->setTemplate("admin/menu/add");
+        $this->getView()->setTemplate('admin/menu/add');
         $this->initForm(null);
-        $this->addBreadcrumb(["reference"=>"/admin/menu/add", "name"=>$this->translate("ADD_NEW_MENU")]);
+        $this->addBreadcrumb(['reference' => '/admin/menu/add', 'name' => $this->translate('ADD_NEW_MENU')]);
 
         return $this->getView();
     }
@@ -156,9 +153,9 @@ final class MenuController extends BaseController
      */
     protected function editAction()
     {
-        $this->getView()->setTemplate("admin/menu/edit");
-        $menu = $this->menuTable->getMenu((int)$this->getParam("id", 0), $this->language());
-        $this->addBreadcrumb(["reference"=>"/admin/menu/edit/{$menu->getId()}", "name"=> $this->translate("EDIT_MENU")." &laquo;".$menu->getCaption()."&raquo;"]);
+        $this->getView()->setTemplate('admin/menu/edit');
+        $menu = $this->menuTable->getMenu((int) $this->getParam('id', 0), $this->language());
+        $this->addBreadcrumb(['reference' => "/admin/menu/edit/{$menu->getId()}", 'name' => $this->translate('EDIT_MENU').' &laquo;'.$menu->getCaption().'&raquo;']);
         $this->initForm($menu);
 
         return $this->getView();
@@ -166,16 +163,16 @@ final class MenuController extends BaseController
 
     protected function deactivateAction()
     {
-        $this->menuTable->toggleActiveMenu((int)$this->getParam("id", 0), $this->language(), 0);
-        $this->setLayoutMessages($this->translate("MENU_DISABLE_SUCCESS"), "success");
-        $this->redirect()->toUrl("/admin/menu");
+        $this->menuTable->toggleActiveMenu((int) $this->getParam('id', 0), $this->language(), 0);
+        $this->setLayoutMessages($this->translate('MENU_DISABLE_SUCCESS'), 'success');
+        $this->redirect()->toUrl('/admin/menu');
     }
 
     protected function activateAction()
     {
-        $this->menuTable->toggleActiveMenu((int)$this->getParam("id", 0), $this->language(), 1);
-        $this->setLayoutMessages($this->translate("MENU_ENABLE_SUCCESS"), "success");
-        $this->redirect()->toUrl("/admin/menu");
+        $this->menuTable->toggleActiveMenu((int) $this->getParam('id', 0), $this->language(), 1);
+        $this->setLayoutMessages($this->translate('MENU_ENABLE_SUCCESS'), 'success');
+        $this->redirect()->toUrl('/admin/menu');
     }
 
     /**
@@ -183,8 +180,8 @@ final class MenuController extends BaseController
      */
     protected function deleteAction()
     {
-        $this->menuTable->deleteMenu((int)$this->getParam("id", 0), $this->language());
-        $this->setLayoutMessages($this->translate("DELETE_MENU_SUCCESS"), "success");
+        $this->menuTable->deleteMenu((int) $this->getParam('id', 0), $this->language());
+        $this->setLayoutMessages($this->translate('DELETE_MENU_SUCCESS'), 'success');
     }
 
     /**
@@ -194,10 +191,10 @@ final class MenuController extends BaseController
      */
     protected function detailAction()
     {
-        $this->getView()->setTemplate("admin/menu/detail");
-        $menu = $this->menuTable->getMenu((int)$this->getParam("id", 0), $this->language());
+        $this->getView()->setTemplate('admin/menu/detail');
+        $menu = $this->menuTable->getMenu((int) $this->getParam('id', 0), $this->language());
         $this->getView()->menuDetail = $menu;
-        $this->addBreadcrumb(["reference"=>"/admin/menu/detail/".$menu->getId()."", "name"=>"&laquo;". $menu->getCaption()."&raquo; ".$this->translate("DETAILS")]);
+        $this->addBreadcrumb(['reference' => '/admin/menu/detail/'.$menu->getId().'', 'name' => '&laquo;'.$menu->getCaption().'&raquo; '.$this->translate('DETAILS')]);
 
         return $this->getView();
     }
@@ -224,7 +221,8 @@ final class MenuController extends BaseController
 
             if ($form->isValid()) {
                 $this->menuTable->saveMenu($menu);
-                return $this->setLayoutMessages("&laquo;".$menu->getCaption()."&raquo; ".$this->translate("SAVE_SUCCESS"), 'success');
+
+                return $this->setLayoutMessages('&laquo;'.$menu->getCaption().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
             }
 
             return $this->setLayoutMessages($form->getMessages(), 'error');

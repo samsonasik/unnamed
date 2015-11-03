@@ -8,16 +8,15 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller\Plugin;
 
-use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 use Application\Exception\InvalidArgumentException;
+use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 
 final class SystemSettings extends AbstractPlugin
 {
     /**
-     * @var array $options
+     * @var array
      */
     private $options = null;
 
@@ -71,6 +70,7 @@ final class SystemSettings extends AbstractPlugin
     {
         $key = strtolower($key);
         $value = strtolower($value);
+
         return array_key_exists($value, $this->options[$key]) ? $this->options[$key][$value] : null;
     }
 }

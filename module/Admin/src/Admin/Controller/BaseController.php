@@ -8,13 +8,12 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
 use Zend\Mvc\MvcEvent;
 use Zend\Session\Container;
+use Zend\View\Model\ViewModel;
 
 class BaseController extends AbstractActionController
 {
@@ -29,18 +28,18 @@ class BaseController extends AbstractActionController
     private $translation;
 
     /**
-     * @var array $breadcrumbs returns an array with links with the current user position on the website
+     * @var array returns an array with links with the current user position on the website
      */
     private $breadcrumbs = [];
 
     public function __construct()
     {
         $this->view = new ViewModel();
-        $this->translation = new Container("translations");
+        $this->translation = new Container('translations');
 
-        if (!$this->getTranslation()->offSetExists("language")) {
-            $this->getTranslation()->offsetSet("language", 1);
-            $this->getTranslation()->offsetSet("languageName", "en");
+        if (!$this->getTranslation()->offSetExists('language')) {
+            $this->getTranslation()->offsetSet('language', 1);
+            $this->getTranslation()->offsetSet('languageName', 'en');
         }
     }
 
@@ -68,7 +67,7 @@ class BaseController extends AbstractActionController
      */
     private function initMenus()
     {
-        $menu = $this->getTable("Admin\\Model\\AdminMenuTable")
+        $menu = $this->getTable('Admin\\Model\\AdminMenuTable')
                      ->getEntityRepository()
                      ->findAll();
 
@@ -79,9 +78,9 @@ class BaseController extends AbstractActionController
                 $menus['submenus'][$submenus->getParent()][] = $submenus->getId();
             }
 
-            $output = "<li role='menuitem'><a hreflang='{$this->language("languageName")}' itemprop='url' href='&sol;admin'> {$this->translate("DASHBOARD")}</a></li>";
+            $output = "<li role='menuitem'><a hreflang='{$this->language('languageName')}' itemprop='url' href='&sol;admin'> {$this->translate('DASHBOARD')}</a></li>";
 
-            $this->getView()->menuAdmin = $this->generateMenu(0, $menus, "menubar", $output);
+            $this->getView()->menuAdmin = $this->generateMenu(0, $menus, 'menubar', $output);
         }
 
         return $this->getView();
@@ -92,26 +91,26 @@ class BaseController extends AbstractActionController
      *
      * @method generateMenu
      *
-     * @param int $parent
-     * @param array $menu
+     * @param int    $parent
+     * @param array  $menu
      * @param string $role
-     * @param string $html - add html menus that do not come from database
+     * @param string $html   - add html menus that do not come from database
      *
      * @return string generated html code
      */
-    private function generateMenu($parent = 0, array $menu = [], $role = "menubar", $html ='')
+    private function generateMenu($parent = 0, array $menu = [], $role = 'menubar', $html = '')
     {
-        $output = "";
-        if (isset($menu["submenus"][$parent])) {
+        $output = '';
+        if (isset($menu['submenus'][$parent])) {
             $output .= "<ul role='{$role}'>";
             $output .= $html;
 
             foreach ($menu['submenus'][$parent] as $id) {
-                $output .= "<li role='menuitem'><a hreflang='{$this->language("languageName")}' itemprop='url' href='/admin/{$menu['menus'][$id]->getController()}/{$menu['menus'][$id]->getAction()}'><em class='fa {$menu['menus'][$id]->getClass()}'></em> {$menu['menus'][$id]->getCaption()}</a>";
-                $output .= $this->generateMenu($id, $menu, "menu");
-                $output .= "</li>";
+                $output .= "<li role='menuitem'><a hreflang='{$this->language('languageName')}' itemprop='url' href='/admin/{$menu['menus'][$id]->getController()}/{$menu['menus'][$id]->getAction()}'><em class='fa {$menu['menus'][$id]->getClass()}'></em> {$menu['menus'][$id]->getCaption()}</a>";
+                $output .= $this->generateMenu($id, $menu, 'menu');
+                $output .= '</li>';
             }
-            $output .= "</ul>";
+            $output .= '</ul>';
         }
 
         return $output;
@@ -125,12 +124,12 @@ class BaseController extends AbstractActionController
      *
      * @return mixed
      */
-    final protected function language($offset = "language")
+    final protected function language($offset = 'language')
     {
         if ($this->getTranslation()->offSetExists($offset)) {
             return $this->getTranslation()->offSetGet($offset);
-        } elseif ($this->getTranslation()->offSetExists("language")) {
-            return $this->getTranslation()->offSetGet("language");
+        } elseif ($this->getTranslation()->offSetExists('language')) {
+            return $this->getTranslation()->offSetGet('language');
         } else {
             return 1;
         }
@@ -160,20 +159,21 @@ class BaseController extends AbstractActionController
     private function isAdmin()
     {
         $auth = $this->UserData();
-        if ($auth->checkIdentity(false, $this->translate("ERROR_AUTHORIZATION"))) {
-            $userId = $auth->getIdentity()["id"];
-            $adminExist = $this->getTable("Admin\\Model\\AdministratorTable")
+        if ($auth->checkIdentity(false, $this->translate('ERROR_AUTHORIZATION'))) {
+            $userId = $auth->getIdentity()['id'];
+            $adminExist = $this->getTable('Admin\\Model\\AdministratorTable')
                                         ->queryBuilder()
                                         ->getEntityManager()
                                         ->createQuery("SELECT a.user, u.name FROM Admin\Entity\Administrator AS a LEFT JOIN Admin\Entity\User AS u WITH a.user=u.id WHERE u.id = {$userId} AND u.admin = 1")->getResult();
 
             if (isset($adminExist[0])) {
                 unset($adminExist);
+
                 return true;
             }
         }
 
-        return $auth->clearUserData($this->translate("ERROR_AUTHORIZATION"));
+        return $auth->clearUserData($this->translate('ERROR_AUTHORIZATION'));
     }
 
     /**
@@ -185,7 +185,7 @@ class BaseController extends AbstractActionController
     }
 
     /**
-     * Returns session holding translations id and name
+     * Returns session holding translations id and name.
      *
      * @method getTranslation
      *

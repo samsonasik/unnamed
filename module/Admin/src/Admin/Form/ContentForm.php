@@ -8,12 +8,11 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Form;
 
+use Doctrine\ORM\EntityManager;
 use Zend\Form\Form;
 use Zend\InputFilter\InputFilterProviderInterface;
-use Doctrine\ORM\EntityManager;
 
 final class ContentForm extends Form implements InputFilterProviderInterface
 {
@@ -27,7 +26,7 @@ final class ContentForm extends Form implements InputFilterProviderInterface
      */
     public function __construct(EntityManager $entityManager)
     {
-        parent::__construct("content");
+        parent::__construct('content');
         $this->entityManager = $entityManager;
     }
 
@@ -41,16 +40,16 @@ final class ContentForm extends Form implements InputFilterProviderInterface
          */
         $this->add(
             [
-            'type' => 'Zend\Form\Element\File',
-            'name' => 'preview',
+            'type'    => 'Zend\Form\Element\File',
+            'name'    => 'preview',
             'options' => [
-                'label' => 'Image',
+                'label'          => 'Image',
                 'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\Content',
-                'property' => "preview",
+                'target_class'   => 'Admin\Entity\Content',
+                'property'       => 'preview',
             ],
             'attributes' => [
-                'id' => 'preview',
+                'id'    => 'preview',
                 'class' => 'preview',
             ],
             ]
@@ -61,11 +60,11 @@ final class ContentForm extends Form implements InputFilterProviderInterface
          */
         $this->add(
             [
-            'type' => 'Zend\Form\Element\File',
-            'name' => 'imageUpload',
+            'type'       => 'Zend\Form\Element\File',
+            'name'       => 'imageUpload',
             'attributes' => [
-                'id' => 'imgajax',
-                'class' => 'imgupload',
+                'id'       => 'imgajax',
+                'class'    => 'imgupload',
                 'multiple' => true,
             ],
             'options' => [
@@ -76,18 +75,18 @@ final class ContentForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'title',
+            'type'    => 'Zend\Form\Element\Text',
+            'name'    => 'title',
             'options' => [
-                'label' => 'Title',
+                'label'          => 'Title',
                 'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\Content',
-                'property' => "title",
+                'target_class'   => 'Admin\Entity\Content',
+                'property'       => 'title',
             ],
             'attributes' => [
-                'required'   => "true",
-                'size'        => "40",
-                'id'         => "seo-caption",
+                'required'    => 'true',
+                'size'        => '40',
+                'id'          => 'seo-caption',
                 'placeholder' => 'Title',
             ],
             ]
@@ -95,18 +94,18 @@ final class ContentForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'text',
+            'type'    => 'Zend\Form\Element\Text',
+            'name'    => 'text',
             'options' => [
-                'label' => 'Text',
+                'label'          => 'Text',
                 'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\Content',
-                'property' => "text",
+                'target_class'   => 'Admin\Entity\Content',
+                'property'       => 'text',
             ],
             'attributes' => [
-                'class'   => 'ckeditor',
-                'rows'        => "5",
-                'cols'      => "80",
+                'class'       => 'ckeditor',
+                'rows'        => '5',
+                'cols'        => '80',
             ],
             ]
         );
@@ -116,35 +115,35 @@ final class ContentForm extends Form implements InputFilterProviderInterface
             $valueOptions[$i] = $i;
         }
         $this->add([
-            'type' => 'DoctrineModule\Form\Element\ObjectSelect',
-            'name' => 'menuOrder',
+            'type'    => 'DoctrineModule\Form\Element\ObjectSelect',
+            'name'    => 'menuOrder',
             'options' => [
-                'object_manager' => $this->entityManager,
+                'object_manager'            => $this->entityManager,
                 'disable_inarray_validator' => true,
-                'target_class' => 'Admin\Entity\Content',
-                'property' => 'menuOrder',
-                'display_empty_item' => true,
-                'empty_item_label' => 'Please choose menu order (optional)',
-                'value_options' => $valueOptions,
-                'label' => 'Menu order',
+                'target_class'              => 'Admin\Entity\Content',
+                'property'                  => 'menuOrder',
+                'display_empty_item'        => true,
+                'empty_item_label'          => 'Please choose menu order (optional)',
+                'value_options'             => $valueOptions,
+                'label'                     => 'Menu order',
             ],
         ]);
 
         $this->add(
             [
-            'type' => 'DoctrineModule\Form\Element\ObjectSelect',
-            'name' => 'type',
+            'type'    => 'DoctrineModule\Form\Element\ObjectSelect',
+            'name'    => 'type',
             'options' => [
-                'label' => 'Type',
-                'object_manager' => $this->entityManager,
+                'label'                     => 'Type',
+                'object_manager'            => $this->entityManager,
                 'disable_inarray_validator' => true,
-                'target_class' => 'Admin\Entity\Content',
-                'property' => 'type',
-                'display_empty_item' => true,
-                'empty_item_label' => 'Please choose your content type',
-                'value_options' => [
-                    '0' => "Menu",
-                    '1' => "News",
+                'target_class'              => 'Admin\Entity\Content',
+                'property'                  => 'type',
+                'display_empty_item'        => true,
+                'empty_item_label'          => 'Please choose your content type',
+                'value_options'             => [
+                    '0' => 'Menu',
+                    '1' => 'News',
                 ],
             ],
             ]
@@ -152,34 +151,34 @@ final class ContentForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'date',
+            'type'    => 'Zend\Form\Element\Text',
+            'name'    => 'date',
             'options' => [
-                'label' => 'Date',
+                'label'          => 'Date',
                 'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\Content',
-                'property' => "date",
+                'target_class'   => 'Admin\Entity\Content',
+                'property'       => 'date',
             ],
             'attributes' => [
-                'size'  => "20",
+                'size'  => '20',
             ],
             ]
         );
 
         $this->add(
             [
-            'type' => 'DoctrineModule\Form\Element\ObjectSelect',
-            'name' => 'menu',
+            'type'    => 'DoctrineModule\Form\Element\ObjectSelect',
+            'name'    => 'menu',
             'options' => [
-                'label' => 'Menu',
+                'label'                     => 'Menu',
                 'disable_inarray_validator' => true,
-                'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\Menu',
-                'property' => "caption",
-                'display_empty_item' => true,
-                'empty_item_label' => 'Please choose your menu',
-                'is_method' => true,
-                'find_method' => [
+                'object_manager'            => $this->entityManager,
+                'target_class'              => 'Admin\Entity\Menu',
+                'property'                  => 'caption',
+                'display_empty_item'        => true,
+                'empty_item_label'          => 'Please choose your menu',
+                'is_method'                 => true,
+                'find_method'               => [
                     'name' => 'getMenus',
                 ],
             ],
@@ -188,18 +187,18 @@ final class ContentForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type' => 'DoctrineModule\Form\Element\ObjectSelect',
-            'name' => 'language',
+            'type'    => 'DoctrineModule\Form\Element\ObjectSelect',
+            'name'    => 'language',
             'options' => [
-                'label' => 'Select language',
+                'label'                     => 'Select language',
                 'disable_inarray_validator' => true,
-                'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\Language',
-                'property' => "name",
-                'display_empty_item' => true,
-                'empty_item_label' => 'Please choose a language',
-                'is_method' => true,
-                'find_method' => [
+                'object_manager'            => $this->entityManager,
+                'target_class'              => 'Admin\Entity\Language',
+                'property'                  => 'name',
+                'display_empty_item'        => true,
+                'empty_item_label'          => 'Please choose a language',
+                'is_method'                 => true,
+                'find_method'               => [
                     'name' => 'getLanguages',
                 ],
             ],
@@ -208,8 +207,8 @@ final class ContentForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Csrf',
-            'name' => 's',
+            'type'    => 'Zend\Form\Element\Csrf',
+            'name'    => 's',
             'options' => [
                 'csrf_options' => [
                     'timeout' => 3600,
@@ -220,35 +219,35 @@ final class ContentForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'name' => 'submit',
+            'name'       => 'submit',
             'attributes' => [
                 'type'  => 'submit',
-                'id' => 'submitbutton',
-                'value' => "Save",
+                'id'    => 'submitbutton',
+                'value' => 'Save',
             ],
             ]
         );
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Hidden',
-            'name' => 'id',
+            'type'    => 'Zend\Form\Element\Hidden',
+            'name'    => 'id',
             'options' => [
                 'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\Content',
-                'property' => "id",
+                'target_class'   => 'Admin\Entity\Content',
+                'property'       => 'id',
             ],
             ]
         );
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Hidden',
-            'name' => 'titleLink',
+            'type'    => 'Zend\Form\Element\Hidden',
+            'name'    => 'titleLink',
             'options' => [
                 'object_manager' => $this->entityManager,
-                'target_class' => 'Admin\Entity\Content',
-                'property' => "titleLink",
+                'target_class'   => 'Admin\Entity\Content',
+                'property'       => 'titleLink',
             ],
             'attributes' => [
                 'id' => 'titleLink',
@@ -268,9 +267,9 @@ final class ContentForm extends Form implements InputFilterProviderInterface
                 ],
             ],
             [
-                "name"=>"title",
-                "required" => true,
-                'filters' => [
+                'name'     => 'title',
+                'required' => true,
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
@@ -280,16 +279,16 @@ final class ContentForm extends Form implements InputFilterProviderInterface
                         'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 1,
-                            'max' => 200,
+                            'min'      => 1,
+                            'max'      => 200,
                         ],
                     ],
                 ],
             ],
             [
-                "name"=>"text",
-                "required" => true,
-                'filters' => [
+                'name'     => 'text',
+                'required' => true,
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
@@ -299,20 +298,20 @@ final class ContentForm extends Form implements InputFilterProviderInterface
                         'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 1,
+                            'min'      => 1,
                         ],
                     ],
                 ],
             ],
             [
-                "name"=>"menuOrder",
-                "required" => false,
+                'name'     => 'menuOrder',
+                'required' => false,
                 'filters'  => [
                     ['name' => 'Int'],
                 ],
                 'validators' => [
                     [
-                        'name' => 'Regex',
+                        'name'    => 'Regex',
                         'options' => [
                             'pattern' => '/^[0-9]+$/',
                         ],
@@ -320,14 +319,14 @@ final class ContentForm extends Form implements InputFilterProviderInterface
                 ],
             ],
             [
-                "name"=>"language",
-                "required" => false,
+                'name'     => 'language',
+                'required' => false,
                 'filters'  => [
                     ['name' => 'Int'],
                 ],
                 'validators' => [
                     [
-                        'name' => 'Regex',
+                        'name'    => 'Regex',
                         'options' => [
                             'pattern' => '/^[0-9]+$/',
                         ],
@@ -335,14 +334,14 @@ final class ContentForm extends Form implements InputFilterProviderInterface
                 ],
             ],
             [
-                "name"=>"menu",
-                "required" => false,
+                'name'     => 'menu',
+                'required' => false,
                 'filters'  => [
                     ['name' => 'Int'],
                 ],
                 'validators' => [
                     [
-                        'name' => 'Regex',
+                        'name'    => 'Regex',
                         'options' => [
                             'pattern' => '/^[0-9]+$/',
                         ],
@@ -350,14 +349,14 @@ final class ContentForm extends Form implements InputFilterProviderInterface
                 ],
             ],
             [
-                "name"=>"type",
-                "required" => false,
+                'name'     => 'type',
+                'required' => false,
                 'filters'  => [
                     ['name' => 'Int'],
                 ],
                 'validators' => [
                     [
-                        'name' => 'Regex',
+                        'name'    => 'Regex',
                         'options' => [
                             'pattern' => '/^[0-1]+$/',
                         ],
@@ -365,27 +364,27 @@ final class ContentForm extends Form implements InputFilterProviderInterface
                 ],
             ],
             [
-                "name"=>"date",
-                "required" => false,
-                'filters' => [
+                'name'     => 'date',
+                'required' => false,
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
             ],
             [
-                "name"=>"preview",
-                "required" => false,
+                'name'       => 'preview',
+                'required'   => false,
                 'validators' => [
                     [
-                        'name' => 'Zend\Validator\File\Size',
+                        'name'    => 'Zend\Validator\File\Size',
                         'options' => [
-                            'min' => '5kB',
-                            'max' => '5MB',
+                            'min'           => '5kB',
+                            'max'           => '5MB',
                             'useByteString' => true,
                         ],
                     ],
                     [
-                        'name' => 'Zend\Validator\File\Extension',
+                        'name'    => 'Zend\Validator\File\Extension',
                         'options' => [
                             'extension' => [
                                 'jpg',
@@ -401,13 +400,13 @@ final class ContentForm extends Form implements InputFilterProviderInterface
                 ],
             ],
             [
-                "name"=>"imageUpload",
-                "required" => false,
+                'name'     => 'imageUpload',
+                'required' => false,
             ],
             [
-                "name"=>"titleLink",
-                "required" => true,
-                'filters' => [
+                'name'     => 'titleLink',
+                'required' => true,
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                     ['name' => 'StringToLower'],

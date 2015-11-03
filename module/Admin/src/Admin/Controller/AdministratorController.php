@@ -8,14 +8,13 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Controller;
 
 use Admin\Entity\Administrator;
 use Admin\Form\AdministratorForm;
 use Zend\Json\Json;
-use Zend\View\Model\JsonModel;
 use Zend\Mvc\MvcEvent;
+use Zend\View\Model\JsonModel;
 
 final class AdministratorController extends BaseController
 {
@@ -51,9 +50,9 @@ final class AdministratorController extends BaseController
      */
     public function onDispatch(MvcEvent $event)
     {
-        $this->addBreadcrumb(["reference"=>"/admin/administrator", "name"=>$this->translate("ADMINISTRATORS")]);
-        $this->administratorTable = $this->getTable("Admin\\Model\\AdministratorTable");
-        $this->userTable = $this->getTable("Admin\\Model\\UserTable");
+        $this->addBreadcrumb(['reference' => '/admin/administrator', 'name' => $this->translate('ADMINISTRATORS')]);
+        $this->administratorTable = $this->getTable('Admin\\Model\\AdministratorTable');
+        $this->userTable = $this->getTable('Admin\\Model\\UserTable');
 
         parent::onDispatch($event);
     }
@@ -65,7 +64,7 @@ final class AdministratorController extends BaseController
      */
     public function indexAction()
     {
-        $this->getView()->setTemplate("admin/administrator/index");
+        $this->getView()->setTemplate('admin/administrator/index');
         $query = $this->administratorTable->queryBuilder()->getEntityManager();
         $query = $query->createQuery('SELECT a.user, u.name FROM Admin\Entity\Administrator AS a LEFT JOIN Admin\Entity\User AS u WITH a.user=u.id');
 
@@ -81,9 +80,9 @@ final class AdministratorController extends BaseController
      */
     protected function addAction()
     {
-        $this->getView()->setTemplate("admin/administrator/add");
+        $this->getView()->setTemplate('admin/administrator/add');
         $this->initForm(null);
-        $this->addBreadcrumb(["reference"=>"/admin/administrator/add", "name"=>$this->translate("ADD_ADMINISTRATOR")]);
+        $this->addBreadcrumb(['reference' => '/admin/administrator/add', 'name' => $this->translate('ADD_ADMINISTRATOR')]);
 
         return $this->getView();
     }
@@ -96,27 +95,27 @@ final class AdministratorController extends BaseController
      */
     protected function editAction()
     {
-        $this->getView()->setTemplate("admin/administrator/edit");
-        $administrator = $this->administratorTable->getAdministrator((int) $this->getParam("id", 0));
+        $this->getView()->setTemplate('admin/administrator/edit');
+        $administrator = $this->administratorTable->getAdministrator((int) $this->getParam('id', 0));
         $this->getView()->administrator = $administrator;
-        $this->addBreadcrumb(["reference"=>"/admin/administrator/edit/{$administrator->getUser()}", "name"=>$this->translate("EDIT_ADMINISTRATOR")]);
+        $this->addBreadcrumb(['reference' => "/admin/administrator/edit/{$administrator->getUser()}", 'name' => $this->translate('EDIT_ADMINISTRATOR')]);
         $this->initForm($administrator);
 
         return $this->getView();
     }
 
     /**
-     * this action deletes a administrator
+     * this action deletes a administrator.
      */
     protected function deleteAction()
     {
-        $id = (int)$this->getParam('id', 0);
+        $id = (int) $this->getParam('id', 0);
         $userTable = $this->userTable;
         $user = $userTable->getUser($id);
         $user->setAdmin(0);
         $userTable->saveUser($user);
         $this->administratorTable->deleteAdministrator($id);
-        $this->setLayoutMessages($this->translate("DELETE_ADMINISTRATOR_SUCCESS"), "success");
+        $this->setLayoutMessages($this->translate('DELETE_ADMINISTRATOR_SUCCESS'), 'success');
     }
 
     /**
@@ -133,7 +132,7 @@ final class AdministratorController extends BaseController
         if ($this->getRequest()->isXmlHttpRequest() && isset($search)) {
             $this->getView()->setTerminal(true);
             $queryBuilder = $this->userTable->queryBuilder();
-            $results = $queryBuilder->select(["u"])
+            $results = $queryBuilder->select(['u'])
                 ->from('Admin\Entity\User', 'u')
                 ->where('u.name = :name')
                 ->orWhere('u.surname LIKE :surname')
@@ -146,10 +145,10 @@ final class AdministratorController extends BaseController
 
             if ($results) {
                 foreach ($results as $key => $result) {
-                    $json[$key]["id"] = $result->getId();
-                    $json[$key]["name"] = $result->getName();
-                    $json[$key]["surname"] = $result->getSurname();
-                    $json[$key]["email"] = $result->getEmail();
+                    $json[$key]['id'] = $result->getId();
+                    $json[$key]['name'] = $result->getName();
+                    $json[$key]['surname'] = $result->getSurname();
+                    $json[$key]['email'] = $result->getEmail();
                 }
                 $success = true;
             }
@@ -157,7 +156,7 @@ final class AdministratorController extends BaseController
 
         return new JsonModel(
             [
-                'ajaxsearch' =>  Json::encode($json),
+                'ajaxsearch' => Json::encode($json),
                 'statusType' => $success,
             ]
         );
@@ -175,7 +174,7 @@ final class AdministratorController extends BaseController
         }
 
         /**
-         * @var $form AdministratorForm
+         * @var AdministratorForm
          */
         $form = $this->administratorForm;
         $form->bind($administrator);
@@ -197,10 +196,13 @@ final class AdministratorController extends BaseController
                     $user->setAdmin(1);
                     $this->userTable->saveUser($user);
                     $this->administratorTable->saveAdministrator($administrator);
-                    return $this->setLayoutMessages("&laquo;".$user->getName()."&raquo; ".$this->translate("SAVE_SUCCESS"), 'success');
+
+                    return $this->setLayoutMessages('&laquo;'.$user->getName().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
                 }
-                return $this->setLayoutMessages($user->getName().$this->translate("ALREADY_ADMIN"), 'info');
+
+                return $this->setLayoutMessages($user->getName().$this->translate('ALREADY_ADMIN'), 'info');
             }
+
             return $this->setLayoutMessages($form->getMessages(), 'error');
         }
     }

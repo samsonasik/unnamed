@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Controller;
 
 use Admin\Entity\AdminMenu;
@@ -42,8 +41,8 @@ final class AdminMenuController extends BaseController
      */
     public function onDispatch(MvcEvent $event)
     {
-        $this->addBreadcrumb(["reference"=>"/admin/adminmenu", "name"=>$this->translate("ADMIN_MENUS")]);
-        $this->adminMenuTable = $this->getTable("Admin\\Model\\AdminMenuTable");
+        $this->addBreadcrumb(['reference' => '/admin/adminmenu', 'name' => $this->translate('ADMIN_MENUS')]);
+        $this->adminMenuTable = $this->getTable('Admin\\Model\\AdminMenuTable');
 
         parent::onDispatch($event);
     }
@@ -55,23 +54,23 @@ final class AdminMenuController extends BaseController
      */
     public function indexAction()
     {
-        $this->getView()->setTemplate("admin/admin-menu/index");
+        $this->getView()->setTemplate('admin/admin-menu/index');
         $menu = $this->adminMenuTable
                      ->getEntityRepository()
                      ->findAll();
 
         if (count($menu) > 0) {
-            $menus = ["menus" => [], "submenus" => []];
+            $menus = ['menus' => [], 'submenus' => []];
             foreach ($menu as $submenu) {
                 if ($submenu->getParent() > 0) {
-                    $menus["submenus"][$submenu->getParent()][] = $submenu;
+                    $menus['submenus'][$submenu->getParent()][] = $submenu;
                 } else {
-                    $menus["menus"][$submenu->getId()] = $submenu;
+                    $menus['menus'][$submenu->getId()] = $submenu;
                 }
             }
 
-            $this->getView()->menus = $menus["menus"];
-            $this->getView()->submenus = $menus["submenus"];
+            $this->getView()->menus = $menus['menus'];
+            $this->getView()->submenus = $menus['submenus'];
         }
 
         return $this->getView();
@@ -84,9 +83,9 @@ final class AdminMenuController extends BaseController
      */
     protected function addAction()
     {
-        $this->getView()->setTemplate("admin/admin-menu/add");
+        $this->getView()->setTemplate('admin/admin-menu/add');
         $this->initForm(null);
-        $this->addBreadcrumb(["reference"=>"/admin/adminmenu/add", "name"=>$this->translate("ADD_ADMINMENU")]);
+        $this->addBreadcrumb(['reference' => '/admin/adminmenu/add', 'name' => $this->translate('ADD_ADMINMENU')]);
 
         return $this->getView();
     }
@@ -99,10 +98,10 @@ final class AdminMenuController extends BaseController
      */
     protected function editAction()
     {
-        $this->getView()->setTemplate("admin/admin-menu/edit");
-        $adminMenu = $this->adminMenuTable->getAdminMenu((int) $this->getParam("id", 0));
+        $this->getView()->setTemplate('admin/admin-menu/edit');
+        $adminMenu = $this->adminMenuTable->getAdminMenu((int) $this->getParam('id', 0));
         $this->getView()->adminMenu = $adminMenu;
-        $this->addBreadcrumb(["reference"=>"/admin/adminmenu/edit/{$adminMenu->getId()}", "name"=>$this->translate("EDIT_ADMINMENU")." &laquo;".$adminMenu->getCaption()."&raquo;"]);
+        $this->addBreadcrumb(['reference' => "/admin/adminmenu/edit/{$adminMenu->getId()}", 'name' => $this->translate('EDIT_ADMINMENU').' &laquo;'.$adminMenu->getCaption().'&raquo;']);
         $this->initForm($adminMenu);
 
         return $this->getView();
@@ -113,8 +112,8 @@ final class AdminMenuController extends BaseController
      */
     protected function deleteAction()
     {
-        $this->adminMenuTable->deleteAdminMenu((int)$this->getParam("id", 0));
-        $this->setLayoutMessages($this->translate("DELETE_ADMINMENU_SUCCESS"), "success");
+        $this->adminMenuTable->deleteAdminMenu((int) $this->getParam('id', 0));
+        $this->setLayoutMessages($this->translate('DELETE_ADMINMENU_SUCCESS'), 'success');
     }
 
     /**
@@ -122,10 +121,10 @@ final class AdminMenuController extends BaseController
      */
     protected function detailAction()
     {
-        $this->getView()->setTemplate("admin/admin-menu/detail");
-        $adminmenu = $this->adminMenuTable->getAdminMenu((int)$this->getParam("id", 0), $this->language());
+        $this->getView()->setTemplate('admin/admin-menu/detail');
+        $adminmenu = $this->adminMenuTable->getAdminMenu((int) $this->getParam('id', 0), $this->language());
         $this->getView()->adminmenu = $adminmenu;
-        $this->addBreadcrumb(["reference"=>"/admin/adminmenu/detail/".$adminmenu->getId()."", "name"=>"&laquo;". $adminmenu->getCaption()."&raquo; ".$this->translate("DETAILS")]);
+        $this->addBreadcrumb(['reference' => '/admin/adminmenu/detail/'.$adminmenu->getId().'', 'name' => '&laquo;'.$adminmenu->getCaption().'&raquo; '.$this->translate('DETAILS')]);
 
         return $this->getView();
     }
@@ -151,7 +150,8 @@ final class AdminMenuController extends BaseController
 
             if ($form->isValid()) {
                 $this->adminMenuTable->saveAdminMenu($adminMenu);
-                return $this->setLayoutMessages("&laquo;".$adminMenu->getCaption()."&raquo; ".$this->translate("SAVE_SUCCESS"), 'success');
+
+                return $this->setLayoutMessages('&laquo;'.$adminMenu->getCaption().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
             }
 
             return $this->setLayoutMessages($form->getMessages(), 'error');

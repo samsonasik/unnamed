@@ -3,7 +3,6 @@
 .buildpath
 auth.json
 .project
-.idea
 .settings
 composer.lock
 data/logs/

@@ -1,4 +1,5 @@
 language: php
+sudo: false
 
 php:
   - 5.5
@@ -11,6 +12,24 @@ install:
   - sudo apt-get install nodejs npm
   - /home/travis/.phpenv/versions/$TRAVIS_PHP_VERSION/bin/composer self-update
   - travis_retry composer install
+
+before_script:
+  - mkdir -p build/coverage
+  - mkdir -p build/logs
+  - mysql -e 'create database IF NOT EXISTS xj;' -uroot
+  - cp config/autoload/doctrine.local.php.dist config/autoload/doctrine.local.php
+  - php vendor/bin/doctrine-module migrations:migrate --no-interaction
+  - php -S localhost:8000 -t public/ &
+  - sleep 1
+
+script:
+  - ls -d module/*/test/PHPUnit | parallel --gnu --keep-order 'echo "Running {} tests"; ./vendor/bin/phpunit -c {}/phpunit.xml;' || exit 1
+  - cd module && for i in $(ls -d *); do ./../vendor/bin/codecept --config=${i%%/}/test/Codeception/codeception.yml run acceptance; done
+  - cd ..
+
+after_script:
+  - php coverage-report.php
+  - php vendor/bin/coveralls -v --exclude-no-stmt
 
 notifications:
   email: true

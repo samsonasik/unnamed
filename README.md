@@ -4,7 +4,7 @@
 |:-------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Versions | [![PHP minimum version](https://img.shields.io/badge/php-%3E%3D5.5-8892BF.svg)](https://php.net/) [![Unnamed version](https://img.shields.io/badge/Unnamed-v0.0.21-brightgreen.svg)](https://bitbucket.org/StanimirDim92/unnamed/overview) [![NPM minimum version](https://img.shields.io/badge/npm-v2.14.3-brightgreen.svg)](https://www.npmjs.com/)                                                                                                                           |
 | License | [![Unnamed license](https://img.shields.io/badge/license-MIT-blue.svg)](https://bitbucket.org/StanimirDim92/unnamed/raw/master/LICENSE)                                                                                                                                                                                                                                       |
-| Testing | [![Build Status](https://travis-ci.org/Stanimirdim92/unnamed.svg)](https://travis-ci.org/Stanimirdim92/unnamed) [![Build Status](https://semaphoreci.com/api/v1/projects/0613b317-95c1-4af3-8b73-4e1c99d7c8db/552367/shields_badge.svg)](https://semaphoreci.com/stanimir/unnamed)                                                                                                                                                                                                            |
+| Testing | [![Coverage Status](https://coveralls.io/repos/Stanimirdim92/unnamed/badge.svg?branch=master&service=github)](https://coveralls.io/github/Stanimirdim92/unnamed?branch=master) [![Build Status](https://travis-ci.org/Stanimirdim92/unnamed.svg)](https://travis-ci.org/Stanimirdim92/unnamed) [![Build Status](https://semaphoreci.com/api/v1/projects/0613b317-95c1-4af3-8b73-4e1c99d7c8db/552367/shields_badge.svg)](https://semaphoreci.com/stanimir/unnamed)                                                                                                                                                                                                            |
 | Quality | [![StyleCI](https://styleci.io/repos/45452188/shield)](https://styleci.io/repos/45452188) [![Dependency Status](https://www.versioneye.com/user/projects/56177e82a193340f280001cb/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56177e82a193340f280001cb) [![Dependency Status](https://www.versioneye.com/user/projects/56177cf2a193340f2f0001a3/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56177cf2a193340f2f0001a3) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/dbe0fb70-00d3-49ca-99b8-90dfcf688c2b/mini.png)](https://insight.sensiolabs.com/projects/dbe0fb70-00d3-49ca-99b8-90dfcf688c2b) |
 
 ### Unnamed CMS ###
@@ -56,7 +56,7 @@
 * PHP Unit (built in via composer)
 * Codeception (built in via composer)
 * PHP Coveralls (built in via composer)
-* Gulp (requires NodeJS 0.12.7 or later). node_modules folder is not included. You will have to run **npm install** from the root directory
+* Gulp (requires NodeJS 0.12.7 or later). node_modules folder is not included. You will have to run **npm install** and **npm install gulp** from the root directory
 
 ### LICENSE ###
 

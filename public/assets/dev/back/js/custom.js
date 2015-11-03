@@ -8,6 +8,10 @@
  */
 
 ;(function (win, doc, $, undefined) {
+    /**
+     * use strict doesn't play nice with IIS/.NET
+     * http://bugs.jquery.com/ticket/13335
+     */
     'use strict';
 
     /**

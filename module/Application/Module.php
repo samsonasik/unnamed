@@ -57,8 +57,10 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
         $moduleRouteListener->attach($eventManager);
 
         $sessionManager = $this->service->get('initSession');
-        $sessionManager->setName('zpc')->start();
-        Container::setDefaultManager($sessionManager);
+        if (!$sessionManager->sessionExists()) {
+            $sessionManager->setName('zpc')->start();
+            Container::setDefaultManager($sessionManager);
+        }
 
         $eventManager->attach('dispatch', [$this, 'setTitleAndTranslation'], -10);
         $eventManager->attach('dispatch.error', [$this, 'onError'], 2);

@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/StanimirDim92/unnamed.git"
+    "url": "git+ssh://git@github.com/Stanimirdim92/unnamed.git"
   },
   "keywords": [
     "gulp",
@@ -32,5 +32,5 @@
   ],
   "author": "Stanimir Dimitrov",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/StanimirDim92/unnamed#readme"
+  "homepage": "https://github.com/Stanimirdim92/unnamed#readme"
 }

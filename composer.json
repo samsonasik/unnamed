@@ -3,12 +3,12 @@
     "description": "Flexible, strong and fast CMS built on top of Zend Framework 2",
     "license": "MIT",
     "type": "project",
-    "homepage": "https://bitbucket.org/StanimirDim92/unnamed#readme",
+    "homepage": "https://github.com/Stanimirdim92/unnamed#readme",
     "authors": [
         {
             "name": "Stanimir Dimitrov",
             "email": "stanimirdim92@gmail.com",
-            "homepage": "https://bitbucket.org/StanimirDim92/unnamed#readme",
+            "homepage": "https://github.com/Stanimirdim92/unnamed#readme",
             "role": "Creator"
         }
     ],
@@ -53,6 +53,7 @@
         "zendframework/zend-servicemanager": "2.*",
         "zendframework/zend-session": "2.*",
         "zendframework/zend-stdlib": "2.*",
+        "zendframework/zend-test": "2.*",
         "zendframework/zend-uri": "2.*",
         "zendframework/zend-validator": "2.*",
         "zendframework/zend-version": "2.*",
@@ -67,13 +68,27 @@
         "squizlabs/php_codesniffer": "2.*",
         "phpunit/PHPUnit": "4.*",
         "satooshi/php-coveralls": "dev-master",
-        "codeception/codeception": "2.*"
+        "codeception/codeception": "2.*",
+        "jonnyw/php-phantomjs": "3.*"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS"
+        ],
+        "post-update-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS"
+        ]
     },
     "autoload": {
         "psr-4": {
           "Application\\": "module/Application/src",
           "Admin\\": "module/Admin/src",
           "Themes\\": "module/Themes/src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ApplicationTest\\Controller\\": "test/"
         }
     },
     "suggest": {

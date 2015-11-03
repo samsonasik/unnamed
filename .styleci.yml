@@ -2,9 +2,6 @@ preset: recommended
 
 linting: true
 
-enabled:
-  - align_double_arrow
-
 finder:
   name:
     - "*.php"

@@ -8,13 +8,12 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Menu
+ * Menu.
  *
  * @ORM\Entity
  * @ORM\Table(name="menu")
@@ -23,7 +22,7 @@ use Doctrine\ORM\Mapping as ORM;
 final class Menu
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -39,21 +38,21 @@ final class Menu
     private $caption;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="menuOrder", type="integer", nullable=false)
      */
     private $menuOrder = 0;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="language", type="smallint", nullable=false)
      */
     private $language = 1;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="parent", type="integer", nullable=false)
      */
@@ -74,14 +73,14 @@ final class Menu
     private $description;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="menutype", type="smallint", nullable=false)
      */
     private $menutype = 0;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="footercolumn", type="integer", nullable=false)
      */
@@ -95,7 +94,7 @@ final class Menu
     private $menulink;
 
     /**
-     * @var boolean
+     * @var bool
      *
      * @ORM\Column(name="active", type="smallint", nullable=false)
      */
@@ -109,7 +108,7 @@ final class Menu
     private $class;
 
     /**
-     * @var array $data
+     * @var array
      */
     public function exchangeArray(array $data = [])
     {
@@ -146,7 +145,7 @@ final class Menu
     /**
      * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -163,11 +162,10 @@ final class Menu
         $this->id = $id;
     }
 
-
     /**
      * Set caption.
      *
-     * @param String $caption
+     * @param string $caption
      */
     public function setCaption($caption)
     {
@@ -197,7 +195,7 @@ final class Menu
     /**
      * Get menuOrder.
      *
-     * @return integer
+     * @return int
      */
     public function getMenuOrder()
     {
@@ -207,7 +205,7 @@ final class Menu
     /**
      * Set active.
      *
-     * @param Boolean $active
+     * @param bool $active
      */
     public function setActive($active = true)
     {
@@ -217,7 +215,7 @@ final class Menu
     /**
      * Get active.
      *
-     * @return Boolean
+     * @return bool
      */
     public function isActive()
     {
@@ -237,7 +235,7 @@ final class Menu
     /**
      * Get language.
      *
-     * @return integer
+     * @return int
      */
     public function getLanguage()
     {
@@ -257,7 +255,7 @@ final class Menu
     /**
      * Get parent.
      *
-     * @return integer
+     * @return int
      */
     public function getParent()
     {
@@ -267,7 +265,7 @@ final class Menu
     /**
      * Set keywords.
      *
-     * @param String $keywords
+     * @param string $keywords
      */
     public function setKeywords($keywords)
     {
@@ -277,7 +275,7 @@ final class Menu
     /**
      * Get keywords.
      *
-     * @return String
+     * @return string
      */
     public function getKeywords()
     {
@@ -297,7 +295,7 @@ final class Menu
     /**
      * Get description.
      *
-     * @return String
+     * @return string
      */
     public function getDescription()
     {
@@ -307,7 +305,7 @@ final class Menu
     /**
      * Set menutype.
      *
-     * @param Int $menutype
+     * @param int $menutype
      */
     public function setMenuType($menutype = 0)
     {
@@ -317,7 +315,7 @@ final class Menu
     /**
      * Get menutype.
      *
-     * @return integer
+     * @return int
      */
     public function getMenuType()
     {
@@ -327,7 +325,7 @@ final class Menu
     /**
      * Set footercolumn.
      *
-     * @param Int $footercolumn
+     * @param int $footercolumn
      */
     public function setFooterColumn($footercolumn = 0)
     {
@@ -337,7 +335,7 @@ final class Menu
     /**
      * Get footercolumn.
      *
-     * @return integer
+     * @return int
      */
     public function getFooterColumn()
     {
@@ -357,7 +355,7 @@ final class Menu
     /**
      * Get menulink.
      *
-     * @return integer
+     * @return int
      */
     public function getMenuLink()
     {
@@ -367,7 +365,7 @@ final class Menu
     /**
      * Set class.
      *
-     * @param String $class
+     * @param string $class
      */
     public function setClass($class)
     {
@@ -377,7 +375,7 @@ final class Menu
     /**
      * Get class.
      *
-     * @return String
+     * @return string
      */
     public function getClass()
     {
@@ -392,13 +390,13 @@ final class Menu
     public function getMenuTypeAsName()
     {
         if ($this->getMenuType() === 0) {
-            return "Main menu";
+            return 'Main menu';
         } elseif ($this->getMenuType() === 1) {
-            return "Left menu";
+            return 'Left menu';
         } elseif ($this->getMenuType() === 3) {
-            return "Footer menu";
+            return 'Footer menu';
         } else {
-            return "Right menu";
+            return 'Right menu';
         }
     }
 }

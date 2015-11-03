@@ -42,7 +42,7 @@ return [
         'InitMetaTags' => false,
     ],
     'translator' => [
-        'locale' => 'en',
+        'locale'                    => 'en',
         'translation_file_patterns' => [
             [
                 'base_dir' => __DIR__.'/../../module/Application/languages/phpArray',
@@ -54,7 +54,7 @@ return [
             'adapter' => [
                 'name'    => 'Filesystem',
                 'options' => [
-                    'cache_dir' => __DIR__ . '/../../data/cache/frontend',
+                    'cache_dir' => __DIR__.'/../../data/cache/frontend',
                     'ttl'       => '604800',
                 ],
             ],
@@ -64,30 +64,30 @@ return [
                     'options' => [],
                 ],
                 'exception_handler' => [
-                    'throw_exceptions' => (APP_ENV === "development"),
+                    'throw_exceptions' => (APP_ENV === 'development'),
                 ],
             ],
         ],
     ],
     'view_manager' => [
-        'display_not_found_reason' => (APP_ENV === "development"),
-        'display_exceptions'       => (APP_ENV === "development"),
+        'display_not_found_reason' => (APP_ENV === 'development'),
+        'display_exceptions'       => (APP_ENV === 'development'),
         'doctype'                  => 'HTML5',
         'not_found_template'       => 'error/index',
         'exception_template'       => 'error/index',
         'default_template_suffix'  => 'phtml',
-        'strategies' => [
+        'strategies'               => [
             'ViewJsonStrategy',
         ],
     ],
     'doctrine' => [
         'authentication' => [
             'orm_default' => [
-                'object_manager' => 'Doctrine\ORM\EntityManager',
-                'identity_class' => 'Admin\Entity\User',
-                'identity_property' => 'email',
+                'object_manager'      => 'Doctrine\ORM\EntityManager',
+                'identity_class'      => 'Admin\Entity\User',
+                'identity_property'   => 'email',
                 'credential_property' => 'password',
-                'credential_callable' => function(\Admin\Entity\User $user, $passwordProvided) {
+                'credential_callable' => function (\Admin\Entity\User $user, $passwordProvided) {
                     return password_verify($passwordProvided, $user->getPassword());
                 },
             ],

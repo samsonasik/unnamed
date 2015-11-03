@@ -8,14 +8,13 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Model;
 
+use Admin\Entity\Administrator;
 use Admin\Exception\RuntimeException;
 use Doctrine\ORM\EntityManager;
-use Admin\Entity\Administrator;
-use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as PaginatorAdapter;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as PaginatorAdapter;
 use Zend\Paginator\Paginator as ZendPaginator;
 
 final class AdministratorTable
@@ -43,7 +42,7 @@ final class AdministratorTable
 
     /**
      * @param Query|QueryBuilder $query               A Doctrine ORM query or query builder.
-     * @param boolean            $fetchJoinCollection Whether the query joins a collection (true by default).
+     * @param bool               $fetchJoinCollection Whether the query joins a collection (true by default).
      *
      * @return Paginator
      */
@@ -67,7 +66,7 @@ final class AdministratorTable
      */
     public function getAdministrator($adminId = 0)
     {
-        $administrator = $this->getEntityRepository()->findBy(["user" => $adminId]);
+        $administrator = $this->getEntityRepository()->findBy(['user' => $adminId]);
 
         if (empty($administrator)) {
             throw new RuntimeException("Couldn't find administrator");

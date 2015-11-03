@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller\Plugin\Factory;
 
 use Application\Controller\Plugin\GetUrlParams;
@@ -17,7 +16,7 @@ use Zend\Mvc\Controller\PluginManager;
 class GetUrlParamsFactory
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      *
      * @param PluginManager $pluginManager
      *
@@ -25,7 +24,7 @@ class GetUrlParamsFactory
      */
     public function __invoke(PluginManager $pluginManager)
     {
-        $params = $pluginManager->get("params");
+        $params = $pluginManager->get('params');
 
         $plugin = new GetUrlParams($params);
 

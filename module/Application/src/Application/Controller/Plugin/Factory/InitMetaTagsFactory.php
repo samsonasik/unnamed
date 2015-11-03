@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller\Plugin\Factory;
 
 use Application\Controller\Plugin\InitMetaTags;
@@ -17,7 +16,7 @@ use Zend\Mvc\Controller\PluginManager;
 class InitMetaTagsFactory
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      *
      * @param PluginManager $pluginManager
      *
@@ -25,33 +24,33 @@ class InitMetaTagsFactory
      */
     public function __invoke(PluginManager $pluginManager)
     {
-        /**
+        /*
          * @var \Zend\View\HelperPluginManager
          */
         $viewHelper = $pluginManager->getController()->getServiceLocator()->get('ViewHelperManager');
 
         /**
-         * @var \Zend\View\Helper\Placeholder\Container $placeholderContainer
+         * @var \Zend\View\Helper\Placeholder\Container
          */
-        $placeholderContainer = $viewHelper->get("placeholder")->getContainer("customHead");
+        $placeholderContainer = $viewHelper->get('placeholder')->getContainer('customHead');
 
         /**
-         * @var \Zend\View\Helper\HeadMeta $headMeta
+         * @var \Zend\View\Helper\HeadMeta
          */
-        $headMeta = $viewHelper->get("HeadMeta");
+        $headMeta = $viewHelper->get('HeadMeta');
 
         /**
-         * @var \Zend\Http\PhpEnvironment\Request $request
+         * @var \Zend\Http\PhpEnvironment\Request
          */
         $request = $pluginManager->getController()->getRequest();
 
-        /**
+        /*
          * @var \Application\Controller\Plugin\SystemSettings
          */
-        $systemsettings = $pluginManager->get("systemsettings");
+        $systemsettings = $pluginManager->get('systemsettings');
 
         /**
-         * @var InitMetaTags $plugin
+         * @var InitMetaTags
          */
         $plugin = new InitMetaTags($placeholderContainer, $headMeta, $request, $systemsettings);
 

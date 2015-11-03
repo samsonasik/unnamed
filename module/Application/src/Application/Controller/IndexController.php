@@ -8,10 +8,7 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller;
-
-use Application\Controller\BaseController;
 
 final class IndexController extends BaseController
 {
@@ -22,7 +19,7 @@ final class IndexController extends BaseController
      */
     public function indexAction()
     {
-        $this->getView()->setTemplate("application/index/index");
+        $this->getView()->setTemplate('application/index/index');
 
         return $this->getView();
     }
@@ -34,11 +31,11 @@ final class IndexController extends BaseController
      */
     protected function languageAction()
     {
-        $language = $this->getTable("Admin\\Model\\LanguageTable")->getLanguage((int) $this->getParam("id", 1));
+        $language = $this->getTable('Admin\\Model\\LanguageTable')->getLanguage((int) $this->getParam('id', 1));
 
         $this->getTranslation()->language = $language->getId();
         $this->getTranslation()->languageName = $language->getName();
 
-        return $this->redirect()->toUrl("/");
+        return $this->redirect()->toUrl('/');
     }
 }

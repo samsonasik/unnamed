@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller\Plugin\Factory;
 
 use Application\Controller\Plugin\ErrorCodes;
@@ -17,7 +16,7 @@ use Zend\Mvc\Controller\PluginManager;
 class ErrorCodesFactory
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     public function __invoke(PluginManager $pluginManager)
     {

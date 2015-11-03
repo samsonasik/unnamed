@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Themes\Service;
 
 use Zend\EventManager\EventManagerAwareInterface;

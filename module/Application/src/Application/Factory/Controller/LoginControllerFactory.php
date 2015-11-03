@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Application\Factory\Controller;
 
 use Application\Controller\LoginController;
@@ -17,7 +16,7 @@ use Zend\Mvc\Controller\ControllerManager;
 final class LoginControllerFactory
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     public function __invoke(ControllerManager $controllerManager)
     {

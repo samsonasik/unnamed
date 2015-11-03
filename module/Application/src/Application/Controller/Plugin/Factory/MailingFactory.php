@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller\Plugin\Factory;
 
 use Application\Controller\Plugin\Mailing;
@@ -17,7 +16,7 @@ use Zend\Mvc\Controller\PluginManager;
 class MailingFactory
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      *
      * @param PluginManager $pluginManager
      *
@@ -25,8 +24,8 @@ class MailingFactory
      */
     public function __invoke(PluginManager $pluginManager)
     {
-        $flashmessenger = $pluginManager->get("flashmessenger");
-        $systemsettings = $pluginManager->get("systemsettings");
+        $flashmessenger = $pluginManager->get('flashmessenger');
+        $systemsettings = $pluginManager->get('systemsettings');
 
         $plugin = new Mailing($flashmessenger, $systemsettings);
 

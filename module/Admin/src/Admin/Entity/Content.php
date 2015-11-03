@@ -8,13 +8,12 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Content
+ * Content.
  *
  * @ORM\Entity
  * @ORM\Table(name="content")
@@ -22,7 +21,7 @@ use Doctrine\ORM\Mapping as ORM;
 final class Content
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -31,7 +30,7 @@ final class Content
     private $id = 0;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="menu", type="integer", nullable=false)
      */
@@ -59,14 +58,14 @@ final class Content
     private $text;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="menuOrder", type="integer", nullable=false)
      */
     private $menuOrder = 0;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="type", type="smallint", nullable=false)
      */
@@ -77,10 +76,10 @@ final class Content
      *
      * @ORM\Column(name="date", type="string", nullable=false)
      */
-    private $date = "0000-00-00 00:00:00";
+    private $date = '0000-00-00 00:00:00';
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="language", type="integer", nullable=false)
      */
@@ -94,7 +93,7 @@ final class Content
     private $titleLink;
 
     /**
-     * @var boolean
+     * @var bool
      *
      * @ORM\Column(name="active", type="smallint", nullable=false)
      */
@@ -197,7 +196,7 @@ final class Content
     /**
      * Get title.
      *
-     * @return String
+     * @return string
      */
     public function getTitle()
     {
@@ -217,7 +216,7 @@ final class Content
     /**
      * Get titleLink.
      *
-     * @return String
+     * @return string
      */
     public function getTitleLink()
     {
@@ -247,7 +246,7 @@ final class Content
     /**
      * Set active.
      *
-     * @param Boolean $active
+     * @param bool $active
      */
     public function setActive($active = 0)
     {
@@ -257,7 +256,7 @@ final class Content
     /**
      * Get active.
      *
-     * @return Boolean
+     * @return bool
      */
     public function isActive()
     {
@@ -267,7 +266,7 @@ final class Content
     /**
      * Set preview.
      *
-     * @param String $preview
+     * @param string $preview
      */
     public function setPreview($preview)
     {
@@ -277,7 +276,7 @@ final class Content
     /**
      * Get preview.
      *
-     * @return String
+     * @return string
      */
     public function getPreview()
     {
@@ -287,7 +286,7 @@ final class Content
     /**
      * Set text.
      *
-     * @param String $text
+     * @param string $text
      */
     public function setText($text)
     {
@@ -297,7 +296,7 @@ final class Content
     /**
      * Get text.
      *
-     * @return String
+     * @return string
      */
     public function getText()
     {
@@ -347,9 +346,9 @@ final class Content
     /**
      * Set date.
      *
-     * @param String $date
+     * @param string $date
      */
-    public function setDate($date = "0000-00-00 00:00:00")
+    public function setDate($date = '0000-00-00 00:00:00')
     {
         $this->date = $date;
     }
@@ -357,7 +356,7 @@ final class Content
     /**
      * Get date.
      *
-     * @return String
+     * @return string
      */
     public function getDate()
     {

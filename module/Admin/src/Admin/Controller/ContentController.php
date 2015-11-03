@@ -8,17 +8,16 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Controller;
 
 use Admin\Entity\Content;
-use Zend\View\Model\JsonModel;
 use Admin\Form\ContentForm;
 use Zend\File\Transfer\Adapter\Http;
+use Zend\Mvc\MvcEvent;
+use Zend\Validator\File\Extension;
 use Zend\Validator\File\IsImage;
 use Zend\Validator\File\Size;
-use Zend\Validator\File\Extension;
-use Zend\Mvc\MvcEvent;
+use Zend\View\Model\JsonModel;
 
 final class ContentController extends BaseController
 {
@@ -40,7 +39,6 @@ final class ContentController extends BaseController
      */
     private $contentTable;
 
-
     /**
      * @param ContentForm $contentForm
      */
@@ -58,8 +56,8 @@ final class ContentController extends BaseController
      */
     public function onDispatch(MvcEvent $event)
     {
-        $this->addBreadcrumb(["reference"=>"/admin/content", "name"=>$this->translate("CONTENTS")]);
-        $this->contentTable = $this->getTable("Admin\\Model\\ContentTable");
+        $this->addBreadcrumb(['reference' => '/admin/content', 'name' => $this->translate('CONTENTS')]);
+        $this->contentTable = $this->getTable('Admin\\Model\\ContentTable');
 
         parent::onDispatch($event);
     }
@@ -71,23 +69,23 @@ final class ContentController extends BaseController
      */
     public function indexAction()
     {
-        $this->getView()->setTemplate("admin/content/index");
+        $this->getView()->setTemplate('admin/content/index');
 
         $table = $this->contentTable;
 
-        if ((int) $this->getParam("id", 0) === 1) {
-            $query = $table->queryBuilder()->select(["c"])
+        if ((int) $this->getParam('id', 0) === 1) {
+            $query = $table->queryBuilder()->select(['c'])
                    ->from('Admin\Entity\Content', 'c')
-                   ->where("c.type = 1 AND c.language = :language")
-                   ->setParameter(":language", (int) $this->language())
-                   ->orderBy("c.date DESC");
+                   ->where('c.type = 1 AND c.language = :language')
+                   ->setParameter(':language', (int) $this->language())
+                   ->orderBy('c.date DESC');
             $paginator = $table->preparePagination($query, false);
         } else {
             $query = $table->queryBuilder()->getEntityManager()->createQuery("SELECT c FROM Admin\Entity\Content AS c LEFT JOIN Admin\Entity\Menu AS m WITH c.menu=m.id WHERE c.type = 0 AND c.language = {$this->language()} ORDER BY m.parent ASC, m.menuOrder ASC, c.date DESC");
             $paginator = $table->preparePagination($query, true);
         }
 
-        $paginator->setCurrentPageNumber((int)$this->getParam("page", 1));
+        $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));
         $paginator->setItemCountPerPage($this->systemSettings('posts', 'language'));
         $this->getView()->paginator = $paginator;
 
@@ -101,9 +99,9 @@ final class ContentController extends BaseController
      */
     protected function addAction()
     {
-        $this->getView()->setTemplate("admin/content/add");
+        $this->getView()->setTemplate('admin/content/add');
         $this->initForm();
-        $this->addBreadcrumb(["reference"=>"/admin/content/add", "name"=>$this->translate("ADD_NEW_CONTENT")]);
+        $this->addBreadcrumb(['reference' => '/admin/content/add', 'name' => $this->translate('ADD_NEW_CONTENT')]);
 
         return $this->getView();
     }
@@ -118,10 +116,10 @@ final class ContentController extends BaseController
     {
         $this->acceptableviewmodelselector($this->acceptCriteria);
 
-        $this->getView()->setTemplate("admin/content/edit");
-        $content = $this->contentTable->getContent((int)$this->getParam("id", 0), $this->language());
+        $this->getView()->setTemplate('admin/content/edit');
+        $content = $this->contentTable->getContent((int) $this->getParam('id', 0), $this->language());
         $this->getView()->content = $content;
-        $this->addBreadcrumb(["reference"=>"/admin/content/edit/{$content->getId()}", "name"=> $this->translate("EDIT_CONTENT")." &laquo;".$content->getTitle()."&raquo;"]);
+        $this->addBreadcrumb(['reference' => "/admin/content/edit/{$content->getId()}", 'name' => $this->translate('EDIT_CONTENT').' &laquo;'.$content->getTitle().'&raquo;']);
         $this->initForm($content);
 
         return $this->getView();
@@ -132,8 +130,8 @@ final class ContentController extends BaseController
      */
     protected function deleteAction()
     {
-        $this->contentTable->deleteContent((int)$this->getParam("id", 0), $this->language());
-        $this->setLayoutMessages($this->translate("DELETE_CONTENT_SUCCESS"), "success");
+        $this->contentTable->deleteContent((int) $this->getParam('id', 0), $this->language());
+        $this->setLayoutMessages($this->translate('DELETE_CONTENT_SUCCESS'), 'success');
     }
 
     /**
@@ -143,24 +141,24 @@ final class ContentController extends BaseController
      */
     protected function detailAction()
     {
-        $this->getView()->setTemplate("admin/content/detail");
-        $content = $this->contentTable->getContent((int)$this->getParam("id", 0), $this->language());
+        $this->getView()->setTemplate('admin/content/detail');
+        $content = $this->contentTable->getContent((int) $this->getParam('id', 0), $this->language());
         $this->getView()->content = $content;
-        $this->addBreadcrumb(["reference"=>"/admin/content/detail/".$content->getId()."", "name"=>"&laquo;". $content->getTitle()."&raquo; ".$this->translate("DETAILS")]);
+        $this->addBreadcrumb(['reference' => '/admin/content/detail/'.$content->getId().'', 'name' => '&laquo;'.$content->getTitle().'&raquo; '.$this->translate('DETAILS')]);
 
         return $this->getView();
     }
 
     protected function deactivateAction()
     {
-        $this->contentTable->toggleActiveContent((int)$this->getParam("id", 0), $this->language(), 0);
-        $this->setLayoutMessages($this->translate("CONTENT_DISABLE_SUCCESS"), "success");
+        $this->contentTable->toggleActiveContent((int) $this->getParam('id', 0), $this->language(), 0);
+        $this->setLayoutMessages($this->translate('CONTENT_DISABLE_SUCCESS'), 'success');
     }
 
     protected function activateAction()
     {
-        $this->contentTable->toggleActiveContent((int)$this->getParam("id", 0), $this->language(), 1);
-        $this->setLayoutMessages($this->translate("CONTENT_ENABLE_SUCCESS"), "success");
+        $this->contentTable->toggleActiveContent((int) $this->getParam('id', 0), $this->language(), 1);
+        $this->setLayoutMessages($this->translate('CONTENT_ENABLE_SUCCESS'), 'success');
     }
 
     /**
@@ -175,7 +173,7 @@ final class ContentController extends BaseController
         }
 
         /**
-         * @var $form ContentForm
+         * @var ContentForm
          */
         $form = $this->contentForm;
         $form->bind($content);
@@ -186,7 +184,7 @@ final class ContentController extends BaseController
 
     /**
      * @param ContentForm $form
-     * @param Content $content
+     * @param Content     $content
      */
     private function form(ContentForm $form, Content $content)
     {
@@ -203,20 +201,20 @@ final class ContentController extends BaseController
                 $formData = $form->getData();
                 $userData = $this->UserData();
 
-                if ($userData->checkIdentity(false, $this->translate("ERROR_AUTHORIZATION"))) {
-                    $content->setAuthor($userData->getIdentity()->name." ".$userData->getIdentity()->surname);
+                if ($userData->checkIdentity(false, $this->translate('ERROR_AUTHORIZATION'))) {
+                    $content->setAuthor($userData->getIdentity()->name.' '.$userData->getIdentity()->surname);
                 } else {
-                    $content->setAuthor("Admin");
+                    $content->setAuthor('Admin');
                 }
 
                 /*
                  * We only need the name. All images ar stored in the same folder, based on the month and year
                  */
-                $content->setPreview($formData->getPreview()["name"]);
+                $content->setPreview($formData->getPreview()['name']);
                 $this->contentTable->saveContent($content);
-                $this->setLayoutMessages("&laquo;".$content->getTitle()."&raquo; ".$this->translate("SAVE_SUCCESS"), "success");
+                $this->setLayoutMessages('&laquo;'.$content->getTitle().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
             } else {
-                $this->setLayoutMessages($form->getMessages(), "error");
+                $this->setLayoutMessages($form->getMessages(), 'error');
             }
         }
     }
@@ -252,12 +250,13 @@ final class ContentController extends BaseController
             $data = $request->getPost()->toArray();
 
             if ($request->isXmlHttpRequest()) {
-                if (is_file("public".$data["img"])) {
-                    unlink("public".$data["img"]);
+                if (is_file('public'.$data['img'])) {
+                    unlink('public'.$data['img']);
                     $status = true;
                 }
             }
         }
+
         return $status;
     }
 
@@ -269,26 +268,27 @@ final class ContentController extends BaseController
      */
     protected function filesAction()
     {
-        chdir(getcwd()."/public/");
-        if (!is_dir('userfiles/'.date("Y_M").'/images/')) {
-            mkdir('userfiles/'.date("Y_M").'/images/', 0750, true);
+        chdir(getcwd().'/public/');
+        if (!is_dir('userfiles/'.date('Y_M').'/images/')) {
+            mkdir('userfiles/'.date('Y_M').'/images/', 0750, true);
         }
         $this->getView()->setTerminal(true);
         $dir = new \RecursiveDirectoryIterator('userfiles/', \FilesystemIterator::SKIP_DOTS);
-        $it  = new \RecursiveIteratorIterator($dir, \RecursiveIteratorIterator::SELF_FIRST);
+        $it = new \RecursiveIteratorIterator($dir, \RecursiveIteratorIterator::SELF_FIRST);
         $it->setMaxDepth(50);
         $files = [];
         $i = 0;
         foreach ($it as $file) {
             if ($file->isFile()) {
-                $files[$i]["filelink"] = DIRECTORY_SEPARATOR.$file->getPath().DIRECTORY_SEPARATOR.$file->getFilename();
-                $files[$i]["filename"] = $file->getFilename();
+                $files[$i]['filelink'] = DIRECTORY_SEPARATOR.$file->getPath().DIRECTORY_SEPARATOR.$file->getFilename();
+                $files[$i]['filename'] = $file->getFilename();
                 $i++;
             }
         }
         chdir(dirname(getcwd()));
         $model = new JsonModel();
-        $model->setVariables(["files" => $files]);
+        $model->setVariables(['files' => $files]);
+
         return $model;
     }
 
@@ -300,21 +300,22 @@ final class ContentController extends BaseController
     private function prepareImages()
     {
         $adapter = new Http();
-        $size = new Size(['min'=>'10kB', 'max'=>'5MB', 'useByteString' => true]);
+        $size = new Size(['min' => '10kB', 'max' => '5MB', 'useByteString' => true]);
         $extension = new Extension(['jpg', 'gif', 'png', 'jpeg', 'bmp', 'webp', 'svg'], true);
 
         $adapter->setValidators([$size, new IsImage(), $extension]);
 
-        if (!is_dir('public/userfiles/'.date("Y_M").'/images/')) {
-            mkdir('public/userfiles/'.date("Y_M").'/images/', 0750, true);
+        if (!is_dir('public/userfiles/'.date('Y_M').'/images/')) {
+            mkdir('public/userfiles/'.date('Y_M').'/images/', 0750, true);
         }
 
-        $adapter->setDestination('public/userfiles/'.date("Y_M").'/images/');
+        $adapter->setDestination('public/userfiles/'.date('Y_M').'/images/');
+
         return $this->uploadFiles($adapter);
     }
 
     /**
-     * @param  Http $adapter
+     * @param Http $adapter
      *
      * @return array
      */
@@ -323,23 +324,24 @@ final class ContentController extends BaseController
         $uploadStatus = [];
 
         foreach ($adapter->getFileInfo() as $key => $file) {
-            if ($key != "preview") {
-                if (!$adapter->isValid($file["name"])) {
+            if ($key != 'preview') {
+                if (!$adapter->isValid($file['name'])) {
                     foreach ($adapter->getMessages() as $msg) {
-                        $uploadStatus["errorFiles"][] = $file["name"]." ".strtolower($msg);
+                        $uploadStatus['errorFiles'][] = $file['name'].' '.strtolower($msg);
                     }
                 }
 
                 // @codeCoverageIgnoreStart
-                $adapter->receive($file["name"]);
-                if (!$adapter->isReceived($file["name"]) && $adapter->isUploaded($file["name"])) {
-                    $uploadStatus["errorFiles"][] = $file["name"]." was not uploaded";
+                $adapter->receive($file['name']);
+                if (!$adapter->isReceived($file['name']) && $adapter->isUploaded($file['name'])) {
+                    $uploadStatus['errorFiles'][] = $file['name'].' was not uploaded';
                 } else {
-                    $uploadStatus["successFiles"][] = $file["name"]." was successfully uploaded";
+                    $uploadStatus['successFiles'][] = $file['name'].' was successfully uploaded';
                 }
                 // @codeCoverageIgnoreEnd
             }
         }
+
         return $uploadStatus;
     }
 }

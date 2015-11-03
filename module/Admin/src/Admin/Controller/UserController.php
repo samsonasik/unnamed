@@ -8,15 +8,14 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Controller;
 
 use Admin\Entity\User;
+use Admin\Exception\AuthorizationException;
 use Admin\Form\UserForm;
 use Zend\Json\Json;
-use Zend\View\Model\JsonModel;
-use Admin\Exception\AuthorizationException;
 use Zend\Mvc\MvcEvent;
+use Zend\View\Model\JsonModel;
 
 final class UserController extends BaseController
 {
@@ -46,7 +45,7 @@ final class UserController extends BaseController
      */
     public function onDispatch(MvcEvent $event)
     {
-        $this->addBreadcrumb(["reference"=>"/admin/user", "name"=>$this->translate("USERS")]);
+        $this->addBreadcrumb(['reference' => '/admin/user', 'name' => $this->translate('USERS')]);
         $this->userTable = $this->getTable("Admin\Model\UserTable");
 
         parent::onDispatch($event);
@@ -59,15 +58,15 @@ final class UserController extends BaseController
      */
     public function indexAction()
     {
-        $this->getView()->setTemplate("admin/user/index");
+        $this->getView()->setTemplate('admin/user/index');
         $table = $this->userTable;
         $query = $table->queryBuilder()
-                   ->select(["u"])
+                   ->select(['u'])
                    ->from('Admin\Entity\User', 'u')
-                   ->where("u.isDisabled = 0");
+                   ->where('u.isDisabled = 0');
 
         $paginator = $table->preparePagination($query, false);
-        $paginator->setCurrentPageNumber((int)$this->getParam("page", 1));
+        $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));
         $paginator->setItemCountPerPage($this->systemSettings('posts', 'user'));
         $this->getView()->paginator = $paginator;
 
@@ -82,10 +81,10 @@ final class UserController extends BaseController
      */
     protected function editAction()
     {
-        $this->getView()->setTemplate("admin/user/edit");
-        $user = $this->userTable->getUser((int)$this->getParam("id", 0));
+        $this->getView()->setTemplate('admin/user/edit');
+        $user = $this->userTable->getUser((int) $this->getParam('id', 0));
         $this->getView()->user = $user;
-        $this->addBreadcrumb(["reference"=>"/admin/user/edit/{$user->getId()}", "name"=> $this->translate("EDIT_USER")." &laquo;".$user->getName()."&raquo;"]);
+        $this->addBreadcrumb(['reference' => "/admin/user/edit/{$user->getId()}", 'name' => $this->translate('EDIT_USER').' &laquo;'.$user->getName().'&raquo;']);
         $this->initForm($user);
 
         return $this->getView();
@@ -99,7 +98,7 @@ final class UserController extends BaseController
     private function initForm(User $user = null)
     {
         if (!$user instanceof User) {
-            throw new AuthorizationException($this->translate("ERROR_AUTHORIZATION"));
+            throw new AuthorizationException($this->translate('ERROR_AUTHORIZATION'));
         }
 
         $form = $this->userForm;
@@ -115,19 +114,20 @@ final class UserController extends BaseController
                 // check for existing email
                 $query = $this->userTable;
                 $existingEmail = $query->queryBuilder()
-                   ->select(["u"])
+                   ->select(['u'])
                    ->from('Admin\Entity\User', 'u')
-                   ->where("u.email = :email")
-                   ->setParameter(":email", (string) $formData->getEmail())->getQuery()->getResult();
+                   ->where('u.email = :email')
+                   ->setParameter(':email', (string) $formData->getEmail())->getQuery()->getResult();
 
                 if (count($existingEmail) > 1) {
-                    return $this->setLayoutMessages($this->translate("EMAIL_EXIST")." <b>".$formData->getEmail()."</b> ".$this->translate("ALREADY_EXIST"), 'info');
+                    return $this->setLayoutMessages($this->translate('EMAIL_EXIST').' <b>'.$formData->getEmail().'</b> '.$this->translate('ALREADY_EXIST'), 'info');
                 }
 
                 $this->userTable->saveUser($user);
-                return $this->setLayoutMessages("&laquo;".$user->getFullName()."&raquo; ".$this->translate("SAVE_SUCCESS"), "success");
 
+                return $this->setLayoutMessages('&laquo;'.$user->getFullName().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
             }
+
             return $this->setLayoutMessages($form->getMessages(), 'error');
         }
     }
@@ -137,30 +137,29 @@ final class UserController extends BaseController
      */
     protected function disabledAction()
     {
-        $this->getView()->setTemplate("admin/user/disabled");
+        $this->getView()->setTemplate('admin/user/disabled');
 
         $query = $this->userTable;
         $q = $query->queryBuilder()
-                   ->select(["u"])
+                   ->select(['u'])
                    ->from('Admin\Entity\User', 'u')
-                   ->where("u.isDisabled = 1");
+                   ->where('u.isDisabled = 1');
 
         $paginator = $query->preparePagination($q, false);
-        $paginator->setCurrentPageNumber((int)$this->getParam("page", 1));
+        $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));
         $paginator->setItemCountPerPage($this->systemSettings('posts', 'user'));
         $this->getView()->paginator = $paginator;
 
         return $this->getView();
     }
 
-
     /**
      * In case that a user account has been disabled and it needs to be enabled call this action.
      */
     protected function enableAction()
     {
-        $this->userTable->toggleUserState((int)$this->getParam("id", 0), 0);
-        $this->setLayoutMessages($this->translate("USER_ENABLE_SUCCESS"), "success");
+        $this->userTable->toggleUserState((int) $this->getParam('id', 0), 0);
+        $this->setLayoutMessages($this->translate('USER_ENABLE_SUCCESS'), 'success');
     }
 
     /**
@@ -168,8 +167,8 @@ final class UserController extends BaseController
      */
     protected function disableAction()
     {
-        $this->userTable->toggleUserState((int)$this->getParam("id", 0), 1);
-        $this->setLayoutMessages($this->translate("USER_DISABLE_SUCCESS"), "success");
+        $this->userTable->toggleUserState((int) $this->getParam('id', 0), 1);
+        $this->setLayoutMessages($this->translate('USER_DISABLE_SUCCESS'), 'success');
     }
 
     /**
@@ -179,10 +178,10 @@ final class UserController extends BaseController
      */
     protected function detailAction()
     {
-        $this->getView()->setTemplate("admin/user/detail");
-        $user = $this->userTable->getUser((int)$this->getParam("id", 0));
+        $this->getView()->setTemplate('admin/user/detail');
+        $user = $this->userTable->getUser((int) $this->getParam('id', 0));
         $this->getView()->user = $user;
-        $this->addBreadcrumb(["reference"=>"/admin/user/detail/".$user->getId()."", "name"=>"&laquo;". $user->getFullName()."&raquo; ".$this->translate("DETAILS")]);
+        $this->addBreadcrumb(['reference' => '/admin/user/detail/'.$user->getId().'', 'name' => '&laquo;'.$user->getFullName().'&raquo; '.$this->translate('DETAILS')]);
 
         return $this->getView();
     }
@@ -196,9 +195,9 @@ final class UserController extends BaseController
     {
         $search = (string) $this->getParam('ajaxsearch', null);
         if (isset($search) && $this->getRequest()->isXmlHttpRequest()) {
-                $this->getView()->setTerminal(true);
-                $queryBuilder = $this->userTable->queryBuilder();
-                $results = $queryBuilder->select(["u"])
+            $this->getView()->setTerminal(true);
+            $queryBuilder = $this->userTable->queryBuilder();
+            $results = $queryBuilder->select(['u'])
                     ->from('Admin\Entity\User', 'u')
                     ->where('u.name = :name')
                     ->orWhere('u.surname LIKE :surname')
@@ -209,22 +208,22 @@ final class UserController extends BaseController
                     ->getQuery()
                     ->getResult();
 
-                $json = [];
-                $success = false;
+            $json = [];
+            $success = false;
 
-                if (!empty($results)) {
-                    foreach ($results as $key => $result) {
-                        $json[$key]["id"] = $result->getId();
-                        $json[$key]["name"] = $result->getName();
-                        $json[$key]["email"] = $result->getEmail();
-                        $json[$key]["buttons"] = $this->htmlButtons($result->getId(), $result->getFullName(), $result->isDisabled());
-                    }
-                    $success = true;
+            if (!empty($results)) {
+                foreach ($results as $key => $result) {
+                    $json[$key]['id'] = $result->getId();
+                    $json[$key]['name'] = $result->getName();
+                    $json[$key]['email'] = $result->getEmail();
+                    $json[$key]['buttons'] = $this->htmlButtons($result->getId(), $result->getFullName(), $result->isDisabled());
                 }
+                $success = true;
+            }
 
-                return new JsonModel(
+            return new JsonModel(
                     [
-                    'ajaxsearch' =>  Json::encode($json),
+                    'ajaxsearch' => Json::encode($json),
                     'statusType' => $success,
                     ]
                 );
@@ -232,13 +231,13 @@ final class UserController extends BaseController
     }
 
     /**
-     * Used to generate buttons for every user row
+     * Used to generate buttons for every user row.
      *
      * @method htmlButtons
      *
-     * @param int $id
+     * @param int    $id
      * @param string $fullName
-     * @param int $userStatus
+     * @param int    $userStatus
      *
      * @return string
      */
@@ -246,11 +245,11 @@ final class UserController extends BaseController
     {
         $action = 'disable';
         $class = 'delete';
-        $i18n = "DISABLE";
+        $i18n = 'DISABLE';
         if ($userStatus === 1) {
             $action = 'enable';
             $class = 'enable';
-            $i18n = "ENABLE";
+            $i18n = 'ENABLE';
         }
 
         return "<li class='table-cell flex-b'>

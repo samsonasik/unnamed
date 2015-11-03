@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller\Plugin\Factory;
 
 use Application\Controller\Plugin\SetLayoutMessages;
@@ -17,7 +16,7 @@ use Zend\Mvc\Controller\PluginManager;
 class SetLayoutMessagesFactory
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      *
      * @param PluginManager $pluginManager
      *
@@ -27,7 +26,7 @@ class SetLayoutMessagesFactory
     {
         $layout = $pluginManager->getController()->layout();
 
-        $flashmessenger = $pluginManager->get("flashmessenger");
+        $flashmessenger = $pluginManager->get('flashmessenger');
 
         $plugin = new SetLayoutMessages($layout, $flashmessenger);
 

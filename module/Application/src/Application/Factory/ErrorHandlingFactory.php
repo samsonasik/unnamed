@@ -8,16 +8,15 @@
  *
  * @link       TBA
  */
-
 namespace Application\Factory;
 
-use Zend\Log\Logger;
 use Application\Controller\ErrorHandling;
+use Zend\Log\Logger;
 
 final class ErrorHandlingFactory
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function __invoke()
     {

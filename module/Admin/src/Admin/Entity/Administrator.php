@@ -8,13 +8,12 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Administrator
+ * Administrator.
  *
  * @ORM\Entity
  * @ORM\Table(name="administrator")
@@ -22,7 +21,7 @@ use Doctrine\ORM\Mapping as ORM;
 final class Administrator
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -31,14 +30,14 @@ final class Administrator
     private $id = 0;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="user", type="integer", nullable=false)
      */
     private $user = 0;
 
     /**
-     * @var array $data
+     * @var array
      */
     public function exchangeArray(array $data = [])
     {

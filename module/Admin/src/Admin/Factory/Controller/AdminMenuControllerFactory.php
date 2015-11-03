@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Factory\Controller;
 
 use Admin\Controller\AdminMenuController;
@@ -17,7 +16,7 @@ use Zend\Mvc\Controller\ControllerManager;
 final class AdminMenuControllerFactory
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     public function __invoke(ControllerManager $controllerManager)
     {

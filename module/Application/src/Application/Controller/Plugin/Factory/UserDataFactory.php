@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller\Plugin\Factory;
 
 use Application\Controller\Plugin\UserData;
@@ -17,7 +16,7 @@ use Zend\Mvc\Controller\PluginManager;
 class UserDataFactory
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      *
      * @param PluginManager $pluginManager
      *
@@ -25,7 +24,7 @@ class UserDataFactory
      */
     public function __invoke(PluginManager $pluginManager)
     {
-        $redirect = $pluginManager->get("redirect");
+        $redirect = $pluginManager->get('redirect');
 
         $plugin = new UserData($redirect);
 

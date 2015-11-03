@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Form;
 
 use Zend\Form\Form;
@@ -27,7 +26,7 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
     public function __construct(array $config = [])
     {
         $this->config = $config;
-        parent::__construct("settings-general");
+        parent::__construct('settings-general');
     }
 
     public function init()
@@ -37,14 +36,14 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'site_name',
+            'type'       => 'Zend\Form\Element\Text',
+            'name'       => 'site_name',
             'attributes' => [
-                'required'   => true,
+                'required'    => true,
                 'size'        => 40,
-                'class'      => 'settings_site_name',
+                'class'       => 'settings_site_name',
                 'placeholder' => 'Site name',
-                'value' => $this->config['site_name'],
+                'value'       => $this->config['site_name'],
             ],
             'options' => [
                 'label' => 'Site name',
@@ -54,14 +53,14 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'site_tag_line',
+            'type'       => 'Zend\Form\Element\Text',
+            'name'       => 'site_tag_line',
             'attributes' => [
-                'required'   => false,
+                'required'    => false,
                 'size'        => 40,
                 'class'       => 'settings_site_tag_line',
                 'placeholder' => 'Tag line',
-                'value' => $this->config['site_tag_line'],
+                'value'       => $this->config['site_tag_line'],
             ],
             'options' => [
                 'label' => 'Tag line',
@@ -71,14 +70,14 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'site_description',
+            'type'       => 'Zend\Form\Element\Text',
+            'name'       => 'site_description',
             'attributes' => [
-                'required'   => false,
+                'required'    => false,
                 'size'        => 40,
                 'class'       => 'settings_site_description',
                 'placeholder' => 'Description',
-                'value' => $this->config['site_description'],
+                'value'       => $this->config['site_description'],
             ],
             'options' => [
                 'label' => 'Description',
@@ -88,14 +87,14 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'site_keywords',
+            'type'       => 'Zend\Form\Element\Text',
+            'name'       => 'site_keywords',
             'attributes' => [
-                'required'   => false,
+                'required'    => false,
                 'size'        => 40,
                 'class'       => 'settings_site_keywords',
                 'placeholder' => 'Keywords',
-                'value' => $this->config['site_keywords'],
+                'value'       => $this->config['site_keywords'],
             ],
             'options' => [
                 'label' => 'Keywords',
@@ -105,14 +104,14 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'site_text',
+            'type'       => 'Zend\Form\Element\Text',
+            'name'       => 'site_text',
             'attributes' => [
-                'required'   => false,
+                'required'    => false,
                 'size'        => 40,
                 'class'       => 'settings_site_text',
                 'placeholder' => 'Site text',
-                'value' => $this->config['site_text'],
+                'value'       => $this->config['site_text'],
             ],
             'options' => [
                 'label' => 'Site text',
@@ -122,14 +121,14 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Email',
-            'name' => 'system_email',
+            'type'       => 'Zend\Form\Element\Email',
+            'name'       => 'system_email',
             'attributes' => [
-                'required'   => false,
+                'required'    => false,
                 'size'        => 40,
                 'class'       => 'settings_system_email',
                 'placeholder' => 'System email',
-                'value' => $this->config["system_email"],
+                'value'       => $this->config['system_email'],
             ],
             'options' => [
                 'label' => 'System email',
@@ -139,14 +138,14 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'timezone',
+            'type'       => 'Zend\Form\Element\Text',
+            'name'       => 'timezone',
             'attributes' => [
-                'required'   => false,
+                'required'    => false,
                 'size'        => 40,
                 'class'       => 'settings_timezone',
                 'placeholder' => 'Timezone',
-                'value' => $this->config['timezone'],
+                'value'       => $this->config['timezone'],
             ],
             'options' => [
                 'label' => 'Timezone',
@@ -156,12 +155,12 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Checkbox',
-            'name' => 'robots_indexing',
+            'type'       => 'Zend\Form\Element\Checkbox',
+            'name'       => 'robots_indexing',
             'attributes' => [
-                'required'   => false,
+                'required'    => false,
                 'class'       => 'settings_robots_indexing',
-                'value' => $this->config['robots_indexing'],
+                'value'       => $this->config['robots_indexing'],
             ],
             'options' => [
                 'label' => 'Site indexing',
@@ -171,14 +170,14 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Select',
-            'name' => 'date_format',
+            'type'       => 'Zend\Form\Element\Select',
+            'name'       => 'date_format',
             'attributes' => [
-                'required'   => false,
+                'required'    => false,
                 'class'       => 'settings_date_format',
             ],
             'options' => [
-                'label' => 'Date',
+                'label'         => 'Date',
                 'value_options' => $this->config['date_formats'],
             ],
             ]
@@ -186,14 +185,14 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Select',
-            'name' => 'time_format',
+            'type'       => 'Zend\Form\Element\Select',
+            'name'       => 'time_format',
             'attributes' => [
-                'required'   => false,
+                'required'    => false,
                 'class'       => 'settings_time_format',
             ],
             'options' => [
-                'label' => 'Time',
+                'label'         => 'Time',
                 'value_options' => $this->config['time_formats'],
             ],
             ]
@@ -201,8 +200,8 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Csrf',
-            'name' => 's',
+            'type'    => 'Zend\Form\Element\Csrf',
+            'name'    => 's',
             'options' => [
                 'csrf_options' => [
                     'timeout' => 3600,
@@ -213,10 +212,10 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
 
         $this->add(
             [
-            'name' => 'submit',
+            'name'       => 'submit',
             'attributes' => [
                 'type'  => 'submit',
-                'id' => 'submitbutton',
+                'id'    => 'submitbutton',
             ],
             ]
         );
@@ -226,9 +225,9 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
     {
         return [
             [
-                "name" => "site_name",
-                "required" => true,
-                'filters' => [
+                'name'     => 'site_name',
+                'required' => true,
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
@@ -238,16 +237,16 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
                         'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 1,
-                            'max' => 255,
+                            'min'      => 1,
+                            'max'      => 255,
                         ],
                     ],
                 ],
             ],
             [
-                "name" => "site_tag_line",
-                "required" => false,
-                'filters' => [
+                'name'     => 'site_tag_line',
+                'required' => false,
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
@@ -256,16 +255,16 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
                         'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 1,
-                            'max' => 255,
+                            'min'      => 1,
+                            'max'      => 255,
                         ],
                     ],
                 ],
             ],
             [
-                "name" => "site_description",
-                "required" => false,
-                'filters' => [
+                'name'     => 'site_description',
+                'required' => false,
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
@@ -274,16 +273,16 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
                         'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 0,
-                            'max' => 150,
+                            'min'      => 0,
+                            'max'      => 150,
                         ],
                     ],
                 ],
             ],
             [
-                "name" => "site_keywords",
-                "required" => false,
-                'filters' => [
+                'name'     => 'site_keywords',
+                'required' => false,
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
@@ -292,16 +291,16 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
                         'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 0,
-                            'max' => 300,
+                            'min'      => 0,
+                            'max'      => 300,
                         ],
                     ],
                 ],
             ],
             [
-                "name" => "site_text",
-                "required" => false,
-                'filters' => [
+                'name'     => 'site_text',
+                'required' => false,
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
@@ -310,22 +309,22 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
                         'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 0,
-                            'max' => 300,
+                            'min'      => 0,
+                            'max'      => 300,
                         ],
                     ],
                 ],
             ],
             [
-                "name" => "system_email",
+                'name'     => 'system_email',
                 'required' => true,
-                'filters' => [
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
-                "validators" => [
+                'validators' => [
                     [
-                        'name' => 'EmailAddress',
+                        'name'    => 'EmailAddress',
                         'options' => [
                             'encoding' => 'UTF-8',
                             'messages' => ['emailAddressInvalidFormat' => "Email address doesn't appear to be valid."],
@@ -342,9 +341,9 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
                 ],
             ],
             [
-                "name" => "timezone",
-                "required" => true,
-                'filters' => [
+                'name'     => 'timezone',
+                'required' => true,
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
@@ -354,23 +353,23 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
                         'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 1,
-                            'max' => 255,
+                            'min'      => 1,
+                            'max'      => 255,
                         ],
                     ],
                 ],
             ],
             [
-                "name" => "robots_indexing",
-                "required" => false,
-                'filters' => [
+                'name'     => 'robots_indexing',
+                'required' => false,
+                'filters'  => [
                     ['name' => 'Int'],
                 ],
             ],
             [
-                "name" => "date_format",
-                "required" => true,
-                'filters' => [
+                'name'     => 'date_format',
+                'required' => true,
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
@@ -385,9 +384,9 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
                 ],
             ],
             [
-                "name" => "time_format",
-                "required" => true,
-                'filters' => [
+                'name'     => 'time_format',
+                'required' => true,
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],

@@ -8,13 +8,12 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * AdminMenu
+ * AdminMenu.
  *
  * @ORM\Entity
  * @ORM\Table(name="adminmenu")
@@ -23,7 +22,7 @@ use Doctrine\ORM\Mapping as ORM;
 final class AdminMenu
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -39,7 +38,7 @@ final class AdminMenu
     private $caption;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="menuOrder", type="integer", nullable=false)
      */
@@ -74,14 +73,14 @@ final class AdminMenu
     private $description;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="parent", type="integer", nullable=false)
      */
     private $parent = 0;
 
     /**
-     * @var array $data
+     * @var array
      */
     public function exchangeArray(array $data = [])
     {
@@ -134,7 +133,7 @@ final class AdminMenu
     /**
      * Set caption.
      *
-     * @param String $caption
+     * @param string $caption
      */
     public function setCaption($caption)
     {
@@ -144,7 +143,7 @@ final class AdminMenu
     /**
      * Get caption.
      *
-     * @return String
+     * @return string
      */
     public function getCaption()
     {
@@ -174,7 +173,7 @@ final class AdminMenu
     /**
      * Set controller.
      *
-     * @param String $controller
+     * @param string $controller
      */
     public function setController($controller)
     {
@@ -184,7 +183,7 @@ final class AdminMenu
     /**
      * Get controller.
      *
-     * @return String
+     * @return string
      */
     public function getController()
     {
@@ -194,7 +193,7 @@ final class AdminMenu
     /**
      * Set action.
      *
-     * @param String $action
+     * @param string $action
      */
     public function setAction($action)
     {
@@ -204,7 +203,7 @@ final class AdminMenu
     /**
      * Get action.
      *
-     * @return String
+     * @return string
      */
     public function getAction()
     {
@@ -214,7 +213,7 @@ final class AdminMenu
     /**
      * Set class.
      *
-     * @param String $class
+     * @param string $class
      */
     public function setClass($class)
     {
@@ -224,7 +223,7 @@ final class AdminMenu
     /**
      * Get class.
      *
-     * @return String
+     * @return string
      */
     public function getClass()
     {

@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller;
 
 use Application\Form\ContactForm;
@@ -36,18 +35,18 @@ final class ContactController extends BaseController
      */
     public function indexAction()
     {
-        $this->getView()->setTemplate("application/contact/index");
+        $this->getView()->setTemplate('application/contact/index');
 
         /**
-         * @var $form ContactForm
+         * @var ContactForm
          */
         $form = $this->contactForm;
 
-        $form->get("email")->setLabel($this->translate("EMAIL"));
-        $form->get("name")->setLabel($this->translate("NAME"))->setAttribute("placeholder", $this->translate("ENTER_NAME"));
-        $form->get("subject")->setLabel($this->translate("SUBJECT"))->setAttribute("placeholder", $this->translate("ENTER_SUBJECT"));
-        $form->get("captcha")->setLabel($this->translate("CAPTCHA"))->setAttribute("placeholder", $this->translate("ENTER_CAPTCHA"));
-        $form->get("message")->setLabel($this->translate("MESSAGE"))->setAttribute("placeholder", $this->translate("ENTER_MESSAGE"));
+        $form->get('email')->setLabel($this->translate('EMAIL'));
+        $form->get('name')->setLabel($this->translate('NAME'))->setAttribute('placeholder', $this->translate('ENTER_NAME'));
+        $form->get('subject')->setLabel($this->translate('SUBJECT'))->setAttribute('placeholder', $this->translate('ENTER_SUBJECT'));
+        $form->get('captcha')->setLabel($this->translate('CAPTCHA'))->setAttribute('placeholder', $this->translate('ENTER_CAPTCHA'));
+        $form->get('message')->setLabel($this->translate('MESSAGE'))->setAttribute('placeholder', $this->translate('ENTER_MESSAGE'));
 
         $this->getView()->form = $form;
         if ($this->getRequest()->isPost()) {
@@ -56,10 +55,10 @@ final class ContactController extends BaseController
             if ($form->isValid()) {
                 $formData = $form->getData();
                 try {
-                    $this->Mailing()->sendMail($this->systemSettings("general", "system_email"), '', $formData["subject"], $formData["message"], $formData["email"], $formData["name"]);
-                    $this->setLayoutMessages($this->translate("CONTACT_SUCCESS"), 'success');
+                    $this->Mailing()->sendMail($this->systemSettings('general', 'system_email'), '', $formData['subject'], $formData['message'], $formData['email'], $formData['name']);
+                    $this->setLayoutMessages($this->translate('CONTACT_SUCCESS'), 'success');
                 } catch (\Exception $exception) {
-                    $this->setLayoutMessages($this->translate("CONTACT_ERROR"), 'error');
+                    $this->setLayoutMessages($this->translate('CONTACT_ERROR'), 'error');
                 }
             } else {
                 $this->setLayoutMessages($form->getMessages(), 'error');

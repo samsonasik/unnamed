@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Themes\Factory;
 
 use DirectoryIterator;

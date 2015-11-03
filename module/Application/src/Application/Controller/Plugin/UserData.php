@@ -8,13 +8,12 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller\Plugin;
 
-use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 use Application\Exception\AuthorizationException;
-use Zend\Mvc\Controller\Plugin\Redirect;
 use Zend\Authentication\AuthenticationService;
+use Zend\Mvc\Controller\Plugin\AbstractPlugin;
+use Zend\Mvc\Controller\Plugin\Redirect;
 
 final class UserData extends AbstractPlugin
 {
@@ -61,27 +60,30 @@ final class UserData extends AbstractPlugin
      * The redirect serves parameter is used to determinated
      * if we need to redirect the user to somewhere else or just leave him access the requested area
      *
-     * @param bool $redirect
+     * @param bool   $redirect
      * @param string $errorString
      * @param string $url
      *
      * @return mixed
      */
-    public function checkIdentity($redirect = true, $errorString = "Error", $url = "/")
+    public function checkIdentity($redirect = true, $errorString = 'Error', $url = '/')
     {
         if ($this->auth->hasIdentity()) {
-            if (isset($this->auth->getIdentity()["id"])) {
+            if (isset($this->auth->getIdentity()['id'])) {
                 /*
                  * If everything went fine, just return true and let the user access the requested area or make a redirect
                  */
                 if ($redirect === false) {
                     return true;
                 }
+
                 return $this->redirect->toUrl($url);
             }
+
             return $this->clearUserData($errorString); // something is wrong, clear all user data
         }
-        return null;
+
+        return;
     }
 
     /**

@@ -8,17 +8,16 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller\Plugin;
 
-use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 use Zend\Escaper\Escaper;
+use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 use Zend\Mvc\Controller\Plugin\Params;
 
 final class GetUrlParams extends AbstractPlugin
 {
     /**
-     * @var Params $params
+     * @var Params
      */
     private $params = null;
 
@@ -33,8 +32,8 @@ final class GetUrlParams extends AbstractPlugin
     /**
      * Shorthand method for getting params from URLs. Makes code easier to edit and avoids DRY code.
      *
-     * @param String $paramName
-     * @param mixed $default
+     * @param string $paramName
+     * @param mixed  $default
      *
      * @return mixed
      */

@@ -8,14 +8,13 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Model;
 
+use Admin\Entity\Menu;
 use Admin\Exception\RuntimeException;
 use Doctrine\ORM\EntityManager;
-use Admin\Entity\Menu;
-use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as PaginatorAdapter;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as PaginatorAdapter;
 use Zend\Paginator\Paginator as ZendPaginator;
 
 final class MenuTable
@@ -43,7 +42,7 @@ final class MenuTable
 
     /**
      * @param Query|QueryBuilder $query               A Doctrine ORM query or query builder.
-     * @param boolean            $fetchJoinCollection Whether the query joins a collection (true by default).
+     * @param bool               $fetchJoinCollection Whether the query joins a collection (true by default).
      *
      * @return Paginator
      */
@@ -61,7 +60,7 @@ final class MenuTable
     }
 
     /**
-     * @param int $menuId menu id
+     * @param int $menuId   menu id
      * @param int $language user language
      *
      * @throws RuntimeException If menu is not found
@@ -71,9 +70,9 @@ final class MenuTable
     public function getMenu($menuId = 0, $language = 1)
     {
         $menu = $this->queryBuilder();
-        $menu->select(["m"]);
+        $menu->select(['m']);
         $menu->from('Admin\Entity\Menu', 'm');
-        $menu->where("m.id = :id AND m.language = :language");
+        $menu->where('m.id = :id AND m.language = :language');
         $menu->setParameter(':id', (int) $menuId);
         $menu->setParameter(':language', (int) $language);
         $menu = $menu->getQuery()->getSingleResult();
@@ -88,7 +87,7 @@ final class MenuTable
     /**
      * Delete a menu based on the provided id and language.
      *
-     * @param int $menuId menu id
+     * @param int $menuId   menu id
      * @param int $language user language
      */
     public function deleteMenu($menuId = 0, $language = 1)
@@ -116,9 +115,9 @@ final class MenuTable
     /**
      * This method can disable or enable menus.
      *
-     * @param int $menuId menu id
+     * @param int $menuId   menu id
      * @param int $language user language
-     * @param int $state 0 - deactivated, 1 - active
+     * @param int $state    0 - deactivated, 1 - active
      */
     public function toggleActiveMenu($menuId = 0, $language = 1, $state = 0)
     {

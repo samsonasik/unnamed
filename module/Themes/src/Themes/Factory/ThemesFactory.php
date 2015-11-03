@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Themes\Factory;
 
 use Zend\ServiceManager\ServiceLocatorInterface;

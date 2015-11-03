@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller\Plugin;
 
 use Zend\Mvc\Controller\Plugin\AbstractPlugin;
@@ -17,7 +16,7 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 final class GetTableModel extends AbstractPlugin
 {
     /**
-     * @var ServiceLocatorInterface $serviceLocator
+     * @var ServiceLocatorInterface
      */
     private $serviceLocator = null;
 

@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Factory\Form;
 
 use Admin\Form\AdministratorForm;
@@ -17,7 +16,7 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 final class AdministratorFormFactory
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     public function __invoke(ServiceLocatorInterface $serviceLocator)
     {

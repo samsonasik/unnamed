@@ -8,28 +8,27 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller\Plugin;
 
-use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 use Zend\Http\PhpEnvironment\Response;
+use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 use Zend\View\Model\ViewModel;
 
 final class ErrorCodes extends AbstractPlugin
 {
     /**
-     * @var ViewModel $layout
+     * @var ViewModel
      */
     private $layout = null;
 
     /**
-     * @var Response $response
+     * @var Response
      */
     private $response = null;
 
     /**
      * @param ViewModel $layout
-     * @param Response $response
+     * @param Response  $response
      */
     public function __construct(ViewModel $layout = null, Response $response = null)
     {
@@ -45,9 +44,9 @@ final class ErrorCodes extends AbstractPlugin
         $this->response->setStatusCode((int) $code);
         $this->layout->setVariables(
             [
-            'message' => '404 Not found',
-            'reason' => 'The link you have requested doesn\'t exists',
-            'exception' => "",
+            'message'   => '404 Not found',
+            'reason'    => 'The link you have requested doesn\'t exists',
+            'exception' => '',
             ]
         );
         $this->layout->setTemplate('error/index');

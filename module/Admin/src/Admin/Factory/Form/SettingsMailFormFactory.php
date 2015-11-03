@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Factory\Form;
 
 use Admin\Form\SettingsMailForm;
@@ -17,13 +16,13 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 final class SettingsMailFormFactory
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      */
     public function __invoke(ServiceLocatorInterface $serviceLocator)
     {
-        $config = $serviceLocator->getServiceLocator()->get("Config");
+        $config = $serviceLocator->getServiceLocator()->get('Config');
 
-        $form = new SettingsMailForm($config['system_config']["mail"]);
+        $form = new SettingsMailForm($config['system_config']['mail']);
 
         return $form;
     }

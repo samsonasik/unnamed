@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin;
 
 use Zend\EventManager\EventInterface;
@@ -27,7 +26,7 @@ final class Module implements ConfigProviderInterface, InitProviderInterface
     {
         $moduleManager->getEventManager()->getSharedManager()->attach(
             __NAMESPACE__,
-            "dispatch",
+            'dispatch',
             function (EventInterface $e) {
                 $e->getTarget()->layout('layout/admin');
             }

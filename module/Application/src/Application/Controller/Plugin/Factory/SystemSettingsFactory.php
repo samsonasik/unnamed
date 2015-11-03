@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller\Plugin\Factory;
 
 use Application\Controller\Plugin\SystemSettings;
@@ -17,7 +16,7 @@ use Zend\Mvc\Controller\PluginManager;
 class SystemSettingsFactory
 {
     /**
-     * @{inheritDoc}
+     * {@inheritdoc}
      *
      * @param PluginManager $pluginManager
      *
@@ -27,9 +26,9 @@ class SystemSettingsFactory
     {
         $serviceLocator = $pluginManager->getController()->getServiceLocator();
 
-        $config = $serviceLocator->get("Config");
+        $config = $serviceLocator->get('Config');
 
-        $plugin = new SystemSettings($config["system_config"]);
+        $plugin = new SystemSettings($config['system_config']);
 
         return $plugin;
     }

@@ -8,10 +8,7 @@
  *
  * @link       TBA
  */
-
 namespace Application\Exception;
-
-use Application\Exception\ExceptionInterface;
 
 final class InvalidArgumentException extends \InvalidArgumentException implements ExceptionInterface
 {

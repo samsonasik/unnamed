@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Themes\Factory\Controller;
 
 use Themes\Controller\IndexController;

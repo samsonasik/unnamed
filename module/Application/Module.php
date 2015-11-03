@@ -8,15 +8,14 @@
  *
  * @link       TBA
  */
-
 namespace Application;
 
-use Zend\Mvc\ModuleRouteListener;
 use Zend\EventManager\EventInterface;
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\BootstrapListenerInterface;
+use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\InitProviderInterface;
 use Zend\ModuleManager\ModuleManagerInterface;
+use Zend\Mvc\ModuleRouteListener;
 use Zend\Session\Container;
 
 final class Module implements ConfigProviderInterface, BootstrapListenerInterface, InitProviderInterface
@@ -35,7 +34,7 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
     {
         $moduleManager->getEventManager()->getSharedManager()->attach(
             __NAMESPACE__,
-            "dispatch",
+            'dispatch',
             function (EventInterface $event) {
                 $event->getTarget()->layout('layout/layout');
             }
@@ -46,6 +45,7 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
      * Listen to the bootstrap event.
      *
      * @param EventInterface $event
+     *
      * @return array|void
      */
     public function onBootstrap(EventInterface $event)
@@ -57,11 +57,11 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
         $moduleRouteListener->attach($eventManager);
 
         $sessionManager = $this->service->get('initSession');
-        $sessionManager->setName("zpc")->start();
+        $sessionManager->setName('zpc')->start();
         Container::setDefaultManager($sessionManager);
 
-        $eventManager->attach("dispatch", [$this, 'setTitleAndTranslation'], -10);
-        $eventManager->attach("dispatch.error", [$this, "onError"], 2);
+        $eventManager->attach('dispatch', [$this, 'setTitleAndTranslation'], -10);
+        $eventManager->attach('dispatch.error', [$this, 'onError'], 2);
     }
 
     /**
@@ -84,9 +84,9 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
     public function setTitleAndTranslation(EventInterface $event)
     {
         $route = $event->getRouteMatch();
-        $title = $this->service->get('ControllerPluginManager')->get("systemsettings");
+        $title = $this->service->get('ControllerPluginManager')->get('systemsettings');
         $viewHelper = $this->service->get('ViewHelperManager');
-        $lang = new Container("translations");
+        $lang = new Container('translations');
         $translator = $this->service->get('translator');
 
         /*
@@ -99,10 +99,10 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
         /*
          * Load page title
          */
-        $action = ($route->getParam('post') ? ' - ' . $route->getParam('post') : ucfirst($route->getParam('__CONTROLLER__')));
+        $action = ($route->getParam('post') ? ' - '.$route->getParam('post') : ucfirst($route->getParam('__CONTROLLER__')));
 
         $headTitleHelper = $viewHelper->get('headTitle');
-        $headTitleHelper->append($title->__invoke('general', 'site_name') . " " . $action);
+        $headTitleHelper->append($title->__invoke('general', 'site_name').' '.$action);
     }
 
     /**
@@ -110,6 +110,6 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
      */
     public function getConfig()
     {
-        return include __DIR__ . '/config/module.config.php';
+        return include __DIR__.'/config/module.config.php';
     }
 }

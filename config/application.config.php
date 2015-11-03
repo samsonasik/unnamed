@@ -1,5 +1,10 @@
 <?php
 
+/*
+ * Set global ENV. Used for debugging.
+ */
+define('APP_ENV', getenv('APPLICATION_ENV'));
+
 $modules = [];
 
 $modules[] = 'Application';

@@ -4,7 +4,6 @@
 auth.json
 .project
 .settings
-composer.lock
 data/logs/
 data/cache/frontend
 data/cache/modules

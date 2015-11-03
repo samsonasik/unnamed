@@ -14,7 +14,7 @@
  */
 define('APP_ENV', getenv('APPLICATION_ENV'));
 
-/**
+/*
  * All configurations options, used in two or more modules must go in here.
  */
 return [

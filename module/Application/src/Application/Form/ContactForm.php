@@ -29,25 +29,25 @@ final class ContactForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'name',
+            'type'       => 'Zend\Form\Element\Text',
+            'name'       => 'name',
             'attributes' => [
                 'required' => true,
-                'min' => 3,
-                'max' => 30,
-                'size' => 30,
+                'min'      => 3,
+                'max'      => 30,
+                'size'     => 30,
             ],
             ]
         );
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Email',
-            'name' => 'email',
+            'type'       => 'Zend\Form\Element\Email',
+            'name'       => 'email',
             'attributes' => [
-                'required' => true,
-                'min' => 3,
-                'size' => 30,
+                'required'    => true,
+                'min'         => 3,
+                'size'        => 30,
                 'placeholder' => 'johnsmith@example.com',
             ],
             ]
@@ -55,36 +55,36 @@ final class ContactForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'subject',
+            'type'       => 'Zend\Form\Element\Text',
+            'name'       => 'subject',
             'attributes' => [
                 'required' => true,
-                'min' => 3,
-                'size' => 30,
+                'min'      => 3,
+                'size'     => 30,
             ],
             ]
         );
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Textarea',
-            'name' => 'message',
+            'type'       => 'Zend\Form\Element\Textarea',
+            'name'       => 'message',
             'attributes' => [
                 'required' => true,
-                'rows' => 8,
-                'cols' => 70,
+                'rows'     => 8,
+                'cols'     => 70,
             ],
             ]
         );
 
         $captchaImage = new CaptchaImage(
             [
-            'font' => 'public/layouts/default/front/fonts/arial.ttf',
-            'width' => 180,
-            'height' => 50,
-            'size' => 30,
-            'fsize' => 20,
-            'dotNoiseLevel' => 10,
+            'font'           => 'public/layouts/default/front/fonts/arial.ttf',
+            'width'          => 180,
+            'height'         => 50,
+            'size'           => 30,
+            'fsize'          => 20,
+            'dotNoiseLevel'  => 10,
             'lineNoiseLevel' => 2,
             ]
         );
@@ -93,11 +93,11 @@ final class ContactForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Captcha',
-            'name' => 'captcha',
+            'type'       => 'Zend\Form\Element\Captcha',
+            'name'       => 'captcha',
             'attributes' => [
                 'class' => 'captcha-input',
-                'size' => 30,
+                'size'  => 30,
             ],
             'options' => [
                 'captcha' => $captchaImage,
@@ -107,18 +107,18 @@ final class ContactForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'name' => 'submit',
+            'name'       => 'submit',
             'attributes' => [
                 'type' => 'submit',
-                'id' => 'submitbutton',
+                'id'   => 'submitbutton',
             ],
             ]
         );
 
         $this->add(
             [
-            'type' => 'Zend\Form\Element\Csrf',
-            'name' => 's',
+            'type'    => 'Zend\Form\Element\Csrf',
+            'name'    => 's',
             'options' => [
                 'csrf_options' => [
                     'timeout' => 320,
@@ -132,81 +132,81 @@ final class ContactForm extends Form implements InputFilterProviderInterface
     {
         return [
             [
-                'name' => 'email',
+                'name'     => 'email',
                 'required' => true,
-                'filters' => [
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
                 'validators' => [
                     [
-                        'name' => 'EmailAddress',
+                        'name'    => 'EmailAddress',
                         'options' => [
                             'encoding' => 'UTF-8',
                             'messages' => ['emailAddressInvalidFormat' => "Email address doesn't appear to be valid."],
                         ],
                     ],
                     [
-                        'name' => 'StringLength',
+                        'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 5,
+                            'min'      => 5,
                         ],
                     ],
                     ['name' => 'NotEmpty'],
                 ],
             ],
             [
-                'name' => 'subject',
+                'name'     => 'subject',
                 'required' => true,
-                'filters' => [
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
                 'validators' => [
                     [
-                        'name' => 'StringLength',
+                        'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 3,
-                            'max' => 100,
+                            'min'      => 3,
+                            'max'      => 100,
                         ],
                     ],
                     ['name' => 'NotEmpty'],
                 ],
             ],
             [
-                'name' => 'message',
+                'name'     => 'message',
                 'required' => true,
-                'filters' => [
+                'filters'  => [
                     ['name' => 'StripTags'],
                 ],
                 'validators' => [
                     [
-                        'name' => 'StringLength',
+                        'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 3,
-                            'max' => 3000,
+                            'min'      => 3,
+                            'max'      => 3000,
                         ],
                     ],
                     ['name' => 'NotEmpty'],
                 ],
             ],
             [
-                'name' => 'name',
+                'name'     => 'name',
                 'required' => true,
-                'filters' => [
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
                 'validators' => [
                     [
-                        'name' => 'StringLength',
+                        'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min' => 3,
-                            'max' => 30,
+                            'min'      => 3,
+                            'max'      => 30,
                         ],
                     ],
                     ['name' => 'NotEmpty'],

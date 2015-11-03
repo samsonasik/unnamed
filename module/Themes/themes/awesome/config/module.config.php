@@ -5,12 +5,12 @@ return [
      * These are mandatory, but if anyone who doesn't want to put text, just leave them empty: => ''.
      */
     'description' => 'Application awesome theme that comes with the installation',
-    'title' => 'Awesome',
-    'screenshot' => 'default.png',
-    'author' => 'Stanimir Dimitrov',
-    'version' => '1.0',
-    'date' => '15.10.2015',
-    'website' => '',
+    'title'       => 'Awesome',
+    'screenshot'  => 'default.png',
+    'author'      => 'Stanimir Dimitrov',
+    'version'     => '1.0',
+    'date'        => '15.10.2015',
+    'website'     => '',
 
     /*
      * The only path structure that is a must and must stay this way is /public/themes/THEME_NAME/ and /module/Themes/THEME_NAME/.
@@ -43,7 +43,7 @@ return [
     /*
      * template_map is not necessary, but it's good for performance.
      */
-    'template_map' => include __DIR__.'/../template_map.php',
+    'template_map'        => include __DIR__.'/../template_map.php',
     'template_path_stack' => [
         'awesome' => __DIR__.'/../view',
     ],

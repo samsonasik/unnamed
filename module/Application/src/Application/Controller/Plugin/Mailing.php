@@ -56,13 +56,13 @@ final class Mailing extends AbstractPlugin
         $transport = new SmtpTransport();
         $options = new SmtpOptions(
             [
-            'host' => $this->settings->__invoke('mail', 'host'),
-            'name' => $this->settings->__invoke('mail', 'name'),
-            'connection_class' => $this->settings->__invoke('mail', 'connection_class'),
+            'host'              => $this->settings->__invoke('mail', 'host'),
+            'name'              => $this->settings->__invoke('mail', 'name'),
+            'connection_class'  => $this->settings->__invoke('mail', 'connection_class'),
             'connection_config' => [
                 'username' => $this->settings->__invoke('mail', 'username'),
                 'password' => $this->settings->__invoke('mail', 'password'),
-                'ssl' => $this->settings->__invoke('mail', 'ssl'),
+                'ssl'      => $this->settings->__invoke('mail', 'ssl'),
             ],
             'port' => $this->settings->__invoke('mail', 'port'),
             ]

@@ -1,0 +1,44 @@
+/**
+ * @copyright  2015 (c) Stanimir Dimitrov.
+ * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
+ *
+ * @version    0.0.21
+ *
+ * @link       TBA
+ */
+
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide.  480px - 640px */
+@media screen and (min-width: 30.000em) and (max-width: 40.000em) {
+    #content-wrapper {
+        width: 100%;
+        min-height: 100%;
+    }
+
+    #header {
+
+    }
+
+    #main {
+
+    }
+
+    #nav {
+
+    }
+
+    .aside {
+
+    }
+
+    #aside-menu-left {
+
+    }
+
+    #aside-menu-right {
+
+    }
+
+    #footer {
+
+    }
+}

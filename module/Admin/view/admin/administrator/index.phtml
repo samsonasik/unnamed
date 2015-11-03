@@ -1,0 +1,44 @@
+<section>
+    <div class="table-style">
+        <ul class="table-header">
+            <li class="table-cell"><?=$this->translate("NAME")?></li>
+            <li class="table-cell flex-b"><?=$this->translate("DETAILS")?></li>
+            <li class="table-cell flex-b"><?=$this->translate("EDIT")?></li>
+            <li class="table-cell flex-b"><?=$this->translate("DELETE")?></li>
+        </ul>
+<?php
+        /**
+         * @var $administrator array
+         */
+        foreach($this->paginator as $administrator) {
+?>
+        <ul class="table-row">
+            <li class="table-cell">
+                <?=$administrator["name"]?>
+            </li>
+            <li class="table-cell flex-b">
+                <a title='<?=$this->translate("DETAILS")?>' class='btn blue btn-sm' href='<?=$this->url("admin/default", ['controller' => "user", "action" => "detail", "id" => $administrator["user"]])?>'> <i class='fa fa-info'></i></a>
+            </li>
+            <li class="table-cell flex-b">
+                <a title='<?=$this->translate("EDIT")?>' href='<?=$this->url("admin/default", ['controller' => "administrator", "action" => "edit", "id" => $administrator["user"]])?>' class='btn btn-sm orange'><i class='fa fa-pencil'></i></a>
+            </li>
+            <li class="table-cell flex-b">
+                <button role="button" aria-pressed="false" aria-label="<?=$this->translate("DELETE")?>" type="button" title='<?=$this->translate("DELETE")?>' id='<?=$administrator["user"]?>' class='btn btn-sm delete dialog_delete'><i class='fa fa-trash-o'></i></button>
+                <div role="alertdialog" aria-labelledby="dialog<?=$administrator["user"]?>Title" class='delete_<?=$administrator["user"]?> dialog_hide'>
+                    <p id="dialog<?=$administrator["user"]?>Title"><?=$this->translate("DELETE_CONFIRM_TEXT")?> add user name here</p>
+                    <ul>
+                        <li>
+                            <a class='btn delete' href='<?=$this->url("admin/default", ['controller' => "administrator", "action" => "delete", "id" => $administrator["user"]])?>'><i class='fa fa-trash-o'></i> <?=$this->translate("DELETE")?></a>
+                        </li>
+                        <li>
+                            <button role="button" aria-pressed="false" aria-label="<?=$this->translate("CANCEL")?>" type="button" title='<?=$this->translate("CANCEL")?>' class='btn btn-default cancel'><i class='fa fa-times'></i> <?=$this->translate("CANCEL")?></button>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+<?php
+        }
+?>
+    </div>
+</section>

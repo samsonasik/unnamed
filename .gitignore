@@ -1,0 +1,15 @@
+._*
+.~lock.*
+.buildpath
+auth.json
+.project
+.settings
+composer.lock
+data/logs/
+data/cache/frontend
+data/cache/modules
+vendor
+composerInstalation
+node_modules
+phpcs.log
+phplog.log

@@ -1,0 +1,43 @@
+<?php
+    /**
+    * @var $user Admin\Model\User
+    */
+    $user = $this->user;
+?>
+<section>
+    <p>
+        <a href="<?=$this->url("admin/default", ['controller' => "user"])?>" class="btn btn-default">
+            <i class="fa fa-chevron-left"></i> <?=$this->translate("BACK")?>
+        </a>
+    </p>
+    <div class='table-style'>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("NAME")?></li>
+            <li class="table-cell"><?=$user->getFullName()?></li>
+        </ul>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("EMAIL")?></li>
+            <li class="table-cell"><?=$user->getEmail()?></li>
+        </ul>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("LAST_LOGIN")?></li>
+            <li class="table-cell"><?=$user->getLastLogin()?></li>
+        </ul>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("DISABLED")?></li>
+            <li class="table-cell"><?php if ($user->isDisabled()) { ?> <i class='fa fa-check'></i> <?php } else {  ?> <i class='fa fa-times'></i> <?php } ?></li>
+        </ul>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("REGISTERED")?></li>
+            <li class="table-cell"><?=$user->getRegistered()?></li>
+        </ul>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("BIRTHDATE")?></li>
+            <li class="table-cell"><?=$user->getBirthDate()?></li>
+        </ul>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("ADMINISTRATOR")?></li>
+            <li class="table-cell"><?php if ($user->getAdmin()) { ?> <i class='fa fa-check'></i> <?php } else {  ?> <i class='fa fa-times'></i> <?php } ?></li>
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,70 @@
+<section>
+    <div class="table-style">
+        <ul class="table-header">
+              <li class="table-cell"><?=$this->translate("TITLE")?></li>
+              <li class="table-cell"><?=$this->translate("DATE")?></li>
+              <li class="table-cell flex-b"><?=$this->translate("DETAILS")?></li>
+              <li class="table-cell flex-b"><?=$this->translate("EDIT")?></li>
+              <li class="table-cell flex-b"><?=$this->translate("ACTIVE")?></li>
+              <li class="table-cell flex-b"><?=$this->translate("DELETE")?></li>
+        </ul>
+<?php
+        /**
+         * @var $content Admin\Model\Content
+         */
+        foreach($this->paginator as $content) {
+?>
+        <ul class="table-row">
+            <li class="table-cell"><?=$content->getTitle()?></li>
+            <li class="table-cell"><?=$content->getDate()?></li>
+            <li class="table-cell flex-b">
+                <a title='<?=$this->translate("DETAILS")?>' class='btn blue btn-default btn-sm' href='<?=$this->url("admin/default", ["controller" => "content", "action" => "detail", "id" => $content->getId()])?>'>
+                    <i class='fa fa-info'></i>
+                </a>
+            </li>
+            <li class="table-cell flex-b">
+                <a title='<?=$this->translate("EDIT_CONTENT");?>' href='<?=$this->url("admin/default", ["controller" => "content", "action" => "edit", "id" => $content->getId()])?>' class='btn btn-sm orange'>
+                    <i class='fa fa-pencil'></i>
+                </a>
+            </li>
+<?php
+        if ($content->isActive() == 0) {
+?>
+            <li class="table-cell flex-b">
+                <a title='<?=$this->translate("DEACTIVATED");?>' href='<?=$this->url("admin/default", ["controller" => "content", "action" => "activate", "id" => $content->getId()])?>' class='btn btn-sm deactivated'>
+                    <i class='fa fa-minus-square-o'></i>
+                </a>
+            </li>
+<?php
+        } else {
+?>
+            <li class="table-cell flex-b">
+                <a title='<?=$this->translate("ACTIVE");?>' href='<?=$this->url("admin/default", ["controller" => "content", "action" => "deactivate", "id" => $content->getId()])?>' class='btn btn-sm active'>
+                    <i class='fa fa-check-square-o'></i>
+                </a>
+            </li>
+<?php
+        }
+?>
+            <li class="table-cell flex-b">
+                <button role="button" aria-pressed="false" aria-label="<?=$this->translate("DELETE")?>" id='<?=$content->getId()?>' type="button" class='btn btn-sm delete dialog_delete'><i class='fa fa-trash-o'></i></button>
+                <div role="alertdialog" aria-labelledby="dialog<?=$content->getId()?>Title" class='delete_<?=$content->getId()?> dialog_hide'>
+                    <p id="dialog<?=$content->getId()?>Title"><?=$this->translate("DELETE_CONFIRM_TEXT")?> &laquo;<?=$content->getTitle()?>&raquo;</p>
+                    <ul>
+                        <li>
+                            <a class='btn delete' href='<?=$this->url("admin/default", ["controller" => "content", "action" => "delete", "id" => $content->getId()])?>'><i class='fa fa-trash-o'></i>&nbsp; <?=$this->translate("DELETE")?></a>
+                        </li>
+                        <li>
+                            <button role="button" aria-pressed="false" aria-label="<?=$this->translate("CANCEL")?>" type="button" title='<?=$this->translate("CANCEL")?>' class='btn btn-default cancel'><i class='fa fa-times'></i> <?=$this->translate("CANCEL")?></button>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+<?php
+        }
+?>
+    </div>
+</section>
+<?php
+    echo $this->paginationControl($this->paginator, 'sliding', 'admin/pagination', ['route' => 'admin/default']);

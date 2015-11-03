@@ -1,0 +1,72 @@
+/**
+ * @copyright  2015 (c) Stanimir Dimitrov.
+ * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
+ *
+ * @version    0.0.21
+ *
+ * @link       TBA
+ */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: black !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]::after {
+        content: ": " attr(href);
+    }
+
+    abbr[title]::after {
+        content: ": " attr(title);
+    }
+
+    a:after,
+    a[href^="javascript:"]::after,
+    a[href^="#"]::after,
+    a[href^=""]::after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

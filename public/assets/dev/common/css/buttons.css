@@ -1,0 +1,94 @@
+/**
+ * @copyright  2015 (c) Stanimir Dimitrov.
+ * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
+ *
+ * @version    0.0.21
+ *
+ * @link       TBA
+ */
+
+/* Buttons */
+/* Main button class */
+.btn, #submitbutton {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn-default, #submitbutton {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.btn-sm {
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+.cancel {
+
+}
+
+/* Buttons for language translation */
+.toggle-translation-box {
+    display: none;
+    background: #eee;
+    width: 50%;
+    height: 25%;
+}
+
+button.add-new-translation {
+
+}
+
+/* Button colors */
+.blue {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.orange {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+
+.delete {
+    background-color: #a90329;
+    color: #fff;
+    border-color: #900323;
+}
+
+.delete:hover {
+    color: #fff;
+    background-color: #81021f;
+    border-color: #540114
+}
+
+.success, .active, .enable {
+    color: #FFF;
+    background: #5cb85c;
+}
+
+.error, .deactivated {
+    color: #FFF;
+    background: #C0392B;
+}

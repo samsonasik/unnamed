@@ -1,0 +1,73 @@
+<?php
+    /**
+     * @var $content Admin\Model\Content
+     */
+    $content = $this->content;
+?>
+<section>
+    <p>
+        <a href="<?=$this->url("admin/default", ["controller" => "content"])?>" class="btn btn-default">
+            <i class="fa fa-chevron-left"></i> <?=$this->translate("BACK")?>
+        </a>
+    </p>
+    <div class="table-style">
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("TITLE")?></li>
+            <li class="table-cell"><?=$content->getTitle()?></li>
+        </ul>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("TITLE")?></li>
+            <li class="table-cell">
+<?php
+            if($content->getPreview() != null) {
+?>
+                <img src="/userfiles/preview/<?=$content->getPreview()?>" width="150">
+<?php
+            } else {
+?>
+                <img src="/back/img/noimg.png" width="100">
+<?php
+            }
+?>
+            </li>
+        </ul>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("TEXT")?></li>
+            <li class="table-cell"><?=$content->getText()?></li>
+        </ul>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("ORDER")?></li>
+            <li class="table-cell"><?=$content->getMenuOrder()?></li>
+        </ul>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("TYPE")?></li>
+            <li class="table-cell"><?=$content->getType()?></li>
+        </ul>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("DATE")?></li>
+            <li class="table-cell"><?=$content->getDate()?></li>
+        </ul>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("AUTHOR")?></li>
+            <li class="table-cell"><?=$content->getAuthor()?></li>
+        </ul>
+<?php
+        if($content->getMenu() > 0) {
+?>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("MENU")?></li>
+            <li class="table-cell">
+                <a class="btn btn-default blue" title="<?=$this->translate("DETAILS")?>" href="<?=$this->url("admin/default", ["controller" => "menu", "action" => "detail", "id" => $content->getMenu()])?>">
+                    <i class="fa fa-info"></i>
+                </a>
+            </li>
+        </ul>
+<?php
+        }
+?>
+    </div>
+
+    <a title="<?=$this->translate("EDIT_CONTENT")?>" href="<?=$this->url("admin/default", ["controller" => "content", "action" => "edit", "id" => $content->getId()])?>" class="btn btn-default edit-btn">
+        <span class="btn-label"><i class="fa fa-pencil"></i></span> <?=$this->translate("EDIT_CONTENT")?>
+    </a>
+</section>

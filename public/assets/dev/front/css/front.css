@@ -1,0 +1,141 @@
+@charset "UTF-8";
+/**
+ * @copyright  2015 (c) Stanimir Dimitrov.
+ * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
+ *
+ * @version    0.0.21
+ *
+ * @link       TBA
+ *
+ * Classes and IDs for all devices and resolutions.
+ * IDs should ONLY be used once and for main elements of the site
+ * Use classes for all other type of style!
+ */
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #23527c;
+    text-decoration: underline;
+}
+
+a:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* 1200px+ */
+@media screen and (min-width: 64.000em) {
+    /* Structure */
+    #content-wrapper {
+        width: 100%;
+        min-height: 100%;
+    }
+
+    #header {
+        margin: 0;
+        padding: 0;
+    }
+
+    #main {
+
+    }
+
+    /* Navigation */
+    #nav {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        width: 100%;
+        background: #333;
+        border-bottom: 4px solid #1b9bff;
+    }
+
+    #nav ul {
+    }
+
+    #nav ul li {
+        display: inline-block;
+        min-height: 1px;
+        vertical-align: middle;
+    }
+
+    #nav ul li a {
+        color: #CACACA;
+        padding: 10px;
+        display: inline-block;
+    }
+
+    #nav ul li:hover {
+        background: #1b9bff;
+    }
+
+    #nav ul li:hover a {
+        color: #FFF;
+        text-decoration: none;
+    }
+
+    #nav ul li ul {
+        position: absolute;
+        background: #454545;
+        min-width: 150px;
+        display: none;
+    }
+
+    #nav ul li:hover ul, #nav ul li:hover ul li  {
+        display: block;
+    }
+
+    #nav ul li:hover ul li > ul {
+        display: none;
+        left: 100%;
+        top: 0;
+    }
+
+    #nav ul li:hover ul li:hover > ul {
+        display: inline-block;
+        left: 100%;
+        top: 0;
+    }
+
+    #nav ul li ul li a {
+        padding: 10px;
+        display: block;
+        border-bottom: 1px solid #1b9bff;
+    }
+
+    #nav ul li ul li a:hover {
+        background: #1b9bff;
+    }
+
+    /* Left|Right panels */
+    .aside {
+
+    }
+
+    #aside-menu-left {
+
+    }
+
+    #aside-menu-right {
+
+    }
+
+    #footer {
+
+    }
+}

@@ -204,16 +204,17 @@ class BaseController extends AbstractActionController
      * @method ajaxUserSearch
      *
      * @param string $search
+     * @param callable $buttons - pass a function with the necessary button.
      *
      * @return JsonModel
      */
-    protected function ajaxUserSearch($search)
+    protected function ajaxUserSearch($search, callable $buttons)
     {
         $json = [];
         $success = false;
-        if ($this->getRequest()->isXmlHttpRequest() && isset($search)) {
+        if ($this->getRequest()->isXmlHttpRequest()) {
             $this->getView()->setTerminal(true);
-            $queryBuilder = $this->userTable->queryBuilder();
+            $queryBuilder = $this->getTable('Admin\\Model\\UserTable')->queryBuilder();
             $results = $queryBuilder->select(['u'])
                 ->from('Admin\Entity\User', 'u')
                 ->where('u.name = :name')
@@ -231,6 +232,10 @@ class BaseController extends AbstractActionController
                     $json[$key]['name'] = $result->getName();
                     $json[$key]['surname'] = $result->getSurname();
                     $json[$key]['email'] = $result->getEmail();
+
+                    if (is_callable($buttons)) {
+                        $json[$key]['buttons'] = $buttons($result->getId(), $result->getFullName(), $result->isDisabled());
+                    }
                 }
                 $success = true;
             }

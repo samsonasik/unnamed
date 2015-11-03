@@ -125,12 +125,10 @@
                  * @method $.ajax.done
                  *
                  * @param  {Object} result
-                 * @param  {Mixed} request
-                 * @param  {Mixed} headers
                  *
                  * @return {Object}
                  */
-                request.done(function (result, request, headers) {
+                request.done(function (result) {
                     ajaxImageUpload.showFiles();
                     ajaxImageUpload.setAjaxResponse(result, "p", "header");
                 });
@@ -169,7 +167,7 @@
             el.className += className;
             el.innerHTML = text;
 
-            $(elementAppend).append(el).slideDown(1000, function (event) {
+            $(elementAppend).append(el).slideDown(1000, function () {
                 setTimeout(function() {
                     $(elementCreate).slideUp(1000, function () {
                         $(this).fadeOut("slow", function () {
@@ -263,7 +261,7 @@
         deleteImage: function () {
             ajaxImageUpload.abourtXHR(request);
 
-            $(".deleteimg").on("click", function (event) {
+            $(".deleteimg").on("click", function () {
                 request = $.post("/admin/content/deleteimage", {"img": $(this).next("img").attr("src")}, function () {
                     ajaxImageUpload.showFiles();
                 });
@@ -297,7 +295,7 @@
      *
      * @return {void}
      */
-    $(doc).ready(function ($) {
+    $(doc).ready(function () {
         'use strict';
         ajaxImageUpload.init();
     });

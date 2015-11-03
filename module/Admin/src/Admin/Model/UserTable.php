@@ -69,7 +69,7 @@ final class UserTable
             throw new RuntimeException("Couldn't find user");
         }
 
-        return $user[0];
+        return $user;
     }
 
     /**

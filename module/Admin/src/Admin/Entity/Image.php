@@ -21,14 +21,14 @@ final class Image implements ImageInterface
      *
      * @var string
      */
-    private $imageFile = null;
+    private $imageFile;
 
     /**
      * Image format, taken from the mime type.
      *
      * @var string
      */
-    private $format = null;
+    private $format;
 
     /**
      * The current dimensions of the image.
@@ -100,11 +100,11 @@ final class Image implements ImageInterface
      *
      * @var GD
      */
-    private $gd = null;
+    private $gdLib;
 
     public function __construct()
     {
-        $this->gd = new GD('2.0.1');
+        $this->gdLib = new GD('2.0.1');
     }
 
     /**
@@ -362,7 +362,7 @@ final class Image implements ImageInterface
      */
     private function imageCreateFromGIF()
     {
-        if ($this->gd->hasGIFCreateSupport()) {
+        if ($this->gdLib->hasGIFCreateSupport()) {
             return imagecreatefromgif($this->getImageFile());
         }
 
@@ -376,7 +376,7 @@ final class Image implements ImageInterface
      */
     private function imageCreateFromJPEG()
     {
-        if ($this->gd->hasJPEGSupport()) {
+        if ($this->gdLib->hasJPEGSupport()) {
             return imagecreatefromjpeg($this->getImageFile());
         }
 
@@ -390,7 +390,7 @@ final class Image implements ImageInterface
      */
     private function imageCreateFromPNG()
     {
-        if ($this->gd->hasPNGSupport()) {
+        if ($this->gdLib->hasPNGSupport()) {
             return imagecreatefrompng($this->getImageFile());
         }
 
@@ -404,7 +404,7 @@ final class Image implements ImageInterface
      */
     private function imageCreateFromWEBP()
     {
-        if ($this->gd->hasJPEGSupport() || $this->gd->hasPNGSupport()) {
+        if ($this->gdLib->hasJPEGSupport() || $this->gdLib->hasPNGSupport()) {
             if (function_exists('imagecreatefromwebp')) {
                 return imagecreatefromwebp($this->getImageFile());
             }
@@ -429,23 +429,36 @@ final class Image implements ImageInterface
             imageantialias($resource, true);
         }
 
-        $color = $this->getOption('alpha_color_allocate');
-        if (!is_array($color)) {
-            $color = [255, 255, 255];
-            $this->options['alpha_color_allocate'] = $color;
-        }
-
-        $alpha = $this->getOption('alpha_transperancy');
-        if ($alpha < 1 || $alpha > 127) {
-            $alpha = 64;
-            $this->options['alpha_transperancy'] = $alpha;
-        }
+        $color = $this->getAlphaColorAllocate();
+        $alpha = $this->getAlphaTransperancy();
 
         $transparentColor = imagecolorallocatealpha($resource, $color[0], $color[1], $color[2], $alpha);
         imagefill($resource, 0, 0, $transparentColor);
         imagecolortransparent($resource, $transparentColor);
 
         return $resource;
+    }
+
+    private function getAlphaColorAllocate()
+    {
+        $color = $this->getOption('alpha_color_allocate');
+        if (!is_array($color)) {
+            $color = [255, 255, 255];
+            $this->options['alpha_color_allocate'] = $color;
+        }
+
+        return $color;
+    }
+
+    private function getAlphaTransperancy()
+    {
+        $alpha = $this->getOption('alpha_transperancy');
+        if ($alpha < 1 || $alpha > 127) {
+            $alpha = 64;
+            $this->options['alpha_transperancy'] = $alpha;
+        }
+
+        return $alpha;
     }
 
     /**

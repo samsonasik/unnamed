@@ -51,8 +51,8 @@ function paths (folder) {
             CSS: devFolders + folder + "/common/css",
             JS:  devFolders + folder + "/common/js",
             IMG: devFolders + folder + "/common/img"
-        }
-    };
+        };
+    }
 
     return filePaths;
 }

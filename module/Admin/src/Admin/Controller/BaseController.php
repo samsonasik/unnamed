@@ -14,6 +14,8 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Mvc\MvcEvent;
 use Zend\Session\Container;
 use Zend\View\Model\ViewModel;
+use Zend\Json\Json;
+use Zend\View\Model\JsonModel;
 
 class BaseController extends AbstractActionController
 {
@@ -194,5 +196,51 @@ class BaseController extends AbstractActionController
     protected function getTranslation()
     {
         return $this->translation;
+    }
+
+    /**
+     * A common function for performing ajax search for user.
+     *
+     * @method ajaxUserSearch
+     *
+     * @param string $search
+     *
+     * @return JsonModel
+     */
+    protected function ajaxUserSearch($search)
+    {
+        $json = [];
+        $success = false;
+        if ($this->getRequest()->isXmlHttpRequest() && isset($search)) {
+            $this->getView()->setTerminal(true);
+            $queryBuilder = $this->userTable->queryBuilder();
+            $results = $queryBuilder->select(['u'])
+                ->from('Admin\Entity\User', 'u')
+                ->where('u.name = :name')
+                ->orWhere('u.surname LIKE :surname')
+                ->orWhere('u.email LIKE :email')
+                ->setParameter(':name', (string) $search)
+                ->setParameter(':surname', (string) $search)
+                ->setParameter(':email', (string) $search)
+                ->getQuery()
+                ->getResult();
+
+            if ($results) {
+                foreach ($results as $key => $result) {
+                    $json[$key]['id'] = $result->getId();
+                    $json[$key]['name'] = $result->getName();
+                    $json[$key]['surname'] = $result->getSurname();
+                    $json[$key]['email'] = $result->getEmail();
+                }
+                $success = true;
+            }
+        }
+
+        return new JsonModel(
+            [
+                'ajaxsearch' => Json::encode($json),
+                'statusType' => $success,
+            ]
+        );
     }
 }

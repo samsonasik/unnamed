@@ -43,7 +43,7 @@ function paths (folder) {
             JS:  prodFolders + folder + "/front/js",
             IMG: prodFolders + folder + "/front/img",
         }
-    }
+    };
 
     // this is also a dev folder
     if (folder === "dev") {
@@ -52,7 +52,8 @@ function paths (folder) {
             JS:  devFolders + folder + "/common/js",
             IMG: devFolders + folder + "/common/img"
         }
-    }
+    };
+
     return filePaths;
 }
 

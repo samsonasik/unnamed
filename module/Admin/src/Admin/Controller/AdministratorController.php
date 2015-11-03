@@ -12,9 +12,7 @@ namespace Admin\Controller;
 
 use Admin\Entity\Administrator;
 use Admin\Form\AdministratorForm;
-use Zend\Json\Json;
 use Zend\Mvc\MvcEvent;
-use Zend\View\Model\JsonModel;
 
 final class AdministratorController extends BaseController
 {
@@ -127,39 +125,8 @@ final class AdministratorController extends BaseController
     protected function searchAction()
     {
         $search = (string) $this->getParam('ajaxsearch');
-        $json = [];
-        $success = false;
-        if ($this->getRequest()->isXmlHttpRequest() && isset($search)) {
-            $this->getView()->setTerminal(true);
-            $queryBuilder = $this->userTable->queryBuilder();
-            $results = $queryBuilder->select(['u'])
-                ->from('Admin\Entity\User', 'u')
-                ->where('u.name = :name')
-                ->orWhere('u.surname LIKE :surname')
-                ->orWhere('u.email LIKE :email')
-                ->setParameter(':name', (string) $search)
-                ->setParameter(':surname', (string) $search)
-                ->setParameter(':email', (string) $search)
-                ->getQuery()
-                ->getResult();
 
-            if ($results) {
-                foreach ($results as $key => $result) {
-                    $json[$key]['id'] = $result->getId();
-                    $json[$key]['name'] = $result->getName();
-                    $json[$key]['surname'] = $result->getSurname();
-                    $json[$key]['email'] = $result->getEmail();
-                }
-                $success = true;
-            }
-        }
-
-        return new JsonModel(
-            [
-                'ajaxsearch' => Json::encode($json),
-                'statusType' => $success,
-            ]
-        );
+        return $this->ajaxUserSearch($search);
     }
 
     /**

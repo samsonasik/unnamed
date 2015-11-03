@@ -13,9 +13,7 @@ namespace Admin\Controller;
 use Admin\Entity\User;
 use Admin\Exception\AuthorizationException;
 use Admin\Form\UserForm;
-use Zend\Json\Json;
 use Zend\Mvc\MvcEvent;
-use Zend\View\Model\JsonModel;
 
 final class UserController extends BaseController
 {
@@ -59,18 +57,42 @@ final class UserController extends BaseController
     public function indexAction()
     {
         $this->getView()->setTemplate('admin/user/index');
+
+        $this->getView()->paginator = $this->showUsersBasedOnTheyAccStatus(0);
+
+        return $this->getView();
+    }
+
+    /**
+     * @return \Zend\View\Model\ViewModel
+     */
+    protected function disabledAction()
+    {
+        $this->getView()->setTemplate('admin/user/disabled');
+
+        $this->getView()->paginator = $this->showUsersBasedOnTheyAccStatus(1);
+
+        return $this->getView();
+    }
+
+    /**
+     * @param bool $isDisabled user status account
+     *
+     * @return \Zend\Paginator\Paginator
+     */
+    private function showUsersBasedOnTheyAccStatus($isDisabled = false) {
         $table = $this->userTable;
         $query = $table->queryBuilder()
                    ->select(['u'])
                    ->from('Admin\Entity\User', 'u')
-                   ->where('u.isDisabled = 0');
+                   ->where('u.isDisabled = :isDisabled')
+                   ->setParameter(":isDisabled", (int) $isDisabled);
 
         $paginator = $table->preparePagination($query, false);
         $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));
         $paginator->setItemCountPerPage($this->systemSettings('posts', 'user'));
-        $this->getView()->paginator = $paginator;
 
-        return $this->getView();
+        return $paginator;
     }
 
     /**
@@ -133,27 +155,6 @@ final class UserController extends BaseController
     }
 
     /**
-     * @return \Zend\View\Model\ViewModel
-     */
-    protected function disabledAction()
-    {
-        $this->getView()->setTemplate('admin/user/disabled');
-
-        $query = $this->userTable;
-        $q = $query->queryBuilder()
-                   ->select(['u'])
-                   ->from('Admin\Entity\User', 'u')
-                   ->where('u.isDisabled = 1');
-
-        $paginator = $query->preparePagination($q, false);
-        $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));
-        $paginator->setItemCountPerPage($this->systemSettings('posts', 'user'));
-        $this->getView()->paginator = $paginator;
-
-        return $this->getView();
-    }
-
-    /**
      * In case that a user account has been disabled and it needs to be enabled call this action.
      */
     protected function enableAction()
@@ -194,40 +195,8 @@ final class UserController extends BaseController
     protected function searchAction()
     {
         $search = (string) $this->getParam('ajaxsearch', null);
-        if (isset($search) && $this->getRequest()->isXmlHttpRequest()) {
-            $this->getView()->setTerminal(true);
-            $queryBuilder = $this->userTable->queryBuilder();
-            $results = $queryBuilder->select(['u'])
-                    ->from('Admin\Entity\User', 'u')
-                    ->where('u.name = :name')
-                    ->orWhere('u.surname LIKE :surname')
-                    ->orWhere('u.email LIKE :email')
-                    ->setParameter(':name', (string) $search)
-                    ->setParameter(':surname', (string) $search)
-                    ->setParameter(':email', (string) $search)
-                    ->getQuery()
-                    ->getResult();
 
-            $json = [];
-            $success = false;
-
-            if (!empty($results)) {
-                foreach ($results as $key => $result) {
-                    $json[$key]['id'] = $result->getId();
-                    $json[$key]['name'] = $result->getName();
-                    $json[$key]['email'] = $result->getEmail();
-                    $json[$key]['buttons'] = $this->htmlButtons($result->getId(), $result->getFullName(), $result->isDisabled());
-                }
-                $success = true;
-            }
-
-            return new JsonModel(
-                    [
-                    'ajaxsearch' => Json::encode($json),
-                    'statusType' => $success,
-                    ]
-                );
-        }
+        return $this->ajaxUserSearch($search);
     }
 
     /**

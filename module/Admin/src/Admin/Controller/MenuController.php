@@ -37,6 +37,8 @@ final class MenuController extends BaseController
 
     /**
      * @param MvcEvent $event
+     *
+     * @return mixed|void
      */
     public function onDispatch(MvcEvent $event)
     {

@@ -18,7 +18,7 @@ use Zend\Stdlib\Parameters;
 
 final class LanguageController extends BaseController
 {
-    /**
+    /*
      * @var LanguageForm
      */
     private $languageForm;

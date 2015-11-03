@@ -29,7 +29,7 @@ final class ContentController extends BaseController
         'Zend\View\Model\ViewModel' => ['text/html'],
     ];
 
-    /**
+    /*
      * @var ContentForm
      */
     private $contentForm;

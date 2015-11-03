@@ -7,6 +7,4 @@ finder:
     - "*.php"
   path:
     - "module"
-    - "data"
-    - "config"
     - "public"

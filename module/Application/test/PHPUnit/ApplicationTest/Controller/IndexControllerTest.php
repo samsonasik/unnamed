@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace ApplicationTest\Controller;
 
 use Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;

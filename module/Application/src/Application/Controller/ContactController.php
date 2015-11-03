@@ -14,7 +14,7 @@ use Application\Form\ContactForm;
 
 final class ContactController extends BaseController
 {
-    /**
+    /*
      * @var ContactForm
      */
     private $contactForm;

@@ -3,7 +3,9 @@
 /*
  * Set global ENV. Used for debugging.
  */
-define('APP_ENV', getenv('APPLICATION_ENV'));
+if (!defined('APP_ENV')) {
+    define('APP_ENV', getenv('APPLICATION_ENV'));
+}
 
 $modules = [];
 

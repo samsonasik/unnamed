@@ -12,8 +12,9 @@
 /*
  * Set global ENV. Used for debugging.
  */
-define('APP_ENV', getenv('APPLICATION_ENV'));
-
+if (!defined('APP_ENV')) {
+    define('APP_ENV', getenv('APPLICATION_ENV'));
+}
 /*
  * All configurations options, used in two or more modules must go in here.
  */

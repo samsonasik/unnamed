@@ -44,8 +44,8 @@ final class ErrorCodes extends AbstractPlugin
         $this->response->setStatusCode((int) $code);
         $this->layout->setVariables(
             [
-            'message'   => '404 Not found',
-            'reason'    => 'The link you have requested doesn\'t exists',
+            'message' => '404 Not found',
+            'reason' => 'The link you have requested doesn\'t exists',
             'exception' => '',
             ]
         );

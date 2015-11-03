@@ -54,7 +54,7 @@ class BaseController extends AbstractActionController
         /*
          * Call this method only if we are not in Menu or News. Both of them calls the function by themselves
          */
-        if (($this->params('action') != 'post')) {
+        if (($this->params('action') !== 'post')) {
             $this->initMetaTags();
         }
     }

@@ -37,16 +37,16 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
 
         $this->add(
             [
-            'type'       => 'Zend\Form\Element\Number',
-            'name'       => 'content',
+            'type' => 'Zend\Form\Element\Number',
+            'name' => 'content',
             'attributes' => [
-                'required'    => true,
-                'min'         => 1,
-                'step'        => 1,
-                'size'        => 40,
-                'class'       => 'settings_content',
+                'required' => true,
+                'min' => 1,
+                'step' => 1,
+                'size' => 40,
+                'class' => 'settings_content',
                 'placeholder' => 'Content posts per page',
-                'value'       => $this->config['content'],
+                'value' => $this->config['content'],
             ],
             'options' => [
                 'label' => 'Content posts per page',
@@ -56,16 +56,16 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
 
         $this->add(
             [
-            'type'       => 'Zend\Form\Element\Number',
-            'name'       => 'menu',
+            'type' => 'Zend\Form\Element\Number',
+            'name' => 'menu',
             'attributes' => [
-                'required'    => true,
-                'min'         => 1,
-                'step'        => 1,
-                'size'        => 40,
-                'class'       => 'settings_menu',
+                'required' => true,
+                'min' => 1,
+                'step' => 1,
+                'size' => 40,
+                'class' => 'settings_menu',
                 'placeholder' => 'Menu posts per page',
-                'value'       => $this->config['menu'],
+                'value' => $this->config['menu'],
             ],
             'options' => [
                 'label' => 'Menu posts per page',
@@ -75,16 +75,16 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
 
         $this->add(
             [
-            'type'       => 'Zend\Form\Element\Number',
-            'name'       => 'adminmenu',
+            'type' => 'Zend\Form\Element\Number',
+            'name' => 'adminmenu',
             'attributes' => [
-                'required'    => true,
-                'min'         => 1,
-                'step'        => 1,
-                'size'        => 40,
-                'class'       => 'settings_adminmenu',
+                'required' => true,
+                'min' => 1,
+                'step' => 1,
+                'size' => 40,
+                'class' => 'settings_adminmenu',
                 'placeholder' => 'Admin menu posts per page',
-                'value'       => $this->config['adminmenu'],
+                'value' => $this->config['adminmenu'],
             ],
             'options' => [
                 'label' => 'Admin menu posts per page',
@@ -94,16 +94,16 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
 
         $this->add(
             [
-            'type'       => 'Zend\Form\Element\Number',
-            'name'       => 'administrator',
+            'type' => 'Zend\Form\Element\Number',
+            'name' => 'administrator',
             'attributes' => [
-                'required'    => true,
-                'min'         => 1,
-                'step'        => 1,
-                'size'        => 40,
-                'class'       => 'settings_administrator',
+                'required' => true,
+                'min' => 1,
+                'step' => 1,
+                'size' => 40,
+                'class' => 'settings_administrator',
                 'placeholder' => 'Administrator posts per page',
-                'value'       => $this->config['administrator'],
+                'value' => $this->config['administrator'],
             ],
             'options' => [
                 'label' => 'Administrator posts per page',
@@ -113,16 +113,16 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
 
         $this->add(
             [
-            'type'       => 'Zend\Form\Element\Number',
-            'name'       => 'language',
+            'type' => 'Zend\Form\Element\Number',
+            'name' => 'language',
             'attributes' => [
-                'required'    => true,
-                'min'         => 1,
-                'step'        => 1,
-                'size'        => 40,
-                'class'       => 'settings_language',
+                'required' => true,
+                'min' => 1,
+                'step' => 1,
+                'size' => 40,
+                'class' => 'settings_language',
                 'placeholder' => 'Language posts per page',
-                'value'       => $this->config['language'],
+                'value' => $this->config['language'],
             ],
             'options' => [
                 'label' => 'Language posts per page',
@@ -132,16 +132,16 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
 
         $this->add(
             [
-            'type'       => 'Zend\Form\Element\Number',
-            'name'       => 'user',
+            'type' => 'Zend\Form\Element\Number',
+            'name' => 'user',
             'attributes' => [
-                'required'    => true,
-                'min'         => 1,
-                'step'        => 1,
-                'size'        => 40,
-                'class'       => 'settings_user',
+                'required' => true,
+                'min' => 1,
+                'step' => 1,
+                'size' => 40,
+                'class' => 'settings_user',
                 'placeholder' => 'User posts per page',
-                'value'       => $this->config['user'],
+                'value' => $this->config['user'],
             ],
             'options' => [
                 'label' => 'User posts per page',
@@ -151,16 +151,16 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
 
         $this->add(
             [
-            'type'       => 'Zend\Form\Element\Number',
-            'name'       => 'news',
+            'type' => 'Zend\Form\Element\Number',
+            'name' => 'news',
             'attributes' => [
-                'required'    => true,
-                'min'         => 1,
-                'step'        => 1,
-                'size'        => 40,
-                'class'       => 'settings_news',
+                'required' => true,
+                'min' => 1,
+                'step' => 1,
+                'size' => 40,
+                'class' => 'settings_news',
                 'placeholder' => 'News posts per page',
-                'value'       => $this->config['news'],
+                'value' => $this->config['news'],
             ],
             'options' => [
                 'label' => 'News posts per page',
@@ -170,8 +170,8 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
 
         $this->add(
             [
-            'type'    => 'Zend\Form\Element\Csrf',
-            'name'    => 's',
+            'type' => 'Zend\Form\Element\Csrf',
+            'name' => 's',
             'options' => [
                 'csrf_options' => [
                     'timeout' => 3600,
@@ -182,10 +182,10 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
 
         $this->add(
             [
-            'name'       => 'submit',
+            'name' => 'submit',
             'attributes' => [
-                'type'  => 'submit',
-                'id'    => 'submitbutton',
+                'type' => 'submit',
+                'id' => 'submitbutton',
             ],
             ]
         );
@@ -195,51 +195,51 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
     {
         return [
             [
-                'name'     => 'content',
+                'name' => 'content',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'Int'],
                 ],
             ],
             [
-                'name'     => 'menu',
+                'name' => 'menu',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'Int'],
                 ],
             ],
             [
-                'name'     => 'adminmenu',
+                'name' => 'adminmenu',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'Int'],
                 ],
             ],
             [
-                'name'     => 'administrator',
+                'name' => 'administrator',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'Int'],
                 ],
             ],
             [
-                'name'     => 'language',
+                'name' => 'language',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'Int'],
                 ],
             ],
             [
-                'name'     => 'user',
+                'name' => 'user',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'Int'],
                 ],
             ],
             [
-                'name'     => 'news',
+                'name' => 'news',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'Int'],
                 ],
             ],

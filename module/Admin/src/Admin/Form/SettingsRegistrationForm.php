@@ -36,11 +36,11 @@ final class SettingsRegistrationForm extends Form implements InputFilterProvider
 
         $this->add(
             [
-            'type'       => 'Zend\Form\Element\Checkbox',
-            'name'       => 'allow_registrations',
+            'type' => 'Zend\Form\Element\Checkbox',
+            'name' => 'allow_registrations',
             'attributes' => [
-                'class'      => 'settings_allow_registrations',
-                'value'      => $this->config['allow_registrations'],
+                'class' => 'settings_allow_registrations',
+                'value' => $this->config['allow_registrations'],
             ],
             'options' => [
                 'label' => 'Allow user registration',
@@ -50,14 +50,14 @@ final class SettingsRegistrationForm extends Form implements InputFilterProvider
 
         $this->add(
             [
-            'type'       => 'Zend\Form\Element\Select',
-            'name'       => 'email_verification',
+            'type' => 'Zend\Form\Element\Select',
+            'name' => 'email_verification',
             'attributes' => [
-                'class'       => 'settings_email_verification',
-                'value'       => $this->config['email_verification'],
+                'class' => 'settings_email_verification',
+                'value' => $this->config['email_verification'],
             ],
             'options' => [
-                'label'         => 'Email verification type',
+                'label' => 'Email verification type',
                 'value_options' => $this->config['email_verifications'],
             ],
             ]
@@ -65,8 +65,8 @@ final class SettingsRegistrationForm extends Form implements InputFilterProvider
 
         $this->add(
             [
-            'type'    => 'Zend\Form\Element\Csrf',
-            'name'    => 's',
+            'type' => 'Zend\Form\Element\Csrf',
+            'name' => 's',
             'options' => [
                 'csrf_options' => [
                     'timeout' => 3600,
@@ -77,10 +77,10 @@ final class SettingsRegistrationForm extends Form implements InputFilterProvider
 
         $this->add(
             [
-            'name'       => 'submit',
+            'name' => 'submit',
             'attributes' => [
-                'type'  => 'submit',
-                'id'    => 'submitbutton',
+                'type' => 'submit',
+                'id' => 'submitbutton',
             ],
             ]
         );
@@ -90,23 +90,23 @@ final class SettingsRegistrationForm extends Form implements InputFilterProvider
     {
         return [
             [
-                'name'     => 'allow_registrations',
+                'name' => 'allow_registrations',
                 'required' => false,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'Int'],
                 ],
             ],
             [
-                'name'     => 'email_verification',
+                'name' => 'email_verification',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
                 'validators' => [
                     ['name' => 'NotEmpty'],
                     [
-                        'name'    => 'StringLength',
+                        'name' => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
                         ],

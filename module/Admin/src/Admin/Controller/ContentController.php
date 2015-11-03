@@ -324,7 +324,7 @@ final class ContentController extends BaseController
         $uploadStatus = [];
 
         foreach ($adapter->getFileInfo() as $key => $file) {
-            if ($key != 'preview') {
+            if ($key !== 'preview') {
                 if (!$adapter->isValid($file['name'])) {
                     foreach ($adapter->getMessages() as $msg) {
                         $uploadStatus['errorFiles'][] = $file['name'].' '.strtolower($msg);

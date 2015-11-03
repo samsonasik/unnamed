@@ -77,10 +77,10 @@ final class Functions extends AbstractPlugin
     {
         $stats = false;
         if (isset($_SERVER['HTTPS'])) {
-            if ('on' == strtolower($_SERVER['HTTPS']) || '1' == $_SERVER['HTTPS']) {
+            if ('on' === strtolower($_SERVER['HTTPS']) || '1' === $_SERVER['HTTPS']) {
                 $stats = true;
             }
-        } elseif (isset($_SERVER['SERVER_PORT']) && ('443' == $_SERVER['SERVER_PORT'])) {
+        } elseif (isset($_SERVER['SERVER_PORT']) && ('443' === $_SERVER['SERVER_PORT'])) {
             $stats = true;
         }
 

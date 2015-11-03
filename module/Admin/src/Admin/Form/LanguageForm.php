@@ -37,17 +37,17 @@ final class LanguageForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type'    => 'Zend\Form\Element\Text',
-            'name'    => 'name',
+            'type' => 'Zend\Form\Element\Text',
+            'name' => 'name',
             'options' => [
-                'label'          => 'Name',
+                'label' => 'Name',
                 'object_manager' => $this->entityManager,
-                'target_class'   => 'Admin\Entity\Language',
-                'property'       => 'name',
+                'target_class' => 'Admin\Entity\Language',
+                'property' => 'name',
             ],
             'attributes' => [
-                'required'    => 'true',
-                'size'        => '40',
+                'required' => 'true',
+                'size' => '40',
                 'placeholder' => 'Name',
             ],
             ]
@@ -55,21 +55,21 @@ final class LanguageForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type'    => 'Zend\Form\Element\Checkbox',
-            'name'    => 'active',
+            'type' => 'Zend\Form\Element\Checkbox',
+            'name' => 'active',
             'options' => [
-                'label'          => 'Active',
+                'label' => 'Active',
                 'object_manager' => $this->entityManager,
-                'target_class'   => 'Admin\Entity\Language',
-                'property'       => 'active',
+                'target_class' => 'Admin\Entity\Language',
+                'property' => 'active',
             ],
             ]
         );
 
         $this->add(
             [
-            'type'    => 'Zend\Form\Element\Csrf',
-            'name'    => 's',
+            'type' => 'Zend\Form\Element\Csrf',
+            'name' => 's',
             'options' => [
                 'csrf_options' => [
                     'timeout' => 500,
@@ -80,10 +80,10 @@ final class LanguageForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'name'       => 'submit',
+            'name' => 'submit',
             'attributes' => [
-                'type'  => 'submit',
-                'id'    => 'submitbutton',
+                'type' => 'submit',
+                'id' => 'submitbutton',
                 'value' => 'Save',
             ],
             ]
@@ -91,12 +91,12 @@ final class LanguageForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type'    => 'Zend\Form\Element\Hidden',
-            'name'    => 'id',
+            'type' => 'Zend\Form\Element\Hidden',
+            'name' => 'id',
             'options' => [
                 'object_manager' => $this->entityManager,
-                'target_class'   => 'Admin\Entity\Language',
-                'property'       => 'id',
+                'target_class' => 'Admin\Entity\Language',
+                'property' => 'id',
             ],
             ]
         );
@@ -106,40 +106,40 @@ final class LanguageForm extends Form implements InputFilterProviderInterface
     {
         return [
             [
-                'name'     => 'id',
+                'name' => 'id',
                 'required' => false,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'Int'],
                 ],
             ],
             [
-                'name'     => 'name',
+                'name' => 'name',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
                 'validators' => [
                     ['name' => 'NotEmpty'],
                     [
-                        'name'    => 'StringLength',
+                        'name' => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min'      => 1,
-                            'max'      => 10,
+                            'min' => 1,
+                            'max' => 10,
                         ],
                     ],
                 ],
             ],
             [
-                'name'     => 'active',
+                'name' => 'active',
                 'required' => false,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'Int'],
                 ],
                 'validators' => [
                     [
-                        'name'    => 'Regex',
+                        'name' => 'Regex',
                         'options' => [
                             'pattern' => '/^[0-1]+$/',
                         ],

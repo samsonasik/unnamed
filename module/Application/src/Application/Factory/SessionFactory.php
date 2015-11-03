@@ -23,16 +23,16 @@ final class SessionFactory
         $sessionConfig = new SessionConfig();
         $sessionConfig->setOptions(
             [
-            'cookie_lifetime'         => 7200, //2hrs
-            'remember_me_seconds'     => 7200, //2hrs This is also set in the login controller
-            'use_cookies'             => true,
-            'cache_expire'            => 180,  //3hrs
-            'cookie_path'             => '/',
-            'cookie_httponly'         => true,
-            'name'                    => '__zpc',
-            'cookie_secure'           => static::isSSL(),
+            'cookie_lifetime' => 7200, //2hrs
+            'remember_me_seconds' => 7200, //2hrs This is also set in the login controller
+            'use_cookies' => true,
+            'cache_expire' => 180,  //3hrs
+            'cookie_path' => '/',
+            'cookie_httponly' => true,
+            'name' => '__zpc',
+            'cookie_secure' => static::isSSL(),
             'hash_bits_per_character' => 6,
-            'hash_function'           => 1,
+            'hash_function' => 1,
             ]
         );
         $sessionManager = new SessionManager($sessionConfig);
@@ -50,10 +50,10 @@ final class SessionFactory
     {
         $stats = false;
         if (isset($_SERVER['HTTPS'])) {
-            if ('on' == strtolower($_SERVER['HTTPS']) || '1' == $_SERVER['HTTPS']) {
+            if ('on' === strtolower($_SERVER['HTTPS']) || '1' === $_SERVER['HTTPS']) {
                 $stats = true;
             }
-        } elseif (isset($_SERVER['SERVER_PORT']) && ('443' == $_SERVER['SERVER_PORT'])) {
+        } elseif (isset($_SERVER['SERVER_PORT']) && ('443' === $_SERVER['SERVER_PORT'])) {
             $stats = true;
         }
 

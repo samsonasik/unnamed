@@ -164,12 +164,12 @@ if (!empty($_POST['submit']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
             'connection' => [
                 'orm_default' => [
                     'driverClass' => 'Doctrine\DBAL\Driver\PDOMySql\Driver',
-                    'params'      => [
-                        'host'     => filter($_POST['host']),
-                        'port'     => filter($_POST['port']),
-                        'user'     => filter($_POST['username']),
+                    'params' => [
+                        'host' => filter($_POST['host']),
+                        'port' => filter($_POST['port']),
+                        'user' => filter($_POST['username']),
                         'password' => filter($_POST['password']),
-                        'dbname'   => filter($_POST['dbname']),
+                        'dbname' => filter($_POST['dbname']),
                     ],
                 ],
             ],

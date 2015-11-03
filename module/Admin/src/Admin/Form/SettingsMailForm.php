@@ -36,14 +36,14 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
 
         $this->add(
             [
-            'type'       => 'Zend\Form\Element\Text',
-            'name'       => 'host',
+            'type' => 'Zend\Form\Element\Text',
+            'name' => 'host',
             'attributes' => [
-                'required'    => true,
-                'size'        => 40,
-                'class'       => 'settings_host',
+                'required' => true,
+                'size' => 40,
+                'class' => 'settings_host',
                 'placeholder' => 'Host',
-                'value'       => $this->config['host'],
+                'value' => $this->config['host'],
             ],
             'options' => [
                 'label' => 'Host',
@@ -53,14 +53,14 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
 
         $this->add(
             [
-            'type'       => 'Zend\Form\Element\Text',
-            'name'       => 'name',
+            'type' => 'Zend\Form\Element\Text',
+            'name' => 'name',
             'attributes' => [
-                'required'    => true,
-                'size'        => 40,
-                'class'       => 'settings_name',
+                'required' => true,
+                'size' => 40,
+                'class' => 'settings_name',
                 'placeholder' => 'Name',
-                'value'       => $this->config['name'],
+                'value' => $this->config['name'],
             ],
             'options' => [
                 'label' => 'Name',
@@ -70,14 +70,14 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
 
         $this->add(
             [
-            'type'       => 'Zend\Form\Element\Text',
-            'name'       => 'port',
+            'type' => 'Zend\Form\Element\Text',
+            'name' => 'port',
             'attributes' => [
-                'required'    => true,
-                'size'        => 40,
-                'class'       => 'settings_port',
+                'required' => true,
+                'size' => 40,
+                'class' => 'settings_port',
                 'placeholder' => 'Port',
-                'value'       => $this->config['port'],
+                'value' => $this->config['port'],
             ],
             'options' => [
                 'label' => 'Port',
@@ -87,14 +87,14 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
 
         $this->add(
             [
-            'type'       => 'Zend\Form\Element\Text',
-            'name'       => 'username',
+            'type' => 'Zend\Form\Element\Text',
+            'name' => 'username',
             'attributes' => [
-                'required'    => true,
-                'size'        => 40,
-                'class'       => 'settings_username',
+                'required' => true,
+                'size' => 40,
+                'class' => 'settings_username',
                 'placeholder' => 'Username',
-                'value'       => $this->config['username'],
+                'value' => $this->config['username'],
             ],
             'options' => [
                 'label' => 'Username',
@@ -104,14 +104,14 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
 
         $this->add(
             [
-            'type'       => 'Zend\Form\Element\Text',
-            'name'       => 'password',
+            'type' => 'Zend\Form\Element\Text',
+            'name' => 'password',
             'attributes' => [
-                'required'    => true,
-                'size'        => 40,
-                'class'       => 'settings_password',
+                'required' => true,
+                'size' => 40,
+                'class' => 'settings_password',
                 'placeholder' => 'Password',
-                'value'       => $this->config['password'],
+                'value' => $this->config['password'],
             ],
             'options' => [
                 'label' => 'Password',
@@ -121,14 +121,14 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
 
         $this->add(
             [
-            'type'       => 'Zend\Form\Element\Text',
-            'name'       => 'ssl',
+            'type' => 'Zend\Form\Element\Text',
+            'name' => 'ssl',
             'attributes' => [
-                'required'    => true,
-                'size'        => 40,
-                'class'       => 'settings_ssl',
+                'required' => true,
+                'size' => 40,
+                'class' => 'settings_ssl',
                 'placeholder' => 'Certificate type',
-                'value'       => $this->config['ssl'],
+                'value' => $this->config['ssl'],
             ],
             'options' => [
                 'label' => 'Cert type',
@@ -138,14 +138,14 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
 
         $this->add(
             [
-            'type'       => 'Zend\Form\Element\Email',
-            'name'       => 'from',
+            'type' => 'Zend\Form\Element\Email',
+            'name' => 'from',
             'attributes' => [
-                'required'    => true,
-                'size'        => 40,
-                'class'       => 'settings_from',
+                'required' => true,
+                'size' => 40,
+                'class' => 'settings_from',
                 'placeholder' => 'Admin email',
-                'value'       => $this->config['from'],
+                'value' => $this->config['from'],
             ],
             'options' => [
                 'label' => 'Admin email',
@@ -155,15 +155,15 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
 
         $this->add(
             [
-            'type'       => 'Zend\Form\Element\Select',
-            'name'       => 'connection_class',
+            'type' => 'Zend\Form\Element\Select',
+            'name' => 'connection_class',
             'attributes' => [
-                'required'    => true,
-                'class'       => 'settings_connection_class',
-                'value'       => $this->config['connection_class'],
+                'required' => true,
+                'class' => 'settings_connection_class',
+                'value' => $this->config['connection_class'],
             ],
             'options' => [
-                'label'         => 'Connection type',
+                'label' => 'Connection type',
                 'value_options' => $this->config['connection_classes'],
             ],
             ]
@@ -171,8 +171,8 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
 
         $this->add(
             [
-            'type'    => 'Zend\Form\Element\Csrf',
-            'name'    => 's',
+            'type' => 'Zend\Form\Element\Csrf',
+            'name' => 's',
             'options' => [
                 'csrf_options' => [
                     'timeout' => 3600,
@@ -183,10 +183,10 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
 
         $this->add(
             [
-            'name'       => 'submit',
+            'name' => 'submit',
             'attributes' => [
-                'type'  => 'submit',
-                'id'    => 'submitbutton',
+                'type' => 'submit',
+                'id' => 'submitbutton',
             ],
             ]
         );
@@ -196,146 +196,146 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
     {
         return [
             [
-                'name'     => 'host',
+                'name' => 'host',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
                 'validators' => [
                     ['name' => 'NotEmpty'],
                     [
-                        'name'    => 'StringLength',
+                        'name' => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min'      => 1,
-                            'max'      => 255,
+                            'min' => 1,
+                            'max' => 255,
                         ],
                     ],
                 ],
             ],
             [
-                'name'     => 'name',
+                'name' => 'name',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
                 'validators' => [
                     [
-                        'name'    => 'StringLength',
+                        'name' => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min'      => 1,
-                            'max'      => 255,
+                            'min' => 1,
+                            'max' => 255,
                         ],
                     ],
                 ],
             ],
             [
-                'name'     => 'port',
+                'name' => 'port',
                 'required' => false,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'Int'],
                 ],
             ],
             [
-                'name'     => 'from',
+                'name' => 'from',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
                 'validators' => [
                     [
-                        'name'    => 'EmailAddress',
+                        'name' => 'EmailAddress',
                         'options' => [
                             'encoding' => 'UTF-8',
                             'messages' => ['emailAddressInvalidFormat' => "Email address doesn't appear to be valid."],
                         ],
                     ],
                     [
-                        'name'    => 'StringLength',
+                        'name' => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min'      => 5,
+                            'min' => 5,
                         ],
                     ],
                     ['name' => 'NotEmpty'],
                 ],
             ],
             [
-                'name'     => 'connection_class',
+                'name' => 'connection_class',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
                 'validators' => [
                     ['name' => 'NotEmpty'],
                     [
-                        'name'    => 'StringLength',
+                        'name' => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min'      => 1,
-                            'max'      => 255,
+                            'min' => 1,
+                            'max' => 255,
                         ],
                     ],
                 ],
             ],
             [
-                'name'     => 'username',
+                'name' => 'username',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
                 'validators' => [
                     ['name' => 'NotEmpty'],
                     [
-                        'name'    => 'StringLength',
+                        'name' => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min'      => 1,
-                            'max'      => 255,
+                            'min' => 1,
+                            'max' => 255,
                         ],
                     ],
                 ],
             ],
             [
-                'name'     => 'password',
+                'name' => 'password',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
                 'validators' => [
                     ['name' => 'NotEmpty'],
                     [
-                        'name'    => 'StringLength',
+                        'name' => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min'      => 1,
-                            'max'      => 255,
+                            'min' => 1,
+                            'max' => 255,
                         ],
                     ],
                 ],
             ],
             [
-                'name'     => 'ssl',
+                'name' => 'ssl',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
                 'validators' => [
                     ['name' => 'NotEmpty'],
                     [
-                        'name'    => 'StringLength',
+                        'name' => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min'      => 1,
-                            'max'      => 255,
+                            'min' => 1,
+                            'max' => 255,
                         ],
                     ],
                 ],

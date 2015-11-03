@@ -196,7 +196,6 @@ final class UserController extends BaseController
     protected function searchAction()
     {
         $search = (string) $this->getParam('ajaxsearch', null);
-        $buttons = $this->
 
         return $this->ajaxUserSearch($search, $this->htmlButtons());
     }

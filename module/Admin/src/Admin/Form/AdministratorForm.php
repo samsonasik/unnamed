@@ -37,19 +37,19 @@ final class AdministratorForm extends Form implements InputFilterProviderInterfa
 
         $this->add(
             [
-            'type'    => 'Zend\Form\Element\Text',
-            'name'    => 'user',
+            'type' => 'Zend\Form\Element\Text',
+            'name' => 'user',
             'options' => [
-                'label'          => 'Caption',
+                'label' => 'Caption',
                 'object_manager' => $this->entityManager,
-                'target_class'   => 'Admin\Entity\Administrator',
-                'property'       => 'caption',
+                'target_class' => 'Admin\Entity\Administrator',
+                'property' => 'caption',
             ],
             'attributes' => [
-                'required'     => 'true',
-                'size'         => '40',
-                'class'        => 'administrator-user ajax-search',
-                'placeholder'  => 'User ID',
+                'required' => 'true',
+                'size' => '40',
+                'class' => 'administrator-user ajax-search',
+                'placeholder' => 'User ID',
                 'autocomplete' => 'off',
             ],
             ]
@@ -57,8 +57,8 @@ final class AdministratorForm extends Form implements InputFilterProviderInterfa
 
         $this->add(
             [
-            'type'    => 'Zend\Form\Element\Csrf',
-            'name'    => 's',
+            'type' => 'Zend\Form\Element\Csrf',
+            'name' => 's',
             'options' => [
                 'csrf_options' => [
                     'timeout' => 1400,
@@ -69,10 +69,10 @@ final class AdministratorForm extends Form implements InputFilterProviderInterfa
 
         $this->add(
             [
-            'name'       => 'submit',
+            'name' => 'submit',
             'attributes' => [
-                'type'  => 'submit',
-                'id'    => 'submitbutton',
+                'type' => 'submit',
+                'id' => 'submitbutton',
                 'value' => 'Save',
             ],
             ]
@@ -90,21 +90,21 @@ final class AdministratorForm extends Form implements InputFilterProviderInterfa
     {
         return [
             [
-                'name'     => 'id',
+                'name' => 'id',
                 'required' => false,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'Int'],
                 ],
             ],
             [
-                'name'     => 'user',
+                'name' => 'user',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'Int'],
                 ],
                 'validators' => [
                     [
-                        'name'    => 'Regex',
+                        'name' => 'Regex',
                         'options' => [
                             'pattern' => '/^[0-9]+$/',
                         ],

@@ -43,7 +43,7 @@ final class RegistrationController extends BaseController
          * he will be redirected to the root url of the website.
          * For resetpassword and newpassword actions we assume that the user is not logged in.
          */
-        if (APP_ENV == 'development') {
+        if (APP_ENV === 'development') {
             $this->UserData()->checkIdentity();
         }
     }

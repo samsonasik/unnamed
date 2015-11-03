@@ -4,24 +4,24 @@ return  [
   'router' => [
     'routes' => [
       'themes' => [
-        'type'    => 'Literal',
+        'type' => 'Literal',
         'options' => [
-          'route'    => '/theme',
+          'route' => '/theme',
           'defaults' => [
             '__NAMESPACE__' => 'Themes\\Controller',
-            'controller'    => 'Index',
-            'action'        => 'index',
+            'controller' => 'Index',
+            'action' => 'index',
           ],
         ],
         'may_terminate' => true,
-        'child_routes'  => [
+        'child_routes' => [
           'default' => [
-            'type'    => 'Segment',
+            'type' => 'Segment',
             'options' => [
-              'route'       => '/[:controller[/:action]]',
+              'route' => '/[:controller[/:action]]',
               'constraints' => [
                 'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
               ],
             ],
           ],
@@ -36,7 +36,7 @@ return  [
   ],
   'service_manager' => [
     'factories' => [
-      'initThemes'       => 'Themes\\Factory\\ThemesFactory',
+      'initThemes' => 'Themes\\Factory\\ThemesFactory',
       'getThemesFromDir' => 'Themes\\Factory\\GetThemesFromDir',
     ],
     'invokables' => [

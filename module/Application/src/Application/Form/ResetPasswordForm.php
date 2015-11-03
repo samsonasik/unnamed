@@ -28,12 +28,12 @@ final class ResetPasswordForm extends Form implements InputFilterProviderInterfa
 
         $this->add(
             [
-            'type'       => 'Zend\Form\Element\Email',
-            'name'       => 'email',
+            'type' => 'Zend\Form\Element\Email',
+            'name' => 'email',
             'attributes' => [
-                'required'    => true,
-                'min'         => 3,
-                'size'        => 30,
+                'required' => true,
+                'min' => 3,
+                'size' => 30,
                 'placeholder' => 'johnsmith@example.com',
             ],
             ]
@@ -41,10 +41,10 @@ final class ResetPasswordForm extends Form implements InputFilterProviderInterfa
 
         $this->add(
             [
-            'name'       => 'resetpw',
+            'name' => 'resetpw',
             'attributes' => [
-                'type'  => 'submit',
-                'id'    => 'submitbutton',
+                'type' => 'submit',
+                'id' => 'submitbutton',
             ],
             ]
         );
@@ -54,26 +54,26 @@ final class ResetPasswordForm extends Form implements InputFilterProviderInterfa
     {
         return [
             [
-                'name'     => 'email',
+                'name' => 'email',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
                 'validators' => [
                     [
-                        'name'    => 'EmailAddress',
+                        'name' => 'EmailAddress',
                         'options' => [
                             'encoding' => 'UTF-8',
                             'messages' => ['emailAddressInvalidFormat' => "Email address doesn't appear to be valid."],
                         ],
                     ],
                     [
-                        'name'    => 'StringLength',
+                        'name' => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min'      => 5,
-                            'max'      => 255,
+                            'min' => 5,
+                            'max' => 255,
                         ],
                     ],
                     ['name' => 'NotEmpty'],

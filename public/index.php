@@ -44,7 +44,7 @@ mb_http_output('UTF-8');
 /*
  * Some server configurations are missing a date timezone and PHP will throw a warning.
  */
-if (ini_get('date.timezone') == '') {
+if (ini_get('date.timezone') === '') {
     date_default_timezone_set('UTC');
 }
 

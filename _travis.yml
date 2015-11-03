@@ -12,12 +12,6 @@ install:
   - /home/travis/.phpenv/versions/$TRAVIS_PHP_VERSION/bin/composer self-update
   - travis_retry composer install
 
-before_script:
-  - mysql -e 'create database IF NOT EXISTS xj;' -uroot
-  - php vendor/bin/doctrine-module migrations:migrate --no-interaction
-  - php -S localhost:8000 -t public/ &
-  - sleep 1
-
 notifications:
   email: true
 

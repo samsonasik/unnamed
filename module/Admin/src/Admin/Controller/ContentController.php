@@ -172,7 +172,7 @@ final class ContentController extends BaseController
             $content = new Content([]);
         }
 
-        /**
+        /*
          * @var ContentForm
          */
         $form = $this->contentForm;

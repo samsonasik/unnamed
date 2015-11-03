@@ -11,8 +11,9 @@
 namespace ApplicationTest\Controller;
 
 use Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;
+use PHPUnit_Framework_Testcase;
 
-class IndexControllerTest extends AbstractHttpControllerTestCase
+class IndexControllerTest extends PHPUnit_Framework_Testcase
 {
     public function setUp()
     {

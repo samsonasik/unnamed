@@ -25,7 +25,7 @@ class SessionFactory
             'cookie_lifetime'         => 7200, //2hrs
             'remember_me_seconds'     => 7200, //2hrs This is also set in the login controller
             'use_cookies'             => true,
-            'cache_expire'            => 180,  //3hrs
+            'cache_expire'            => 180, //3hrs
             'cookie_path'             => '/',
             'cookie_httponly'         => true,
             'name'                    => '__zpc',

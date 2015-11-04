@@ -18,12 +18,12 @@ final class SystemSettings extends AbstractPlugin
     /**
      * @var array
      */
-    private $options = null;
+    private $options = [];
 
     /**
      * @param array $options
      */
-    public function __construct(array $options = null)
+    public function __construct(array $options = [])
     {
         $this->options = $options;
     }
@@ -45,12 +45,9 @@ final class SystemSettings extends AbstractPlugin
             case 'posts':
             case 'discussion':
                 return $this->getOption($option, $value);
-                break;
 
             default:
                 throw new InvalidArgumentException("Option doesn't exists");
-
-                break;
         }
     }
 

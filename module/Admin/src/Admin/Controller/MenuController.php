@@ -56,8 +56,8 @@ final class MenuController extends BaseController
     private function showMenus()
     {
         $menu = $this->menuTable
-                     ->getEntityRepository()
-                     ->findBy(['language' => $this->language()], ['parent' => 'DESC']);
+                        ->getEntityRepository()
+                        ->findBy(['language' => $this->language()], ['parent' => 'DESC']);
 
         $menus = ['menus' => [], 'submenus' => []];
         if (count($menu) > 0) {

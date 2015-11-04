@@ -73,8 +73,8 @@ final class RegistrationController extends BaseController
              * See if there is already registered user with this email
              */
             $existingEmail = $this->getTable('Admin\\Model\\UserTable')
-                                  ->getEntityRepository()
-                                  ->findBy(['email' => $formData['email']]);
+                                    ->getEntityRepository()
+                                    ->findBy(['email' => $formData['email']]);
 
             if (count($existingEmail) > 0) {
                 return $this->setLayoutMessages($this->translate('EMAIL_EXIST').' <b>'.$formData['email'].'</b> '.$this->translate('ALREADY_EXIST'), 'info');

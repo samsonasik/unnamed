@@ -67,8 +67,8 @@ class BaseController extends AbstractActionController
     private function initMenus()
     {
         $menu = $this->getTable('Admin\\Model\\MenuTable')
-                     ->getEntityRepository()
-                     ->findBy(['active' => 1, 'language' => $this->language()], ['parent' => 'DESC']);
+                        ->getEntityRepository()
+                        ->findBy(['active' => 1, 'language' => $this->language()], ['parent' => 'DESC']);
 
         if (count($menu) > 0) {
             $menus = ['menus' => [], 'submenus' => []];
@@ -99,7 +99,7 @@ class BaseController extends AbstractActionController
      *
      * @param int    $parent
      * @param array  $menu
-     * @param string $role
+     * @param string $ariaRole
      * @param string $html   - add html menus that do not come from database
      *
      * @return string generated html code
@@ -126,7 +126,7 @@ class BaseController extends AbstractActionController
      * Get Language id or name. Defaults to language - id.
      * If none is found - 1 will be returned as the default language id where 1 == en.
      *
-     * @return mixed
+     * @return integer|string
      */
     final protected function language($offset = 'language')
     {

@@ -23,10 +23,10 @@ final class NewsController extends BaseController
 
         $query = $this->getTable('Admin\\Model\\ContentTable');
         $news = $query->queryBuilder()->select(['c'])
-               ->from('Admin\Entity\Content', 'c')
-               ->where('c.type = 1 AND c.menu = 0 AND c.language = :language')
-               ->setParameter(':language', (int) $this->language())
-               ->orderBy('c.date', 'DESC');
+                ->from('Admin\Entity\Content', 'c')
+                ->where('c.type = 1 AND c.menu = 0 AND c.language = :language')
+                ->setParameter(':language', (int) $this->language())
+                ->orderBy('c.date', 'DESC');
 
         $paginator = $query->preparePagination($news, false);
         $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));
@@ -47,11 +47,11 @@ final class NewsController extends BaseController
         $post = (string) $escaper->escapeUrl($this->getParam('post'));
         $query = $this->getTable('Admin\\Model\\ContentTable');
         $new = $query->queryBuilder()->select(['c.title, c.text, c.date, c.preview'])
-               ->from('Admin\Entity\Content', 'c')
-               ->where('c.type = 1 AND c.menu = 0 AND c.language = :language AND c.titleLink = :titleLink')
-               ->setParameter(':language', (int) $this->language())
-               ->setParameter(':titleLink', (string) $post)
-               ->orderBy('c.date', 'DESC');
+                ->from('Admin\Entity\Content', 'c')
+                ->where('c.type = 1 AND c.menu = 0 AND c.language = :language AND c.titleLink = :titleLink')
+                ->setParameter(':language', (int) $this->language())
+                ->setParameter(':titleLink', (string) $post)
+                ->orderBy('c.date', 'DESC');
 
         $new = $new->getQuery()->getResult();
         if ($new) {

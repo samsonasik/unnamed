@@ -166,7 +166,7 @@ final class Image implements ImageInterface
     }
 
     /**
-     * @return resource
+     * @return string
      */
     private function getImageFile()
     {
@@ -186,7 +186,7 @@ final class Image implements ImageInterface
     /**
      * The current dimensions of the image.
      *
-     * @return array
+     * @return resource
      */
     public function getImageDimensions()
     {

@@ -20,7 +20,7 @@ final class AbstractTableFactory implements AbstractFactoryInterface
      *
      * @method canCreateServiceWithName
      *
-     * @param ServiceLocatorInterface $services
+     * @param ServiceLocatorInterface $serviceLocator
      * @param string                  $name
      * @param string                  $requestedName
      *

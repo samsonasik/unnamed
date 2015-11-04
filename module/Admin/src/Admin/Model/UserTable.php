@@ -30,7 +30,7 @@ final class UserTable
     }
 
     /**
-     * @return Doctrine\ORM\QueryBuilder
+     * @return \Doctrine\ORM\QueryBuilder
      */
     public function queryBuilder()
     {
@@ -41,7 +41,7 @@ final class UserTable
      * @param Query|QueryBuilder $query               A Doctrine ORM query or query builder.
      * @param bool               $fetchJoinCollection Whether the query joins a collection (true by default).
      *
-     * @return Paginator
+     * @return ZendPaginator
      */
     public function preparePagination($query, $fetchJoinCollection = true)
     {
@@ -49,7 +49,7 @@ final class UserTable
     }
 
     /**
-     * @return Admin\Entity\User
+     * @return \Doctrine\ORM\EntityRepository
      */
     public function getEntityRepository()
     {
@@ -59,7 +59,7 @@ final class UserTable
     /**
      * @param int $userId user id
      *
-     * @return array
+     * @return User
      */
     public function getUser($userId = 0)
     {

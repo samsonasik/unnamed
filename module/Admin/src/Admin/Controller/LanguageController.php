@@ -62,8 +62,8 @@ final class LanguageController extends BaseController
         $table = $this->languageTable;
 
         $query = $table->queryBuilder()
-                   ->select(['l'])
-                   ->from('Admin\Entity\Language', 'l');
+                    ->select(['l'])
+                    ->from('Admin\Entity\Language', 'l');
 
         $paginator = $table->preparePagination($query, false);
         $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));

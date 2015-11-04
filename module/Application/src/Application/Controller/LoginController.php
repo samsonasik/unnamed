@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @copyright  2015 (c) Stanimir Dimitrov.
  * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
@@ -7,6 +8,7 @@
  *
  * @link       TBA
  */
+
 namespace Application\Controller;
 
 use Application\Entity\ResetPassword;
@@ -22,7 +24,7 @@ use Zend\Session\Container;
 final class LoginController extends BaseController
 {
     /**
-     * @var AuthenticationService
+     * @var \Zend\Authentication\Adapter\AdapterInterface
      */
     private $authService;
 
@@ -43,7 +45,7 @@ final class LoginController extends BaseController
 
     /**
      * @param LoginForm             $loginForm
-     * @param AuthenticationService $authService
+     * @param \Zend\Authentication\Adapter\AdapterInterface $authService
      * @param ResetPasswordForm     $resetPasswordForm
      * @param NewPasswordForm       $newPasswordForm
      */
@@ -286,8 +288,8 @@ final class LoginController extends BaseController
             if ($form->isValid()) {
                 $formData = $form->getData();
                 $existingEmail = $this->getTable('Admin\\Model\\UserTable')
-                                      ->getEntityRepository()
-                                      ->findBy(['email' => $formData['email']]);
+                                        ->getEntityRepository()
+                                        ->findBy(['email' => $formData['email']]);
 
                 if (count($existingEmail) === 1) {
                     $func = $this->getFunctions();

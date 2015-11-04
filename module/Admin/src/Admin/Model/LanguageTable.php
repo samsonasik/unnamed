@@ -33,7 +33,7 @@ class LanguageTable implements LanguageTableInterface
     }
 
     /**
-     * @return Doctrine\ORM\QueryBuilder
+     * @return \Doctrine\ORM\QueryBuilder
      */
     public function queryBuilder()
     {
@@ -41,10 +41,10 @@ class LanguageTable implements LanguageTableInterface
     }
 
     /**
-     * @param Query|QueryBuilder $query               A Doctrine ORM query or query builder.
-     * @param bool               $fetchJoinCollection Whether the query joins a collection (true by default).
+     * @param \Doctrine\ORM\QueryBuilder $query               A Doctrine ORM query or query builder.
+     * @param bool                       $fetchJoinCollection Whether the query joins a collection (true by default).
      *
-     * @return Paginator
+     * @return ZendPaginator
      */
     public function preparePagination($query, $fetchJoinCollection = true)
     {
@@ -52,7 +52,7 @@ class LanguageTable implements LanguageTableInterface
     }
 
     /**
-     * @return Admin\Entity\Language
+     * @return \Doctrine\ORM\EntityRepository
      */
     public function getEntityRepository()
     {

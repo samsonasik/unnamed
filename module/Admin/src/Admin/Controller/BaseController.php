@@ -124,21 +124,19 @@ class BaseController extends AbstractActionController
      * it will ty to check for a language offset.
      * If language offset is also not found 1 s being returned as the default language id where 1 == en.
      *
-     * @return mixed
+     * @return integer|string
      */
     final protected function language($offset = 'language')
     {
         if ($this->getTranslation()->offSetExists($offset)) {
             return $this->getTranslation()->offSetGet($offset);
-        } elseif ($this->getTranslation()->offSetExists('language')) {
-            return $this->getTranslation()->offSetGet('language');
-        } else {
-            return 1;
         }
+
+        return 1;
     }
 
     /**
-     * @param array $breadcrumbs
+     * @param array $breadcrumb
      */
     final protected function addBreadcrumb(array $breadcrumb = [])
     {
@@ -208,7 +206,7 @@ class BaseController extends AbstractActionController
      *
      * @return JsonModel
      */
-    protected function ajaxUserSearch($search, callable $buttons)
+    protected function ajaxUserSearch($search, callable $buttons = null)
     {
         $json = [];
         $success = false;

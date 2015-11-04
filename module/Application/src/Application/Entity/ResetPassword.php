@@ -65,10 +65,10 @@ final class ResetPassword
     public function exchangeArray(array $data = [])
     {
         $this->id = (isset($data['id'])) ? $data['id'] : $this->getId();
-        $this->ip = (isset($data['ip'])) ? $data['ip'] :  $this->getIp();
-        $this->date = (isset($data['date'])) ? $data['date'] :  $this->getDate();
-        $this->token = (isset($data['token'])) ? $data['token'] :  $this->getToken();
-        $this->user = (isset($data['user'])) ? $data['user'] :  $this->getUser();
+        $this->ip = (isset($data['ip'])) ? $data['ip'] : $this->getIp();
+        $this->date = (isset($data['date'])) ? $data['date'] : $this->getDate();
+        $this->token = (isset($data['token'])) ? $data['token'] : $this->getToken();
+        $this->user = (isset($data['user'])) ? $data['user'] : $this->getUser();
     }
 
     /**

@@ -61,9 +61,9 @@ class BaseControllerTest extends AbstractHttpControllerTestCase
     /**
      * Get a protected/private method reflection for testing.
      *
-     * @param object $obj  The instantiated instance of your class
-     * @param string $name The name of your protected/private method
-     * @param array  $args Arguments for the protected/private method
+     * @param BaseController $obj  The instantiated instance of your class
+     * @param string         $name The name of your protected/private method
+     * @param array          $args Arguments for the protected/private method
      *
      * @return ReflectionClass The method you asked for
      */
@@ -89,16 +89,16 @@ class BaseControllerTest extends AbstractHttpControllerTestCase
     {
         $authMock = $this->getMock('Zend\Authentication\AuthenticationService');
         $authMock->expects($this->any())
-                 ->method('setIdentity')
-                 ->will($this->returnValue('someIdentity'));
+                    ->method('setIdentity')
+                    ->will($this->returnValue('someIdentity'));
 
         $authMock->expects($this->any())
-                 ->method('hasIdentity')
-                 ->will($this->returnValue(true));
+                    ->method('hasIdentity')
+                    ->will($this->returnValue(true));
 
         $authMock->expects($this->any())
-                 ->method('getIdentity')
-                 ->will($this->returnValue('someIdentity'));
+                    ->method('getIdentity')
+                    ->will($this->returnValue('someIdentity'));
     }
 
     public function testGetViewMethodWillReturnViewModelInstance()

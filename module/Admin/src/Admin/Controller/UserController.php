@@ -84,10 +84,10 @@ final class UserController extends BaseController
     {
         $table = $this->userTable;
         $query = $table->queryBuilder()
-                   ->select(['u'])
-                   ->from('Admin\Entity\User', 'u')
-                   ->where('u.isDisabled = :isDisabled')
-                   ->setParameter(':isDisabled', (int) $isDisabled);
+                    ->select(['u'])
+                    ->from('Admin\Entity\User', 'u')
+                    ->where('u.isDisabled = :isDisabled')
+                    ->setParameter(':isDisabled', (int) $isDisabled);
 
         $paginator = $table->preparePagination($query, false);
         $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));
@@ -137,10 +137,10 @@ final class UserController extends BaseController
                 // check for existing email
                 $query = $this->userTable;
                 $existingEmail = $query->queryBuilder()
-                   ->select(['u'])
-                   ->from('Admin\Entity\User', 'u')
-                   ->where('u.email = :email')
-                   ->setParameter(':email', (string) $formData->getEmail())->getQuery()->getResult();
+                    ->select(['u'])
+                    ->from('Admin\Entity\User', 'u')
+                    ->where('u.email = :email')
+                    ->setParameter(':email', (string) $formData->getEmail())->getQuery()->getResult();
 
                 if (count($existingEmail) > 1) {
                     return $this->setLayoutMessages($this->translate('EMAIL_EXIST').' <b>'.$formData->getEmail().'</b> '.$this->translate('ALREADY_EXIST'), 'info');
@@ -191,7 +191,7 @@ final class UserController extends BaseController
     /**
      * return the list of users that match a given criteria.
      *
-     * @return JsonModel
+     * @return \Zend\View\Model\JsonModel
      */
     protected function searchAction()
     {

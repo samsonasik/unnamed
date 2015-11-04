@@ -120,7 +120,7 @@ final class Content
         $this->type = (isset($data['type'])) ? $data['type'] : $this->getType();
         $this->date = (isset($data['date'])) ? $data['date'] : $this->getDate();
         $this->language = (isset($data['language'])) ? $data['language'] : $this->getLanguage();
-        $this->titleLink = (isset($data['titleLink'])) ? $data['titleLink'] :  $this->getTitleLink();
+        $this->titleLink = (isset($data['titleLink'])) ? $data['titleLink'] : $this->getTitleLink();
         $this->active = (isset($data['active'])) ? $data['active'] : $this->isActive();
         $this->author = (isset($data['author'])) ? $data['author'] : $this->getAuthor();
     }
@@ -246,7 +246,7 @@ final class Content
     /**
      * Set active.
      *
-     * @param bool $active
+     * @param integer $active
      */
     public function setActive($active = 0)
     {

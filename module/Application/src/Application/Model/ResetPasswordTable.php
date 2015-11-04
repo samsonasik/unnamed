@@ -35,7 +35,7 @@ final class ResetPasswordTable
     }
 
     /**
-     * @return \Application\Entity\ResetPassword
+     * @return \Doctrine\ORM\EntityRepository
      */
     public function getEntityRepository()
     {

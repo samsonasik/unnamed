@@ -14,6 +14,11 @@ use Admin\Entity\Administrator;
 use Admin\Form\AdministratorForm;
 use Zend\Mvc\MvcEvent;
 
+/**
+ * @method string getTable($tableName)
+ * @method void setLayoutMessages($message = [], $namespace = 'default')
+ * @method string translate($message = '')
+ */
 final class AdministratorController extends BaseController
 {
     /**
@@ -108,10 +113,9 @@ final class AdministratorController extends BaseController
     protected function deleteAction()
     {
         $id = (int) $this->getParam('id', 0);
-        $userTable = $this->userTable;
-        $user = $userTable->getUser($id);
+        $user = $this->userTable->getUser($id);
         $user->setAdmin(0);
-        $userTable->saveUser($user);
+        $this->userTable->saveUser($user);
         $this->administratorTable->deleteAdministrator($id);
         $this->setLayoutMessages($this->translate('DELETE_ADMINISTRATOR_SUCCESS'), 'success');
     }
@@ -120,13 +124,13 @@ final class AdministratorController extends BaseController
      * This action is used in combination with the javascript ajax function
      * to search for existing users and add them as administrators.
      *
-     * @return JsonModel
+     * @return \Zend\View\Model\JsonModel
      */
     protected function searchAction()
     {
         $search = (string) $this->getParam('ajaxsearch');
 
-        return $this->ajaxUserSearch($search);
+        return $this->ajaxUserSearch($search, null);
     }
 
     /**

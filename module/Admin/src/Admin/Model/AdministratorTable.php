@@ -33,7 +33,7 @@ final class AdministratorTable
     }
 
     /**
-     * @return Doctrine\ORM\QueryBuilder
+     * @return \Doctrine\ORM\QueryBuilder
      */
     public function queryBuilder()
     {
@@ -44,7 +44,7 @@ final class AdministratorTable
      * @param Query|QueryBuilder $query               A Doctrine ORM query or query builder.
      * @param bool               $fetchJoinCollection Whether the query joins a collection (true by default).
      *
-     * @return Paginator
+     * @return ZendPaginator
      */
     public function preparePagination($query, $fetchJoinCollection = true)
     {
@@ -52,7 +52,7 @@ final class AdministratorTable
     }
 
     /**
-     * @return Admin\Entity\Administrator
+     * @return \Doctrine\ORM\EntityRepository
      */
     public function getEntityRepository()
     {

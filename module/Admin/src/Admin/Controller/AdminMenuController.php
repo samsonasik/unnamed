@@ -58,8 +58,8 @@ final class AdminMenuController extends BaseController
     {
         $this->getView()->setTemplate('admin/admin-menu/index');
         $menu = $this->adminMenuTable
-                     ->getEntityRepository()
-                     ->findAll();
+                        ->getEntityRepository()
+                        ->findAll();
 
         if (count($menu) > 0) {
             $menus = ['menus' => [], 'submenus' => []];

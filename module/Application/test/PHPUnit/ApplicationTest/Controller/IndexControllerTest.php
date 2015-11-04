@@ -47,14 +47,14 @@ class IndexControllerTest extends PHPUnit_Framework_Testcase
      * @param string $pluginName
      * @param string $method
      *
-     * @return mixed
+     * @return \Zend\Mvc\Controller\PluginManager
      */
     private function getPlugin($pluginName, $method = 'get')
     {
         $pluginManager = $this->getMock('Zend\Mvc\Controller\PluginManager', ['get']);
         $pluginManager->expects($this->any())
-                      ->method($method)
-                      ->will($this->returnCallback([$this, $pluginName]));
+                        ->method($method)
+                        ->will($this->returnCallback([$this, $pluginName]));
 
         return $pluginManager;
     }
@@ -63,17 +63,4 @@ class IndexControllerTest extends PHPUnit_Framework_Testcase
     {
         $this->assertInstanceOf('Zend\View\Model\ViewModel', $this->controller->indexAction());
     }
-
-    // public function testLanguageAction()
-    // {
-    //     // $doctrine = $this->prophesize('Doctrine\ORM\EntityManager');
-    //     // $language = new \Admin\Entity\Language($doctrine->reveal());
-    //     $languageTableMock = $this->getMockBuilder('Admin\Model\LanguageTable')
-    //         ->disableOriginalConstructor()
-    //         ->getMock();
-
-    //     $languageTableMock->expects($this->any())
-    //                 ->method('getLanguage')
-    //                 ->will($this->returnValue(array()));
-    // }
 }

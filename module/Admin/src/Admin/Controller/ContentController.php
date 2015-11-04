@@ -75,10 +75,10 @@ final class ContentController extends BaseController
 
         if ((int) $this->getParam('id', 0) === 1) {
             $query = $table->queryBuilder()->select(['c'])
-                   ->from('Admin\Entity\Content', 'c')
-                   ->where('c.type = 1 AND c.language = :language')
-                   ->setParameter(':language', (int) $this->language())
-                   ->orderBy('c.date DESC');
+                    ->from('Admin\Entity\Content', 'c')
+                    ->where('c.type = 1 AND c.language = :language')
+                    ->setParameter(':language', (int) $this->language())
+                    ->orderBy('c.date DESC');
             $paginator = $table->preparePagination($query, false);
         } else {
             $query = $table->queryBuilder()->getEntityManager()->createQuery("SELECT c FROM Admin\Entity\Content AS c LEFT JOIN Admin\Entity\Menu AS m WITH c.menu=m.id WHERE c.type = 0 AND c.language = {$this->language()} ORDER BY m.parent ASC, m.menuOrder ASC, c.date DESC");

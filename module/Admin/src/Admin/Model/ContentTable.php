@@ -30,7 +30,7 @@ final class ContentTable
     }
 
     /**
-     * @return Doctrine\ORM\QueryBuilder
+     * @return \Doctrine\ORM\QueryBuilder
      */
     public function queryBuilder()
     {
@@ -41,7 +41,7 @@ final class ContentTable
      * @param Query|QueryBuilder $query               A Doctrine ORM query or query builder.
      * @param bool               $fetchJoinCollection Whether the query joins a collection (true by default).
      *
-     * @return Paginator
+     * @return ZendPaginator
      */
     public function preparePagination($query, $fetchJoinCollection = true)
     {
@@ -49,7 +49,7 @@ final class ContentTable
     }
 
     /**
-     * @return Admin\Entity\User
+     * @return \Doctrine\ORM\EntityRepository
      */
     public function getEntityRepository()
     {

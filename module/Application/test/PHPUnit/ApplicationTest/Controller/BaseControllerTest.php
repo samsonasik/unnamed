@@ -86,7 +86,6 @@ class BaseControllerTest extends AbstractHttpControllerTestCase
         $this->assertMatchedRouteName('application');
     }
 
-    // does't work properly
     public function testValidIdentity()
     {
         $authMock = $this->getMock('Zend\Authentication\AuthenticationService');

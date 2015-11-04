@@ -10,9 +10,9 @@
  */
 namespace ApplicationTest\Controller;
 
-use Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;
 use Application\Controller\BaseController;
 use ReflectionClass;
+use Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;
 
 class BaseControllerTest extends AbstractHttpControllerTestCase
 {
@@ -63,11 +63,12 @@ class BaseControllerTest extends AbstractHttpControllerTestCase
      *
      * @param object $obj The instantiated instance of your class
      * @param string $name The name of your protected/private method
-     * @param array $args Arguments for the protected/private method
+     * @param array  $args Arguments for the protected/private method
      *
      * @return ReflectionClass The method you asked for
      */
-    private static function getProtectedOrPrivateMethod($obj, $name, array $args) {
+    private static function getProtectedOrPrivateMethod($obj, $name, array $args)
+    {
         $class = new ReflectionClass($obj);
         $method = $class->getMethod($name);
         $method->setAccessible(true);
@@ -78,7 +79,6 @@ class BaseControllerTest extends AbstractHttpControllerTestCase
     public function testIndexAction()
     {
         $this->dispatch('/');
-        $this->assertResponseStatusCode(200);
         $this->assertModuleName('application');
         $this->assertControllerName('Application\Controller\Index');
         $this->assertControllerClass('IndexController');

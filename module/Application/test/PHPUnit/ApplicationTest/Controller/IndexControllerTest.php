@@ -11,7 +11,7 @@
 namespace ApplicationTest\Controller;
 
 use Application\Controller\IndexController;
-use \PHPUnit_Framework_Testcase;
+use PHPUnit_Framework_Testcase;
 
 class IndexControllerTest extends PHPUnit_Framework_Testcase
 {
@@ -64,4 +64,17 @@ class IndexControllerTest extends PHPUnit_Framework_Testcase
     {
         $this->assertInstanceOf('Zend\View\Model\ViewModel', $this->controller->indexAction());
     }
+
+    // public function testLanguageAction()
+    // {
+    //     // $doctrine = $this->prophesize('Doctrine\ORM\EntityManager');
+    //     // $language = new \Admin\Entity\Language($doctrine->reveal());
+    //     $languageTableMock = $this->getMockBuilder('Admin\Model\LanguageTable')
+    //         ->disableOriginalConstructor()
+    //         ->getMock();
+
+    //     $languageTableMock->expects($this->any())
+    //                 ->method('getLanguage')
+    //                 ->will($this->returnValue(array()));
+    // }
 }

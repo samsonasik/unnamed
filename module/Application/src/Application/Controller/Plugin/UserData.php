@@ -70,8 +70,10 @@ final class UserData extends AbstractPlugin
             if ($this->auth->getIdentity()) {
                 return true;
             }
+
             return $this->clearUserData($errorString); // something is wrong, clear all user data
         }
+
         return;
     }
 

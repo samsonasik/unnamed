@@ -29,7 +29,7 @@ final class IndexController extends BaseController
      *
      * This will reload the translations every time the method is being called.
      */
-    protected function languageAction()
+    public function languageAction()
     {
         $language = $this->getTable('Admin\\Model\\LanguageTable')->getLanguage((int) $this->getParam('id', 1));
 

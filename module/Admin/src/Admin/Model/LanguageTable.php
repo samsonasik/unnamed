@@ -11,14 +11,13 @@
 namespace Admin\Model;
 
 use Admin\Entity\Language;
-use Admin\Model\LanguageTableInterface;
 use Admin\Exception\RuntimeException;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as PaginatorAdapter;
 use Zend\Paginator\Paginator as ZendPaginator;
 
-final class LanguageTable implements LanguageTableInterface
+class LanguageTable implements LanguageTableInterface
 {
     /**
      * @var EntityManager
@@ -67,7 +66,7 @@ final class LanguageTable implements LanguageTableInterface
      *
      * @return Language
      */
-    public function getLanguage($languageId = 0)
+    public function getLanguage($languageId = 1)
     {
         $language = $this->getEntityRepository()->find($languageId);
 

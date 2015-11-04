@@ -67,6 +67,7 @@ class BaseControllerTest extends AbstractHttpControllerTestCase
      *
      * @return ReflectionClass The method you asked for
      */
+
     private static function getProtectedOrPrivateMethod($obj, $name, array $args)
     {
         $class = new ReflectionClass($obj);

@@ -67,17 +67,7 @@
         "san/san-session-toolbar": "0.*",
         "squizlabs/php_codesniffer": "2.*",
         "phpunit/PHPUnit": "4.*",
-        "satooshi/php-coveralls": "dev-master",
-        "codeception/codeception": "2.*",
-        "jonnyw/php-phantomjs": "3.*"
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "PhantomInstaller\\Installer::installPhantomJS"
-        ],
-        "post-update-cmd": [
-            "PhantomInstaller\\Installer::installPhantomJS"
-        ]
+        "satooshi/php-coveralls": "dev-master"
     },
     "autoload": {
         "psr-4": {

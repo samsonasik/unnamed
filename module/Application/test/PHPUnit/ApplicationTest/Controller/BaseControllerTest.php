@@ -61,7 +61,7 @@ class BaseControllerTest extends AbstractHttpControllerTestCase
     /**
      * Get a protected/private method reflection for testing.
      *
-     * @param object $obj The instantiated instance of your class
+     * @param object $obj  The instantiated instance of your class
      * @param string $name The name of your protected/private method
      * @param array  $args Arguments for the protected/private method
      *

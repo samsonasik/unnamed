@@ -19,6 +19,7 @@ before_script:
   - mysql -e 'create database IF NOT EXISTS xj;' -uroot
   - cp config/autoload/doctrine.local.php.dist config/autoload/doctrine.local.php
   - php -S localhost:8000 -t public/ &
+  - vendor/bin/phantomjs --webdriver=4444 && PID=$! &
   - sleep 1
 
 script:

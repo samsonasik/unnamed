@@ -51,7 +51,6 @@ class IndexControllerTest extends PHPUnit_Framework_Testcase
      */
     private function getPlugin($pluginName, $method = 'get')
     {
-
         $pluginManager = $this->getMock('Zend\Mvc\Controller\PluginManager', ['get']);
         $pluginManager->expects($this->any())
                       ->method($method)

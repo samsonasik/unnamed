@@ -1,0 +1,266 @@
+2015-11-04T17:49:06+00:00 INFO (6):  *** LOG ***
+        Controller: Application\Controller\Index,
+        Controller action: index,
+        IP: ,
+        Browser string: ,
+        Date: 2015-11-04 17:49:06,
+        Full URL: /,
+        Method used: GET
+
+2015-11-04T17:49:06+00:00 ERR (3): 
+Exception: Error
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php(75): Application\Controller\Plugin\UserData->clearUserData('Error')
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(47): Application\Controller\Plugin\UserData->checkIdentity()
+#2 [internal function]: Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#7 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-test\src\PHPUnit\Controller\AbstractControllerTestCase.php(282): Zend\Mvc\Application->run()
+#12 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\ApplicationTest\Controller\BaseControllerTest.php(112): Zend\Test\PHPUnit\Controller\AbstractControllerTestCase->dispatch('/')
+#13 [internal function]: ApplicationTest\Controller\BaseControllerTest->testIndexAction()
+#14 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(881): ReflectionMethod->invokeArgs(Object(ApplicationTest\Controller\BaseControllerTest), Array)
+#15 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(746): PHPUnit_Framework_TestCase->runTest()
+#16 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestResult.php(601): PHPUnit_Framework_TestCase->runBare()
+#17 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(702): PHPUnit_Framework_TestResult->run(Object(ApplicationTest\Controller\BaseControllerTest))
+#18 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestCase->run(Object(PHPUnit_Framework_TestResult))
+#19 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
+#20 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/TestRunner.php(432): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
+#21 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(148): PHPUnit_TextUI_TestRunner->doRun(Object(PHPUnit_Framework_TestSuite), Array)
+#22 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(100): PHPUnit_TextUI_Command->run(Array, true)
+#23 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\phpunit.phar(547): PHPUnit_TextUI_Command::main()
+#24 {main}
+2015-11-04T17:54:19+00:00 INFO (6):  *** LOG ***
+        Controller: Application\Controller\Index,
+        Controller action: index,
+        IP: ,
+        Browser string: ,
+        Date: 2015-11-04 17:54:19,
+        Full URL: /,
+        Method used: GET
+
+2015-11-04T17:54:19+00:00 ERR (3): 
+Exception: Error
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php(75): Application\Controller\Plugin\UserData->clearUserData('Error')
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(47): Application\Controller\Plugin\UserData->checkIdentity()
+#2 [internal function]: Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#7 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-test\src\PHPUnit\Controller\AbstractControllerTestCase.php(282): Zend\Mvc\Application->run()
+#12 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\ApplicationTest\Controller\BaseControllerTest.php(112): Zend\Test\PHPUnit\Controller\AbstractControllerTestCase->dispatch('/')
+#13 [internal function]: ApplicationTest\Controller\BaseControllerTest->testIndexAction()
+#14 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(881): ReflectionMethod->invokeArgs(Object(ApplicationTest\Controller\BaseControllerTest), Array)
+#15 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(746): PHPUnit_Framework_TestCase->runTest()
+#16 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestResult.php(601): PHPUnit_Framework_TestCase->runBare()
+#17 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(702): PHPUnit_Framework_TestResult->run(Object(ApplicationTest\Controller\BaseControllerTest))
+#18 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestCase->run(Object(PHPUnit_Framework_TestResult))
+#19 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
+#20 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/TestRunner.php(432): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
+#21 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(148): PHPUnit_TextUI_TestRunner->doRun(Object(PHPUnit_Framework_TestSuite), Array)
+#22 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(100): PHPUnit_TextUI_Command->run(Array, true)
+#23 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\phpunit.phar(547): PHPUnit_TextUI_Command::main()
+#24 {main}
+2015-11-04T17:55:23+00:00 INFO (6):  *** LOG ***
+        Controller: Application\Controller\Index,
+        Controller action: index,
+        IP: ,
+        Browser string: ,
+        Date: 2015-11-04 17:55:23,
+        Full URL: /,
+        Method used: GET
+
+2015-11-04T17:55:24+00:00 ERR (3): 
+Exception: Error
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php(75): Application\Controller\Plugin\UserData->clearUserData('Error')
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(47): Application\Controller\Plugin\UserData->checkIdentity()
+#2 [internal function]: Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#7 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-test\src\PHPUnit\Controller\AbstractControllerTestCase.php(282): Zend\Mvc\Application->run()
+#12 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\ApplicationTest\Controller\BaseControllerTest.php(109): Zend\Test\PHPUnit\Controller\AbstractControllerTestCase->dispatch('/')
+#13 [internal function]: ApplicationTest\Controller\BaseControllerTest->testIndexAction()
+#14 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(881): ReflectionMethod->invokeArgs(Object(ApplicationTest\Controller\BaseControllerTest), Array)
+#15 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(746): PHPUnit_Framework_TestCase->runTest()
+#16 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestResult.php(601): PHPUnit_Framework_TestCase->runBare()
+#17 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(702): PHPUnit_Framework_TestResult->run(Object(ApplicationTest\Controller\BaseControllerTest))
+#18 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestCase->run(Object(PHPUnit_Framework_TestResult))
+#19 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
+#20 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/TestRunner.php(432): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
+#21 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(148): PHPUnit_TextUI_TestRunner->doRun(Object(PHPUnit_Framework_TestSuite), Array)
+#22 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(100): PHPUnit_TextUI_Command->run(Array, true)
+#23 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\phpunit.phar(547): PHPUnit_TextUI_Command::main()
+#24 {main}
+2015-11-04T18:03:24+00:00 INFO (6):  *** LOG ***
+        Controller: Application\Controller\Index,
+        Controller action: index,
+        IP: ,
+        Browser string: ,
+        Date: 2015-11-04 18:03:24,
+        Full URL: /,
+        Method used: GET
+
+2015-11-04T18:03:24+00:00 ERR (3): 
+Exception: Error
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php(75): Application\Controller\Plugin\UserData->clearUserData('Error')
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(47): Application\Controller\Plugin\UserData->checkIdentity()
+#2 [internal function]: Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#7 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-test\src\PHPUnit\Controller\AbstractControllerTestCase.php(282): Zend\Mvc\Application->run()
+#12 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\ApplicationTest\Controller\BaseControllerTest.php(96): Zend\Test\PHPUnit\Controller\AbstractControllerTestCase->dispatch('/')
+#13 [internal function]: ApplicationTest\Controller\BaseControllerTest->testIndexAction()
+#14 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(881): ReflectionMethod->invokeArgs(Object(ApplicationTest\Controller\BaseControllerTest), Array)
+#15 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(746): PHPUnit_Framework_TestCase->runTest()
+#16 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestResult.php(601): PHPUnit_Framework_TestCase->runBare()
+#17 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(702): PHPUnit_Framework_TestResult->run(Object(ApplicationTest\Controller\BaseControllerTest))
+#18 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestCase->run(Object(PHPUnit_Framework_TestResult))
+#19 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
+#20 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/TestRunner.php(432): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
+#21 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(148): PHPUnit_TextUI_TestRunner->doRun(Object(PHPUnit_Framework_TestSuite), Array)
+#22 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(100): PHPUnit_TextUI_Command->run(Array, true)
+#23 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\phpunit.phar(547): PHPUnit_TextUI_Command::main()
+#24 {main}
+2015-11-04T18:04:15+00:00 INFO (6):  *** LOG ***
+        Controller: Application\Controller\Index,
+        Controller action: index,
+        IP: ,
+        Browser string: ,
+        Date: 2015-11-04 18:04:15,
+        Full URL: /,
+        Method used: GET
+
+2015-11-04T18:04:15+00:00 ERR (3): 
+Exception: Error
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php(75): Application\Controller\Plugin\UserData->clearUserData('Error')
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(47): Application\Controller\Plugin\UserData->checkIdentity()
+#2 [internal function]: Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#7 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-test\src\PHPUnit\Controller\AbstractControllerTestCase.php(282): Zend\Mvc\Application->run()
+#12 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\ApplicationTest\Controller\BaseControllerTest.php(96): Zend\Test\PHPUnit\Controller\AbstractControllerTestCase->dispatch('/')
+#13 [internal function]: ApplicationTest\Controller\BaseControllerTest->testIndexAction()
+#14 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(881): ReflectionMethod->invokeArgs(Object(ApplicationTest\Controller\BaseControllerTest), Array)
+#15 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(746): PHPUnit_Framework_TestCase->runTest()
+#16 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestResult.php(601): PHPUnit_Framework_TestCase->runBare()
+#17 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(702): PHPUnit_Framework_TestResult->run(Object(ApplicationTest\Controller\BaseControllerTest))
+#18 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestCase->run(Object(PHPUnit_Framework_TestResult))
+#19 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
+#20 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/TestRunner.php(432): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
+#21 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(148): PHPUnit_TextUI_TestRunner->doRun(Object(PHPUnit_Framework_TestSuite), Array)
+#22 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(100): PHPUnit_TextUI_Command->run(Array, true)
+#23 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\phpunit.phar(547): PHPUnit_TextUI_Command::main()
+#24 {main}
+2015-11-04T18:05:21+00:00 INFO (6):  *** LOG ***
+        Controller: Application\Controller\Index,
+        Controller action: index,
+        IP: ,
+        Browser string: ,
+        Date: 2015-11-04 18:05:21,
+        Full URL: /,
+        Method used: GET
+
+2015-11-04T18:05:21+00:00 ERR (3): 
+Exception: Error
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php(75): Application\Controller\Plugin\UserData->clearUserData('Error')
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(47): Application\Controller\Plugin\UserData->checkIdentity()
+#2 [internal function]: Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#7 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-test\src\PHPUnit\Controller\AbstractControllerTestCase.php(282): Zend\Mvc\Application->run()
+#12 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\ApplicationTest\Controller\BaseControllerTest.php(96): Zend\Test\PHPUnit\Controller\AbstractControllerTestCase->dispatch('/')
+#13 [internal function]: ApplicationTest\Controller\BaseControllerTest->testIndexAction()
+#14 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(881): ReflectionMethod->invokeArgs(Object(ApplicationTest\Controller\BaseControllerTest), Array)
+#15 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(746): PHPUnit_Framework_TestCase->runTest()
+#16 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestResult.php(601): PHPUnit_Framework_TestCase->runBare()
+#17 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(702): PHPUnit_Framework_TestResult->run(Object(ApplicationTest\Controller\BaseControllerTest))
+#18 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestCase->run(Object(PHPUnit_Framework_TestResult))
+#19 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
+#20 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/TestRunner.php(432): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
+#21 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(148): PHPUnit_TextUI_TestRunner->doRun(Object(PHPUnit_Framework_TestSuite), Array)
+#22 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(100): PHPUnit_TextUI_Command->run(Array, true)
+#23 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\phpunit.phar(547): PHPUnit_TextUI_Command::main()
+#24 {main}
+2015-11-04T18:06:28+00:00 INFO (6):  *** LOG ***
+        Controller: Application\Controller\Index,
+        Controller action: index,
+        IP: ,
+        Browser string: ,
+        Date: 2015-11-04 18:06:28,
+        Full URL: /,
+        Method used: GET
+
+2015-11-04T18:06:28+00:00 ERR (3): 
+Exception: Error
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php(75): Application\Controller\Plugin\UserData->clearUserData('Error')
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(47): Application\Controller\Plugin\UserData->checkIdentity()
+#2 [internal function]: Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#7 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-test\src\PHPUnit\Controller\AbstractControllerTestCase.php(282): Zend\Mvc\Application->run()
+#12 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\ApplicationTest\Controller\BaseControllerTest.php(80): Zend\Test\PHPUnit\Controller\AbstractControllerTestCase->dispatch('/')
+#13 [internal function]: ApplicationTest\Controller\BaseControllerTest->testIndexAction()
+#14 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(881): ReflectionMethod->invokeArgs(Object(ApplicationTest\Controller\BaseControllerTest), Array)
+#15 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(746): PHPUnit_Framework_TestCase->runTest()
+#16 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestResult.php(601): PHPUnit_Framework_TestCase->runBare()
+#17 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(702): PHPUnit_Framework_TestResult->run(Object(ApplicationTest\Controller\BaseControllerTest))
+#18 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestCase->run(Object(PHPUnit_Framework_TestResult))
+#19 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
+#20 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/TestRunner.php(432): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
+#21 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(148): PHPUnit_TextUI_TestRunner->doRun(Object(PHPUnit_Framework_TestSuite), Array)
+#22 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(100): PHPUnit_TextUI_Command->run(Array, true)
+#23 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\phpunit.phar(547): PHPUnit_TextUI_Command::main()
+#24 {main}

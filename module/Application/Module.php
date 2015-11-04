@@ -75,7 +75,6 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
     {
         $service = $this->service->get('ErrorHandling');
         $service->logError($event, $this->service);
-        $event->stopPropagation();
     }
 
     /**

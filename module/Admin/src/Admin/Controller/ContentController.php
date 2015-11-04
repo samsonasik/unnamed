@@ -201,7 +201,7 @@ final class ContentController extends BaseController
                 $formData = $form->getData();
                 $userData = $this->UserData();
 
-                if ($userData->checkIdentity(false, $this->translate('ERROR_AUTHORIZATION'))) {
+                if ($userData->checkIdentity($this->translate('ERROR_AUTHORIZATION'))) {
                     $content->setAuthor($userData->getIdentity()->name.' '.$userData->getIdentity()->surname);
                 } else {
                     $content->setAuthor('Admin');

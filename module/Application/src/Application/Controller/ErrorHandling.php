@@ -130,8 +130,6 @@ final class ErrorHandling
         Browser string: '.$sm->get('Request')->getServer()->get('HTTP_USER_AGENT').',
         Date: '.date('Y-m-d H:i:s', time()).',
         Full URL: '.$sm->get('Request')->getRequestUri().',
-        User port: '.$_SERVER['REMOTE_PORT'].',
-        Remote host addr: '.gethostbyaddr($remote->getIpAddress()).',
         Method used: '.$sm->get('Request')->getMethod()."\n";
 
         $writer = new Stream($this->destination.date('F').'.txt');

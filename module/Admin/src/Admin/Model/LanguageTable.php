@@ -11,13 +11,14 @@
 namespace Admin\Model;
 
 use Admin\Entity\Language;
+use Admin\Model\LanguageTableInterface;
 use Admin\Exception\RuntimeException;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as PaginatorAdapter;
 use Zend\Paginator\Paginator as ZendPaginator;
 
-final class LanguageTable
+final class LanguageTable implements LanguageTableInterface
 {
     /**
      * @var EntityManager
@@ -74,7 +75,7 @@ final class LanguageTable
             throw new RuntimeException("Couldn't find language");
         }
 
-        return $language[0];
+        return $language;
     }
 
     /**

@@ -10,43 +10,58 @@
  */
 namespace ApplicationTest\Controller;
 
-use Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;
-use PHPUnit_Framework_Testcase;
+use Application\Controller\IndexController;
+use \PHPUnit_Framework_Testcase;
 
 class IndexControllerTest extends PHPUnit_Framework_Testcase
 {
-    public function setUp()
+    /*
+     * @var IndexController
+     */
+    private $controller;
+
+    /**
+     * @var \Zend\ServiceManager\ServiceLocatorInterface
+     */
+    private $serviceManager;
+
+    protected function setUp()
     {
-        if (!defined('APP_ENV')) {
-            define('APP_ENV', getenv('APPLICATION_ENV'));
-        }
+        $controller = new IndexController();
 
-        $this->setApplicationConfig(
-            include dirname(dirname(dirname(dirname(dirname(dirname(__DIR__)))))).'/config/application.config.php'
-        );
+        $userDataPlugin = $this->getPlugin('UserData');
+        $this->serviceManager = $this->prophesize('Zend\ServiceManager\ServiceLocatorInterface');
 
-        parent::setUp();
+        $controller->setServiceLocator($this->serviceManager->reveal());
+        $controller->setPluginManager($userDataPlugin);
+
+        $this->controller = $controller;
+    }
+
+    public function tearDown()
+    {
+        unset($this->controller);
     }
 
     /**
-     * Called after every test.
+     * @param string $pluginName
+     * @param string $method
      *
-     * @method tearDown
-     *
-     * @return void
+     * @return mixed
      */
-    public function tearDown()
+    private function getPlugin($pluginName, $method = 'get')
     {
+
+        $pluginManager = $this->getMock('Zend\Mvc\Controller\PluginManager', ['get']);
+        $pluginManager->expects($this->any())
+                      ->method($method)
+                      ->will($this->returnCallback([$this, $pluginName]));
+
+        return $pluginManager;
     }
 
     public function testIndexAction()
     {
-        $this->dispatch('/');
-        $this->assertResponseStatusCode(200);
-
-        $this->assertModuleName('Application');
-        $this->assertControllerName('Application\Controller\Index');
-        $this->assertControllerClass('IndexController');
-        $this->assertMatchedRouteName('application/default');
+        $this->assertInstanceOf('Zend\View\Model\ViewModel', $this->controller->indexAction());
     }
 }

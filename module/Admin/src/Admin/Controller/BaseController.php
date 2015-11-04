@@ -161,7 +161,7 @@ class BaseController extends AbstractActionController
     private function isAdmin()
     {
         $auth = $this->UserData();
-        if ($auth->checkIdentity(false, $this->translate('ERROR_AUTHORIZATION'))) {
+        if ($auth->checkIdentity($this->translate('ERROR_AUTHORIZATION'))) {
             $userId = $auth->getIdentity()['id'];
             $adminExist = $this->getTable('Admin\\Model\\AdministratorTable')
                                         ->queryBuilder()

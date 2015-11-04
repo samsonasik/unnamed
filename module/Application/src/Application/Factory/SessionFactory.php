@@ -13,7 +13,7 @@ namespace Application\Factory;
 use Zend\Session\Config\SessionConfig;
 use Zend\Session\SessionManager;
 
-final class SessionFactory
+class SessionFactory
 {
     /**
      * {@inheritdoc}
@@ -21,8 +21,7 @@ final class SessionFactory
     public function __invoke()
     {
         $sessionConfig = new SessionConfig();
-        $sessionConfig->setOptions(
-            [
+        $sessionConfig->setOptions([
             'cookie_lifetime'         => 7200, //2hrs
             'remember_me_seconds'     => 7200, //2hrs This is also set in the login controller
             'use_cookies'             => true,
@@ -33,8 +32,7 @@ final class SessionFactory
             'cookie_secure'           => static::isSSL(),
             'hash_bits_per_character' => 6,
             'hash_function'           => 1,
-            ]
-        );
+        ]);
         $sessionManager = new SessionManager($sessionConfig);
 
         return $sessionManager;

@@ -166,7 +166,9 @@ final class AdministratorController extends BaseController
                 $adminExist = $this->administratorTable
                                         ->queryBuilder()
                                         ->getEntityManager()
-                                        ->createQuery("SELECT a.user, u.name, u.admin FROM Admin\Entity\Administrator AS a LEFT JOIN Admin\Entity\User AS u WITH a.user=u.id WHERE u.id = ".$userId.'')->getResult();
+                                        ->createQuery("SELECT a.user, u.name, u.admin FROM Admin\Entity\Administrator AS a LEFT JOIN Admin\Entity\User AS u WITH a.user=u.id WHERE u.id = :userId")
+                                        ->setParameter('userId', $userId)
+                                        ->getResult();
 
                 $user = $this->userTable->getUser($userId);
                 if (!isset($adminExist[0])) {

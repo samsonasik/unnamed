@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Application\Controller;
 
 use Application\Entity\ResetPassword;
@@ -54,10 +53,10 @@ final class LoginController extends BaseController
     private $loginForm;
 
     /**
-     * @param LoginForm $loginForm
+     * @param LoginForm             $loginForm
      * @param AuthenticationService $authService
-     * @param ResetPasswordForm $resetPasswordForm
-     * @param NewPasswordForm $newPasswordForm
+     * @param ResetPasswordForm     $resetPasswordForm
+     * @param NewPasswordForm       $newPasswordForm
      */
     public function __construct(LoginForm $loginForm,
         AuthenticationService $authService,

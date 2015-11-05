@@ -38,9 +38,9 @@ final class InitMetaTags extends AbstractPlugin
     private $settings;
 
     /**
-     * @param Placeholder $placeholder
-     * @param HeadMeta $headMeta
-     * @param Request $request
+     * @param Placeholder    $placeholder
+     * @param HeadMeta       $headMeta
+     * @param Request        $request
      * @param SystemSettings $settings
      */
     public function __construct(

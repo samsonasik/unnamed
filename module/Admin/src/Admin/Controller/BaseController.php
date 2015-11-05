@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Controller;
 
 use Zend\Json\Json;
@@ -88,7 +87,7 @@ class BaseController extends AbstractActionController
                 $menus['submenus'][$submenus->getParent()][] = $submenus->getId();
             }
 
-            $output = "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/admin'> ".$this->translate('DASHBOARD')."</a></li>";
+            $output = "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/admin'> ".$this->translate('DASHBOARD').'</a></li>';
 
             $this->getView()->setVariable('menuAdmin', $this->generateMenu(0, $menus, 'menubar', $output));
         }
@@ -116,7 +115,7 @@ class BaseController extends AbstractActionController
             $output .= $html;
 
             foreach ($menu['submenus'][$parent] as $id) {
-                $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/admin/".$menu['menus'][$id]->getController()."/".$menu['menus'][$id]->getAction()."'><em class='fa ".$menu['menus'][$id]->getClass()."'></em> ".$menu['menus'][$id]->getCaption()."</a>";
+                $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/admin/".$menu['menus'][$id]->getController().'/'.$menu['menus'][$id]->getAction()."'><em class='fa ".$menu['menus'][$id]->getClass()."'></em> ".$menu['menus'][$id]->getCaption().'</a>';
                 $output .= $this->generateMenu($id, $menu, 'menu');
                 $output .= '</li>';
             }

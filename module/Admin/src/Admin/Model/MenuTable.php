@@ -53,7 +53,7 @@ final class MenuTable
      */
     public function getEntityRepository()
     {
-        return $this->entityManager->getRepository("Admin\\Entity\\Menu");
+        return $this->entityManager->getRepository('Admin\\Entity\\Menu');
     }
 
     /**

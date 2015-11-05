@@ -24,6 +24,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
     /*
      * @param EntityManager $entityManager
      */
+
     public function __construct(EntityManager $entityManager)
     {
         parent::__construct('admin-menu');

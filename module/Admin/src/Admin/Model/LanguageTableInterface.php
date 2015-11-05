@@ -20,7 +20,7 @@ interface LanguageTableInterface
     public function queryBuilder();
 
     /**
-     * @param \Doctrine\ORM\Query|\Doctrine\ORM\QueryBuilder $query               A Doctrine ORM query or query builder.
+     * @param \Doctrine\ORM\Query|\Doctrine\ORM\QueryBuilder $query A Doctrine ORM query or query builder.
      * @param bool
      */
     public function preparePagination($query, $fetchJoinCollection = true);

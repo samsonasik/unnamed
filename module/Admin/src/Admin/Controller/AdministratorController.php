@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Controller;
 
 use Admin\Entity\Administrator;
@@ -155,11 +154,11 @@ final class AdministratorController extends BaseController
         $form->bind($administrator);
         $this->getView()->setVariable('form', $form);
 
-        /** @var \Zend\Http\Request $request */
+            /** @var \Zend\Http\Request $request */
             $request = $this->getRequest();
-            if ($request->isPost()) {
-                $form->setInputFilter($form->getInputFilter());
-                $form->setData($request->getPost());
+        if ($request->isPost()) {
+            $form->setInputFilter($form->getInputFilter());
+            $form->setData($request->getPost());
 
             if ($form->isValid()) {
                 $formData = $form->getData();
@@ -167,7 +166,7 @@ final class AdministratorController extends BaseController
                 $adminExist = $this->administratorTable
                                         ->queryBuilder()
                                         ->getEntityManager()
-                                        ->createQuery("SELECT a.user, u.name, u.admin FROM Admin\Entity\Administrator AS a LEFT JOIN Admin\Entity\User AS u WITH a.user=u.id WHERE u.id = ".$userId."")->getResult();
+                                        ->createQuery("SELECT a.user, u.name, u.admin FROM Admin\Entity\Administrator AS a LEFT JOIN Admin\Entity\User AS u WITH a.user=u.id WHERE u.id = ".$userId.'')->getResult();
 
                 $user = $this->userTable->getUser($userId);
                 if (!isset($adminExist[0])) {
@@ -183,6 +182,7 @@ final class AdministratorController extends BaseController
 
             return $this->setLayoutMessages($form->getMessages(), 'error');
         }
+
         return false;
     }
 }

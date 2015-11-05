@@ -74,7 +74,7 @@ final class UserData extends AbstractPlugin
             return $this->clearUserData($errorString); // something is wrong, clear all user data
         }
 
-        return null;
+        return;
     }
 
     /**

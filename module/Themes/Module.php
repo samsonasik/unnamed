@@ -34,7 +34,7 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
         $moduleManager->getEventManager()->getSharedManager()->attach(
             __NAMESPACE__,
             'dispatch',
-            function(EventInterface $e) {
+            function (EventInterface $e) {
                 $e->getTarget()->layout('layout/layout');
             }
         );

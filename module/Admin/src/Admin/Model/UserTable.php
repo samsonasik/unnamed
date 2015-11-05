@@ -53,7 +53,7 @@ final class UserTable
      */
     public function getEntityRepository()
     {
-        return $this->entityManager->getRepository("Admin\\Entity\\User");
+        return $this->entityManager->getRepository('Admin\\Entity\\User');
     }
 
     /**

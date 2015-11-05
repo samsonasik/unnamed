@@ -264,7 +264,7 @@ final class Image implements ImageInterface
             return $this->options[$option];
         }
 
-        return null;
+        return;
     }
 
     /**

@@ -18,9 +18,9 @@ final class GD implements GDInterface
     /**
      * The GD library.
      *
-     * @var GD
+     * @var array
      */
-    private $gd = null;
+    private $gd = [];
 
     /**
      * @method __construct
@@ -29,8 +29,8 @@ final class GD implements GDInterface
      */
     public function __construct($version = '2.0.1')
     {
-        $this->loadGDInfo();
-        $this->checkGDVersion($version);
+        $this->loadGdInfo();
+        $this->checkGdVersion($version);
     }
 
     /**
@@ -38,7 +38,7 @@ final class GD implements GDInterface
      *
      * @throws BadMethodCallException if gd_info doesn't exists
      */
-    private function loadGDInfo()
+    private function loadGdInfo()
     {
         if (!function_exists('gd_info')) {
             throw new BadMethodCallException('GD library has not been installed');
@@ -54,7 +54,7 @@ final class GD implements GDInterface
      *
      * @throws InvalidArgumentException on invalid version
      */
-    private function checkGDVersion($version = '2.0.1')
+    private function checkGdVersion($version = '2.0.1')
     {
         if (version_compare(GD_VERSION, $version, '<')) {
             throw new InvalidArgumentException(sprintf('GD2 version %s or higher is required', $version));
@@ -100,7 +100,7 @@ final class GD implements GDInterface
      *
      * @return bool
      */
-    public function hasGIFReadSupport()
+    public function hasGifReadSupport()
     {
         return $this->gd['GIF Read Support'];
     }
@@ -110,7 +110,7 @@ final class GD implements GDInterface
      *
      * @return bool
      */
-    public function hasGIFCreateSupport()
+    public function hasGifCreateSupport()
     {
         return $this->gd['GIF Create Support'];
     }
@@ -120,7 +120,7 @@ final class GD implements GDInterface
      *
      * @return bool
      */
-    public function hasJPEGSupport()
+    public function hasJpegSupport()
     {
         return $this->gd['JPEG Support'];
     }
@@ -130,7 +130,7 @@ final class GD implements GDInterface
      *
      * @return bool
      */
-    public function hasPNGSupport()
+    public function hasPngSupport()
     {
         return $this->gd['PNG Support'];
     }

@@ -19,7 +19,7 @@ final class Image implements ImageInterface
     /**
      * A valid image path /path/to/image.png.
      *
-     * @var string
+     * @var string|resource
      */
     private $imageFile;
 
@@ -186,7 +186,7 @@ final class Image implements ImageInterface
     /**
      * The current dimensions of the image.
      *
-     * @return resource
+     * @return array
      */
     public function getImageDimensions()
     {
@@ -351,7 +351,6 @@ final class Image implements ImageInterface
 
             default:
                 throw new RuntimeException('Invalid image format');
-                break;
         }
     }
 
@@ -362,7 +361,7 @@ final class Image implements ImageInterface
      */
     private function imageCreateFromGIF()
     {
-        if ($this->gdLib->hasGIFCreateSupport()) {
+        if ($this->gdLib->hasGifCreateSupport()) {
             return imagecreatefromgif($this->getImageFile());
         }
 
@@ -376,7 +375,7 @@ final class Image implements ImageInterface
      */
     private function imageCreateFromJPEG()
     {
-        if ($this->gdLib->hasJPEGSupport()) {
+        if ($this->gdLib->hasJpegSupport()) {
             return imagecreatefromjpeg($this->getImageFile());
         }
 
@@ -390,7 +389,7 @@ final class Image implements ImageInterface
      */
     private function imageCreateFromPNG()
     {
-        if ($this->gdLib->hasPNGSupport()) {
+        if ($this->gdLib->hasPngSupport()) {
             return imagecreatefrompng($this->getImageFile());
         }
 
@@ -404,7 +403,7 @@ final class Image implements ImageInterface
      */
     private function imageCreateFromWEBP()
     {
-        if ($this->gdLib->hasJPEGSupport() || $this->gdLib->hasPNGSupport()) {
+        if ($this->gdLib->hasJpegSupport() || $this->gdLib->hasPngSupport()) {
             if (function_exists('imagecreatefromwebp')) {
                 return imagecreatefromwebp($this->getImageFile());
             }

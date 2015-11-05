@@ -53,15 +53,15 @@ final class ErrorHandling
 
         if (!is_dir($destination)) {
             throw new InvalidArgumentException(
-                "Public directory '{$destination}' not found or not a directory"
+                "Public directory '".$destination."' not found or not a directory"
             );
         } elseif (!is_writable($destination)) {
             throw new InvalidArgumentException(
-                "Public directory '{$destination}' not writable"
+                "Public directory '".$destination."' not writable"
             );
         } elseif (!is_readable($destination)) {
             throw new InvalidArgumentException(
-                "Public directory '{$destination}' not readable"
+                "Public directory '".$destination."' not readable"
             );
         }
 

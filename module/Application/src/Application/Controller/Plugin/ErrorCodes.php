@@ -19,12 +19,12 @@ final class ErrorCodes extends AbstractPlugin
     /**
      * @var ViewModel
      */
-    private $layout = null;
+    private $layout;
 
     /**
      * @var Response
      */
-    private $response = null;
+    private $response;
 
     /**
      * @param ViewModel $layout

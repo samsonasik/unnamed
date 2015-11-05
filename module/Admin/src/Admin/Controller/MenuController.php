@@ -165,7 +165,7 @@ final class MenuController extends BaseController
     {
         $this->getView()->setTemplate('admin/menu/edit');
         $menu = $this->menuTable->getMenu((int) $this->getParam('id', 0), $this->language());
-        $this->addBreadcrumb(['reference' => "/admin/menu/edit/{$menu->getId()}", 'name' => $this->translate('EDIT_MENU').' &laquo;'.$menu->getCaption().'&raquo;']);
+        $this->addBreadcrumb(['reference' => "/admin/menu/edit/".$menu->getId()."", 'name' => $this->translate('EDIT_MENU').' &laquo;'.$menu->getCaption().'&raquo;']);
         $this->initForm($menu);
 
         return $this->getView();
@@ -212,11 +212,11 @@ final class MenuController extends BaseController
     /**
      * This is common function used by add and edit actions (to avoid code duplication).
      *
-     * @param Menu $menu
+     * @param null|Menu $menu
      *
      * @return bool|object
      */
-    private function initForm(Menu $menu)
+    private function initForm(Menu $menu = null)
     {
         if (!$menu instanceof Menu) {
             $menu = new Menu([]);

@@ -102,7 +102,7 @@ final class AdministratorController extends BaseController
         $this->getView()->setTemplate('admin/administrator/edit');
         $administrator = $this->administratorTable->getAdministrator((int) $this->getParam('id', 0));
         $this->getView()->setVariable('administrator', $administrator);
-        $this->addBreadcrumb(['reference' => "/admin/administrator/edit/{$administrator->getUser()}", 'name' => $this->translate('EDIT_ADMINISTRATOR')]);
+        $this->addBreadcrumb(['reference' => "/admin/administrator/edit/".$administrator->getUser()."", 'name' => $this->translate('EDIT_ADMINISTRATOR')]);
         $this->initForm($administrator);
 
         return $this->getView();
@@ -139,7 +139,7 @@ final class AdministratorController extends BaseController
      *
      * @param Administrator|null $administrator
      *
-     * @return bool|\Zend\View\Model\ViewModel
+     * @return false|object
      */
     private function initForm(Administrator $administrator = null)
     {
@@ -166,7 +166,7 @@ final class AdministratorController extends BaseController
                 $adminExist = $this->administratorTable
                                         ->queryBuilder()
                                         ->getEntityManager()
-                                        ->createQuery("SELECT a.user, u.name, u.admin FROM Admin\Entity\Administrator AS a LEFT JOIN Admin\Entity\User AS u WITH a.user=u.id WHERE u.id = :userId")
+                                        ->createQuery('SELECT a.user, u.name, u.admin FROM Admin\Entity\Administrator AS a LEFT JOIN Admin\Entity\User AS u WITH a.user=u.id WHERE u.id = :userId')
                                         ->setParameter('userId', $userId)
                                         ->getResult();
 

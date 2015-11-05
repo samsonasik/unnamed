@@ -90,7 +90,7 @@ final class Administrator
     /**
      * Get user id.
      *
-     * @return string
+     * @return int
      */
     public function getUser()
     {

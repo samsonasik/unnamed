@@ -17,6 +17,9 @@ use Admin\Form\SettingsPostsForm;
 use Admin\Form\SettingsRegistrationForm;
 use Zend\Mvc\MvcEvent;
 
+/**
+ * @method object setLayoutMessages($message = [], $namespace = 'default')
+ */
 final class SettingsController extends BaseController
 {
     /**

@@ -93,7 +93,7 @@ final class Content
     private $titleLink;
 
     /**
-     * @var bool
+     * @var bool|int
      *
      * @ORM\Column(name="active", type="smallint", nullable=false)
      */
@@ -246,7 +246,7 @@ final class Content
     /**
      * Set active.
      *
-     * @param int $active
+     * @param bool|int $active
      */
     public function setActive($active = 0)
     {
@@ -256,7 +256,7 @@ final class Content
     /**
      * Get active.
      *
-     * @return bool
+     * @return bool|int
      */
     public function isActive()
     {

@@ -88,7 +88,7 @@ final class ContentController extends BaseController
                     ->orderBy('c.date DESC');
             $paginator = $table->preparePagination($query, false);
         } else {
-            $query = $table->queryBuilder()->getEntityManager()->createQuery("SELECT c FROM Admin\Entity\Content AS c LEFT JOIN Admin\Entity\Menu AS m WITH c.menu=m.id WHERE c.type = 0 AND c.language = ".$this->language().' ORDER BY m.parent ASC, m.menuOrder ASC, c.date DESC');
+            $query = $table->queryBuilder()->getEntityManager()->createQuery('SELECT c FROM Admin\Entity\Content AS c LEFT JOIN Admin\Entity\Menu AS m WITH c.menu=m.id WHERE c.type = 0 AND c.language = :language ORDER BY m.parent ASC, m.menuOrder ASC, c.date DESC')->setParameter(':language', $this->language());
             $paginator = $table->preparePagination($query, true);
         }
 
@@ -126,7 +126,7 @@ final class ContentController extends BaseController
         $this->getView()->setTemplate('admin/content/edit');
         $content = $this->contentTable->getContent((int) $this->getParam('id', 0), $this->language());
         $this->getView()->setVariable('content', $content);
-        $this->addBreadcrumb(['reference' => "/admin/content/edit/{$content->getId()}", 'name' => $this->translate('EDIT_CONTENT').' &laquo;'.$content->getTitle().'&raquo;']);
+        $this->addBreadcrumb(['reference' => "/admin/content/edit/".$content->getId()."", 'name' => $this->translate('EDIT_CONTENT').' &laquo;'.$content->getTitle().'&raquo;']);
         $this->initForm($content);
 
         return $this->getView();
@@ -195,7 +195,7 @@ final class ContentController extends BaseController
      * @param ContentForm $form
      * @param Content     $content
      *
-     * @return Content
+     * @return null|Content
      */
     private function form(ContentForm $form, Content $content)
     {
@@ -285,9 +285,7 @@ final class ContentController extends BaseController
     protected function filesAction()
     {
         chdir(getcwd().'/public/');
-        if (!is_dir('userfiles/'.date('Y_M').'/images/')) {
-            mkdir('userfiles/'.date('Y_M').'/images/', 0750, true);
-        }
+        $this->makeDir();
         $this->getView()->setTerminal(true);
         $dir = new \RecursiveDirectoryIterator('userfiles/', \FilesystemIterator::SKIP_DOTS);
         $it = new \RecursiveIteratorIterator($dir, \RecursiveIteratorIterator::SELF_FIRST);
@@ -309,6 +307,18 @@ final class ContentController extends BaseController
     }
 
     /**
+     * @param string $publicFolder
+     *
+     * @return void
+     */
+    private function makeDir($publicFolder)
+    {
+        if (!is_dir($publicFolder.'userfiles/'.date('Y_M').'/images/')) {
+            mkdir($publicFolder.'userfiles/'.date('Y_M').'/images/', 0750, true);
+        }
+    }
+
+    /**
      * Upload all images async.
      *
      * @return array
@@ -321,9 +331,7 @@ final class ContentController extends BaseController
 
         $adapter->setValidators([$size, new IsImage(), $extension]);
 
-        if (!is_dir('public/userfiles/'.date('Y_M').'/images/')) {
-            mkdir('public/userfiles/'.date('Y_M').'/images/', 0750, true);
-        }
+        $this->makeDir('public/');
 
         $adapter->setDestination('public/userfiles/'.date('Y_M').'/images/');
 

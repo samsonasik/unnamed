@@ -38,26 +38,26 @@ interface GDInterface
      *
      * @return bool
      */
-    public function hasGIFReadSupport();
+    public function hasGifReadSupport();
 
     /**
      * Check GIF file creation support.
      *
      * @return bool
      */
-    public function hasGIFCreateSupport();
+    public function hasGifCreateSupport();
 
     /**
      * Check JPEG|JPG file support.
      *
      * @return bool
      */
-    public function hasJPEGSupport();
+    public function hasJpegSupport();
 
     /**
      * Check PNG file support.
      *
      * @return bool
      */
-    public function hasPNGSupport();
+    public function hasPngSupport();
 }

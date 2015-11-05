@@ -17,6 +17,7 @@ use Zend\ModuleManager\Feature\InitProviderInterface;
 use Zend\ModuleManager\ModuleManagerInterface;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Session\Container;
+use Zend\Mvc\MvcEvent;
 
 final class Module implements ConfigProviderInterface, BootstrapListenerInterface, InitProviderInterface
 {
@@ -44,11 +45,11 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
     /**
      * Listen to the bootstrap event.
      *
-     * @param EventInterface|\Zend\Mvc\MvcEvent $event
+     * @param MvcEvent $event
      *
      * @return array|void
      */
-    public function onBootstrap(EventInterface $event)
+    public function onBootstrap(MvcEvent $event)
     {
         $app = $event->getApplication();
         $moduleRouteListener = new ModuleRouteListener();
@@ -69,9 +70,9 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
     /**
      * Log errors.
      *
-     * @param EventInterface|\Zend\Mvc\MvcEvent $event
+     * @param MvcEvent $event
      */
-    public function onError(EventInterface $event)
+    public function onError(MvcEvent $event)
     {
         $service = $this->service->get('ErrorHandling');
         $service->logError($event, $this->service);
@@ -80,9 +81,9 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
     /**
      * Handle layout titles onDispatch.
      *
-     * @param EventInterface|\Zend\Mvc\MvcEvent $event
+     * @param MvcEvent $event
      */
-    public function setTitleAndTranslation(EventInterface $event)
+    public function setTitleAndTranslation(MvcEvent $event)
     {
         $route = $event->getRouteMatch();
         $title = $this->service->get('ControllerPluginManager')->get('systemsettings');

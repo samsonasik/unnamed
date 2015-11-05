@@ -206,8 +206,8 @@ class BaseController extends AbstractActionController
      *
      * @method ajaxUserSearch
      *
-     * @param string   $search
-     * @param callable $buttons - pass a function with the necessary button.
+     * @param string        $search
+     * @param null|callable $buttons - pass a function with the necessary button.
      *
      * @return JsonModel
      */

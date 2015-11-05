@@ -38,7 +38,7 @@ final class Language
     private $name;
 
     /**
-     * @var bool
+     * @var bool|int
      *
      * @ORM\Column(name="active", type="smallint", nullable=false)
      */
@@ -123,7 +123,7 @@ final class Language
     /**
      * Set active.
      *
-     * @param int $active
+     * @param bool|int $active
      *
      * @return $this
      */
@@ -137,7 +137,7 @@ final class Language
     /**
      * Get active.
      *
-     * @return bool
+     * @return bool|int
      */
     public function isActive()
     {

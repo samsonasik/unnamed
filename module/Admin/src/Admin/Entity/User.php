@@ -72,7 +72,7 @@ final class User
     private $lastLogin = '0000-00-00 00:00:00';
 
     /**
-     * @var bool
+     * @var bool|int
      *
      * @ORM\Column(name="isDisabled", type="smallint", nullable=false)
      */
@@ -302,7 +302,7 @@ final class User
     /**
      * Set isDisabled.
      *
-     * @param bool $isDisabled
+     * @param bool|int $isDisabled
      */
     public function setDisabled($isDisabled = false)
     {
@@ -312,7 +312,7 @@ final class User
     /**
      * Get isDisabled.
      *
-     * @return int
+     * @return bool|int
      */
     public function isDisabled()
     {
@@ -432,7 +432,7 @@ final class User
     /**
      * Get admin.
      *
-     * @return bool
+     * @return int
      */
     public function getAdmin()
     {

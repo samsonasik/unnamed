@@ -110,7 +110,7 @@ final class AdminMenuController extends BaseController
         $this->getView()->setTemplate('admin/admin-menu/edit');
         $adminMenu = $this->adminMenuTable->getAdminMenu((int) $this->getParam('id', 0));
         $this->getView()->setVariable('adminMenu', $adminMenu);
-        $this->addBreadcrumb(['reference' => "/admin/adminmenu/edit/{$adminMenu->getId()}", 'name' => $this->translate('EDIT_ADMINMENU').' &laquo;'.$adminMenu->getCaption().'&raquo;']);
+        $this->addBreadcrumb(['reference' => "/admin/adminmenu/edit/".$adminMenu->getId()."", 'name' => $this->translate('EDIT_ADMINMENU').' &laquo;'.$adminMenu->getCaption().'&raquo;']);
         $this->initForm($adminMenu);
 
         return $this->getView();
@@ -143,7 +143,7 @@ final class AdminMenuController extends BaseController
      *
      * @param AdminMenu|null $adminMenu
      *
-     * @return bool|\Zend\View\Model\ViewModel
+     * @return bool|false
      */
     private function initForm(AdminMenu $adminMenu = null)
     {

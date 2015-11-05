@@ -219,3 +219,26 @@ Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicema
 #11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
 #12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
 #13 {main}
+2015-11-05T19:43:47+00:00 ERR (3): 
+Exception: An abstract factory could not create an instance of adminmodeladministratortable(alias: Admin\Model\AdministratorTable).
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(645): Zend\ServiceManager\ServiceManager->createFromAbstractFactory('adminmodeladmin...', 'Admin\\Model\\Adm...')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('Admin\\Model\\Adm...', 'adminmodeladmin...')
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\GetTableModel.php(38): Zend\ServiceManager\ServiceManager->get('Admin\\Model\\Adm...')
+#4 [internal function]: Application\Controller\Plugin\GetTableModel->__invoke('Admin\\Model\\Adm...')
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(309): call_user_func_array(Object(Application\Controller\Plugin\GetTableModel), Array)
+#6 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\AdministratorController.php(58): Zend\Mvc\Controller\AbstractController->__call('getTable', Array)
+#7 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\AdministratorController.php(58): Admin\Controller\AdministratorController->getTable('Admin\\Model\\Adm...')
+#8 [internal function]: Admin\Controller\AdministratorController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#13 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#18 {main}

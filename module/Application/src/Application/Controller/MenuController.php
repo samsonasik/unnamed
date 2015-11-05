@@ -43,7 +43,7 @@ final class MenuController extends BaseController
                     ->setParameter(':language', (int) $this->language());
 
         $contents = $contents->getQuery()->getResult();
-        if ($contents) {
+        if (!empty($contents)) {
             $this->initMetaTags($contents[0]);
             $this->getView()->setVariable('contents', $contents);
         }

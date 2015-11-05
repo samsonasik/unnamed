@@ -345,7 +345,7 @@ final class Menu
     /**
      * Set menulink.
      *
-     * @param null $menulink
+     * @param string $menulink
      */
     public function setMenuLink($menulink)
     {
@@ -355,7 +355,7 @@ final class Menu
     /**
      * Get menulink.
      *
-     * @return int
+     * @return string
      */
     public function getMenuLink()
     {

@@ -70,11 +70,11 @@ if ($this->viewModel()->getCurrent()->getChildren() != null) {
                  */
                 if ($this->layout()->flashMessages) {
                     foreach ($this->layout()->flashMessages->getCurrentMessages() as $context => $message) {
-                        echo "<div class='{$this->layout()->flashMessages->getNamespace()}'>
+                        echo "<div class='".$this->layout()->flashMessages->getNamespace()."'>
                                 <ul>
                                     <li role='alert'>
-                                        <i class='fa-fw fa fa-{$this->layout()->flashMessages->getNamespace()}'></i>{$message}
-                                        <button role='button' aria-pressed='false' aria-label='{$this->translate("DELETE")}' type='button' class='btn btn-default close close'><i class='fa fa-times'></i></button>
+                                        <i class='fa-fw fa fa-".$this->layout()->flashMessages->getNamespace()."'></i>{$message}
+                                        <button role='button' aria-pressed='false' aria-label='".$this->translate("DELETE")."' type='button' class='btn btn-default close close'><i class='fa fa-times'></i></button>
                                     </li>
                                 </ul>
                               </div>

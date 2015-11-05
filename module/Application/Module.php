@@ -44,7 +44,7 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
     /**
      * Listen to the bootstrap event.
      *
-     * @param EventInterface $event
+     * @param EventInterface|\Zend\Mvc\MvcEvent $event
      *
      * @return array|void
      */
@@ -69,7 +69,7 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
     /**
      * Log errors.
      *
-     * @param EventInterface $event
+     * @param EventInterface|\Zend\Mvc\MvcEvent $event
      */
     public function onError(EventInterface $event)
     {
@@ -80,7 +80,7 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
     /**
      * Handle layout titles onDispatch.
      *
-     * @param EventInterface $event
+     * @param EventInterface|\Zend\Mvc\MvcEvent $event
      */
     public function setTitleAndTranslation(EventInterface $event)
     {
@@ -93,9 +93,9 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
         /*
          * Load translations.
          */
-        $translator->setLocale($lang->languageName)->setFallbackLocale('en');
+        $translator->setLocale($lang->offsetGet('languageName'))->setFallbackLocale('en');
         $viewModel = $event->getViewModel();
-        $viewModel->lang = $translator->getLocale();
+        $viewModel->setVariable('lang', $translator->getLocale());
 
         /*
          * Load page title

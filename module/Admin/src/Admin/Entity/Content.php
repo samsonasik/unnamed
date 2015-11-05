@@ -8,6 +8,7 @@
  *
  * @link       TBA
  */
+
 namespace Admin\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -246,7 +247,7 @@ final class Content
     /**
      * Set active.
      *
-     * @param integer $active
+     * @param int $active
      */
     public function setActive($active = 0)
     {

@@ -8,15 +8,22 @@
  *
  * @link       TBA
  */
+
 namespace Admin\Controller;
 
 use Admin\Entity\AdminMenu;
 use Admin\Form\AdminMenuForm;
 use Zend\Mvc\MvcEvent;
 
+/**
+ * @method object getTable($tableName)
+ * @method object setLayoutMessages($message = [], $namespace = 'default')
+ * @method string translate($message = '')
+ * @method mixed getParam($paramName = null, $default = null)
+ */
 final class AdminMenuController extends BaseController
 {
-    /**
+    /*
      * @var AdminMenuForm
      */
     private $adminMenuForm;
@@ -63,16 +70,17 @@ final class AdminMenuController extends BaseController
 
         if (count($menu) > 0) {
             $menus = ['menus' => [], 'submenus' => []];
-            foreach ($menu as $submenu) {
-                if ($submenu->getParent() > 0) {
-                    $menus['submenus'][$submenu->getParent()][] = $submenu;
+            /** @var AdminMenu $submenus */
+            foreach ($menu as $submenus) {
+                if ($submenus->getParent() > 0) {
+                    $menus['submenus'][$submenus->getParent()][] = $submenus;
                 } else {
-                    $menus['menus'][$submenu->getId()] = $submenu;
+                    $menus['menus'][$submenus->getId()] = $submenus;
                 }
             }
 
-            $this->getView()->menus = $menus['menus'];
-            $this->getView()->submenus = $menus['submenus'];
+            $this->getView()->setVariable('menus', $menus['menus']);
+            $this->getView()->setVariable('submenus', $menus['submenus']);
         }
 
         return $this->getView();
@@ -102,7 +110,7 @@ final class AdminMenuController extends BaseController
     {
         $this->getView()->setTemplate('admin/admin-menu/edit');
         $adminMenu = $this->adminMenuTable->getAdminMenu((int) $this->getParam('id', 0));
-        $this->getView()->adminMenu = $adminMenu;
+        $this->getView()->setVariable('adminMenu', $adminMenu);
         $this->addBreadcrumb(['reference' => "/admin/adminmenu/edit/{$adminMenu->getId()}", 'name' => $this->translate('EDIT_ADMINMENU').' &laquo;'.$adminMenu->getCaption().'&raquo;']);
         $this->initForm($adminMenu);
 
@@ -124,9 +132,9 @@ final class AdminMenuController extends BaseController
     protected function detailAction()
     {
         $this->getView()->setTemplate('admin/admin-menu/detail');
-        $adminmenu = $this->adminMenuTable->getAdminMenu((int) $this->getParam('id', 0), $this->language());
-        $this->getView()->adminmenu = $adminmenu;
-        $this->addBreadcrumb(['reference' => '/admin/adminmenu/detail/'.$adminmenu->getId().'', 'name' => '&laquo;'.$adminmenu->getCaption().'&raquo; '.$this->translate('DETAILS')]);
+        $adminMenu = $this->adminMenuTable->getAdminMenu((int) $this->getParam('id', 0));
+        $this->getView()->setVariable('adminMenu', $adminMenu);
+        $this->addBreadcrumb(['reference' => '/admin/adminmenu/detail/'.$adminMenu->getId().'', 'name' => '&laquo;'.$adminMenu->getCaption().'&raquo; '.$this->translate('DETAILS')]);
 
         return $this->getView();
     }
@@ -134,7 +142,9 @@ final class AdminMenuController extends BaseController
     /**
      * This is common function used by add and edit actions (to avoid code duplication).
      *
-     * @param AdminMenu $adminMenu
+     * @param AdminMenu|null $adminMenu
+     *
+     * @return bool|\Zend\View\Model\ViewModel
      */
     private function initForm(AdminMenu $adminMenu = null)
     {
@@ -144,11 +154,13 @@ final class AdminMenuController extends BaseController
 
         $form = $this->adminMenuForm;
         $form->bind($adminMenu);
-        $this->getView()->form = $form;
+        $this->getView()->setVariable('form', $form);
 
-        if ($this->getRequest()->isPost()) {
+        /** @var \Zend\Http\Request $request */
+        $request = $this->getRequest();
+        if ($request->isPost()) {
             $form->setInputFilter($form->getInputFilter());
-            $form->setData($this->getRequest()->getPost());
+            $form->setData($request->getPost());
 
             if ($form->isValid()) {
                 $this->adminMenuTable->saveAdminMenu($adminMenu);
@@ -158,5 +170,7 @@ final class AdminMenuController extends BaseController
 
             return $this->setLayoutMessages($form->getMessages(), 'error');
         }
+
+        return false;
     }
 }

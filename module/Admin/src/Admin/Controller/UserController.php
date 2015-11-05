@@ -8,6 +8,7 @@
  *
  * @link       TBA
  */
+
 namespace Admin\Controller;
 
 use Admin\Entity\User;
@@ -15,9 +16,16 @@ use Admin\Exception\AuthorizationException;
 use Admin\Form\UserForm;
 use Zend\Mvc\MvcEvent;
 
+/**
+ * @method object getTable($tableName)
+ * @method object setLayoutMessages($message = [], $namespace = 'default')
+ * @method string translate($message = '')
+ * @method mixed getParam($paramName = null, $default = null)
+ * @method string|null systemSettings($option = 'general', $value = 'site_name')
+ */
 final class UserController extends BaseController
 {
-    /**
+    /*
      * @var UserForm
      */
     private $userForm;
@@ -44,7 +52,7 @@ final class UserController extends BaseController
     public function onDispatch(MvcEvent $event)
     {
         $this->addBreadcrumb(['reference' => '/admin/user', 'name' => $this->translate('USERS')]);
-        $this->userTable = $this->getTable("Admin\Model\UserTable");
+        $this->userTable = $this->getTable("Admin\\Model\\UserTable");
 
         parent::onDispatch($event);
     }
@@ -57,8 +65,7 @@ final class UserController extends BaseController
     public function indexAction()
     {
         $this->getView()->setTemplate('admin/user/index');
-
-        $this->getView()->paginator = $this->showUsersBasedOnTheyAccStatus(0);
+        $this->getView()->setVariable('paginator', $this->showUsersBasedOnTheyAccStatus(0));
 
         return $this->getView();
     }
@@ -69,8 +76,7 @@ final class UserController extends BaseController
     protected function disabledAction()
     {
         $this->getView()->setTemplate('admin/user/disabled');
-
-        $this->getView()->paginator = $this->showUsersBasedOnTheyAccStatus(1);
+        $this->getView()->setVariable('paginator', $this->showUsersBasedOnTheyAccStatus(1));
 
         return $this->getView();
     }
@@ -106,7 +112,7 @@ final class UserController extends BaseController
     {
         $this->getView()->setTemplate('admin/user/edit');
         $user = $this->userTable->getUser((int) $this->getParam('id', 0));
-        $this->getView()->user = $user;
+        $this->getView()->setVariable('user', $user);
         $this->addBreadcrumb(['reference' => "/admin/user/edit/{$user->getId()}", 'name' => $this->translate('EDIT_USER').' &laquo;'.$user->getName().'&raquo;']);
         $this->initForm($user);
 
@@ -116,7 +122,9 @@ final class UserController extends BaseController
     /**
      * This is common function used by add and edit actions (to avoid code duplication).
      *
-     * @param User $user
+     * @param User|null $user
+     *
+     * @return bool|object
      */
     private function initForm(User $user = null)
     {
@@ -126,11 +134,13 @@ final class UserController extends BaseController
 
         $form = $this->userForm;
         $form->bind($user);
-        $this->getView()->form = $form;
+        $this->getView()->setVariable('form', $form);
 
-        if ($this->getRequest()->isPost()) {
+        /** @var \Zend\Http\Request $request */
+        $request = $this->getRequest();
+        if ($request->isPost()) {
             $form->setInputFilter($form->getInputFilter());
-            $form->setData($this->getRequest()->getPost());
+            $form->setData($request->getPost());
             if ($form->isValid()) {
                 $formData = $form->getData();
 
@@ -153,6 +163,8 @@ final class UserController extends BaseController
 
             return $this->setLayoutMessages($form->getMessages(), 'error');
         }
+
+        return false;
     }
 
     /**
@@ -182,7 +194,7 @@ final class UserController extends BaseController
     {
         $this->getView()->setTemplate('admin/user/detail');
         $user = $this->userTable->getUser((int) $this->getParam('id', 0));
-        $this->getView()->user = $user;
+        $this->getView()->setVariable('user', $user);
         $this->addBreadcrumb(['reference' => '/admin/user/detail/'.$user->getId().'', 'name' => '&laquo;'.$user->getFullName().'&raquo; '.$this->translate('DETAILS')]);
 
         return $this->getView();
@@ -211,7 +223,7 @@ final class UserController extends BaseController
      *
      * @return string
      */
-    private function htmlButtons($id, $fullName, $userStatus)
+    private function htmlButtons($id = 0, $fullName = null, $userStatus = 1)
     {
         $action = 'disable';
         $class = 'delete';
@@ -223,21 +235,21 @@ final class UserController extends BaseController
         }
 
         return "<li class='table-cell flex-b'>
-                <a title='{$this->translate('DETAILS')}' class='btn blue btn-sm' href='/admin/user/detail/{$id}'><i class='fa fa-info'></i></a>
+                <a title='".$this->translate('DETAILS')."' class='btn blue btn-sm' href='/admin/user/detail/".$id."'><i class='fa fa-info'></i></a>
             </li>
             <li class='table-cell flex-b'>
-                <a title='{$this->translate('EDIT_USER')}' href='/admin/user/edit/{$id}' class='btn btn-sm orange'><i class='fa fa-pencil'></i></a>
+                <a title='".$this->translate('EDIT_USER')."' href='/admin/user/edit/".$id."' class='btn btn-sm orange'><i class='fa fa-pencil'></i></a>
             </li>
             <li class='table-cell flex-b'>
-                <button role='button' aria-pressed='false' aria-label='{$this->translate("$i18n")}' id='{$id}' type='button' class='btn btn-sm {$class} dialog_delete' title='{$this->translate("$i18n")}'><i class='fa fa-times'></i></button>
-                <div role='alertdialog' aria-labelledby='dialog{$id}Title' class='delete_{$id} dialog_hide'>
-                   <p id='dialog{$id}Title'>{$this->translate("$i18n".'_CONFIRM_TEXT')} &laquo;{$fullName}&raquo;</p>
+                <button role='button' aria-pressed='false' aria-label='".$this->translate("$i18n")."' id='".$id."' type='button' class='btn btn-sm ".$class." dialog_delete' title='".$this->translate("$i18n")."'><i class='fa fa-times'></i></button>
+                <div role='alertdialog' aria-labelledby='dialog".$id."Title' class='delete_".$id." dialog_hide'>
+                   <p id='dialog".$id."Title'>".$this->translate("$i18n".'_CONFIRM_TEXT')." &laquo;".$fullName."&raquo;</p>
                     <ul>
                         <li>
-                            <a class='btn {$class}' href='/admin/user/{$action}/{$id}'><i class='fa fa-times'></i> {$this->translate("$i18n")}</a>
+                            <a class='btn ".$class."' href='/admin/user/".$action."/".$id."'><i class='fa fa-times'></i> ".$this->translate("$i18n")."</a>
                         </li>
                         <li>
-                            <button role='button' aria-pressed='false' aria-label='{$this->translate('CANCEL')}' type='button' title='{$this->translate('CANCEL')}' class='btn btn-default cancel'><i class='fa fa-times'></i> {$this->translate('CANCEL')}</button>
+                            <button role='button' aria-pressed='false' aria-label='".$this->translate('CANCEL')."' type='button' title='".$this->translate('CANCEL')."' class='btn btn-default cancel'><i class='fa fa-times'></i> ".$this->translate('CANCEL')."</button>
                         </li>
                     </ul>
                 </div>

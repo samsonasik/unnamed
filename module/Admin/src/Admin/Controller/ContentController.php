@@ -8,6 +8,7 @@
  *
  * @link       TBA
  */
+
 namespace Admin\Controller;
 
 use Admin\Entity\Content;
@@ -19,9 +20,16 @@ use Zend\Validator\File\IsImage;
 use Zend\Validator\File\Size;
 use Zend\View\Model\JsonModel;
 
+/**
+ * @method object getTable($tableName)
+ * @method object setLayoutMessages($message = [], $namespace = 'default')
+ * @method string translate($message = '')
+ * @method mixed getParam($paramName = null, $default = null)
+ * @method string|null systemSettings($option = 'general', $value = 'site_name')
+ */
 final class ContentController extends BaseController
 {
-    /**
+    /*
      * @var array
      */
     protected $acceptCriteria = [
@@ -81,13 +89,13 @@ final class ContentController extends BaseController
                     ->orderBy('c.date DESC');
             $paginator = $table->preparePagination($query, false);
         } else {
-            $query = $table->queryBuilder()->getEntityManager()->createQuery("SELECT c FROM Admin\Entity\Content AS c LEFT JOIN Admin\Entity\Menu AS m WITH c.menu=m.id WHERE c.type = 0 AND c.language = {$this->language()} ORDER BY m.parent ASC, m.menuOrder ASC, c.date DESC");
+            $query = $table->queryBuilder()->getEntityManager()->createQuery("SELECT c FROM Admin\Entity\Content AS c LEFT JOIN Admin\Entity\Menu AS m WITH c.menu=m.id WHERE c.type = 0 AND c.language = ".$this->language()." ORDER BY m.parent ASC, m.menuOrder ASC, c.date DESC");
             $paginator = $table->preparePagination($query, true);
         }
 
         $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));
         $paginator->setItemCountPerPage($this->systemSettings('posts', 'language'));
-        $this->getView()->paginator = $paginator;
+        $this->getView()->setVariable('paginator', $paginator);
 
         return $this->getView();
     }
@@ -118,7 +126,7 @@ final class ContentController extends BaseController
 
         $this->getView()->setTemplate('admin/content/edit');
         $content = $this->contentTable->getContent((int) $this->getParam('id', 0), $this->language());
-        $this->getView()->content = $content;
+        $this->getView()->setVariable('content', $content);
         $this->addBreadcrumb(['reference' => "/admin/content/edit/{$content->getId()}", 'name' => $this->translate('EDIT_CONTENT').' &laquo;'.$content->getTitle().'&raquo;']);
         $this->initForm($content);
 
@@ -143,7 +151,7 @@ final class ContentController extends BaseController
     {
         $this->getView()->setTemplate('admin/content/detail');
         $content = $this->contentTable->getContent((int) $this->getParam('id', 0), $this->language());
-        $this->getView()->content = $content;
+        $this->getView()->setVariable('content', $content);
         $this->addBreadcrumb(['reference' => '/admin/content/detail/'.$content->getId().'', 'name' => '&laquo;'.$content->getTitle().'&raquo; '.$this->translate('DETAILS')]);
 
         return $this->getView();
@@ -165,6 +173,8 @@ final class ContentController extends BaseController
      * This is common function used by add and edit actions.
      *
      * @param Content $content
+     *
+     * @return Content
      */
     private function initForm(Content $content = null)
     {
@@ -177,7 +187,7 @@ final class ContentController extends BaseController
          */
         $form = $this->contentForm;
         $form->bind($content);
-        $this->getView()->form = $form;
+        $this->getView()->setVariable('form', $form);
 
         return $this->form($form, $content);
     }
@@ -185,9 +195,12 @@ final class ContentController extends BaseController
     /**
      * @param ContentForm $form
      * @param Content     $content
+     *
+     * @return Content
      */
     private function form(ContentForm $form, Content $content)
     {
+        /** @var \Zend\Http\Request $request */
         $request = $this->getRequest();
         if ($request->isPost()) {
             $form->setInputFilter($form->getInputFilter());
@@ -217,6 +230,8 @@ final class ContentController extends BaseController
                 $this->setLayoutMessages($form->getMessages(), 'error');
             }
         }
+
+        return $content;
     }
 
     /**
@@ -224,6 +239,7 @@ final class ContentController extends BaseController
      */
     protected function uploadAction()
     {
+        /** @var \Zend\Http\Request $request */
         $request = $this->getRequest();
         $data = [];
 
@@ -237,12 +253,13 @@ final class ContentController extends BaseController
     /**
      * Deleted image with from a given src.
      *
-     * @method deleteimageAction
+     * @method deleteImageAction
      *
      * @return bool
      */
-    protected function deleteimageAction()
+    protected function deleteImageAction()
     {
+        /** @var \Zend\Http\Request $request */
         $request = $this->getRequest();
         $status = false;
 

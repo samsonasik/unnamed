@@ -166,7 +166,7 @@ final class Image implements ImageInterface
     }
 
     /**
-     * @return string
+     * @return string|resource
      */
     private function getImageFile()
     {
@@ -264,7 +264,7 @@ final class Image implements ImageInterface
             return $this->options[$option];
         }
 
-        return;
+        return null;
     }
 
     /**
@@ -569,7 +569,8 @@ final class Image implements ImageInterface
         }
 
         if (!in_array($filter, array_keys($this->pngFilterTypes))) {
-            throw new RuntimeException(sprintf('png_compression_filter should be one or a combination of: "%s"', implode('', '', array_keys($this->pngFilterTypes))));
+            throw new RuntimeException(
+                sprintf('png_compression_filter should be one or a combination of: "%s"', implode('', array_keys($this->pngFilterTypes))));
         }
         $params['filter'] = $this->pngFilterTypes[$filter];
 

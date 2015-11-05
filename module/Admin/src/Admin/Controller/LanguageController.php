@@ -8,6 +8,7 @@
  *
  * @link       TBA
  */
+
 namespace Admin\Controller;
 
 use Admin\Entity\Language;
@@ -16,6 +17,13 @@ use Admin\Form\LanguageForm;
 use Zend\Mvc\MvcEvent;
 use Zend\Stdlib\Parameters;
 
+/**
+ * @method object getTable($tableName)
+ * @method object setLayoutMessages($message = [], $namespace = 'default')
+ * @method string translate($message = '')
+ * @method mixed getParam($paramName = null, $default = null)
+ * @method string|null systemSettings($option = 'general', $value = 'site_name')
+ */
 final class LanguageController extends BaseController
 {
     /*
@@ -68,7 +76,7 @@ final class LanguageController extends BaseController
         $paginator = $table->preparePagination($query, false);
         $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));
         $paginator->setItemCountPerPage($this->systemSettings('posts', 'language'));
-        $this->getView()->paginator = $paginator;
+        $this->getView()->setVariable('paginator', $paginator);
 
         return $this->getView();
     }
@@ -97,7 +105,7 @@ final class LanguageController extends BaseController
     {
         $this->getView()->setTemplate('admin/language/edit');
         $language = $this->languageTable->getLanguage((int) $this->getParam('id', 0));
-        $this->getView()->language = $language;
+        $this->getView()->setVariable('language', $language);
         $this->addBreadcrumb(['reference' => "/admin/language/edit/{$language->getId()}", 'name' => $this->translate('EDIT_LANGUAGE').' &laquo;'.$language->getName().'&raquo;']);
         $this->initForm($language);
 
@@ -122,7 +130,7 @@ final class LanguageController extends BaseController
     {
         $this->getView()->setTemplate('admin/language/detail');
         $lang = $this->languageTable->getLanguage((int) $this->getParam('id', 0));
-        $this->getView()->lang = $lang;
+        $this->getView()->setVariable('lang', $lang);
         $this->addBreadcrumb(['reference' => "/admin/language/detail/{$lang->getId()}", 'name' => '&laquo;'.$lang->getName().'&raquo; '.$this->translate('DETAILS')]);
 
         return $this->getView();
@@ -155,8 +163,9 @@ final class LanguageController extends BaseController
             throw new RunTimeException($this->translate('NO_TRANSLATION_FILE'));
         }
 
-        $this->getView()->translationsArray = include $arr;
+        $this->getView()->setVariable('translationsArray', include $arr);
 
+        /** @var \Zend\Http\Request $request */
         $request = $this->getRequest();
         if ($request->isPost() && $request->getPost() instanceof Parameters) {
             $filename = 'module/Application/languages/phpArray/'.$this->language('languageName').'.php';
@@ -173,6 +182,8 @@ final class LanguageController extends BaseController
      * This is common function used by add and edit actions (to avoid code duplication).
      *
      * @param Language $language
+     *
+     * @return bool|\Zend\View\Model\ViewModel
      */
     private function initForm(Language $language = null)
     {
@@ -185,10 +196,13 @@ final class LanguageController extends BaseController
          */
         $form = $this->languageForm;
         $form->bind($language);
-        $this->getView()->form = $form;
-        if ($this->getRequest()->isPost()) {
+        $this->getView()->setVariable('form', $form);
+
+        /** @var \Zend\Http\Request $request */
+        $request = $this->getRequest();
+        if ($request->isPost()) {
             $form->setInputFilter($form->getInputFilter());
-            $form->setData($this->getRequest()->getPost());
+            $form->setData($request->getPost());
             if ($form->isValid()) {
                 $this->languageTable->saveLanguage($language);
 
@@ -197,5 +211,7 @@ final class LanguageController extends BaseController
 
             return $this->setLayoutMessages($form->getMessages(), 'error');
         }
+
+        return false;
     }
 }

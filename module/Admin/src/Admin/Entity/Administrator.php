@@ -80,7 +80,7 @@ final class Administrator
     /**
      * Set user id.
      *
-     * @param string $user
+     * @param int $user
      */
     public function setUser($user = 0)
     {

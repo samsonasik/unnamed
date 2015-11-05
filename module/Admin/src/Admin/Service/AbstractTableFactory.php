@@ -26,9 +26,9 @@ final class AbstractTableFactory implements AbstractFactoryInterface
      *
      * @return bool
      */
-    public function canCreateServiceWithName(ServiceLocatorInterface $serviceLocator, $name, $className)
+    public function canCreateServiceWithName(ServiceLocatorInterface $serviceLocator, $name, $requestedName)
     {
-        if (strpos($className, 'Table') && class_exists($className)) {
+        if (strpos($requestedName, 'Table') && class_exists($requestedName)) {
             return true;
         }
 
@@ -44,8 +44,8 @@ final class AbstractTableFactory implements AbstractFactoryInterface
      *
      * @return object
      */
-    public function createServiceWithName(ServiceLocatorInterface $serviceLocator, $name, $className)
+    public function createServiceWithName(ServiceLocatorInterface $serviceLocator, $name, $requestedName)
     {
-        return new $className($serviceLocator->get("Doctrine\ORM\EntityManager"));
+        return new $requestedName($serviceLocator->get("Doctrine\\ORM\\EntityManager"));
     }
 }

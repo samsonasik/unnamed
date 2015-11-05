@@ -8,6 +8,7 @@
  *
  * @link       TBA
  */
+
 namespace Admin\Entity;
 
 use Admin\Exception\BadMethodCallException;

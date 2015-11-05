@@ -8,6 +8,7 @@
  *
  * @link       TBA
  */
+
 namespace Admin\Controller;
 
 use Admin\Entity\Administrator;
@@ -15,9 +16,10 @@ use Admin\Form\AdministratorForm;
 use Zend\Mvc\MvcEvent;
 
 /**
- * @method string getTable($tableName)
- * @method void setLayoutMessages($message = [], $namespace = 'default')
+ * @method object getTable($tableName)
+ * @method object setLayoutMessages($message = [], $namespace = 'default')
  * @method string translate($message = '')
+ * @method mixed getParam($paramName = null, $default = null)
  */
 final class AdministratorController extends BaseController
 {
@@ -71,7 +73,7 @@ final class AdministratorController extends BaseController
         $query = $this->administratorTable->queryBuilder()->getEntityManager();
         $query = $query->createQuery('SELECT a.user, u.name FROM Admin\Entity\Administrator AS a LEFT JOIN Admin\Entity\User AS u WITH a.user=u.id');
 
-        $this->getView()->paginator = $query->getResult();
+        $this->getView()->setVariable('paginator', $query->getResult());
 
         return $this->getView();
     }
@@ -100,7 +102,7 @@ final class AdministratorController extends BaseController
     {
         $this->getView()->setTemplate('admin/administrator/edit');
         $administrator = $this->administratorTable->getAdministrator((int) $this->getParam('id', 0));
-        $this->getView()->administrator = $administrator;
+        $this->getView()->setVariable('administrator', $administrator);
         $this->addBreadcrumb(['reference' => "/admin/administrator/edit/{$administrator->getUser()}", 'name' => $this->translate('EDIT_ADMINISTRATOR')]);
         $this->initForm($administrator);
 
@@ -136,7 +138,9 @@ final class AdministratorController extends BaseController
     /**
      * This is common function used by add and edit actions (to avoid code duplication).
      *
-     * @param Administrator $administrator
+     * @param Administrator|null $administrator
+     *
+     * @return bool|\Zend\View\Model\ViewModel
      */
     private function initForm(Administrator $administrator = null)
     {
@@ -149,21 +153,24 @@ final class AdministratorController extends BaseController
          */
         $form = $this->administratorForm;
         $form->bind($administrator);
-        $this->getView()->form = $form;
+        $this->getView()->setVariable('form', $form);
 
-        if ($this->getRequest()->isPost()) {
-            $form->setInputFilter($form->getInputFilter());
-            $form->setData($this->getRequest()->getPost());
+        /** @var \Zend\Http\Request $request */
+            $request = $this->getRequest();
+            if ($request->isPost()) {
+                $form->setInputFilter($form->getInputFilter());
+                $form->setData($request->getPost());
+
             if ($form->isValid()) {
                 $formData = $form->getData();
                 $userId = $formData->getUser();
                 $adminExist = $this->administratorTable
                                         ->queryBuilder()
                                         ->getEntityManager()
-                                        ->createQuery("SELECT a.user, u.name, u.admin FROM Admin\Entity\Administrator AS a LEFT JOIN Admin\Entity\User AS u WITH a.user=u.id WHERE u.id = {$userId}")->getResult();
+                                        ->createQuery("SELECT a.user, u.name, u.admin FROM Admin\Entity\Administrator AS a LEFT JOIN Admin\Entity\User AS u WITH a.user=u.id WHERE u.id = ".$userId."")->getResult();
 
+                $user = $this->userTable->getUser($userId);
                 if (!isset($adminExist[0])) {
-                    $user = $this->userTable->getUser($userId);
                     $user->setAdmin(1);
                     $this->userTable->saveUser($user);
                     $this->administratorTable->saveAdministrator($administrator);
@@ -176,5 +183,6 @@ final class AdministratorController extends BaseController
 
             return $this->setLayoutMessages($form->getMessages(), 'error');
         }
+        return false;
     }
 }

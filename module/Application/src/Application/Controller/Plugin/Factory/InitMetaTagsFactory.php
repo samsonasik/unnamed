@@ -47,12 +47,12 @@ class InitMetaTagsFactory
         /*
          * @var \Application\Controller\Plugin\SystemSettings
          */
-        $systemsettings = $pluginManager->get('systemsettings');
+        $systemSettings = $pluginManager->get('systemsettings');
 
         /*
          * @var InitMetaTags
          */
-        $plugin = new InitMetaTags($placeholderContainer, $headMeta, $request, $systemsettings);
+        $plugin = new InitMetaTags($placeholderContainer, $headMeta, $request, $systemSettings);
 
         return $plugin;
     }

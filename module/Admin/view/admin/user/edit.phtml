@@ -7,7 +7,7 @@
     <div class='form-inputs'>
         <?php
             /**
-             * @var Admin\Form\UserForm
+             * @var \Admin\Form\UserForm $form
              */
             $form = $this->form;
             $form->setAttribute('action', $this->url('admin/default', ['controller' =>'user', 'action' => 'edit', 'id'=> $this->user->getId()]));

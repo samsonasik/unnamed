@@ -8,9 +8,15 @@
       <library name="PHARS">
         <CLASSES>
           <root url="phar://$MODULE_DIR$/composer.phar" />
+          <root url="phar://$MODULE_DIR$/module/Admin/test/PHPUnit/phpunit.phar" />
+          <root url="phar://$MODULE_DIR$/module/Application/test/PHPUnit/phpunit.phar" />
+          <root url="phar://$MODULE_DIR$/module/Themes/test/PHPUnit/phpunit.phar" />
         </CLASSES>
         <SOURCES>
           <root url="phar://$MODULE_DIR$/composer.phar" />
+          <root url="phar://$MODULE_DIR$/module/Admin/test/PHPUnit/phpunit.phar" />
+          <root url="phar://$MODULE_DIR$/module/Application/test/PHPUnit/phpunit.phar" />
+          <root url="phar://$MODULE_DIR$/module/Themes/test/PHPUnit/phpunit.phar" />
         </SOURCES>
       </library>
     </orderEntry>

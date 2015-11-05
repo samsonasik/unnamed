@@ -15,36 +15,28 @@ use Admin\Entity\Language;
 interface LanguageTableInterface
 {
     /**
-     * @return Doctrine\ORM\QueryBuilder
+     * @return \Doctrine\ORM\QueryBuilder
      */
     public function queryBuilder();
 
     /**
-     * @param Query|QueryBuilder $query               A Doctrine ORM query or query builder.
-     * @param bool               $fetchJoinCollection Whether the query joins a collection (true by default).
-     *
-     * @return Paginator
+     * @param \Doctrine\ORM\Query|\Doctrine\ORM\QueryBuilder $query               A Doctrine ORM query or query builder.
+     * @param bool
      */
     public function preparePagination($query, $fetchJoinCollection = true);
 
     /**
-     * @return Admin\Entity\Language
+     * @return \Doctrine\ORM\EntityRepository
      */
     public function getEntityRepository();
 
     /**
      * @param int $languageId
-     *
-     * @throws RuntimeException
-     *
-     * @return Language
      */
     public function getLanguage($languageId = 0);
 
     /**
      * @param int $languageId
-     *
-     * @return Language
      */
     public function deleteLanguage($languageId = 0);
 
@@ -52,8 +44,6 @@ interface LanguageTableInterface
      * Save or update language based on the provided id.
      *
      * @param Language $language
-     *
-     * @return Language
      */
     public function saveLanguage(Language $language);
 }

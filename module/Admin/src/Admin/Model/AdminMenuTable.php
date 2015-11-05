@@ -20,13 +20,10 @@ use Zend\Paginator\Paginator as ZendPaginator;
 final class AdminMenuTable
 {
     /**
-     * @var EntityManager
+     * @var \Doctrine\ORM\EntityManager
      */
     private $entityManager;
 
-    /**
-     * @param EntityManager $entityManager
-     */
     public function __construct(EntityManager $entityManager)
     {
         $this->entityManager = $entityManager;
@@ -41,8 +38,8 @@ final class AdminMenuTable
     }
 
     /**
-     * @param Query|QueryBuilder $query               A Doctrine ORM query or query builder.
-     * @param bool               $fetchJoinCollection Whether the query joins a collection (true by default).
+     * @param \Doctrine\ORM\Query|\Doctrine\ORM\QueryBuilder $query               A Doctrine ORM query or query builder.
+     * @param bool                                           $fetchJoinCollection Whether the query joins a collection (true by default).
      *
      * @return ZendPaginator
      */
@@ -56,13 +53,13 @@ final class AdminMenuTable
      */
     public function getEntityRepository()
     {
-        return $this->entityManager->getRepository("Admin\Entity\AdminMenu");
+        return $this->entityManager->getRepository("Admin\\Entity\\AdminMenu");
     }
 
     /**
-     * @param int $adminMenuId adminmenu id
+     * @param int $adminMenuId admin menu id
      *
-     * @throws RuntimeException If adminmenu is not found
+     * @throws RuntimeException If admin menu is not found
      *
      * @return AdminMenu
      */
@@ -78,7 +75,7 @@ final class AdminMenuTable
     }
 
     /**
-     * Delete a adminmenu based on the provided id.
+     * Delete a admin menu based on the provided id.
      *
      * @param int $adminMenuId admin menu id
      *

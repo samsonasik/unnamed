@@ -1,7 +1,7 @@
 <?php
 if(!empty($this->news)) {
    /**
-    * @var $new Admin\Model\Content
+    * @var $new \Admin\Entity\Content
     */
     foreach($this->news as $new) {
         $dateTime = date("Y-m-d", strtotime($new->getDate()));

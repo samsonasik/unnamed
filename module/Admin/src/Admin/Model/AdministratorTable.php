@@ -41,7 +41,7 @@ final class AdministratorTable
     }
 
     /**
-     * @param Query|QueryBuilder $query               A Doctrine ORM query or query builder.
+     * @param \Doctrine\ORM\Query|\Doctrine\ORM\QueryBuilder $query               A Doctrine ORM query or query builder.
      * @param bool               $fetchJoinCollection Whether the query joins a collection (true by default).
      *
      * @return ZendPaginator
@@ -56,7 +56,7 @@ final class AdministratorTable
      */
     public function getEntityRepository()
     {
-        return $this->entityManager->getRepository("Admin\Entity\Administrator");
+        return $this->entityManager->getRepository("Admin\\Entity\\Administrator");
     }
 
     /**

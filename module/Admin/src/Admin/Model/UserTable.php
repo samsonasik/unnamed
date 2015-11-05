@@ -20,7 +20,7 @@ use Zend\Paginator\Paginator as ZendPaginator;
 final class UserTable
 {
     /**
-     * @var Doctrine\ORM\EntityManager
+     * @var \Doctrine\ORM\EntityManager
      */
     private $entityManager;
 
@@ -38,8 +38,8 @@ final class UserTable
     }
 
     /**
-     * @param Query|QueryBuilder $query               A Doctrine ORM query or query builder.
-     * @param bool               $fetchJoinCollection Whether the query joins a collection (true by default).
+     * @param \Doctrine\ORM\Query|\Doctrine\ORM\QueryBuilder $query               A Doctrine ORM query or query builder.
+     * @param bool                                           $fetchJoinCollection Whether the query joins a collection (true by default).
      *
      * @return ZendPaginator
      */
@@ -53,7 +53,7 @@ final class UserTable
      */
     public function getEntityRepository()
     {
-        return $this->entityManager->getRepository("Admin\Entity\User");
+        return $this->entityManager->getRepository("Admin\\Entity\\User");
     }
 
     /**

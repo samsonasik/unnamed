@@ -14,7 +14,7 @@
 
 if (count($this->menus)) {
        /**
-        * @var $adminMenu Admin\Model\AdminMenu
+        * @var $adminMenu \Admin\Entity\AdminMenu
         */
         foreach($this->menus as $adminMenu) {
 ?>
@@ -48,7 +48,7 @@ if (count($this->menus)) {
 <?php
             if (isset($this->submenus[$adminMenu->getId()])) {
                /**
-                * @var $sub Admin\Model\AdminMenu
+                * @var $sub Admin\Entity\AdminMenu
                 */
                 foreach($this->submenus[$adminMenu->getId()] as $sub) {
 ?>

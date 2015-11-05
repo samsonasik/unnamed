@@ -12,6 +12,14 @@ namespace Application\Controller;
 
 use Application\Form\ContactForm;
 
+/**
+ * @method object getTable($tableName)
+ * @method object setLayoutMessages($message = [], $namespace = 'default')
+ * @method string translate($message = '')
+ * @method mixed getParam($paramName = null, $default = null)
+ * @method mixed Mailing()
+ * @method string|null systemSettings($option = 'general', $value = 'site_name')
+ */
 final class ContactController extends BaseController
 {
     /*
@@ -48,10 +56,13 @@ final class ContactController extends BaseController
         $form->get('captcha')->setLabel($this->translate('CAPTCHA'))->setAttribute('placeholder', $this->translate('ENTER_CAPTCHA'));
         $form->get('message')->setLabel($this->translate('MESSAGE'))->setAttribute('placeholder', $this->translate('ENTER_MESSAGE'));
 
-        $this->getView()->form = $form;
-        if ($this->getRequest()->isPost()) {
+        $this->getView()->setVariable('form', $form);
+
+        /** @var \Zend\Http\Request $request */
+        $request = $this->getRequest();
+        if ($request->isPost()) {
             $form->setInputFilter($form->getInputFilter());
-            $form->setData($this->getRequest()->getPost());
+            $form->setData($request->getPost());
             if ($form->isValid()) {
                 $formData = $form->getData();
                 try {

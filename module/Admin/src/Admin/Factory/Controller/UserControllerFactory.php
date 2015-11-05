@@ -23,7 +23,7 @@ final class UserControllerFactory
         $serviceLocator = $controllerManager->getServiceLocator();
 
         $controller = new UserController(
-            (object) $serviceLocator->get('FormElementManager')->get('Admin\Form\UserForm')
+            $serviceLocator->get('FormElementManager')->get('Admin\Form\UserForm')
         );
 
         return $controller;

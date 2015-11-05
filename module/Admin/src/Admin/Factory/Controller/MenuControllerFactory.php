@@ -23,7 +23,7 @@ final class MenuControllerFactory
         $serviceLocator = $controllerManager->getServiceLocator();
 
         $controller = new MenuController(
-            (object) $serviceLocator->get('FormElementManager')->get('Admin\Form\MenuForm')
+            $serviceLocator->get('FormElementManager')->get('Admin\Form\MenuForm')
         );
 
         return $controller;

@@ -8,6 +8,7 @@
  *
  * @link       TBA
  */
+
 namespace Admin\Controller;
 
 final class IndexController extends BaseController
@@ -29,10 +30,11 @@ final class IndexController extends BaseController
      */
     protected function languageAction()
     {
+        /** @var \Admin\Entity\Language $language */
         $language = $this->getTable('Admin\\Model\\LanguageTable')->getLanguage((int) $this->getParam('id', 1));
 
-        $this->getTranslation()->language = $language->getId();
-        $this->getTranslation()->languageName = $language->getName();
+        $this->getTranslation()->offsetSet('language', $language->getId());
+        $this->getTranslation()->offsetSet('languageName', $language->getName());
 
         return $this->redirect()->toUrl('/');
     }

@@ -94,9 +94,10 @@ class Bootstrap
         ]);
     }
 
-
     /**
      * @param string $path
+     *
+     * @return bool|string
      */
     protected static function findParentPath($path)
     {

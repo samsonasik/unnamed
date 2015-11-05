@@ -142,18 +142,21 @@ final class SettingsController extends BaseController
 
     /**
      * @param $form object
-     * @param $action string
+     * @param string $actionKey
+     * @internal param string $action
      */
     private function initForm($form, $actionKey = 'general')
     {
         $form->get('submit')->setValue($this->translate('EDIT'));
         $filename = 'config/autoload/system.local.php';
         $settings = include $filename;
-        $this->getView()->form = $form;
+        $this->getView()->setVariable('form', $form);
 
-        if ($this->getRequest()->isPost()) {
+        /** @var \Zend\Http\Request $request */
+        $request = $this->getRequest();
+        if ($request->isPost()) {
             $form->setInputFilter($form->getInputFilter());
-            $form->setData($this->getRequest()->getPost());
+            $form->setData($request->getPost());
 
             if ($form->isValid()) {
                 $formData = $form->getData();

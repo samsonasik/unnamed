@@ -15,9 +15,17 @@ use Application\Form\RegistrationForm;
 use Zend\Http\PhpEnvironment\RemoteAddress;
 use Zend\Mvc\MvcEvent;
 
+/**
+ * @method object getTable($tableName)
+ * @method object setLayoutMessages($message = [], $namespace = 'default')
+ * @method string translate($message = '')
+ * @method mixed UserData()
+ * @method mixed getFunctions()
+ * @method string|null systemSettings($option = 'general', $value = 'site_name')
+ */
 final class RegistrationController extends BaseController
 {
-    /**
+    /*
      * @var RegistrationForm
      */
     private $registrationForm;
@@ -33,6 +41,8 @@ final class RegistrationController extends BaseController
 
     /**
      * @param MvcEvent $event
+     *
+     * @return mixed|void
      */
     public function onDispatch(MvcEvent $event)
     {
@@ -41,7 +51,7 @@ final class RegistrationController extends BaseController
         /*
          * If user is logged and tries to access one of the given actions
          * he will be redirected to the root url of the website.
-         * For resetpassword and newpassword actions we assume that the user is not logged in.
+         * For reset password and new password actions we assume that the user is not logged in.
          */
         if (APP_ENV === 'development') {
             $this->UserData()->checkIdentity();
@@ -53,7 +63,9 @@ final class RegistrationController extends BaseController
      */
     public function processregistrationAction()
     {
-        if (!$this->getRequest()->isPost()) {
+        /** @var \Zend\Http\Request $request */
+        $request = $this->getRequest();
+        if (!$request->isPost()) {
             return $this->redirect()->toUrl('/registration');
         }
 
@@ -63,7 +75,7 @@ final class RegistrationController extends BaseController
         $form = $this->registrationForm;
 
         $form->setInputFilter($form->getInputFilter());
-        $form->setData($this->getRequest()->getPost());
+        $form->setData($request->getPost());
 
         if ($form->isValid()) {
             $formData = $form->getData();
@@ -104,7 +116,7 @@ final class RegistrationController extends BaseController
         $this->getView()->setTemplate('application/registration/index');
 
         if ($this->systemSettings('registration', 'allow_registrations') !== 1) {
-            $this->getView()->form = $this->translate('REGISTRATION_CLOSED');
+            $this->getView()->setVariable('form', $this->translate('REGISTRATION_CLOSED'));
 
             return $this->getView();
         }
@@ -121,7 +133,7 @@ final class RegistrationController extends BaseController
         $form->get('captcha')->setLabel($this->translate('CAPTCHA'))->setAttribute('placeholder', $this->translate('ENTER_CAPTCHA'));
         $form->get('register')->setValue($this->translate('SIGN_UP'));
 
-        $this->getView()->form = $form;
+        $this->getView()->setVariable('form', $form);
 
         return $this->getView();
     }

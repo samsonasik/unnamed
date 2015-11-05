@@ -13,6 +13,10 @@ namespace Themes\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
+/**
+ * @method object setLayoutMessages($message = [], $namespace = 'default')
+ * @method string translate($message = '')
+ */
 final class IndexController extends AbstractActionController
 {
     /**
@@ -46,6 +50,7 @@ final class IndexController extends AbstractActionController
      */
     public function indexAction()
     {
+        /** @var \Zend\Http\Request $request */
         $request = $this->getRequest();
         if ($request->isPost()) {
             $filename = __DIR__.'/../../../config/module.config.php';

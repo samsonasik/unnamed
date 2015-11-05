@@ -16,13 +16,13 @@ use Zend\InputFilter\InputFilterProviderInterface;
 
 final class ContentForm extends Form implements InputFilterProviderInterface
 {
-    /**
-     * @var Doctrine\ORM\EntityManager
+    /*
+     * @var EntityManager
      */
     private $entityManager;
 
-    /**
-     * @param $entityManager
+    /*
+     * @param EntityManager $entityManager
      */
     public function __construct(EntityManager $entityManager)
     {

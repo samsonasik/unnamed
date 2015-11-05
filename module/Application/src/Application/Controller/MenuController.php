@@ -10,6 +10,13 @@
  */
 namespace Application\Controller;
 
+use Doctrine\ORM\Query\Expr\Join;
+
+/**
+ * @method object getTable($tableName)
+ * @method mixed initMetaTags(array $content = [])
+ * @method mixed getParam($paramName = null, $default = null)
+ */
 final class MenuController extends BaseController
 {
     /**
@@ -21,13 +28,14 @@ final class MenuController extends BaseController
     {
         $this->getView()->setTemplate('application/menu/post');
 
+        /** @var \Doctrine\ORM\QueryBuilder $contents */
         $contents = $this->getTable('Admin\\Model\\ContentTable')->queryBuilder();
         $contents->select('m.menulink, m.parent, m.keywords, m.description', 'c.menu, c.text, c.id, c.title, c.preview')
                     ->from('Admin\Entity\Menu', 'm')
                     ->innerJoin(
                     'Admin\Entity\Content',
                     'c',
-                    \Doctrine\ORM\Query\Expr\Join::WITH,
+                    Join::WITH,
                     'c.menu = m.id'
                     )
                     ->where('m.menulink = :menulink AND c.type = 0 AND c.language = :language')
@@ -37,7 +45,7 @@ final class MenuController extends BaseController
         $contents = $contents->getQuery()->getResult();
         if ($contents) {
             $this->initMetaTags($contents[0]);
-            $this->getView()->contents = $contents;
+            $this->getView()->setVariable('contents', $contents);
         }
 
         return $this->getView();

@@ -15,7 +15,7 @@ use Doctrine\ORM\EntityRepository;
 class LanguageRepository extends EntityRepository
 {
     /**
-     * @return arrayobject
+     * @return array|object
      */
     public function getLanguages()
     {

@@ -16,14 +16,14 @@ use Zend\Session\Container;
 class MenuRepository extends EntityRepository
 {
     /**
-     * @return arrayobject
+     * @return array|object
      */
     public function getMenus()
     {
         $lang = new Container('translations');
 
         return $this->createQueryBuilder('m')->select('m')
-                    ->where("m.active = 1 AND m.language = '{$lang->language}'")
+                    ->where("m.active = 1 AND m.language = '".$lang->offsetGet('language')."'")
                     ->orderBy('m.parent', 'ASC')
                     ->getQuery()->getResult();
     }

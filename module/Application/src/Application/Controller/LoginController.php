@@ -21,33 +21,43 @@ use Zend\Http\PhpEnvironment\RemoteAddress;
 use Zend\Mvc\MvcEvent;
 use Zend\Session\Container;
 
+/**
+ * @method object getTable($tableName)
+ * @method object setLayoutMessages($message = [], $namespace = 'default')
+ * @method string translate($message = '')
+ * @method mixed UserData()
+ * @method mixed getParam($paramName = null, $default = null)
+ * @method mixed getFunctions()
+ * @method string|null systemSettings($option = 'general', $value = 'site_name')
+ * @method object Mailing()
+ */
 final class LoginController extends BaseController
 {
-    /**
-     * @var \Zend\Authentication\Adapter\AdapterInterface
+    /*
+     * @var AuthenticationService
      */
     private $authService;
 
-    /**
+    /*
      * @var ResetPasswordForm
      */
     private $resetPasswordForm;
 
-    /**
+    /*
      * @var NewPasswordForm
      */
     private $newPasswordForm;
 
-    /**
+    /*
      * @var LoginForm
      */
     private $loginForm;
 
     /**
-     * @param LoginForm             $loginForm
-     * @param \Zend\Authentication\Adapter\AdapterInterface $authService
-     * @param ResetPasswordForm     $resetPasswordForm
-     * @param NewPasswordForm       $newPasswordForm
+     * @param LoginForm $loginForm
+     * @param AuthenticationService $authService
+     * @param ResetPasswordForm $resetPasswordForm
+     * @param NewPasswordForm $newPasswordForm
      */
     public function __construct(LoginForm $loginForm,
         AuthenticationService $authService,
@@ -73,7 +83,7 @@ final class LoginController extends BaseController
         /*
          * If user is logged and tries to access one of the given actions
          * he will be redirected to the root url of the website.
-         * For resetpassword and newpassword actions we assume that the user is not logged in.
+         * For reset password and new password actions we assume that the user is not logged in.
          */
         if (APP_ENV !== 'development') {
             $this->UserData()->checkIdentity();
@@ -89,6 +99,7 @@ final class LoginController extends BaseController
      */
     private function getAuthAdapter(array $options = [])
     {
+        /** @var AuthenticationService $authAdapter */
         $authAdapter = $this->authService->getAdapter();
         $authAdapter->setIdentityValue((string) $options['email']);
         $authAdapter->setCredentialValue((string) $options['password']);
@@ -110,7 +121,7 @@ final class LoginController extends BaseController
         $form->get('login')->setValue($this->translate('SIGN_IN'));
         $form->get('email')->setLabel($this->translate('EMAIL'));
         $form->get('password')->setLabel($this->translate('PASSWORD'));
-        $this->getView()->form = $form;
+        $this->getView()->setVariable('form', $form);
 
         return $this->getView();
     }
@@ -122,10 +133,9 @@ final class LoginController extends BaseController
     {
         $this->getView()->setTemplate('application/login/index');
 
-        /*
-         * Check if we have a POST request
-         */
-        if (!$this->getRequest()->isPost()) {
+        /** @var \Zend\Http\Request $request */
+        $request = $this->getRequest();
+        if (!$request->isPost()) {
             return $this->logoutAction();
         }
 
@@ -134,7 +144,7 @@ final class LoginController extends BaseController
          */
         $form = $this->loginForm;
         $form->setInputFilter($form->getInputFilter());
-        $form->setData($this->getRequest()->getPost());
+        $form->setData($request->getPost());
 
         /*
          * See if form is valid
@@ -216,12 +226,8 @@ final class LoginController extends BaseController
         $form->get('repeatpw')->setLabel($this->translate('REPEAT_PASSWORD'))->setAttribute('placeholder', $this->translate('REPEAT_PASSWORD'));
         $form->get('resetpw')->setValue($this->translate('RESET_PW'));
 
-        /*
-         * temporary create new view variable to hold the user id.
-         * After the password is reset the variable is destroyed.
-         */
-        $this->getView()->resetpwUserId = $tokenExist['user'];
-        $this->getView()->form = $form;
+        $this->getView()->setVariable('resetpwUserId', $tokenExist['user']);
+        $this->getView()->setVariable('form', $form);
 
         return $this->getView();
     }
@@ -238,18 +244,20 @@ final class LoginController extends BaseController
          */
         $form = $this->newPasswordForm;
 
-        if ($this->getRequest()->isPost()) {
+        /** @var \Zend\Http\Request $request */
+        $request = $this->getRequest();
+        if ($request->isPost()) {
             $form->setInputFilter($form->getInputFilter());
-            $form->setData($this->getRequest()->getPost());
+            $form->setData($request->getPost());
 
             if ($form->isValid()) {
                 $formData = $form->getData();
                 $pw = $func::createPassword($formData->password);
 
                 if (!empty($pw)) {
-                    $user = $this->getTable('Admin\\Model\\UserTable')->getUser($this->getView()->resetpwUserId);
+                    /** @var \Admin\Entity\User $user */
+                    $user = $this->getTable('Admin\\Model\\UserTable')->getUser($this->getView()->getVariable('resetpwUserId'));
                     $remote = new RemoteAddress();
-                    unset($this->getView()->resetpwUserId);
                     $user->setPassword($pw);
                     $user->setIp($remote->getIpAddress());
                     $this->getTable('Admin\\Model\\UserTable')->saveUser($user);
@@ -260,9 +268,9 @@ final class LoginController extends BaseController
             } else {
                 $this->setLayoutMessages($form->getMessages(), 'error');
             }
-
-            return $this->redirect()->toUrl('/login');
         }
+
+        return $this->redirect()->toUrl('/login');
     }
 
     /**
@@ -279,14 +287,17 @@ final class LoginController extends BaseController
         $form = $this->resetPasswordForm;
         $form->get('resetpw')->setValue($this->translate('RESET_PW'));
         $form->get('email')->setLabel($this->translate('EMAIL'));
-        $this->getView()->form = $form;
+        $this->getView()->setVariable('form', $form);
 
-        if ($this->getRequest()->isPost()) {
+        /** @var \Zend\Http\Request $request */
+        $request = $this->getRequest();
+        if ($request->isPost()) {
             $form->setInputFilter($form->getInputFilter());
-            $form->setData($this->getRequest()->getPost());
+            $form->setData($request->getPost());
 
             if ($form->isValid()) {
                 $formData = $form->getData();
+                /** @var \Admin\Entity\User $existingEmail */
                 $existingEmail = $this->getTable('Admin\\Model\\UserTable')
                                         ->getEntityRepository()
                                         ->findBy(['email' => $formData['email']]);

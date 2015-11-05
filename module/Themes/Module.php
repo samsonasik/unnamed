@@ -20,14 +20,14 @@ use Zend\ModuleManager\ModuleManagerInterface;
 final class Module implements ConfigProviderInterface, BootstrapListenerInterface, InitProviderInterface
 {
     /**
-     * @var \Zend\getServiceManager\ServiceManager
+     * @var \Zend\ServiceManager\ServiceManager
      */
     private $service;
 
     /**
      * Setup module layout.
      *
-     * @param  $moduleManager ModuleManager
+     * @param $moduleManager ModuleManagerInterface
      */
     public function init(ModuleManagerInterface $moduleManager)
     {
@@ -43,7 +43,9 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
     /**
      * Listen to the bootstrap event.
      *
-     * @param EventInterface $event
+     * @param EventInterface|\Zend\Mvc\MvcEvent $event
+     *
+     * @return array|void
      */
     public function onBootstrap(EventInterface $event)
     {
@@ -73,7 +75,9 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
     /**
      * Setup theme.
      *
-     * @param EventInterface $event
+     * @param EventInterface|\Zend\Mvc\MvcEvent $event
+     *
+     * @return array|object
      */
     public function loadTheme(EventInterface $event)
     {
@@ -83,6 +87,8 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
         if (!in_array($event->getRouteMatch()->getMatchedRouteName(), ['admin', 'admin/default', 'themes', 'themes/default'])) {
             return $this->service->get('initThemes');
         }
+
+        return [];
     }
 
     /**

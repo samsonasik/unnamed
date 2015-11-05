@@ -201,3 +201,21 @@ Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\
 #22 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(100): PHPUnit_TextUI_Command->run(Array, true)
 #23 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\phpunit.phar(547): PHPUnit_TextUI_Command::main()
 #24 {main}
+2015-11-05T11:43:48+00:00 ERR (3): 
+Exception: An exception was raised while creating "Admin\Controller\User"; no instance returned
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(283): Zend\ServiceManager\ServiceManager->createServiceViaCallback(Object(Admin\Factory\Controller\UserControllerFactory), 'admincontroller...', 'Admin\\Controlle...')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(243): Zend\ServiceManager\AbstractPluginManager->createServiceViaCallback(Object(Admin\Factory\Controller\UserControllerFactory), 'admincontroller...', 'Admin\\Controlle...')
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(637): Zend\ServiceManager\AbstractPluginManager->createFromFactory('admincontroller...', 'Admin\\Controlle...')
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('Admin\\Controlle...', 'admincontroller...')
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(115): Zend\ServiceManager\ServiceManager->get('Admin\\Controlle...', false)
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\ControllerManager.php(137): Zend\ServiceManager\AbstractPluginManager->get('Admin\\Controlle...', Array, false)
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(76): Zend\Mvc\Controller\ControllerManager->get('Admin\\Controlle...')
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}

@@ -8,21 +8,29 @@
  *
  * @link       TBA
  */
+
 namespace Admin\Controller;
 
 use Admin\Entity\Menu;
 use Admin\Form\MenuForm;
 use Zend\Mvc\MvcEvent;
+use Zend\Escaper\Escaper;
 
+/**
+ * @method object getTable($tableName)
+ * @method object setLayoutMessages($message = [], $namespace = 'default')
+ * @method string translate($message = '')
+ * @method mixed getParam($paramName = null, $default = null)
+ */
 final class MenuController extends BaseController
 {
-    /**
+    /*
      * @var MenuForm
      */
     private $menuForm;
 
     /**
-     * @var Menu
+     * @var \Admin\Model\MenuTable
      */
     private $menuTable;
 
@@ -61,6 +69,7 @@ final class MenuController extends BaseController
 
         $menus = ['menus' => [], 'submenus' => []];
         if (count($menu) > 0) {
+            /** @var Menu $submenus */
             foreach ($menu as $submenus) {
                 $menus['menus'][$submenus->getId()] = $submenus;
                 $menus['submenus'][$submenus->getParent()][] = $submenus->getId();
@@ -84,28 +93,28 @@ final class MenuController extends BaseController
     {
         $output = '';
         if (isset($menu['submenus'][$parent])) {
-            $escaper = new \Zend\Escaper\Escaper('utf-8');
+            $escaper = new Escaper('utf-8');
             foreach ($menu['submenus'][$parent] as $id) {
                 $output .= "<ul class='table-row'>";
-                $output .= "<li class='table-cell flex-2'>{$menu['menus'][$id]->getCaption()}</li>";
-                $output .= "<li class='table-cell flex-b'><a title='{$this->translate('DETAILS')}' hreflang='{$this->language('languageName')}' itemprop='url' href='/admin/menu/detail/{$escaper->escapeUrl($menu['menus'][$id]->getId())}' class='btn btn-sm blue'><i class='fa fa-info'></i></a></li>";
-                $output .= "<li class='table-cell flex-b'><a title='{$this->translate('EDIT')}' hreflang='{$this->language('languageName')}' itemprop='url' href='/admin/menu/edit/{$escaper->escapeUrl($menu['menus'][$id]->getId())}' class='btn btn-sm orange'><i class='fa fa-pencil'></i></a></li>";
-                if ($menu['menus'][$id]->isActive() === 0) {
-                    $output .= "<li class='table-cell flex-b'><a title='{$this->translate('DEACTIVATED')}' hreflang='{$this->language('languageName')}' itemprop='url' href='/admin/menu/activate/{$escaper->escapeUrl($menu['menus'][$id]->getId())}' class='btn btn-sm deactivated'><i class='fa fa-minus-square-o'></i></a></li>";
+                $output .= "<li class='table-cell flex-2'>".$menu['menus'][$id]->getCaption()."</li>";
+                $output .= "<li class='table-cell flex-b'><a title='".$this->translate('DETAILS')."' hreflang='".$this->language('languageName')."' itemprop='url' href='/admin/menu/detail/".$escaper->escapeUrl($menu['menus'][$id]->getId())."' class='btn btn-sm blue'><i class='fa fa-info'></i></a></li>";
+                $output .= "<li class='table-cell flex-b'><a title='".$this->translate('EDIT')."' hreflang='".$this->language('languageName')."' itemprop='url' href='/admin/menu/edit/".$escaper->escapeUrl($menu['menus'][$id]->getId())."' class='btn btn-sm orange'><i class='fa fa-pencil'></i></a></li>";
+                if (0 === $menu['menus'][$id]->isActive()) {
+                    $output .= "<li class='table-cell flex-b'><a title='".$this->translate('DEACTIVATED')."' hreflang='".$this->language('languageName')."' itemprop='url' href='/admin/menu/activate/".$escaper->escapeUrl($menu['menus'][$id]->getId())."' class='btn btn-sm deactivated'><i class='fa fa-minus-square-o'></i></a></li>";
                 } else {
-                    $output .= "<li class='table-cell flex-b'><a title='{$this->translate('ACTIVE')}' hreflang='{$this->language('languageName')}' itemprop='url' href='/admin/menu/deactivate/{$escaper->escapeUrl($menu['menus'][$id]->getId())}' class='btn btn-sm active'><i class='fa fa fa-check-square-o'></i></a></li>";
+                    $output .= "<li class='table-cell flex-b'><a title='".$this->translate('ACTIVE')."' hreflang='".$this->language('languageName')."' itemprop='url' href='/admin/menu/deactivate/".$escaper->escapeUrl($menu['menus'][$id]->getId())."' class='btn btn-sm active'><i class='fa fa fa-check-square-o'></i></a></li>";
                 }
                 $output .= "
                 <li class='table-cell flex-b'>
-                    <button role='button' aria-pressed='false' aria-label='{$this->translate('DELETE')}' id='{$menu['menus'][$id]->getId()}' type='button' class='btn btn-sm delete dialog_delete' title='{$this->translate('DELETE')}'><i class='fa fa-trash-o'></i></button>
-                        <div role='alertdialog' aria-labelledby='dialog{$menu['menus'][$id]->getId()}Title' class='delete_{$menu['menus'][$id]->getId()} dialog_hide'>
-                           <p id='dialog{$menu['menus'][$id]->getId()}Title'>{$this->translate('DELETE_CONFIRM_TEXT')} &laquo;{$menu['menus'][$id]->getCaption()}&raquo;</p>
+                    <button role='button' aria-pressed='false' aria-label='".$this->translate('DELETE')."' id='".$menu['menus'][$id]->getId()."' type='button' class='btn btn-sm delete dialog_delete' title='".$this->translate('DELETE')."'><i class='fa fa-trash-o'></i></button>
+                        <div role='alertdialog' aria-labelledby='dialog".$menu['menus'][$id]->getId()."Title' class='delete_".$menu['menus'][$id]->getId()." dialog_hide'>
+                           <p id='dialog".$menu['menus'][$id]->getId()."Title'>".$this->translate('DELETE_CONFIRM_TEXT')." &laquo;".$menu['menus'][$id]->getCaption()."&raquo;</p>
                             <ul>
                                 <li>
-                                    <a class='btn delete' href='/admin/menu/delete/{$escaper->escapeUrl($menu['menus'][$id]->getId())}'><i class='fa fa-trash-o'></i> {$this->translate('DELETE')}</a>
+                                    <a class='btn delete' href='/admin/menu/delete/".$escaper->escapeUrl($menu['menus'][$id]->getId())."'><i class='fa fa-trash-o'></i> ".$this->translate('DELETE')."</a>
                                 </li>
                                 <li>
-                                    <button role='button' aria-pressed='false' aria-label='{$this->translate('CANCEL')}' class='btn btn-default cancel'><i class='fa fa-times'></i> {$this->translate('CANCEL')}</button>
+                                    <button role='button' aria-pressed='false' aria-label='".$this->translate('CANCEL')."' class='btn btn-default cancel'><i class='fa fa-times'></i> ".$this->translate('CANCEL')."</button>
                                 </li>
                             </ul>
                         </div>
@@ -128,7 +137,7 @@ final class MenuController extends BaseController
     {
         $this->getView()->setTemplate('admin/menu/index');
 
-        $this->getView()->menus = $this->showMenus();
+        $this->getView()->setVariable('menus', $this->showMenus());
 
         return $this->getView();
     }
@@ -195,7 +204,7 @@ final class MenuController extends BaseController
     {
         $this->getView()->setTemplate('admin/menu/detail');
         $menu = $this->menuTable->getMenu((int) $this->getParam('id', 0), $this->language());
-        $this->getView()->menuDetail = $menu;
+        $this->getView()->setVariable('menuDetail', $menu);
         $this->addBreadcrumb(['reference' => '/admin/menu/detail/'.$menu->getId().'', 'name' => '&laquo;'.$menu->getCaption().'&raquo; '.$this->translate('DETAILS')]);
 
         return $this->getView();
@@ -205,6 +214,8 @@ final class MenuController extends BaseController
      * This is common function used by add and edit actions (to avoid code duplication).
      *
      * @param Menu $menu
+     *
+     * @return bool|object
      */
     private function initForm(Menu $menu)
     {
@@ -214,12 +225,14 @@ final class MenuController extends BaseController
 
         $form = $this->menuForm;
         $form->bind($menu);
-        $this->getView()->form = $form;
-        $this->getView()->editMenu = $menu;
+        $this->getView()->setVariable('form', $form);
+        $this->getView()->setVariable('editMenu', $menu);
 
-        if ($this->getRequest()->isPost()) {
+        /** @var \Zend\Http\Request $request */
+        $request = $this->getRequest();
+        if ($request->isPost()) {
             $form->setInputFilter($form->getInputFilter());
-            $form->setData($this->getRequest()->getPost());
+            $form->setData($request->getPost());
 
             if ($form->isValid()) {
                 $this->menuTable->saveMenu($menu);
@@ -229,5 +242,7 @@ final class MenuController extends BaseController
 
             return $this->setLayoutMessages($form->getMessages(), 'error');
         }
+
+        return false;
     }
 }

@@ -15,7 +15,7 @@ use Doctrine\ORM\EntityRepository;
 class AdminMenuRepository extends EntityRepository
 {
     /**
-     * @return arrayobject
+     * @return array|object
      */
     public function getParentMenus()
     {

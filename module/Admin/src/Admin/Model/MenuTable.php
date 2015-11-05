@@ -20,13 +20,10 @@ use Zend\Paginator\Paginator as ZendPaginator;
 final class MenuTable
 {
     /**
-     * @var EntityManager
+     * @var \Doctrine\ORM\EntityManager
      */
     private $entityManager;
 
-    /**
-     * @param EntityManager $entityManager
-     */
     public function __construct(EntityManager $entityManager)
     {
         $this->entityManager = $entityManager;
@@ -41,8 +38,8 @@ final class MenuTable
     }
 
     /**
-     * @param Query|QueryBuilder $query               A Doctrine ORM query or query builder.
-     * @param bool               $fetchJoinCollection Whether the query joins a collection (true by default).
+     * @param \Doctrine\ORM\Query|\Doctrine\ORM\QueryBuilder $query               A Doctrine ORM query or query builder.
+     * @param bool                                           $fetchJoinCollection Whether the query joins a collection (true by default).
      *
      * @return ZendPaginator
      */
@@ -56,7 +53,7 @@ final class MenuTable
      */
     public function getEntityRepository()
     {
-        return $this->entityManager->getRepository("Admin\Entity\Menu");
+        return $this->entityManager->getRepository("Admin\\Entity\\Menu");
     }
 
     /**

@@ -56,7 +56,7 @@ class LanguageTable implements LanguageTableInterface
      */
     public function getEntityRepository()
     {
-        return $this->entityManager->getRepository("Admin\Entity\Language");
+        return $this->entityManager->getRepository("Admin\\Entity\\Language");
     }
 
     /**

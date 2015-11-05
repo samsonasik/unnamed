@@ -123,7 +123,7 @@ final class Language
     /**
      * Set active.
      *
-     * @param integer $active
+     * @param int $active
      *
      * @return $this
      */

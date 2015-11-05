@@ -23,7 +23,7 @@ final class AdminMenuControllerFactory
         $serviceLocator = $controllerManager->getServiceLocator();
 
         $controller = new AdminMenuController(
-            (object) $serviceLocator->get('FormElementManager')->get('Admin\Form\AdminMenuForm')
+            $serviceLocator->get('FormElementManager')->get('Admin\Form\AdminMenuForm')
         );
 
         return $controller;

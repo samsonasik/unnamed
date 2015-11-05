@@ -8,6 +8,7 @@
  *
  * @link       TBA
  */
+
 namespace Admin\Controller;
 
 use Zend\Json\Json;
@@ -17,9 +18,15 @@ use Zend\Session\Container;
 use Zend\View\Model\JsonModel;
 use Zend\View\Model\ViewModel;
 
+/**
+ * @method object getTable($tableName)
+ * @method string translate($message = '')
+ * @method mixed getParam($paramName = null, $default = null)
+ * @method mixed UserData()
+ */
 class BaseController extends AbstractActionController
 {
-    /**
+    /**f
      * @var ViewModel
      */
     private $view;
@@ -59,11 +66,11 @@ class BaseController extends AbstractActionController
         parent::onDispatch($event);
         $this->initMenus();
 
-        $this->getView()->breadcrumbs = $this->breadcrumbs;
+        $this->getView()->setVariable('breadcrumbs', $this->breadcrumbs);
     }
 
     /**
-     * Initialize menus and their submenus. 1 query to rule them all!
+     * Initialize menus and their sub menus. 1 query to rule them all!
      *
      * @return \Zend\View\Model\ViewModel
      */
@@ -75,14 +82,15 @@ class BaseController extends AbstractActionController
 
         if (count($menu) > 0) {
             $menus = ['menus' => [], 'submenus' => []];
+            /** @var \Admin\Entity\AdminMenu $submenus */
             foreach ($menu as $submenus) {
                 $menus['menus'][$submenus->getId()] = $submenus;
                 $menus['submenus'][$submenus->getParent()][] = $submenus->getId();
             }
 
-            $output = "<li role='menuitem'><a hreflang='{$this->language('languageName')}' itemprop='url' href='&sol;admin'> {$this->translate('DASHBOARD')}</a></li>";
+            $output = "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/admin'> ".$this->translate('DASHBOARD')."</a></li>";
 
-            $this->getView()->menuAdmin = $this->generateMenu(0, $menus, 'menubar', $output);
+            $this->getView()->setVariable('menuAdmin', $this->generateMenu(0, $menus, 'menubar', $output));
         }
 
         return $this->getView();
@@ -104,11 +112,11 @@ class BaseController extends AbstractActionController
     {
         $output = '';
         if (isset($menu['submenus'][$parent])) {
-            $output .= "<ul role='{$role}'>";
+            $output .= "<ul role='".$role."'>";
             $output .= $html;
 
             foreach ($menu['submenus'][$parent] as $id) {
-                $output .= "<li role='menuitem'><a hreflang='{$this->language('languageName')}' itemprop='url' href='/admin/{$menu['menus'][$id]->getController()}/{$menu['menus'][$id]->getAction()}'><em class='fa {$menu['menus'][$id]->getClass()}'></em> {$menu['menus'][$id]->getCaption()}</a>";
+                $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/admin/".$menu['menus'][$id]->getController()."/".$menu['menus'][$id]->getAction()."'><em class='fa ".$menu['menus'][$id]->getClass()."'></em> ".$menu['menus'][$id]->getCaption()."</a>";
                 $output .= $this->generateMenu($id, $menu, 'menu');
                 $output .= '</li>';
             }
@@ -120,11 +128,11 @@ class BaseController extends AbstractActionController
 
     /**
      * Get Language id or name. Defaults to language - id.
-     * If a different offset is passed (not-existing-offset) and it doesn't,
-     * it will ty to check for a language offset.
-     * If language offset is also not found 1 s being returned as the default language id where 1 == en.
+     * If none is found - 1 will be returned as the default language id where 1 == en.
      *
-     * @return integer|string
+     * @param string $offset
+     *
+     * @return int|string
      */
     final protected function language($offset = 'language')
     {
@@ -152,8 +160,6 @@ class BaseController extends AbstractActionController
      *
      * @throws \Admin\Exception\AuthorizationException If wrong credentials or not in administrator table
      *
-     * @todo create a bruteforce protection for failed login attempts.
-     *
      * @return mixed
      */
     private function isAdmin()
@@ -164,7 +170,7 @@ class BaseController extends AbstractActionController
             $adminExist = $this->getTable('Admin\\Model\\AdministratorTable')
                                         ->queryBuilder()
                                         ->getEntityManager()
-                                        ->createQuery("SELECT a.user, u.name FROM Admin\Entity\Administrator AS a LEFT JOIN Admin\Entity\User AS u WITH a.user=u.id WHERE u.id = {$userId} AND u.admin = 1")->getResult();
+                                        ->createQuery("SELECT a.user, u.name FROM Admin\Entity\Administrator AS a LEFT JOIN Admin\Entity\User AS u WITH a.user=u.id WHERE u.id = '".$userId."' AND u.admin = 1")->getResult();
 
             if (isset($adminExist[0])) {
                 unset($adminExist);
@@ -210,9 +216,14 @@ class BaseController extends AbstractActionController
     {
         $json = [];
         $success = false;
-        if ($this->getRequest()->isXmlHttpRequest()) {
+        /** @var \Zend\Http\Request $request */
+        $request = $this->getRequest();
+        if ($request->isXmlHttpRequest()) {
             $this->getView()->setTerminal(true);
+
+            /** @var \Doctrine\ORM\QueryBuilder $queryBuilder */
             $queryBuilder = $this->getTable('Admin\\Model\\UserTable')->queryBuilder();
+
             $results = $queryBuilder->select(['u'])
                 ->from('Admin\Entity\User', 'u')
                 ->where('u.name = :name')
@@ -225,6 +236,10 @@ class BaseController extends AbstractActionController
                 ->getResult();
 
             if ($results) {
+                /**
+                 * @var int                $key
+                 * @var \Admin\Entity\User $result
+                 */
                 foreach ($results as $key => $result) {
                     $json[$key]['id'] = $result->getId();
                     $json[$key]['name'] = $result->getName();
@@ -239,11 +254,9 @@ class BaseController extends AbstractActionController
             }
         }
 
-        return new JsonModel(
-            [
+        return new JsonModel([
                 'ajaxsearch' => Json::encode($json),
                 'statusType' => $success,
-            ]
-        );
+        ]);
     }
 }

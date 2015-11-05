@@ -102,7 +102,7 @@ final class AdministratorController extends BaseController
         $this->getView()->setTemplate('admin/administrator/edit');
         $administrator = $this->administratorTable->getAdministrator((int) $this->getParam('id', 0));
         $this->getView()->setVariable('administrator', $administrator);
-        $this->addBreadcrumb(['reference' => "/admin/administrator/edit/".$administrator->getUser()."", 'name' => $this->translate('EDIT_ADMINISTRATOR')]);
+        $this->addBreadcrumb(['reference' => '/admin/administrator/edit/'.$administrator->getUser().'', 'name' => $this->translate('EDIT_ADMINISTRATOR')]);
         $this->initForm($administrator);
 
         return $this->getView();

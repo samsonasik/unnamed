@@ -16,8 +16,8 @@ use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\InitProviderInterface;
 use Zend\ModuleManager\ModuleManagerInterface;
 use Zend\Mvc\ModuleRouteListener;
-use Zend\Session\Container;
 use Zend\Mvc\MvcEvent;
+use Zend\Session\Container;
 
 final class Module implements ConfigProviderInterface, BootstrapListenerInterface, InitProviderInterface
 {

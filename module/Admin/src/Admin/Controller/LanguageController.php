@@ -105,7 +105,7 @@ final class LanguageController extends BaseController
         $this->getView()->setTemplate('admin/language/edit');
         $language = $this->languageTable->getLanguage((int) $this->getParam('id', 0));
         $this->getView()->setVariable('language', $language);
-        $this->addBreadcrumb(['reference' => "/admin/language/edit/".$language->getId()."", 'name' => $this->translate('EDIT_LANGUAGE').' &laquo;'.$language->getName().'&raquo;']);
+        $this->addBreadcrumb(['reference' => '/admin/language/edit/'.$language->getId().'', 'name' => $this->translate('EDIT_LANGUAGE').' &laquo;'.$language->getName().'&raquo;']);
         $this->initForm($language);
 
         return $this->getView();
@@ -130,7 +130,7 @@ final class LanguageController extends BaseController
         $this->getView()->setTemplate('admin/language/detail');
         $lang = $this->languageTable->getLanguage((int) $this->getParam('id', 0));
         $this->getView()->setVariable('lang', $lang);
-        $this->addBreadcrumb(['reference' => "/admin/language/detail/".$lang->getId()."", 'name' => '&laquo;'.$lang->getName().'&raquo; '.$this->translate('DETAILS')]);
+        $this->addBreadcrumb(['reference' => '/admin/language/detail/'.$lang->getId().'', 'name' => '&laquo;'.$lang->getName().'&raquo; '.$this->translate('DETAILS')]);
 
         return $this->getView();
     }

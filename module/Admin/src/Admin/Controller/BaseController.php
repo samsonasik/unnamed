@@ -236,7 +236,7 @@ class BaseController extends AbstractActionController
 
             if ($results) {
                 /**
-                 * @var \Admin\Entity\User $result
+                 * @var \Admin\Entity\User
                  */
                 foreach ($results as $key => $result) {
                     $json[$key]['id'] = $result->getId();

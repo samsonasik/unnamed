@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Controller;
 
 use Admin\Entity\Content;
@@ -89,7 +88,7 @@ final class ContentController extends BaseController
                     ->orderBy('c.date DESC');
             $paginator = $table->preparePagination($query, false);
         } else {
-            $query = $table->queryBuilder()->getEntityManager()->createQuery("SELECT c FROM Admin\Entity\Content AS c LEFT JOIN Admin\Entity\Menu AS m WITH c.menu=m.id WHERE c.type = 0 AND c.language = ".$this->language()." ORDER BY m.parent ASC, m.menuOrder ASC, c.date DESC");
+            $query = $table->queryBuilder()->getEntityManager()->createQuery("SELECT c FROM Admin\Entity\Content AS c LEFT JOIN Admin\Entity\Menu AS m WITH c.menu=m.id WHERE c.type = 0 AND c.language = ".$this->language().' ORDER BY m.parent ASC, m.menuOrder ASC, c.date DESC');
             $paginator = $table->preparePagination($query, true);
         }
 

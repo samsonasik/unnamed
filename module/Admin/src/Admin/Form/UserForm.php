@@ -24,6 +24,7 @@ final class UserForm extends Form implements InputFilterProviderInterface
     /*
      * @param EntityManager $entityManager
      */
+
     public function __construct(EntityManager $entityManager)
     {
         parent::__construct('user');

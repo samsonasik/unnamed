@@ -143,6 +143,7 @@ final class SettingsController extends BaseController
     /**
      * @param $form object
      * @param string $actionKey
+     *
      * @internal param string $action
      */
     private function initForm($form, $actionKey = 'general')

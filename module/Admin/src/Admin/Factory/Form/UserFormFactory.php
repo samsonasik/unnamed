@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Factory\Form;
 
 use Admin\Form\UserForm;

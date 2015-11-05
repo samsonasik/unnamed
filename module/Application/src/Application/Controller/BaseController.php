@@ -89,13 +89,13 @@ class BaseController extends AbstractActionController
                 $menus['submenus'][$submenus->getParent()][] = $submenus->getId();
             }
 
-            $output = "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/'>".$this->translate('HOME')."</a></li>";
-            $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/news'>".$this->translate('NEWS')."</a></li>";
+            $output = "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/'>".$this->translate('HOME').'</a></li>';
+            $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/news'>".$this->translate('NEWS').'</a></li>';
             if ($this->UserData()->checkIdentity()) {
-                $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/login/logout'>".$this->translate('SIGN_OUT')."</a></li>";
+                $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/login/logout'>".$this->translate('SIGN_OUT').'</a></li>';
             } else {
-                $output .= "<li role='menuitem'><a hreflang='" . $this->language('languageName') . "' itemprop='url' href='/login'>" . $this->translate('SIGN_IN') . "</a></li>";
-                $output .= "<li role='menuitem'><a hreflang='" . $this->language('languageName') . "' itemprop='url' href='/registration'>" . $this->translate('SIGN_UP') . "</a></li>";
+                $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/login'>".$this->translate('SIGN_IN').'</a></li>';
+                $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/registration'>".$this->translate('SIGN_UP').'</a></li>';
             }
 
             $this->getView()->setVariable('menu', $this->generateMenu(0, $menus, 'menubar', $output));
@@ -112,7 +112,7 @@ class BaseController extends AbstractActionController
      * @param int    $parent
      * @param array  $menu
      * @param string $ariaRole
-     * @param string $html   - add html menus that do not come from database
+     * @param string $html     - add html menus that do not come from database
      *
      * @return string generated html code
      */
@@ -124,7 +124,7 @@ class BaseController extends AbstractActionController
             $output .= $html;
 
             foreach ($menu['submenus'][$parent] as $id) {
-                $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/menu/post/".$menu['menus'][$id]->getMenuLink()."'><em class='fa ".$menu['menus'][$id]->getClass()."'></em> ".$menu['menus'][$id]->getCaption()."</a>";
+                $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/menu/post/".$menu['menus'][$id]->getMenuLink()."'><em class='fa ".$menu['menus'][$id]->getClass()."'></em> ".$menu['menus'][$id]->getCaption().'</a>';
                 $output .= $this->generateMenu($id, $menu, 'menu');
                 $output .= '</li>';
             }

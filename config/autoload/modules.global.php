@@ -93,7 +93,7 @@ return [
                 'identity_class'      => 'Admin\Entity\User',
                 'identity_property'   => 'email',
                 'credential_property' => 'password',
-                'credential_callable' => function(\Admin\Entity\User $user, $passwordProvided) {
+                'credential_callable' => function (\Admin\Entity\User $user, $passwordProvided) {
                     return password_verify($passwordProvided, $user->getPassword());
                 },
             ],

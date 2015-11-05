@@ -8,13 +8,12 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Controller;
 
 use Admin\Entity\Menu;
 use Admin\Form\MenuForm;
-use Zend\Mvc\MvcEvent;
 use Zend\Escaper\Escaper;
+use Zend\Mvc\MvcEvent;
 
 /**
  * @method object getTable($tableName)
@@ -96,7 +95,7 @@ final class MenuController extends BaseController
             $escaper = new Escaper('utf-8');
             foreach ($menu['submenus'][$parent] as $id) {
                 $output .= "<ul class='table-row'>";
-                $output .= "<li class='table-cell flex-2'>".$menu['menus'][$id]->getCaption()."</li>";
+                $output .= "<li class='table-cell flex-2'>".$menu['menus'][$id]->getCaption().'</li>';
                 $output .= "<li class='table-cell flex-b'><a title='".$this->translate('DETAILS')."' hreflang='".$this->language('languageName')."' itemprop='url' href='/admin/menu/detail/".$escaper->escapeUrl($menu['menus'][$id]->getId())."' class='btn btn-sm blue'><i class='fa fa-info'></i></a></li>";
                 $output .= "<li class='table-cell flex-b'><a title='".$this->translate('EDIT')."' hreflang='".$this->language('languageName')."' itemprop='url' href='/admin/menu/edit/".$escaper->escapeUrl($menu['menus'][$id]->getId())."' class='btn btn-sm orange'><i class='fa fa-pencil'></i></a></li>";
                 if (0 === $menu['menus'][$id]->isActive()) {
@@ -108,17 +107,17 @@ final class MenuController extends BaseController
                 <li class='table-cell flex-b'>
                     <button role='button' aria-pressed='false' aria-label='".$this->translate('DELETE')."' id='".$menu['menus'][$id]->getId()."' type='button' class='btn btn-sm delete dialog_delete' title='".$this->translate('DELETE')."'><i class='fa fa-trash-o'></i></button>
                         <div role='alertdialog' aria-labelledby='dialog".$menu['menus'][$id]->getId()."Title' class='delete_".$menu['menus'][$id]->getId()." dialog_hide'>
-                           <p id='dialog".$menu['menus'][$id]->getId()."Title'>".$this->translate('DELETE_CONFIRM_TEXT')." &laquo;".$menu['menus'][$id]->getCaption()."&raquo;</p>
+                           <p id='dialog".$menu['menus'][$id]->getId()."Title'>".$this->translate('DELETE_CONFIRM_TEXT').' &laquo;'.$menu['menus'][$id]->getCaption()."&raquo;</p>
                             <ul>
                                 <li>
                                     <a class='btn delete' href='/admin/menu/delete/".$escaper->escapeUrl($menu['menus'][$id]->getId())."'><i class='fa fa-trash-o'></i> ".$this->translate('DELETE')."</a>
                                 </li>
                                 <li>
-                                    <button role='button' aria-pressed='false' aria-label='".$this->translate('CANCEL')."' class='btn btn-default cancel'><i class='fa fa-times'></i> ".$this->translate('CANCEL')."</button>
+                                    <button role='button' aria-pressed='false' aria-label='".$this->translate('CANCEL')."' class='btn btn-default cancel'><i class='fa fa-times'></i> ".$this->translate('CANCEL').'</button>
                                 </li>
                             </ul>
                         </div>
-                </li>";
+                </li>';
 
                 $output .= '</ul>';
                 $output .= $this->getMenus($id, $menu);

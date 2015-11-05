@@ -8,7 +8,6 @@
  *
  * @link       TBA
  */
-
 namespace Admin\Controller;
 
 final class IndexController extends BaseController

@@ -235,7 +235,7 @@ class BaseController extends AbstractActionController
                 ->getResult();
 
             if ($results) {
-                /**
+                /*
                  * @var \Admin\Entity\User
                  */
                 foreach ($results as $key => $result) {

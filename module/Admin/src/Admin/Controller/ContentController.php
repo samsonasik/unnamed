@@ -126,7 +126,7 @@ final class ContentController extends BaseController
         $this->getView()->setTemplate('admin/content/edit');
         $content = $this->contentTable->getContent((int) $this->getParam('id', 0), $this->language());
         $this->getView()->setVariable('content', $content);
-        $this->addBreadcrumb(['reference' => "/admin/content/edit/".$content->getId()."", 'name' => $this->translate('EDIT_CONTENT').' &laquo;'.$content->getTitle().'&raquo;']);
+        $this->addBreadcrumb(['reference' => '/admin/content/edit/'.$content->getId().'', 'name' => $this->translate('EDIT_CONTENT').' &laquo;'.$content->getTitle().'&raquo;']);
         $this->initForm($content);
 
         return $this->getView();

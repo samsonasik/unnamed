@@ -45,11 +45,11 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
     /**
      * Listen to the bootstrap event.
      *
-     * @param MvcEvent $event
+     * @param EventInterface $event
      *
      * @return array|void
      */
-    public function onBootstrap(MvcEvent $event)
+    public function onBootstrap(EventInterface $event)
     {
         $app = $event->getApplication();
         $moduleRouteListener = new ModuleRouteListener();

@@ -11,12 +11,9 @@
 namespace Application\Controller;
 
 use Application\Entity\ResetPassword;
-use Application\Exception\RuntimeException;
 use Application\Form\ResetPasswordForm;
-use Zend\Authentication\AuthenticationService;
 use Zend\Http\PhpEnvironment\RemoteAddress;
 use Zend\Mvc\MvcEvent;
-use Zend\Session\Container;
 
 /**
  * @method object getTable($tableName)

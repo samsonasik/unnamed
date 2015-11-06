@@ -73,7 +73,6 @@ final class NewPasswordController extends BaseController
         $this->getView()->setTemplate('application/newpassword/index');
 
         $token = (string) $this->getParam('token', null);
-        $func = $this->getFunctions();
 
         if (!$token) {
             throw new RuntimeException($this->translate('TOKEN_MISMATCH'));
@@ -82,7 +81,7 @@ final class NewPasswordController extends BaseController
         /*
          * See if token exist or has expired
          */
-        $date = date('Y-m-d H:m:s',strtotime('last day'));
+        $date = date('Y-m-d H:m:s', strtotime('last day'));
         $tokenExist = $this->getTable('Application\\Model\\ResetPasswordTable')->queryBuilder()->getEntityManager();
         $tokenExist = $tokenExist->createQuery('SELECT rp.user, rp.date, rp.token FROM Application\Entity\ResetPassword rp WHERE rp.token = :token AND rp.date >= :dateInterval')
             ->setParameter(':token', (string) $token)

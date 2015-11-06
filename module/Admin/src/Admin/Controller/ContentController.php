@@ -173,7 +173,7 @@ final class ContentController extends BaseController
      *
      * @param Content $content
      *
-     * @return Content
+     * @return null|Content
      */
     private function initForm(Content $content = null)
     {

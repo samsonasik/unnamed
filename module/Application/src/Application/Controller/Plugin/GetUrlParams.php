@@ -19,12 +19,12 @@ final class GetUrlParams extends AbstractPlugin
     /**
      * @var Params
      */
-    private $params = null;
+    private $params;
 
     /**
      * @param Params $params
      */
-    public function __construct(Params $params = null)
+    public function __construct(Params $params)
     {
         $this->params = $params;
     }
@@ -37,7 +37,7 @@ final class GetUrlParams extends AbstractPlugin
      *
      * @return mixed
      */
-    public function __invoke($paramName = null, $default = null)
+    public function __invoke($paramName, $default = null)
     {
         $escaper = new Escaper('utf-8');
 

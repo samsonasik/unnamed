@@ -53,7 +53,7 @@ final class Functions extends AbstractPlugin
      *
      * @return int The number of bytes
      */
-    public static function strLength($string = null)
+    public static function strLength($string = '')
     {
         return mb_strlen($string, 'utf8');
     }

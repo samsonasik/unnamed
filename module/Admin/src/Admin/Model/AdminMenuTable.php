@@ -78,8 +78,6 @@ final class AdminMenuTable
      * Delete a admin menu based on the provided id.
      *
      * @param int $adminMenuId admin menu id
-     *
-     * @return AdminMenu
      */
     public function deleteAdminMenu($adminMenuId = 0)
     {

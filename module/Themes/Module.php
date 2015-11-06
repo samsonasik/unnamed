@@ -16,6 +16,7 @@ use Zend\ModuleManager\Feature\BootstrapListenerInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\InitProviderInterface;
 use Zend\ModuleManager\ModuleManagerInterface;
+use Zend\Mvc\MvcEvent;
 
 final class Module implements ConfigProviderInterface, BootstrapListenerInterface, InitProviderInterface
 {
@@ -75,11 +76,11 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
     /**
      * Setup theme.
      *
-     * @param EventInterface|\Zend\Mvc\MvcEvent $event
+     * @param MvcEvent $event
      *
      * @return array|object
      */
-    public function loadTheme(EventInterface $event)
+    public function loadTheme(MvcEvent $event)
     {
         /*
          * Exclude modules that doesn't need a dinamicly changed layout

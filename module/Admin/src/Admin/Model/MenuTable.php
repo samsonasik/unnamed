@@ -121,7 +121,7 @@ final class MenuTable
         $menu = $this->getMenu($menuId, $language);
 
         if ($menu) {
-            $menu->setActive((int) $state);
+            $menu->setActive((bool) $state);
             $this->saveMenu($menu);
         }
     }

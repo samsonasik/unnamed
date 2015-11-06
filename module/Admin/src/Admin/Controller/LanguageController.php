@@ -178,7 +178,7 @@ final class LanguageController extends BaseController
      *
      * @param null|Language $language
      *
-     * @return bool|false
+     * @return object|false
      */
     private function initForm(Language $language = null)
     {

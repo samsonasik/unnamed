@@ -34,7 +34,7 @@ final class Mailing extends AbstractPlugin
      * @param FlashMessenger $flashMessenger
      * @param SystemSettings $settings
      */
-    public function __construct(FlashMessenger $flashMessenger = null, SystemSettings $settings = null)
+    public function __construct(FlashMessenger $flashMessenger, SystemSettings $settings)
     {
         $this->flashMessenger = $flashMessenger;
         $this->settings = $settings;
@@ -48,8 +48,7 @@ final class Mailing extends AbstractPlugin
      * @param string $from
      * @param string $fromName
      *
-     * @return bool
-     * @return bool|string
+     * @return bool|FlashMessenger
      */
     public function sendMail($to, $toName, $subject, $message, $from, $fromName)
     {

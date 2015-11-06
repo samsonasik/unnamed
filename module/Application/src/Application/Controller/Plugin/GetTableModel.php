@@ -18,12 +18,12 @@ final class GetTableModel extends AbstractPlugin
     /**
      * @var ServiceLocatorInterface
      */
-    private $serviceLocator = null;
+    private $serviceLocator;
 
     /**
      * @param ServiceLocatorInterface $serviceLocator
      */
-    public function __construct(ServiceLocatorInterface $serviceLocator = null)
+    public function __construct(ServiceLocatorInterface $serviceLocator)
     {
         $this->serviceLocator = $serviceLocator;
     }
@@ -31,7 +31,7 @@ final class GetTableModel extends AbstractPlugin
     /**
      * @param string $tableName
      *
-     * @return object|null
+     * @return object|array|null
      */
     public function __invoke($tableName)
     {

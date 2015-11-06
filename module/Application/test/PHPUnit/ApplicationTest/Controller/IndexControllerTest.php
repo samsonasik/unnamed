@@ -21,7 +21,7 @@ class IndexControllerTest extends PHPUnit_Framework_Testcase
     private $controller;
 
     /**
-     * @var \Zend\ServiceManager\ServiceLocatorInterface
+     * @var \Prophecy\Prophecy\ObjectProphecy
      */
     private $serviceManager;
 

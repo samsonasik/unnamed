@@ -79,8 +79,6 @@ class LanguageTable implements LanguageTableInterface
 
     /**
      * @param int $languageId
-     *
-     * @return Language
      */
     public function deleteLanguage($languageId = 0)
     {

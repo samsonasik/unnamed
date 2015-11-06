@@ -17,11 +17,9 @@ use Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;
 class BaseControllerTest extends AbstractHttpControllerTestCase
 {
     /**
-     * Original $_SERVER.
-     *
      * @var array
      */
-    protected $_origServer;
+    protected $origServer;
 
     /*
      * @var BaseController
@@ -29,13 +27,13 @@ class BaseControllerTest extends AbstractHttpControllerTestCase
     protected $controller;
 
     /**
-     * @var \Zend\ServiceManager\ServiceLocatorInterface
+     * @var \Prophecy\Prophecy\ObjectProphecy
      */
     protected $serviceManager;
 
     protected function setUp()
     {
-        $this->_origServer = $_SERVER;
+        $this->origServer = $_SERVER;
         $_SERVER['SCRIPT_FILENAME'] = __FILE__;
         $_SERVER['PHP_SELF'] = __FILE__;
         $_SERVER['REQUEST_URI'] = '/index/index';
@@ -55,7 +53,7 @@ class BaseControllerTest extends AbstractHttpControllerTestCase
     public function tearDown()
     {
         unset($this->controller, $this->serviceManager);
-        $_SERVER = $this->_origServer;
+        $_SERVER = $this->origServer;
     }
 
     /**
@@ -103,28 +101,28 @@ class BaseControllerTest extends AbstractHttpControllerTestCase
 
     public function testGetViewMethodWillReturnViewModelInstance()
     {
-        $viewModel = static::getProtectedOrPrivateMethod($this->controller, 'getView', []);
+        $viewModel = self::getProtectedOrPrivateMethod($this->controller, 'getView', []);
 
         $this->assertInstanceOf('Zend\View\Model\ViewModel', $viewModel);
     }
 
     public function testGetTranslationMethodWillReturnContainerInstance()
     {
-        $sessionContainer = static::getProtectedOrPrivateMethod($this->controller, 'getTranslation', []);
+        $sessionContainer = self::getProtectedOrPrivateMethod($this->controller, 'getTranslation', []);
 
         $this->assertInstanceOf('Zend\Session\Container', $sessionContainer);
     }
 
     public function testLanguageCanReturnLanguageId()
     {
-        $langMethod = static::getProtectedOrPrivateMethod($this->controller, 'language', ['language']);
+        $langMethod = self::getProtectedOrPrivateMethod($this->controller, 'language', ['language']);
 
         $this->assertEquals(1, $langMethod);
     }
 
     public function testLanguageReturnsOneForWrongArgument()
     {
-        $langMethod = static::getProtectedOrPrivateMethod($this->controller, 'language', ['this-argument-is-invalid']);
+        $langMethod = self::getProtectedOrPrivateMethod($this->controller, 'language', ['this-argument-is-invalid']);
 
         $this->assertEquals(1, $langMethod);
     }

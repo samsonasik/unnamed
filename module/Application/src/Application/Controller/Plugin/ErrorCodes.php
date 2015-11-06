@@ -30,7 +30,7 @@ final class ErrorCodes extends AbstractPlugin
      * @param ViewModel $layout
      * @param Response  $response
      */
-    public function __construct(ViewModel $layout = null, Response $response = null)
+    public function __construct(ViewModel $layout, Response $response)
     {
         $this->layout = $layout;
         $this->response = $response;

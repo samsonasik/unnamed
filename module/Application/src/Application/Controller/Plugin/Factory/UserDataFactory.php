@@ -11,18 +11,15 @@
 namespace Application\Controller\Plugin\Factory;
 
 use Application\Controller\Plugin\UserData;
-use Zend\Mvc\Controller\PluginManager;
 
-class UserDataFactory
+final class UserDataFactory
 {
     /**
      * {@inheritdoc}
      *
-     * @param PluginManager $pluginManager
-     *
      * @return UserData
      */
-    public function __invoke(PluginManager $pluginManager)
+    public function __invoke()
     {
         $plugin = new UserData();
 

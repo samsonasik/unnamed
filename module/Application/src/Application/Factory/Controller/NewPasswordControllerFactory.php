@@ -23,8 +23,7 @@ final class NewPasswordControllerFactory
         $serviceLocator = $controllerManager->getServiceLocator();
 
         $controller = new NewPasswordController(
-            $serviceLocator->get('FormElementManager')->get('Application\Form\NewPasswordForm'),
-            $serviceLocator->get('doctrine.authenticationservice.orm_default')
+            $serviceLocator->get('FormElementManager')->get('Application\Form\NewPasswordForm')
         );
 
         return $controller;

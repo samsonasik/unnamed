@@ -20,22 +20,22 @@ use Zend\View\Model\ViewModel;
 final class IndexController extends AbstractActionController
 {
     /**
-     * @var array
+     * @var array|object
      */
     private $themesConfig = [];
 
     /**
      * @var mixed
      */
-    private $reloadService = null;
+    private $reloadService;
 
     /**
      * @method __construct
      *
-     * @param array $themesConfig
+     * @param array|object $themesConfig
      * @param mixed $reloadService
      */
-    public function __construct(array $themesConfig = [], $reloadService)
+    public function __construct($themesConfig, $reloadService)
     {
         $this->themesConfig = $themesConfig;
         $this->reloadService = $reloadService;

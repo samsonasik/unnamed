@@ -18,12 +18,12 @@ final class Translate extends AbstractPlugin
     /**
      * @var Translator
      */
-    private $translator = null;
+    private $translator;
 
     /**
      * @param Translator $translator
      */
-    public function __construct(Translator $translator = null)
+    public function __construct(Translator $translator)
     {
         $this->translator = $translator;
     }

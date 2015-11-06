@@ -64,7 +64,7 @@ final class UserController extends BaseController
     public function indexAction()
     {
         $this->getView()->setTemplate('admin/user/index');
-        $this->getView()->setVariable('paginator', $this->showUsersBasedOnTheyAccStatus(0));
+        $this->getView()->setVariable('paginator', $this->showUsersBasedOnTheyAccStatus(false));
 
         return $this->getView();
     }
@@ -75,7 +75,7 @@ final class UserController extends BaseController
     protected function disabledAction()
     {
         $this->getView()->setTemplate('admin/user/disabled');
-        $this->getView()->setVariable('paginator', $this->showUsersBasedOnTheyAccStatus(1));
+        $this->getView()->setVariable('paginator', $this->showUsersBasedOnTheyAccStatus(true));
 
         return $this->getView();
     }
@@ -112,7 +112,7 @@ final class UserController extends BaseController
         $this->getView()->setTemplate('admin/user/edit');
         $user = $this->userTable->getUser((int) $this->getParam('id', 0));
         $this->getView()->setVariable('user', $user);
-        $this->addBreadcrumb(['reference' => "/admin/user/edit/{$user->getId()}", 'name' => $this->translate('EDIT_USER').' &laquo;'.$user->getName().'&raquo;']);
+        $this->addBreadcrumb(['reference' => "/admin/user/edit/".$user->getId()."", 'name' => $this->translate('EDIT_USER').' &laquo;'.$user->getName().'&raquo;']);
         $this->initForm($user);
 
         return $this->getView();
@@ -222,7 +222,7 @@ final class UserController extends BaseController
      *
      * @return string
      */
-    private function htmlButtons($id = 0, $fullName = null, $userStatus = 1)
+    private function htmlButtons($id = 0, $fullName = '', $userStatus = 1)
     {
         $action = 'disable';
         $class = 'delete';
@@ -240,12 +240,12 @@ final class UserController extends BaseController
                 <a title='".$this->translate('EDIT_USER')."' href='/admin/user/edit/".$id."' class='btn btn-sm orange'><i class='fa fa-pencil'></i></a>
             </li>
             <li class='table-cell flex-b'>
-                <button role='button' aria-pressed='false' aria-label='".$this->translate("$i18n")."' id='".$id."' type='button' class='btn btn-sm ".$class." dialog_delete' title='".$this->translate("$i18n")."'><i class='fa fa-times'></i></button>
+                <button role='button' aria-pressed='false' aria-label='".$this->translate($i18n)."' id='".$id."' type='button' class='btn btn-sm ".$class." dialog_delete' title='".$this->translate($i18n)."'><i class='fa fa-times'></i></button>
                 <div role='alertdialog' aria-labelledby='dialog".$id."Title' class='delete_".$id." dialog_hide'>
-                   <p id='dialog".$id."Title'>".$this->translate("$i18n".'_CONFIRM_TEXT').' &laquo;'.$fullName."&raquo;</p>
+                   <p id='dialog".$id."Title'>".$this->translate($i18n."_CONFIRM_TEXT') &laquo;".$fullName."&raquo;</p>
                     <ul>
                         <li>
-                            <a class='btn ".$class."' href='/admin/user/".$action.'/'.$id."'><i class='fa fa-times'></i> ".$this->translate("$i18n")."</a>
+                            <a class='btn ".$class."' href='/admin/user/".$action."/".$id."'><i class='fa fa-times'></i> ".$this->translate($i18n)."</a>
                         </li>
                         <li>
                             <button role='button' aria-pressed='false' aria-label='".$this->translate('CANCEL')."' type='button' title='".$this->translate('CANCEL')."' class='btn btn-default cancel'><i class='fa fa-times'></i> ".$this->translate('CANCEL').'</button>

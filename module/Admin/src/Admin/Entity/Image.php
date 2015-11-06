@@ -334,19 +334,19 @@ final class Image implements ImageInterface
     {
         switch ($this->getFormat()) {
             case 'GIF':
-                $this->imageFile = $this->imageCreateFromGIF();
+                $this->imageFile = $this->imageCreateFromGif();
                 break;
 
             case 'JPEG':
-                $this->imageFile = $this->imageCreateFromJPEG();
+                $this->imageFile = $this->imageCreateFromJpeg();
                 break;
 
             case 'PNG':
-                $this->imageFile = $this->imageCreateFromPNG();
+                $this->imageFile = $this->imageCreateFromPng();
                 break;
 
             case 'WEBP':
-                $this->imageFile = $this->imageCreateFromWEBP();
+                $this->imageFile = $this->imageCreateFromWebp();
                 break;
 
             default:
@@ -359,10 +359,10 @@ final class Image implements ImageInterface
      *
      * @throws BadMethodCallException on missing support
      */
-    private function imageCreateFromGIF()
+    private function imageCreateFromGif()
     {
         if ($this->gdLib->hasGifCreateSupport()) {
-            return imagecreatefromgif($this->getImageFile());
+            return imageCreateFromGif($this->getImageFile());
         }
 
         throw new BadMethodCallException('Missing GIF create support');
@@ -373,10 +373,10 @@ final class Image implements ImageInterface
      *
      * @throws BadMethodCallException on missing support
      */
-    private function imageCreateFromJPEG()
+    private function imageCreateFromJpeg()
     {
         if ($this->gdLib->hasJpegSupport()) {
-            return imagecreatefromjpeg($this->getImageFile());
+            return imageCreateFromJpeg($this->getImageFile());
         }
 
         throw new BadMethodCallException('Missing JPEG support');
@@ -387,10 +387,10 @@ final class Image implements ImageInterface
      *
      * @throws BadMethodCallException on missing support
      */
-    private function imageCreateFromPNG()
+    private function imageCreateFromPng()
     {
         if ($this->gdLib->hasPngSupport()) {
-            return imagecreatefrompng($this->getImageFile());
+            return imageCreateFromPng($this->getImageFile());
         }
 
         throw new BadMethodCallException('Missing PNG support');
@@ -401,11 +401,11 @@ final class Image implements ImageInterface
      *
      * @throws BadMethodCallException on missing support
      */
-    private function imageCreateFromWEBP()
+    private function imageCreateFromWebp()
     {
         if ($this->gdLib->hasJpegSupport() || $this->gdLib->hasPngSupport()) {
-            if (function_exists('imagecreatefromwebp')) {
-                return imagecreatefromwebp($this->getImageFile());
+            if (function_exists('imageCreateFromWebp')) {
+                return imageCreateFromWebp($this->getImageFile());
             }
         }
 

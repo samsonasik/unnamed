@@ -24,6 +24,7 @@ class SystemSettingsFactory
      */
     public function __invoke(PluginManager $pluginManager)
     {
+        /** @var Zend\ServiceManager\ServiceManager */
         $serviceLocator = $pluginManager->getController()->getServiceLocator();
 
         $config = $serviceLocator->get('Config');

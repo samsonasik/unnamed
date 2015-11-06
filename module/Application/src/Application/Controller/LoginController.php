@@ -71,11 +71,11 @@ final class LoginController extends BaseController
      *
      * @param array $options
      *
-     * @return AuthenticationService
+     * @return \DoctrineModule\Authentication\Adapter\ObjectRepository
      */
     private function getAuthAdapter(array $options = [])
     {
-        /** @var AuthenticationService $authAdapter */
+        /** @var \DoctrineModule\Authentication\Adapter\ObjectRepository $authAdapter */
         $authAdapter = $this->authService->getAdapter();
         $authAdapter->setIdentityValue((string) $options['email']);
         $authAdapter->setCredentialValue((string) $options['password']);

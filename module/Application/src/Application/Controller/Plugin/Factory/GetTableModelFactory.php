@@ -20,6 +20,7 @@ class GetTableModelFactory
      */
     public function __invoke(PluginManager $pluginManager)
     {
+        /** @var Zend\ServiceManager\ServiceManager */
         $serviceLocator = $pluginManager->getController()->getServiceLocator();
 
         $plugin = new GetTableModel($serviceLocator);

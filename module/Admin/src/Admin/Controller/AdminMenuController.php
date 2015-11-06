@@ -143,7 +143,7 @@ final class AdminMenuController extends BaseController
      *
      * @param AdminMenu|null $adminMenu
      *
-     * @return bool|false
+     * @return object|false
      */
     private function initForm(AdminMenu $adminMenu = null)
     {

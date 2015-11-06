@@ -15,15 +15,13 @@ use Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;
 class SessionFactoryTest extends AbstractHttpControllerTestCase
 {
     /**
-     * Original $_SERVER.
-     *
      * @var array
      */
-    protected $_origServer;
+    protected $origServer;
 
     protected function setUp()
     {
-        $this->_origServer = $_SERVER;
+        $this->origServer = $_SERVER;
         $_SERVER['SCRIPT_FILENAME'] = __FILE__;
         $_SERVER['PHP_SELF'] = __FILE__;
         $_SERVER['REQUEST_URI'] = '/index/index';
@@ -39,7 +37,7 @@ class SessionFactoryTest extends AbstractHttpControllerTestCase
 
     public function tearDown()
     {
-        $_SERVER = $this->_origServer;
+        $_SERVER = $this->origServer;
     }
 
     public function testCanInvokeSession()

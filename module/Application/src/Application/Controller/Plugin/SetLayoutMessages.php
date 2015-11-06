@@ -13,20 +13,21 @@ namespace Application\Controller\Plugin;
 use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 use Zend\Mvc\Controller\Plugin\FlashMessenger;
 use Zend\View\Model\ViewModel;
+use RecursiveArrayIterator;
 
 final class SetLayoutMessages extends AbstractPlugin
 {
     /**
      * @var FlashMessenger
      */
-    private $flashMessenger = null;
+    private $flashMessenger;
 
     /**
      * @var ViewModel
      */
-    private $layout = null;
+    private $layout;
 
-    public function __construct(ViewModel $layout = null, FlashMessenger $flashMessenger = null)
+    public function __construct(ViewModel $layout, FlashMessenger $flashMessenger)
     {
         $this->layout = $layout;
         $this->flashMessenger = $flashMessenger;
@@ -54,7 +55,7 @@ final class SetLayoutMessages extends AbstractPlugin
      *     $this->setLayoutMessages($myArray, "default");
      * </code>
      *
-     * @param array|string $message
+     * @param array|string|RecursiveArrayIterator $message
      * @param string       $namespace determinate the message layout and color. It's also used for the flashMessenger namespace
      *
      * @return \Zend\View\Model\ViewModel
@@ -67,7 +68,7 @@ final class SetLayoutMessages extends AbstractPlugin
             $namespace = 'default';
         }
 
-        $iterator = new \RecursiveArrayIterator((array) $message);
+        $iterator = new RecursiveArrayIterator((array) $message);
 
         while ($iterator->valid()) {
             if ($iterator->hasChildren()) {

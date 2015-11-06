@@ -6,7 +6,7 @@
  *
  * @version    0.0.21
  *
- * @link       TBA
+ * @link       https://github.com/Stanimirdim92/unnamed
  */
 namespace Application\Factory\Controller;
 
@@ -24,9 +24,7 @@ final class LoginControllerFactory
 
         $controller = new LoginController(
             $serviceLocator->get('FormElementManager')->get('Application\Form\LoginForm'),
-            $serviceLocator->get('doctrine.authenticationservice.orm_default'),
-            $serviceLocator->get('FormElementManager')->get('Application\Form\ResetPasswordForm'),
-            $serviceLocator->get('FormElementManager')->get('Application\Form\NewPasswordForm')
+            $serviceLocator->get('doctrine.authenticationservice.orm_default')
         );
 
         return $controller;

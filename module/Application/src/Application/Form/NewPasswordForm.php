@@ -6,7 +6,7 @@
  *
  * @version    0.0.21
  *
- * @link       TBA
+ * @link       https://github.com/Stanimirdim92/unnamed
  */
 namespace Application\Form;
 
@@ -17,13 +17,13 @@ final class NewPasswordForm extends Form implements InputFilterProviderInterface
 {
     public function __construct()
     {
-        parent::__construct('resetpw');
+        parent::__construct('newpassword');
     }
 
     public function init()
     {
         $this->setAttribute('method', 'post');
-        $this->setAttribute('action', '/login/newpasswordprocess');
+        $this->setAttribute('action', '/newpassword/newpasswordprocess');
         $this->setAttribute('role', 'form');
 
         $this->add(

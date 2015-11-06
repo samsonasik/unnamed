@@ -6,7 +6,7 @@
  *
  * @version    0.0.21
  *
- * @link       TBA
+ * @link       https://github.com/Stanimirdim92/unnamed
  */
 namespace Application\Factory;
 
@@ -29,7 +29,7 @@ class SessionFactory
             'cookie_path'             => '/',
             'cookie_httponly'         => true,
             'name'                    => '__zpc',
-            'cookie_secure'           => static::isSSL(),
+            'cookie_secure'           => $this->isSSL(),
             'hash_bits_per_character' => 6,
             'hash_function'           => 1,
         ]);
@@ -44,7 +44,7 @@ class SessionFactory
      *
      * @return bool
      */
-    private static function isSSL()
+    private function isSSL()
     {
         $stats = false;
         if (isset($_SERVER['HTTPS'])) {

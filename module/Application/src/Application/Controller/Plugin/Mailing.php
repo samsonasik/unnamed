@@ -6,7 +6,7 @@
  *
  * @version    0.0.21
  *
- * @link       TBA
+ * @link       https://github.com/Stanimirdim92/unnamed
  */
 namespace Application\Controller\Plugin;
 
@@ -23,12 +23,12 @@ final class Mailing extends AbstractPlugin
     /**
      * @var FlashMessenger
      */
-    private $flashMessenger = null;
+    private $flashMessenger;
 
     /**
      * @var SystemSettings
      */
-    private $settings = null;
+    private $settings;
 
     /**
      * @param FlashMessenger $flashMessenger

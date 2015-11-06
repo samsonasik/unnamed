@@ -29,7 +29,7 @@
 * User page with account disable option
 * Flexbox
 * Zend OPcache
-* Font Awesome icons
+* Font Awesome icons support
 * DoctrineORM
 
 ### Requirements ###

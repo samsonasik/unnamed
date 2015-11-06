@@ -6,7 +6,7 @@
  *
  * @version    0.0.21
  *
- * @link       TBA
+ * @link       https://github.com/Stanimirdim92/unnamed
  */
 namespace Application\Controller\Plugin;
 
@@ -55,7 +55,7 @@ final class Functions extends AbstractPlugin
      */
     public static function strLength($string = null)
     {
-        return mb_strlen($string, '8bit');
+        return mb_strlen($string, 'utf8');
     }
 
     /**
@@ -65,7 +65,7 @@ final class Functions extends AbstractPlugin
      */
     public static function generateToken()
     {
-        return base64_encode(Rand::getBytes(mt_rand(1, 999999), true));
+        return base64_encode(Rand::getString(mt_rand(1, 100), null, true));
     }
 
     /**

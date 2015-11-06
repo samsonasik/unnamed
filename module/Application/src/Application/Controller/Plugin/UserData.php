@@ -6,14 +6,13 @@
  *
  * @version    0.0.21
  *
- * @link       TBA
+ * @link       https://github.com/Stanimirdim92/unnamed
  */
 namespace Application\Controller\Plugin;
 
 use Application\Exception\AuthorizationException;
 use Zend\Authentication\AuthenticationService;
 use Zend\Mvc\Controller\Plugin\AbstractPlugin;
-use Zend\Mvc\Controller\Plugin\Redirect;
 
 final class UserData extends AbstractPlugin
 {
@@ -22,17 +21,8 @@ final class UserData extends AbstractPlugin
      */
     private $auth;
 
-    /**
-     * @var Redirect
-     */
-    private $redirect;
-
-    /**
-     * @param Redirect $redirect
-     */
-    public function __construct(Redirect $redirect)
+    public function __construct()
     {
-        $this->redirect = $redirect;
         $this->auth = new AuthenticationService();
     }
 
@@ -52,13 +42,6 @@ final class UserData extends AbstractPlugin
 
     /**
      * See if user is logged in.
-     *
-     * First we check to see if there is an identity stored.
-     * If there is, we need to check for two parameters role and logged.
-     * Those 2 parameters MUST always be of types int and bool.
-     *
-     * The redirect serves parameter is used to determinated
-     * if we need to redirect the user to somewhere else or just leave him access the requested area
      *
      * @param string $errorString
      *

@@ -6,7 +6,7 @@
  *
  * @version    0.0.21
  *
- * @link       TBA
+ * @link       https://github.com/Stanimirdim92/unnamed
  */
 namespace Application\Controller\Plugin\Factory;
 
@@ -24,9 +24,7 @@ class UserDataFactory
      */
     public function __invoke(PluginManager $pluginManager)
     {
-        $redirect = $pluginManager->get('redirect');
-
-        $plugin = new UserData($redirect);
+        $plugin = new UserData();
 
         return $plugin;
     }

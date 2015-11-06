@@ -6,7 +6,7 @@
  *
  * @version    0.0.21
  *
- * @link       TBA
+ * @link       https://github.com/Stanimirdim92/unnamed
  */
 namespace Application;
 
@@ -50,9 +50,11 @@ return [
     ],
     'controllers' => [
         'factories' => [
-            'Application\Controller\Login'        => Factory\Controller\LoginControllerFactory::class,
-            'Application\Controller\Contact'      => Factory\Controller\ContactControllerFactory::class,
-            'Application\Controller\Registration' => Factory\Controller\RegistrationControllerFactory::class,
+            'Application\Controller\Login'         => Factory\Controller\LoginControllerFactory::class,
+            'Application\Controller\ResetPassword' => Factory\Controller\ResetPasswordControllerFactory::class,
+            'Application\Controller\NewPassword'   => Factory\Controller\NewPasswordControllerFactory::class,
+            'Application\Controller\Contact'       => Factory\Controller\ContactControllerFactory::class,
+            'Application\Controller\Registration'  => Factory\Controller\RegistrationControllerFactory::class,
         ],
         'invokables' => [
             'Application\Controller\Base'  => Controller\BaseController::class,
@@ -67,12 +69,12 @@ return [
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
                 'paths' => [
-                    __DIR__.'/../src/'.__NAMESPACE__.'/Model',
+                    __DIR__.'/../src/'.__NAMESPACE__.'/Entity',
                 ],
             ],
             'orm_default' => [
                 'drivers' => [
-                    __NAMESPACE__.'\Model' => __NAMESPACE__.'_driver',
+                    __NAMESPACE__.'\Entity' => __NAMESPACE__.'_driver',
                 ],
             ],
         ],

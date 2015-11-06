@@ -1,6 +1,6 @@
 # CHANGELOG #
 DD.MM.YYYY
-## 0.0.21 (13.10.2015) - Stable Alpha ##
+## 0.0.21 (2.11.2015) - Stable Alpha ##
 - Migrated to DoctrineORM
 - Fixed AbstractTableFactory
 

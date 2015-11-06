@@ -6,7 +6,7 @@
  *
  * @version    0.0.21
  *
- * @link       TBA
+ * @link       https://github.com/Stanimirdim92/unnamed
  */
 namespace Application\Form;
 
@@ -17,13 +17,13 @@ final class ResetPasswordForm extends Form implements InputFilterProviderInterfa
 {
     public function __construct()
     {
-        parent::__construct('loginform');
+        parent::__construct('resetpw');
     }
 
     public function init()
     {
         $this->setAttribute('method', 'post');
-        $this->setAttribute('action', '/login/resetpassword');
+        $this->setAttribute('action', '/resetpassword/process');
         $this->setAttribute('role', 'form');
 
         $this->add(

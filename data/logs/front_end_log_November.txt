@@ -1,244 +1,1061 @@
-2015-11-04T17:49:06+00:00 ERR (3): 
-Exception: Error
+2015-11-06T10:05:03+00:00 ERR (3): 
+Exception: Unable to find the socket transport "ssl" - did you forget to enable it when you configured PHP?
 Code: 0
-File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php
-Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php(75): Application\Controller\Plugin\UserData->clearUserData('Error')
-#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(47): Application\Controller\Plugin\UserData->checkIdentity()
-#2 [internal function]: Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
-#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
-#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
-#7 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
-#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
-#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-test\src\PHPUnit\Controller\AbstractControllerTestCase.php(282): Zend\Mvc\Application->run()
-#12 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\ApplicationTest\Controller\BaseControllerTest.php(112): Zend\Test\PHPUnit\Controller\AbstractControllerTestCase->dispatch('/')
-#13 [internal function]: ApplicationTest\Controller\BaseControllerTest->testIndexAction()
-#14 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(881): ReflectionMethod->invokeArgs(Object(ApplicationTest\Controller\BaseControllerTest), Array)
-#15 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(746): PHPUnit_Framework_TestCase->runTest()
-#16 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestResult.php(601): PHPUnit_Framework_TestCase->runBare()
-#17 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(702): PHPUnit_Framework_TestResult->run(Object(ApplicationTest\Controller\BaseControllerTest))
-#18 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestCase->run(Object(PHPUnit_Framework_TestResult))
-#19 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
-#20 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/TestRunner.php(432): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
-#21 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(148): PHPUnit_TextUI_TestRunner->doRun(Object(PHPUnit_Framework_TestSuite), Array)
-#22 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(100): PHPUnit_TextUI_Command->run(Array, true)
-#23 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\phpunit.phar(547): PHPUnit_TextUI_Command::main()
-#24 {main}
-2015-11-04T17:54:19+00:00 ERR (3): 
-Exception: Error
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mail\src\Protocol\AbstractProtocol.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mail\src\Protocol\Smtp.php(148): Zend\Mail\Protocol\AbstractProtocol->_connect('ssl://smtp.gmai...')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mail\src\Transport\Smtp.php(375): Zend\Mail\Protocol\Smtp->connect()
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mail\src\Transport\Smtp.php(361): Zend\Mail\Transport\Smtp->connect()
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mail\src\Transport\Smtp.php(372): Zend\Mail\Transport\Smtp->lazyLoadConnection()
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mail\src\Transport\Smtp.php(229): Zend\Mail\Transport\Smtp->connect()
+#5 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\Mailing.php(86): Zend\Mail\Transport\Smtp->send(Object(Zend\Mail\Message))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\ResetPasswordController.php(121): Application\Controller\Plugin\Mailing->sendMail('stanimirdim92@g...', 'stanNew ', 'New password', 'Request for new...', 'penka@example.c...', 'Test CMS name')
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\ResetPasswordController->processAction()
+#8 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\ResetPasswordController.php(53): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 [internal function]: Application\Controller\ResetPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#15 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#19 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#20 {main}
+2015-11-06T10:29:45+00:00 ERR (3): 
+Exception: Token misatch
 Code: 0
-File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php
-Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php(75): Application\Controller\Plugin\UserData->clearUserData('Error')
-#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(47): Application\Controller\Plugin\UserData->checkIdentity()
-#2 [internal function]: Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
-#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
-#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
-#7 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
-#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
-#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-test\src\PHPUnit\Controller\AbstractControllerTestCase.php(282): Zend\Mvc\Application->run()
-#12 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\ApplicationTest\Controller\BaseControllerTest.php(112): Zend\Test\PHPUnit\Controller\AbstractControllerTestCase->dispatch('/')
-#13 [internal function]: ApplicationTest\Controller\BaseControllerTest->testIndexAction()
-#14 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(881): ReflectionMethod->invokeArgs(Object(ApplicationTest\Controller\BaseControllerTest), Array)
-#15 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(746): PHPUnit_Framework_TestCase->runTest()
-#16 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestResult.php(601): PHPUnit_Framework_TestCase->runBare()
-#17 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(702): PHPUnit_Framework_TestResult->run(Object(ApplicationTest\Controller\BaseControllerTest))
-#18 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestCase->run(Object(PHPUnit_Framework_TestResult))
-#19 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
-#20 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/TestRunner.php(432): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
-#21 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(148): PHPUnit_TextUI_TestRunner->doRun(Object(PHPUnit_Framework_TestSuite), Array)
-#22 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(100): PHPUnit_TextUI_Command->run(Array, true)
-#23 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\phpunit.phar(547): PHPUnit_TextUI_Command::main()
-#24 {main}
-2015-11-04T17:55:24+00:00 ERR (3): 
-Exception: Error
-Code: 0
-File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php
-Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php(75): Application\Controller\Plugin\UserData->clearUserData('Error')
-#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(47): Application\Controller\Plugin\UserData->checkIdentity()
-#2 [internal function]: Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
-#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
-#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
-#7 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
-#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
-#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-test\src\PHPUnit\Controller\AbstractControllerTestCase.php(282): Zend\Mvc\Application->run()
-#12 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\ApplicationTest\Controller\BaseControllerTest.php(109): Zend\Test\PHPUnit\Controller\AbstractControllerTestCase->dispatch('/')
-#13 [internal function]: ApplicationTest\Controller\BaseControllerTest->testIndexAction()
-#14 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(881): ReflectionMethod->invokeArgs(Object(ApplicationTest\Controller\BaseControllerTest), Array)
-#15 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(746): PHPUnit_Framework_TestCase->runTest()
-#16 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestResult.php(601): PHPUnit_Framework_TestCase->runBare()
-#17 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(702): PHPUnit_Framework_TestResult->run(Object(ApplicationTest\Controller\BaseControllerTest))
-#18 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestCase->run(Object(PHPUnit_Framework_TestResult))
-#19 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
-#20 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/TestRunner.php(432): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
-#21 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(148): PHPUnit_TextUI_TestRunner->doRun(Object(PHPUnit_Framework_TestSuite), Array)
-#22 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(100): PHPUnit_TextUI_Command->run(Array, true)
-#23 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\phpunit.phar(547): PHPUnit_TextUI_Command::main()
-#24 {main}
-2015-11-04T18:03:24+00:00 ERR (3): 
-Exception: Error
-Code: 0
-File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php
-Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php(75): Application\Controller\Plugin\UserData->clearUserData('Error')
-#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(47): Application\Controller\Plugin\UserData->checkIdentity()
-#2 [internal function]: Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
-#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
-#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
-#7 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
-#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
-#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-test\src\PHPUnit\Controller\AbstractControllerTestCase.php(282): Zend\Mvc\Application->run()
-#12 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\ApplicationTest\Controller\BaseControllerTest.php(96): Zend\Test\PHPUnit\Controller\AbstractControllerTestCase->dispatch('/')
-#13 [internal function]: ApplicationTest\Controller\BaseControllerTest->testIndexAction()
-#14 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(881): ReflectionMethod->invokeArgs(Object(ApplicationTest\Controller\BaseControllerTest), Array)
-#15 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(746): PHPUnit_Framework_TestCase->runTest()
-#16 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestResult.php(601): PHPUnit_Framework_TestCase->runBare()
-#17 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(702): PHPUnit_Framework_TestResult->run(Object(ApplicationTest\Controller\BaseControllerTest))
-#18 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestCase->run(Object(PHPUnit_Framework_TestResult))
-#19 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
-#20 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/TestRunner.php(432): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
-#21 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(148): PHPUnit_TextUI_TestRunner->doRun(Object(PHPUnit_Framework_TestSuite), Array)
-#22 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(100): PHPUnit_TextUI_Command->run(Array, true)
-#23 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\phpunit.phar(547): PHPUnit_TextUI_Command::main()
-#24 {main}
-2015-11-04T18:04:15+00:00 ERR (3): 
-Exception: Error
-Code: 0
-File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php
-Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php(75): Application\Controller\Plugin\UserData->clearUserData('Error')
-#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(47): Application\Controller\Plugin\UserData->checkIdentity()
-#2 [internal function]: Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
-#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
-#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
-#7 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
-#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
-#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-test\src\PHPUnit\Controller\AbstractControllerTestCase.php(282): Zend\Mvc\Application->run()
-#12 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\ApplicationTest\Controller\BaseControllerTest.php(96): Zend\Test\PHPUnit\Controller\AbstractControllerTestCase->dispatch('/')
-#13 [internal function]: ApplicationTest\Controller\BaseControllerTest->testIndexAction()
-#14 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(881): ReflectionMethod->invokeArgs(Object(ApplicationTest\Controller\BaseControllerTest), Array)
-#15 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(746): PHPUnit_Framework_TestCase->runTest()
-#16 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestResult.php(601): PHPUnit_Framework_TestCase->runBare()
-#17 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(702): PHPUnit_Framework_TestResult->run(Object(ApplicationTest\Controller\BaseControllerTest))
-#18 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestCase->run(Object(PHPUnit_Framework_TestResult))
-#19 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
-#20 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/TestRunner.php(432): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
-#21 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(148): PHPUnit_TextUI_TestRunner->doRun(Object(PHPUnit_Framework_TestSuite), Array)
-#22 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(100): PHPUnit_TextUI_Command->run(Array, true)
-#23 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\phpunit.phar(547): PHPUnit_TextUI_Command::main()
-#24 {main}
-2015-11-04T18:05:21+00:00 ERR (3): 
-Exception: Error
-Code: 0
-File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php
-Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php(75): Application\Controller\Plugin\UserData->clearUserData('Error')
-#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(47): Application\Controller\Plugin\UserData->checkIdentity()
-#2 [internal function]: Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
-#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
-#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
-#7 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
-#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
-#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-test\src\PHPUnit\Controller\AbstractControllerTestCase.php(282): Zend\Mvc\Application->run()
-#12 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\ApplicationTest\Controller\BaseControllerTest.php(96): Zend\Test\PHPUnit\Controller\AbstractControllerTestCase->dispatch('/')
-#13 [internal function]: ApplicationTest\Controller\BaseControllerTest->testIndexAction()
-#14 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(881): ReflectionMethod->invokeArgs(Object(ApplicationTest\Controller\BaseControllerTest), Array)
-#15 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(746): PHPUnit_Framework_TestCase->runTest()
-#16 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestResult.php(601): PHPUnit_Framework_TestCase->runBare()
-#17 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(702): PHPUnit_Framework_TestResult->run(Object(ApplicationTest\Controller\BaseControllerTest))
-#18 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestCase->run(Object(PHPUnit_Framework_TestResult))
-#19 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
-#20 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/TestRunner.php(432): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
-#21 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(148): PHPUnit_TextUI_TestRunner->doRun(Object(PHPUnit_Framework_TestSuite), Array)
-#22 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(100): PHPUnit_TextUI_Command->run(Array, true)
-#23 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\phpunit.phar(547): PHPUnit_TextUI_Command::main()
-#24 {main}
-2015-11-04T18:06:28+00:00 ERR (3): 
-Exception: Error
-Code: 0
-File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php
-Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\UserData.php(75): Application\Controller\Plugin\UserData->clearUserData('Error')
-#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(47): Application\Controller\Plugin\UserData->checkIdentity()
-#2 [internal function]: Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
-#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
-#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
-#7 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
-#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
-#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-test\src\PHPUnit\Controller\AbstractControllerTestCase.php(282): Zend\Mvc\Application->run()
-#12 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\ApplicationTest\Controller\BaseControllerTest.php(80): Zend\Test\PHPUnit\Controller\AbstractControllerTestCase->dispatch('/')
-#13 [internal function]: ApplicationTest\Controller\BaseControllerTest->testIndexAction()
-#14 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(881): ReflectionMethod->invokeArgs(Object(ApplicationTest\Controller\BaseControllerTest), Array)
-#15 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(746): PHPUnit_Framework_TestCase->runTest()
-#16 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestResult.php(601): PHPUnit_Framework_TestCase->runBare()
-#17 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestCase.php(702): PHPUnit_Framework_TestResult->run(Object(ApplicationTest\Controller\BaseControllerTest))
-#18 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestCase->run(Object(PHPUnit_Framework_TestResult))
-#19 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/Framework/TestSuite.php(735): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
-#20 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/TestRunner.php(432): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
-#21 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(148): PHPUnit_TextUI_TestRunner->doRun(Object(PHPUnit_Framework_TestSuite), Array)
-#22 phar://C:/xampp/htdocs/stan_files/unnamed/module/Application/test/PHPUnit/phpunit.phar/phar/phpunit/TextUI/Command.php(100): PHPUnit_TextUI_Command->run(Array, true)
-#23 C:\xampp\htdocs\stan_files\unnamed\module\Application\test\PHPUnit\phpunit.phar(547): PHPUnit_TextUI_Command::main()
-#24 {main}
-2015-11-05T11:43:48+00:00 ERR (3): 
-Exception: An exception was raised while creating "Admin\Controller\User"; no instance returned
-Code: 0
-File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
-Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(283): Zend\ServiceManager\ServiceManager->createServiceViaCallback(Object(Admin\Factory\Controller\UserControllerFactory), 'admincontroller...', 'Admin\\Controlle...')
-#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(243): Zend\ServiceManager\AbstractPluginManager->createServiceViaCallback(Object(Admin\Factory\Controller\UserControllerFactory), 'admincontroller...', 'Admin\\Controlle...')
-#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(637): Zend\ServiceManager\AbstractPluginManager->createFromFactory('admincontroller...', 'Admin\\Controlle...')
-#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('Admin\\Controlle...', 'admincontroller...')
-#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
-#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(115): Zend\ServiceManager\ServiceManager->get('Admin\\Controlle...', false)
-#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\ControllerManager.php(137): Zend\ServiceManager\AbstractPluginManager->get('Admin\\Controlle...', Array, false)
-#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(76): Zend\Mvc\Controller\ControllerManager->get('Admin\\Controlle...')
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
 #8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
 #9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
 #10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
 #11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
 #12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
 #13 {main}
-2015-11-05T19:43:47+00:00 ERR (3): 
-Exception: An abstract factory could not create an instance of adminmodeladministratortable(alias: Admin\Model\AdministratorTable).
+2015-11-06T10:30:08+00:00 ERR (3): 
+Exception: Token misatch
 Code: 0
-File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
-Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(645): Zend\ServiceManager\ServiceManager->createFromAbstractFactory('adminmodeladmin...', 'Admin\\Model\\Adm...')
-#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('Admin\\Model\\Adm...', 'adminmodeladmin...')
-#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
-#3 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\GetTableModel.php(38): Zend\ServiceManager\ServiceManager->get('Admin\\Model\\Adm...')
-#4 [internal function]: Application\Controller\Plugin\GetTableModel->__invoke('Admin\\Model\\Adm...')
-#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(309): call_user_func_array(Object(Application\Controller\Plugin\GetTableModel), Array)
-#6 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\AdministratorController.php(58): Zend\Mvc\Controller\AbstractController->__call('getTable', Array)
-#7 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\AdministratorController.php(58): Admin\Controller\AdministratorController->getTable('Admin\\Model\\Adm...')
-#8 [internal function]: Admin\Controller\AdministratorController->onDispatch(Object(Zend\Mvc\MvcEvent))
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
 #9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
 #10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
-#13 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
-#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
-#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
-#17 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
-#18 {main}
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:30:40+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:32:57+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:33:00+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:33:13+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:33:16+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:33:22+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:33:51+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:34:57+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:35:10+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:35:36+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:36:57+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:37:01+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:37:25+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:37:28+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:37:47+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:37:49+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:38:09+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:38:13+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:38:22+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:38:31+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:38:34+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:38:39+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:38:44+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:38:52+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:38:57+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:39:02+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:39:07+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:39:10+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:39:12+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:39:20+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:39:30+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:42:41+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:42:45+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:42:47+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T10:45:19+00:00 ERR (3): 
+Exception: [Syntax Error] line 0, col 93: Error: Expected known function, got 'NOW'
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\QueryException.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(448): Doctrine\ORM\Query\QueryException::syntaxError('line 0, col 93:...', Object(Doctrine\ORM\Query\QueryException))
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(3379): Doctrine\ORM\Query\Parser->syntaxError('known function', Array)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(3351): Doctrine\ORM\Query\Parser->CustomFunctionDeclaration()
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2810): Doctrine\ORM\Query\Parser->FunctionDeclaration()
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\AST\Functions\DateAddFunction.php(86): Doctrine\ORM\Query\Parser->ArithmeticPrimary()
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(3442): Doctrine\ORM\Query\AST\Functions\DateAddFunction->parse(Object(Doctrine\ORM\Query\Parser))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(3348): Doctrine\ORM\Query\Parser->FunctionsReturningDatetime()
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2810): Doctrine\ORM\Query\Parser->FunctionDeclaration()
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2771): Doctrine\ORM\Query\Parser->ArithmeticPrimary()
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2739): Doctrine\ORM\Query\Parser->ArithmeticFactor()
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2713): Doctrine\ORM\Query\Parser->ArithmeticTerm()
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2700): Doctrine\ORM\Query\Parser->SimpleArithmeticExpression()
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(3043): Doctrine\ORM\Query\Parser->ArithmeticExpression()
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2564): Doctrine\ORM\Query\Parser->ComparisonExpression()
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2447): Doctrine\ORM\Query\Parser->SimpleConditionalExpression()
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2423): Doctrine\ORM\Query\Parser->ConditionalPrimary()
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2396): Doctrine\ORM\Query\Parser->ConditionalFactor()
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2366): Doctrine\ORM\Query\Parser->ConditionalTerm()
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(1333): Doctrine\ORM\Query\Parser->ConditionalExpression()
+#19 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(876): Doctrine\ORM\Query\Parser->WhereClause()
+#20 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(843): Doctrine\ORM\Query\Parser->SelectStatement()
+#21 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(268): Doctrine\ORM\Query\Parser->QueryLanguage()
+#22 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(351): Doctrine\ORM\Query\Parser->getAST()
+#23 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query.php(281): Doctrine\ORM\Query\Parser->parse()
+#24 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query.php(293): Doctrine\ORM\Query->_parse()
+#25 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(969): Doctrine\ORM\Query->_doExecute()
+#26 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(924): Doctrine\ORM\AbstractQuery->executeIgnoreQueryCache(NULL, 1)
+#27 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(727): Doctrine\ORM\AbstractQuery->execute(NULL, 1)
+#28 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(95): Doctrine\ORM\AbstractQuery->getResult()
+#29 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#30 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#31 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#32 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#33 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#34 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#35 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#36 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#37 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#38 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#39 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#40 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#41 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#42 {main}
+2015-11-06T10:45:41+00:00 ERR (3): 
+Exception: [Syntax Error] line 0, col 99: Error: Expected known function, got 'NOW'
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\QueryException.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(448): Doctrine\ORM\Query\QueryException::syntaxError('line 0, col 99:...', Object(Doctrine\ORM\Query\QueryException))
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(3379): Doctrine\ORM\Query\Parser->syntaxError('known function', Array)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(3351): Doctrine\ORM\Query\Parser->CustomFunctionDeclaration()
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2810): Doctrine\ORM\Query\Parser->FunctionDeclaration()
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\AST\Functions\DateAddFunction.php(86): Doctrine\ORM\Query\Parser->ArithmeticPrimary()
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(3442): Doctrine\ORM\Query\AST\Functions\DateAddFunction->parse(Object(Doctrine\ORM\Query\Parser))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(3348): Doctrine\ORM\Query\Parser->FunctionsReturningDatetime()
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2810): Doctrine\ORM\Query\Parser->FunctionDeclaration()
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2771): Doctrine\ORM\Query\Parser->ArithmeticPrimary()
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2739): Doctrine\ORM\Query\Parser->ArithmeticFactor()
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2713): Doctrine\ORM\Query\Parser->ArithmeticTerm()
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2700): Doctrine\ORM\Query\Parser->SimpleArithmeticExpression()
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(3043): Doctrine\ORM\Query\Parser->ArithmeticExpression()
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2564): Doctrine\ORM\Query\Parser->ComparisonExpression()
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2447): Doctrine\ORM\Query\Parser->SimpleConditionalExpression()
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2423): Doctrine\ORM\Query\Parser->ConditionalPrimary()
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2396): Doctrine\ORM\Query\Parser->ConditionalFactor()
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2366): Doctrine\ORM\Query\Parser->ConditionalTerm()
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(1333): Doctrine\ORM\Query\Parser->ConditionalExpression()
+#19 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(876): Doctrine\ORM\Query\Parser->WhereClause()
+#20 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(843): Doctrine\ORM\Query\Parser->SelectStatement()
+#21 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(268): Doctrine\ORM\Query\Parser->QueryLanguage()
+#22 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(351): Doctrine\ORM\Query\Parser->getAST()
+#23 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query.php(281): Doctrine\ORM\Query\Parser->parse()
+#24 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query.php(293): Doctrine\ORM\Query->_parse()
+#25 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(969): Doctrine\ORM\Query->_doExecute()
+#26 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(924): Doctrine\ORM\AbstractQuery->executeIgnoreQueryCache(NULL, 1)
+#27 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(727): Doctrine\ORM\AbstractQuery->execute(NULL, 1)
+#28 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(95): Doctrine\ORM\AbstractQuery->getResult()
+#29 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#30 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#31 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#32 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#33 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#34 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#35 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#36 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#37 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#38 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#39 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#40 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#41 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#42 {main}
+2015-11-06T10:49:12+00:00 ERR (3): 
+Exception: [Syntax Error] line 0, col 123: Error: Expected known function, got 'NOW'
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\QueryException.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(448): Doctrine\ORM\Query\QueryException::syntaxError('line 0, col 123...', Object(Doctrine\ORM\Query\QueryException))
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(3379): Doctrine\ORM\Query\Parser->syntaxError('known function', Array)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(3351): Doctrine\ORM\Query\Parser->CustomFunctionDeclaration()
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2810): Doctrine\ORM\Query\Parser->FunctionDeclaration()
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\AST\Functions\DateAddFunction.php(86): Doctrine\ORM\Query\Parser->ArithmeticPrimary()
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(3442): Doctrine\ORM\Query\AST\Functions\DateAddFunction->parse(Object(Doctrine\ORM\Query\Parser))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(3348): Doctrine\ORM\Query\Parser->FunctionsReturningDatetime()
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2810): Doctrine\ORM\Query\Parser->FunctionDeclaration()
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2771): Doctrine\ORM\Query\Parser->ArithmeticPrimary()
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2739): Doctrine\ORM\Query\Parser->ArithmeticFactor()
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2713): Doctrine\ORM\Query\Parser->ArithmeticTerm()
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2700): Doctrine\ORM\Query\Parser->SimpleArithmeticExpression()
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(3043): Doctrine\ORM\Query\Parser->ArithmeticExpression()
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2564): Doctrine\ORM\Query\Parser->ComparisonExpression()
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2447): Doctrine\ORM\Query\Parser->SimpleConditionalExpression()
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2423): Doctrine\ORM\Query\Parser->ConditionalPrimary()
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2396): Doctrine\ORM\Query\Parser->ConditionalFactor()
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2366): Doctrine\ORM\Query\Parser->ConditionalTerm()
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(1333): Doctrine\ORM\Query\Parser->ConditionalExpression()
+#19 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(876): Doctrine\ORM\Query\Parser->WhereClause()
+#20 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(843): Doctrine\ORM\Query\Parser->SelectStatement()
+#21 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(268): Doctrine\ORM\Query\Parser->QueryLanguage()
+#22 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(351): Doctrine\ORM\Query\Parser->getAST()
+#23 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query.php(281): Doctrine\ORM\Query\Parser->parse()
+#24 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query.php(293): Doctrine\ORM\Query->_parse()
+#25 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(969): Doctrine\ORM\Query->_doExecute()
+#26 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(924): Doctrine\ORM\AbstractQuery->executeIgnoreQueryCache(NULL, 1)
+#27 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(727): Doctrine\ORM\AbstractQuery->execute(NULL, 1)
+#28 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(90): Doctrine\ORM\AbstractQuery->getResult()
+#29 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#30 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#31 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#32 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#33 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#34 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#35 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#36 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#37 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#38 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#39 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#40 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#41 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#42 {main}
+2015-11-06T10:49:23+00:00 ERR (3): 
+Exception: [Syntax Error] line 0, col 137: Error: Expected Doctrine\ORM\Query\Lexer::T_COMMA, got '24'
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\QueryException.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(448): Doctrine\ORM\Query\QueryException::syntaxError('line 0, col 137...', Object(Doctrine\ORM\Query\QueryException))
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(316): Doctrine\ORM\Query\Parser->syntaxError('Doctrine\\ORM\\Qu...')
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\AST\Functions\DateAddFunction.php(89): Doctrine\ORM\Query\Parser->match(8)
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(3442): Doctrine\ORM\Query\AST\Functions\DateAddFunction->parse(Object(Doctrine\ORM\Query\Parser))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(3348): Doctrine\ORM\Query\Parser->FunctionsReturningDatetime()
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2810): Doctrine\ORM\Query\Parser->FunctionDeclaration()
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2771): Doctrine\ORM\Query\Parser->ArithmeticPrimary()
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2739): Doctrine\ORM\Query\Parser->ArithmeticFactor()
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2713): Doctrine\ORM\Query\Parser->ArithmeticTerm()
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2700): Doctrine\ORM\Query\Parser->SimpleArithmeticExpression()
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(3043): Doctrine\ORM\Query\Parser->ArithmeticExpression()
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2564): Doctrine\ORM\Query\Parser->ComparisonExpression()
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2447): Doctrine\ORM\Query\Parser->SimpleConditionalExpression()
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2423): Doctrine\ORM\Query\Parser->ConditionalPrimary()
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2396): Doctrine\ORM\Query\Parser->ConditionalFactor()
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(2366): Doctrine\ORM\Query\Parser->ConditionalTerm()
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(1333): Doctrine\ORM\Query\Parser->ConditionalExpression()
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(876): Doctrine\ORM\Query\Parser->WhereClause()
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(843): Doctrine\ORM\Query\Parser->SelectStatement()
+#19 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(268): Doctrine\ORM\Query\Parser->QueryLanguage()
+#20 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\Parser.php(351): Doctrine\ORM\Query\Parser->getAST()
+#21 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query.php(281): Doctrine\ORM\Query\Parser->parse()
+#22 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query.php(293): Doctrine\ORM\Query->_parse()
+#23 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(969): Doctrine\ORM\Query->_doExecute()
+#24 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(924): Doctrine\ORM\AbstractQuery->executeIgnoreQueryCache(NULL, 1)
+#25 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(727): Doctrine\ORM\AbstractQuery->execute(NULL, 1)
+#26 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(90): Doctrine\ORM\AbstractQuery->getResult()
+#27 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#28 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#29 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#30 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#31 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#32 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#33 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#34 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#35 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#36 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#37 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#38 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#39 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#40 {main}
+2015-11-06T10:54:54+00:00 ERR (3): 
+Exception: Password cannot be empty
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\Functions.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(134): Application\Controller\Plugin\Functions::createPassword(NULL)
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->newpasswordprocessAction()
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#9 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#14 {main}
+2015-11-06T10:55:11+00:00 ERR (3): 
+Exception: Password cannot be empty
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\Plugin\Functions.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(135): Application\Controller\Plugin\Functions::createPassword(NULL)
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->newpasswordprocessAction()
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#9 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#14 {main}
+2015-11-06T10:55:33+00:00 ERR (3): 
+Exception: The identifier id is missing for a query of Admin\Entity\User
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\ORMException.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityManager.php(403): Doctrine\ORM\ORMException::missingIdentifierField('Admin\\Entity\\Us...', 'id')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityRepository.php(154): Doctrine\ORM\EntityManager->find('Admin\\Entity\\Us...', NULL, NULL, NULL)
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\UserTable.php(66): Doctrine\ORM\EntityRepository->find(NULL)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(138): Admin\Model\UserTable->getUser(NULL)
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->newpasswordprocessAction()
+#5 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#12 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#17 {main}
+2015-11-06T10:56:00+00:00 ERR (3): 
+Exception: The identifier id is missing for a query of Admin\Entity\User
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\ORMException.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityManager.php(403): Doctrine\ORM\ORMException::missingIdentifierField('Admin\\Entity\\Us...', 'id')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityRepository.php(154): Doctrine\ORM\EntityManager->find('Admin\\Entity\\Us...', NULL, NULL, NULL)
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\UserTable.php(66): Doctrine\ORM\EntityRepository->find(NULL)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(138): Admin\Model\UserTable->getUser(NULL)
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->newpasswordprocessAction()
+#5 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#12 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#17 {main}
+2015-11-06T10:56:10+00:00 ERR (3): 
+Exception: The identifier id is missing for a query of Admin\Entity\User
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\ORMException.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityManager.php(403): Doctrine\ORM\ORMException::missingIdentifierField('Admin\\Entity\\Us...', 'id')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityRepository.php(154): Doctrine\ORM\EntityManager->find('Admin\\Entity\\Us...', NULL, NULL, NULL)
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\UserTable.php(66): Doctrine\ORM\EntityRepository->find(NULL)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(138): Admin\Model\UserTable->getUser(NULL)
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->newpasswordprocessAction()
+#5 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#12 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#17 {main}
+2015-11-06T10:57:52+00:00 ERR (3): 
+Exception: The identifier id is missing for a query of Admin\Entity\User
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\ORMException.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityManager.php(403): Doctrine\ORM\ORMException::missingIdentifierField('Admin\\Entity\\Us...', 'id')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityRepository.php(154): Doctrine\ORM\EntityManager->find('Admin\\Entity\\Us...', NULL, NULL, NULL)
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\UserTable.php(66): Doctrine\ORM\EntityRepository->find(NULL)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(137): Admin\Model\UserTable->getUser(NULL)
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->newpasswordprocessAction()
+#5 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#12 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#17 {main}
+2015-11-06T10:58:35+00:00 ERR (3): 
+Exception: The identifier id is missing for a query of Admin\Entity\User
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\ORMException.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityManager.php(403): Doctrine\ORM\ORMException::missingIdentifierField('Admin\\Entity\\Us...', 'id')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityRepository.php(154): Doctrine\ORM\EntityManager->find('Admin\\Entity\\Us...', NULL, NULL, NULL)
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\UserTable.php(66): Doctrine\ORM\EntityRepository->find(NULL)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(137): Admin\Model\UserTable->getUser(NULL)
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->newpasswordprocessAction()
+#5 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#12 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#17 {main}
+2015-11-06T11:00:59+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T11:01:17+00:00 ERR (3): 
+Exception: Token misatch
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-06T11:03:15+00:00 ERR (3): 
+Exception: The link has expired
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Application\Controller\NewPasswordController->indexAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\BaseController.php(62): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Application\src\Application\Controller\NewPasswordController.php(50): Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: Application\Controller\NewPasswordController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}

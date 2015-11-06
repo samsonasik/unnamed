@@ -6,7 +6,7 @@
  *
  * @version    0.0.21
  *
- * @link       TBA
+ * @link       https://github.com/Stanimirdim92/unnamed
  */
 namespace Admin\Controller;
 
@@ -311,7 +311,7 @@ final class ContentController extends BaseController
      *
      * @return void
      */
-    private function makeDir($publicFolder)
+    private function makeDir($publicFolder = 'public/')
     {
         if (!is_dir($publicFolder.'userfiles/'.date('Y_M').'/images/')) {
             mkdir($publicFolder.'userfiles/'.date('Y_M').'/images/', 0750, true);

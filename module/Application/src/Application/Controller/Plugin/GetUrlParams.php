@@ -33,18 +33,40 @@ final class GetUrlParams extends AbstractPlugin
      * Shorthand method for getting params from URLs. Makes code easier to edit and avoids DRY code.
      *
      * @param string $paramName
-     * @param mixed  $default
      *
      * @return mixed
      */
-    public function __invoke($paramName, $default = null)
+    public function __invoke($paramName)
     {
         $escaper = new Escaper('utf-8');
 
-        $param = $this->params->fromPost($paramName, 0);
+        /**
+         * Return early. Usually params will come from post.
+         *
+         * @var mixed
+         */
+        $param = $this->params->fromPost($paramName, null);
         if (!$param) {
-            $param = $this->params->fromRoute($paramName, null);
+            $param = $this->findParam($paramName);
         }
+
+        /*
+         * If this is array it MUST comes from fromFiles()
+         */
+        if (is_array($param) && !empty($param)) {
+            return $param;
+        }
+
+        return $escaper->escapeHtml($param);
+    }
+
+    /**
+     * @param string $paramName
+     *
+     * @return mixed
+     */
+    private function findParam($paramName)
+    {
         if (!$param) {
             $param = $this->params->fromQuery($paramName, null);
         }
@@ -55,20 +77,6 @@ final class GetUrlParams extends AbstractPlugin
             $param = $this->params->fromFiles($paramName, null);
         }
 
-        /*
-         * If this is array it MUST comes from fromFiles()
-         */
-        if (is_array($param) && !empty($param)) {
-            return $param;
-        }
-
-        /*
-         * It could be an empty array or any negative value. In this case return the default value.
-         */
-        if ((is_array($param) && empty($param)) || !$param) {
-            return $default;
-        }
-
-        return $escaper->escapeHtml($param);
+        return $param;
     }
 }

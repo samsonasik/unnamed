@@ -349,20 +349,55 @@ final class ContentController extends BaseController
 
         foreach ($adapter->getFileInfo() as $key => $file) {
             if ($key !== 'preview') {
-                if (!$adapter->isValid($file['name'])) {
-                    foreach ($adapter->getMessages() as $msg) {
-                        $uploadStatus['errorFiles'][] = $file['name'].' '.strtolower($msg);
-                    }
-                }
-
                 // @codeCoverageIgnoreStart
-                $adapter->receive($file['name']);
-                if (!$adapter->isReceived($file['name']) && $adapter->isUploaded($file['name'])) {
-                    $uploadStatus['errorFiles'][] = $file['name'].' was not uploaded';
-                } else {
-                    $uploadStatus['successFiles'][] = $file['name'].' was successfully uploaded';
-                }
+                $arr1 = $this->validateUploadedFileName($adapter, $file['name']);
+
+                $arr2 = $this->validateUploadedFile($adapter, $file['name']);
+                $uploadStatus = array_merge_recursive($arr1, $arr2);
                 // @codeCoverageIgnoreEnd
+            }
+        }
+
+        return $uploadStatus;
+    }
+
+    /**
+     * See if file has been received and uploaded.
+     *
+     * @param Http $adapter
+     * @param string $fileName
+     *
+     * @return array
+     */
+    private function validateUploadedFile(Http $adapter, $fileName)
+    {
+        $uploadStatus = [];
+        $adapter->receive($fileName);
+
+        if (!$adapter->isReceived($fileName) && $adapter->isUploaded($fileName)) {
+            $uploadStatus['errorFiles'][] = $fileName.' was not uploaded';
+        } else {
+            $uploadStatus['successFiles'][] = $fileName.' was successfully uploaded';
+        }
+
+        return $uploadStatus;
+    }
+
+    /**
+     * See if file name is valid and it not return alll messages.
+     *
+     * @param Http $adapter
+     * @param string $fileName
+     *
+     * @return array
+     */
+    private function validateUploadedFileName(Http $adapter, $fileName)
+    {
+        $uploadStatus = [];
+
+        if (!$adapter->isValid($fileName)) {
+            foreach ($adapter->getMessages() as $msg) {
+                $uploadStatus['errorFiles'][] = $fileName.' '.strtolower($msg);
             }
         }
 

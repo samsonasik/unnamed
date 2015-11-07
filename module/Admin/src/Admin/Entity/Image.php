@@ -218,10 +218,10 @@ final class Image implements ImageInterface
      */
     private function setOptions(array $options = [])
     {
-        if (!is_array($options) && !$options instanceof \Traversable) {
+        if (!is_array($options)) {
             throw new InvalidArgumentException(
                 sprintf(
-                    'Parameter provided to %s must be an array or Traversable',
+                    'Parameter provided to %s must be an array',
                     __METHOD__
                 )
             );
@@ -307,13 +307,25 @@ final class Image implements ImageInterface
         }
 
         /*
-         * strip out image/ from string and make the rest upper cases
+         * strip out image/ from mime type and make the rest upper cases
          */
         $format = strtoupper(substr($format['mime'], 6));
 
         /*
-         * Normalize formats
+         * Normalize format
          */
+        $format = $this->normalizeImageFormat($format);
+
+        $this->format = $format;
+    }
+
+    /**
+     * @param string $format
+     *
+     * @return string
+     */
+    private function normalizeImageFormat($format)
+    {
         if ($format === 'JPG' || $format === 'PJPEG') {
             $format = 'JPEG';
         }
@@ -322,7 +334,7 @@ final class Image implements ImageInterface
             $format = 'WBMP';
         }
 
-        $this->format = $format;
+        return $format;
     }
 
     /**
@@ -428,36 +440,14 @@ final class Image implements ImageInterface
             imageantialias($resource, true);
         }
 
-        $color = $this->getAlphaColorAllocate();
-        $alpha = $this->getAlphaTransperancy();
+        $color = $this->getArrayKeyValue('alpha_color_allocate', [255, 255, 255]);
+        $alpha = $this->getKeyValue('alpha_transperancy');
 
         $transparentColor = imagecolorallocatealpha($resource, $color[0], $color[1], $color[2], $alpha);
         imagefill($resource, 0, 0, $transparentColor);
         imagecolortransparent($resource, $transparentColor);
 
         return $resource;
-    }
-
-    private function getAlphaColorAllocate()
-    {
-        $color = $this->getOption('alpha_color_allocate');
-        if (!is_array($color)) {
-            $color = [255, 255, 255];
-            $this->options['alpha_color_allocate'] = $color;
-        }
-
-        return $color;
-    }
-
-    private function getAlphaTransperancy()
-    {
-        $alpha = $this->getOption('alpha_transperancy');
-        if ($alpha < 1 || $alpha > 127) {
-            $alpha = 64;
-            $this->options['alpha_transperancy'] = $alpha;
-        }
-
-        return $alpha;
     }
 
     /**
@@ -501,13 +491,7 @@ final class Image implements ImageInterface
      */
     public function save($path, $fileName)
     {
-        if (!$path || !is_dir($path)) {
-            throw new RuntimeException('Path is not set');
-        }
-
-        if (!is_writable($path)) {
-            throw new RuntimeException('Path is not writable');
-        }
+        $this->validateDir($path);
 
         if (!$fileName) {
             throw new RuntimeException('Image name is not set');
@@ -516,15 +500,45 @@ final class Image implements ImageInterface
         $format = strtolower($this->getFormat());
         $imageSaveMethod = 'image'.$format;
         $options = [$this->getImageFile(), $path.DIRECTORY_SEPARATOR.$fileName];
-
-        $opt = $this->checkFormatOptions();
-        foreach ($opt as $option) {
-            $options[] = $option;
-        }
+        $options[] = $his->getFormatOptions();
 
         if (!call_user_func_array($imageSaveMethod, $options)) {
             throw new RuntimeException('Image save has failed');
         }
+    }
+
+    /**
+     * @param string $path
+     *
+     * @throws InvalidArgumentException
+     */
+    private function validateDir($path)
+    {
+        if (!is_dir($path)) {
+            throw new InvalidArgumentException(
+                "Public directory '".$path."' not found or not a directory"
+            );
+        } elseif (!is_writable($path)) {
+            throw new InvalidArgumentException(
+                "Public directory '".$path."' not writable"
+            );
+        } elseif (!is_readable($path)) {
+            throw new InvalidArgumentException(
+                "Public directory '".$path."' not readable"
+            );
+        }
+    }
+
+    private function getFormatOptions()
+    {
+        $options = [];
+        $opt = $this->checkFormatOptions();
+
+        foreach ($opt as $option) {
+            $options[] = $option;
+        }
+
+        return $options;
     }
 
     /**
@@ -540,9 +554,9 @@ final class Image implements ImageInterface
             $params[] = $png['level'];
             $params[] = $png['filter'];
         } elseif ($format === 'jpeg') {
-            $params[] = $this->jpegOptions();
+            $params[] = $this->getKeyValue('jpeg_quality');
         } elseif ($format === 'wbmp') {
-            $params[] = $this->wbmpOptions();
+            $params[] = $this->getArrayKeyValue('foreground', [0, 0, 0]);
         }
 
         return $params;
@@ -555,16 +569,12 @@ final class Image implements ImageInterface
     {
         $params = [];
         $params['level'] = $this->getOption('png_compression_level');
-        $filter = $this->getOption('png_compression_filter');
+        $filter = (string) $this->getOption('png_compression_filter');
 
         if ($params['level'] < 0 || $params['level'] > 9) {
             // http://www.zlib.net/manual.html
             $params['level'] = -1; // Z_DEFAULT_COMPRESSION
             $this->options['png_compression_level'] = $params['level'];
-        }
-
-        if (!is_string($filter)) {
-            throw new RuntimeException('png_compression_filter must be a string '.gettype($filter).' given');
         }
 
         if (!in_array($filter, array_keys($this->pngFilterTypes))) {
@@ -577,32 +587,39 @@ final class Image implements ImageInterface
     }
 
     /**
+     * @param string $key
+     * @param int $value
+     *
      * @return int
      */
-    private function jpegOptions()
+    private function getKeyValue($key, $value = 64)
     {
-        $jpegQuality = $this->getOption('jpeg_quality');
+        $key = (string) $key;
+        $alpha = $this->getOption($key);
 
-        if ($jpegQuality < 0 || $jpegQuality > 100) {
-            $jpegQuality = 75;
-            $this->options['jpeg_quality'] = $jpegQuality;
+        if ($alpha < 1 || $alpha > 127) {
+            $alpha = (int) $value;
+            $this->options[$key] = $alpha;
         }
 
-        return $jpegQuality;
+        return $alpha;
     }
 
     /**
+     * @param string $key
+     * @param array $defaultValue
+     *
      * @return array
      */
-    private function wBmpOptions()
+    private function getArrayKeyValue($key, array $defaultValue = [255, 255, 255])
     {
-        $foreground = $this->getOption('foreground');
+        $value = $this->getOption($key);
 
-        if (!is_array($foreground)) {
-            $foreground = [0, 0, 0];
-            $this->options['foreground'] = $foreground;
+        if (!is_array($value)) {
+            $value = $defaultValue;
+            $this->options[$key] = $value;
         }
 
-        return $foreground;
+        return $value;
     }
 }

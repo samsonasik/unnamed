@@ -242,7 +242,7 @@ final class UserController extends BaseController
             <li class='table-cell flex-b'>
                 <button role='button' aria-pressed='false' aria-label='".$this->translate($i18n)."' id='".$id."' type='button' class='btn btn-sm ".$class." dialog_delete' title='".$this->translate($i18n)."'><i class='fa fa-times'></i></button>
                 <div role='alertdialog' aria-labelledby='dialog".$id."Title' class='delete_".$id." dialog_hide'>
-                   <p id='dialog".$id."Title'>".$this->translate($i18n."_CONFIRM_TEXT') &laquo;".$fullName."&raquo;</p>
+                   <p id='dialog".$id."Title'>".$this->translate($i18n."_CONFIRM_TEXT")." &laquo;".$fullName."&raquo;</p>
                     <ul>
                         <li>
                             <a class='btn ".$class."' href='/admin/user/".$action.'/'.$id."'><i class='fa fa-times'></i> ".$this->translate($i18n)."</a>

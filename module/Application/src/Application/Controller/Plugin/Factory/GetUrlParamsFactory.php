@@ -24,6 +24,9 @@ class GetUrlParamsFactory
      */
     public function __invoke(PluginManager $pluginManager)
     {
+        /*
+         * @var \Zend\Mvc\Controller\Plugin\Params
+         */
         $params = $pluginManager->get('params');
 
         $plugin = new GetUrlParams($params);

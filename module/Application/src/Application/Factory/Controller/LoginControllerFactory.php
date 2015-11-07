@@ -22,9 +22,12 @@ final class LoginControllerFactory
     {
         $serviceLocator = $controllerManager->getServiceLocator();
 
+        /** @var \Zend\Authentication\AuthenticationService */
+        $doctrineAuthService =  $serviceLocator->get('doctrine.authenticationservice.orm_default');
+
         $controller = new LoginController(
             $serviceLocator->get('FormElementManager')->get('Application\Form\LoginForm'),
-            $serviceLocator->get('doctrine.authenticationservice.orm_default')
+            $doctrineAuthService
         );
 
         return $controller;

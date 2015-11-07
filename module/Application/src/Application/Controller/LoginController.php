@@ -77,8 +77,8 @@ final class LoginController extends BaseController
     {
         /** @var \DoctrineModule\Authentication\Adapter\ObjectRepository $authAdapter */
         $authAdapter = $this->authService->getAdapter();
-        $authAdapter->setIdentityValue((string) $options['email']);
-        $authAdapter->setCredentialValue((string) $options['password']);
+        $authAdapter->setIdentity((string) $options['email']);
+        $authAdapter->setCredential((string) $options['password']);
 
         return $authAdapter;
     }

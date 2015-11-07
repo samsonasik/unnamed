@@ -112,7 +112,7 @@ final class UserController extends BaseController
         $this->getView()->setTemplate('admin/user/edit');
         $user = $this->userTable->getUser((int) $this->getParam('id', 0));
         $this->getView()->setVariable('user', $user);
-        $this->addBreadcrumb(['reference' => "/admin/user/edit/".$user->getId()."", 'name' => $this->translate('EDIT_USER').' &laquo;'.$user->getName().'&raquo;']);
+        $this->addBreadcrumb(['reference' => '/admin/user/edit/'.$user->getId().'', 'name' => $this->translate('EDIT_USER').' &laquo;'.$user->getName().'&raquo;']);
         $this->initForm($user);
 
         return $this->getView();
@@ -245,13 +245,13 @@ final class UserController extends BaseController
                    <p id='dialog".$id."Title'>".$this->translate($i18n."_CONFIRM_TEXT') &laquo;".$fullName."&raquo;</p>
                     <ul>
                         <li>
-                            <a class='btn ".$class."' href='/admin/user/".$action."/".$id."'><i class='fa fa-times'></i> ".$this->translate($i18n)."</a>
+                            <a class='btn ".$class."' href='/admin/user/".$action.'/'.$id."'><i class='fa fa-times'></i> ".$this->translate($i18n)."</a>
                         </li>
                         <li>
-                            <button role='button' aria-pressed='false' aria-label='".$this->translate('CANCEL')."' type='button' title='".$this->translate('CANCEL')."' class='btn btn-default cancel'><i class='fa fa-times'></i> ".$this->translate('CANCEL').'</button>
+                            <button role='button' aria-pressed='false' aria-label='".$this->translate('CANCEL')."' type='button' title='".$this->translate('CANCEL')."' class='btn btn-default cancel'><i class='fa fa-times'></i> ".$this->translate('CANCEL')."</button>
                         </li>
                     </ul>
                 </div>
-            </li>';
+            </li>";
     }
 }

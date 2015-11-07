@@ -68,7 +68,7 @@ final class InitMetaTags extends AbstractPlugin
         $preview = (!empty($content['preview']) ? $content['preview'] : '');
         $title = (!empty($content['title']) ? $content['title'] : $this->settings->__invoke('general', 'site_name'));
 
-        $this->placeholder->append("\r\n<meta itemprop='name' content='"$this->settings->__invoke('general', 'site_name')."'>\r\n"); // must be set from db
+        $this->placeholder->append("\r\n<meta itemprop='name' content='".$this->settings->__invoke('general', 'site_name')."'>\r\n"); // must be set from db
         $this->placeholder->append("<meta itemprop='description' content='".substr(strip_tags($text), 0, 150)."'>\r\n");
         $this->placeholder->append("<meta itemprop='title' content='".$title."'>\r\n");
         $this->placeholder->append("<meta itemprop='image' content='".$preview."'>\r\n");

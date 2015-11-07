@@ -24,7 +24,7 @@ class InitMetaTagsFactory
      */
     public function __invoke(PluginManager $pluginManager)
     {
-        /** @var Zend\ServiceManager\ServiceManager */
+        /** @var \Zend\ServiceManager\ServiceManager */
         $viewHelper = $pluginManager->getController()->getServiceLocator()->get('ViewHelperManager');
 
         /*

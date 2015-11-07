@@ -24,7 +24,7 @@ final class TranslateFactory
      */
     public function __invoke(PluginManager $pluginManager)
     {
-        /** @var Zend\ServiceManager\ServiceManager */
+        /** @var \Zend\ServiceManager\ServiceManager */
         $translator = $pluginManager->getController()->getServiceLocator()->get('translator')->getTranslator();
 
         $plugin = new Translate($translator);

@@ -24,8 +24,10 @@ class SetLayoutMessagesFactory
      */
     public function __invoke(PluginManager $pluginManager)
     {
+        /** @var \Zend\View\Model\ViewModel */
         $layout = $pluginManager->getController()->layout();
 
+        /** @var \Zend\Mvc\Controller\Plugin\FlashMessenger */
         $flashmessenger = $pluginManager->get('flashmessenger');
 
         $plugin = new SetLayoutMessages($layout, $flashmessenger);

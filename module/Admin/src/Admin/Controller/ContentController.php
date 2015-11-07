@@ -171,9 +171,9 @@ final class ContentController extends BaseController
     /**
      * This is common function used by add and edit actions.
      *
-     * @param Content $content
+     * @param null|Content $content
      *
-     * @return null|Content
+     * @return Content
      */
     private function initForm(Content $content = null)
     {
@@ -195,7 +195,7 @@ final class ContentController extends BaseController
      * @param ContentForm $form
      * @param Content     $content
      *
-     * @return null|Content
+     * @return Content
      */
     private function form(ContentForm $form, Content $content)
     {

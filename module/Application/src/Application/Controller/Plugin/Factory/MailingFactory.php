@@ -24,7 +24,10 @@ class MailingFactory
      */
     public function __invoke(PluginManager $pluginManager)
     {
+        /** @var \Zend\Mvc\Controller\Plugin\FlashMessenger */
         $flashmessenger = $pluginManager->get('flashmessenger');
+
+        /** @var \Application\Controller\Plugin\SystemSettings */
         $systemsettings = $pluginManager->get('systemsettings');
 
         $plugin = new Mailing($flashmessenger, $systemsettings);

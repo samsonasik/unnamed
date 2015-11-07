@@ -17,7 +17,6 @@ use Zend\Mime\Message as MimeMessage;
 use Zend\Mime\Part as MimePart;
 use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 use Zend\Mvc\Controller\Plugin\FlashMessenger;
-use Application\Controller\Plugin\SystemSettings;
 
 final class Mailing extends AbstractPlugin
 {

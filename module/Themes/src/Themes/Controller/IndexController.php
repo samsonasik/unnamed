@@ -33,7 +33,7 @@ final class IndexController extends AbstractActionController
      * @method __construct
      *
      * @param array|object $themesConfig
-     * @param mixed $reloadService
+     * @param mixed        $reloadService
      */
     public function __construct($themesConfig, $reloadService)
     {

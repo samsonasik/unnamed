@@ -10,10 +10,10 @@
  */
 namespace Application\Controller\Plugin;
 
+use RecursiveArrayIterator;
 use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 use Zend\Mvc\Controller\Plugin\FlashMessenger;
 use Zend\View\Model\ViewModel;
-use RecursiveArrayIterator;
 
 final class SetLayoutMessages extends AbstractPlugin
 {
@@ -56,7 +56,7 @@ final class SetLayoutMessages extends AbstractPlugin
      * </code>
      *
      * @param array|string|RecursiveArrayIterator $message
-     * @param string       $namespace determinate the message layout and color. It's also used for the flashMessenger namespace
+     * @param string                              $namespace determinate the message layout and color. It's also used for the flashMessenger namespace
      *
      * @return \Zend\View\Model\ViewModel
      */

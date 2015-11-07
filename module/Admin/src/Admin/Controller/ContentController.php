@@ -364,7 +364,7 @@ final class ContentController extends BaseController
     /**
      * See if file has been received and uploaded.
      *
-     * @param Http $adapter
+     * @param Http   $adapter
      * @param string $fileName
      *
      * @return array
@@ -386,7 +386,7 @@ final class ContentController extends BaseController
     /**
      * See if file name is valid and it not return alll messages.
      *
-     * @param Http $adapter
+     * @param Http   $adapter
      * @param string $fileName
      *
      * @return array

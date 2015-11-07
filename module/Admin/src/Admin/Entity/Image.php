@@ -588,7 +588,7 @@ final class Image implements ImageInterface
 
     /**
      * @param string $key
-     * @param int $value
+     * @param int    $value
      *
      * @return int
      */
@@ -607,7 +607,7 @@ final class Image implements ImageInterface
 
     /**
      * @param string $key
-     * @param array $defaultValue
+     * @param array  $defaultValue
      *
      * @return array
      */

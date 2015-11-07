@@ -40,7 +40,7 @@ final class GetUrlParams extends AbstractPlugin
     {
         $escaper = new Escaper('utf-8');
 
-        /**
+        /*
          * Return early. Usually params will come from post.
          *
          * @var mixed

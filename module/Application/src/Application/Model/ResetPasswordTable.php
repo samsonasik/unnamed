@@ -28,7 +28,7 @@ final class ResetPasswordTable implements ResetPasswordTableInterface
     private $objectRepository;
 
     /**
-     * @param ObjectManager $entityManager
+     * @param ObjectManager    $entityManager
      * @param ObjectRepository $objectRepository
      */
     public function __construct(ObjectManager $entityManager, ObjectRepository $objectRepository)

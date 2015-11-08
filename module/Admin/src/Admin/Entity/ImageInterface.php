@@ -52,6 +52,8 @@ interface ImageInterface
     /**
      * @param string $path
      * @param string $fileName
+     *
+     * @return void
      */
     public function save($path, $fileName);
 

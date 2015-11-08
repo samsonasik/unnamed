@@ -47,7 +47,7 @@ final class AbstractControllerFactory implements AbstractFactoryInterface
     public function createServiceWithName(ServiceLocatorInterface $serviceLocator, $name, $requestedName)
     {
         $serviceLocator = $serviceLocator->getServiceLocator();
-        $className = $class = $requestedName.'Controller';
+        $className = $requestedName.'Controller';
         $formInstance = str_replace('Controller', 'Form', $className);
         $entityManager = $serviceLocator->get('Doctrine\ORM\EntityManager');
         $form = $serviceLocator->get('FormElementManager')->get($formInstance);

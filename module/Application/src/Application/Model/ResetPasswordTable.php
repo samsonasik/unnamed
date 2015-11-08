@@ -18,7 +18,7 @@ use Doctrine\Common\Persistence\ObjectRepository;
 final class ResetPasswordTable implements ResetPasswordTableInterface
 {
     /*
-     * @var \Doctrine\ORM\EntityManager
+     * @var ObjectManager
      */
     private $entityManager;
 

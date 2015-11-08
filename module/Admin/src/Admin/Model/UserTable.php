@@ -67,7 +67,6 @@ final class UserTable implements UserTableInterface
         return $this->objectRepository;
     }
 
-
     /**
      * @param int $userId user id
      *

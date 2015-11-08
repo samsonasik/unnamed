@@ -67,7 +67,6 @@ final class AdminMenuTable implements AdminMenuTableInterface
         return $this->objectRepository;
     }
 
-
     /**
      * @param int $adminMenuId admin menu id
      *

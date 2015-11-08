@@ -32,7 +32,6 @@ interface AdministratorTableInterface
      */
     public function getEntityRepository();
 
-
     /**
      * @param int $adminId user id
      *

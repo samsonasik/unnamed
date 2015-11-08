@@ -10,24 +10,28 @@
  */
 namespace Admin\Form;
 
-use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Persistence\ObjectManager;
 use Zend\Form\Form;
 use Zend\InputFilter\InputFilterProviderInterface;
 
 final class AdministratorForm extends Form implements InputFilterProviderInterface
 {
     /*
-     * @var EntityManager
+     * @var ObjectManager
      */
-    private $entityManager;
+    private $objectManager;
+
+    public function __construct()
+    {
+        parent::__construct('content');
+    }
 
     /**
-     * @param EntityManager $entityManager
+     * @param ObjectManager $objectManager
      */
-    public function __construct(EntityManager $entityManager)
+    public function setObjectManager(ObjectManager $objectManager)
     {
-        parent::__construct('administrator');
-        $this->entityManager = $entityManager;
+        $this->objectManager = $objectManager;
     }
 
     public function init()
@@ -41,7 +45,7 @@ final class AdministratorForm extends Form implements InputFilterProviderInterfa
             'name'    => 'user',
             'options' => [
                 'label'          => 'Caption',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\Administrator',
                 'property'       => 'caption',
             ],

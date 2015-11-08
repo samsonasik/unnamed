@@ -12,18 +12,29 @@ namespace Application\Model;
 
 use Application\Entity\ResetPassword;
 use Application\Exception\RuntimeException;
-use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Common\Persistence\ObjectRepository;
 
-final class ResetPasswordTable
+final class ResetPasswordTable implements ResetPasswordTableInterface
 {
-    /**
+    /*
      * @var \Doctrine\ORM\EntityManager
      */
     private $entityManager;
 
-    public function __construct(EntityManager $entityManager)
+    /*
+     * @var object
+     */
+    private $objectRepository;
+
+    /**
+     * @param ObjectManager $entityManager
+     * @param ObjectRepository $objectRepository
+     */
+    public function __construct(ObjectManager $entityManager, ObjectRepository $objectRepository)
     {
         $this->entityManager = $entityManager;
+        $this->objectRepository = $objectRepository;
     }
 
     /**
@@ -35,11 +46,11 @@ final class ResetPasswordTable
     }
 
     /**
-     * @return \Doctrine\ORM\EntityRepository
+     * @return object
      */
     public function getEntityRepository()
     {
-        return $this->entityManager->getRepository('Application\\Entity\\ResetPassword');
+        return $this->objectRepository;
     }
 
     /**
@@ -50,8 +61,9 @@ final class ResetPasswordTable
      *
      * @throws \Doctrine\ORM\NoResultException
      * @throws \Doctrine\ORM\NonUniqueResultException
+     * @throws RuntimeException
      *
-     * @return ResetPassword If row is not found
+     * @return ResetPassword
      */
     public function getResetPassword($id = 0, $user = 0)
     {

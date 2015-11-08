@@ -21,10 +21,10 @@ final class ContentControllerFactory
     public function __invoke(ControllerManager $controllerManager)
     {
         $serviceLocator = $controllerManager->getServiceLocator();
-
-        $controller = new ContentController(
-            $serviceLocator->get('FormElementManager')->get('Admin\Form\ContentForm')
-        );
+        $entityManager = $serviceLocator->get('Doctrine\ORM\EntityManager');
+        $form = $serviceLocator->get('FormElementManager')->get('Admin\Form\ContentForm');
+        $form->setObjectManager($entityManager);
+        $controller = new ContentController($form);
 
         return $controller;
     }

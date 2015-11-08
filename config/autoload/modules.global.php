@@ -23,6 +23,7 @@ return [
         'abstract_factories' => [
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Admin\Service\AbstractTableFactory',
+            'Zend\Form\FormAbstractServiceFactory',
         ],
         'factories' => [
             'translator'    => 'Zend\Mvc\Service\TranslatorServiceFactory',

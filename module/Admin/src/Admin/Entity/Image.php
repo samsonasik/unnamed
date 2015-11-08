@@ -500,7 +500,7 @@ final class Image implements ImageInterface
         $format = strtolower($this->getFormat());
         $imageSaveMethod = 'image'.$format;
         $options = [$this->getImageFile(), $path.DIRECTORY_SEPARATOR.$fileName];
-        $options[] = $his->getFormatOptions();
+        $options[] = $this->getFormatOptions();
 
         if (!call_user_func_array($imageSaveMethod, $options)) {
             throw new RuntimeException('Image save has failed');
@@ -515,17 +515,11 @@ final class Image implements ImageInterface
     private function validateDir($path)
     {
         if (!is_dir($path)) {
-            throw new InvalidArgumentException(
-                "Public directory '".$path."' not found or not a directory"
-            );
+            throw new InvalidArgumentException(sprintf('Directory "%s" not found or not a directory', $path));
         } elseif (!is_writable($path)) {
-            throw new InvalidArgumentException(
-                "Public directory '".$path."' not writable"
-            );
+            throw new InvalidArgumentException(sprintf('Directory "%s" not writable', $path));
         } elseif (!is_readable($path)) {
-            throw new InvalidArgumentException(
-                "Public directory '".$path."' not readable"
-            );
+            throw new InvalidArgumentException(sprintf('Directory "%s" not readable', $path));
         }
     }
 

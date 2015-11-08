@@ -10,24 +10,28 @@
  */
 namespace Admin\Form;
 
-use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Persistence\ObjectManager;
 use Zend\Form\Form;
 use Zend\InputFilter\InputFilterProviderInterface;
 
 final class ContentForm extends Form implements InputFilterProviderInterface
 {
     /*
-     * @var EntityManager
+     * @var ObjectManager
      */
-    private $entityManager;
+    private $objectManager;
 
-    /**
-     * @param EntityManager $entityManager
-     */
-    public function __construct(EntityManager $entityManager)
+    public function __construct()
     {
         parent::__construct('content');
-        $this->entityManager = $entityManager;
+    }
+
+    /**
+     * @param ObjectManager $objectManager
+     */
+    public function setObjectManager(ObjectManager $objectManager)
+    {
+        $this->objectManager = $objectManager;
     }
 
     public function init()
@@ -44,7 +48,7 @@ final class ContentForm extends Form implements InputFilterProviderInterface
             'name'    => 'preview',
             'options' => [
                 'label'          => 'Image',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\Content',
                 'property'       => 'preview',
             ],
@@ -79,7 +83,7 @@ final class ContentForm extends Form implements InputFilterProviderInterface
             'name'    => 'title',
             'options' => [
                 'label'          => 'Title',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\Content',
                 'property'       => 'title',
             ],
@@ -98,7 +102,7 @@ final class ContentForm extends Form implements InputFilterProviderInterface
             'name'    => 'text',
             'options' => [
                 'label'          => 'Text',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\Content',
                 'property'       => 'text',
             ],
@@ -118,7 +122,7 @@ final class ContentForm extends Form implements InputFilterProviderInterface
             'type'    => 'DoctrineModule\Form\Element\ObjectSelect',
             'name'    => 'menuOrder',
             'options' => [
-                'object_manager'            => $this->entityManager,
+                'object_manager'            => $this->objectManager,
                 'disable_inarray_validator' => true,
                 'target_class'              => 'Admin\Entity\Content',
                 'property'                  => 'menuOrder',
@@ -135,7 +139,7 @@ final class ContentForm extends Form implements InputFilterProviderInterface
             'name'    => 'type',
             'options' => [
                 'label'                     => 'Type',
-                'object_manager'            => $this->entityManager,
+                'object_manager'            => $this->objectManager,
                 'disable_inarray_validator' => true,
                 'target_class'              => 'Admin\Entity\Content',
                 'property'                  => 'type',
@@ -155,7 +159,7 @@ final class ContentForm extends Form implements InputFilterProviderInterface
             'name'    => 'date',
             'options' => [
                 'label'          => 'Date',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\Content',
                 'property'       => 'date',
             ],
@@ -172,7 +176,7 @@ final class ContentForm extends Form implements InputFilterProviderInterface
             'options' => [
                 'label'                     => 'Menu',
                 'disable_inarray_validator' => true,
-                'object_manager'            => $this->entityManager,
+                'object_manager'            => $this->objectManager,
                 'target_class'              => 'Admin\Entity\Menu',
                 'property'                  => 'caption',
                 'display_empty_item'        => true,
@@ -192,7 +196,7 @@ final class ContentForm extends Form implements InputFilterProviderInterface
             'options' => [
                 'label'                     => 'Select language',
                 'disable_inarray_validator' => true,
-                'object_manager'            => $this->entityManager,
+                'object_manager'            => $this->objectManager,
                 'target_class'              => 'Admin\Entity\Language',
                 'property'                  => 'name',
                 'display_empty_item'        => true,
@@ -233,7 +237,7 @@ final class ContentForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Hidden',
             'name'    => 'id',
             'options' => [
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\Content',
                 'property'       => 'id',
             ],
@@ -245,7 +249,7 @@ final class ContentForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Hidden',
             'name'    => 'titleLink',
             'options' => [
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\Content',
                 'property'       => 'titleLink',
             ],

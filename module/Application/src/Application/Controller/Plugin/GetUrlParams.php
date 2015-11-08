@@ -67,6 +67,7 @@ final class GetUrlParams extends AbstractPlugin
      */
     private function findParam($paramName)
     {
+        $param = $this->params->fromRoute($paramName, null);
         if (!$param) {
             $param = $this->params->fromQuery($paramName, null);
         }

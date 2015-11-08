@@ -1223,3 +1223,949 @@ Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-view\src\
 #13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
 #14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
 #15 {main}
+2015-11-08T11:52:12+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T11:52:25+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T12:05:27+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T12:07:04+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T12:12:58+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T12:13:14+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T12:16:50+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T12:17:21+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T12:25:24+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T12:34:05+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:06:58+00:00 ERR (3): 
+Exception: An exception was raised while creating "Admin\Controller\Content"; no instance returned
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(283): Zend\ServiceManager\ServiceManager->createServiceViaCallback(Object(Admin\Factory\Controller\ContentControllerFactory), 'admincontroller...', 'Admin\\Controlle...')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(243): Zend\ServiceManager\AbstractPluginManager->createServiceViaCallback(Object(Admin\Factory\Controller\ContentControllerFactory), 'admincontroller...', 'Admin\\Controlle...')
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(637): Zend\ServiceManager\AbstractPluginManager->createFromFactory('admincontroller...', 'Admin\\Controlle...')
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('Admin\\Controlle...', 'admincontroller...')
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(115): Zend\ServiceManager\ServiceManager->get('Admin\\Controlle...', false)
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\ControllerManager.php(137): Zend\ServiceManager\AbstractPluginManager->get('Admin\\Controlle...', Array, false)
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(76): Zend\Mvc\Controller\ControllerManager->get('Admin\\Controlle...')
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-08T13:07:12+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:08:32+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:09:28+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:09:36+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:14:05+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:14:39+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:17:17+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:21:53+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:22:22+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:22:43+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:26:36+00:00 ERR (3): 
+Exception: Zend\Mvc\Controller\PluginManager::get was unable to fetch or create an instance for getEntityManager
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(115): Zend\ServiceManager\ServiceManager->get('getEntityManage...', true)
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\PluginManager.php(84): Zend\ServiceManager\AbstractPluginManager->get('getEntityManage...', NULL, true)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(292): Zend\Mvc\Controller\PluginManager->get('getEntityManage...', NULL)
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(307): Zend\Mvc\Controller\AbstractController->plugin('getEntityManage...')
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(55): Zend\Mvc\Controller\AbstractController->__call('getEntityManage...', Array)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(55): Admin\Controller\ContentController->getEntityManager()
+#6 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Factory\Controller\ContentControllerFactory.php(36): Admin\Controller\ContentController->__construct(Object(Admin\Form\ContentForm))
+#7 [internal function]: Admin\Factory\Controller\ContentControllerFactory->__invoke(Object(Zend\Mvc\Controller\ControllerManager), 'admincontroller...', 'Admin\\Controlle...')
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(938): call_user_func(Object(Admin\Factory\Controller\ContentControllerFactory), Object(Zend\Mvc\Controller\ControllerManager), 'admincontroller...', 'Admin\\Controlle...')
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(283): Zend\ServiceManager\ServiceManager->createServiceViaCallback(Object(Admin\Factory\Controller\ContentControllerFactory), 'admincontroller...', 'Admin\\Controlle...')
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(243): Zend\ServiceManager\AbstractPluginManager->createServiceViaCallback(Object(Admin\Factory\Controller\ContentControllerFactory), 'admincontroller...', 'Admin\\Controlle...')
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(637): Zend\ServiceManager\AbstractPluginManager->createFromFactory('admincontroller...', 'Admin\\Controlle...')
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('Admin\\Controlle...', 'admincontroller...')
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(115): Zend\ServiceManager\ServiceManager->get('Admin\\Controlle...', false)
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\ControllerManager.php(137): Zend\ServiceManager\AbstractPluginManager->get('Admin\\Controlle...', Array, false)
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(76): Zend\Mvc\Controller\ControllerManager->get('Admin\\Controlle...')
+#17 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#19 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#20 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#21 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#22 {main}
+2015-11-08T13:26:45+00:00 ERR (3): 
+Exception: Zend\Mvc\Controller\PluginManager::get was unable to fetch or create an instance for entityManager
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(115): Zend\ServiceManager\ServiceManager->get('entityManager', true)
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\PluginManager.php(84): Zend\ServiceManager\AbstractPluginManager->get('entityManager', NULL, true)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(292): Zend\Mvc\Controller\PluginManager->get('entityManager', NULL)
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(307): Zend\Mvc\Controller\AbstractController->plugin('entityManager')
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(56): Zend\Mvc\Controller\AbstractController->__call('entityManager', Array)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(56): Admin\Controller\ContentController->entityManager()
+#6 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Factory\Controller\ContentControllerFactory.php(36): Admin\Controller\ContentController->__construct(Object(Admin\Form\ContentForm))
+#7 [internal function]: Admin\Factory\Controller\ContentControllerFactory->__invoke(Object(Zend\Mvc\Controller\ControllerManager), 'admincontroller...', 'Admin\\Controlle...')
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(938): call_user_func(Object(Admin\Factory\Controller\ContentControllerFactory), Object(Zend\Mvc\Controller\ControllerManager), 'admincontroller...', 'Admin\\Controlle...')
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(283): Zend\ServiceManager\ServiceManager->createServiceViaCallback(Object(Admin\Factory\Controller\ContentControllerFactory), 'admincontroller...', 'Admin\\Controlle...')
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(243): Zend\ServiceManager\AbstractPluginManager->createServiceViaCallback(Object(Admin\Factory\Controller\ContentControllerFactory), 'admincontroller...', 'Admin\\Controlle...')
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(637): Zend\ServiceManager\AbstractPluginManager->createFromFactory('admincontroller...', 'Admin\\Controlle...')
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('Admin\\Controlle...', 'admincontroller...')
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(115): Zend\ServiceManager\ServiceManager->get('Admin\\Controlle...', false)
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\ControllerManager.php(137): Zend\ServiceManager\AbstractPluginManager->get('Admin\\Controlle...', Array, false)
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(76): Zend\Mvc\Controller\ControllerManager->get('Admin\\Controlle...')
+#17 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#19 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#20 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#21 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#22 {main}
+2015-11-08T13:26:49+00:00 ERR (3): 
+Exception: Zend\Mvc\Controller\PluginManager::get was unable to fetch or create an instance for EntityManager
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(115): Zend\ServiceManager\ServiceManager->get('EntityManager', true)
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\PluginManager.php(84): Zend\ServiceManager\AbstractPluginManager->get('EntityManager', NULL, true)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(292): Zend\Mvc\Controller\PluginManager->get('EntityManager', NULL)
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(307): Zend\Mvc\Controller\AbstractController->plugin('EntityManager')
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(57): Zend\Mvc\Controller\AbstractController->__call('EntityManager', Array)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(57): Admin\Controller\ContentController->EntityManager()
+#6 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Factory\Controller\ContentControllerFactory.php(36): Admin\Controller\ContentController->__construct(Object(Admin\Form\ContentForm))
+#7 [internal function]: Admin\Factory\Controller\ContentControllerFactory->__invoke(Object(Zend\Mvc\Controller\ControllerManager), 'admincontroller...', 'Admin\\Controlle...')
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(938): call_user_func(Object(Admin\Factory\Controller\ContentControllerFactory), Object(Zend\Mvc\Controller\ControllerManager), 'admincontroller...', 'Admin\\Controlle...')
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(283): Zend\ServiceManager\ServiceManager->createServiceViaCallback(Object(Admin\Factory\Controller\ContentControllerFactory), 'admincontroller...', 'Admin\\Controlle...')
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(243): Zend\ServiceManager\AbstractPluginManager->createServiceViaCallback(Object(Admin\Factory\Controller\ContentControllerFactory), 'admincontroller...', 'Admin\\Controlle...')
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(637): Zend\ServiceManager\AbstractPluginManager->createFromFactory('admincontroller...', 'Admin\\Controlle...')
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('Admin\\Controlle...', 'admincontroller...')
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(115): Zend\ServiceManager\ServiceManager->get('Admin\\Controlle...', false)
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\ControllerManager.php(137): Zend\ServiceManager\AbstractPluginManager->get('Admin\\Controlle...', Array, false)
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(76): Zend\Mvc\Controller\ControllerManager->get('Admin\\Controlle...')
+#17 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#19 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#20 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#21 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#22 {main}
+2015-11-08T13:29:17+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(132): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(74): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:30:07+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(132): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(74): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:31:16+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:31:43+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:32:00+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:32:12+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:33:43+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:34:01+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:34:06+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:34:15+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\MenuTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\MenuController.php(167): Admin\Model\MenuTable->getMenu(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\MenuController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\MenuController.php(55): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\MenuController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:34:32+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\MenuTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\MenuController.php(167): Admin\Model\MenuTable->getMenu(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\MenuController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\MenuController.php(55): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\MenuController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:34:39+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:37:37+00:00 ERR (3): 
+Exception: Couldn't find content
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#2 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#9 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#14 {main}
+2015-11-08T13:37:57+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:38:37+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:39:47+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(87): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:40:06+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(87): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:40:17+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(87): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:45:59+00:00 ERR (3): 
+Exception: Too few parameters: the query defines 2 parameters but you only bound 1
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\QueryException.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query.php(311): Doctrine\ORM\Query\QueryException::tooFewParameters(2, 1)
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(969): Doctrine\ORM\Query->_doExecute()
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(924): Doctrine\ORM\AbstractQuery->executeIgnoreQueryCache(NULL, NULL)
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(804): Doctrine\ORM\AbstractQuery->execute(NULL, NULL)
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(87): Doctrine\ORM\AbstractQuery->getSingleResult()
+#5 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#7 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#14 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#19 {main}
+2015-11-08T13:46:09+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(87): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-08T13:47:31+00:00 ERR (3): 
+Exception: Too many parameters: the query defines 0 parameters and you bound 2
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query\QueryException.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Query.php(309): Doctrine\ORM\Query\QueryException::tooManyParameters(0, 2)
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(969): Doctrine\ORM\Query->_doExecute()
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(924): Doctrine\ORM\AbstractQuery->executeIgnoreQueryCache(NULL, NULL)
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(804): Doctrine\ORM\AbstractQuery->execute(NULL, NULL)
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#5 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#7 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#14 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#19 {main}
+2015-11-08T13:47:42+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(127): Admin\Model\ContentTable->getContent(0, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\ContentController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\ContentController.php(69): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}

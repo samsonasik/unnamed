@@ -42,6 +42,11 @@ final class AbstractTableFactory implements AbstractFactoryInterface
      */
     public function createServiceWithName(ServiceLocatorInterface $serviceLocator, $name, $requestedName)
     {
-        return new $requestedName($serviceLocator->get('Doctrine\\ORM\\EntityManager'));
+        $entity = substr($requestedName, 0, -5);
+        $entity = str_replace('Model', 'Entity', $entity);
+        $entityManager = $serviceLocator->get('Doctrine\ORM\EntityManager');
+        $repository = $entityManager->getRepository($entity);
+
+        return new $requestedName($entityManager, $repository);
     }
 }

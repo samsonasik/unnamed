@@ -10,9 +10,9 @@
  */
 namespace Admin\Model;
 
-use Admin\Entity\Language;
+use Admin\Entity\User;
 
-interface LanguageTableInterface
+interface UserTableInterface
 {
     /**
      * @return \Doctrine\ORM\QueryBuilder
@@ -30,20 +30,24 @@ interface LanguageTableInterface
      */
     public function getEntityRepository();
 
-    /**
-     * @param int $languageId
-     */
-    public function getLanguage($languageId = 0);
 
     /**
-     * @param int $languageId
+     * @param int $userId user id
      */
-    public function deleteLanguage($languageId = 0);
+    public function getUser($userId = 0);
 
     /**
-     * Save or update language based on the provided id.
+     * This method can disable or enable user accounts.
      *
-     * @param Language $language
+     * @param int $userId user id
+     * @param int $state  0 - enabled, 1 - disabled
      */
-    public function saveLanguage(Language $language);
+    public function toggleUserState($userId = 0, $state = 0);
+
+    /**
+     * Update user based on the provided id.
+     *
+     * @param User $user
+     */
+    public function saveUser(User $user);
 }

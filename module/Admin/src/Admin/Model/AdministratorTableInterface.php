@@ -10,9 +10,9 @@
  */
 namespace Admin\Model;
 
-use Admin\Entity\Language;
+use Admin\Entity\Administrator;
 
-interface LanguageTableInterface
+interface AdministratorTableInterface
 {
     /**
      * @return \Doctrine\ORM\QueryBuilder
@@ -30,20 +30,23 @@ interface LanguageTableInterface
      */
     public function getEntityRepository();
 
-    /**
-     * @param int $languageId
-     */
-    public function getLanguage($languageId = 0);
 
     /**
-     * @param int $languageId
+     * @param int $adminId user id
      */
-    public function deleteLanguage($languageId = 0);
+    public function getAdministrator($adminId = 0);
 
     /**
-     * Save or update language based on the provided id.
+     * Delete a administrator based on the provided user id.
      *
-     * @param Language $language
+     * @param int $adminId user id
      */
-    public function saveLanguage(Language $language);
+    public function deleteAdministrator($adminId = 0);
+
+    /**
+     * Save or update administrator based on the provided id.
+     *
+     * @param Administrator $administrator
+     */
+    public function saveAdministrator(Administrator $administrator);
 }

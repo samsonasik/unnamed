@@ -10,15 +10,14 @@
  */
 namespace Admin\Model;
 
-use Admin\Entity\Language;
+use Admin\Entity\AdminMenu;
 
-interface LanguageTableInterface
+interface AdminMenuTableInterface
 {
     /**
      * @return \Doctrine\ORM\QueryBuilder
      */
     public function queryBuilder();
-
     /**
      * @param \Doctrine\ORM\Query|\Doctrine\ORM\QueryBuilder $query               A Doctrine ORM query or query builder.
      * @param bool                                           $fetchJoinCollection Whether the query joins a collection (true by default).
@@ -31,19 +30,23 @@ interface LanguageTableInterface
     public function getEntityRepository();
 
     /**
-     * @param int $languageId
-     */
-    public function getLanguage($languageId = 0);
-
-    /**
-     * @param int $languageId
-     */
-    public function deleteLanguage($languageId = 0);
-
-    /**
-     * Save or update language based on the provided id.
+     * @param int $adminMenuId admin menu id
      *
-     * @param Language $language
+     * @throws RuntimeException If admin menu is not found
      */
-    public function saveLanguage(Language $language);
+    public function getAdminMenu($adminMenuId = 0);
+
+    /**
+     * Delete a admin menu based on the provided id.
+     *
+     * @param int $adminMenuId admin menu id
+     */
+    public function deleteAdminMenu($adminMenuId = 0);
+
+    /**
+     * Save or update menu based on the provided id and language.
+     *
+     * @param AdminMenu $adminMenu
+     */
+    public function saveAdminMenu(AdminMenu $adminMenu);
 }

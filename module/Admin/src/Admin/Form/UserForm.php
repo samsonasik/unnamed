@@ -10,24 +10,28 @@
  */
 namespace Admin\Form;
 
-use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Persistence\ObjectManager;
 use Zend\Form\Form;
 use Zend\InputFilter\InputFilterProviderInterface;
 
 final class UserForm extends Form implements InputFilterProviderInterface
 {
     /*
-     * @var EntityManager
+     * @var ObjectManager
      */
-    private $entityManager;
+    private $objectManager;
 
-    /**
-     * @param EntityManager $entityManager
-     */
-    public function __construct(EntityManager $entityManager)
+    public function __construct()
     {
         parent::__construct('user');
-        $this->entityManager = $entityManager;
+    }
+
+    /**
+     * @param ObjectManager $objectManager
+     */
+    public function setObjectManager(ObjectManager $objectManager)
+    {
+        $this->objectManager = $objectManager;
     }
 
     public function init()
@@ -41,7 +45,7 @@ final class UserForm extends Form implements InputFilterProviderInterface
             'name'    => 'name',
             'options' => [
                 'label'          => 'Name',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\User',
                 'property'       => 'name',
             ],
@@ -59,7 +63,7 @@ final class UserForm extends Form implements InputFilterProviderInterface
             'name'    => 'surname',
             'options' => [
                 'label'          => 'Surname',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\User',
                 'property'       => 'surname',
             ],
@@ -76,7 +80,7 @@ final class UserForm extends Form implements InputFilterProviderInterface
             'name'    => 'email',
             'options' => [
                 'label'          => 'Email',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\User',
                 'property'       => 'email',
             ],
@@ -95,7 +99,7 @@ final class UserForm extends Form implements InputFilterProviderInterface
             'name'    => 'birthDate',
             'options' => [
                 'label'          => 'Birthdate',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\User',
                 'property'       => 'birthDate',
             ],
@@ -113,7 +117,7 @@ final class UserForm extends Form implements InputFilterProviderInterface
             'name'    => 'isDisabled',
             'options' => [
                 'label'          => 'Disabled',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\User',
                 'property'       => 'isDisabled',
             ],
@@ -126,7 +130,7 @@ final class UserForm extends Form implements InputFilterProviderInterface
             'name'    => 'hideEmail',
             'options' => [
                 'label'          => 'Hide email',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\User',
                 'property'       => 'hideEmail',
             ],
@@ -161,7 +165,7 @@ final class UserForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Hidden',
             'name'    => 'id',
             'options' => [
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\User',
                 'property'       => 'id',
             ],

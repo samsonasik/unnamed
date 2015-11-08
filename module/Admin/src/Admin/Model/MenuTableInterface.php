@@ -10,9 +10,9 @@
  */
 namespace Admin\Model;
 
-use Admin\Entity\Language;
+use Admin\Entity\Menu;
 
-interface LanguageTableInterface
+interface MenuTableInterface
 {
     /**
      * @return \Doctrine\ORM\QueryBuilder
@@ -31,19 +31,32 @@ interface LanguageTableInterface
     public function getEntityRepository();
 
     /**
-     * @param int $languageId
-     */
-    public function getLanguage($languageId = 0);
-
-    /**
-     * @param int $languageId
-     */
-    public function deleteLanguage($languageId = 0);
-
-    /**
-     * Save or update language based on the provided id.
+     * @param int $menuId   menu id
+     * @param int $language user language
      *
-     * @param Language $language
+     * @throws RuntimeException If menu is not found
      */
-    public function saveLanguage(Language $language);
+    public function getMenu($menuId = 0, $language = 1);
+
+    /**
+     * Delete a menu based on the provided id and language.
+     *
+     * @param int $menuId   menu id
+     * @param int $language user language
+     */
+    public function deleteMenu($menuId = 0, $language = 1);
+
+    /**
+     * @param Menu $menu
+     */
+    public function saveMenu(Menu $menu);
+
+    /**
+     * This method can disable or enable menus.
+     *
+     * @param int $menuId   menu id
+     * @param int $language user language
+     * @param int $state    0 - deactivated, 1 - active
+     */
+    public function toggleActiveMenu($menuId = 0, $language = 1, $state = 0);
 }

@@ -21,10 +21,10 @@ final class LanguageControllerFactory
     public function __invoke(ControllerManager $controllerManager)
     {
         $serviceLocator = $controllerManager->getServiceLocator();
-
-        $controller = new LanguageController(
-            $serviceLocator->get('FormElementManager')->get('Admin\Form\LanguageForm')
-        );
+        $entityManager = $serviceLocator->get('Doctrine\ORM\EntityManager');
+        $form = $serviceLocator->get('FormElementManager')->get('Admin\Form\LanguageForm');
+        $form->setObjectManager($entityManager);
+        $controller = new LanguageController($form);
 
         return $controller;
     }

@@ -21,10 +21,10 @@ final class AdministratorControllerFactory
     public function __invoke(ControllerManager $controllerManager)
     {
         $serviceLocator = $controllerManager->getServiceLocator();
-
-        $controller = new AdministratorController(
-            $serviceLocator->get('FormElementManager')->get('Admin\Form\AdministratorForm')
-        );
+        $entityManager = $serviceLocator->get('Doctrine\ORM\EntityManager');
+        $form = $serviceLocator->get('FormElementManager')->get('Admin\Form\AdministratorForm');
+        $form->setObjectManager($entityManager);
+        $controller = new AdministratorController($form);
 
         return $controller;
     }

@@ -21,10 +21,10 @@ final class UserControllerFactory
     public function __invoke(ControllerManager $controllerManager)
     {
         $serviceLocator = $controllerManager->getServiceLocator();
-
-        $controller = new UserController(
-            $serviceLocator->get('FormElementManager')->get('Admin\Form\UserForm')
-        );
+        $entityManager = $serviceLocator->get('Doctrine\ORM\EntityManager');
+        $form = $serviceLocator->get('FormElementManager')->get('Admin\Form\UserForm');
+        $form->setObjectManager($entityManager);
+        $controller = new UserController($form);
 
         return $controller;
     }

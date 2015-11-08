@@ -64,12 +64,6 @@ return [
     ],
     'form_elements' => [
         'factories' => [
-            'Admin\Form\LanguageForm'             => Factory\Form\LanguageFormFactory::class,
-            'Admin\Form\UserForm'                 => Factory\Form\UserFormFactory::class,
-            'Admin\Form\AdministratorForm'        => Factory\Form\AdministratorFormFactory::class,
-            'Admin\Form\ContentForm'              => Factory\Form\ContentFormFactory::class,
-            'Admin\Form\MenuForm'                 => Factory\Form\MenuFormFactory::class,
-            'Admin\Form\AdminMenuForm'            => Factory\Form\AdminMenuFormFactory::class,
             'Admin\Form\SettingsMailForm'         => Factory\Form\SettingsMailFormFactory::class,
             'Admin\Form\SettingsPostsForm'        => Factory\Form\SettingsPostsFormFactory::class,
             'Admin\Form\SettingsGeneralForm'      => Factory\Form\SettingsGeneralFormFactory::class,

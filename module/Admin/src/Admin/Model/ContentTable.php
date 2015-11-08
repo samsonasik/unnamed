@@ -12,21 +12,32 @@ namespace Admin\Model;
 
 use Admin\Entity\Content;
 use Admin\Exception\RuntimeException;
-use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Common\Persistence\ObjectRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as PaginatorAdapter;
 use Zend\Paginator\Paginator as ZendPaginator;
 
-final class ContentTable
+final class ContentTable implements ContentTableInterface
 {
-    /**
+    /*
      * @var \Doctrine\ORM\EntityManager
      */
     private $entityManager;
 
-    public function __construct(EntityManager $entityManager)
+    /*
+     * @var object
+     */
+    private $objectRepository;
+
+    /**
+     * @param ObjectManager $entityManager
+     * @param ObjectRepository $objectRepository
+     */
+    public function __construct(ObjectManager $entityManager, ObjectRepository $objectRepository)
     {
         $this->entityManager = $entityManager;
+        $this->objectRepository = $objectRepository;
     }
 
     /**
@@ -49,11 +60,11 @@ final class ContentTable
     }
 
     /**
-     * @return \Doctrine\ORM\EntityRepository
+     * @return object
      */
     public function getEntityRepository()
     {
-        return $this->entityManager->getRepository('Admin\\Entity\\User');
+        return $this->objectRepository;
     }
 
     /**

@@ -21,10 +21,10 @@ final class MenuControllerFactory
     public function __invoke(ControllerManager $controllerManager)
     {
         $serviceLocator = $controllerManager->getServiceLocator();
-
-        $controller = new MenuController(
-            $serviceLocator->get('FormElementManager')->get('Admin\Form\MenuForm')
-        );
+        $entityManager = $serviceLocator->get('Doctrine\ORM\EntityManager');
+        $form = $serviceLocator->get('FormElementManager')->get('Admin\Form\MenuForm');
+        $form->setObjectManager($entityManager);
+        $controller = new MenuController($form);
 
         return $controller;
     }

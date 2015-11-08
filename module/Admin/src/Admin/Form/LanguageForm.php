@@ -10,24 +10,28 @@
  */
 namespace Admin\Form;
 
-use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Persistence\ObjectManager;
 use Zend\Form\Form;
 use Zend\InputFilter\InputFilterProviderInterface;
 
 final class LanguageForm extends Form implements InputFilterProviderInterface
 {
     /*
-     * @var EntityManager
+     * @var ObjectManager
      */
-    private $entityManager;
+    private $objectManager;
 
-    /**
-     * @param EntityManager $entityManager
-     */
-    public function __construct(EntityManager $entityManager)
+    public function __construct()
     {
         parent::__construct('language');
-        $this->entityManager = $entityManager;
+    }
+
+    /**
+     * @param ObjectManager $objectManager
+     */
+    public function setObjectManager(ObjectManager $objectManager)
+    {
+        $this->objectManager = $objectManager;
     }
 
     public function init()
@@ -41,7 +45,7 @@ final class LanguageForm extends Form implements InputFilterProviderInterface
             'name'    => 'name',
             'options' => [
                 'label'          => 'Name',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\Language',
                 'property'       => 'name',
             ],
@@ -59,7 +63,7 @@ final class LanguageForm extends Form implements InputFilterProviderInterface
             'name'    => 'active',
             'options' => [
                 'label'          => 'Active',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\Language',
                 'property'       => 'active',
             ],
@@ -94,7 +98,7 @@ final class LanguageForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Hidden',
             'name'    => 'id',
             'options' => [
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\Language',
                 'property'       => 'id',
             ],

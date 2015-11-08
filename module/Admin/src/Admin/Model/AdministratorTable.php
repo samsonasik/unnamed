@@ -12,24 +12,32 @@ namespace Admin\Model;
 
 use Admin\Entity\Administrator;
 use Admin\Exception\RuntimeException;
-use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Common\Persistence\ObjectRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as PaginatorAdapter;
 use Zend\Paginator\Paginator as ZendPaginator;
 
-final class AdministratorTable
+final class AdministratorTable implements AdministratorTableInterface
 {
-    /**
-     * @var EntityManager
+    /*
+     * @var \Doctrine\ORM\EntityManager
      */
     private $entityManager;
 
-    /**
-     * @param EntityManager $entityManager
+    /*
+     * @var object
      */
-    public function __construct(EntityManager $entityManager)
+    private $objectRepository;
+
+    /**
+     * @param ObjectManager $entityManager
+     * @param ObjectRepository $objectRepository
+     */
+    public function __construct(ObjectManager $entityManager, ObjectRepository $objectRepository)
     {
         $this->entityManager = $entityManager;
+        $this->objectRepository = $objectRepository;
     }
 
     /**
@@ -52,11 +60,11 @@ final class AdministratorTable
     }
 
     /**
-     * @return \Doctrine\ORM\EntityRepository
+     * @return object
      */
     public function getEntityRepository()
     {
-        return $this->entityManager->getRepository('Admin\\Entity\\Administrator');
+        return $this->objectRepository;
     }
 
     /**

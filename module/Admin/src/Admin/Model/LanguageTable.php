@@ -12,24 +12,32 @@ namespace Admin\Model;
 
 use Admin\Entity\Language;
 use Admin\Exception\RuntimeException;
-use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Common\Persistence\ObjectRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as PaginatorAdapter;
 use Zend\Paginator\Paginator as ZendPaginator;
 
 class LanguageTable implements LanguageTableInterface
 {
-    /**
-     * @var EntityManager
+    /*
+     * @var \Doctrine\ORM\EntityManager
      */
     private $entityManager;
 
-    /**
-     * @param EntityManager $entityManager
+    /*
+     * @var object
      */
-    public function __construct(EntityManager $entityManager)
+    private $objectRepository;
+
+    /**
+     * @param ObjectManager $entityManager
+     * @param ObjectRepository $objectRepository
+     */
+    public function __construct(ObjectManager $entityManager, ObjectRepository $objectRepository)
     {
         $this->entityManager = $entityManager;
+        $this->objectRepository = $objectRepository;
     }
 
     /**
@@ -41,8 +49,8 @@ class LanguageTable implements LanguageTableInterface
     }
 
     /**
-     * @param \Doctrine\ORM\QueryBuilder $query               A Doctrine ORM query or query builder.
-     * @param bool                       $fetchJoinCollection Whether the query joins a collection (true by default).
+     * @param \Doctrine\ORM\Query|\Doctrine\ORM\QueryBuilder $query               A Doctrine ORM query or query builder.
+     * @param bool                                           $fetchJoinCollection Whether the query joins a collection (true by default).
      *
      * @return ZendPaginator
      */
@@ -52,12 +60,13 @@ class LanguageTable implements LanguageTableInterface
     }
 
     /**
-     * @return \Doctrine\ORM\EntityRepository
+     * @return object
      */
     public function getEntityRepository()
     {
-        return $this->entityManager->getRepository('Admin\\Entity\\Language');
+        return $this->objectRepository;
     }
+
 
     /**
      * @param int $languageId

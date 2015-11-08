@@ -10,24 +10,28 @@
  */
 namespace Admin\Form;
 
-use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Persistence\ObjectManager;
 use Zend\Form\Form;
 use Zend\InputFilter\InputFilterProviderInterface;
 
 final class MenuForm extends Form implements InputFilterProviderInterface
 {
     /*
-     * @var EntityManager
+     * @var ObjectManager
      */
-    private $entityManager;
+    private $objectManager;
 
-    /**
-     * @param EntityManager $entityManager
-     */
-    public function __construct(EntityManager $entityManager)
+    public function __construct()
     {
         parent::__construct('menu');
-        $this->entityManager = $entityManager;
+    }
+
+    /**
+     * @param ObjectManager $objectManager
+     */
+    public function setObjectManager(ObjectManager $objectManager)
+    {
+        $this->objectManager = $objectManager;
     }
 
     public function init()
@@ -46,7 +50,7 @@ final class MenuForm extends Form implements InputFilterProviderInterface
             ],
             'options' => [
                 'label'          => 'Caption',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\Menu',
                 'property'       => 'caption',
             ],
@@ -60,7 +64,7 @@ final class MenuForm extends Form implements InputFilterProviderInterface
             'type'    => 'DoctrineModule\Form\Element\ObjectSelect',
             'name'    => 'menuOrder',
             'options' => [
-                'object_manager'            => $this->entityManager,
+                'object_manager'            => $this->objectManager,
                 'disable_inarray_validator' => true,
                 'target_class'              => 'Admin\Entity\Menu',
                 'property'                  => 'menuOrder',
@@ -75,7 +79,7 @@ final class MenuForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Text',
             'name'    => 'keywords',
             'options' => [
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\Menu',
                 'property'       => 'keywords',
                 'label'          => 'Keywords',
@@ -90,7 +94,7 @@ final class MenuForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Text',
             'name'    => 'description',
             'options' => [
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\Menu',
                 'property'       => 'description',
                 'label'          => 'Description',
@@ -106,7 +110,7 @@ final class MenuForm extends Form implements InputFilterProviderInterface
             'name'    => 'language',
             'options' => [
                 'label'          => 'Language',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\Menu',
                 'property'       => 'language',
             ],
@@ -122,7 +126,7 @@ final class MenuForm extends Form implements InputFilterProviderInterface
             'options' => [
                 'label'                     => 'Parent menu',
                 'disable_inarray_validator' => true,
-                'object_manager'            => $this->entityManager,
+                'object_manager'            => $this->objectManager,
                 'target_class'              => 'Admin\Entity\Menu',
                 'property'                  => 'caption',
                 'display_empty_item'        => true,
@@ -143,7 +147,7 @@ final class MenuForm extends Form implements InputFilterProviderInterface
             'type'    => 'DoctrineModule\Form\Element\ObjectSelect',
             'name'    => 'menutype',
             'options' => [
-                'object_manager'            => $this->entityManager,
+                'object_manager'            => $this->objectManager,
                 'disable_inarray_validator' => true,
                 'target_class'              => 'Admin\Entity\Menu',
                 'property'                  => 'menutype',
@@ -158,7 +162,7 @@ final class MenuForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Text',
             'name'    => 'class',
             'options' => [
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\Menu',
                 'property'       => 'class',
                 'label'          => 'CSS class',
@@ -180,7 +184,7 @@ final class MenuForm extends Form implements InputFilterProviderInterface
             'type'    => 'DoctrineModule\Form\Element\ObjectSelect',
             'name'    => 'footercolumn',
             'options' => [
-                'object_manager'     => $this->entityManager,
+                'object_manager'     => $this->objectManager,
                 'target_class'       => 'Admin\Entity\Menu',
                 'property'           => 'footercolumn',
                 'display_empty_item' => true,
@@ -215,7 +219,7 @@ final class MenuForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Hidden',
             'name'    => 'id',
             'options' => [
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\Menu',
                 'property'       => 'id',
             ],
@@ -228,7 +232,7 @@ final class MenuForm extends Form implements InputFilterProviderInterface
                 'id' => 'menulink',
             ],
             'options' => [
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\Menu',
                 'property'       => 'menulink',
             ],

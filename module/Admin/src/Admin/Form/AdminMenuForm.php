@@ -10,24 +10,28 @@
  */
 namespace Admin\Form;
 
-use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Persistence\ObjectManager;
 use Zend\Form\Form;
 use Zend\InputFilter\InputFilterProviderInterface;
 
 final class AdminMenuForm extends Form implements InputFilterProviderInterface
 {
     /*
-     * @var EntityManager
+     * @var ObjectManager
      */
-    private $entityManager;
+    private $objectManager;
 
-    /**
-     * @param EntityManager $entityManager
-     */
-    public function __construct(EntityManager $entityManager)
+    public function __construct()
     {
         parent::__construct('admin-menu');
-        $this->entityManager = $entityManager;
+    }
+
+    /**
+     * @param ObjectManager $objectManager
+     */
+    public function setObjectManager(ObjectManager $objectManager)
+    {
+        $this->objectManager = $objectManager;
     }
 
     public function init()
@@ -40,7 +44,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
             'name'    => 'caption',
             'options' => [
                 'label'          => 'Caption',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\AdminMenu',
                 'property'       => 'caption',
             ],
@@ -60,7 +64,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
             'type'    => 'DoctrineModule\Form\Element\ObjectSelect',
             'name'    => 'menuOrder',
             'options' => [
-                'object_manager'            => $this->entityManager,
+                'object_manager'            => $this->objectManager,
                 'disable_inarray_validator' => true,
                 'target_class'              => 'Admin\Entity\AdminMenu',
                 'property'                  => 'menuOrder',
@@ -76,7 +80,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
             'name'    => 'controller',
             'options' => [
                 'label'          => 'Controller',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\AdminMenu',
                 'property'       => 'controller',
             ],
@@ -92,7 +96,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
             'name'    => 'class',
             'options' => [
                 'label'          => 'CSS class',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\AdminMenu',
                 'property'       => 'class',
             ],
@@ -108,7 +112,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
             'name'    => 'action',
             'options' => [
                 'label'          => 'Action',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\AdminMenu',
                 'property'       => 'action',
             ],
@@ -124,7 +128,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
             'name'    => 'description',
             'options' => [
                 'label'          => 'Description',
-                'object_manager' => $this->entityManager,
+                'object_manager' => $this->objectManager,
                 'target_class'   => 'Admin\Entity\AdminMenu',
                 'property'       => 'caption',
             ],
@@ -141,7 +145,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
             'options' => [
                 'label'                     => 'Parent admin menu',
                 'disable_inarray_validator' => true,
-                'object_manager'            => $this->entityManager,
+                'object_manager'            => $this->objectManager,
                 'target_class'              => 'Admin\Entity\AdminMenu',
                 'property'                  => 'caption',
                 'display_empty_item'        => true,

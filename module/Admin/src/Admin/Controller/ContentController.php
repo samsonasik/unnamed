@@ -80,7 +80,7 @@ final class ContentController extends BaseController
 
         $table = $this->contentTable;
 
-        if ((int) $this->getParam('id', 0) === 1) {
+        if ((int) $this->getParam('id') === 1) {
             $query = $table->queryBuilder()->select(['c'])
                     ->from('Admin\Entity\Content', 'c')
                     ->where('c.type = 1 AND c.language = :language')
@@ -124,7 +124,7 @@ final class ContentController extends BaseController
         $this->acceptableviewmodelselector($this->acceptCriteria);
 
         $this->getView()->setTemplate('admin/content/edit');
-        $content = $this->contentTable->getContent((int) $this->getParam('id', 0), $this->language());
+        $content = $this->contentTable->getContent((int) $this->getParam('id'), $this->language());
         $this->getView()->setVariable('content', $content);
         $this->addBreadcrumb(['reference' => '/admin/content/edit/'.$content->getId().'', 'name' => $this->translate('EDIT_CONTENT').' &laquo;'.$content->getTitle().'&raquo;']);
         $this->initForm($content);
@@ -137,7 +137,7 @@ final class ContentController extends BaseController
      */
     protected function deleteAction()
     {
-        $this->contentTable->deleteContent((int) $this->getParam('id', 0), $this->language());
+        $this->contentTable->deleteContent((int) $this->getParam('id'), $this->language());
         $this->setLayoutMessages($this->translate('DELETE_CONTENT_SUCCESS'), 'success');
     }
 
@@ -149,7 +149,7 @@ final class ContentController extends BaseController
     protected function detailAction()
     {
         $this->getView()->setTemplate('admin/content/detail');
-        $content = $this->contentTable->getContent((int) $this->getParam('id', 0), $this->language());
+        $content = $this->contentTable->getContent((int) $this->getParam('id'), $this->language());
         $this->getView()->setVariable('content', $content);
         $this->addBreadcrumb(['reference' => '/admin/content/detail/'.$content->getId().'', 'name' => '&laquo;'.$content->getTitle().'&raquo; '.$this->translate('DETAILS')]);
 
@@ -158,13 +158,13 @@ final class ContentController extends BaseController
 
     protected function deactivateAction()
     {
-        $this->contentTable->toggleActiveContent((int) $this->getParam('id', 0), $this->language(), 0);
+        $this->contentTable->toggleActiveContent((int) $this->getParam('id'), $this->language(), 0);
         $this->setLayoutMessages($this->translate('CONTENT_DISABLE_SUCCESS'), 'success');
     }
 
     protected function activateAction()
     {
-        $this->contentTable->toggleActiveContent((int) $this->getParam('id', 0), $this->language(), 1);
+        $this->contentTable->toggleActiveContent((int) $this->getParam('id'), $this->language(), 1);
         $this->setLayoutMessages($this->translate('CONTENT_ENABLE_SUCCESS'), 'success');
     }
 

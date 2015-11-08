@@ -21,9 +21,9 @@ use Zend\Paginator\Paginator as ZendPaginator;
 final class MenuTable implements MenuTableInterface
 {
     /*
-     * @var \Doctrine\ORM\EntityManager
+     * @var ObjectManager
      */
-    private $entityManager;
+    private $objectManager;
 
     /*
      * @var object
@@ -31,12 +31,12 @@ final class MenuTable implements MenuTableInterface
     private $objectRepository;
 
     /**
-     * @param ObjectManager $entityManager
+     * @param ObjectManager    $objectManager
      * @param ObjectRepository $objectRepository
      */
-    public function __construct(ObjectManager $entityManager, ObjectRepository $objectRepository)
+    public function __construct(ObjectManager $objectManager, ObjectRepository $objectRepository)
     {
-        $this->entityManager = $entityManager;
+        $this->objectManager = $objectManager;
         $this->objectRepository = $objectRepository;
     }
 
@@ -45,7 +45,7 @@ final class MenuTable implements MenuTableInterface
      */
     public function queryBuilder()
     {
-        return $this->entityManager->createQueryBuilder();
+        return $this->objectManager->createQueryBuilder();
     }
 
     /**
@@ -102,8 +102,8 @@ final class MenuTable implements MenuTableInterface
     {
         $menu = $this->getMenu($menuId, $language);
         if ($menu) {
-            $this->entityManager->remove($menu);
-            $this->entityManager->flush();
+            $this->objectManager->remove($menu);
+            $this->objectManager->flush();
         }
     }
 
@@ -114,8 +114,8 @@ final class MenuTable implements MenuTableInterface
      */
     public function saveMenu(Menu $menu)
     {
-        $this->entityManager->persist($menu);
-        $this->entityManager->flush();
+        $this->objectManager->persist($menu);
+        $this->objectManager->flush();
 
         return $menu;
     }

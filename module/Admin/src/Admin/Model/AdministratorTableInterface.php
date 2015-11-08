@@ -22,6 +22,8 @@ interface AdministratorTableInterface
     /**
      * @param \Doctrine\ORM\Query|\Doctrine\ORM\QueryBuilder $query               A Doctrine ORM query or query builder.
      * @param bool                                           $fetchJoinCollection Whether the query joins a collection (true by default).
+     *
+     * @return ZendPaginator
      */
     public function preparePagination($query, $fetchJoinCollection = true);
 
@@ -33,6 +35,8 @@ interface AdministratorTableInterface
 
     /**
      * @param int $adminId user id
+     *
+     * @return Administrator
      */
     public function getAdministrator($adminId = 0);
 
@@ -47,6 +51,8 @@ interface AdministratorTableInterface
      * Save or update administrator based on the provided id.
      *
      * @param Administrator $administrator
+     *
+     * @return Administrator
      */
     public function saveAdministrator(Administrator $administrator);
 }

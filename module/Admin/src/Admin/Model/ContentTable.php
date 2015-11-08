@@ -21,9 +21,9 @@ use Zend\Paginator\Paginator as ZendPaginator;
 final class ContentTable implements ContentTableInterface
 {
     /*
-     * @var \Doctrine\ORM\EntityManager
+     * @var ObjectManager
      */
-    private $entityManager;
+    private $objectManager;
 
     /*
      * @var object
@@ -31,12 +31,12 @@ final class ContentTable implements ContentTableInterface
     private $objectRepository;
 
     /**
-     * @param ObjectManager $entityManager
+     * @param ObjectManager    $objectManager
      * @param ObjectRepository $objectRepository
      */
-    public function __construct(ObjectManager $entityManager, ObjectRepository $objectRepository)
+    public function __construct(ObjectManager $objectManager, ObjectRepository $objectRepository)
     {
-        $this->entityManager = $entityManager;
+        $this->objectManager = $objectManager;
         $this->objectRepository = $objectRepository;
     }
 
@@ -45,7 +45,7 @@ final class ContentTable implements ContentTableInterface
      */
     public function queryBuilder()
     {
-        return $this->entityManager->createQueryBuilder();
+        return $this->objectManager->createQueryBuilder();
     }
 
     /**
@@ -102,8 +102,8 @@ final class ContentTable implements ContentTableInterface
     {
         $content = $this->getContent($contentId, $language);
         if ($content) {
-            $this->entityManager->remove($content);
-            $this->entityManager->flush();
+            $this->objectManager->remove($content);
+            $this->objectManager->flush();
         }
     }
 
@@ -116,8 +116,8 @@ final class ContentTable implements ContentTableInterface
      */
     public function saveContent(Content $content)
     {
-        $this->entityManager->persist($content);
-        $this->entityManager->flush();
+        $this->objectManager->persist($content);
+        $this->objectManager->flush();
 
         return $content;
     }

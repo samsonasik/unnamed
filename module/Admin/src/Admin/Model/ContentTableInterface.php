@@ -22,6 +22,8 @@ interface ContentTableInterface
     /**
      * @param \Doctrine\ORM\Query|\Doctrine\ORM\QueryBuilder $query               A Doctrine ORM query or query builder.
      * @param bool                                           $fetchJoinCollection Whether the query joins a collection (true by default).
+     *
+     * @return ZendPaginator
      */
     public function preparePagination($query, $fetchJoinCollection = true);
 
@@ -35,6 +37,8 @@ interface ContentTableInterface
      * @param int $language  user language
      *
      * @throws RuntimeException If content is not found
+     *
+     * @return Content
      */
     public function getContent($contentId = 0, $language = 1);
 
@@ -50,6 +54,8 @@ interface ContentTableInterface
      * Save or update content based on the provided id and language.
      *
      * @param Content $content
+     *
+     * @return Content
      */
     public function saveContent(Content $content);
 

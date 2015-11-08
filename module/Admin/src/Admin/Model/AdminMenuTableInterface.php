@@ -18,9 +18,12 @@ interface AdminMenuTableInterface
      * @return \Doctrine\ORM\QueryBuilder
      */
     public function queryBuilder();
+
     /**
      * @param \Doctrine\ORM\Query|\Doctrine\ORM\QueryBuilder $query               A Doctrine ORM query or query builder.
      * @param bool                                           $fetchJoinCollection Whether the query joins a collection (true by default).
+     *
+     * @return ZendPaginator
      */
     public function preparePagination($query, $fetchJoinCollection = true);
 
@@ -33,6 +36,8 @@ interface AdminMenuTableInterface
      * @param int $adminMenuId admin menu id
      *
      * @throws RuntimeException If admin menu is not found
+     *
+     * @return AdminMenu
      */
     public function getAdminMenu($adminMenuId = 0);
 
@@ -47,6 +52,8 @@ interface AdminMenuTableInterface
      * Save or update menu based on the provided id and language.
      *
      * @param AdminMenu $adminMenu
+     *
+     * @return AdminMenu
      */
     public function saveAdminMenu(AdminMenu $adminMenu);
 }

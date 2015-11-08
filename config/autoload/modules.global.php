@@ -31,6 +31,11 @@ return [
             'initSession'   => 'Application\Factory\SessionFactory',
         ],
     ],
+    'controllers' => [
+        'abstract_factories' => [
+            'Admin\Service\AbstractControllerFactory',
+        ],
+    ],
     'controller_plugins' => [
         'factories' => [
             'translate'         => 'Application\Controller\Plugin\Factory\TranslateFactory',

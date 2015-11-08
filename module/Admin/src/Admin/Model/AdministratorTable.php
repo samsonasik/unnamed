@@ -21,9 +21,9 @@ use Zend\Paginator\Paginator as ZendPaginator;
 final class AdministratorTable implements AdministratorTableInterface
 {
     /*
-     * @var \Doctrine\ORM\EntityManager
+     * @var ObjectManager
      */
-    private $entityManager;
+    private $objectManager;
 
     /*
      * @var object
@@ -31,12 +31,12 @@ final class AdministratorTable implements AdministratorTableInterface
     private $objectRepository;
 
     /**
-     * @param ObjectManager $entityManager
+     * @param ObjectManager    $objectManager
      * @param ObjectRepository $objectRepository
      */
-    public function __construct(ObjectManager $entityManager, ObjectRepository $objectRepository)
+    public function __construct(ObjectManager $objectManager, ObjectRepository $objectRepository)
     {
-        $this->entityManager = $entityManager;
+        $this->objectManager = $objectManager;
         $this->objectRepository = $objectRepository;
     }
 
@@ -45,7 +45,7 @@ final class AdministratorTable implements AdministratorTableInterface
      */
     public function queryBuilder()
     {
-        return $this->entityManager->createQueryBuilder();
+        return $this->objectManager->createQueryBuilder();
     }
 
     /**
@@ -93,8 +93,8 @@ final class AdministratorTable implements AdministratorTableInterface
         $administrator = $this->getAdministrator($adminId);
 
         if ($administrator) {
-            $this->entityManager->remove($administrator[0]);
-            $this->entityManager->flush();
+            $this->objectManager->remove($administrator[0]);
+            $this->objectManager->flush();
         }
     }
 
@@ -107,8 +107,8 @@ final class AdministratorTable implements AdministratorTableInterface
      */
     public function saveAdministrator(Administrator $administrator)
     {
-        $this->entityManager->persist($administrator);
-        $this->entityManager->flush();
+        $this->objectManager->persist($administrator);
+        $this->objectManager->flush();
 
         return $administrator;
     }

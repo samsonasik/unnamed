@@ -22,6 +22,8 @@ interface MenuTableInterface
     /**
      * @param \Doctrine\ORM\Query|\Doctrine\ORM\QueryBuilder $query               A Doctrine ORM query or query builder.
      * @param bool                                           $fetchJoinCollection Whether the query joins a collection (true by default).
+     *
+     * @return ZendPaginator
      */
     public function preparePagination($query, $fetchJoinCollection = true);
 
@@ -35,6 +37,8 @@ interface MenuTableInterface
      * @param int $language user language
      *
      * @throws RuntimeException If menu is not found
+     *
+     * @return Menu
      */
     public function getMenu($menuId = 0, $language = 1);
 
@@ -48,6 +52,8 @@ interface MenuTableInterface
 
     /**
      * @param Menu $menu
+     *
+     * @return Menu
      */
     public function saveMenu(Menu $menu);
 

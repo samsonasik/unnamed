@@ -22,6 +22,8 @@ interface LanguageTableInterface
     /**
      * @param \Doctrine\ORM\Query|\Doctrine\ORM\QueryBuilder $query               A Doctrine ORM query or query builder.
      * @param bool                                           $fetchJoinCollection Whether the query joins a collection (true by default).
+     *
+     * @return ZendPaginator
      */
     public function preparePagination($query, $fetchJoinCollection = true);
 
@@ -32,6 +34,8 @@ interface LanguageTableInterface
 
     /**
      * @param int $languageId
+     *
+     * @return Language
      */
     public function getLanguage($languageId = 0);
 
@@ -44,6 +48,8 @@ interface LanguageTableInterface
      * Save or update language based on the provided id.
      *
      * @param Language $language
+     *
+     * @return Language
      */
     public function saveLanguage(Language $language);
 }

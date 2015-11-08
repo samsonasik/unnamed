@@ -412,6 +412,8 @@ final class Image implements ImageInterface
      * See if we can create WEBP images.
      *
      * @throws BadMethodCallException on missing support
+     *
+     * @return resource
      */
     private function imageCreateFromWebp()
     {

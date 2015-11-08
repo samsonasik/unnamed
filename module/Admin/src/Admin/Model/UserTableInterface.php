@@ -22,6 +22,8 @@ interface UserTableInterface
     /**
      * @param \Doctrine\ORM\Query|\Doctrine\ORM\QueryBuilder $query               A Doctrine ORM query or query builder.
      * @param bool                                           $fetchJoinCollection Whether the query joins a collection (true by default).
+     *
+     * @return ZendPaginator
      */
     public function preparePagination($query, $fetchJoinCollection = true);
 
@@ -30,9 +32,10 @@ interface UserTableInterface
      */
     public function getEntityRepository();
 
-
     /**
      * @param int $userId user id
+     *
+     * @return User
      */
     public function getUser($userId = 0);
 
@@ -48,6 +51,8 @@ interface UserTableInterface
      * Update user based on the provided id.
      *
      * @param User $user
+     *
+     * @return User
      */
     public function saveUser(User $user);
 }

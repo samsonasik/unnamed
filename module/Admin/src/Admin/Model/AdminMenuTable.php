@@ -21,9 +21,9 @@ use Zend\Paginator\Paginator as ZendPaginator;
 final class AdminMenuTable implements AdminMenuTableInterface
 {
     /*
-     * @var \Doctrine\ORM\EntityManager
+     * @var ObjectManager
      */
-    private $entityManager;
+    private $objectManager;
 
     /*
      * @var object
@@ -31,12 +31,12 @@ final class AdminMenuTable implements AdminMenuTableInterface
     private $objectRepository;
 
     /**
-     * @param ObjectManager $entityManager
+     * @param ObjectManager    $objectManager
      * @param ObjectRepository $objectRepository
      */
-    public function __construct(ObjectManager $entityManager, ObjectRepository $objectRepository)
+    public function __construct(ObjectManager $objectManager, ObjectRepository $objectRepository)
     {
-        $this->entityManager = $entityManager;
+        $this->objectManager = $objectManager;
         $this->objectRepository = $objectRepository;
     }
 
@@ -45,7 +45,7 @@ final class AdminMenuTable implements AdminMenuTableInterface
      */
     public function queryBuilder()
     {
-        return $this->entityManager->createQueryBuilder();
+        return $this->objectManager->createQueryBuilder();
     }
 
     /**
@@ -96,8 +96,8 @@ final class AdminMenuTable implements AdminMenuTableInterface
         $adminMenu = $this->getAdminMenu($adminMenuId);
 
         if ($adminMenu) {
-            $this->entityManager->remove($adminMenu);
-            $this->entityManager->flush();
+            $this->objectManager->remove($adminMenu);
+            $this->objectManager->flush();
         }
     }
 
@@ -110,8 +110,8 @@ final class AdminMenuTable implements AdminMenuTableInterface
      */
     public function saveAdminMenu(AdminMenu $adminMenu)
     {
-        $this->entityManager->persist($adminMenu);
-        $this->entityManager->flush();
+        $this->objectManager->persist($adminMenu);
+        $this->objectManager->flush();
 
         return $adminMenu;
     }

@@ -1,5 +1,14 @@
 # CHANGELOG #
 DD.MM.YYYY
+## 0.0.22 (9.11.2015) - Stable Alpha ##
+- A lot of code style fixes - ~500
+- Moved forms to Zend\Form]AbstractFormactory
+- Replaced EntityManager with ObjectManager
+- Added interfaces for each model table
+- Refactored login controller
+- Added NewPassword, ResetPassword classes
+
+DD.MM.YYYY
 ## 0.0.21 (2.11.2015) - Stable Alpha ##
 - Migrated to DoctrineORM
 - Fixed AbstractTableFactory

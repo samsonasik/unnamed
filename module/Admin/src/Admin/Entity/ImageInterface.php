@@ -14,6 +14,8 @@ interface ImageInterface
 {
     /**
      * Get all options set.
+     *
+     * @return array
      */
     public function getOptions();
 
@@ -25,11 +27,15 @@ interface ImageInterface
      * Returns null for unfound options
      *
      * @param string $option
+     *
+     * @return mixed
      */
     public function getOption($option);
 
     /**
      * The function will return false for invalid images.
+     *
+     * @return array|false
      */
     public function getImageInfo();
 
@@ -38,6 +44,8 @@ interface ImageInterface
      *
      * @param int $width
      * @param int $height
+     *
+     * @return self
      */
     public function resize($width = 1, $height = 1);
 
@@ -51,6 +59,8 @@ interface ImageInterface
      * Opens an existing image from $path.
      *
      * @param string $path
+     *
+     * @return self
      */
     public function open($path);
 }

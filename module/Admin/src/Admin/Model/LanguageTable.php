@@ -21,9 +21,9 @@ use Zend\Paginator\Paginator as ZendPaginator;
 class LanguageTable implements LanguageTableInterface
 {
     /*
-     * @var \Doctrine\ORM\EntityManager
+     * @var ObjectManager
      */
-    private $entityManager;
+    private $objectManager;
 
     /*
      * @var object
@@ -31,12 +31,12 @@ class LanguageTable implements LanguageTableInterface
     private $objectRepository;
 
     /**
-     * @param ObjectManager $entityManager
+     * @param ObjectManager    $objectManager
      * @param ObjectRepository $objectRepository
      */
-    public function __construct(ObjectManager $entityManager, ObjectRepository $objectRepository)
+    public function __construct(ObjectManager $objectManager, ObjectRepository $objectRepository)
     {
-        $this->entityManager = $entityManager;
+        $this->objectManager = $objectManager;
         $this->objectRepository = $objectRepository;
     }
 
@@ -45,7 +45,7 @@ class LanguageTable implements LanguageTableInterface
      */
     public function queryBuilder()
     {
-        return $this->entityManager->createQueryBuilder();
+        return $this->objectManager->createQueryBuilder();
     }
 
     /**
@@ -67,11 +67,8 @@ class LanguageTable implements LanguageTableInterface
         return $this->objectRepository;
     }
 
-
     /**
      * @param int $languageId
-     *
-     * @throws RuntimeException
      *
      * @return Language
      */
@@ -93,8 +90,8 @@ class LanguageTable implements LanguageTableInterface
     {
         $language = $this->getLanguage($languageId);
         if ($language) {
-            $this->entityManager->remove($language);
-            $this->entityManager->flush();
+            $this->objectManager->remove($language);
+            $this->objectManager->flush();
         }
     }
 
@@ -107,8 +104,8 @@ class LanguageTable implements LanguageTableInterface
      */
     public function saveLanguage(Language $language)
     {
-        $this->entityManager->persist($language);
-        $this->entityManager->flush();
+        $this->objectManager->persist($language);
+        $this->objectManager->flush();
 
         return $language;
     }

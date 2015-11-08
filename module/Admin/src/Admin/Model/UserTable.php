@@ -21,9 +21,9 @@ use Zend\Paginator\Paginator as ZendPaginator;
 final class UserTable implements UserTableInterface
 {
     /*
-     * @var \Doctrine\ORM\EntityManager
+     * @var ObjectManager
      */
-    private $entityManager;
+    private $objectManager;
 
     /*
      * @var object
@@ -31,12 +31,12 @@ final class UserTable implements UserTableInterface
     private $objectRepository;
 
     /**
-     * @param ObjectManager $entityManager
+     * @param ObjectManager    $objectManager
      * @param ObjectRepository $objectRepository
      */
-    public function __construct(ObjectManager $entityManager, ObjectRepository $objectRepository)
+    public function __construct(ObjectManager $objectManager, ObjectRepository $objectRepository)
     {
-        $this->entityManager = $entityManager;
+        $this->objectManager = $objectManager;
         $this->objectRepository = $objectRepository;
     }
 
@@ -45,7 +45,7 @@ final class UserTable implements UserTableInterface
      */
     public function queryBuilder()
     {
-        return $this->entityManager->createQueryBuilder();
+        return $this->objectManager->createQueryBuilder();
     }
 
     /**
@@ -109,8 +109,8 @@ final class UserTable implements UserTableInterface
      */
     public function saveUser(User $user)
     {
-        $this->entityManager->persist($user);
-        $this->entityManager->flush();
+        $this->objectManager->persist($user);
+        $this->objectManager->flush();
 
         return $user;
     }

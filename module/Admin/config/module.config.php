@@ -49,13 +49,7 @@ return [
     ],
     'controllers' => [
         'factories' => [
-            'Admin\Controller\Content'       => Factory\Controller\ContentControllerFactory::class,
-            'Admin\Controller\Menu'          => Factory\Controller\MenuControllerFactory::class,
-            'Admin\Controller\Language'      => Factory\Controller\LanguageControllerFactory::class,
-            'Admin\Controller\Administrator' => Factory\Controller\AdministratorControllerFactory::class,
-            'Admin\Controller\AdminMenu'     => Factory\Controller\AdminMenuControllerFactory::class,
-            'Admin\Controller\User'          => Factory\Controller\UserControllerFactory::class,
-            'Admin\Controller\Settings'      => Factory\Controller\SettingsControllerFactory::class,
+            'Admin\Controller\Settings' => Factory\Controller\SettingsControllerFactory::class,
         ],
         'invokables' => [
             'Admin\Controller\Base'  => Controller\BaseController::class,

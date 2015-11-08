@@ -15,7 +15,7 @@ use Admin\Entity\Language;
 interface LanguageTableInterface
 {
     /**
-     * @return \Doctrine\ORM\QueryBuilder
+     * @return object
      */
     public function queryBuilder();
 
@@ -41,6 +41,8 @@ interface LanguageTableInterface
 
     /**
      * @param int $languageId
+     *
+     * @return void
      */
     public function deleteLanguage($languageId = 0);
 

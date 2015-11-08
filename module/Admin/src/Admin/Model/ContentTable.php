@@ -41,7 +41,7 @@ final class ContentTable implements ContentTableInterface
     }
 
     /**
-     * @return \Doctrine\ORM\QueryBuilder
+     * @return object
      */
     public function queryBuilder()
     {

@@ -15,7 +15,7 @@ use Admin\Entity\Content;
 interface ContentTableInterface
 {
     /**
-     * @return \Doctrine\ORM\QueryBuilder
+     * @return object
      */
     public function queryBuilder();
 
@@ -47,6 +47,8 @@ interface ContentTableInterface
      *
      * @param int $contentId content id
      * @param int $language  user language
+     *
+     * @return void
      */
     public function deleteContent($contentId = 0, $language = 1);
 
@@ -65,6 +67,8 @@ interface ContentTableInterface
      * @param int $contentId content id
      * @param int $language  user language
      * @param int $state     0 - deactivated, 1 - active
+     *
+     * @return void
      */
     public function toggleActiveContent($contentId = 0, $language = 1, $state = 0);
 }

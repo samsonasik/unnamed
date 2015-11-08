@@ -15,7 +15,7 @@ use Application\Entity\ResetPassword;
 interface ResetPasswordTableInterface
 {
     /**
-     * @return \Doctrine\ORM\QueryBuilder
+     * @return object
      */
     public function queryBuilder();
 
@@ -33,6 +33,8 @@ interface ResetPasswordTableInterface
      * @throws \Doctrine\ORM\NoResultException
      * @throws \Doctrine\ORM\NonUniqueResultException
      * @throws RuntimeException
+     *
+     * @return void
      */
     public function getResetPassword($id = 0, $user = 0);
 

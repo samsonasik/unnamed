@@ -38,7 +38,7 @@ final class ResetPasswordTable implements ResetPasswordTableInterface
     }
 
     /**
-     * @return \Doctrine\ORM\QueryBuilder
+     * @return object
      */
     public function queryBuilder()
     {

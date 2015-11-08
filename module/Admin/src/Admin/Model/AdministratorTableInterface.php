@@ -15,7 +15,7 @@ use Admin\Entity\Administrator;
 interface AdministratorTableInterface
 {
     /**
-     * @return \Doctrine\ORM\QueryBuilder
+     * @return object
      */
     public function queryBuilder();
 
@@ -44,6 +44,8 @@ interface AdministratorTableInterface
      * Delete a administrator based on the provided user id.
      *
      * @param int $adminId user id
+     *
+     * @return void
      */
     public function deleteAdministrator($adminId = 0);
 

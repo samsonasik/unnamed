@@ -15,7 +15,7 @@ use Admin\Entity\Menu;
 interface MenuTableInterface
 {
     /**
-     * @return \Doctrine\ORM\QueryBuilder
+     * @return object
      */
     public function queryBuilder();
 
@@ -47,6 +47,8 @@ interface MenuTableInterface
      *
      * @param int $menuId   menu id
      * @param int $language user language
+     *
+     * @return void
      */
     public function deleteMenu($menuId = 0, $language = 1);
 
@@ -63,6 +65,8 @@ interface MenuTableInterface
      * @param int $menuId   menu id
      * @param int $language user language
      * @param int $state    0 - deactivated, 1 - active
+     *
+     * @return void
      */
     public function toggleActiveMenu($menuId = 0, $language = 1, $state = 0);
 }

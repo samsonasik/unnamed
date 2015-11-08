@@ -15,7 +15,7 @@ use Admin\Entity\AdminMenu;
 interface AdminMenuTableInterface
 {
     /**
-     * @return \Doctrine\ORM\QueryBuilder
+     * @return object
      */
     public function queryBuilder();
 
@@ -45,6 +45,8 @@ interface AdminMenuTableInterface
      * Delete a admin menu based on the provided id.
      *
      * @param int $adminMenuId admin menu id
+     *
+     * @return void
      */
     public function deleteAdminMenu($adminMenuId = 0);
 

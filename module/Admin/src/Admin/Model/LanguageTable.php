@@ -41,7 +41,7 @@ class LanguageTable implements LanguageTableInterface
     }
 
     /**
-     * @return \Doctrine\ORM\QueryBuilder
+     * @return object
      */
     public function queryBuilder()
     {

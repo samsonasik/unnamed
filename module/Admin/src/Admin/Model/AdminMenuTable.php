@@ -41,7 +41,7 @@ final class AdminMenuTable implements AdminMenuTableInterface
     }
 
     /**
-     * @return \Doctrine\ORM\QueryBuilder
+     * @return object
      */
     public function queryBuilder()
     {

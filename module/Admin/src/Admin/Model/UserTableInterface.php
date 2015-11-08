@@ -15,7 +15,7 @@ use Admin\Entity\User;
 interface UserTableInterface
 {
     /**
-     * @return \Doctrine\ORM\QueryBuilder
+     * @return object
      */
     public function queryBuilder();
 
@@ -44,6 +44,8 @@ interface UserTableInterface
      *
      * @param int $userId user id
      * @param int $state  0 - enabled, 1 - disabled
+     *
+     * @return void
      */
     public function toggleUserState($userId = 0, $state = 0);
 

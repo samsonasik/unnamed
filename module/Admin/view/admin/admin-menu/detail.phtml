@@ -1,12 +1,12 @@
 <?php
     /**
-    * @var $adminmenu \Admin\Entity\AdminMenu
+    * @var $admin-menu \Admin\Entity\AdminMenu
     */
     $adminmenu = $this->adminmenu;
 ?>
 <section>
     <p>
-        <a href="<?=$this->url("admin/default", ['controller' => "adminmenu"])?>" class="btn btn-default">
+        <a href="<?=$this->url("admin/default", ['controller' => "admin-menu"])?>" class="btn btn-default">
             <i class="fa fa-chevron-left"></i> <?=$this->translate("BACK")?>
         </a>
     </p>
@@ -29,7 +29,7 @@
         </ul>
         <ul class="table-row">
             <li class="table-cell"><?=$this->translate("CLASS")?></li>
-            <li class="table-cell"><i class="fa <?=$adminmenu->getClass()?>"> &dash; <?=$adminmenu->getClass()?></i></li>
+            <li class="table-cell"><i class="fa <?=$admin-menu->getClass()?>"> &dash; <?=$adminmenu->getClass()?></i></li>
         </ul>
         <ul class="table-row">
             <li class="table-cell"><?=$this->translate("DESCRIPTION")?></li>
@@ -42,7 +42,7 @@
         <ul class="table-row">
             <li class="table-cell"><?=$this->translate("PARENT")?></li>
             <li class="table-cell">
-                <a class='btn btn-default blue' href='<?=$this->url("admin/default", ['controller' => "adminmenu", "action" => "detail", "id" => $adminmenu->getParent()])?>'><i class='fa fa-info'></i></a>
+                <a class='btn btn-default blue' href='<?=$this->url("admin/default", ['controller' => "admin-menu", "action" => "detail", "id" => $adminmenu->getParent()])?>'><i class='fa fa-info'></i></a>
             </li>
         </ul>
 <?php

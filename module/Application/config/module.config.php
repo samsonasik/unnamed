@@ -51,10 +51,7 @@ return [
     'controllers' => [
         'factories' => [
             'Application\Controller\Login'         => Factory\Controller\LoginControllerFactory::class,
-            'Application\Controller\ResetPassword' => Factory\Controller\ResetPasswordControllerFactory::class,
             'Application\Controller\NewPassword'   => Factory\Controller\NewPasswordControllerFactory::class,
-            'Application\Controller\Contact'       => Factory\Controller\ContactControllerFactory::class,
-            'Application\Controller\Registration'  => Factory\Controller\RegistrationControllerFactory::class,
         ],
         'invokables' => [
             'Application\Controller\Base'  => Controller\BaseController::class,

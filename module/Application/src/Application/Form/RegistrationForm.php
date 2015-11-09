@@ -10,6 +10,7 @@
  */
 namespace Application\Form;
 
+use Doctrine\Common\Persistence\ObjectManager;
 use Zend\Captcha;
 use Zend\Captcha\Image as CaptchaImage;
 use Zend\Form\Form;
@@ -17,9 +18,22 @@ use Zend\InputFilter\InputFilterProviderInterface;
 
 final class RegistrationForm extends Form implements InputFilterProviderInterface
 {
+    /*
+     * @var ObjectManager
+     */
+    private $objectManager;
+
     public function __construct()
     {
         parent::__construct('registration');
+    }
+
+    /**
+     * @param ObjectManager $objectManager
+     */
+    public function setObjectManager(ObjectManager $objectManager)
+    {
+        $this->objectManager = $objectManager;
     }
 
     public function init()
@@ -32,6 +46,9 @@ final class RegistrationForm extends Form implements InputFilterProviderInterfac
             [
             'type'       => 'Zend\Form\Element\Text',
             'name'       => 'name',
+            'options' => [
+                'object_manager' => $this->objectManager,
+            ],
             'attributes' => [
                 'required' => true,
                 'min'      => 3,
@@ -70,6 +87,9 @@ final class RegistrationForm extends Form implements InputFilterProviderInterfac
             [
             'type'       => 'Zend\Form\Element\Email',
             'name'       => 'email',
+            'options' => [
+                'object_manager' => $this->objectManager,
+            ],
             'attributes' => [
                 'required'    => true,
                 'min'         => 3,

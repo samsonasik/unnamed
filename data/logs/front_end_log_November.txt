@@ -2681,3 +2681,29 @@ Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicema
 #9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
 #10 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
 #11 {main}
+2015-11-09T09:09:36+00:00 ERR (3): 
+Exception: An exception occurred while executing 'SELECT t0.id AS id_1, t0.caption AS caption_2, t0.menuOrder AS menuOrder_3, t0.controller AS controller_4, t0.action AS action_5, t0.class AS class_6, t0.description AS description_7, t0.parent AS parent_8 FROM admin-menu t0':
+
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-menu t0' at line 1
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\AbstractMySQLDriver.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(836): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'SELECT t0.id AS...', Array)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Persisters\Entity\BasicEntityPersister.php(884): Doctrine\DBAL\Connection->executeQuery('SELECT t0.id AS...', Array, Array)
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityRepository.php(181): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->loadAll(Array, NULL, NULL, NULL)
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityRepository.php(164): Doctrine\ORM\EntityRepository->findBy(Array)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\AdminMenuController.php(68): Doctrine\ORM\EntityRepository->findAll()
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): Admin\Controller\AdminMenuController->indexAction()
+#7 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\module\Admin\src\Admin\Controller\AdminMenuController.php(55): Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 [internal function]: Admin\Controller\AdminMenuController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#14 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#19 {main}

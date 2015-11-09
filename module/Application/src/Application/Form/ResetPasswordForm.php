@@ -10,26 +10,43 @@
  */
 namespace Application\Form;
 
+use Doctrine\Common\Persistence\ObjectManager;
 use Zend\Form\Form;
 use Zend\InputFilter\InputFilterProviderInterface;
 
 final class ResetPasswordForm extends Form implements InputFilterProviderInterface
 {
+    /*
+     * @var ObjectManager
+     */
+    private $objectManager;
+
     public function __construct()
     {
-        parent::__construct('resetpw');
+        parent::__construct('resetpassword');
+    }
+
+    /**
+     * @param ObjectManager $objectManager
+     */
+    public function setObjectManager(ObjectManager $objectManager)
+    {
+        $this->objectManager = $objectManager;
     }
 
     public function init()
     {
         $this->setAttribute('method', 'post');
-        $this->setAttribute('action', '/resetpassword/process');
+        $this->setAttribute('action', '/reset-password/process');
         $this->setAttribute('role', 'form');
 
         $this->add(
             [
             'type'       => 'Zend\Form\Element\Email',
             'name'       => 'email',
+            'options' => [
+                'object_manager' => $this->objectManager,
+            ],
             'attributes' => [
                 'required'    => true,
                 'min'         => 3,

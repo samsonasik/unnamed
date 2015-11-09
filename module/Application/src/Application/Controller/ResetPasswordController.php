@@ -81,7 +81,7 @@ final class ResetPasswordController extends BaseController
         /** @var \Zend\Http\Request $request */
         $request = $this->getRequest();
         if (!$request->isPost()) {
-            $this->redirect()->toUrl('/resetpassword');
+            $this->redirect()->toUrl('/reset-password');
         }
 
         /*

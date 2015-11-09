@@ -17,6 +17,7 @@ before_script:
   - mkdir -p build/coverage
   - mkdir -p build/logs
   - mysql -e 'create database IF NOT EXISTS xj;' -uroot
+  - pip install --user codecov
   - cp config/autoload/doctrine.local.php.dist config/autoload/doctrine.local.php
   - php -S localhost:8000 -t public/ &
   - sleep 1
@@ -24,6 +25,9 @@ before_script:
 script:
   - ls -d module/*/test/PHPUnit | parallel --gnu --keep-order 'echo "Running {} tests"; ./vendor/bin/phpunit -c {}/phpunit.xml;' || exit 1
   - cd ..
+
+after_success:
+  - codecov
 
 after_script:
   - php coverage-report.php

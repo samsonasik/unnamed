@@ -18,7 +18,9 @@ use Zend\Validator\File\Extension;
 use Zend\Validator\File\IsImage;
 use Zend\Validator\File\Size;
 use Zend\View\Model\JsonModel;
-
+use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
+use FilesystemIterator;
 /**
  * @method object getTable($tableName)
  * @method object setLayoutMessages($message = [], $namespace = 'default')
@@ -210,19 +212,12 @@ final class ContentController extends BaseController
 
             $form->setData($data);
             if ($form->isValid()) {
-                $formData = $form->getData();
-                $userData = $this->UserData();
-
-                if ($userData->checkIdentity($this->translate('ERROR_AUTHORIZATION'))) {
-                    $content->setAuthor($userData->getIdentity()->name.' '.$userData->getIdentity()->surname);
-                } else {
-                    $content->setAuthor('Admin');
-                }
+                $content->setAuthor($this->UserData()->getIdentity()[0]);
 
                 /*
                  * We only need the name. All images ar stored in the same folder, based on the month and year
                  */
-                $content->setPreview($formData->getPreview()['name']);
+                $content->setPreview($form->getData()->getPreview()['name']);
                 $this->contentTable->saveContent($content);
                 $this->setLayoutMessages('&laquo;'.$content->getTitle().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
             } else {
@@ -287,18 +282,20 @@ final class ContentController extends BaseController
         chdir(getcwd().'/public/');
         $this->makeDir();
         $this->getView()->setTerminal(true);
-        $dir = new \RecursiveDirectoryIterator('userfiles/', \FilesystemIterator::SKIP_DOTS);
-        $it = new \RecursiveIteratorIterator($dir, \RecursiveIteratorIterator::SELF_FIRST);
-        $it->setMaxDepth(50);
+        $dir = new RecursiveDirectoryIterator('userfiles/', FilesystemIterator::SKIP_DOTS);
+        $iterator  = new RecursiveIteratorIterator($dir, RecursiveIteratorIterator::SELF_FIRST);
+        $iterator->setMaxDepth(50);
         $files = [];
-        $i = 0;
-        foreach ($it as $file) {
+        $index = 0;
+
+        foreach ($iterator as $file) {
             if ($file->isFile()) {
-                $files[$i]['filelink'] = DIRECTORY_SEPARATOR.$file->getPath().DIRECTORY_SEPARATOR.$file->getFilename();
-                $files[$i]['filename'] = $file->getFilename();
-                $i++;
+                $files[$index]["filelink"] = DIRECTORY_SEPARATOR.$file->getPath().DIRECTORY_SEPARATOR.$file->getFilename();
+                $files[$index]["filename"] = $file->getFilename();
+                $index = $index + 1;
             }
         }
+
         chdir(dirname(getcwd()));
         $model = new JsonModel();
         $model->setVariables(['files' => $files]);

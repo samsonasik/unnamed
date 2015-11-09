@@ -49,7 +49,7 @@ final class AdminMenuController extends BaseController
      */
     public function onDispatch(MvcEvent $event)
     {
-        $this->addBreadcrumb(['reference' => '/admin/adminmenu', 'name' => $this->translate('ADMIN_MENUS')]);
+        $this->addBreadcrumb(['reference' => '/admin/admin-menu', 'name' => $this->translate('ADMIN_MENUS')]);
         $this->adminMenuTable = $this->getTable('Admin\\Model\\AdminMenuTable');
 
         parent::onDispatch($event);
@@ -94,7 +94,7 @@ final class AdminMenuController extends BaseController
     {
         $this->getView()->setTemplate('admin/admin-menu/add');
         $this->initForm(null);
-        $this->addBreadcrumb(['reference' => '/admin/adminmenu/add', 'name' => $this->translate('ADD_ADMINMENU')]);
+        $this->addBreadcrumb(['reference' => '/admin/admin-menu/add', 'name' => $this->translate('ADD_ADMINMENU')]);
 
         return $this->getView();
     }
@@ -110,7 +110,7 @@ final class AdminMenuController extends BaseController
         $this->getView()->setTemplate('admin/admin-menu/edit');
         $adminMenu = $this->adminMenuTable->getAdminMenu((int) $this->getParam('id', 0));
         $this->getView()->setVariable('adminMenu', $adminMenu);
-        $this->addBreadcrumb(['reference' => '/admin/adminmenu/edit/'.$adminMenu->getId().'', 'name' => $this->translate('EDIT_ADMINMENU').' &laquo;'.$adminMenu->getCaption().'&raquo;']);
+        $this->addBreadcrumb(['reference' => '/admin/admin-menu/edit/'.$adminMenu->getId().'', 'name' => $this->translate('EDIT_ADMINMENU').' &laquo;'.$adminMenu->getCaption().'&raquo;']);
         $this->initForm($adminMenu);
 
         return $this->getView();
@@ -133,7 +133,7 @@ final class AdminMenuController extends BaseController
         $this->getView()->setTemplate('admin/admin-menu/detail');
         $adminMenu = $this->adminMenuTable->getAdminMenu((int) $this->getParam('id', 0));
         $this->getView()->setVariable('adminMenu', $adminMenu);
-        $this->addBreadcrumb(['reference' => '/admin/adminmenu/detail/'.$adminMenu->getId().'', 'name' => '&laquo;'.$adminMenu->getCaption().'&raquo; '.$this->translate('DETAILS')]);
+        $this->addBreadcrumb(['reference' => '/admin/admin-menu/detail/'.$adminMenu->getId().'', 'name' => '&laquo;'.$adminMenu->getCaption().'&raquo; '.$this->translate('DETAILS')]);
 
         return $this->getView();
     }

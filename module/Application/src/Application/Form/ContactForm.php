@@ -10,6 +10,7 @@
  */
 namespace Application\Form;
 
+use Doctrine\Common\Persistence\ObjectManager;
 use Zend\Captcha;
 use Zend\Captcha\Image as CaptchaImage;
 use Zend\Form\Form;
@@ -17,9 +18,22 @@ use Zend\InputFilter\InputFilterProviderInterface;
 
 final class ContactForm extends Form implements InputFilterProviderInterface
 {
+    /*
+     * @var ObjectManager
+     */
+    private $objectManager;
+
     public function __construct()
     {
         parent::__construct('contact_form');
+    }
+
+    /**
+     * @param ObjectManager $objectManager
+     */
+    public function setObjectManager(ObjectManager $objectManager)
+    {
+        $this->objectManager = $objectManager;
     }
 
     public function init()
@@ -31,6 +45,9 @@ final class ContactForm extends Form implements InputFilterProviderInterface
             [
             'type'       => 'Zend\Form\Element\Text',
             'name'       => 'name',
+            'options' => [
+                'object_manager' => $this->objectManager,
+            ],
             'attributes' => [
                 'required' => true,
                 'min'      => 3,
@@ -44,6 +61,9 @@ final class ContactForm extends Form implements InputFilterProviderInterface
             [
             'type'       => 'Zend\Form\Element\Email',
             'name'       => 'email',
+            'options' => [
+                'object_manager' => $this->objectManager,
+            ],
             'attributes' => [
                 'required'    => true,
                 'min'         => 3,
@@ -57,6 +77,9 @@ final class ContactForm extends Form implements InputFilterProviderInterface
             [
             'type'       => 'Zend\Form\Element\Text',
             'name'       => 'subject',
+            'options' => [
+                'object_manager' => $this->objectManager,
+            ],
             'attributes' => [
                 'required' => true,
                 'min'      => 3,
@@ -69,6 +92,9 @@ final class ContactForm extends Form implements InputFilterProviderInterface
             [
             'type'       => 'Zend\Form\Element\Textarea',
             'name'       => 'message',
+            'options' => [
+                'object_manager' => $this->objectManager,
+            ],
             'attributes' => [
                 'required' => true,
                 'rows'     => 8,

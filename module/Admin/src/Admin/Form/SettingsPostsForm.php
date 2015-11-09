@@ -82,7 +82,7 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
                 'min'         => 1,
                 'step'        => 1,
                 'size'        => 40,
-                'class'       => 'settings_adminmenu',
+                'class'       => 'settings_admin-menu',
                 'placeholder' => 'Admin menu posts per page',
                 'value'       => $this->config['adminmenu'],
             ],

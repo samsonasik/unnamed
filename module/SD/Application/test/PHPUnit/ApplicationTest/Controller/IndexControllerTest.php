@@ -10,8 +10,8 @@
  */
 namespace ApplicationTest\Controller;
 
-use SD\Application\Controller\IndexController;
 use PHPUnit_Framework_Testcase;
+use SD\Application\Controller\IndexController;
 
 class IndexControllerTest extends PHPUnit_Framework_Testcase
 {

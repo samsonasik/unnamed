@@ -10,12 +10,12 @@
  */
 namespace SD\Admin\Model;
 
-use SD\Admin\Entity\Language;
-use SD\Admin\Exception\RuntimeException;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\Persistence\ObjectRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as PaginatorAdapter;
+use SD\Admin\Entity\Language;
+use SD\Admin\Exception\RuntimeException;
 use Zend\Paginator\Paginator as ZendPaginator;
 
 class LanguageTable implements LanguageTableInterface

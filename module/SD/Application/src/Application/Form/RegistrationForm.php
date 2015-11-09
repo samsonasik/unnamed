@@ -46,7 +46,7 @@ final class RegistrationForm extends Form implements InputFilterProviderInterfac
             [
             'type'       => 'Zend\Form\Element\Text',
             'name'       => 'name',
-            'options' => [
+            'options'    => [
                 'object_manager' => $this->objectManager,
             ],
             'attributes' => [
@@ -87,7 +87,7 @@ final class RegistrationForm extends Form implements InputFilterProviderInterfac
             [
             'type'       => 'Zend\Form\Element\Email',
             'name'       => 'email',
-            'options' => [
+            'options'    => [
                 'object_manager' => $this->objectManager,
             ],
             'attributes' => [

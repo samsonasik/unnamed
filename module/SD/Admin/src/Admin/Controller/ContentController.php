@@ -10,6 +10,9 @@
  */
 namespace SD\Admin\Controller;
 
+use FilesystemIterator;
+use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
 use SD\Admin\Entity\Content;
 use SD\Admin\Form\ContentForm;
 use Zend\File\Transfer\Adapter\Http;
@@ -18,9 +21,7 @@ use Zend\Validator\File\Extension;
 use Zend\Validator\File\IsImage;
 use Zend\Validator\File\Size;
 use Zend\View\Model\JsonModel;
-use RecursiveDirectoryIterator;
-use RecursiveIteratorIterator;
-use FilesystemIterator;
+
 /**
  * @method object getTable($tableName)
  * @method object setLayoutMessages($message = [], $namespace = 'default')
@@ -283,7 +284,7 @@ final class ContentController extends BaseController
         $this->makeDir();
         $this->getView()->setTerminal(true);
         $dir = new RecursiveDirectoryIterator('userfiles/', FilesystemIterator::SKIP_DOTS);
-        $iterator  = new RecursiveIteratorIterator($dir, RecursiveIteratorIterator::SELF_FIRST);
+        $iterator = new RecursiveIteratorIterator($dir, RecursiveIteratorIterator::SELF_FIRST);
         $iterator->setMaxDepth(50);
         $files = [];
         $index = 0;

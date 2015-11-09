@@ -71,9 +71,9 @@
     },
     "autoload": {
         "psr-4": {
-          "Application\\": "module/Application/src",
-          "Admin\\": "module/Admin/src",
-          "Themes\\": "module/Themes/src"
+          "SD\\Application\\": "module/SD/Application/src",
+          "SD\\Admin\\": "module/SD/Admin/src",
+          "SD\\Themes\\": "module/SD/Themes/src"
         }
     },
     "autoload-dev": {

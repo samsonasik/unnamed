@@ -9,11 +9,11 @@ if (!defined('APP_ENV')) {
 
 $modules = [];
 
-$modules[] = 'Application';
-$modules[] = 'Admin';
+$modules[] = 'SD\Application';
+$modules[] = 'SD\Admin';
+$modules[] = 'SD\Themes';
 $modules[] = 'DoctrineModule';
 $modules[] = 'DoctrineORMModule';
-$modules[] = 'Themes';
 
 if (APP_ENV === 'development') {
     $modules[] = 'ZendDeveloperTools';

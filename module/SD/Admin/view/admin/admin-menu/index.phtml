@@ -1,0 +1,89 @@
+<section>
+    <div class="table-style">
+        <ul class="table-header">
+            <li class="table-cell"><?=$this->translate("MENU_ORDER")?></li>
+            <li class="table-cell"><?=$this->translate("CAPTION")?></li>
+            <li class="table-cell"><?=$this->translate("CONTROLLER")?></li>
+            <li class="table-cell"><?=$this->translate("ACTION")?></li>
+            <li class="table-cell"><?=$this->translate("CLASS")?></li>
+			<li class="table-cell flex-b"><?=$this->translate("DETAILS")?></li>
+            <li class="table-cell flex-b"><?=$this->translate("EDIT")?></li>
+            <li class="table-cell flex-b"><?=$this->translate("DELETE")?></li>
+        </ul>
+<?php
+
+if (count($this->menus)) {
+       /**
+        * @var $adminMenu \SD\Admin\Entity\AdminMenu
+        */
+        foreach($this->menus as $adminMenu) {
+?>
+            <ul class="table-row">
+                <li class="table-cell"><?=$adminMenu->getMenuOrder()?></li>
+                <li class="table-cell"><?=$adminMenu->getCaption()?></li>
+                <li class="table-cell"><?=$adminMenu->getController()?></li>
+                <li class="table-cell"><?=$adminMenu->getAction()?></li>
+                <li class="table-cell"><?=$adminMenu->getClass()?></li>
+                <li class="table-cell flex-b">
+                    <a title='<?=$this->translate("DETAILS")?>' class='btn blue btn-sm' href='<?=$this->url("admin/default", ['controller' => "admin-menu", "action" => "detail", "id" => $adminMenu->getId()])?>'><i class='fa fa-info'></i></a>
+                </li>
+                <li class="table-cell flex-b">
+                    <a title='<?=$this->translate("EDIT")?>' href='<?=$this->url("admin/default", ['controller' => "admin-menu", "action" => "edit", "id" => $adminMenu->getId()])?>' class='btn btn-sm orange'><i class='fa fa-pencil'></i></a>
+                </li>
+                <li class='table-cell flex-b'>
+                    <button role="button" aria-pressed="false" aria-label="<?=$this->translate("DELETE")?>" id='<?=$adminMenu->getId()?>' type='button' class='btn btn-sm delete dialog_delete' title='<?=$this->translate("DELETE")?>'><i class='fa fa-trash-o'></i></button>
+                        <div role="alertdialog" aria-labelledby="dialog<?=$adminMenu->getId()?>Title" class='delete_<?=$adminMenu->getId()?> dialog_hide'>
+                           <p id="dialog<?=$adminMenu->getId()?>Title"><?=$this->translate("DELETE_CONFIRM_TEXT")?> &laquo;<?=$adminMenu->getCaption()?>&raquo;</p>
+                            <ul>
+                                <li>
+                                    <a class='btn delete' href='/admin/admin-menu/delete/<?=$adminMenu->getId()?>'><i class='fa fa-trash-o'></i> <?=$this->translate("DELETE")?></a>
+                                </li>
+                                <li>
+                                    <button role="button" aria-pressed="false" aria-label="<?=$this->translate("CANCEL")?>" type="button" title='<?=$this->translate("CANCEL")?>' class='btn btn-default cancel'><i class='fa fa-times'></i> <?=$this->translate("CANCEL")?></button>
+                                </li>
+                            </ul>
+                        </div>
+                </li>
+            </ul>
+<?php
+            if (isset($this->submenus[$adminMenu->getId()])) {
+               /**
+                * @var $sub SD\Admin\Entity\AdminMenu
+                */
+                foreach($this->submenus[$adminMenu->getId()] as $sub) {
+?>
+                    <ul class="table-row">
+                        <li class="table-cell"><?=$sub->getMenuOrder()?></li>
+                        <li class="table-cell"><?=$sub->getCaption()?></li>
+                        <li class="table-cell"><?=$sub->getController()?></li>
+                        <li class="table-cell"><?=$sub->getAction()?></li>
+                        <li class="table-cell"><?=$sub->getClass()?></li>
+                        <li class="table-cell flex-b">
+                            <a title='<?=$this->translate("DETAILS")?>' class='btn blue btn-sm' href='<?=$this->url("admin/default", ['controller' => "admin-menu", "action" => "detail", "id" => $sub->getId()])?>'><i class='fa fa-info'></i></a>
+                        </li>
+                        <li class="table-cell flex-b">
+                            <a title='<?=$this->translate("EDIT")?>' href='<?=$this->url("admin/default", ['controller' => "admin-menu", "action" => "edit", "id" => $sub->getId()])?>' class='btn btn-sm orange'><i class='fa fa-pencil'></i></a>
+                        </li>
+                        <li class='table-cell flex-b'>
+                            <button role="button" aria-pressed="false" aria-label="<?=$this->translate("DELETE")?>" id='<?=$sub->getId()?>' type='button' class='btn btn-sm delete dialog_delete' title='<?=$this->translate("DELETE")?>'><i class='fa fa-trash-o'></i></button>
+                                <div role="alertdialog" aria-labelledby="dialog<?=$sub->getId()?>Title" class='delete_<?=$sub->getId()?> dialog_hide'>
+                                   <p id="dialog<?=$adminMenu->getId()?>Title"><?=$this->translate("DELETE_CONFIRM_TEXT")?> &laquo;<?=$sub->getCaption()?>&raquo;</p>
+                                    <ul>
+                                        <li>
+                                            <a class='btn delete' href='/admin/admin-menu/delete/<?=$sub->getId()?>'><i class='fa fa-trash-o'></i> <?=$this->translate("DELETE")?></a>
+                                        </li>
+                                        <li>
+                                            <button role="button" aria-pressed="false" aria-label="<?=$this->translate("CANCEL")?>" type="button" title='<?=$this->translate("CANCEL")?>' class='btn btn-default cancel'><i class='fa fa-times'></i> <?=$this->translate("CANCEL")?></button>
+                                        </li>
+                                    </ul>
+                                </div>
+                        </li>
+                    </ul>
+<?php
+                }
+            }
+        }
+}
+?>
+    </div>
+</section>

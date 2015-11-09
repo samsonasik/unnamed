@@ -4,7 +4,7 @@
  * @copyright  2015 (c) Stanimir Dimitrov.
  * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
  *
- * @version    0.0.21
+ * @version    0.0.22
  *
  * @link       https://github.com/Stanimirdim92/unnamed
  */
@@ -22,32 +22,32 @@ return [
     'service_manager' => [
         'abstract_factories' => [
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
-            'Admin\Service\AbstractTableFactory',
             'Zend\Form\FormAbstractServiceFactory',
+            'SD\Admin\Service\AbstractTableFactory',
         ],
         'factories' => [
             'translator'    => 'Zend\Mvc\Service\TranslatorServiceFactory',
-            'ErrorHandling' => 'Application\Factory\ErrorHandlingFactory',
-            'initSession'   => 'Application\Factory\SessionFactory',
+            'ErrorHandling' => 'SD\Application\Factory\ErrorHandlingFactory',
+            'initSession'   => 'SD\Application\Factory\SessionFactory',
         ],
     ],
     'controllers' => [
         'abstract_factories' => [
-            'Admin\Service\AbstractControllerFactory',
+            'SD\Admin\Service\AbstractControllerFactory',
         ],
     ],
     'controller_plugins' => [
         'factories' => [
-            'translate'         => 'Application\Controller\Plugin\Factory\TranslateFactory',
-            'Mailing'           => 'Application\Controller\Plugin\Factory\MailingFactory',
-            'UserData'          => 'Application\Controller\Plugin\Factory\UserDataFactory',
-            'setLayoutMessages' => 'Application\Controller\Plugin\Factory\SetLayoutMessagesFactory',
-            'InitMetaTags'      => 'Application\Controller\Plugin\Factory\InitMetaTagsFactory',
-            'getParam'          => 'Application\Controller\Plugin\Factory\GetUrlParamsFactory',
-            'getTable'          => 'Application\Controller\Plugin\Factory\GetTableModelFactory',
-            'getFunctions'      => 'Application\Controller\Plugin\Factory\FunctionsFactory',
-            'setErrorCode'      => 'Application\Controller\Plugin\Factory\ErrorCodesFactory',
-            'systemSettings'    => 'Application\Controller\Plugin\Factory\SystemSettingsFactory',
+            'translate'         => 'SD\Application\Controller\Plugin\Factory\TranslateFactory',
+            'Mailing'           => 'SD\Application\Controller\Plugin\Factory\MailingFactory',
+            'UserData'          => 'SD\Application\Controller\Plugin\Factory\UserDataFactory',
+            'setLayoutMessages' => 'SD\Application\Controller\Plugin\Factory\SetLayoutMessagesFactory',
+            'InitMetaTags'      => 'SD\Application\Controller\Plugin\Factory\InitMetaTagsFactory',
+            'getParam'          => 'SD\Application\Controller\Plugin\Factory\GetUrlParamsFactory',
+            'getTable'          => 'SD\Application\Controller\Plugin\Factory\GetTableModelFactory',
+            'getFunctions'      => 'SD\Application\Controller\Plugin\Factory\FunctionsFactory',
+            'setErrorCode'      => 'SD\Application\Controller\Plugin\Factory\ErrorCodesFactory',
+            'systemSettings'    => 'SD\Application\Controller\Plugin\Factory\SystemSettingsFactory',
         ],
     ],
     'shared' => [
@@ -57,7 +57,7 @@ return [
         'locale'                    => 'en',
         'translation_file_patterns' => [
             [
-                'base_dir' => __DIR__.'/../../module/Application/languages/phpArray',
+                'base_dir' => __DIR__.'/../../module/SD/Application/languages/phpArray',
                 'type'     => 'phpArray',
                 'pattern'  => '%s.php',
             ],
@@ -96,10 +96,10 @@ return [
         'authentication' => [
             'orm_default' => [
                 'object_manager'      => 'Doctrine\ORM\EntityManager',
-                'identity_class'      => 'Admin\Entity\User',
+                'identity_class'      => 'SD\Admin\Entity\User',
                 'identity_property'   => 'email',
                 'credential_property' => 'password',
-                'credential_callable' => function (\Admin\Entity\User $user, $passwordProvided) {
+                'credential_callable' => function (\SD\Admin\Entity\User $user, $passwordProvided) {
                     return password_verify($passwordProvided, $user->getPassword());
                 },
             ],

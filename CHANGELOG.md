@@ -7,6 +7,7 @@ DD.MM.YYYY
 - Added interfaces for each model table
 - Refactored login controller
 - Added NewPassword, ResetPassword classes
+- Moved all namespaces under one global namespace - SD
 
 DD.MM.YYYY
 ## 0.0.21 (2.11.2015) - Stable Alpha ##

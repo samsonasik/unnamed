@@ -62,6 +62,9 @@ final class RegistrationForm extends Form implements InputFilterProviderInterfac
             [
             'type'       => 'Zend\Form\Element\Password',
             'name'       => 'password',
+            'options'    => [
+                'object_manager' => $this->objectManager,
+            ],
             'attributes' => [
                 'required'    => true,
                 'min'         => 8,
@@ -75,6 +78,9 @@ final class RegistrationForm extends Form implements InputFilterProviderInterfac
             [
             'type'       => 'Zend\Form\Element\Password',
             'name'       => 'repeatpw',
+            'options'    => [
+                'object_manager' => $this->objectManager,
+            ],
             'attributes' => [
                 'required'    => true,
                 'size'        => 30,

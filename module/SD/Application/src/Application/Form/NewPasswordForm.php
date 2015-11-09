@@ -10,14 +10,28 @@
  */
 namespace SD\Application\Form;
 
+use Doctrine\Common\Persistence\ObjectManager;
 use Zend\Form\Form;
 use Zend\InputFilter\InputFilterProviderInterface;
 
 final class NewPasswordForm extends Form implements InputFilterProviderInterface
 {
+    /*
+     * @var ObjectManager
+     */
+    private $objectManager;
+
     public function __construct()
     {
         parent::__construct('newpassword');
+    }
+
+    /**
+     * @param ObjectManager $objectManager
+     */
+    public function setObjectManager(ObjectManager $objectManager)
+    {
+        $this->objectManager = $objectManager;
     }
 
     public function init()
@@ -30,6 +44,9 @@ final class NewPasswordForm extends Form implements InputFilterProviderInterface
             [
             'type'       => 'Zend\Form\Element\Password',
             'name'       => 'password',
+            'options'    => [
+                'object_manager' => $this->objectManager,
+            ],
             'attributes' => [
                 'required'    => true,
                 'min'         => 8,
@@ -46,6 +63,9 @@ final class NewPasswordForm extends Form implements InputFilterProviderInterface
             [
             'type'       => 'Zend\Form\Element\Password',
             'name'       => 'repeatpw',
+            'options'    => [
+                'object_manager' => $this->objectManager,
+            ],
             'attributes' => [
                 'required'    => true,
                 'size'        => 30,

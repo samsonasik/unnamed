@@ -51,7 +51,6 @@ return [
     'controllers' => [
         'factories' => [
             'SD\Application\Controller\Login'         => Factory\Controller\LoginControllerFactory::class,
-            'SD\Application\Controller\NewPassword'   => Factory\Controller\NewPasswordControllerFactory::class,
         ],
         'invokables' => [
             'SD\Application\Controller\Base'  => Controller\BaseController::class,

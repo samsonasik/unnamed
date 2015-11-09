@@ -114,7 +114,7 @@ final class ResetPasswordController extends BaseController
         $resetpw->setDate(date('Y-m-d H:i:s', time()));
         $resetpw->setIp($remote->getIpAddress());
         $this->getTable('SD\Application\\Model\\ResetPasswordTable')->saveResetPassword($resetpw);
-        $message = $this->translate('NEW_PW_TEXT').' '.$_SERVER['SERVER_NAME'].'/login/newpassword/token/'.$token;
+        $message = $this->translate('NEW_PW_TEXT').' '.$_SERVER['SERVER_NAME'].'/newpassword/token/'.$token;
 
         $result = $this->Mailing()->sendMail($formData['email'], $existingEmail[0]->getFullName(), $this->translate('NEW_PW_TITLE'), $message, $this->systemSettings('general', 'system_email'), $this->systemSettings('general', 'site_name'));
 

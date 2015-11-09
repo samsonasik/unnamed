@@ -82,7 +82,7 @@ final class NewPasswordController extends BaseController
          * See if token exist or has expired
          */
         $date = date('Y-m-d H:m:s', strtotime('last day'));
-        $tokenExist = $this->getTable('SD\Application\\Model\\ResetPasswordTable')->queryBuilder()->getEntityManager();
+        $tokenExist = $this->getTable('SD\\Application\\Model\\ResetPasswordTable')->queryBuilder()->getEntityManager();
         $tokenExist = $tokenExist->createQuery('SELECT rp.user, rp.date, rp.token FROM SD\Application\Entity\ResetPassword rp WHERE rp.token = :token AND rp.date >= :dateInterval')
             ->setParameter(':token', (string) $token)
             ->setParameter(':dateInterval', (string) $date);
@@ -133,11 +133,11 @@ final class NewPasswordController extends BaseController
 
                 if (!empty($pw)) {
                     /** @var \SD\Admin\Entity\User $user */
-                    $user = $this->getTable('SD\Admin\\Model\\UserTable')->getUser($this->getTranslation()->offsetGet('resetpwUserId'));
+                    $user = $this->getTable('SD\\Admin\\Model\\UserTable')->getUser($this->getTranslation()->offsetGet('resetpwUserId'));
                     $remote = new RemoteAddress();
                     $user->setPassword($pw);
                     $user->setIp($remote->getIpAddress());
-                    $this->getTable('SD\Admin\\Model\\UserTable')->saveUser($user);
+                    $this->getTable('SD\\Admin\\Model\\UserTable')->saveUser($user);
                     $this->setLayoutMessages($this->translate('NEW_PW_SUCCESS'), 'success');
                 } else {
                     $this->setLayoutMessages($this->translate('PASSWORD_NOT_GENERATED'), 'error');

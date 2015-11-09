@@ -6,7 +6,7 @@ machine:
 
   # Version of php to use
   php:
-    version: 5.5.28
+    version: 5.5.21
   node:
     version: 2.14.3
 

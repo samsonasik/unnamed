@@ -30,8 +30,6 @@ final class IndexController extends AbstractActionController
     private $reloadService;
 
     /**
-     * @method __construct
-     *
      * @param array|object $themesConfig
      * @param mixed        $reloadService
      */
@@ -44,15 +42,13 @@ final class IndexController extends AbstractActionController
     /**
      * This action shows the list of all themes.
      *
-     * @method indexAction
-     *
      * @return ViewModel
      */
     public function indexAction()
     {
         $view = new ViewModel();
-
         $view->setTemplate('themes/index/index');
+
         /** @var \Zend\Http\Request $request */
         $request = $this->getRequest();
         if ($request->isPost()) {
@@ -65,8 +61,8 @@ final class IndexController extends AbstractActionController
             $this->reloadService->reload();
         }
 
-        return [
-            'themes' => $this->themesConfig,
-        ];
+        $view->setVariable('themes',  $this->themesConfig);
+
+        return $view;
     }
 }

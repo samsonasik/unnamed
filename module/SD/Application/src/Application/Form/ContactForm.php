@@ -45,7 +45,7 @@ final class ContactForm extends Form implements InputFilterProviderInterface
             [
             'type'       => 'Zend\Form\Element\Text',
             'name'       => 'name',
-            'options' => [
+            'options'    => [
                 'object_manager' => $this->objectManager,
             ],
             'attributes' => [
@@ -61,7 +61,7 @@ final class ContactForm extends Form implements InputFilterProviderInterface
             [
             'type'       => 'Zend\Form\Element\Email',
             'name'       => 'email',
-            'options' => [
+            'options'    => [
                 'object_manager' => $this->objectManager,
             ],
             'attributes' => [
@@ -77,7 +77,7 @@ final class ContactForm extends Form implements InputFilterProviderInterface
             [
             'type'       => 'Zend\Form\Element\Text',
             'name'       => 'subject',
-            'options' => [
+            'options'    => [
                 'object_manager' => $this->objectManager,
             ],
             'attributes' => [
@@ -92,7 +92,7 @@ final class ContactForm extends Form implements InputFilterProviderInterface
             [
             'type'       => 'Zend\Form\Element\Textarea',
             'name'       => 'message',
-            'options' => [
+            'options'    => [
                 'object_manager' => $this->objectManager,
             ],
             'attributes' => [

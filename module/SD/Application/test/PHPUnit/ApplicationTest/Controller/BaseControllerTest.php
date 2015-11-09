@@ -10,8 +10,8 @@
  */
 namespace ApplicationTest\Controller;
 
-use SD\Application\Controller\BaseController;
 use ReflectionClass;
+use SD\Application\Controller\BaseController;
 use Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;
 
 class BaseControllerTest extends AbstractHttpControllerTestCase

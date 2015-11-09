@@ -10,10 +10,10 @@
  */
 namespace SD\Application\Model;
 
-use SD\Application\Entity\ResetPassword;
-use SD\Application\Exception\RuntimeException;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\Persistence\ObjectRepository;
+use SD\Application\Entity\ResetPassword;
+use SD\Application\Exception\RuntimeException;
 
 final class ResetPasswordTable implements ResetPasswordTableInterface
 {

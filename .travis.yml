@@ -13,9 +13,10 @@ install:
   - travis_retry composer install --optimize-autoloader
 
 before_script:
-  - chmod -R 777 data/logs
   - mkdir -p build/coverage
-  - mkdir -p build/logs
+  - mkdir -p build/coverage
+  - mkdir -p data/logs
+  - chmod -R 777 data/logs
   - mysql -e 'create database IF NOT EXISTS xj;' -uroot
   - pip install --user codecov
   - cp config/autoload/doctrine.local.php.dist config/autoload/doctrine.local.php

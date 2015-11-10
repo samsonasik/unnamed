@@ -134,8 +134,8 @@ final class SettingsDiscussionForm extends Form implements InputFilterProviderIn
             [
             'name'       => 'submit',
             'attributes' => [
-                'type' => 'submit',
-                'id'   => 'submitbutton',
+                'type'  => 'submit',
+                'id'    => 'submitbutton',
                 'value' => 'SAVE',
             ],
             ]

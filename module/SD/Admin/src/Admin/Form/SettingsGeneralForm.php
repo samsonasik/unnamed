@@ -214,8 +214,8 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
             [
             'name'       => 'submit',
             'attributes' => [
-                'type' => 'submit',
-                'id'   => 'submitbutton',
+                'type'  => 'submit',
+                'id'    => 'submitbutton',
                 'value' => 'SAVE',
             ],
             ]

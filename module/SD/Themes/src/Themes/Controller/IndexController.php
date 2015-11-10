@@ -61,7 +61,7 @@ final class IndexController extends AbstractActionController
             $this->reloadService->reload();
         }
 
-        $view->setVariable('themes',  $this->themesConfig);
+        $view->setVariable('themes', $this->themesConfig);
 
         return $view;
     }

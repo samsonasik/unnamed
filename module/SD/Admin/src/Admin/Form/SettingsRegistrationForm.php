@@ -79,8 +79,8 @@ final class SettingsRegistrationForm extends Form implements InputFilterProvider
             [
             'name'       => 'submit',
             'attributes' => [
-                'type' => 'submit',
-                'id'   => 'submitbutton',
+                'type'  => 'submit',
+                'id'    => 'submitbutton',
                 'value' => 'SAVE',
             ],
             ]

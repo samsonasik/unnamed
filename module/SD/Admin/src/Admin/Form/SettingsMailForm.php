@@ -185,9 +185,9 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
             [
             'name'       => 'submit',
             'attributes' => [
-                'type' => 'submit',
-                'id'   => 'submitbutton',
-                'value' => 'SAVE'
+                'type'  => 'submit',
+                'id'    => 'submitbutton',
+                'value' => 'SAVE',
             ],
             ]
         );

@@ -198,4 +198,3 @@ DD.MM.YYYY
  - After/In Beta version start creating the first PHPUnit and Selenium tests
  - Social networks controller or module
  - Voice Search
- - Theme module

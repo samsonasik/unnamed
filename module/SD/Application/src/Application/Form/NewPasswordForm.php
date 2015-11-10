@@ -45,7 +45,7 @@ final class NewPasswordForm extends Form implements InputFilterProviderInterface
             'type'       => 'Zend\Form\Element\Password',
             'name'       => 'password',
             'options'    => [
-                'label'  => 'PASSWORD',
+                'label'          => 'PASSWORD',
                 'object_manager' => $this->objectManager,
             ],
             'attributes' => [
@@ -65,7 +65,7 @@ final class NewPasswordForm extends Form implements InputFilterProviderInterface
             'type'       => 'Zend\Form\Element\Password',
             'name'       => 'repeatpw',
             'options'    => [
-                'label'  => 'REPEAT_PASSWORD',
+                'label'          => 'REPEAT_PASSWORD',
                 'object_manager' => $this->objectManager,
             ],
             'attributes' => [
@@ -95,9 +95,9 @@ final class NewPasswordForm extends Form implements InputFilterProviderInterface
             [
             'name'       => 'resetpw',
             'attributes' => [
-                'type' => 'submit',
-                'id'   => 'submitbutton',
-                'value' => 'RESET_PW'
+                'type'  => 'submit',
+                'id'    => 'submitbutton',
+                'value' => 'RESET_PW',
             ],
             ]
         );

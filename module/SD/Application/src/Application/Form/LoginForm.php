@@ -74,9 +74,9 @@ final class LoginForm extends Form implements InputFilterProviderInterface
             [
             'name'       => 'login',
             'attributes' => [
-                'type' => 'submit',
-                'id'   => 'submitbutton',
-                'value' => "SIGN_IN"
+                'type'  => 'submit',
+                'id'    => 'submitbutton',
+                'value' => 'SIGN_IN',
             ],
             ]
         );

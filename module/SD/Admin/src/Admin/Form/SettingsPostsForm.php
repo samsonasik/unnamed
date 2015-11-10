@@ -184,9 +184,9 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
             [
             'name'       => 'submit',
             'attributes' => [
-                'type' => 'submit',
-                'id'   => 'submitbutton',
-                'value' => 'SAVE'
+                'type'  => 'submit',
+                'id'    => 'submitbutton',
+                'value' => 'SAVE',
             ],
             ]
         );

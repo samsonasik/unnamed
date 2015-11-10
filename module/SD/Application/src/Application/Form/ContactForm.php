@@ -46,14 +46,14 @@ final class ContactForm extends Form implements InputFilterProviderInterface
             'type'       => 'Zend\Form\Element\Text',
             'name'       => 'name',
             'options'    => [
-                'label'  => 'NAME',
+                'label'          => 'NAME',
                 'object_manager' => $this->objectManager,
             ],
             'attributes' => [
-                'required' => true,
-                'min'      => 3,
-                'max'      => 30,
-                'size'     => 30,
+                'required'    => true,
+                'min'         => 3,
+                'max'         => 30,
+                'size'        => 30,
                 'placeholder' => 'ENTER_NAME',
             ],
             ]
@@ -64,7 +64,7 @@ final class ContactForm extends Form implements InputFilterProviderInterface
             'type'       => 'Zend\Form\Element\Email',
             'name'       => 'email',
             'options'    => [
-                'label'  => 'EMAIL',
+                'label'          => 'EMAIL',
                 'object_manager' => $this->objectManager,
             ],
             'attributes' => [
@@ -81,13 +81,13 @@ final class ContactForm extends Form implements InputFilterProviderInterface
             'type'       => 'Zend\Form\Element\Text',
             'name'       => 'subject',
             'options'    => [
-                'label'  => 'SUBJECT',
+                'label'          => 'SUBJECT',
                 'object_manager' => $this->objectManager,
             ],
             'attributes' => [
-                'required' => true,
-                'min'      => 3,
-                'size'     => 30,
+                'required'    => true,
+                'min'         => 3,
+                'size'        => 30,
                 'placeholder' => 'ENTER_SUBJECT',
             ],
             ]
@@ -98,13 +98,13 @@ final class ContactForm extends Form implements InputFilterProviderInterface
             'type'       => 'Zend\Form\Element\Textarea',
             'name'       => 'message',
             'options'    => [
-                'label'  => 'MESSAGE',
+                'label'          => 'MESSAGE',
                 'object_manager' => $this->objectManager,
             ],
             'attributes' => [
-                'required' => true,
-                'rows'     => 8,
-                'cols'     => 70,
+                'required'    => true,
+                'rows'        => 8,
+                'cols'        => 70,
                 'placeholder' => 'ENTER_MESSAGE',
             ],
             ]
@@ -129,12 +129,12 @@ final class ContactForm extends Form implements InputFilterProviderInterface
             'type'       => 'Zend\Form\Element\Captcha',
             'name'       => 'captcha',
             'attributes' => [
-                'class' => 'captcha-input',
-                'size'  => 30,
+                'class'       => 'captcha-input',
+                'size'        => 30,
                 'placeholder' => 'ENTER_CAPTCHA',
             ],
             'options' => [
-                'label'  => 'CAPTCHA',
+                'label'   => 'CAPTCHA',
                 'captcha' => $captchaImage,
             ],
             ]
@@ -144,8 +144,8 @@ final class ContactForm extends Form implements InputFilterProviderInterface
             [
             'name'       => 'submit',
             'attributes' => [
-                'type' => 'submit',
-                'id'   => 'submitbutton',
+                'type'  => 'submit',
+                'id'    => 'submitbutton',
                 'value' => 'SEND',
             ],
             ]

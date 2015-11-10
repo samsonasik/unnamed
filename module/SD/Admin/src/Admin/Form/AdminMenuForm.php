@@ -177,8 +177,8 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
         ]);
 
         $this->add([
-            'type' => 'Zend\Form\Element\Hidden',
-            'name' => 'id',
+            'type'    => 'Zend\Form\Element\Hidden',
+            'name'    => 'id',
             'options' => [
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\AdminMenu',

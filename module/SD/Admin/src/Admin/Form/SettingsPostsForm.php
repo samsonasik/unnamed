@@ -45,11 +45,11 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
                 'step'        => 1,
                 'size'        => 40,
                 'class'       => 'settings_content',
-                'placeholder' => 'Content posts per page',
+                'placeholder' => 'CONTENT_POSTS_PER_PAGE',
                 'value'       => $this->config['content'],
             ],
             'options' => [
-                'label' => 'Content posts per page',
+                'label' => 'CONTENT_POSTS_PER_PAGE',
             ],
             ]
         );
@@ -64,11 +64,11 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
                 'step'        => 1,
                 'size'        => 40,
                 'class'       => 'settings_menu',
-                'placeholder' => 'Menu posts per page',
+                'placeholder' => 'MENU_POSTS_PER_PAGE',
                 'value'       => $this->config['menu'],
             ],
             'options' => [
-                'label' => 'Menu posts per page',
+                'label' => 'MENU_POSTS_PER_PAGE',
             ],
             ]
         );
@@ -83,11 +83,11 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
                 'step'        => 1,
                 'size'        => 40,
                 'class'       => 'settings_admin-menu',
-                'placeholder' => 'Admin menu posts per page',
+                'placeholder' => 'ADMINMENU_POSTS_PER_PAGE',
                 'value'       => $this->config['adminmenu'],
             ],
             'options' => [
-                'label' => 'Admin menu posts per page',
+                'label' => 'ADMINMENU_POSTS_PER_PAGE',
             ],
             ]
         );
@@ -102,11 +102,11 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
                 'step'        => 1,
                 'size'        => 40,
                 'class'       => 'settings_administrator',
-                'placeholder' => 'Administrator posts per page',
+                'placeholder' => 'ADMIN_POSTS_PER_PAGE',
                 'value'       => $this->config['administrator'],
             ],
             'options' => [
-                'label' => 'Administrator posts per page',
+                'label' => 'ADMIN_POSTS_PER_PAGE',
             ],
             ]
         );
@@ -121,11 +121,11 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
                 'step'        => 1,
                 'size'        => 40,
                 'class'       => 'settings_language',
-                'placeholder' => 'Language posts per page',
+                'placeholder' => 'LANGUAGE_POSTS_PER_PAGE',
                 'value'       => $this->config['language'],
             ],
             'options' => [
-                'label' => 'Language posts per page',
+                'label' => 'LANGUAGE_POSTS_PER_PAGE',
             ],
             ]
         );
@@ -140,11 +140,11 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
                 'step'        => 1,
                 'size'        => 40,
                 'class'       => 'settings_user',
-                'placeholder' => 'User posts per page',
+                'placeholder' => 'USER_POSTS_PER_PAGE',
                 'value'       => $this->config['user'],
             ],
             'options' => [
-                'label' => 'User posts per page',
+                'label' => 'USER_POSTS_PER_PAGE',
             ],
             ]
         );
@@ -159,11 +159,11 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
                 'step'        => 1,
                 'size'        => 40,
                 'class'       => 'settings_news',
-                'placeholder' => 'News posts per page',
+                'placeholder' => 'NEWS_POSTS_PER_PAGE',
                 'value'       => $this->config['news'],
             ],
             'options' => [
-                'label' => 'News posts per page',
+                'label' => 'NEWS_POSTS_PER_PAGE',
             ],
             ]
         );
@@ -186,6 +186,7 @@ final class SettingsPostsForm extends Form implements InputFilterProviderInterfa
             'attributes' => [
                 'type' => 'submit',
                 'id'   => 'submitbutton',
+                'value' => 'SAVE'
             ],
             ]
         );

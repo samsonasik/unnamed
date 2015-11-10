@@ -44,7 +44,7 @@ final class AdministratorForm extends Form implements InputFilterProviderInterfa
             'type'    => 'Zend\Form\Element\Text',
             'name'    => 'user',
             'options' => [
-                'label'          => 'Caption',
+                'label'          => 'CAPTION',
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\Administrator',
                 'property'       => 'caption',
@@ -53,7 +53,7 @@ final class AdministratorForm extends Form implements InputFilterProviderInterfa
                 'required'     => 'true',
                 'size'         => '40',
                 'class'        => 'administrator-user ajax-search',
-                'placeholder'  => 'User ID',
+                'placeholder'  => 'USER_ID',
                 'autocomplete' => 'off',
             ],
             ]
@@ -77,7 +77,7 @@ final class AdministratorForm extends Form implements InputFilterProviderInterfa
             'attributes' => [
                 'type'  => 'submit',
                 'id'    => 'submitbutton',
-                'value' => 'Save',
+                'value' => 'SAVE',
             ],
             ]
         );
@@ -86,6 +86,11 @@ final class AdministratorForm extends Form implements InputFilterProviderInterfa
             [
             'type' => 'Zend\Form\Element\Hidden',
             'name' => 'id',
+            'options' => [
+                'object_manager' => $this->objectManager,
+                'target_class'   => 'SD\Admin\Entity\Administrator',
+                'property'       => 'id',
+            ],
             ]
         );
     }

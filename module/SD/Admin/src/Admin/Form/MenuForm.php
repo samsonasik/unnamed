@@ -46,10 +46,10 @@ final class MenuForm extends Form implements InputFilterProviderInterface
                 'required'    => 'true',
                 'size'        => '40',
                 'id'          => 'seo-caption',
-                'placeholder' => 'Caption',
+                'placeholder' => 'CAPTION',
             ],
             'options' => [
-                'label'          => 'Caption',
+                'label'          => 'CAPTION',
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\Menu',
                 'property'       => 'caption',
@@ -69,9 +69,9 @@ final class MenuForm extends Form implements InputFilterProviderInterface
                 'target_class'              => 'SD\Admin\Entity\Menu',
                 'property'                  => 'menuOrder',
                 'display_empty_item'        => true,
-                'empty_item_label'          => 'Please choose menu order (optional)',
+                'empty_item_label'          => 'MENU_ORDER_TEXT',
                 'value_options'             => $valueOptions,
-                'label'                     => 'Menu order',
+                'label'                     => 'MENU_ORDER',
             ],
         ]);
 
@@ -82,11 +82,11 @@ final class MenuForm extends Form implements InputFilterProviderInterface
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\Menu',
                 'property'       => 'keywords',
-                'label'          => 'Keywords',
+                'label'          => 'KEYWORDS',
             ],
             'attributes' => [
                 'size'        => '40',
-                'placeholder' => 'Keywords (max 15 words) seperated by commas',
+                'placeholder' => 'KEYWORDS_LIMIT',
             ],
         ]);
 
@@ -97,11 +97,11 @@ final class MenuForm extends Form implements InputFilterProviderInterface
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\Menu',
                 'property'       => 'description',
-                'label'          => 'Description',
+                'label'          => 'DESCRIPTION',
             ],
             'attributes' => [
                 'size'        => '40',
-                'placeholder' => 'Description (max 150 characters)',
+                'placeholder' => 'DESCRIPTION',
             ],
         ]);
 
@@ -109,14 +109,14 @@ final class MenuForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Text',
             'name'    => 'language',
             'options' => [
-                'label'          => 'Language',
+                'label'          => 'LANGUAGE',
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\Menu',
                 'property'       => 'language',
             ],
             'attributes' => [
                 'size'        => '40',
-                'placeholder' => 'Language',
+                'placeholder' => 'LANGUAGE',
             ],
         ]);
 
@@ -124,13 +124,13 @@ final class MenuForm extends Form implements InputFilterProviderInterface
             'type'    => 'DoctrineModule\Form\Element\ObjectSelect',
             'name'    => 'parent',
             'options' => [
-                'label'                     => 'Parent menu',
+                'label'                     => 'PARENT',
                 'disable_inarray_validator' => true,
                 'object_manager'            => $this->objectManager,
                 'target_class'              => 'SD\Admin\Entity\Menu',
                 'property'                  => 'caption',
                 'display_empty_item'        => true,
-                'empty_item_label'          => 'Please choose parent menu',
+                'empty_item_label'          => 'PARENT_TEXT',
                 'is_method'                 => true,
                 'find_method'               => [
                     'name' => 'getMenus',
@@ -152,9 +152,9 @@ final class MenuForm extends Form implements InputFilterProviderInterface
                 'target_class'              => 'SD\Admin\Entity\Menu',
                 'property'                  => 'menutype',
                 'display_empty_item'        => true,
-                'empty_item_label'          => 'Please choose menu type',
+                'empty_item_label'          => 'MENU_TYPE_TEXT',
                 'value_options'             => $valueOptions,
-                'label'                     => 'Choose menu type',
+                'label'                     => 'MENU_TYPE',
             ],
         ]);
 
@@ -165,12 +165,12 @@ final class MenuForm extends Form implements InputFilterProviderInterface
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\Menu',
                 'property'       => 'class',
-                'label'          => 'CSS class',
+                'label'          => 'CSS_CLASS',
             ],
             'attributes' => [
                 'size'        => '40',
                 'class'       => 'admin-menu-class',
-                'placeholder' => 'CSS class',
+                'placeholder' => 'CSS_CLASS',
             ],
         ]);
 
@@ -188,9 +188,9 @@ final class MenuForm extends Form implements InputFilterProviderInterface
                 'target_class'       => 'SD\Admin\Entity\Menu',
                 'property'           => 'footercolumn',
                 'display_empty_item' => true,
-                'empty_item_label'   => 'Please choose footer column',
+                'empty_item_label'   => 'FOOTER_COLUMN_TEXT',
                 'value_options'      => $valueOptions,
-                'label'              => 'Choose footer column',
+                'label'              => 'FOOTER_COLUMN',
             ],
         ]);
 
@@ -211,7 +211,7 @@ final class MenuForm extends Form implements InputFilterProviderInterface
             'attributes' => [
                 'type'  => 'submit',
                 'id'    => 'submitbutton',
-                'value' => 'Save',
+                'value' => 'SAVE',
             ],
         ]);
 

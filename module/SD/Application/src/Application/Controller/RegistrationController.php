@@ -126,13 +126,6 @@ final class RegistrationController extends BaseController
          */
         $form = $this->registrationForm;
 
-        $form->get('name')->setLabel($this->translate('NAME'))->setAttribute('placeholder', $this->translate('NAME'));
-        $form->get('email')->setLabel($this->translate('EMAIL'));
-        $form->get('password')->setLabel($this->translate('PASSWORD'));
-        $form->get('repeatpw')->setLabel($this->translate('REPEAT_PASSWORD'))->setAttribute('placeholder', $this->translate('REPEAT_PASSWORD'));
-        $form->get('captcha')->setLabel($this->translate('CAPTCHA'))->setAttribute('placeholder', $this->translate('ENTER_CAPTCHA'));
-        $form->get('register')->setValue($this->translate('SIGN_UP'));
-
         $this->getView()->setVariable('form', $form);
 
         return $this->getView();

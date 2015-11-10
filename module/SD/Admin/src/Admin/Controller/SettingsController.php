@@ -151,7 +151,6 @@ final class SettingsController extends BaseController
      */
     private function initForm($form, $actionKey = 'general')
     {
-        $form->get('submit')->setValue($this->translate('EDIT'));
         $filename = 'config/autoload/system.local.php';
         $settings = include $filename;
         $this->getView()->setVariable('form', $form);

@@ -94,9 +94,6 @@ final class LoginController extends BaseController
          */
         $form = $this->loginForm;
 
-        $form->get('login')->setValue($this->translate('SIGN_IN'));
-        $form->get('email')->setLabel($this->translate('EMAIL'));
-        $form->get('password')->setLabel($this->translate('PASSWORD'));
         $this->getView()->setVariable('form', $form);
 
         return $this->getView();

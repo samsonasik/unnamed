@@ -43,7 +43,7 @@ final class SettingsDiscussionForm extends Form implements InputFilterProviderIn
                 'value' => $this->config['allow_comments'],
             ],
             'options' => [
-                'label' => 'Allow comments',
+                'label' => 'ALLOW_COMMENTS',
             ],
             ]
         );
@@ -57,7 +57,7 @@ final class SettingsDiscussionForm extends Form implements InputFilterProviderIn
                 'value' => $this->config['comment_registration'],
             ],
             'options' => [
-                'label' => 'Users must be registered and logged in to comment',
+                'label' => 'COMMENT_REGISTRATION',
             ],
             ]
         );
@@ -71,7 +71,7 @@ final class SettingsDiscussionForm extends Form implements InputFilterProviderIn
                 'value' => $this->config['comments_notify'],
             ],
             'options' => [
-                'label' => 'Anyone posts a comment',
+                'label' => 'COMMENT_NOTIFY',
             ],
             ]
         );
@@ -85,7 +85,7 @@ final class SettingsDiscussionForm extends Form implements InputFilterProviderIn
                 'value' => $this->config['moderation_notify'],
             ],
             'options' => [
-                'label' => 'A comment is held for moderation',
+                'label' => 'COMMENT_MODERATION',
             ],
             ]
         );
@@ -99,7 +99,7 @@ final class SettingsDiscussionForm extends Form implements InputFilterProviderIn
                 'value' => $this->config['comment_moderation'],
             ],
             'options' => [
-                'label' => 'Comment must be manually approved',
+                'label' => 'COMMENT_MANUAL_APPROVE',
             ],
             ]
         );
@@ -113,7 +113,7 @@ final class SettingsDiscussionForm extends Form implements InputFilterProviderIn
                 'value' => $this->config['show_avatars'],
             ],
             'options' => [
-                'label' => 'Show avatars',
+                'label' => 'SHOW_AVATARS',
             ],
             ]
         );
@@ -136,6 +136,7 @@ final class SettingsDiscussionForm extends Form implements InputFilterProviderIn
             'attributes' => [
                 'type' => 'submit',
                 'id'   => 'submitbutton',
+                'value' => 'SAVE',
             ],
             ]
         );

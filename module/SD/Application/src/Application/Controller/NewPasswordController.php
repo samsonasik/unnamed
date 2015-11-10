@@ -99,9 +99,6 @@ final class NewPasswordController extends BaseController
          * @var NewPasswordForm
          */
         $form = $this->newPasswordForm;
-        $form->get('password')->setLabel($this->translate('PASSWORD'))->setAttribute('placeholder', $this->translate('PASSWORD'));
-        $form->get('repeatpw')->setLabel($this->translate('REPEAT_PASSWORD'))->setAttribute('placeholder', $this->translate('REPEAT_PASSWORD'));
-        $form->get('resetpw')->setValue($this->translate('RESET_PW'));
 
         $this->getTranslation()->offsetSet('resetpwUserId', $tokenExist['user']);
         $this->getView()->setVariable('form', $form);

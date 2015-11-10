@@ -1,8 +1,8 @@
 <div class="showRegister" id="showForm">
     <p itemprop='name' class="legend"><?=$this->translate("CREATE_ACCOUNT");?></p>
     <?php
-        if (!$this->form instanceof Application\Form\RegistrationForm) {
-            echo "<p itemscope itemprop='text' class='c'>{$this->form}</p>";
+        if (!$this->form instanceof SD\Application\Form\RegistrationForm) {
+            echo "<p itemscope itemprop='text' class='c'>".$this->form."</p>";
         } else {
            /**
             * @var $form \Application\Form\RegistrationForm|string

@@ -43,7 +43,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Text',
             'name'    => 'caption',
             'options' => [
-                'label'          => 'Caption',
+                'label'          => 'CAPTION',
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\AdminMenu',
                 'property'       => 'caption',
@@ -52,7 +52,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
                 'required'    => 'true',
                 'size'        => '40',
                 'class'       => 'admin-menu-caption',
-                'placeholder' => 'Caption',
+                'placeholder' => 'CAPTION',
             ],
         ]);
 
@@ -69,9 +69,9 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
                 'target_class'              => 'SD\Admin\Entity\AdminMenu',
                 'property'                  => 'menuOrder',
                 'display_empty_item'        => true,
-                'empty_item_label'          => 'Please choose menu order (optional)',
+                'empty_item_label'          => 'MENU_ORDER_TEXT',
                 'value_options'             => $valueOptions,
-                'label'                     => 'Menu order',
+                'label'                     => 'MENU_ORDER',
             ],
         ]);
 
@@ -79,7 +79,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Text',
             'name'    => 'controller',
             'options' => [
-                'label'          => 'Controller',
+                'label'          => 'CONTROLLER',
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\AdminMenu',
                 'property'       => 'controller',
@@ -87,7 +87,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
             'attributes' => [
                 'size'        => '40',
                 'class'       => 'admin-menu-controller',
-                'placeholder' => 'Controller',
+                'placeholder' => 'CONTROLLER',
             ],
         ]);
 
@@ -95,7 +95,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Text',
             'name'    => 'class',
             'options' => [
-                'label'          => 'CSS class',
+                'label'          => 'CSS_CLASS',
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\AdminMenu',
                 'property'       => 'class',
@@ -103,7 +103,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
             'attributes' => [
                 'size'        => '40',
                 'class'       => 'admin-menu-class',
-                'placeholder' => 'CSS class',
+                'placeholder' => 'CSS_CLASS',
             ],
         ]);
 
@@ -111,7 +111,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Text',
             'name'    => 'action',
             'options' => [
-                'label'          => 'Action',
+                'label'          => 'ACTION',
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\AdminMenu',
                 'property'       => 'action',
@@ -119,7 +119,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
             'attributes' => [
                 'size'        => '40',
                 'class'       => 'admin-menu-action',
-                'placeholder' => 'Action',
+                'placeholder' => 'ACTION',
             ],
         ]);
 
@@ -127,7 +127,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Text',
             'name'    => 'description',
             'options' => [
-                'label'          => 'Description',
+                'label'          => 'DESCRIPTION',
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\AdminMenu',
                 'property'       => 'caption',
@@ -135,7 +135,7 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
             'attributes' => [
                 'size'        => '40',
                 'class'       => 'admin-menu-description',
-                'placeholder' => 'Description',
+                'placeholder' => 'DESCRIPTION',
             ],
         ]);
 
@@ -172,13 +172,18 @@ final class AdminMenuForm extends Form implements InputFilterProviderInterface
             'attributes' => [
                 'type'  => 'submit',
                 'id'    => 'submitbutton',
-                'value' => 'Save',
+                'value' => 'SAVE',
             ],
         ]);
 
         $this->add([
             'type' => 'Zend\Form\Element\Hidden',
             'name' => 'id',
+            'options' => [
+                'object_manager' => $this->objectManager,
+                'target_class'   => 'SD\Admin\Entity\AdminMenu',
+                'property'       => 'id',
+            ],
         ]);
     }
 

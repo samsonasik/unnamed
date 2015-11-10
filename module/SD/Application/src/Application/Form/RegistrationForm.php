@@ -47,10 +47,12 @@ final class RegistrationForm extends Form implements InputFilterProviderInterfac
             'type'       => 'Zend\Form\Element\Text',
             'name'       => 'name',
             'options'    => [
+                'label'  => 'NAME',
                 'object_manager' => $this->objectManager,
             ],
             'attributes' => [
                 'required' => true,
+                'placeholder' => 'ENTER_NAME',
                 'min'      => 3,
                 'max'      => 20,
                 'size'     => 30,
@@ -63,13 +65,14 @@ final class RegistrationForm extends Form implements InputFilterProviderInterfac
             'type'       => 'Zend\Form\Element\Password',
             'name'       => 'password',
             'options'    => [
+                'label'  => 'PASSWORD',
                 'object_manager' => $this->objectManager,
             ],
             'attributes' => [
                 'required'    => true,
+                'placeholder' => 'PASSWORD',
                 'min'         => 8,
                 'size'        => 30,
-                'placeholder' => '1234567890',
             ],
             ]
         );
@@ -79,12 +82,13 @@ final class RegistrationForm extends Form implements InputFilterProviderInterfac
             'type'       => 'Zend\Form\Element\Password',
             'name'       => 'repeatpw',
             'options'    => [
+                'label'  => 'REPEAT_PASSWORD',
                 'object_manager' => $this->objectManager,
             ],
             'attributes' => [
                 'required'    => true,
+                'placeholder' => 'REPEAT_PASSWORD',
                 'size'        => 30,
-                'placeholder' => '1234567890',
             ],
             ]
         );
@@ -94,6 +98,7 @@ final class RegistrationForm extends Form implements InputFilterProviderInterfac
             'type'       => 'Zend\Form\Element\Email',
             'name'       => 'email',
             'options'    => [
+                'label'  => 'EMAIL',
                 'object_manager' => $this->objectManager,
             ],
             'attributes' => [
@@ -126,9 +131,11 @@ final class RegistrationForm extends Form implements InputFilterProviderInterfac
             'name'       => 'captcha',
             'attributes' => [
                 'class' => 'captcha-input',
+                'placeholder' => 'ENTER_CAPTCHA',
                 'size'  => 30,
             ],
             'options' => [
+                'label'  => 'CAPTCHA',
                 'captcha' => $captchaImage,
             ],
             ]
@@ -152,6 +159,7 @@ final class RegistrationForm extends Form implements InputFilterProviderInterfac
             'attributes' => [
                 'type' => 'submit',
                 'id'   => 'submitbutton',
+                'value' => 'SIGN_UP'
             ],
             ]
         );

@@ -66,8 +66,6 @@ final class ResetPasswordController extends BaseController
     {
         $this->getView()->setTemplate('application/resetpassword/index');
 
-        $this->resetPasswordForm->get('resetpw')->setValue($this->translate('RESET_PW'));
-        $this->resetPasswordForm->get('email')->setLabel($this->translate('EMAIL'));
         $this->getView()->setVariable('form', $this->resetPasswordForm);
 
         return $this->getView();

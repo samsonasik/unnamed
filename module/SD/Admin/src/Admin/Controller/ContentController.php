@@ -213,7 +213,7 @@ final class ContentController extends BaseController
 
             $form->setData($data);
             if ($form->isValid()) {
-                $content->setAuthor($this->UserData()->getIdentity()[0]);
+                $content->setAuthor($this->UserData()->getIdentity()['id']);
 
                 /*
                  * We only need the name. All images ar stored in the same folder, based on the month and year

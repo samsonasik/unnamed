@@ -30,6 +30,9 @@ final class LoginForm extends Form implements InputFilterProviderInterface
             [
             'type'       => 'Zend\Form\Element\Email',
             'name'       => 'email',
+            'options'    => [
+                'label' => 'EMAIL',
+            ],
             'attributes' => [
                 'required'    => true,
                 'min'         => 3,
@@ -43,11 +46,14 @@ final class LoginForm extends Form implements InputFilterProviderInterface
             [
             'type'       => 'Zend\Form\Element\Password',
             'name'       => 'password',
+            'options'    => [
+                'label' => 'PASSWORD',
+            ],
             'attributes' => [
                 'required'    => true,
                 'min'         => 8,
                 'size'        => 30,
-                'placeholder' => '1234567890',
+                'placeholder' => 'PASSWORD',
             ],
             ]
         );
@@ -70,6 +76,7 @@ final class LoginForm extends Form implements InputFilterProviderInterface
             'attributes' => [
                 'type' => 'submit',
                 'id'   => 'submitbutton',
+                'value' => "SIGN_IN"
             ],
             ]
         );

@@ -42,11 +42,11 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
                 'required'    => true,
                 'size'        => 40,
                 'class'       => 'settings_host',
-                'placeholder' => 'Host',
+                'placeholder' => 'ENTER_HOST',
                 'value'       => $this->config['host'],
             ],
             'options' => [
-                'label' => 'Host',
+                'label' => 'HOST',
             ],
             ]
         );
@@ -59,11 +59,11 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
                 'required'    => true,
                 'size'        => 40,
                 'class'       => 'settings_name',
-                'placeholder' => 'Name',
+                'placeholder' => 'ENTER_NAME',
                 'value'       => $this->config['name'],
             ],
             'options' => [
-                'label' => 'Name',
+                'label' => 'NAME',
             ],
             ]
         );
@@ -76,11 +76,11 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
                 'required'    => true,
                 'size'        => 40,
                 'class'       => 'settings_port',
-                'placeholder' => 'Port',
+                'placeholder' => 'ENTER_PORT',
                 'value'       => $this->config['port'],
             ],
             'options' => [
-                'label' => 'Port',
+                'label' => 'PORT',
             ],
             ]
         );
@@ -93,11 +93,11 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
                 'required'    => true,
                 'size'        => 40,
                 'class'       => 'settings_username',
-                'placeholder' => 'Username',
+                'placeholder' => 'ENTER_USERNAME',
                 'value'       => $this->config['username'],
             ],
             'options' => [
-                'label' => 'Username',
+                'label' => 'USERNAME',
             ],
             ]
         );
@@ -110,11 +110,11 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
                 'required'    => true,
                 'size'        => 40,
                 'class'       => 'settings_password',
-                'placeholder' => 'Password',
+                'placeholder' => 'ENTER_PASSWORD',
                 'value'       => $this->config['password'],
             ],
             'options' => [
-                'label' => 'Password',
+                'label' => 'PASSWORD',
             ],
             ]
         );
@@ -127,11 +127,11 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
                 'required'    => true,
                 'size'        => 40,
                 'class'       => 'settings_ssl',
-                'placeholder' => 'Certificate type',
+                'placeholder' => 'ENTER_SSL_CERT_TYPE',
                 'value'       => $this->config['ssl'],
             ],
             'options' => [
-                'label' => 'Cert type',
+                'label' => 'SSL_CERT_TYPE',
             ],
             ]
         );
@@ -144,11 +144,11 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
                 'required'    => true,
                 'size'        => 40,
                 'class'       => 'settings_from',
-                'placeholder' => 'Admin email',
+                'placeholder' => 'ENTER_ADMIN_EMAIL',
                 'value'       => $this->config['from'],
             ],
             'options' => [
-                'label' => 'Admin email',
+                'label' => 'ADMIN_EMAIL',
             ],
             ]
         );
@@ -163,7 +163,7 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
                 'value'    => $this->config['connection_class'],
             ],
             'options' => [
-                'label'         => 'Connection type',
+                'label'         => 'CONNECTION_TYPE',
                 'value_options' => $this->config['connection_classes'],
             ],
             ]
@@ -187,6 +187,7 @@ final class SettingsMailForm extends Form implements InputFilterProviderInterfac
             'attributes' => [
                 'type' => 'submit',
                 'id'   => 'submitbutton',
+                'value' => 'SAVE'
             ],
             ]
         );

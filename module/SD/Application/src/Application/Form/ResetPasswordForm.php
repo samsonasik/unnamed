@@ -45,6 +45,7 @@ final class ResetPasswordForm extends Form implements InputFilterProviderInterfa
             'type'       => 'Zend\Form\Element\Email',
             'name'       => 'email',
             'options'    => [
+                'label'  => 'EMAIL',
                 'object_manager' => $this->objectManager,
             ],
             'attributes' => [
@@ -62,6 +63,7 @@ final class ResetPasswordForm extends Form implements InputFilterProviderInterfa
             'attributes' => [
                 'type' => 'submit',
                 'id'   => 'submitbutton',
+                'value' => 'RESET_PW'
             ],
             ]
         );

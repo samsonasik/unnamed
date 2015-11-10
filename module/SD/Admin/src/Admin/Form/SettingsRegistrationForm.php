@@ -43,7 +43,7 @@ final class SettingsRegistrationForm extends Form implements InputFilterProvider
                 'value' => $this->config['allow_registrations'],
             ],
             'options' => [
-                'label' => 'Allow user registration',
+                'label' => 'ALLOW_USER_REGISTRATION',
             ],
             ]
         );
@@ -57,7 +57,7 @@ final class SettingsRegistrationForm extends Form implements InputFilterProvider
                 'value' => $this->config['email_verification'],
             ],
             'options' => [
-                'label'         => 'Email verification type',
+                'label'         => 'EMAIL_VERIFICATION_TYPE',
                 'value_options' => $this->config['email_verifications'],
             ],
             ]
@@ -81,6 +81,7 @@ final class SettingsRegistrationForm extends Form implements InputFilterProvider
             'attributes' => [
                 'type' => 'submit',
                 'id'   => 'submitbutton',
+                'value' => 'SAVE',
             ],
             ]
         );

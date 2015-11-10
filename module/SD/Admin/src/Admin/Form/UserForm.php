@@ -44,7 +44,7 @@ final class UserForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Text',
             'name'    => 'name',
             'options' => [
-                'label'          => 'Name',
+                'label'          => 'NAME',
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\User',
                 'property'       => 'name',
@@ -52,7 +52,7 @@ final class UserForm extends Form implements InputFilterProviderInterface
             'attributes' => [
                 'required'    => 'true',
                 'size'        => '40',
-                'placeholder' => 'Name',
+                'placeholder' => 'ENTER_NAME',
             ],
             ]
         );
@@ -62,14 +62,14 @@ final class UserForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Text',
             'name'    => 'surname',
             'options' => [
-                'label'          => 'Surname',
+                'label'          => 'SURNAME',
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\User',
                 'property'       => 'surname',
             ],
             'attributes' => [
                 'size'        => '40',
-                'placeholder' => 'Surname',
+                'placeholder' => 'ENTER_SURNAME',
             ],
             ]
         );
@@ -79,7 +79,7 @@ final class UserForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Email',
             'name'    => 'email',
             'options' => [
-                'label'          => 'Email',
+                'label'          => 'EMAIL',
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\User',
                 'property'       => 'email',
@@ -98,7 +98,7 @@ final class UserForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Text',
             'name'    => 'birthDate',
             'options' => [
-                'label'          => 'Birthdate',
+                'label'          => 'BIRTHDATE',
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\User',
                 'property'       => 'birthDate',
@@ -116,7 +116,7 @@ final class UserForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Checkbox',
             'name'    => 'isDisabled',
             'options' => [
-                'label'          => 'Disabled',
+                'label'          => 'DISABLED',
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\User',
                 'property'       => 'isDisabled',
@@ -129,7 +129,7 @@ final class UserForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Checkbox',
             'name'    => 'hideEmail',
             'options' => [
-                'label'          => 'Hide email',
+                'label'          => 'HIDE_EMAIL',
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\User',
                 'property'       => 'hideEmail',
@@ -155,7 +155,7 @@ final class UserForm extends Form implements InputFilterProviderInterface
             'attributes' => [
                 'type'  => 'submit',
                 'id'    => 'submitbutton',
-                'value' => 'Save',
+                'value' => 'SAVE',
             ],
             ]
         );

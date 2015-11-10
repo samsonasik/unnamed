@@ -49,13 +49,6 @@ final class ContactController extends BaseController
          * @var ContactForm
          */
         $form = $this->contactForm;
-
-        $form->get('email')->setLabel($this->translate('EMAIL'));
-        $form->get('name')->setLabel($this->translate('NAME'))->setAttribute('placeholder', $this->translate('ENTER_NAME'));
-        $form->get('subject')->setLabel($this->translate('SUBJECT'))->setAttribute('placeholder', $this->translate('ENTER_SUBJECT'));
-        $form->get('captcha')->setLabel($this->translate('CAPTCHA'))->setAttribute('placeholder', $this->translate('ENTER_CAPTCHA'));
-        $form->get('message')->setLabel($this->translate('MESSAGE'))->setAttribute('placeholder', $this->translate('ENTER_MESSAGE'));
-
         $this->getView()->setVariable('form', $form);
 
         /** @var \Zend\Http\Request $request */

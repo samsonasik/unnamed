@@ -44,7 +44,7 @@ final class LanguageForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Text',
             'name'    => 'name',
             'options' => [
-                'label'          => 'Name',
+                'label'          => 'NAME',
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\Language',
                 'property'       => 'name',
@@ -52,7 +52,7 @@ final class LanguageForm extends Form implements InputFilterProviderInterface
             'attributes' => [
                 'required'    => 'true',
                 'size'        => '40',
-                'placeholder' => 'Name',
+                'placeholder' => 'ENTER_NAME',
             ],
             ]
         );
@@ -62,7 +62,7 @@ final class LanguageForm extends Form implements InputFilterProviderInterface
             'type'    => 'Zend\Form\Element\Checkbox',
             'name'    => 'active',
             'options' => [
-                'label'          => 'Active',
+                'label'          => 'ACTIVE',
                 'object_manager' => $this->objectManager,
                 'target_class'   => 'SD\Admin\Entity\Language',
                 'property'       => 'active',
@@ -88,7 +88,7 @@ final class LanguageForm extends Form implements InputFilterProviderInterface
             'attributes' => [
                 'type'  => 'submit',
                 'id'    => 'submitbutton',
-                'value' => 'Save',
+                'value' => 'SAVE',
             ],
             ]
         );

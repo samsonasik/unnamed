@@ -42,11 +42,11 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
                 'required'    => true,
                 'size'        => 40,
                 'class'       => 'settings_site_name',
-                'placeholder' => 'Site name',
+                'placeholder' => 'ENTER_SITE_NAMEENTER_SITE_NAME',
                 'value'       => $this->config['site_name'],
             ],
             'options' => [
-                'label' => 'Site name',
+                'label' => 'SITE_NAME',
             ],
             ]
         );
@@ -59,11 +59,11 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
                 'required'    => false,
                 'size'        => 40,
                 'class'       => 'settings_site_tag_line',
-                'placeholder' => 'Tag line',
+                'placeholder' => 'ENTER_SITE_TAG_LINE',
                 'value'       => $this->config['site_tag_line'],
             ],
             'options' => [
-                'label' => 'Tag line',
+                'label' => 'SITE_TAG_LINE',
             ],
             ]
         );
@@ -76,11 +76,11 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
                 'required'    => false,
                 'size'        => 40,
                 'class'       => 'settings_site_description',
-                'placeholder' => 'Description',
+                'placeholder' => 'DESCRIPTION',
                 'value'       => $this->config['site_description'],
             ],
             'options' => [
-                'label' => 'Description',
+                'label' => 'DESCRIPTION',
             ],
             ]
         );
@@ -93,11 +93,11 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
                 'required'    => false,
                 'size'        => 40,
                 'class'       => 'settings_site_keywords',
-                'placeholder' => 'Keywords',
+                'placeholder' => 'KEYWORDS',
                 'value'       => $this->config['site_keywords'],
             ],
             'options' => [
-                'label' => 'Keywords',
+                'label' => 'KEYWORDS',
             ],
             ]
         );
@@ -110,11 +110,11 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
                 'required'    => false,
                 'size'        => 40,
                 'class'       => 'settings_site_text',
-                'placeholder' => 'Site text',
+                'placeholder' => 'ENTER_SITE_TEXT',
                 'value'       => $this->config['site_text'],
             ],
             'options' => [
-                'label' => 'Site text',
+                'label' => 'SITE_TEXT',
             ],
             ]
         );
@@ -127,11 +127,11 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
                 'required'    => false,
                 'size'        => 40,
                 'class'       => 'settings_system_email',
-                'placeholder' => 'System email',
+                'placeholder' => 'ENTER_SISTEM_EMAIL',
                 'value'       => $this->config['system_email'],
             ],
             'options' => [
-                'label' => 'System email',
+                'label' => 'SISTEM_EMAIL',
             ],
             ]
         );
@@ -144,11 +144,11 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
                 'required'    => false,
                 'size'        => 40,
                 'class'       => 'settings_timezone',
-                'placeholder' => 'Timezone',
+                'placeholder' => 'TIMEZONE',
                 'value'       => $this->config['timezone'],
             ],
             'options' => [
-                'label' => 'Timezone',
+                'label' => 'TIMEZONE',
             ],
             ]
         );
@@ -163,7 +163,7 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
                 'value'    => $this->config['robots_indexing'],
             ],
             'options' => [
-                'label' => 'Site indexing',
+                'label' => 'SITE_INDEXING',
             ],
             ]
         );
@@ -177,7 +177,7 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
                 'class'    => 'settings_date_format',
             ],
             'options' => [
-                'label'         => 'Date',
+                'label'         => 'DATE',
                 'value_options' => $this->config['date_formats'],
             ],
             ]
@@ -192,7 +192,7 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
                 'class'    => 'settings_time_format',
             ],
             'options' => [
-                'label'         => 'Time',
+                'label'         => 'TIME',
                 'value_options' => $this->config['time_formats'],
             ],
             ]
@@ -216,6 +216,7 @@ final class SettingsGeneralForm extends Form implements InputFilterProviderInter
             'attributes' => [
                 'type' => 'submit',
                 'id'   => 'submitbutton',
+                'value' => 'SAVE',
             ],
             ]
         );

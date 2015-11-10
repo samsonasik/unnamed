@@ -76,8 +76,8 @@ class BaseController extends AbstractActionController
     private function initMenus()
     {
         $menu = $this->getTable('SD\\Admin\\Model\\AdminMenuTable')
-                     ->getEntityRepository()
-                     ->findAll();
+                        ->getEntityRepository()
+                        ->findAll();
 
         if (count($menu) > 0) {
             $menus = ['menus' => [], 'submenus' => []];

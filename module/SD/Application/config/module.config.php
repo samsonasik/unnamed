@@ -65,7 +65,7 @@ return [
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
                 'paths' => [
-                   dirname(__DIR__).'/src/Application/Entity',
+                    dirname(__DIR__).'/src/Application/Entity',
                 ],
             ],
             'orm_default' => [

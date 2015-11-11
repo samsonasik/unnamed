@@ -67,7 +67,7 @@ final class ContentController extends BaseController
     public function onDispatch(MvcEvent $event)
     {
         $this->addBreadcrumb(['reference' => '/admin/content', 'name' => $this->translate('CONTENTS')]);
-        $this->contentTable = $this->getTable('SD\Admin\\Model\\ContentTable');
+        $this->contentTable = $this->getTable('SD\\Admin\\Model\\ContentTable');
 
         parent::onDispatch($event);
     }
@@ -84,15 +84,9 @@ final class ContentController extends BaseController
         $table = $this->contentTable;
 
         if ((int) $this->getParam('id') === 1) {
-            $query = $table->queryBuilder()->select(['c'])
-                    ->from('SD\Admin\Entity\Content', 'c')
-                    ->where('c.type = 1 AND c.language = :language')
-                    ->setParameter(':language', (int) $this->language())
-                    ->orderBy('c.date DESC');
-            $paginator = $table->preparePagination($query, false);
+            $paginator = $table->preparePagination($this->getNewsContent(), false);
         } else {
-            $query = $table->queryBuilder()->getEntityManager()->createQuery('SELECT c FROM SD\Admin\Entity\Content AS c LEFT JOIN SD\Admin\Entity\Menu AS m WITH c.menu=m.id WHERE c.type = 0 AND c.language = :language ORDER BY m.parent ASC, m.menuOrder ASC, c.date DESC')->setParameter(':language', $this->language());
-            $paginator = $table->preparePagination($query, true);
+            $paginator = $table->preparePagination($this->getMenuContent(), true);
         }
 
         $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));
@@ -100,6 +94,25 @@ final class ContentController extends BaseController
         $this->getView()->setVariable('paginator', $paginator);
 
         return $this->getView();
+    }
+
+    /**
+     * @return object
+     */
+    private function getNewsContent()
+    {
+        $query = $table->queryBuilder()->select(['c'])
+                    ->from('SD\Admin\Entity\Content', 'c')
+                    ->where('c.type = 1 AND c.language = :language')
+                    ->setParameter(':language', (int) $this->language())
+                    ->orderBy('c.date DESC');
+
+        return $query;
+    }
+
+    public function getMenuContent()
+    {
+        return $table->queryBuilder()->getEntityManager()->createQuery('SELECT c FROM SD\Admin\Entity\Content AS c LEFT JOIN SD\Admin\Entity\Menu AS m WITH c.menu=m.id WHERE c.type = 0 AND c.language = :language ORDER BY m.parent ASC, m.menuOrder ASC, c.date DESC')->setParameter(':language', $this->language());
     }
 
     /**
@@ -142,21 +155,6 @@ final class ContentController extends BaseController
     {
         $this->contentTable->deleteContent((int) $this->getParam('id'), $this->language());
         $this->setLayoutMessages($this->translate('DELETE_CONTENT_SUCCESS'), 'success');
-    }
-
-    /**
-     * this action shows content details.
-     *
-     * @return \Zend\View\Model\ViewModel
-     */
-    protected function detailAction()
-    {
-        $this->getView()->setTemplate('admin/content/detail');
-        $content = $this->contentTable->getContent((int) $this->getParam('id'), $this->language());
-        $this->getView()->setVariable('content', $content);
-        $this->addBreadcrumb(['reference' => '/admin/content/detail/'.$content->getId().'', 'name' => '&laquo;'.$content->getTitle().'&raquo; '.$this->translate('DETAILS')]);
-
-        return $this->getView();
     }
 
     protected function deactivateAction()

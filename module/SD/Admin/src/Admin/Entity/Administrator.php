@@ -37,12 +37,19 @@ final class Administrator
     private $user = 0;
 
     /**
-     * @var array
+     * @param array $data
      */
     public function exchangeArray(array $data = [])
     {
-        $this->id = (isset($data['id'])) ? $data['id'] : $this->getId();
-        $this->user = (isset($data['user'])) ? $data['user'] : $this->getUser();
+        // We need to extract all default values defined for this entity
+        // and make a comparsion between both arrays
+        $arrayCopy = $this->getArrayCopy();
+
+        foreach ($data as $key => $value) {
+            if (isset($arrayCopy[$key])) {
+                $this->{$key} = $value;
+            }
+        }
     }
 
     /**

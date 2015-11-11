@@ -111,18 +111,15 @@ final class Content
      */
     public function exchangeArray(array $data = [])
     {
-        $this->id = (isset($data['id'])) ? $data['id'] : $this->getId();
-        $this->menu = (isset($data['menu'])) ? $data['menu'] : $this->getMenu();
-        $this->title = (isset($data['title'])) ? $data['title'] : $this->getTitle();
-        $this->preview = (isset($data['preview'])) ? $data['preview'] : $this->getPreview();
-        $this->text = (isset($data['text'])) ? $data['text'] : $this->getText();
-        $this->menuOrder = (isset($data['menuOrder'])) ? $data['menuOrder'] : $this->getMenuOrder();
-        $this->type = (isset($data['type'])) ? $data['type'] : $this->getType();
-        $this->date = (isset($data['date'])) ? $data['date'] : $this->getDate();
-        $this->language = (isset($data['language'])) ? $data['language'] : $this->getLanguage();
-        $this->titleLink = (isset($data['titleLink'])) ? $data['titleLink'] : $this->getTitleLink();
-        $this->active = (isset($data['active'])) ? $data['active'] : $this->isActive();
-        $this->author = (isset($data['author'])) ? $data['author'] : $this->getAuthor();
+        // We need to extract all default values defined for this entity
+        // and make a comparsion between both arrays
+        $arrayCopy = $this->getArrayCopy();
+
+        foreach ($data as $key => $value) {
+            if (isset($arrayCopy[$key])) {
+                $this->{$key} = $value;
+            }
+        }
     }
 
     /**

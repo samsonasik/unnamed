@@ -125,20 +125,15 @@ final class User
      */
     public function exchangeArray(array $data = [])
     {
-        $this->id = (isset($data['id'])) ? $data['id'] : $this->getId();
-        $this->name = (isset($data['name'])) ? $data['name'] : $this->getName();
-        $this->surname = (isset($data['surname'])) ? $data['surname'] : $this->getSurname();
-        $this->password = (isset($data['password'])) ? $data['password'] : $this->getPassword();
-        $this->email = (isset($data['email'])) ? $data['email'] : $this->getEmail();
-        $this->birthDate = (isset($data['birthDate'])) ? $data['birthDate'] : $this->getBirthDate();
-        $this->lastLogin = (isset($data['lastLogin'])) ? $data['lastLogin'] : $this->getLastLogin();
-        $this->isDisabled = (isset($data['isDisabled'])) ? $data['isDisabled'] : $this->isDisabled();
-        $this->image = (isset($data['image'])) ? $data['image'] : $this->getImage();
-        $this->registered = (isset($data['registered'])) ? $data['registered'] : $this->getRegistered();
-        $this->hideEmail = (isset($data['hideEmail'])) ? $data['hideEmail'] : $this->getHideEmail();
-        $this->ip = (isset($data['ip'])) ? $data['ip'] : $this->getIp();
-        $this->admin = (isset($data['admin'])) ? $data['admin'] : $this->getAdmin();
-        $this->language = (isset($data['language'])) ? $data['language'] : $this->getLanguage();
+        // We need to extract all default values defined for this entity
+        // and make a comparsion between both arrays
+        $arrayCopy = $this->getArrayCopy();
+
+        foreach ($data as $key => $value) {
+            if (isset($arrayCopy[$key])) {
+                $this->{$key} = $value;
+            }
+        }
     }
 
     /**

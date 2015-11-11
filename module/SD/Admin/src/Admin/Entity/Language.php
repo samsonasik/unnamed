@@ -45,13 +45,19 @@ final class Language
     private $active = 1;
 
     /**
-     * @var array
+     * @param array $data
      */
     public function exchangeArray(array $data = [])
     {
-        $this->id = (isset($data['id'])) ? $data['id'] : $this->getId();
-        $this->name = (isset($data['name'])) ? $data['name'] : $this->getName();
-        $this->active = (isset($data['active'])) ? $data['active'] : $this->isActive();
+        // We need to extract all default values defined for this entity
+        // and make a comparsion between both arrays
+        $arrayCopy = $this->getArrayCopy();
+
+        foreach ($data as $key => $value) {
+            if (isset($arrayCopy[$key])) {
+                $this->{$key} = $value;
+            }
+        }
     }
 
     /**

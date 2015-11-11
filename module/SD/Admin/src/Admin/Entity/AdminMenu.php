@@ -80,18 +80,19 @@ final class AdminMenu
     private $parent = 0;
 
     /**
-     * @var array
+     * @param array $data
      */
     public function exchangeArray(array $data = [])
     {
-        $this->id = (isset($data['id'])) ? $data['id'] : $this->getId();
-        $this->caption = (isset($data['caption'])) ? $data['caption'] : $this->getCaption();
-        $this->menuOrder = (isset($data['menuOrder'])) ? $data['menuOrder'] : $this->getMenuOrder();
-        $this->controller = (isset($data['controller'])) ? $data['controller'] : $this->getController();
-        $this->action = (isset($data['action'])) ? $data['action'] : $this->getAction();
-        $this->class = (isset($data['class'])) ? $data['class'] : $this->getClass();
-        $this->description = (isset($data['description'])) ? $data['description'] : $this->getDescription();
-        $this->parent = (isset($data['parent'])) ? $data['parent'] : $this->getParent();
+        // We need to extract all default values defined for this entity
+        // and make a comparsion between both arrays
+        $arrayCopy = $this->getArrayCopy();
+
+        foreach ($data as $key => $value) {
+            if (isset($arrayCopy[$key])) {
+                $this->{$key} = $value;
+            }
+        }
     }
 
     /**

@@ -81,12 +81,10 @@ final class ContentController extends BaseController
     {
         $this->getView()->setTemplate('admin/content/index');
 
-        $table = $this->contentTable;
-
         if ((int) $this->getParam('id') === 1) {
-            $paginator = $table->preparePagination($this->getNewsContent(), false);
+            $paginator = $this->contentTable->preparePagination($this->getNewsContent(), false);
         } else {
-            $paginator = $table->preparePagination($this->getMenuContent(), true);
+            $paginator = $this->contentTable->preparePagination($this->getMenuContent(), true);
         }
 
         $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));
@@ -101,7 +99,7 @@ final class ContentController extends BaseController
      */
     private function getNewsContent()
     {
-        $query = $table->queryBuilder()->select(['c'])
+        $query = $this->contentTable->queryBuilder()->select(['c'])
                     ->from('SD\Admin\Entity\Content', 'c')
                     ->where('c.type = 1 AND c.language = :language')
                     ->setParameter(':language', (int) $this->language())
@@ -110,9 +108,12 @@ final class ContentController extends BaseController
         return $query;
     }
 
+    /**
+     * @return object
+     */
     public function getMenuContent()
     {
-        return $table->queryBuilder()->getEntityManager()->createQuery('SELECT c FROM SD\Admin\Entity\Content AS c LEFT JOIN SD\Admin\Entity\Menu AS m WITH c.menu=m.id WHERE c.type = 0 AND c.language = :language ORDER BY m.parent ASC, m.menuOrder ASC, c.date DESC')->setParameter(':language', $this->language());
+        return $this->contentTable->queryBuilder()->getEntityManager()->createQuery('SELECT c FROM SD\Admin\Entity\Content AS c LEFT JOIN SD\Admin\Entity\Menu AS m WITH c.menu=m.id WHERE c.type = 0 AND c.language = :language ORDER BY m.parent ASC, m.menuOrder ASC, c.date DESC')->setParameter(':language', $this->language());
     }
 
     /**
@@ -149,8 +150,18 @@ final class ContentController extends BaseController
     }
 
     /**
-     * this action deletes a content.
+     * @return \Zend\View\Model\ViewModel
      */
+    protected function detailAction()
+    {
+        $this->getView()->setTemplate('admin/content/detail');
+        $content = $this->contentTable->getContent((int) $this->getParam('id'), $this->language());
+        $this->getView()->setVariable('content', $content);
+        $this->addBreadcrumb(['reference' => '/admin/content/detail/'.$content->getId().'', 'name' => '&laquo;'.$content->getTitle().'&raquo; '.$this->translate('DETAILS')]);
+
+        return $this->getView();
+    }
+
     protected function deleteAction()
     {
         $this->contentTable->deleteContent((int) $this->getParam('id'), $this->language());
@@ -210,18 +221,19 @@ final class ContentController extends BaseController
             );
 
             $form->setData($data);
-            if ($form->isValid()) {
-                $content->setAuthor($this->UserData()->getIdentity()['id']);
-
-                /*
-                 * We only need the name. All images ar stored in the same folder, based on the month and year
-                 */
-                $content->setPreview($form->getData()->getPreview()['name']);
-                $this->contentTable->saveContent($content);
-                $this->setLayoutMessages('&laquo;'.$content->getTitle().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
-            } else {
-                $this->setLayoutMessages($form->getMessages(), 'error');
+            if (!$form->isValid()) {
+                return $this->setLayoutMessages($form->getMessages(), 'error');
             }
+
+            $content->setAuthor($this->UserData()->getIdentity()['id']);
+
+            /*
+             * We only need the name. All images ar stored in the same folder, based on the month and year
+             */
+            $content->setPreview($form->getData()->getPreview()['name']);
+            $this->contentTable->saveContent($content);
+            return $this->setLayoutMessages('&laquo;'.$content->getTitle().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
+
         }
 
         return $content;
@@ -245,8 +257,6 @@ final class ContentController extends BaseController
 
     /**
      * Deleted image with from a given src.
-     *
-     * @method deleteImageAction
      *
      * @return bool
      */
@@ -284,6 +294,22 @@ final class ContentController extends BaseController
         $dir = new RecursiveDirectoryIterator('userfiles/', FilesystemIterator::SKIP_DOTS);
         $iterator = new RecursiveIteratorIterator($dir, RecursiveIteratorIterator::SELF_FIRST);
         $iterator->setMaxDepth(50);
+        $files = $this->extractImages($iterator);
+
+        chdir(dirname(getcwd()));
+        $model = new JsonModel();
+        $model->setVariables(['files' => $files]);
+
+        return $model;
+    }
+
+    /**
+     * @param  RecursiveIteratorIterator $iterator
+     *
+     * @return array
+     */
+    private function extractImages($iterator)
+    {
         $files = [];
         $index = 0;
 
@@ -295,11 +321,7 @@ final class ContentController extends BaseController
             }
         }
 
-        chdir(dirname(getcwd()));
-        $model = new JsonModel();
-        $model->setVariables(['files' => $files]);
-
-        return $model;
+        return $files;
     }
 
     /**

@@ -108,22 +108,19 @@ final class Menu
     private $class;
 
     /**
-     * @var array
+     * @param array $data
      */
     public function exchangeArray(array $data = [])
     {
-        $this->id = (isset($data['id'])) ? $data['id'] : $this->getId();
-        $this->caption = (isset($data['caption'])) ? $data['caption'] : $this->getCaption();
-        $this->menuOrder = (isset($data['menuOrder'])) ? $data['menuOrder'] : $this->getMenuOrder();
-        $this->language = (isset($data['language'])) ? $data['language'] : $this->getLanguage();
-        $this->parent = (isset($data['parent'])) ? $data['parent'] : $this->getParent();
-        $this->keywords = (isset($data['keywords'])) ? $data['keywords'] : $this->getKeywords();
-        $this->description = (isset($data['description'])) ? $data['description'] : $this->getDescription();
-        $this->menutype = (isset($data['menutype'])) ? $data['menutype'] : $this->getMenuType();
-        $this->footercolumn = (isset($data['footercolumn'])) ? $data['footercolumn'] : $this->getFooterColumn();
-        $this->menulink = (isset($data['menulink'])) ? $data['menulink'] : $this->getMenuLink();
-        $this->active = (isset($data['active'])) ? $data['active'] : $this->isActive();
-        $this->class = (isset($data['class'])) ? $data['class'] : $this->getClass();
+        // We need to extract all default values defined for this entity
+        // and make a comparsion between both arrays
+        $arrayCopy = $this->getArrayCopy();
+
+        foreach ($data as $key => $value) {
+            if (isset($arrayCopy[$key])) {
+                $this->{$key} = $value;
+            }
+        }
     }
 
     /**

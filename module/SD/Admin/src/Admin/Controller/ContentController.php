@@ -185,7 +185,7 @@ final class ContentController extends BaseController
      *
      * @param null|Content $content
      *
-     * @return void
+     * @return object|null
      */
     private function initForm(Content $content = null)
     {
@@ -212,7 +212,6 @@ final class ContentController extends BaseController
 
             $this->processFormData($form, $content);
         }
-
     }
 
     /**

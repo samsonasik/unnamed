@@ -203,15 +203,28 @@ final class ContentController extends BaseController
         /** @var \Zend\Http\Request $request */
         $request = $this->getRequest();
         if ($request->isPost()) {
-            $form->setInputFilter($form->getInputFilter());
             $data = array_merge_recursive(
                 $request->getPost()->toArray(),
                 $request->getFiles()->toArray()
             );
-            $form->setData($data);
 
-            $this->processFormData($form, $content);
+            $this->processFormData($form, $content, $data);
         }
+    }
+
+    /**
+     * @param ContentForm $form
+     * @param Content     $content
+     * @param array       $data
+     *
+     * @return void
+     */
+    private function processFormData(ContentForm $form, Content $content, array $data)
+    {
+        $form->setInputFilter($form->getInputFilter());
+        $form->setData($data);
+
+        $this->saveFormData($form, $content);
     }
 
     /**
@@ -220,7 +233,7 @@ final class ContentController extends BaseController
      *
      * @return void
      */
-    private function processFormData(ContentForm $form, Content $content)
+    private function saveFormData(ContentForm $form, Content $content)
     {
 
         if (!$form->isValid()) {

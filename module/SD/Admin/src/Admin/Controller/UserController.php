@@ -123,7 +123,7 @@ final class UserController extends BaseController
      *
      * @param User|null $user
      *
-     * @return bool|object
+     * @return false|object
      */
     private function initForm(User $user = null)
     {

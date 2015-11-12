@@ -280,34 +280,34 @@ final class UserForm extends Form implements InputFilterProviderInterface
                     ],
                 ],
             ],
-            // [
-            //     "name"=>"image",
-            //     "required" => false,
-            //     'validators' => [
-            //         [
-            //             'name' => 'Zend\Validator\File\Size',
-            //             'options' => [
-            //                 'min' => '10kB',
-            //                 'max' => '5MB',
-            //                 'useByteString' => true,
-            //             ],
-            //         ],
-            //         [
-            //             'name' => 'Zend\Validator\File\Extension',
-            //             'options' => [
-            //                 'extension' => [
-            //                     'jpg',
-            //                     'gif',
-            //                     'png',
-            //                     'jpeg',
-            //                     'bmp',
-            //                     'webp',
-            //                 ],
-            //                 'case' => true,
-            //             ],
-            //         ],
-            //     ],
-            // ],
+            [
+                "name"=>"image",
+                "required" => false,
+                'validators' => [
+                    [
+                        'name' => 'Zend\Validator\File\Size',
+                        'options' => [
+                            'min' => '10kB',
+                            'max' => '5MB',
+                            'useByteString' => true,
+                        ],
+                    ],
+                    [
+                        'name' => 'Zend\Validator\File\Extension',
+                        'options' => [
+                            'extension' => [
+                                'jpg',
+                                'gif',
+                                'png',
+                                'jpeg',
+                                'bmp',
+                                'webp',
+                            ],
+                            'case' => true,
+                        ],
+                    ],
+                ],
+            ],
             [
                 'name'     => 'hideEmail',
                 'required' => false,

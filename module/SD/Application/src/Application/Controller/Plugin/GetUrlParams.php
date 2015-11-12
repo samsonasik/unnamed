@@ -34,7 +34,7 @@ final class GetUrlParams extends AbstractPlugin
      *
      * @param string $paramName
      *
-     * @return mixed
+     * @return array|string
      */
     public function __invoke($paramName)
     {

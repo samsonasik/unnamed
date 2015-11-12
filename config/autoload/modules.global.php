@@ -9,12 +9,8 @@
  * @link       https://github.com/Stanimirdim92/unnamed
  */
 
-/*
- * Set global ENV. Used for debugging.
- */
-if (!defined('APP_ENV')) {
-    define('APP_ENV', getenv('APPLICATION_ENV'));
-}
+$env = getenv('APPLICATION_ENV');
+
 /*
  * All configurations options, used in two or more modules must go in here.
  */
@@ -76,14 +72,14 @@ return [
                     'options' => [],
                 ],
                 'exception_handler' => [
-                    'throw_exceptions' => (APP_ENV === 'development'),
+                    'throw_exceptions' => ($env === 'development'),
                 ],
             ],
         ],
     ],
     'view_manager' => [
-        'display_not_found_reason' => (APP_ENV === 'development'),
-        'display_exceptions'       => (APP_ENV === 'development'),
+        'display_not_found_reason' => ($env === 'development'),
+        'display_exceptions'       => ($env === 'development'),
         'doctype'                  => 'HTML5',
         'not_found_template'       => 'error/index',
         'exception_template'       => 'error/index',
@@ -99,8 +95,7 @@ return [
                 'identity_class'      => 'SD\Admin\Entity\User',
                 'identity_property'   => 'email',
                 'credential_property' => 'password',
-                'credential_callable' => function (\SD\Admin\Entity\User $user, $passwordProvided)
-                {
+                'credential_callable' => function (\SD\Admin\Entity\User $user, $passwordProvided) {
                     return password_verify($passwordProvided, $user->getPassword());
                 },
             ],

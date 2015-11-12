@@ -104,7 +104,7 @@ final class Content
      *
      * @ORM\Column(name="author", type="integer", nullable=false)
      */
-    private $author;
+    private $author = 0;
 
     /**
      * @param array $data
@@ -221,19 +221,19 @@ final class Content
     }
 
     /**
-     * Set author.
+     * Set author id.
      *
-     * @param string $author
+     * @param int $author
      */
-    public function setAuthor($author)
+    public function setAuthor($author = 0)
     {
         $this->author = $author;
     }
 
     /**
-     * Get author.
+     * Get author id.
      *
-     * @return string
+     * @return int
      */
     public function getAuthor()
     {

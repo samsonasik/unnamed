@@ -214,7 +214,7 @@ final class MenuController extends BaseController
      *
      * @param null|Menu $menu
      *
-     * @return bool|object
+     * @return false|object
      */
     private function initForm(Menu $menu = null)
     {

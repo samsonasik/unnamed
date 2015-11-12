@@ -42,7 +42,7 @@ final class Language
      *
      * @ORM\Column(name="active", type="smallint", nullable=false)
      */
-    private $active = 1;
+    private $active = true;
 
     /**
      * @param array $data
@@ -133,7 +133,7 @@ final class Language
      *
      * @return $this
      */
-    public function setActive($active = 0)
+    public function setActive($active = true)
     {
         $this->active = $active;
 

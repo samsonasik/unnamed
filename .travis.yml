@@ -28,9 +28,9 @@ before_script:
 script:
   - ls -d module/*/test/PHPUnit | parallel --gnu --keep-order 'echo "Running {} tests"; ./vendor/bin/phpunit -c {}/phpunit.xml;' || exit 1
   - cd ..
+  - php coverage-report.php
 
 after_script:
-  - php coverage-report.php
   - php vendor/bin/coveralls -v --exclude-no-stmt
 
 after_success:

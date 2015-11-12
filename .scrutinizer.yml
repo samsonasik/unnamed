@@ -1,0 +1,101 @@
+checks:
+    php:
+        use_self_instead_of_fqcn: true
+        uppercase_constants: true
+        simplify_boolean_return: true
+        return_doc_comments: true
+        properties_in_camelcaps: true
+        phpunit_assertions: true
+        parameters_in_camelcaps: true
+        parameter_doc_comments: true
+        no_short_variable_names:
+            minimum: '2'
+        function_in_camel_caps: true
+        fix_use_statements:
+            remove_unused: true
+            preserve_multiple: false
+            preserve_blanklines: false
+            order_alphabetically: true
+        fix_line_ending: true
+        encourage_single_quotes: true
+        classes_in_camel_caps: true
+        no_commented_out_code: true
+        avoid_entity_manager_injection: true
+        side_effects_or_types: true
+        psr2_switch_declaration: true
+        psr2_class_declaration: true
+        avoid_superglobals: true
+        return_doc_comment_if_not_inferrable: true
+        param_doc_comment_if_not_inferrable: true
+        no_short_method_names:
+            minimum: '3'
+        duplication: false
+        newline_at_end_of_file: true
+        remove_extra_empty_lines: true
+        prefer_while_loop_over_for_loop: true
+        optional_parameters_at_the_end: true
+        no_long_variable_names:
+            maximum: '20'
+        no_goto: true
+        naming_conventions:
+            local_variable: '^[a-z][a-zA-Z0-9]*$'
+            abstract_class_name: ^Abstract|Factory$
+            utility_class_name: 'Utils?$'
+            constant_name: '^[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)*$'
+            property_name: '^[a-z][a-zA-Z0-9]*$'
+            method_name: '^(?:[a-z]|__)[a-zA-Z0-9]*$'
+            parameter_name: '^[a-z][a-zA-Z0-9]*$'
+            interface_name: '^[A-Z][a-zA-Z0-9]*Interface$'
+            type_name: '^[A-Z][a-zA-Z0-9]*$'
+            exception_name: '^[A-Z][a-zA-Z0-9]*Exception$'
+            isser_method_name: '^(?:is|has|should|may|supports|valid|validate)'
+        more_specific_types_in_doc_comments: true
+        avoid_unnecessary_concatenation: true
+        avoid_todo_comments: true
+        avoid_perl_style_comments: true
+        avoid_multiple_statements_on_same_line: true
+        avoid_fixme_comments: true
+    javascript: {  }
+
+filter:
+    excluded_paths:
+        - module/SD/Admin/test/*
+        - module/SD/Application/test/*
+        - module/SD/Themes/test/*
+coding_style:
+    php:
+        spaces:
+            before_parentheses:
+                closure_definition: true
+        braces:
+            classes_functions:
+                class: new-line
+                function: new-line
+                closure: end-of-line
+            if:
+                opening: end-of-line
+            for:
+                opening: end-of-line
+            while:
+                opening: end-of-line
+            do_while:
+                opening: end-of-line
+            switch:
+                opening: end-of-line
+            try:
+                opening: end-of-line
+        upper_lower_casing:
+            keywords:
+                general: lower
+            constants:
+                true_false_null: lower
+tools:
+    external_code_coverage: true
+    php_mess_detector: true
+    sensiolabs_security_checker: true
+    php_code_coverage: true
+    php_pdepend: true
+    php_loc:
+        enabled: true
+    php_cpd:
+        enabled: true

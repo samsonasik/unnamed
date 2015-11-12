@@ -59,16 +59,18 @@ final class ResetPassword
 
     /**
      * @param array $data
-     *
-     * @return mixed
      */
     public function exchangeArray(array $data = [])
     {
-        $this->id = (isset($data['id'])) ? $data['id'] : $this->getId();
-        $this->ip = (isset($data['ip'])) ? $data['ip'] : $this->getIp();
-        $this->date = (isset($data['date'])) ? $data['date'] : $this->getDate();
-        $this->token = (isset($data['token'])) ? $data['token'] : $this->getToken();
-        $this->user = (isset($data['user'])) ? $data['user'] : $this->getUser();
+        // We need to extract all default values defined for this entity
+        // and make a comparsion between both arrays
+        $arrayCopy = $this->getArrayCopy();
+
+        foreach ($data as $key => $value) {
+            if (isset($arrayCopy[$key])) {
+                $this->{$key} = $value;
+            }
+        }
     }
 
     /**

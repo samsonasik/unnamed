@@ -100,9 +100,9 @@ final class Content
     private $active = 1;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="author", type="string", length=200, nullable=true)
+     * @ORM\Column(name="author", type="integer", nullable=false)
      */
     private $author;
 

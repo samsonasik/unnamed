@@ -185,7 +185,7 @@ final class ContentController extends BaseController
      *
      * @param null|Content $content
      *
-     * @return Content
+     * @return void
      */
     private function initForm(Content $content = null)
     {
@@ -200,17 +200,6 @@ final class ContentController extends BaseController
         $form->bind($content);
         $this->getView()->setVariable('form', $form);
 
-        return $this->form($form, $content);
-    }
-
-    /**
-     * @param ContentForm $form
-     * @param Content     $content
-     *
-     * @return Content
-     */
-    private function form(ContentForm $form, Content $content)
-    {
         /** @var \Zend\Http\Request $request */
         $request = $this->getRequest();
         if ($request->isPost()) {
@@ -219,24 +208,35 @@ final class ContentController extends BaseController
                 $request->getPost()->toArray(),
                 $request->getFiles()->toArray()
             );
-
             $form->setData($data);
-            if (!$form->isValid()) {
-                return $this->setLayoutMessages($form->getMessages(), 'error');
-            }
 
-            $content->setAuthor($this->UserData()->getIdentity()['id']);
-
-            /*
-             * We only need the name. All images ar stored in the same folder, based on the month and year
-             */
-            $content->setPreview($form->getData()->getPreview()['name']);
-            $this->contentTable->saveContent($content);
-            return $this->setLayoutMessages('&laquo;'.$content->getTitle().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
-
+            $this->processFormData($form, $content);
         }
 
-        return $content;
+    }
+
+    /**
+     * @param ContentForm $form
+     * @param Content     $content
+     *
+     * @return void
+     */
+    private function processFormData(ContentForm $form, Content $content)
+    {
+
+        if (!$form->isValid()) {
+            return $this->setLayoutMessages($form->getMessages(), 'error');
+        }
+
+        $content->setAuthor($this->UserData()->getIdentity()['id']);
+
+        /*
+         * We only need the name. All images ar stored in the same folder, based on the month and year
+         */
+        $content->setPreview($form->getData()->getPreview()['name']);
+        $this->contentTable->saveContent($content);
+
+        $this->setLayoutMessages('&laquo;'.$content->getTitle().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
     }
 
     /**
@@ -304,7 +304,7 @@ final class ContentController extends BaseController
     }
 
     /**
-     * @param  RecursiveIteratorIterator $iterator
+     * @param RecursiveIteratorIterator $iterator
      *
      * @return array
      */

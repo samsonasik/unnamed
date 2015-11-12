@@ -8,6 +8,8 @@ DD.MM.YYYY
 - Refactored login controller
 - Added NewPassword, ResetPassword classes
 - Moved all namespaces under one global namespace - SD
+- Simplified exchangeArray function
+- Removed Image class for now - moving it to a separated module which will be included via composer
 
 DD.MM.YYYY
 ## 0.0.21 (2.11.2015) - Stable Alpha ##

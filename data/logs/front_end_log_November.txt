@@ -1,0 +1,29 @@
+2015-11-11T19:03:28+00:00 ERR (3): 
+Exception: Unknown column type "int" requested. Any Doctrine type that you use has to be registered with \Doctrine\DBAL\Types\Type::addType(). You can get a list of all the known types with \Doctrine\DBAL\Types\Type::getTypesMap(). If this error occurs during database introspection then you might have forgot to register all database types for a Doctrine Type. Use AbstractPlatform#registerDoctrineTypeMapping() or have your custom types implement Type#getMappedDatabaseTypes(). If the type name is empty you might have a problem with the cache or forgot some mapping information.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\DBALException.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Types\Type.php(172): Doctrine\DBAL\DBALException::unknownColumnType('int')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Internal\Hydration\AbstractHydrator.php(374): Doctrine\DBAL\Types\Type::getType('int')
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Internal\Hydration\AbstractHydrator.php(260): Doctrine\ORM\Internal\Hydration\AbstractHydrator->hydrateColumnInfo('author_11')
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Internal\Hydration\ObjectHydrator.php(333): Doctrine\ORM\Internal\Hydration\AbstractHydrator->gatherRowData(Array, Array, Array)
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Internal\Hydration\ObjectHydrator.php(165): Doctrine\ORM\Internal\Hydration\ObjectHydrator->hydrateRowData(Array, Array)
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Internal\Hydration\AbstractHydrator.php(147): Doctrine\ORM\Internal\Hydration\ObjectHydrator->hydrateAllData()
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(978): Doctrine\ORM\Internal\Hydration\AbstractHydrator->hydrateAll(Object(Doctrine\DBAL\Driver\PDOStatement), Object(Doctrine\ORM\Query\ResultSetMapping), Array)
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(924): Doctrine\ORM\AbstractQuery->executeIgnoreQueryCache(NULL, NULL)
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php(804): Doctrine\ORM\AbstractQuery->execute(NULL, NULL)
+#9 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Model\ContentTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#10 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(144): SD\Admin\Model\ContentTable->getContent(2, 1)
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\ContentController->editAction()
+#12 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(72): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#14 [internal function]: SD\Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#19 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#20 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#21 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#22 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#23 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#24 {main}

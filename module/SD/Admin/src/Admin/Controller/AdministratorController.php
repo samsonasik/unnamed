@@ -18,7 +18,7 @@ use Zend\Mvc\MvcEvent;
  * @method object getTable($tableName)
  * @method object setLayoutMessages($message = [], $namespace = 'default')
  * @method string translate($message = '')
- * @method mixed getParam($paramName = null, $default = null)
+ * @method mixed getParam($paramName = null)
  */
 final class AdministratorController extends BaseController
 {
@@ -100,7 +100,7 @@ final class AdministratorController extends BaseController
     protected function editAction()
     {
         $this->getView()->setTemplate('admin/administrator/edit');
-        $administrator = $this->administratorTable->getAdministrator((int) $this->getParam('id', 0));
+        $administrator = $this->administratorTable->getAdministrator((int) $this->getParam('id'));
         $this->getView()->setVariable('administrator', $administrator);
         $this->addBreadcrumb(['reference' => '/admin/administrator/edit/'.$administrator->getUser().'', 'name' => $this->translate('EDIT_ADMINISTRATOR')]);
         $this->initForm($administrator);
@@ -113,7 +113,7 @@ final class AdministratorController extends BaseController
      */
     protected function deleteAction()
     {
-        $id = (int) $this->getParam('id', 0);
+        $id = (int) $this->getParam('id');
         $user = $this->userTable->getUser($id);
         $user->setAdmin(0);
         $this->userTable->saveUser($user);

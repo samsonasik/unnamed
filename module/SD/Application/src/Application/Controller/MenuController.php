@@ -15,7 +15,7 @@ use Doctrine\ORM\Query\Expr\Join;
 /**
  * @method object getTable($tableName)
  * @method mixed initMetaTags(array $content = [])
- * @method mixed getParam($paramName = null, $default = null)
+ * @method mixed getParam($paramName = null)
  */
 final class MenuController extends BaseController
 {

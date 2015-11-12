@@ -19,7 +19,7 @@ use Zend\Mvc\MvcEvent;
  * @method object getTable($tableName)
  * @method object setLayoutMessages($message = [], $namespace = 'default')
  * @method string translate($message = '')
- * @method mixed getParam($paramName = null, $default = null)
+ * @method mixed getParam($paramName = null)
  */
 final class MenuController extends BaseController
 {
@@ -164,7 +164,7 @@ final class MenuController extends BaseController
     protected function editAction()
     {
         $this->getView()->setTemplate('admin/menu/edit');
-        $menu = $this->menuTable->getMenu((int) $this->getParam('id', 0), $this->language());
+        $menu = $this->menuTable->getMenu((int) $this->getParam('id'), $this->language());
         $this->addBreadcrumb(['reference' => '/admin/menu/edit/'.$menu->getId().'', 'name' => $this->translate('EDIT_MENU').' &laquo;'.$menu->getCaption().'&raquo;']);
         $this->initForm($menu);
 
@@ -173,14 +173,14 @@ final class MenuController extends BaseController
 
     protected function deactivateAction()
     {
-        $this->menuTable->toggleActiveMenu((int) $this->getParam('id', 0), $this->language(), 0);
+        $this->menuTable->toggleActiveMenu((int) $this->getParam('id'), $this->language(), 0);
         $this->setLayoutMessages($this->translate('MENU_DISABLE_SUCCESS'), 'success');
         $this->redirect()->toUrl('/admin/menu');
     }
 
     protected function activateAction()
     {
-        $this->menuTable->toggleActiveMenu((int) $this->getParam('id', 0), $this->language(), 1);
+        $this->menuTable->toggleActiveMenu((int) $this->getParam('id'), $this->language(), 1);
         $this->setLayoutMessages($this->translate('MENU_ENABLE_SUCCESS'), 'success');
         $this->redirect()->toUrl('/admin/menu');
     }
@@ -190,7 +190,7 @@ final class MenuController extends BaseController
      */
     protected function deleteAction()
     {
-        $this->menuTable->deleteMenu((int) $this->getParam('id', 0), $this->language());
+        $this->menuTable->deleteMenu((int) $this->getParam('id'), $this->language());
         $this->setLayoutMessages($this->translate('DELETE_MENU_SUCCESS'), 'success');
     }
 
@@ -202,7 +202,7 @@ final class MenuController extends BaseController
     protected function detailAction()
     {
         $this->getView()->setTemplate('admin/menu/detail');
-        $menu = $this->menuTable->getMenu((int) $this->getParam('id', 0), $this->language());
+        $menu = $this->menuTable->getMenu((int) $this->getParam('id'), $this->language());
         $this->getView()->setVariable('menuDetail', $menu);
         $this->addBreadcrumb(['reference' => '/admin/menu/detail/'.$menu->getId().'', 'name' => '&laquo;'.$menu->getCaption().'&raquo; '.$this->translate('DETAILS')]);
 

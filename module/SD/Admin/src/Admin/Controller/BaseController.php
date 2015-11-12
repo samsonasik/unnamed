@@ -20,7 +20,7 @@ use Zend\View\Model\ViewModel;
 /**
  * @method object getTable($tableName)
  * @method string translate($message = '')
- * @method mixed getParam($paramName = null, $default = null)
+ * @method mixed getParam($paramName = null)
  * @method mixed UserData()
  */
 class BaseController extends AbstractActionController

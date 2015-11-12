@@ -19,7 +19,7 @@ use Zend\Mvc\MvcEvent;
  * @method object getTable($tableName)
  * @method object setLayoutMessages($message = [], $namespace = 'default')
  * @method string translate($message = '')
- * @method mixed getParam($paramName = null, $default = null)
+ * @method mixed getParam($paramName = null)
  * @method string|null systemSettings($option = 'general', $value = 'site_name')
  */
 final class UserController extends BaseController
@@ -95,7 +95,7 @@ final class UserController extends BaseController
                     ->setParameter(':isDisabled', (int) $isDisabled);
 
         $paginator = $table->preparePagination($query, false);
-        $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));
+        $paginator->setCurrentPageNumber((int) $this->getParam('page'));
         $paginator->setItemCountPerPage($this->systemSettings('posts', 'user'));
 
         return $paginator;
@@ -110,7 +110,7 @@ final class UserController extends BaseController
     protected function editAction()
     {
         $this->getView()->setTemplate('admin/user/edit');
-        $user = $this->userTable->getUser((int) $this->getParam('id', 0));
+        $user = $this->userTable->getUser((int) $this->getParam('id'));
         $this->getView()->setVariable('user', $user);
         $this->addBreadcrumb(['reference' => '/admin/user/edit/'.$user->getId().'', 'name' => $this->translate('EDIT_USER').' &laquo;'.$user->getName().'&raquo;']);
         $this->initForm($user);
@@ -171,7 +171,7 @@ final class UserController extends BaseController
      */
     protected function enableAction()
     {
-        $this->userTable->toggleUserState((int) $this->getParam('id', 0), 0);
+        $this->userTable->toggleUserState((int) $this->getParam('id'), 0);
         $this->setLayoutMessages($this->translate('USER_ENABLE_SUCCESS'), 'success');
     }
 
@@ -180,7 +180,7 @@ final class UserController extends BaseController
      */
     protected function disableAction()
     {
-        $this->userTable->toggleUserState((int) $this->getParam('id', 0), 1);
+        $this->userTable->toggleUserState((int) $this->getParam('id'), 1);
         $this->setLayoutMessages($this->translate('USER_DISABLE_SUCCESS'), 'success');
     }
 
@@ -192,7 +192,7 @@ final class UserController extends BaseController
     protected function detailAction()
     {
         $this->getView()->setTemplate('admin/user/detail');
-        $user = $this->userTable->getUser((int) $this->getParam('id', 0));
+        $user = $this->userTable->getUser((int) $this->getParam('id'));
         $this->getView()->setVariable('user', $user);
         $this->addBreadcrumb(['reference' => '/admin/user/detail/'.$user->getId().'', 'name' => '&laquo;'.$user->getFullName().'&raquo; '.$this->translate('DETAILS')]);
 
@@ -206,7 +206,7 @@ final class UserController extends BaseController
      */
     protected function searchAction()
     {
-        $search = (string) $this->getParam('ajaxsearch', null);
+        $search = (string) $this->getParam('ajaxsearch');
 
         return $this->ajaxUserSearch($search, $this->htmlButtons());
     }

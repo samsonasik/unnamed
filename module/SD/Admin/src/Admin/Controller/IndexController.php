@@ -30,7 +30,7 @@ final class IndexController extends BaseController
     protected function languageAction()
     {
         /** @var \SD\Admin\Entity\Language $language */
-        $language = $this->getTable('SD\\Admin\\Model\\LanguageTable')->getLanguage((int) $this->getParam('id', 1));
+        $language = $this->getTable('SD\\Admin\\Model\\LanguageTable')->getLanguage((int) $this->getParam('id'));
 
         $this->getTranslation()->offsetSet('language', $language->getId());
         $this->getTranslation()->offsetSet('languageName', $language->getName());

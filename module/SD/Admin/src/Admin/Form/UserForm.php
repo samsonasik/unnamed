@@ -281,8 +281,8 @@ final class UserForm extends Form implements InputFilterProviderInterface
                 ],
             ],
             [
-                "name"=>"image",
-                "required" => false,
+                'name'=>'image',
+                'required' => false,
                 'validators' => [
                     [
                         'name' => 'Zend\Validator\File\Size',

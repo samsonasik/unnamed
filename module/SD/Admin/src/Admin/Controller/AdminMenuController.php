@@ -18,7 +18,7 @@ use Zend\Mvc\MvcEvent;
  * @method object getTable($tableName)
  * @method object setLayoutMessages($message = [], $namespace = 'default')
  * @method string translate($message = '')
- * @method mixed getParam($paramName = null, $default = null)
+ * @method mixed getParam($paramName = null)
  */
 final class AdminMenuController extends BaseController
 {
@@ -108,7 +108,7 @@ final class AdminMenuController extends BaseController
     protected function editAction()
     {
         $this->getView()->setTemplate('admin/admin-menu/edit');
-        $adminMenu = $this->adminMenuTable->getAdminMenu((int) $this->getParam('id', 0));
+        $adminMenu = $this->adminMenuTable->getAdminMenu((int) $this->getParam('id'));
         $this->getView()->setVariable('adminMenu', $adminMenu);
         $this->addBreadcrumb(['reference' => '/admin/admin-menu/edit/'.$adminMenu->getId().'', 'name' => $this->translate('EDIT_ADMINMENU').' &laquo;'.$adminMenu->getCaption().'&raquo;']);
         $this->initForm($adminMenu);
@@ -121,7 +121,7 @@ final class AdminMenuController extends BaseController
      */
     protected function deleteAction()
     {
-        $this->adminMenuTable->deleteAdminMenu((int) $this->getParam('id', 0));
+        $this->adminMenuTable->deleteAdminMenu((int) $this->getParam('id'));
         $this->setLayoutMessages($this->translate('DELETE_ADMINMENU_SUCCESS'), 'success');
     }
 
@@ -131,7 +131,7 @@ final class AdminMenuController extends BaseController
     protected function detailAction()
     {
         $this->getView()->setTemplate('admin/admin-menu/detail');
-        $adminMenu = $this->adminMenuTable->getAdminMenu((int) $this->getParam('id', 0));
+        $adminMenu = $this->adminMenuTable->getAdminMenu((int) $this->getParam('id'));
         $this->getView()->setVariable('adminMenu', $adminMenu);
         $this->addBreadcrumb(['reference' => '/admin/admin-menu/detail/'.$adminMenu->getId().'', 'name' => '&laquo;'.$adminMenu->getCaption().'&raquo; '.$this->translate('DETAILS')]);
 

@@ -20,7 +20,7 @@ use Zend\Stdlib\Parameters;
  * @method object getTable($tableName)
  * @method object setLayoutMessages($message = [], $namespace = 'default')
  * @method string translate($message = '')
- * @method mixed getParam($paramName = null, $default = null)
+ * @method mixed getParam($paramName = null)
  * @method string|null systemSettings($option = 'general', $value = 'site_name')
  */
 final class LanguageController extends BaseController
@@ -73,7 +73,7 @@ final class LanguageController extends BaseController
                     ->from('SD\Admin\Entity\Language', 'l');
 
         $paginator = $table->preparePagination($query, false);
-        $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));
+        $paginator->setCurrentPageNumber((int) $this->getParam('page'));
         $paginator->setItemCountPerPage($this->systemSettings('posts', 'language'));
         $this->getView()->setVariable('paginator', $paginator);
 
@@ -103,7 +103,7 @@ final class LanguageController extends BaseController
     protected function editAction()
     {
         $this->getView()->setTemplate('admin/language/edit');
-        $language = $this->languageTable->getLanguage((int) $this->getParam('id', 0));
+        $language = $this->languageTable->getLanguage((int) $this->getParam('id'));
         $this->getView()->setVariable('language', $language);
         $this->addBreadcrumb(['reference' => '/admin/language/edit/'.$language->getId().'', 'name' => $this->translate('EDIT_LANGUAGE').' &laquo;'.$language->getName().'&raquo;']);
         $this->initForm($language);
@@ -116,7 +116,7 @@ final class LanguageController extends BaseController
      */
     protected function deleteAction()
     {
-        $this->languageTable->deleteLanguage((int) $this->getParam('id', 0));
+        $this->languageTable->deleteLanguage((int) $this->getParam('id'));
         $this->setLayoutMessages($this->translate('DELETE_LANGUAGE_SUCCESS'), 'success');
     }
 
@@ -128,7 +128,7 @@ final class LanguageController extends BaseController
     protected function detailAction()
     {
         $this->getView()->setTemplate('admin/language/detail');
-        $lang = $this->languageTable->getLanguage((int) $this->getParam('id', 0));
+        $lang = $this->languageTable->getLanguage((int) $this->getParam('id'));
         $this->getView()->setVariable('lang', $lang);
         $this->addBreadcrumb(['reference' => '/admin/language/detail/'.$lang->getId().'', 'name' => '&laquo;'.$lang->getName().'&raquo; '.$this->translate('DETAILS')]);
 

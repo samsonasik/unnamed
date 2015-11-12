@@ -16,7 +16,7 @@ use SD\Application\Form\ContactForm;
  * @method object getTable($tableName)
  * @method object setLayoutMessages($message = [], $namespace = 'default')
  * @method string translate($message = '')
- * @method mixed getParam($paramName = null, $default = null)
+ * @method mixed getParam($paramName = null)
  * @method mixed Mailing()
  * @method string|null systemSettings($option = 'general', $value = 'site_name')
  */

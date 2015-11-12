@@ -97,7 +97,7 @@ final class Content
      *
      * @ORM\Column(name="active", type="smallint", nullable=false)
      */
-    private $active = 1;
+    private $active = true;
 
     /**
      * @var int
@@ -245,7 +245,7 @@ final class Content
      *
      * @param bool|int $active
      */
-    public function setActive($active = 0)
+    public function setActive($active = true)
     {
         $this->active = $active;
     }

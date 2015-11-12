@@ -26,7 +26,7 @@ use Zend\View\Model\JsonModel;
  * @method object getTable($tableName)
  * @method object setLayoutMessages($message = [], $namespace = 'default')
  * @method string translate($message = '')
- * @method mixed getParam($paramName = null, $default = null)
+ * @method mixed getParam($paramName = null)
  * @method string|null systemSettings($option = 'general', $value = 'site_name')
  */
 final class ContentController extends BaseController
@@ -87,7 +87,7 @@ final class ContentController extends BaseController
             $paginator = $this->contentTable->preparePagination($this->getMenuContent(), true);
         }
 
-        $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));
+        $paginator->setCurrentPageNumber((int) $this->getParam('page'));
         $paginator->setItemCountPerPage($this->systemSettings('posts', 'language'));
         $this->getView()->setVariable('paginator', $paginator);
 
@@ -231,7 +231,7 @@ final class ContentController extends BaseController
      * @param ContentForm $form
      * @param Content     $content
      *
-     * @return void
+     * @return object|null
      */
     private function saveFormData(ContentForm $form, Content $content)
     {

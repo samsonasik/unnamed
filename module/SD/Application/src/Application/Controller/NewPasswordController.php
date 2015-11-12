@@ -20,7 +20,7 @@ use Zend\Mvc\MvcEvent;
  * @method object setLayoutMessages($message = [], $namespace = 'default')
  * @method string translate($message = '')
  * @method mixed UserData()
- * @method mixed getParam($paramName = null, $default = null)
+ * @method mixed getParam($paramName = null)
  * @method mixed getFunctions()
  */
 final class NewPasswordController extends BaseController
@@ -72,7 +72,7 @@ final class NewPasswordController extends BaseController
     {
         $this->getView()->setTemplate('application/newpassword/index');
 
-        $token = (string) $this->getParam('token', null);
+        $token = (string) $this->getParam('token');
 
         if (!$token) {
             throw new RuntimeException($this->translate('TOKEN_MISMATCH'));

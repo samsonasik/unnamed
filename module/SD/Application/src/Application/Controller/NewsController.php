@@ -17,7 +17,7 @@ use Zend\Escaper\Escaper;
  * @method string translate($message = '')
  * @method int setErrorCode(int $code)
  * @method void initMetaTags(array $content)
- * @method mixed getParam($paramName = null, $default = null)
+ * @method mixed getParam($paramName = null)
  * @method string|null systemSettings($option = 'general', $value = 'site_name')
  */
 final class NewsController extends BaseController
@@ -39,7 +39,7 @@ final class NewsController extends BaseController
                 ->orderBy('c.date', 'DESC');
 
         $paginator = $query->preparePagination($news, false);
-        $paginator->setCurrentPageNumber((int) $this->getParam('page', 1));
+        $paginator->setCurrentPageNumber((int) $this->getParam('page'));
         $paginator->setItemCountPerPage($this->systemSettings('posts', 'news'));
         $this->getView()->setVariable('news', $paginator);
 

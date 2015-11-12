@@ -19,7 +19,7 @@ use Zend\View\Model\ViewModel;
  * @method object getTable($tableName)
  * @method object setLayoutMessages($message = [], $namespace = 'default')
  * @method string translate($message = '')
- * @method mixed getParam($paramName = null, $default = null)
+ * @method mixed getParam($paramName = null)
  * @method string|null systemSettings($option = 'general', $value = 'site_name')
  * @method mixed UserData()
  * @method void initMetaTags()

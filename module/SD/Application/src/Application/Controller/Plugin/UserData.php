@@ -45,7 +45,7 @@ final class UserData extends AbstractPlugin
      *
      * @param string $errorString
      *
-     * @return boolean|null
+     * @return bool|null
      */
     public function checkIdentity($errorString = 'Error')
     {

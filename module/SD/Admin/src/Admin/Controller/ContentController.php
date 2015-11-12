@@ -235,7 +235,6 @@ final class ContentController extends BaseController
      */
     private function saveFormData(ContentForm $form, Content $content)
     {
-
         if (!$form->isValid()) {
             return $this->setLayoutMessages($form->getMessages(), 'error');
         }

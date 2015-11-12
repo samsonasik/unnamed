@@ -281,19 +281,19 @@ final class UserForm extends Form implements InputFilterProviderInterface
                 ],
             ],
             [
-                'name'=>'image',
-                'required' => false,
+                'name'       => 'image',
+                'required'   => false,
                 'validators' => [
                     [
-                        'name' => 'Zend\Validator\File\Size',
+                        'name'    => 'Zend\Validator\File\Size',
                         'options' => [
-                            'min' => '10kB',
-                            'max' => '5MB',
+                            'min'           => '10kB',
+                            'max'           => '5MB',
                             'useByteString' => true,
                         ],
                     ],
                     [
-                        'name' => 'Zend\Validator\File\Extension',
+                        'name'    => 'Zend\Validator\File\Extension',
                         'options' => [
                             'extension' => [
                                 'jpg',

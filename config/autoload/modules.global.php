@@ -8,7 +8,6 @@
  *
  * @link       https://github.com/Stanimirdim92/unnamed
  */
-
 $env = getenv('APPLICATION_ENV');
 
 /*

@@ -90,8 +90,6 @@ coding_style:
             constants:
                 true_false_null: lower
 tools:
-    external_code_coverage:
-        timeout: 1000
     php_mess_detector: true
     sensiolabs_security_checker: true
     php_code_coverage: true

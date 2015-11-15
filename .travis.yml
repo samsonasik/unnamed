@@ -6,7 +6,6 @@ addons:
     apt_packages:
         - parallel
         - nodejs
-        - npm
 
 notifications:
     email: true

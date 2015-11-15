@@ -67,7 +67,8 @@
         "san/san-session-toolbar": "0.*",
         "squizlabs/php_codesniffer": "2.*",
         "phpunit/PHPUnit": "4.*",
-        "satooshi/php-coveralls": "dev-master"
+        "satooshi/php-coveralls": "dev-master",
+        "phpunit/phpcov": "~2.0"
     },
     "autoload": {
         "psr-4": {

@@ -21,6 +21,9 @@ matrix:
         - php: 7
         - php: hhvm
 
+before_install:
+  - composer self-update
+
 install:
     - /home/travis/.phpenv/versions/$TRAVIS_PHP_VERSION/bin/composer self-update
     - travis_retry composer install --optimize-autoloader
@@ -38,5 +41,5 @@ script:
     - ls -d module/*/test/PHPUnit | parallel --gnu --keep-order 'echo "Running {} tests"; ./vendor/bin/phpunit -c {}/phpunit.xml;' || exit 1
 
 after_script:
-    - php coverage-report.php
+    - php ./vendor/bin/phpcov merge --clover ./build/logs/clover.xml ./build/coverage/
     - php vendor/bin/coveralls -v --exclude-no-stmt

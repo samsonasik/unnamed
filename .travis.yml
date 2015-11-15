@@ -37,7 +37,7 @@ before_script:
     - sleep 1
 
 script:
-    - ls -d module/SD/*/test/PHPUnit | parallel --gnu --keep-order 'echo "Running {} tests"; ./vendor/bin/phpunit -c {}/phpunit.xml;' || exit 1
+    - ls -d module/*/test/PHPUnit | parallel --gnu --keep-order 'echo "Running {} tests"; ./vendor/bin/phpunit -c {}/phpunit.xml;' || exit 1
 
 after_script:
     - php ./vendor/bin/phpcov merge --clover ./build/logs/clover.xml ./build/coverage/

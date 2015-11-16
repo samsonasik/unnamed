@@ -70,7 +70,7 @@ class BaseController extends AbstractActionController
                 'SD\Application\Controller\Login',
                 'SD\Application\Controller\ResetPassword',
                 'SD\Application\Controller\NewPassword',
-                'SD\Application\Controller\Registration'
+                'SD\Application\Controller\Registration',
             ];
 
             if ($userData && in_array($this->params('controller'), $controllersArray)) {

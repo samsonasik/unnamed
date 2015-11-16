@@ -6,6 +6,7 @@ DD.MM.YYYY
 - First drafts of ProfileController
 - Bumped cookie life time to 10 days
 - Minor bug fixes
+- Updated composer.phar
 
 DD.MM.YYYY
 ## 0.0.22 (9.11.2015) - Stable Alpha ##

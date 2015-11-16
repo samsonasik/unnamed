@@ -4,7 +4,7 @@
  * @copyright  2015 (c) Stanimir Dimitrov.
  * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
  *
- * @version    0.0.22
+ * @version    0.0.23
  *
  * @link       https://github.com/Stanimirdim92/unnamed
  */
@@ -13,7 +13,7 @@
  * Check requirements.
  */
 if (version_compare('5.5.28', PHP_VERSION, '>')) {
-    throw new \Exception(sprintf('Your server is running PHP version <b>%1$s</b>, but the system <b>%2$s</b> requires at least <b>%3$s</b> or higher</b>.', PHP_VERSION, '0.0.22', '5.5.28'));
+    throw new \Exception(sprintf('Your server is running PHP version <b>%1$s</b>, but the system <b>%2$s</b> requires at least <b>%3$s</b> or higher</b>.', PHP_VERSION, '0.0.23', '5.5.28'));
 }
 
 /*

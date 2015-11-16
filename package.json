@@ -1,6 +1,6 @@
 {
   "name": "unnamed",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "gulp config",
   "main": "gulpfile.js",
   "dependencies": {

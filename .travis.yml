@@ -19,11 +19,10 @@ matrix:
         - php: hhvm
 
 before_install:
-  - composer self-update
+    - composer self-update
 
 install:
     - travis_retry composer install --optimize-autoloader
-    - wget https://scrutinizer-ci.com/ocular.phar
 
 before_script:
     - mkdir -p build/coverage
@@ -37,9 +36,6 @@ before_script:
 
 script:
     - ls -d module/*/test/PHPUnit | parallel --gnu --keep-order 'echo "Running {} tests"; ./vendor/bin/phpunit -c {}/phpunit.xml;' || exit 1
-
-after_script:
-    - php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
 
 notifications:
     email: true

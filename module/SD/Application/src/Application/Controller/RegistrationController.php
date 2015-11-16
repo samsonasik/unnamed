@@ -40,25 +40,6 @@ final class RegistrationController extends BaseController
     }
 
     /**
-     * @param MvcEvent $event
-     *
-     * @return mixed|void
-     */
-    public function onDispatch(MvcEvent $event)
-    {
-        parent::onDispatch($event);
-
-        /*
-         * If user is logged and tries to access one of the given actions
-         * he will be redirected to the root url of the website.
-         * For reset password and new password actions we assume that the user is not logged in.
-         */
-        if (APP_ENV === 'development') {
-            $this->UserData()->checkIdentity();
-        }
-    }
-
-    /**
      * @return \Zend\Http\Response
      */
     public function processregistrationAction()

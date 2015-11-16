@@ -41,7 +41,7 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
 
         $sessionManager = $this->service->get('initSession');
         if (!$sessionManager->sessionExists()) {
-            $sessionManager->setName('zpc')->start();
+            $sessionManager->start();
             Container::setDefaultManager($sessionManager);
         }
 

@@ -34,7 +34,7 @@ final class UserData extends AbstractPlugin
      *
      * @throws AuthorizationException
      */
-    public function clearUserData($errorString)
+    public function clearUserData($errorString = 'ERROR')
     {
         $this->auth->clearIdentity();
         throw new AuthorizationException($errorString);
@@ -45,26 +45,26 @@ final class UserData extends AbstractPlugin
      *
      * @param string $errorString
      *
-     * @return bool|null
+     * @return bool
      */
-    public function checkIdentity($errorString = 'Error')
+    public function hasIdentity($errorString = 'ERROR')
     {
         if ($this->auth->hasIdentity()) {
-            if ($this->auth->getIdentity()) {
+            if ($this->getIdentity()) {
                 return true;
             }
 
             return $this->clearUserData($errorString); // something is wrong, clear all user data
         }
 
-        return;
+        return false;
     }
 
     /**
-     * @return array
+     * @return int returns user id from database
      */
     public function getIdentity()
     {
-        return $this->auth->getIdentity();
+        return (int) $this->auth->getIdentity()['id'];
     }
 }

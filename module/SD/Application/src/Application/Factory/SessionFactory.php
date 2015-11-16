@@ -22,13 +22,12 @@ class SessionFactory
     {
         $sessionConfig = new SessionConfig();
         $sessionConfig->setOptions([
-            'cookie_lifetime'         => 7200, //2hrs
-            'remember_me_seconds'     => 7200, //2hrs This is also set in the login controller
+            'cookie_lifetime'         => 864000, //10 days
+            'remember_me_seconds'     => 864000,
             'use_cookies'             => true,
-            'cache_expire'            => 180, //3hrs
             'cookie_path'             => '/',
             'cookie_httponly'         => true,
-            'name'                    => '__zpc',
+            'name'                    => 'zpc',
             'cookie_secure'           => $this->isSSL(),
             'hash_bits_per_character' => 6,
             'hash_function'           => 1,

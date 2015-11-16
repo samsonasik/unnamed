@@ -19,7 +19,7 @@ var plumber = require('gulp-plumber');
  */
 function paths (folder) {
     var devFolders = "./public/assets/";
-    var prodFolders = "./public/themes/";
+    var prodFolders = "./public/layouts/";
     var filePaths = {
         // these are the development folder
         back: {

@@ -50,13 +50,14 @@ return [
     ],
     'controllers' => [
         'factories' => [
-            'SD\Application\Controller\Login'         => Factory\Controller\LoginControllerFactory::class,
+            'SD\Application\Controller\Login' => Factory\Controller\LoginControllerFactory::class,
         ],
         'invokables' => [
-            'SD\Application\Controller\Base'  => Controller\BaseController::class,
-            'SD\Application\Controller\Index' => Controller\IndexController::class,
-            'SD\Application\Controller\News'  => Controller\NewsController::class,
-            'SD\Application\Controller\Menu'  => Controller\MenuController::class,
+            'SD\Application\Controller\Base'    => Controller\BaseController::class,
+            'SD\Application\Controller\Index'   => Controller\IndexController::class,
+            'SD\Application\Controller\News'    => Controller\NewsController::class,
+            'SD\Application\Controller\Menu'    => Controller\MenuController::class,
+            'SD\Application\Controller\Profile' => Controller\ProfileController::class,
         ],
     ],
     'doctrine' => [

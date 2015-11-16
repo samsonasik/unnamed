@@ -23,7 +23,7 @@ final class ThemesFactory
         $config = $serviceLocator->get('Config');
         $headScript = $serviceLocator->get('ViewHelperManager')->get('HeadScript');
         $headLink = $serviceLocator->get('ViewHelperManager')->get('headLink');
-        $publicDir = '/layouts/'.$config['theme']['name'].DIRECTORY_SEPARATOR;
+        $publicDir = '/layouts/'.$config['theme']['name'].'/';
 
         /*
          * Get theme name from config and load it.

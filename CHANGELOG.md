@@ -1,5 +1,13 @@
 # CHANGELOG #
 DD.MM.YYYY
+## 0.0.23 (17.11.2015) - Stable Alpha ##
+- Fixed session collisions - The ap was creating two sessions __zpc and zpc
+- Fixed a bug, where Firefox couldn't load assests files due to misconfigured url slashes
+- First drafts of ProfileController
+- Bumped cookie life time to 10 days
+- Minor bug fixes
+
+DD.MM.YYYY
 ## 0.0.22 (9.11.2015) - Stable Alpha ##
 - A lot of code style fixes - ~500
 - Moved forms to Zend\Form]AbstractFormactory

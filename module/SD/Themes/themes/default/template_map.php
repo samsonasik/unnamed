@@ -5,6 +5,7 @@ return [
     'application/contact/index'       => __DIR__.'/view/application/contact/index.phtml',
     'application/index/index'         => __DIR__.'/view/application/index/index.phtml',
     'application/login/index'         => __DIR__.'/view/application/login/index.phtml',
+    'application/profile/index'       => __DIR__.'/view/application/profile/index.phtml',
     'application/resetpassword/index' => __DIR__.'/view/application/resetpassword/index.phtml',
     'application/newpassword/index'   => __DIR__.'/view/application/newpassword/index.phtml',
     'application/menu/post'           => __DIR__.'/view/application/menu/post.phtml',

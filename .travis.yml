@@ -7,9 +7,6 @@ addons:
         - parallel
         - nodejs
 
-notifications:
-    email: true
-
 matrix:
     include:
         - php: 5.5
@@ -26,9 +23,11 @@ before_install:
 
 install:
     - travis_retry composer install --optimize-autoloader
+    - wget https://scrutinizer-ci.com/ocular.phar
 
 before_script:
     - mkdir -p build/coverage
+    - mkdir -p build/logs
     - mkdir -p data/logs
     - chmod -R 777 data/logs
     - mysql -e 'create database IF NOT EXISTS xj;' -uroot
@@ -40,5 +39,7 @@ script:
     - ls -d module/*/test/PHPUnit | parallel --gnu --keep-order 'echo "Running {} tests"; ./vendor/bin/phpunit -c {}/phpunit.xml;' || exit 1
 
 after_script:
-    - php ./vendor/bin/phpcov merge --clover ./build/logs/clover.xml ./build/coverage/
-    - php vendor/bin/coveralls -v --exclude-no-stmt
+    - php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
+
+notifications:
+    email: true

@@ -54,12 +54,30 @@ class BaseController extends AbstractActionController
      */
     public function onDispatch(MvcEvent $event)
     {
-        $userData = $this->UserData();
-        if ($userData->checkIdentity()) {
+        parent::onDispatch($event);
+
+        $userData = $this->UserData()->hasIdentity();
+        if ($userData) {
             $this->getView()->setVariable('identity', $userData->getIdentity());
         }
 
-        parent::onDispatch($event);
+        /*
+         * If user is logged and tries to access one of the given controllers,
+         * he will be redirected to the root url of the website.
+         */
+        if (APP_ENV !== 'development') {
+            $controllersArray = [
+                'SD\Application\Controller\Login',
+                'SD\Application\Controller\ResetPassword',
+                'SD\Application\Controller\NewPassword',
+                'SD\Application\Controller\Registration'
+            ];
+
+            if ($userData && in_array($this->params('controller'), $controllersArray)) {
+                $this->redirect()->toUrl('/');
+            }
+        }
+
         $this->initMenus();
 
         /*
@@ -77,7 +95,7 @@ class BaseController extends AbstractActionController
      */
     private function initMenus()
     {
-        $menu = $this->getTable('SD\Admin\\Model\\MenuTable')
+        $menu = $this->getTable('SD\\Admin\\Model\\MenuTable')
                         ->getEntityRepository()
                         ->findBy(['active' => 1, 'language' => $this->language()], ['parent' => 'DESC']);
 
@@ -91,7 +109,7 @@ class BaseController extends AbstractActionController
 
             $output = "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/'>".$this->translate('HOME').'</a></li>';
             $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/news'>".$this->translate('NEWS').'</a></li>';
-            if ($this->UserData()->checkIdentity()) {
+            if ($this->UserData()->hasIdentity()) {
                 $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/login/logout'>".$this->translate('SIGN_OUT').'</a></li>';
             } else {
                 $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/login'>".$this->translate('SIGN_IN').'</a></li>';

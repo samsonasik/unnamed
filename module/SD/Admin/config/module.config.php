@@ -71,7 +71,7 @@ return [
     ],
     'doctrine' => [
         'driver' => [
-            'Admin_driver' => [
+            'SD_Admin_driver' => [
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
                 'paths' => [
@@ -80,7 +80,7 @@ return [
             ],
             'orm_default' => [
                 'drivers' => [
-                    'SD\Admin\Entity' => 'Admin_driver',
+                    'SD\Admin\Entity' => 'SD_Admin_driver',
                 ],
             ],
         ],

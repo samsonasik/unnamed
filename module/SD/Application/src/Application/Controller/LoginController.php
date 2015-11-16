@@ -48,25 +48,6 @@ final class LoginController extends BaseController
     }
 
     /**
-     * @param MvcEvent $event
-     *
-     * @return mixed|void
-     */
-    public function onDispatch(MvcEvent $event)
-    {
-        parent::onDispatch($event);
-        /*
-         * If user is logged and tries to access one of the given actions
-         * he will be redirected to the root url of the website.
-         */
-        if (APP_ENV !== 'development') {
-            if ($this->UserData()->checkIdentity()) {
-                $this->redirect()->toUrl('/');
-            }
-        }
-    }
-
-    /**
      * Get database and check if given email and password matches.
      *
      * @param array $options

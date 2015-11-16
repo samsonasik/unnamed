@@ -13,7 +13,6 @@ namespace SD\Application\Controller;
 use SD\Application\Exception\RuntimeException;
 use SD\Application\Form\NewPasswordForm;
 use Zend\Http\PhpEnvironment\RemoteAddress;
-use Zend\Mvc\MvcEvent;
 
 /**
  * @method object getTable($tableName)

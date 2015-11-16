@@ -10,7 +10,6 @@
  */
 namespace SD\Application\Controller;
 
-use Zend\Authentication\AuthenticationServiceInterface;
 use Zend\Mvc\MvcEvent;
 
 /**

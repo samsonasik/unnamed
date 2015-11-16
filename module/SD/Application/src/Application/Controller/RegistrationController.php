@@ -13,7 +13,6 @@ namespace SD\Application\Controller;
 use SD\Admin\Entity\User;
 use SD\Application\Form\RegistrationForm;
 use Zend\Http\PhpEnvironment\RemoteAddress;
-use Zend\Mvc\MvcEvent;
 
 /**
  * @method object getTable($tableName)

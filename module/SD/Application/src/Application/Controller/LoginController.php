@@ -13,7 +13,6 @@ namespace SD\Application\Controller;
 use SD\Application\Form\LoginForm;
 use Zend\Authentication\AuthenticationService;
 use Zend\Http\PhpEnvironment\RemoteAddress;
-use Zend\Mvc\MvcEvent;
 use Zend\Session\Container;
 
 /**

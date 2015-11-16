@@ -62,7 +62,7 @@ return [
     ],
     'doctrine' => [
         'driver' => [
-            'Application_driver' => [
+            'SD_Application_driver' => [
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
                 'paths' => [
@@ -71,7 +71,7 @@ return [
             ],
             'orm_default' => [
                 'drivers' => [
-                    'SD\Application\Entity' => 'Application_driver',
+                    'SD\Application\Entity' => 'SD_Application_driver',
                 ],
             ],
         ],

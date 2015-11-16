@@ -92,7 +92,7 @@
                     dataType: "json",
                     contentType: "application/json; charset=utf-8;",
                     cache: !1,
-                }).done(function (result, request, headers) {
+                }).done(function (result, request) {
                     if (request === "success" && result.statusType === true) {
                         $("#results").empty();
                         $.each($.parseJSON(result.ajaxsearch), function (key, value) {

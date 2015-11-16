@@ -17,10 +17,7 @@ use Zend\View\Model\ViewModel;
 
 /**
  * @method object getTable($tableName)
- * @method object setLayoutMessages($message = [], $namespace = 'default')
  * @method string translate($message = '')
- * @method mixed getParam($paramName = null)
- * @method string|null systemSettings($option = 'general', $value = 'site_name')
  * @method mixed UserData()
  * @method void initMetaTags()
  */
@@ -56,8 +53,8 @@ class BaseController extends AbstractActionController
     {
         parent::onDispatch($event);
 
-        $userData = $this->UserData()->hasIdentity();
-        if ($userData) {
+        $userData = $this->UserData();
+        if ($userData->hasIdentity()) {
             $this->getView()->setVariable('identity', $userData->getIdentity());
         }
 
@@ -73,7 +70,7 @@ class BaseController extends AbstractActionController
                 'SD\Application\Controller\Registration',
             ];
 
-            if ($userData && in_array($this->params('controller'), $controllersArray)) {
+            if ($userData->hasIdentity() && in_array($this->params('controller'), $controllersArray)) {
                 $this->redirect()->toUrl('/');
             }
         }

@@ -19,7 +19,6 @@ use Zend\Session\Container;
  * @method object getTable($tableName)
  * @method object setLayoutMessages($message = [], $namespace = 'default')
  * @method string translate($message = '')
- * @method mixed UserData()
  */
 final class LoginController extends BaseController
 {
@@ -69,12 +68,8 @@ final class LoginController extends BaseController
     public function indexAction()
     {
         $this->getView()->setTemplate('application/login/index');
-        /*
-         * @var LoginForm
-         */
-        $form = $this->loginForm;
 
-        $this->getView()->setVariable('form', $form);
+        $this->getView()->setVariable('form', $this->loginForm);
 
         return $this->getView();
     }

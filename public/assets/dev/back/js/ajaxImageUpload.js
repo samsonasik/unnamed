@@ -75,7 +75,7 @@
                 $("#modal-imgupload").fadeToggle(850);
             });
 
-            ajaxImageUpload.abourtXHR(request);
+            ajaxImageUpload.abortXHR(request);
 
             /**
              * Listen for change event and submit the form
@@ -218,7 +218,7 @@
             $(".gallery-view").find("figure.centered").not(".large-image").remove();
             $(".gallery-view, .ajax-loader").show();
 
-            ajaxImageUpload.abourtXHR(request);
+            ajaxImageUpload.abortXHR(request);
 
             request = $.get("/admin/content/files", function (files) {
                 $(".ajax-loader").hide();
@@ -259,7 +259,7 @@
          * @return {Bool}
          */
         deleteImage: function () {
-            ajaxImageUpload.abourtXHR(request);
+            ajaxImageUpload.abortXHR(request);
 
             $(".deleteimg").on("click", function () {
                 request = $.post("/admin/content/deleteimage", {"img": $(this).next("img").attr("src")}, function () {
@@ -272,13 +272,13 @@
          * Abort every previous AJAX request if new is made.
          * The method will abort on both client and server sides.
          *
-         * @method abourtXHR
+         * @method abortXHR
          *
          * @param  {Object} xhr
          *
          * @return {void}
          */
-        abourtXHR: function (xhr) {
+        abortXHR: function (xhr) {
             if (xhr && xhr.readyState !== 4) {
                 xhr.abort();
                 xhr = null;

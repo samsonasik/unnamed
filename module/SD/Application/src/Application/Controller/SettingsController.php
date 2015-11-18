@@ -21,11 +21,12 @@ use Zend\Validator\File\Size;
 /**
  * @method object getTable($tableName)
  * @method mixed UserData()
+ * @method object setLayoutMessages($message = [], $namespace = 'default')
  */
 final class SettingsController extends BaseController
 {
     /**
-     * @var SettingsForm $settingsForm
+     * @var SettingsForm
      */
     private $settingsForm;
 
@@ -74,7 +75,7 @@ final class SettingsController extends BaseController
         return $this->getView();
     }
 
-/**
+    /**
      * This is common function used by add and edit actions (to avoid code duplication).
      *
      * @param User|null $user
@@ -117,7 +118,7 @@ final class SettingsController extends BaseController
                 if (is_array($formData->getImage()) && !empty($formData->getImage())) {
                     $ext = pathinfo($formData->getImage()['name'], PATHINFO_EXTENSION);
                     $newName = $formData->getId().'.'.$ext;
-                    $this->uploadImage($formData->getImage(), $formData->getId());
+                    $this->uploadImage($formData->getId());
                     $user->setImage($newName);
                 }
 
@@ -133,12 +134,11 @@ final class SettingsController extends BaseController
     }
 
     /**
-     * @param int $userId - used to create a folder for the current user
-     * and rename the image
+     * @param int $userId - used to create a folder for the current user and rename the image
      *
      * @return void
      */
-    private function uploadImage(array $imageData, $userId = 0)
+    private function uploadImage($userId = 0)
     {
         $userId = (int) $userId;
         $messages = [];
@@ -156,7 +156,7 @@ final class SettingsController extends BaseController
             $newName = $userId.'.'.$ext;
             $adapter->setValidators([$size, new IsImage(), $extension]);
             $adapter->addFilter('File\Rename', [
-                 'target' => $dir.$newName,
+                 'target'    => $dir.$newName,
                  'overwrite' => true,
             ]);
             $adapter->receive($file['name']);

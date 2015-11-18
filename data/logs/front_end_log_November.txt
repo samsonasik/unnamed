@@ -339,3 +339,109 @@ Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicema
 #19 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
 #20 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
 #21 {main}
+2015-11-18T12:20:27+00:00 ERR (3): 
+Exception: Zend\Form\Form::setData expects an array or Traversable argument; received "NULL"
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-form\src\Form.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\SettingsController.php(98): Zend\Form\Form->setData(NULL)
+#1 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\SettingsController.php(66): SD\Application\Controller\SettingsController->initForm(Object(SD\Admin\Entity\User))
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Application\Controller\SettingsController->indexAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\BaseController.php(54): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\SettingsController.php(44): SD\Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: SD\Application\Controller\SettingsController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-18T12:21:14+00:00 ERR (3): 
+Exception: Zend\Form\Form::setData expects an array or Traversable argument; received "stdClass"
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-form\src\Form.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\SettingsController.php(98): Zend\Form\Form->setData(Object(stdClass))
+#1 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\SettingsController.php(66): SD\Application\Controller\SettingsController->initForm(Object(SD\Admin\Entity\User))
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Application\Controller\SettingsController->indexAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\BaseController.php(54): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\SettingsController.php(44): SD\Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: SD\Application\Controller\SettingsController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-18T13:01:25+00:00 ERR (3): 
+Exception: File 'C:\Windows\Temp\php3A56.tmp' could not be renamed. It already exists.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-filter\src\File\Rename.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-file\src\Transfer\Adapter\Http.php(156): Zend\Filter\File\Rename->getNewName('C:\\Windows\\Temp...')
+#1 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\SettingsController.php(161): Zend\File\Transfer\Adapter\Http->receive('30b0bo0.png')
+#2 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\SettingsController.php(118): SD\Application\Controller\SettingsController->uploadImage(Array, 21)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\SettingsController.php(70): SD\Application\Controller\SettingsController->initForm(Object(SD\Admin\Entity\User))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Application\Controller\SettingsController->indexAction()
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\BaseController.php(54): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\SettingsController.php(48): SD\Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 [internal function]: SD\Application\Controller\SettingsController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#12 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#17 {main}
+2015-11-18T13:01:36+00:00 ERR (3): 
+Exception: File 'C:\Windows\Temp\php6473.tmp' could not be renamed. It already exists.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-filter\src\File\Rename.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-file\src\Transfer\Adapter\Http.php(156): Zend\Filter\File\Rename->getNewName('C:\\Windows\\Temp...')
+#1 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\SettingsController.php(160): Zend\File\Transfer\Adapter\Http->receive('30b0bo0.png')
+#2 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\SettingsController.php(118): SD\Application\Controller\SettingsController->uploadImage(Array, 21)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\SettingsController.php(70): SD\Application\Controller\SettingsController->initForm(Object(SD\Admin\Entity\User))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Application\Controller\SettingsController->indexAction()
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\BaseController.php(54): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\SettingsController.php(48): SD\Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 [internal function]: SD\Application\Controller\SettingsController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#12 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#17 {main}
+2015-11-18T13:01:46+00:00 ERR (3): 
+Exception: File 'C:\Windows\Temp\php8C6E.tmp' could not be renamed. It already exists.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-filter\src\File\Rename.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-file\src\Transfer\Adapter\Http.php(156): Zend\Filter\File\Rename->getNewName('C:\\Windows\\Temp...')
+#1 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\SettingsController.php(160): Zend\File\Transfer\Adapter\Http->receive('30b0bo0.png')
+#2 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\SettingsController.php(118): SD\Application\Controller\SettingsController->uploadImage(Array, 21)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\SettingsController.php(70): SD\Application\Controller\SettingsController->initForm(Object(SD\Admin\Entity\User))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Application\Controller\SettingsController->indexAction()
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\BaseController.php(54): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\SettingsController.php(48): SD\Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 [internal function]: SD\Application\Controller\SettingsController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#12 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#17 {main}

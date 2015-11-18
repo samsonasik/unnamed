@@ -1,35 +1,46 @@
 <?php
     /** @var SD\Admin\Entity\User */
     $user = $this->identity;
+
+    $img = '/layouts/default/front/img/default.png';
+    if ($user->getImage()) {
+        $img = "userfiles/images/user-".$user->getId().'/'.$user->getImage();
+    }
  ?>
-<section>
-    <div class='table-style'>
+<section class='table-style row-wrap'>
+    <div class='table-2c'>
         <ul class="table-row">
-            <li class="table-cell"><?=$this->translate("NAME")?></li>
-            <li class="table-cell"><?=$user->getFullName()?></li>
+            <li class="table-cell"><img class="user-avatar" width="203" height="203" alt="<?=$user->getFullName()?>" title="<?=$user->getFullName()?>" src="<?=$img?>"></li>
         </ul>
         <ul class="table-row">
-            <li class="table-cell"><?=$this->translate("EMAIL")?></li>
+            <li class="table-cell">
+                <h2 class='username'><?=$user->getFullName()?></h2>
+            </li>
+        </ul>
+    </div>
+    <div class='table-2c'>
+        <ul class="table-row">
+            <li class="table-cell bold"><?=$this->translate("EMAIL")?>:</li>
             <li class="table-cell"><?=$user->getEmail()?></li>
         </ul>
         <ul class="table-row">
-            <li class="table-cell"><?=$this->translate("LAST_LOGIN")?></li>
+            <li class="table-cell bold"><?=$this->translate("LAST_LOGIN")?>:</li>
             <li class="table-cell"><?=$user->getLastLogin()?></li>
         </ul>
         <ul class="table-row">
-            <li class="table-cell"><?=$this->translate("DISABLED")?></li>
+            <li class="table-cell bold"><?=$this->translate("DISABLED")?>:</li>
             <li class="table-cell"><?php if ($user->isDisabled()) { ?> <i class='fa fa-check'></i> <?php } else {  ?> <i class='fa fa-times'></i> <?php } ?></li>
         </ul>
         <ul class="table-row">
-            <li class="table-cell"><?=$this->translate("REGISTERED")?></li>
+            <li class="table-cell bold"><?=$this->translate("REGISTERED")?>:</li>
             <li class="table-cell"><?=$user->getRegistered()?></li>
         </ul>
         <ul class="table-row">
-            <li class="table-cell"><?=$this->translate("BIRTHDATE")?></li>
+            <li class="table-cell bold"><?=$this->translate("BIRTHDATE")?>:</li>
             <li class="table-cell"><?=$user->getBirthDate()?></li>
         </ul>
         <ul class="table-row">
-            <li class="table-cell"><?=$this->translate("ADMINISTRATOR")?></li>
+            <li class="table-cell bold"><?=$this->translate("ADMINISTRATOR")?>:</li>
             <li class="table-cell"><?php if ($user->getAdmin()) { ?> <i class='fa fa-check'></i> <?php } else {  ?> <i class='fa fa-times'></i> <?php } ?></li>
         </ul>
     </div>

@@ -60,7 +60,7 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    font: .813em/1.4 "Helvetica", "Helvetica Neue", Helvetica, sans-serif, Arial; /* 1 */
+    font: .813em "Helvetica", "Helvetica Neue", Helvetica, sans-serif, Arial; /* 1 */
     min-width: 100%; /* 3 */
     min-height: 100%; /* 3 */
     -webkit-box-sizing: border-box;
@@ -77,6 +77,7 @@ html {
 body {
     min-width: 100%; /* 2 */
     min-height: 100%; /* 2 */
+    line-height: 1.42857143;
 }
 
 /**
@@ -306,26 +307,32 @@ textarea:focus {
 }
 
 .table-style {
-     display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: column nowrap;
-  -moz-flex-flow: column nowrap;
-  flex-flow: column nowrap;
-  -webkit-box-pack: justify;
-  -moz-box-pack: justify;
-  box-pack: justify;
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  -ms-justify-content: space-between;
-  -o-justify-content: space-between;
-  justify-content: space-between;
-  -ms-flex-pack: justify;
-  margin: 0.5rem;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: column nowrap;
+    -moz-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -o-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: justify;
+    margin: 0.5rem;
+}
+
+.row-wrap {
+    -webkit-flex-flow: row nowrap;
+    -moz-flex-flow: row nowrap;
+    flex-flow: row nowrap;
 }
 
 .table-row, .table-header {
@@ -375,10 +382,6 @@ textarea:focus {
 
 .table-row .table-row {
     width: 100%;
-}
-
-.table-row:nth-child(even) {
-  background: #eee;
 }
 
 /*

@@ -181,4 +181,5 @@ return  [
     'CSS_CLASS'                          => 'CSS class',
     'FOOTER_COLUMN'                      => 'Choose footer column',
     'FOOTER_COLUMN_TEXT'                 => 'Please choose footer column',
+    'PROFILE'                            => 'Profile',
 ];

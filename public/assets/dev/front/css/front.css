@@ -12,6 +12,10 @@
  * Use classes for all other type of style!
  */
 
+body {
+    background: #f0f0f0;
+}
+
 a {
     color: #337ab7;
     text-decoration: none;
@@ -137,5 +141,33 @@ ul {
 
     #footer {
 
+    }
+
+    .user-avatar {
+        width: 203px;
+        height: 203px;
+        margin: 0 auto;
+    }
+    .username {
+        text-align: center;
+        width: 100%;
+    }
+
+    .table-2c {
+        padding: 10px;
+        margin: 20px;
+        background: #fff;
+    }
+
+    .table-style > div.table-2c:first-child {
+        width: 25%;
+    }
+
+    .table-style > .table-2c:nth-child(2) {
+        width: 75%;
+    }
+
+    .table-2c:nth-child(2) .table-row {
+        border-bottom: 1px solid #E6E6E6;
     }
 }

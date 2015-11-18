@@ -8,13 +8,13 @@
  *
  * @link       https://github.com/Stanimirdim92/unnamed
  */
-namespace SD\Admin\Form;
+namespace SD\Application\Form;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Zend\Form\Form;
 use Zend\InputFilter\InputFilterProviderInterface;
 
-final class UserForm extends Form implements InputFilterProviderInterface
+final class SettingsForm extends Form implements InputFilterProviderInterface
 {
     /*
      * @var ObjectManager
@@ -23,7 +23,7 @@ final class UserForm extends Form implements InputFilterProviderInterface
 
     public function __construct()
     {
-        parent::__construct('user');
+        parent::__construct('settings-user');
     }
 
     /**
@@ -38,6 +38,23 @@ final class UserForm extends Form implements InputFilterProviderInterface
     {
         $this->setAttribute('method', 'post');
         $this->setAttribute('role', 'form');
+
+        $this->add(
+            [
+            'type'    => 'Zend\Form\Element\File',
+            'name'    => 'image',
+            'options' => [
+                'label'          => 'IMAGE',
+                'object_manager' => $this->objectManager,
+                'target_class'   => 'SD\Admin\Entity\User',
+                'property'       => 'image',
+            ],
+            'attributes' => [
+                'id'    => 'image',
+                'class' => 'image',
+            ],
+            ]
+        );
 
         $this->add(
             [
@@ -107,19 +124,6 @@ final class UserForm extends Form implements InputFilterProviderInterface
                 'size'        => '40',
                 'class'       => 'datetimepicker',
                 'placeholder' => 'YYYY-MM-DD',
-            ],
-            ]
-        );
-
-        $this->add(
-            [
-            'type'    => 'Zend\Form\Element\Checkbox',
-            'name'    => 'isDisabled',
-            'options' => [
-                'label'          => 'DISABLED',
-                'object_manager' => $this->objectManager,
-                'target_class'   => 'SD\Admin\Entity\User',
-                'property'       => 'isDisabled',
             ],
             ]
         );
@@ -276,6 +280,34 @@ final class UserForm extends Form implements InputFilterProviderInterface
                         'name'    => 'Regex',
                         'options' => [
                             'pattern' => '/^[0-1]+$/',
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'name'       => 'image',
+                'required'   => false,
+                'validators' => [
+                    [
+                        'name'    => 'Zend\Validator\File\Size',
+                        'options' => [
+                            'min'           => '5kB',
+                            'max'           => '5MB',
+                            'useByteString' => true,
+                        ],
+                    ],
+                    [
+                        'name'    => 'Zend\Validator\File\Extension',
+                        'options' => [
+                            'extension' => [
+                                'jpg',
+                                'gif',
+                                'png',
+                                'jpeg',
+                                'bmp',
+                                'webp',
+                            ],
+                            'case' => true,
                         ],
                     ],
                 ],

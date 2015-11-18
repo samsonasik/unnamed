@@ -118,6 +118,10 @@ ul {
     }
 }
 
+.table-row:nth-child(even) {
+  background: #eee;
+}
+
 /* Dialog || Popup window */
 .dialog_hide {
     width: 355px;

@@ -291,7 +291,7 @@ final class ContentForm extends Form implements InputFilterProviderInterface
             ],
             [
                 'name'     => 'text',
-                'required' => true,
+                'required' => false,
                 'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
@@ -302,7 +302,6 @@ final class ContentForm extends Form implements InputFilterProviderInterface
                         'name'    => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8',
-                            'min'      => 1,
                         ],
                     ],
                 ],

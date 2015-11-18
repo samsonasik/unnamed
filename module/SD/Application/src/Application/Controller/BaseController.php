@@ -53,14 +53,27 @@ class BaseController extends AbstractActionController
     {
         parent::onDispatch($event);
 
-        $userData = $this->UserData();
-        if ($userData->hasIdentity()) {
-            $this->getView()->setVariable('identity', $userData->getIdentity());
-        }
+        $this->validateLoggedUserAccess();
+        $this->initMenus();
 
+        /*
+         * Call this method only if we are not in Menu or News. Both of them calls the function by themselves
+         */
+        if (($this->getParam('action') !== 'post')) {
+            $this->initMetaTags();
+        }
+    }
+
+    /**
+     * @return void
+     */
+    private function validateLoggedUserAccess()
+    {
         /*
          * If user is logged and tries to access one of the given controllers,
          * he will be redirected to the root url of the website.
+         *
+         * These controllers should be only accesed if the user is NOT logged in.
          */
         if (APP_ENV !== 'development') {
             $controllersArray = [
@@ -70,18 +83,9 @@ class BaseController extends AbstractActionController
                 'SD\Application\Controller\Registration',
             ];
 
-            if ($userData->hasIdentity() && in_array($this->params('controller'), $controllersArray)) {
+            if ($this->UserData()->hasIdentity() && in_array($this->getParam('controller'), $controllersArray)) {
                 $this->redirect()->toUrl('/');
             }
-        }
-
-        $this->initMenus();
-
-        /*
-         * Call this method only if we are not in Menu or News. Both of them calls the function by themselves
-         */
-        if (($this->params('action') !== 'post')) {
-            $this->initMetaTags();
         }
     }
 
@@ -104,16 +108,18 @@ class BaseController extends AbstractActionController
                 $menus['submenus'][$submenus->getParent()][] = $submenus->getId();
             }
 
-            $output = "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/'>".$this->translate('HOME').'</a></li>';
-            $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/news'>".$this->translate('NEWS').'</a></li>';
+            $staticHtml = "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/'>".$this->translate('HOME').'</a></li>';
+            $staticHtml .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/news'>".$this->translate('NEWS').'</a></li>';
             if ($this->UserData()->hasIdentity()) {
-                $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/login/logout'>".$this->translate('SIGN_OUT').'</a></li>';
+                $staticHtml .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/login/logout'>".$this->translate('SIGN_OUT').'</a></li>';
+                $staticHtml .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/profile'>".$this->translate('PROFILE').'</a></li>';
+                $staticHtml .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/settings'>".$this->translate('SETTINGS').'</a></li>';
             } else {
-                $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/login'>".$this->translate('SIGN_IN').'</a></li>';
-                $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/registration'>".$this->translate('SIGN_UP').'</a></li>';
+                $staticHtml .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/login'>".$this->translate('SIGN_IN').'</a></li>';
+                $staticHtml .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/registration'>".$this->translate('SIGN_UP').'</a></li>';
             }
 
-            $this->getView()->setVariable('menu', $this->generateMenu(0, $menus, 'menubar', $output));
+            $this->getView()->setVariable('menu', $this->generateMenu(0, $menus, 'menubar', $staticHtml));
         }
 
         return $this->getView();
@@ -127,16 +133,16 @@ class BaseController extends AbstractActionController
      * @param int    $parent
      * @param array  $menu
      * @param string $ariaRole
-     * @param string $html     - add html menus that do not come from database
+     * @param string $staticHtml - add html menus that do not come from database
      *
      * @return string generated html code
      */
-    private function generateMenu($parent = 0, array $menu = [], $ariaRole = 'menubar', $html = '')
+    private function generateMenu($parent = 0, array $menu = [], $ariaRole = 'menubar', $staticHtml = '')
     {
         $output = '';
         if (isset($menu['submenus'][$parent])) {
             $output .= "<ul role='".$ariaRole."'>";
-            $output .= $html;
+            $output .= $staticHtml;
 
             foreach ($menu['submenus'][$parent] as $id) {
                 $output .= "<li role='menuitem'><a hreflang='".$this->language('languageName')."' itemprop='url' href='/menu/post/".$menu['menus'][$id]->getMenuLink()."'><em class='fa ".$menu['menus'][$id]->getClass()."'></em> ".$menu['menus'][$id]->getCaption().'</a>';

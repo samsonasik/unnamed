@@ -28,8 +28,10 @@ final class AbstractControllerFactory implements AbstractFactoryInterface
      */
     public function canCreateServiceWithName(ServiceLocatorInterface $serviceLocator, $name, $requestedName)
     {
-        if (!strpos($requestedName.'Controller', 'Settings')) {
-            return class_exists($requestedName.'Controller');
+        $requestedName = $requestedName.'Controller';
+
+        if ($requestedName !== 'SD\Admin\Controller\SettingsController') {
+            return class_exists($requestedName);
         }
 
         return false;

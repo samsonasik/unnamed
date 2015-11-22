@@ -144,8 +144,7 @@ final class UserController extends BaseController
                 $formData = $form->getData();
 
                 // check for existing email
-                $query = $this->userTable;
-                $existingEmail = $query->queryBuilder()
+                $existingEmail = $this->userTable->queryBuilder()
                     ->select(['u'])
                     ->from('SD\Admin\Entity\User', 'u')
                     ->where('u.email = :email')
@@ -159,7 +158,7 @@ final class UserController extends BaseController
 
                 $this->setLayoutMessages('&laquo;'.$user->getFullName().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
 
-                return $this->redirect()->toUrl('/admin/user');
+                $this->redirect()->toUrl('/admin/user');
             }
 
             return $this->setLayoutMessages($form->getMessages(), 'error');

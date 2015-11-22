@@ -121,6 +121,42 @@ final class User
     private $language = 1;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="city", type="string", length=150, nullable=true)
+     */
+    private $city;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone", type="string", length=150, nullable=true)
+     */
+    private $phone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="website", type="string", length=150, nullable=true)
+     */
+    private $website;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="country", type="string", length=150, nullable=true)
+     */
+    private $country;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="interests", type="string", length=150, nullable=true)
+     */
+    private $interests;
+
+
+    /**
      * @param array $data
      */
     public function exchangeArray(array $data = [])
@@ -128,7 +164,6 @@ final class User
         // We need to extract all default values defined for this entity
         // and make a comparsion between both arrays
         $arrayCopy = $this->getArrayCopy();
-
         foreach ($data as $key => $value) {
             if (isset($arrayCopy[$key])) {
                 $this->{$key} = $value;
@@ -440,5 +475,105 @@ final class User
     public function getFullName()
     {
         return $this->getName().' '.$this->getSurname();
+    }
+
+    /**
+     * Set city.
+     *
+     * @param string $city
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+    }
+
+    /**
+     * Get city.
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set phone.
+     *
+     * @param string $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+    }
+
+    /**
+     * Get phone.
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Set website.
+     *
+     * @param string $website
+     */
+    public function setWebsite($website)
+    {
+        $this->website = $website;
+    }
+
+    /**
+     * Get website.
+     *
+     * @return string
+     */
+    public function getWebsite()
+    {
+        return $this->website;
+    }
+
+    /**
+     * Set country.
+     *
+     * @param string $country
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+    }
+
+    /**
+     * Get country.
+     *
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Set interests.
+     *
+     * @param string $interests
+     */
+    public function setInterests($interests)
+    {
+        $this->interests = $interests;
+    }
+
+    /**
+     * Get interests.
+     *
+     * @return string
+     */
+    public function getInterests()
+    {
+        return $this->interests;
     }
 }

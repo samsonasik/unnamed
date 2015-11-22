@@ -6,6 +6,8 @@ DD.MM.YYYY
 - Added remember me button in login controller
 - Improved flash messenger
 - Removed coveralls badge
+ - UserController additional fields:
+    - city, phone, website country, interests,
 
 DD.MM.YYYY
 ## 0.0.23 (18.11.2015) - Stable Alpha ##
@@ -215,11 +217,10 @@ DD.MM.YYYY
  - Comments controller
  - Catageries controller
  - Groups controller
+ - Tags controller
  - ElasticSearch
  - After/In Beta version start creating the first PHPUnit and Selenium tests
  - Social networks controller or module
  - Voice Search
- - UserController additional fields:
-    - city, phone, website country, interests,
  - Return the image manipulation library as a stand alone package via composer
  - Add cookie policy

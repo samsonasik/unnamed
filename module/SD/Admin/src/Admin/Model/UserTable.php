@@ -70,14 +70,14 @@ final class UserTable implements UserTableInterface
     /**
      * @param int $userId user id
      *
-     * @return User
+     * @return User|null
      */
     public function getUser($userId = 0)
     {
         $user = $this->getEntityRepository()->find($userId);
 
         if (empty($user)) {
-            throw new RuntimeException("Couldn't find user");
+            return null;
         }
 
         return $user;

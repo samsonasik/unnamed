@@ -39,5 +39,25 @@
             <li class="table-cell"><?=$this->translate("ADMINISTRATOR")?></li>
             <li class="table-cell"><?php if ($user->getAdmin()) { ?> <i class='fa fa-check'></i> <?php } else {  ?> <i class='fa fa-times'></i> <?php } ?></li>
         </ul>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("CITY")?></li>
+            <li class="table-cell"><?=$user->getCity()?></li>
+        </ul>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("COUNTRY")?></li>
+            <li class="table-cell"><?=$user->getCountry()?></li>
+        </ul>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("WEBSITE")?></li>
+            <li class="table-cell"><a rel="external" href="<?=$user->getWebsite()?>"><?=$user->getWebsite()?></a></li>
+        </ul>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("PHONE")?></li>
+            <li class="table-cell"><?=$user->getPhone()?></li>
+        </ul>
+        <ul class="table-row">
+            <li class="table-cell"><?=$this->translate("INTERESTS")?></li>
+            <li class="table-cell"><?=$user->getInterests()?></li>
+        </ul>
     </div>
 </section>

@@ -76,6 +76,91 @@ final class UserForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
+            'type'    => 'Zend\Form\Element\Text',
+            'name'    => 'city',
+            'options' => [
+                'label'          => 'CITY',
+                'object_manager' => $this->objectManager,
+                'target_class'   => 'SD\Admin\Entity\User',
+                'property'       => 'city',
+            ],
+            'attributes' => [
+                'size'        => '40',
+                'placeholder' => 'ENTER_CITY',
+            ],
+            ]
+        );
+
+        $this->add(
+            [
+            'type'    => 'Zend\Form\Element\Text',
+            'name'    => 'phone',
+            'options' => [
+                'label'          => 'PHONE',
+                'object_manager' => $this->objectManager,
+                'target_class'   => 'SD\Admin\Entity\User',
+                'property'       => 'phone',
+            ],
+            'attributes' => [
+                'size'        => '40',
+                'placeholder' => 'ENTER_PHONE',
+            ],
+            ]
+        );
+
+        $this->add(
+            [
+            'type'    => 'Zend\Form\Element\Text',
+            'name'    => 'website',
+            'options' => [
+                'label'          => 'WEBSITE',
+                'object_manager' => $this->objectManager,
+                'target_class'   => 'SD\Admin\Entity\User',
+                'property'       => 'website',
+            ],
+            'attributes' => [
+                'size'        => '40',
+                'placeholder' => 'ENTER_WEBSITE',
+            ],
+            ]
+        );
+
+        $this->add(
+            [
+            'type'    => 'Zend\Form\Element\Text',
+            'name'    => 'country',
+            'options' => [
+                'label'          => 'COUNTRY',
+                'object_manager' => $this->objectManager,
+                'target_class'   => 'SD\Admin\Entity\User',
+                'property'       => 'country',
+            ],
+            'attributes' => [
+                'size'        => '40',
+                'placeholder' => 'ENTER_COUNTRY',
+            ],
+            ]
+        );
+
+        $this->add(
+            [
+            'type'    => 'Zend\Form\Element\Text',
+            'name'    => 'interests',
+            'options' => [
+                'label'          => 'INTERESTS',
+                'object_manager' => $this->objectManager,
+                'target_class'   => 'SD\Admin\Entity\User',
+                'property'       => 'interests',
+            ],
+            'attributes' => [
+                'size'        => '40',
+                'placeholder' => 'ENTER_INTERESTS',
+            ],
+            ]
+        );
+
+        $this->add(
+            [
             'type'    => 'Zend\Form\Element\Email',
             'name'    => 'email',
             'options' => [
@@ -217,6 +302,101 @@ final class UserForm extends Form implements InputFilterProviderInterface
                             'encoding' => 'UTF-8',
                             'min'      => 1,
                             'max'      => 100,
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'name'     => 'city',
+                'required' => false,
+                'filters'  => [
+                    ['name' => 'StripTags'],
+                    ['name' => 'StringTrim'],
+                ],
+                'validators' => [
+                    ['name' => 'NotEmpty'],
+                    [
+                        'name'    => 'StringLength',
+                        'options' => [
+                            'encoding' => 'UTF-8',
+                            'min'      => 1,
+                            'max'      => 150,
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'name'     => 'phone',
+                'required' => false,
+                'filters'  => [
+                    ['name' => 'StripTags'],
+                    ['name' => 'StringTrim'],
+                ],
+                'validators' => [
+                    ['name' => 'NotEmpty'],
+                    [
+                        'name'    => 'StringLength',
+                        'options' => [
+                            'encoding' => 'UTF-8',
+                            'min'      => 1,
+                            'max'      => 150,
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'name'     => 'website',
+                'required' => false,
+                'filters'  => [
+                    ['name' => 'StripTags'],
+                    ['name' => 'StringTrim'],
+                ],
+                'validators' => [
+                    ['name' => 'NotEmpty'],
+                    [
+                        'name'    => 'StringLength',
+                        'options' => [
+                            'encoding' => 'UTF-8',
+                            'min'      => 1,
+                            'max'      => 150,
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'name'     => 'country',
+                'required' => false,
+                'filters'  => [
+                    ['name' => 'StripTags'],
+                    ['name' => 'StringTrim'],
+                ],
+                'validators' => [
+                    ['name' => 'NotEmpty'],
+                    [
+                        'name'    => 'StringLength',
+                        'options' => [
+                            'encoding' => 'UTF-8',
+                            'min'      => 1,
+                            'max'      => 150,
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'name'     => 'interests',
+                'required' => false,
+                'filters'  => [
+                    ['name' => 'StripTags'],
+                    ['name' => 'StringTrim'],
+                ],
+                'validators' => [
+                    // ['name' => 'NotEmpty'],
+                    [
+                        'name'    => 'StringLength',
+                        'options' => [
+                            'encoding' => 'UTF-8',
+                            'min'      => 1,
+                            'max'      => 150,
                         ],
                     ],
                 ],

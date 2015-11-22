@@ -90,6 +90,7 @@ final class SettingsController extends BaseController
 
         $form = $this->settingsForm;
         $form->bind($user);
+        $oldImage = $user->getImage(); //hack
         $this->getView()->setVariable('form', $form);
 
         /** @var \Zend\Http\Request $request */
@@ -115,11 +116,13 @@ final class SettingsController extends BaseController
                     return $this->setLayoutMessages($this->translate('EMAIL_EXIST').' <b>'.$formData->getEmail().'</b> '.$this->translate('ALREADY_EXIST'), 'info');
                 }
 
-                if (is_array($formData->getImage()) && !empty($formData->getImage())) {
+                if (!empty($formData->getImage()['name'])) {
                     $ext = pathinfo($formData->getImage()['name'], PATHINFO_EXTENSION);
                     $newName = $formData->getId().'.'.$ext;
                     $this->uploadImage($formData->getId());
                     $user->setImage($newName);
+                } else {
+                    $user->setImage($oldImage);
                 }
 
                 $this->getTable('SD\\Admin\\Model\\UserTable')->saveUser($user);

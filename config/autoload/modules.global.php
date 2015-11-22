@@ -8,7 +8,6 @@
  *
  * @link       https://github.com/Stanimirdim92/unnamed
  */
-$env = getenv('APPLICATION_ENV');
 
 /*
  * All configurations options, used in two or more modules must go in here.
@@ -36,13 +35,20 @@ return [
             'translate'         => 'SD\Application\Controller\Plugin\Factory\TranslateFactory',
             'Mailing'           => 'SD\Application\Controller\Plugin\Factory\MailingFactory',
             'UserData'          => 'SD\Application\Controller\Plugin\Factory\UserDataFactory',
-            'setLayoutMessages' => 'SD\Application\Controller\Plugin\Factory\SetLayoutMessagesFactory',
             'InitMetaTags'      => 'SD\Application\Controller\Plugin\Factory\InitMetaTagsFactory',
             'getParam'          => 'SD\Application\Controller\Plugin\Factory\GetUrlParamsFactory',
             'getTable'          => 'SD\Application\Controller\Plugin\Factory\GetTableModelFactory',
             'getFunctions'      => 'SD\Application\Controller\Plugin\Factory\FunctionsFactory',
             'setErrorCode'      => 'SD\Application\Controller\Plugin\Factory\ErrorCodesFactory',
             'systemSettings'    => 'SD\Application\Controller\Plugin\Factory\SystemSettingsFactory',
+        ],
+        'invokables' => [
+            'setLayoutMessages' => 'SD\Application\Controller\Plugin\SetLayoutMessages',
+        ],
+    ],
+    'view_helpers' => [
+        'factories' => [
+            'translate' => 'SD\Application\View\Helper\Factory\TranslateHelperFactory',
         ],
     ],
     'shared' => [
@@ -52,9 +58,22 @@ return [
         'locale'                    => 'en',
         'translation_file_patterns' => [
             [
-                'base_dir' => __DIR__.'/../../module/SD/Application/languages/phpArray',
+                'type' => 'phpArray',
+                'base_dir' => __DIR__.'/../../vendor/zendframework/zend-i18n-resources/languages',
+                'pattern' => '%s/Zend_Captcha.php',
+                'text_domain' => 'formandtitle',
+            ],
+            [
+                'type' => 'phpArray',
+                'base_dir' => __DIR__.'/../../vendor/zendframework/zend-i18n-resources/languages',
+                'pattern' => '%s/Zend_Validate.php',
+                'text_domain' => 'formandtitle',
+            ],
+            [
                 'type'     => 'phpArray',
+                'base_dir' => __DIR__.'/../../module/SD/Themes/themes/default/languages/phpArray',
                 'pattern'  => '%s.php',
+                'text_domain' => 'SD_Translations',
             ],
         ],
         'cache' => [
@@ -71,14 +90,14 @@ return [
                     'options' => [],
                 ],
                 'exception_handler' => [
-                    'throw_exceptions' => ($env === 'development'),
+                    'throw_exceptions' => (APP_ENV === 'development'),
                 ],
             ],
         ],
     ],
     'view_manager' => [
-        'display_not_found_reason' => ($env === 'development'),
-        'display_exceptions'       => ($env === 'development'),
+        'display_not_found_reason' => (APP_ENV === 'development'),
+        'display_exceptions'       => (APP_ENV === 'development'),
         'doctype'                  => 'HTML5',
         'not_found_template'       => 'error/index',
         'exception_template'       => 'error/index',

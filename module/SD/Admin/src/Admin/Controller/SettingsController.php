@@ -161,17 +161,19 @@ final class SettingsController extends BaseController
             $form->setInputFilter($form->getInputFilter());
             $form->setData($request->getPost());
 
-            if ($form->isValid()) {
-                $formData = $form->getData();
-
-                unset($formData['submit'], $formData['s']);
-                $settings['system_config'][$actionKey] = array_merge($settings['system_config'][$actionKey], $formData);
-
-                file_put_contents($filename, '<?php return '.var_export($settings, true).';');
-                $this->setLayoutMessages($this->translate('SETTINGS').' '.$this->translate('SAVE_SUCCESS'), 'success');
-            } else {
-                $this->setLayoutMessages($form->getMessages(), 'error');
+            if (!$form->isValid()) {
+                return $this->setLayoutMessages($form->getMessages(), 'error');
             }
+
+            $formData = $form->getData();
+
+            unset($formData['submit'], $formData['s']);
+            $settings['system_config'][$actionKey] = array_merge($settings['system_config'][$actionKey], $formData);
+
+            file_put_contents($filename, '<?php return '.var_export($settings, true).';');
+            $this->setLayoutMessages($this->translate('SETTINGS').' '.$this->translate('SAVE_SUCCESS'), 'success');
+
+            return $this->redirect()->toUrl('/admin/settings/'.$actionKey);
         }
     }
 }

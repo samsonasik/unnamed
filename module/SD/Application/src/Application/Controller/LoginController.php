@@ -84,7 +84,7 @@ final class LoginController extends BaseController
         /** @var \Zend\Http\Request $request */
         $request = $this->getRequest();
         if (!$request->isPost()) {
-            return $this->logoutAction();
+            return $this->redirect()->toUrl('/login');
         }
 
         /*
@@ -100,10 +100,11 @@ final class LoginController extends BaseController
         if (!$form->isValid()) {
             $this->setLayoutMessages($form->getMessages(), 'error');
 
-            return $this->logoutAction();
+            return $this->redirect()->toUrl('/login');
         }
 
-        $adapter = $this->getAuthAdapter($form->getData());
+        $formData = $form->getData();
+        $adapter = $this->getAuthAdapter($formData);
         $auth = new AuthenticationService();
         $result = $auth->authenticate($adapter);
 
@@ -111,25 +112,34 @@ final class LoginController extends BaseController
          * See if authentication is valid
          */
         if (!$result->isValid()) {
-            return $this->setLayoutMessages($result->getMessages(), 'error');
+            $this->setLayoutMessages($result->getMessages(), 'error');
+
+            return $this->redirect()->toUrl('/login');
         }
+        $user = $result->getIdentity();
 
         /*
          * If account is disabled/banned (call it w/e you like) clear user data and redirect
          */
-        if ((int) $result->getIdentity()->isDisabled() === 1) {
+        if ((int) $user->isDisabled() === 1) {
             $this->setLayoutMessages($this->translate('LOGIN_ERROR'), 'error');
 
-            return $this->logoutAction();
+            return $this->redirect()->toUrl('/login');
         }
 
-        $result->getIdentity()->setLastLogin(date('Y-m-d H:i:s', time()));
         $remote = new RemoteAddress();
-        $result->getIdentity()->setIp($remote->getIpAddress());
-        $this->getTable('SD\Admin\Model\UserTable')->saveUser($result->getIdentity());
-        Container::getDefaultManager()->regenerateId();
+        $user->setLastLogin(date('Y-m-d H:i:s', time()));
+        $user->setIp($remote->getIpAddress());
+        $this->getTable('SD\Admin\Model\UserTable')->saveUser($user);
 
-        $this->authService->getStorage()->write($result->getIdentity()); // puts only id in session!
+        $manager =  Container::getDefaultManager();
+        if ($formData['rememberme'] == 1) {
+            $manager->rememberMe(864000); //10 days
+            $manager->getConfig()->setRememberMeSeconds(864000);
+        }
+        $manager->regenerateId();
+
+        $this->authService->getStorage()->write($user); // puts only id in session!
         return $this->redirect()->toUrl('/');
     }
 
@@ -138,7 +148,8 @@ final class LoginController extends BaseController
      */
     protected function logoutAction()
     {
-        $this->getTranslation()->getManager()->getStorage()->clear();
+        $this->getTranslation()->getManager()->forgetMe();
+        // $this->getTranslation()->getManager()->getStorage()->clear();
         $this->authService->clearIdentity();
 
         return $this->redirect()->toUrl('/');

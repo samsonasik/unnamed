@@ -175,14 +175,16 @@ final class MenuController extends BaseController
     {
         $this->menuTable->toggleActiveMenu((int) $this->getParam('id'), $this->language(), 0);
         $this->setLayoutMessages($this->translate('MENU_DISABLE_SUCCESS'), 'success');
-        $this->redirect()->toUrl('/admin/menu');
+
+        return $this->redirect()->toUrl('/admin/menu');
     }
 
     protected function activateAction()
     {
         $this->menuTable->toggleActiveMenu((int) $this->getParam('id'), $this->language(), 1);
         $this->setLayoutMessages($this->translate('MENU_ENABLE_SUCCESS'), 'success');
-        $this->redirect()->toUrl('/admin/menu');
+
+        return $this->redirect()->toUrl('/admin/menu');
     }
 
     /**
@@ -236,7 +238,9 @@ final class MenuController extends BaseController
             if ($form->isValid()) {
                 $this->menuTable->saveMenu($menu);
 
-                return $this->setLayoutMessages('&laquo;'.$menu->getCaption().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
+                $this->setLayoutMessages('&laquo;'.$menu->getCaption().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
+
+                return $this->redirect()->toUrl('/admin/menu');
             }
 
             return $this->setLayoutMessages($form->getMessages(), 'error');

@@ -35,6 +35,6 @@ final class IndexController extends BaseController
         $this->getTranslation()->offsetSet('language', $language->getId());
         $this->getTranslation()->offsetSet('languageName', $language->getName());
 
-        return $this->redirect()->toUrl('/');
+        return $this->redirect()->toUrl('/admin');
     }
 }

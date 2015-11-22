@@ -172,12 +172,16 @@ final class ContentController extends BaseController
     {
         $this->contentTable->toggleActiveContent((int) $this->getParam('id'), $this->language(), 0);
         $this->setLayoutMessages($this->translate('CONTENT_DISABLE_SUCCESS'), 'success');
+
+        return $this->redirect()->toUrl('/admin/content');
     }
 
     protected function activateAction()
     {
         $this->contentTable->toggleActiveContent((int) $this->getParam('id'), $this->language(), 1);
         $this->setLayoutMessages($this->translate('CONTENT_ENABLE_SUCCESS'), 'success');
+
+        return $this->redirect()->toUrl('/admin/content');
     }
 
     /**
@@ -200,8 +204,16 @@ final class ContentController extends BaseController
         $form->bind($content);
         $this->getView()->setVariable('form', $form);
 
-        /** @var \Zend\Http\Request $request */
-        $request = $this->getRequest();
+        $this->processFormRequest($this->getRequest());
+    }
+
+    /**
+     * @param \Zend\Http\Request $request
+     *
+     * @return [type] [description]
+     */
+    private function processFormRequest($request)
+    {
         if ($request->isPost()) {
             $data = array_merge_recursive(
                 $request->getPost()->toArray(),
@@ -248,6 +260,8 @@ final class ContentController extends BaseController
         $this->contentTable->saveContent($content);
 
         $this->setLayoutMessages('&laquo;'.$content->getTitle().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
+
+        return $this->redirect()->toUrl('/admin/content');
     }
 
     /**

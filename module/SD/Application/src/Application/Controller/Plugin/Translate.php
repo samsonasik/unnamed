@@ -33,8 +33,8 @@ final class Translate extends AbstractPlugin
      *
      * @return string
      */
-    public function __invoke($message = '')
+    public function __invoke($message = '', $textDomain = 'SD_Translations')
     {
-        return $this->translator->translate($message);
+        return $this->translator->translate($message, $textDomain);
     }
 }

@@ -56,8 +56,6 @@ final class AdminMenuController extends BaseController
     }
 
     /**
-     * This action shows the list of all admin menus.
-     *
      * @return \Zend\View\Model\ViewModel
      */
     public function indexAction()
@@ -67,8 +65,22 @@ final class AdminMenuController extends BaseController
                         ->getEntityRepository()
                         ->findAll();
 
+        $menus = $this->getAdminMenus($menu);
+        $this->getView()->setVariable('menus', $menus['menus']);
+        $this->getView()->setVariable('submenus', $menus['submenus']);
+
+        return $this->getView();
+    }
+
+    /**
+     * @param array $menu - array of objects
+     *
+     * @return array
+     */
+    private function getAdminMenus(array $menu) {
+        $menus = ['menus' => [], 'submenus' => []];
+
         if (count($menu) > 0) {
-            $menus = ['menus' => [], 'submenus' => []];
             /** @var AdminMenu $submenus */
             foreach ($menu as $submenus) {
                 if ($submenus->getParent() > 0) {
@@ -77,12 +89,9 @@ final class AdminMenuController extends BaseController
                     $menus['menus'][$submenus->getId()] = $submenus;
                 }
             }
-
-            $this->getView()->setVariable('menus', $menus['menus']);
-            $this->getView()->setVariable('submenus', $menus['submenus']);
         }
 
-        return $this->getView();
+        return $menus;
     }
 
     /**
@@ -158,18 +167,30 @@ final class AdminMenuController extends BaseController
         /** @var \Zend\Http\Request $request */
         $request = $this->getRequest();
         if ($request->isPost()) {
-            $form->setInputFilter($form->getInputFilter());
-            $form->setData($request->getPost());
-
-            if ($form->isValid()) {
-                $this->adminMenuTable->saveAdminMenu($adminMenu);
-
-                return $this->setLayoutMessages('&laquo;'.$adminMenu->getCaption().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
-            }
+            $this->processFormData($form);
 
             return $this->setLayoutMessages($form->getMessages(), 'error');
         }
 
         return false;
+    }
+
+    /**
+     * @param adminMenuForm $form
+     *
+     * @return object|void
+     */
+    private function processFormData($form)
+    {
+        $form->setInputFilter($form->getInputFilter());
+        $form->setData($request->getPost());
+
+        if ($form->isValid()) {
+            $this->adminMenuTable->saveAdminMenu($adminMenu);
+
+            $this->setLayoutMessages('&laquo;'.$adminMenu->getCaption().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
+
+            return $this->redirect()->toUrl('/admin/admin-menu');
+        }
     }
 }

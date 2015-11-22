@@ -44,6 +44,16 @@ final class LoginForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
+            'type'       => 'Zend\Form\Element\Checkbox',
+            'name'       => 'rememberme',
+            'options'    => [
+                'label' => 'REMEMBER_ME',
+            ],
+            ]
+        );
+
+        $this->add(
+            [
             'type'       => 'Zend\Form\Element\Password',
             'name'       => 'password',
             'options'    => [

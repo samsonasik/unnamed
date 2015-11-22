@@ -16,6 +16,7 @@ use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use Zend\Session\Container;
+use Zend\Validator\AbstractValidator;
 
 final class Module implements ConfigProviderInterface, BootstrapListenerInterface
 {
@@ -25,11 +26,7 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
     private $service;
 
     /**
-     * Listen to the bootstrap event.
-     *
-     * @param EventInterface $event
-     *
-     * @return array|void
+     * {@inheritdoc}
      */
     public function onBootstrap(EventInterface $event)
     {
@@ -45,7 +42,7 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
             Container::setDefaultManager($sessionManager);
         }
 
-        $eventManager->attach('dispatch', [$this, 'setTitleAndTranslation'], -10);
+        $eventManager->attach('dispatch', [$this, 'setTitleAndTranslation']);
         $eventManager->attach('dispatch.error', [$this, 'onError'], 2);
     }
 
@@ -71,14 +68,31 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
         $title = $this->service->get('ControllerPluginManager')->get('systemsettings');
         $viewHelper = $this->service->get('ViewHelperManager');
         $lang = new Container('translations');
+
         $translator = $this->service->get('translator');
 
         /*
          * Load translations.
          */
+        $renderer = $this->service->get('ViewManager')->getRenderer();
+        $renderer->plugin('formRow')->setTranslator($translator, 'SD_Translations');
+        $renderer->plugin('formCollection')->setTranslator($translator, 'SD_Translations');
+        $renderer->plugin('formLabel')->setTranslator($translator, 'SD_Translations');
+        $renderer->plugin('formSelect')->setTranslator($translator, 'SD_Translations');
+        $renderer->plugin('formSubmit')->setTranslator($translator, 'SD_Translations');
+
+        AbstractValidator::setDefaultTranslator($translator, 'formandtitle');
         $translator->setLocale($lang->offsetGet('languageName'))->setFallbackLocale('en');
+
         $viewModel = $event->getViewModel();
         $viewModel->setVariable('lang', $translator->getLocale());
+
+        /**
+         * Custom flash messenger.
+         */
+        $msg = $lang->offsetGet('flashMessages');
+        $lang->offsetUnset('flashMessages');
+        $viewModel->setVariable('flashMessages', $msg);
 
         /*
          * Load page title
@@ -90,7 +104,7 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
     }
 
     /**
-     * @return array|\Traversable
+     * {@inheritdoc}
      */
     public function getConfig()
     {

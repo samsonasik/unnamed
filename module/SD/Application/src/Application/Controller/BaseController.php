@@ -19,6 +19,7 @@ use Zend\View\Model\ViewModel;
  * @method object getTable($tableName)
  * @method string translate($message = '')
  * @method mixed UserData()
+ * @method mixed getParam($paramName = null)
  * @method void initMetaTags()
  */
 class BaseController extends AbstractActionController

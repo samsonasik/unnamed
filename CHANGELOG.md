@@ -1,7 +1,13 @@
 # CHANGELOG #
 DD.MM.YYYY
+## 0.0.24 (20.11.2015) - Stable Alpha ##
+- Added text_domain for translations
+- Created translate view helper, which calls translate controller plugin
+- Added remember me button in login controller
+
+DD.MM.YYYY
 ## 0.0.23 (18.11.2015) - Stable Alpha ##
-- Fixed session collisions - The ap was creating two sessions __zpc and zpc
+- Fixed session collisions - The app was creating two sessions __zpc and zpc, but read only zpc
 - Fixed a bug, where Firefox couldn't load assests files due to misconfigured url slashes
 - First drafts of ProfileController
 - Bumped cookie life time to 10 days
@@ -205,8 +211,13 @@ DD.MM.YYYY
 
 # TODO
  - Comments controller
- - ElasticSearch
  - Catageries controller
+ - Groups controller
+ - ElasticSearch
  - After/In Beta version start creating the first PHPUnit and Selenium tests
  - Social networks controller or module
  - Voice Search
+ - UserController additional fields:
+    - city, phone, website country, interests,
+ - Return the image manipulation library as a stand alone package via composer
+ - Add cookie policy

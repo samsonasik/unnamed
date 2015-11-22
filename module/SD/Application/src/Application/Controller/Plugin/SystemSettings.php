@@ -44,6 +44,7 @@ final class SystemSettings extends AbstractPlugin
             case 'registration':
             case 'posts':
             case 'discussion':
+            case 'theme':
                 return $this->getOption($option, $value);
 
             default:
@@ -54,9 +55,7 @@ final class SystemSettings extends AbstractPlugin
     /**
      * Get an individual option.
      *
-     * Keys are normalized to lowercase.
-     *
-     * Returns null for not found options.
+     * Returns null for not found option.
      *
      * @param string $key
      * @param string $value
@@ -65,9 +64,6 @@ final class SystemSettings extends AbstractPlugin
      */
     private function getOption($key, $value)
     {
-        $key = strtolower($key);
-        $value = strtolower($value);
-
         return array_key_exists($value, $this->options[$key]) ? $this->options[$key][$value] : null;
     }
 }

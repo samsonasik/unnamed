@@ -22,8 +22,6 @@ class SessionFactory
     {
         $sessionConfig = new SessionConfig();
         $sessionConfig->setOptions([
-            'cookie_lifetime'         => 864000, //10 days
-            'remember_me_seconds'     => 864000,
             'use_cookies'             => true,
             'cookie_path'             => '/',
             'cookie_httponly'         => true,

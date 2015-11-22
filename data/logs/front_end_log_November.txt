@@ -445,3 +445,221 @@ Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-file\src\
 #15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
 #16 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
 #17 {main}
+2015-11-20T21:13:58+00:00 ERR (3): 
+Exception: An abstract factory could not create an instance of sdapplicationcontrollerregistration(alias: SD\Application\Controller\Registration).
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(645): Zend\ServiceManager\ServiceManager->createFromAbstractFactory('sdapplicationco...', 'SD\\Application\\...')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('SD\\Application\\...', 'sdapplicationco...')
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(115): Zend\ServiceManager\ServiceManager->get('SD\\Application\\...', false)
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\ControllerManager.php(137): Zend\ServiceManager\AbstractPluginManager->get('SD\\Application\\...', Array, false)
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(76): Zend\Mvc\Controller\ControllerManager->get('SD\\Application\\...')
+#6 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#11 {main}
+2015-11-20T21:15:01+00:00 ERR (3): 
+Exception: An abstract factory could not create an instance of sdapplicationcontrollerregistration(alias: SD\Application\Controller\Registration).
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(645): Zend\ServiceManager\ServiceManager->createFromAbstractFactory('sdapplicationco...', 'SD\\Application\\...')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('SD\\Application\\...', 'sdapplicationco...')
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(115): Zend\ServiceManager\ServiceManager->get('SD\\Application\\...', false)
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\ControllerManager.php(137): Zend\ServiceManager\AbstractPluginManager->get('SD\\Application\\...', Array, false)
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(76): Zend\Mvc\Controller\ControllerManager->get('SD\\Application\\...')
+#6 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#11 {main}
+2015-11-20T21:15:47+00:00 ERR (3): 
+Exception: An abstract factory could not create an instance of sdapplicationcontrollerregistration(alias: SD\Application\Controller\Registration).
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(645): Zend\ServiceManager\ServiceManager->createFromAbstractFactory('sdapplicationco...', 'SD\\Application\\...')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('SD\\Application\\...', 'sdapplicationco...')
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(115): Zend\ServiceManager\ServiceManager->get('SD\\Application\\...', false)
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\ControllerManager.php(137): Zend\ServiceManager\AbstractPluginManager->get('SD\\Application\\...', Array, false)
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(76): Zend\Mvc\Controller\ControllerManager->get('SD\\Application\\...')
+#6 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#11 {main}
+2015-11-21T16:40:32+00:00 ERR (3): 
+Exception: Zend\Mvc\Controller\PluginManager::get was unable to fetch or create an instance for translate
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(115): Zend\ServiceManager\ServiceManager->get('translate', true)
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\PluginManager.php(84): Zend\ServiceManager\AbstractPluginManager->get('translate', NULL, true)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(292): Zend\Mvc\Controller\PluginManager->get('translate', NULL)
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(307): Zend\Mvc\Controller\AbstractController->plugin('translate')
+#4 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\BaseController.php(112): Zend\Mvc\Controller\AbstractController->__call('translate', Array)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\BaseController.php(112): SD\Application\Controller\LoginController->translate('HOME')
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\BaseController.php(58): SD\Application\Controller\BaseController->initMenus()
+#7 [internal function]: SD\Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#12 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#17 {main}
+2015-11-21T16:40:46+00:00 ERR (3): 
+Exception: Zend\Mvc\Controller\PluginManager::get was unable to fetch or create an instance for translate
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\AbstractPluginManager.php(115): Zend\ServiceManager\ServiceManager->get('translate', true)
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\PluginManager.php(84): Zend\ServiceManager\AbstractPluginManager->get('translate', NULL, true)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(292): Zend\Mvc\Controller\PluginManager->get('translate', NULL)
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(307): Zend\Mvc\Controller\AbstractController->plugin('translate')
+#4 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\BaseController.php(112): Zend\Mvc\Controller\AbstractController->__call('translate', Array)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\BaseController.php(112): SD\Application\Controller\LoginController->translate('HOME')
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\BaseController.php(58): SD\Application\Controller\BaseController->initMenus()
+#7 [internal function]: SD\Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#12 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#17 {main}
+2015-11-21T16:54:30+00:00 ERR (3): 
+Exception: No translation file was found
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\LanguageController.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\LanguageController->translationsAction()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#2 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\LanguageController.php(58): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 [internal function]: SD\Admin\Controller\LanguageController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#8 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#13 {main}
+2015-11-21T16:55:41+00:00 ERR (3): 
+Exception: Option doesn't exists
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\Plugin\SystemSettings.php
+Trace: #0 [internal function]: SD\Application\Controller\Plugin\SystemSettings->__invoke('theme', 'name')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(309): call_user_func_array(Object(SD\Application\Controller\Plugin\SystemSettings), Array)
+#2 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\LanguageController.php(151): Zend\Mvc\Controller\AbstractController->__call('systemSettings', Array)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\LanguageController.php(151): SD\Admin\Controller\LanguageController->systemSettings('theme', 'name')
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\LanguageController->translationsAction()
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\LanguageController.php(58): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 [internal function]: SD\Admin\Controller\LanguageController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#12 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#17 {main}
+2015-11-21T16:57:27+00:00 ERR (3): 
+Exception: Option doesn't exists
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\Plugin\SystemSettings.php
+Trace: #0 [internal function]: SD\Application\Controller\Plugin\SystemSettings->__invoke('theme', 'name')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(309): call_user_func_array(Object(SD\Application\Controller\Plugin\SystemSettings), Array)
+#2 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\LanguageController.php(151): Zend\Mvc\Controller\AbstractController->__call('systemSettings', Array)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\LanguageController.php(151): SD\Admin\Controller\LanguageController->systemSettings('theme', 'name')
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\LanguageController->translationsAction()
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\LanguageController.php(58): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 [internal function]: SD\Admin\Controller\LanguageController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#12 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#17 {main}
+2015-11-21T16:59:30+00:00 ERR (3): 
+Exception: Option doesn't exists
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\Plugin\SystemSettings.php
+Trace: #0 [internal function]: SD\Application\Controller\Plugin\SystemSettings->__invoke('theme', 'name')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(309): call_user_func_array(Object(SD\Application\Controller\Plugin\SystemSettings), Array)
+#2 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\LanguageController.php(151): Zend\Mvc\Controller\AbstractController->__call('systemSettings', Array)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\LanguageController.php(151): SD\Admin\Controller\LanguageController->systemSettings('theme', 'name')
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\LanguageController->translationsAction()
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\LanguageController.php(58): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 [internal function]: SD\Admin\Controller\LanguageController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#12 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#17 {main}
+2015-11-21T17:55:33+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Model\MenuTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\MenuController.php(167): SD\Admin\Model\MenuTable->getMenu(2, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\MenuController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\MenuController.php(55): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: SD\Admin\Controller\MenuController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-11-22T11:11:14+00:00 ERR (3): 
+Exception: Offset invalid or out of range
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\Plugin\SetLayoutMessages.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\Plugin\SetLayoutMessages.php(63): SplDoublyLinkedList->offsetSet('success', Object(Zend\Stdlib\SplQueue))
+#1 [internal function]: SD\Application\Controller\Plugin\SetLayoutMessages->__invoke(Array, 'success')
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(309): call_user_func_array(Object(SD\Application\Controller\Plugin\SetLayoutMessages), Array)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\RegistrationController.php(117): Zend\Mvc\Controller\AbstractController->__call('setLayoutMessag...', Array)
+#4 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\RegistrationController.php(117): SD\Application\Controller\RegistrationController->setLayoutMessages(Array, 'success')
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Application\Controller\RegistrationController->indexAction()
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\BaseController.php(55): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 [internal function]: SD\Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#12 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#17 {main}

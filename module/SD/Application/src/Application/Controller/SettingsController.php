@@ -124,7 +124,7 @@ final class SettingsController extends BaseController
 
                 $this->getTable('SD\\Admin\\Model\\UserTable')->saveUser($user);
 
-                return $this->setLayoutMessages('&laquo;'.$user->getFullName().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
+                return $this->setLayoutMessages($this->translate('SETTINGS').' '.$this->translate('SAVE_SUCCESS'), 'success');
             }
 
             return $this->setLayoutMessages($form->getMessages(), 'error');
@@ -151,13 +151,13 @@ final class SettingsController extends BaseController
             mkdir($dir, 0750, true);
         }
 
-        foreach ($adapter->getFileInfo() as $key => $file) {
+        foreach ($adapter->getFileInfo() as $file) {
             $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
             $newName = $userId.'.'.$ext;
             $adapter->setValidators([$size, new IsImage(), $extension]);
             $adapter->addFilter('File\Rename', [
-                 'target'    => $dir.$newName,
-                 'overwrite' => true,
+                'target'    => $dir.$newName,
+                'overwrite' => true,
             ]);
             $adapter->receive($file['name']);
 

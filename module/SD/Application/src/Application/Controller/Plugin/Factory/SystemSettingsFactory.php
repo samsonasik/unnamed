@@ -29,6 +29,10 @@ class SystemSettingsFactory
 
         $config = $serviceLocator->get('Config');
 
+        /**
+         * No need to pass a second argument, just for the theme name. Instead,merge it into the already system config array
+         */
+        $config['system_config']['theme']['name'] = $config['theme']['name'];
         $plugin = new SystemSettings($config['system_config']);
 
         return $plugin;

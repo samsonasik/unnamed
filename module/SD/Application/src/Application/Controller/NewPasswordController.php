@@ -42,7 +42,7 @@ final class NewPasswordController extends BaseController
     /**
      * The ResetpasswordController has generated a random token string.
      * In order to reset the account password, we need to take that token and validate it first.
-     * If everything is fine, we let the user to reset his password.
+     * If everything is fine, we let the user reset his password.
      *
      * @throws RuntimeException
      *
@@ -71,7 +71,8 @@ final class NewPasswordController extends BaseController
 
         if (empty($tokenExist)) {
             $this->setLayoutMessages($this->translate('LINK_EXPIRED'), 'error');
-            $this->redirect()->toUrl('/');
+
+            return $this->redirect()->toUrl('/');
         }
 
         $tokenExist = $tokenExist[0];
@@ -104,23 +105,23 @@ final class NewPasswordController extends BaseController
             $form->setInputFilter($form->getInputFilter());
             $form->setData($request->getPost());
 
-            if ($form->isValid()) {
-                $formData = $form->getData();
-                $pw = $func::createPassword($formData['password']);
-
-                if (!empty($pw)) {
-                    /** @var \SD\Admin\Entity\User $user */
-                    $user = $this->getTable('SD\\Admin\\Model\\UserTable')->getUser($this->getTranslation()->offsetGet('resetpwUserId'));
-                    $remote = new RemoteAddress();
-                    $user->setPassword($pw);
-                    $user->setIp($remote->getIpAddress());
-                    $this->getTable('SD\\Admin\\Model\\UserTable')->saveUser($user);
-                    $this->setLayoutMessages($this->translate('NEW_PW_SUCCESS'), 'success');
-                } else {
-                    $this->setLayoutMessages($this->translate('PASSWORD_NOT_GENERATED'), 'error');
-                }
-            } else {
+            if (!$form->isValid()) {
                 $this->setLayoutMessages($form->getMessages(), 'error');
+            }
+
+            $formData = $form->getData();
+            $pw = $func::createPassword($formData['password']);
+
+            if (!empty($pw)) {
+                /** @var \SD\Admin\Entity\User $user */
+                $user = $this->getTable('SD\\Admin\\Model\\UserTable')->getUser($this->getTranslation()->offsetGet('resetpwUserId'));
+                $remote = new RemoteAddress();
+                $user->setPassword($pw);
+                $user->setIp($remote->getIpAddress());
+                $this->getTable('SD\\Admin\\Model\\UserTable')->saveUser($user);
+                $this->setLayoutMessages($this->translate('NEW_PW_SUCCESS'), 'success');
+            } else {
+                $this->setLayoutMessages($this->translate('PASSWORD_NOT_GENERATED'), 'error');
             }
         }
 

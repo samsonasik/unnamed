@@ -56,16 +56,16 @@ final class ContactController extends BaseController
         if ($request->isPost()) {
             $form->setInputFilter($form->getInputFilter());
             $form->setData($request->getPost());
-            if ($form->isValid()) {
-                $formData = $form->getData();
-                try {
-                    $this->Mailing()->sendMail($this->systemSettings('general', 'system_email'), '', $formData['subject'], $formData['message'], $formData['email'], $formData['name']);
-                    $this->setLayoutMessages($this->translate('CONTACT_SUCCESS'), 'success');
-                } catch (\Exception $exception) {
-                    $this->setLayoutMessages($this->translate('CONTACT_ERROR'), 'error');
-                }
-            } else {
-                $this->setLayoutMessages($form->getMessages(), 'error');
+            if (!$form->isValid()) {
+                return $this->setLayoutMessages($form->getMessages(), 'error');
+            }
+
+            $formData = $form->getData();
+            try {
+                $this->Mailing()->sendMail($this->systemSettings('general', 'system_email'), '', $formData['subject'], $formData['message'], $formData['email'], $formData['name']);
+                return $this->setLayoutMessages($this->translate('CONTACT_SUCCESS'), 'success');
+            } catch (\Exception $exception) {
+                return $this->setLayoutMessages($this->translate('CONTACT_ERROR'), 'error');
             }
         }
 

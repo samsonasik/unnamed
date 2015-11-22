@@ -11,7 +11,7 @@
 namespace SD\Admin\Controller;
 
 use SD\Admin\Entity\Language;
-use SD\Admin\Exception\RunTimeException;
+use SD\Admin\Exception\RuntimeException;
 use SD\Admin\Form\LanguageForm;
 use Zend\Mvc\MvcEvent;
 use Zend\Stdlib\Parameters;
@@ -148,14 +148,15 @@ final class LanguageController extends BaseController
     {
         $this->getView()->setTemplate('admin/language/translations');
 
-        $arr = 'module/Application/languages/phpArray/'.$this->language('languageName').'.php';
+        $dir = 'module/SD/Themes/themes/'.$this->systemSettings('theme', 'name').'/languages/phpArray/';
+        $arr = $dir.$this->language('languageName').'.php';
 
         if (!is_file($arr)) {
-            $arr = 'module/Application/languages/phpArray/en.php';
+            $arr = 'module/SD/Themes/themes/default/languages/phpArray/en.php';
         }
 
         if (!is_file($arr)) {
-            throw new RunTimeException($this->translate('NO_TRANSLATION_FILE'));
+            throw new RuntimeException($this->translate('NO_TRANSLATION_FILE'));
         }
 
         $this->getView()->setVariable('translationsArray', include $arr);
@@ -163,11 +164,13 @@ final class LanguageController extends BaseController
         /** @var \Zend\Http\Request $request */
         $request = $this->getRequest();
         if ($request->isPost() && $request->getPost() instanceof Parameters) {
-            $filename = 'module/Application/languages/phpArray/'.$this->language('languageName').'.php';
+            $filename = $dir.$this->language('languageName').'.php';
             $arr2 = $request->getPost()->toArray();
             unset($arr2['submit']); // remove submit button
             file_put_contents($filename, '<?php return '.var_export($arr2, true).';');
             $this->setLayoutMessages($this->translate('TRANSLATIONS_SAVE_SUCCESS'), 'success');
+
+            return $this->redirect()->toUrl('/admin/language/translations');
         }
 
         return $this->getView();
@@ -201,7 +204,9 @@ final class LanguageController extends BaseController
             if ($form->isValid()) {
                 $this->languageTable->saveLanguage($language);
 
-                return $this->setLayoutMessages($this->translate('LANGUAGE').' &laquo;'.$language->getName().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
+                $this->setLayoutMessages($this->translate('LANGUAGE').' &laquo;'.$language->getName().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
+
+                return $this->redirect()->toUrl('/admin/language');
             }
 
             return $this->setLayoutMessages($form->getMessages(), 'error');

@@ -57,35 +57,37 @@ final class RegistrationController extends BaseController
         $form->setInputFilter($form->getInputFilter());
         $form->setData($request->getPost());
 
-        if ($form->isValid()) {
-            $formData = $form->getData();
-            $remote = new RemoteAddress();
-
-            /*
-             * See if there is already registered user with this email
-             */
-            $existingEmail = $this->getTable('SD\Admin\\Model\\UserTable')
-                                    ->getEntityRepository()
-                                    ->findBy(['email' => $formData['email']]);
-
-            if (count($existingEmail) > 0) {
-                return $this->setLayoutMessages($this->translate('EMAIL_EXIST').' <b>'.$formData['email'].'</b> '.$this->translate('ALREADY_EXIST'), 'info');
-            } else {
-                $func = $this->getFunctions();
-                $registerUser = new User();
-                $registerUser->setName($formData['name']);
-                $registerUser->setPassword($func::createPassword($formData['password']));
-                $registerUser->setRegistered(date('Y-m-d H:i:s', time()));
-                $registerUser->setIp($remote->getIpAddress());
-                $registerUser->setEmail($formData['email']);
-                $registerUser->setLanguage($this->language());
-                $this->getTable('SD\Admin\\Model\\UserTable')->saveUser($registerUser);
-
-                return $this->setLayoutMessages($this->translate('REGISTRATION_SUCCESS'), 'success');
-            }
-        } else {
+        if (!$form->isValid()) {
             return $this->setLayoutMessages($form->getMessages(), 'error');
         }
+
+        $formData = $form->getData();
+
+        /*
+         * See if there is already registered user with this email
+         */
+        $existingEmail = $this->getTable('SD\Admin\\Model\\UserTable')
+                                ->getEntityRepository()
+                                ->findBy(['email' => $formData['email']]);
+
+        if (count($existingEmail) > 0) {
+            return $this->setLayoutMessages($this->translate('EMAIL_EXIST').' <b>'.$formData['email'].'</b> '.$this->translate('ALREADY_EXIST'), 'info');
+        }
+
+        $func = $this->getFunctions();
+        $remote = new RemoteAddress();
+        $registerUser = new User();
+        $registerUser->setName($formData['name']);
+        $registerUser->setPassword($func::createPassword($formData['password']));
+        $registerUser->setRegistered(date('Y-m-d H:i:s', time()));
+        $registerUser->setIp($remote->getIpAddress());
+        $registerUser->setEmail($formData['email']);
+        $registerUser->setLanguage($this->language());
+        $this->getTable('SD\Admin\\Model\\UserTable')->saveUser($registerUser);
+
+        $this->setLayoutMessages($this->translate('REGISTRATION_SUCCESS'), 'success');
+
+        return $this->redirect()->toUrl('/login');
     }
 
     /**
@@ -95,18 +97,11 @@ final class RegistrationController extends BaseController
     {
         $this->getView()->setTemplate('application/registration/index');
 
+        $this->getView()->setVariable('form', $this->registrationForm);
+
         if ($this->systemSettings('registration', 'allow_registrations') !== 1) {
             $this->getView()->setVariable('form', $this->translate('REGISTRATION_CLOSED'));
-
-            return $this->getView();
         }
-
-        /*
-         * @var RegistrationForm
-         */
-        $form = $this->registrationForm;
-
-        $this->getView()->setVariable('form', $form);
 
         return $this->getView();
     }

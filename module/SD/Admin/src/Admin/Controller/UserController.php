@@ -157,7 +157,9 @@ final class UserController extends BaseController
 
                 $this->userTable->saveUser($user);
 
-                return $this->setLayoutMessages('&laquo;'.$user->getFullName().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
+                $this->setLayoutMessages('&laquo;'.$user->getFullName().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
+
+                return $this->redirect()->toUrl('/admin/user');
             }
 
             return $this->setLayoutMessages($form->getMessages(), 'error');
@@ -173,6 +175,8 @@ final class UserController extends BaseController
     {
         $this->userTable->toggleUserState((int) $this->getParam('id'), 0);
         $this->setLayoutMessages($this->translate('USER_ENABLE_SUCCESS'), 'success');
+
+        return $this->redirect()->toUrl('/admin/user');
     }
 
     /**
@@ -182,6 +186,8 @@ final class UserController extends BaseController
     {
         $this->userTable->toggleUserState((int) $this->getParam('id'), 1);
         $this->setLayoutMessages($this->translate('USER_DISABLE_SUCCESS'), 'success');
+
+        return $this->redirect()->toUrl('/admin/user');
     }
 
     /**

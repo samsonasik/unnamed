@@ -55,31 +55,31 @@ if ($this->viewModel()->getCurrent()->getChildren() != null) {
                 <!-- Breadcrumbs -->
                 <div class="breadcrumbs">
                     <ul>
-                    <li><a hreflang='<?=$this->layout()->lang?>' href="/admin"><?=$this->translate("DASHBOARD");?></a> &sol;</li>
+                        <li><a hreflang='<?=$this->layout()->lang?>' href="/admin"><?=$this->translate("DASHBOARD");?></a> &sol;</li>
 <?php
-                    if (!empty($view->breadcrumbs)) {
-                        foreach($view->breadcrumbs as $bread) {
-                                echo "<li><a hreflang='{$this->layout()->lang}' href='{$bread["reference"]}'>{$bread["name"]}</a></li> &sol;";
+                        if (!empty($view->breadcrumbs)) {
+                            foreach($view->breadcrumbs as $bread) {
+                                    echo "<li><a hreflang='{$this->layout()->lang}' href='{$bread["reference"]}'>{$bread["name"]}</a></li> &sol;";
+                            }
+                        }
+                    echo "</ul>";
+                echo "</div>";
+
+                if ($this->layout()->flashMessages) {
+                    foreach ($this->layout()->flashMessages as $msg) {
+                        foreach ($msg as $context => $message) {
+                            echo "<div class='".$context."'>
+                                    <ul>
+                                        <li role='alert'>
+                                            <i class='fa-fw fa fa-".$context."'></i>".$message."
+                                            <button role='button' aria-pressed='false' aria-label='".$this->translate("DELETE")."' type='button' class='btn btn-default close close'><i class='fa fa-times'></i></button>
+                                        </li>
+                                    </ul>
+                                  </div>
+                            ";
                         }
                     }
-                echo "</ul>";
-            echo "</div>";
-
-                /**
-                 * All messages passed from $this->getLayoutMessages() plugin method are showed with this code
-                 */
-                if ($this->layout()->flashMessages) {
-                    foreach ($this->layout()->flashMessages->getCurrentMessages() as $context => $message) {
-                        echo "<div class='".$this->layout()->flashMessages->getNamespace()."'>
-                                <ul>
-                                    <li role='alert'>
-                                        <i class='fa-fw fa fa-".$this->layout()->flashMessages->getNamespace()."'></i>{$message}
-                                        <button role='button' aria-pressed='false' aria-label='".$this->translate("DELETE")."' type='button' class='btn btn-default close close'><i class='fa fa-times'></i></button>
-                                    </li>
-                                </ul>
-                              </div>
-                        ";
-                    }
+                    $this->layout()->flashMessages = null;
                 }
 
                 /**
@@ -95,7 +95,7 @@ if ($this->viewModel()->getCurrent()->getChildren() != null) {
             </aside>
 
             <footer class="c" id="footer">
-                <small>Copyright <time datetime="2015 - <?=date("Y");?>">2015 - <?=date("Y");?></time> &copy; dzfsdsfg Dimitrov. </small>
+                <small>Copyright <time datetime="2015 - <?=date("Y");?>">2015 - <?=date("Y");?></time> &copy; Stanimir Dimitrov. </small>
             </footer>
         </div>
 <?php

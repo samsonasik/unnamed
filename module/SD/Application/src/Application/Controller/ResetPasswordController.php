@@ -21,6 +21,7 @@ use Zend\Http\PhpEnvironment\RemoteAddress;
  * @method mixed UserData()
  * @method mixed getFunctions()
  * @method object Mailing()
+ * @method string|null systemSettings($option = 'general', $value = 'site_name')
  */
 final class ResetPasswordController extends BaseController
 {
@@ -59,7 +60,7 @@ final class ResetPasswordController extends BaseController
         /** @var \Zend\Http\Request $request */
         $request = $this->getRequest();
         if (!$request->isPost()) {
-            $this->redirect()->toUrl('/reset-password');
+            return $this->redirect()->toUrl('/reset-password');
         }
 
         /*
@@ -75,7 +76,7 @@ final class ResetPasswordController extends BaseController
 
         $formData = $form->getData();
         /** @var \SD\Admin\Entity\User $existingEmail */
-        $existingEmail = $this->getTable('SD\Admin\\Model\\UserTable')
+        $existingEmail = $this->getTable('SD\\Admin\\Model\\UserTable')
                                 ->getEntityRepository()
                                 ->findBy(['email' => $formData['email']]);
 
@@ -91,7 +92,7 @@ final class ResetPasswordController extends BaseController
         $resetpw->setUser($existingEmail[0]->getId());
         $resetpw->setDate(date('Y-m-d H:i:s', time()));
         $resetpw->setIp($remote->getIpAddress());
-        $this->getTable('SD\Application\\Model\\ResetPasswordTable')->saveResetPassword($resetpw);
+        $this->getTable('SD\\Application\\Model\\ResetPasswordTable')->saveResetPassword($resetpw);
         $message = $this->translate('NEW_PW_TEXT').' '.$_SERVER['SERVER_NAME'].'/newpassword/token/'.$token;
 
         $result = $this->Mailing()->sendMail($formData['email'], $existingEmail[0]->getFullName(), $this->translate('NEW_PW_TITLE'), $message, $this->systemSettings('general', 'system_email'), $this->systemSettings('general', 'site_name'));
@@ -100,6 +101,8 @@ final class ResetPasswordController extends BaseController
             return $this->setLayoutMessages($this->translate('EMAIL_NOT_SENT'), 'error');
         }
 
-        return $this->setLayoutMessages($this->translate('PW_SENT').' <b>'.$formData['email'].'</b>', 'success');
+        $this->setLayoutMessages($this->translate('PW_SENT').' <b>'.$formData['email'].'</b>', 'success');
+
+        return $this->redirect()->toUrl('/login');
     }
 }

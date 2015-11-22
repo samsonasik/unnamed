@@ -18,7 +18,7 @@
         "Unnamed"
     ],
     "require": {
-        "php": "^5.5.28|^7.0",
+        "php": "^5.5.14|^7.0",
         "zendframework/zend-authentication": "2.*",
         "zendframework/zend-cache": "2.*",
         "zendframework/zend-captcha": "2.*",

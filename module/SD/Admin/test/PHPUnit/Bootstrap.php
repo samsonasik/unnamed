@@ -8,7 +8,7 @@
  *
  * @link       https://github.com/Stanimirdim92/unnamed
  */
-namespace test;
+namespace AdminTest;
 
 use RuntimeException;
 use Zend\Loader\AutoloaderFactory;

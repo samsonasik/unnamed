@@ -1,9 +1,11 @@
 # CHANGELOG #
 DD.MM.YYYY
-## 0.0.24 (20.11.2015) - Stable Alpha ##
+## 0.0.24 (22.11.2015) - Stable Alpha ##
 - Added text_domain for translations
 - Created translate view helper, which calls translate controller plugin
 - Added remember me button in login controller
+- Improved flash messenger
+- Removed coveralls badge
 
 DD.MM.YYYY
 ## 0.0.23 (18.11.2015) - Stable Alpha ##

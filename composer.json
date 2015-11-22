@@ -37,7 +37,7 @@
         "zendframework/zend-http": "2.*",
         "zendframework/zend-hydrator": "2.*",
         "zendframework/zend-i18n": "2.*",
-        "zendframework/zend-i18n-resources": "2.*",
+        "zendframework/zend-i18n-resources": "dev-master",
         "zendframework/zend-inputfilter": "2.*",
         "zendframework/zend-json": "2.*",
         "zendframework/zend-loader": "2.*",
@@ -66,8 +66,7 @@
         "zendframework/zend-developer-tools": "dev-master",
         "san/san-session-toolbar": "0.*",
         "squizlabs/php_codesniffer": "2.*",
-        "phpunit/PHPUnit": "4.*",
-        "satooshi/php-coveralls": "dev-master"
+        "phpunit/PHPUnit": "4.*"
     },
     "autoload": {
         "psr-4": {
@@ -78,7 +77,9 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "ApplicationTest\\Controller\\": "test/"
+            "ApplicationTest\\Controller\\": "module/SD/Application/test",
+            "AdminTest\\Controller\\": "module/SD/Admin/test",
+            "ThemesTest\\Controller\\": "module/SD/Themes/test"
         }
     },
     "suggest": {

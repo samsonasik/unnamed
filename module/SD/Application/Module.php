@@ -87,7 +87,7 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
         $viewModel = $event->getViewModel();
         $viewModel->setVariable('lang', $translator->getLocale());
 
-        /**
+        /*
          * Custom flash messenger.
          */
         $msg = $lang->offsetGet('flashMessages');

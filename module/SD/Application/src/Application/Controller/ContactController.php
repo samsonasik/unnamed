@@ -63,6 +63,7 @@ final class ContactController extends BaseController
             $formData = $form->getData();
             try {
                 $this->Mailing()->sendMail($this->systemSettings('general', 'system_email'), '', $formData['subject'], $formData['message'], $formData['email'], $formData['name']);
+
                 return $this->setLayoutMessages($this->translate('CONTACT_SUCCESS'), 'success');
             } catch (\Exception $exception) {
                 return $this->setLayoutMessages($this->translate('CONTACT_ERROR'), 'error');

@@ -132,7 +132,7 @@ final class LoginController extends BaseController
         $user->setIp($remote->getIpAddress());
         $this->getTable('SD\Admin\Model\UserTable')->saveUser($user);
 
-        $manager =  Container::getDefaultManager();
+        $manager = Container::getDefaultManager();
         if ($formData['rememberme'] == 1) {
             $manager->rememberMe(864000); //10 days
             $manager->getConfig()->setRememberMeSeconds(864000);

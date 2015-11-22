@@ -58,7 +58,7 @@ final class SetLayoutMessages extends AbstractPlugin
                 $this->__invoke($iterator->getChildren(), $namespace);
             } else {
                 if (!isset($trans->flashMessages)
-                    || ! $trans->flashMessages instanceof SplQueue
+                    || !$trans->flashMessages instanceof SplQueue
                 ) {
                     $trans->flashMessages = new SplQueue();
                 }

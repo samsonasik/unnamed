@@ -77,7 +77,8 @@ final class AdminMenuController extends BaseController
      *
      * @return array
      */
-    private function getAdminMenus(array $menu) {
+    private function getAdminMenus(array $menu)
+    {
         $menus = ['menus' => [], 'submenus' => []];
 
         if (count($menu) > 0) {

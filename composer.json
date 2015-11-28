@@ -91,5 +91,6 @@
        "ext-pdo": "for database driver",
        "ext-opcache": "for caching"
     },
-    "prefer-stable": true
+    "prefer-stable": true,
+    "minimum-stability": "dev"
 }

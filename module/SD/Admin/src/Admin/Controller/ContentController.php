@@ -204,15 +204,16 @@ final class ContentController extends BaseController
         $form->bind($content);
         $this->getView()->setVariable('form', $form);
 
-        $this->processFormRequest($this->getRequest());
+        /** @var \Zend\Http\Request */
+        $this->processFormRequest($this->getRequest(), $form, $content);
     }
 
     /**
      * @param \Zend\Http\Request $request
-     *
-     * @return [type] [description]
+     * @param ContentForm $form
+     * @param Content     $content
      */
-    private function processFormRequest($request)
+    private function processFormRequest($request, ContentForm $form, Content $content)
     {
         if ($request->isPost()) {
             $data = array_merge_recursive(

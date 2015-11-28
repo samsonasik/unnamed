@@ -33,10 +33,10 @@ final class MenuController extends BaseController
         $contents->select('m.menulink, m.parent, m.keywords, m.description', 'c.menu, c.text, c.id, c.title, c.preview')
                     ->from('SD\Admin\Entity\Menu', 'm')
                     ->innerJoin(
-                    'SD\Admin\Entity\Content',
-                    'c',
-                    Join::WITH,
-                    'c.menu = m.id'
+                        'SD\Admin\Entity\Content',
+                        'c',
+                        Join::WITH,
+                        'c.menu = m.id'
                     )
                     ->where('m.menulink = :menulink AND c.type = 0 AND c.language = :language')
                     ->setParameter(':menulink', (string) $this->getParam('post'))

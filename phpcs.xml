@@ -2,10 +2,7 @@
 <ruleset name="Unnamed coding standards">
     <description>All coding standards for this framework.</description>
 
-    <file>module</file>
-    <file>public/index.php</file>
-    <file>public/install.php</file>
-
+    <!-- display progress -->
     <arg name="report-file" value="phpcs.log"/>
     <arg value="p"/>
     <arg name="colors"/>
@@ -18,4 +15,10 @@
             <property name="ignoreBlankLines" value="false"/>
         </properties>
     </rule>
+ <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+ <rule ref="Generic.Commenting.Todo"/>
+ <rule ref="Generic.ControlStructures.InlineControlStructure"/>
+
+    <!-- Paths to check -->
+    <file>module</file>
 </ruleset>

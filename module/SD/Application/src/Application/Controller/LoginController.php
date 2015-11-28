@@ -36,9 +36,11 @@ final class LoginController extends BaseController
      * @param LoginForm             $loginForm
      * @param AuthenticationService $authService
      */
-    public function __construct(LoginForm $loginForm,
-        AuthenticationService $authService)
-    {
+    public function __construct(
+        LoginForm $loginForm,
+        AuthenticationService $authService
+    ) {
+
         parent::__construct();
 
         $this->loginForm = $loginForm;

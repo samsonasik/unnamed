@@ -204,14 +204,14 @@ final class ContentController extends BaseController
         $form->bind($content);
         $this->getView()->setVariable('form', $form);
 
-        /** @var \Zend\Http\Request */
+        /* @var \Zend\Http\Request */
         $this->processFormRequest($this->getRequest(), $form, $content);
     }
 
     /**
      * @param \Zend\Http\Request $request
-     * @param ContentForm $form
-     * @param Content     $content
+     * @param ContentForm        $form
+     * @param Content            $content
      */
     private function processFormRequest($request, ContentForm $form, Content $content)
     {

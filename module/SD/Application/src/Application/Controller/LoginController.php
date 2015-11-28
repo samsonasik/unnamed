@@ -40,7 +40,6 @@ final class LoginController extends BaseController
         LoginForm $loginForm,
         AuthenticationService $authService
     ) {
-
         parent::__construct();
 
         $this->loginForm = $loginForm;

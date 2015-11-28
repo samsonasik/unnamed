@@ -15,7 +15,6 @@ use Doctrine\Common\Persistence\ObjectRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as PaginatorAdapter;
 use SD\Admin\Entity\User;
-use SD\Admin\Exception\RuntimeException;
 use Zend\Paginator\Paginator as ZendPaginator;
 
 final class UserTable implements UserTableInterface
@@ -77,7 +76,7 @@ final class UserTable implements UserTableInterface
         $user = $this->getEntityRepository()->find($userId);
 
         if (empty($user)) {
-            return null;
+            return;
         }
 
         return $user;

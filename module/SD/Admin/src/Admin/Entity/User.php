@@ -155,7 +155,6 @@ final class User
      */
     private $interests;
 
-
     /**
      * @param array $data
      */

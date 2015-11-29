@@ -13,14 +13,17 @@ namespace SD\Admin\Controller;
 use FilesystemIterator;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
+use SD\Admin\Entity\ContentInterface;
 use SD\Admin\Entity\Content;
-use SD\Admin\Form\ContentForm;
+use Zend\Form\FormInterface;
 use Zend\File\Transfer\Adapter\Http;
 use Zend\Mvc\MvcEvent;
 use Zend\Validator\File\Extension;
 use Zend\Validator\File\IsImage;
 use Zend\Validator\File\Size;
 use Zend\View\Model\JsonModel;
+use Zend\Authentication\Adapter\AdapterInterface;
+use Zend\Stdlib\RequestInterface;
 
 /**
  * @method object getTable($tableName)
@@ -40,7 +43,7 @@ final class ContentController extends BaseController
     ];
 
     /*
-     * @var ContentForm
+     * @var FormInterface
      */
     private $contentForm;
 
@@ -50,9 +53,9 @@ final class ContentController extends BaseController
     private $contentTable;
 
     /**
-     * @param ContentForm $contentForm
+     * @param FormInterface $contentForm
      */
-    public function __construct(ContentForm $contentForm)
+    public function __construct(FormInterface $contentForm)
     {
         parent::__construct();
 
@@ -187,33 +190,33 @@ final class ContentController extends BaseController
     /**
      * This is common function used by add and edit actions.
      *
-     * @param null|Content $content
+     * @param null|ContentInterface $content
      *
      * @return object|null
      */
-    private function initForm(Content $content = null)
+    private function initForm(ContentInterface $content = null)
     {
         if (!$content instanceof Content) {
             $content = new Content([]);
         }
 
         /*
-         * @var ContentForm
+         * @var FormInterface
          */
         $form = $this->contentForm;
         $form->bind($content);
         $this->getView()->setVariable('form', $form);
 
-        /* @var \Zend\Http\Request */
+        /* @var RequestInterface */
         $this->processFormRequest($this->getRequest(), $form, $content);
     }
 
     /**
-     * @param \Zend\Http\Request $request
-     * @param ContentForm        $form
-     * @param Content            $content
+     * @param RequestInterface $request
+     * @param FormInterface    $form
+     * @param ContentInterface $content
      */
-    private function processFormRequest($request, ContentForm $form, Content $content)
+    private function processFormRequest(RequestInterface $request, FormInterface $form, ContentInterface $content)
     {
         if ($request->isPost()) {
             $data = array_merge_recursive(
@@ -226,13 +229,13 @@ final class ContentController extends BaseController
     }
 
     /**
-     * @param ContentForm $form
-     * @param Content     $content
+     * @param FormInterface $form
+     * @param ContentInterface     $content
      * @param array       $data
      *
      * @return void
      */
-    private function processFormData(ContentForm $form, Content $content, array $data)
+    private function processFormData(FormInterface $form, ContentInterface $content, array $data)
     {
         $form->setInputFilter($form->getInputFilter());
         $form->setData($data);
@@ -241,12 +244,12 @@ final class ContentController extends BaseController
     }
 
     /**
-     * @param ContentForm $form
-     * @param Content     $content
+     * @param FormInterface $form
+     * @param ContentInterface     $content
      *
      * @return object|null
      */
-    private function saveFormData(ContentForm $form, Content $content)
+    private function saveFormData(FormInterface $form, ContentInterface $content)
     {
         if (!$form->isValid()) {
             return $this->setLayoutMessages($form->getMessages(), 'error');
@@ -270,7 +273,7 @@ final class ContentController extends BaseController
      */
     protected function uploadAction()
     {
-        /** @var \Zend\Http\Request $request */
+        /** @var RequestInterface $request */
         $request = $this->getRequest();
         $data = [];
 
@@ -288,7 +291,7 @@ final class ContentController extends BaseController
      */
     protected function deleteImageAction()
     {
-        /** @var \Zend\Http\Request $request */
+        /** @var RequestInterface $request */
         $request = $this->getRequest();
         $status = false;
 
@@ -383,11 +386,11 @@ final class ContentController extends BaseController
     }
 
     /**
-     * @param Http $adapter
+     * @param AdapterInterface $adapter
      *
      * @return array
      */
-    private function uploadFiles(Http $adapter)
+    private function uploadFiles(AdapterInterface $adapter)
     {
         $uploadStatus = [];
 
@@ -408,12 +411,12 @@ final class ContentController extends BaseController
     /**
      * See if file has been received and uploaded.
      *
-     * @param Http   $adapter
+     * @param AdapterInterface   $adapter
      * @param string $fileName
      *
      * @return array
      */
-    private function validateUploadedFile(Http $adapter, $fileName)
+    private function validateUploadedFile(AdapterInterface $adapter, $fileName)
     {
         $uploadStatus = [];
         $adapter->receive($fileName);
@@ -430,12 +433,12 @@ final class ContentController extends BaseController
     /**
      * See if file name is valid and it not return alll messages.
      *
-     * @param Http   $adapter
-     * @param string $fileName
+     * @param AdapterInterface   $adapter
+     * @param string             $fileName
      *
      * @return array
      */
-    private function validateUploadedFileName(Http $adapter, $fileName)
+    private function validateUploadedFileName(AdapterInterface $adapter, $fileName)
     {
         $uploadStatus = [];
 

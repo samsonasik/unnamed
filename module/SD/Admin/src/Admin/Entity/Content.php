@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="content")
  */
-final class Content
+final class Content implements ContentInterface
 {
     /**
      * @var int

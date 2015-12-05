@@ -213,8 +213,7 @@ final class UserController extends BaseController
     {
         $search = (string) $this->getParam('ajaxsearch');
 
-        return $this->ajaxUserSearch($search, function ($id = 0, $fullName = '', $userStatus = 1)
-        {
+        return $this->ajaxUserSearch($search, function ($id = 0, $fullName = '', $userStatus = 1) {
             $action = 'disable';
             $class = 'delete';
             $i18n = 'DISABLE';

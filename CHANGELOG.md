@@ -1,5 +1,10 @@
 # CHANGELOG #
 DD.MM.YYYY
+## 0.0.25 (05.12.2015) - Stable Alpha ##
+- Removed some Zend unused zend packages
+- Small bug fixes
+
+DD.MM.YYYY
 ## 0.0.24 (22.11.2015) - Stable Alpha ##
 - Added text_domain for translations
 - Created translate view helper, which calls translate controller plugin

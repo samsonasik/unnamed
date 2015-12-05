@@ -4,7 +4,7 @@
  * @copyright  2015 (c) Stanimir Dimitrov.
  * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
  *
- * @version    0.0.23
+ * @version    0.0.25
  *
  * @link       https://github.com/Stanimirdim92/unnamed
  */
@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="content")
  */
-final class Content implements ContentInterface
+final class Content
 {
     /**
      * @var int

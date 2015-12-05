@@ -4,14 +4,14 @@
  * @copyright  2015 (c) Stanimir Dimitrov.
  * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
  *
- * @version    0.0.23
+ * @version    0.0.25
  *
  * @link       https://github.com/Stanimirdim92/unnamed
  */
 namespace SD\Admin\Controller;
 
 use SD\Admin\Entity\AdminMenu;
-use SD\Admin\Form\AdminMenuForm;
+use Zend\Form\FormInterface;
 use Zend\Mvc\MvcEvent;
 
 /**
@@ -23,7 +23,7 @@ use Zend\Mvc\MvcEvent;
 final class AdminMenuController extends BaseController
 {
     /*
-     * @var AdminMenuForm
+     * @var FormInterface
      */
     private $adminMenuForm;
 
@@ -33,9 +33,9 @@ final class AdminMenuController extends BaseController
     private $adminMenuTable;
 
     /**
-     * @param AdminMenuForm $adminMenuForm
+     * @param FormInterface $adminMenuForm
      */
-    public function __construct(AdminMenuForm $adminMenuForm)
+    public function __construct(FormInterface $adminMenuForm)
     {
         parent::__construct();
 
@@ -75,7 +75,7 @@ final class AdminMenuController extends BaseController
     /**
      * @param array $menu - array of objects
      *
-     * @return array
+     * @return array<string,array>
      */
     private function getAdminMenus(array $menu)
     {
@@ -168,7 +168,7 @@ final class AdminMenuController extends BaseController
         /** @var \Zend\Http\Request $request */
         $request = $this->getRequest();
         if ($request->isPost()) {
-            $this->processFormData($form);
+            $this->processFormData($form, $request, $adminMenu);
 
             return $this->setLayoutMessages($form->getMessages(), 'error');
         }
@@ -177,11 +177,13 @@ final class AdminMenuController extends BaseController
     }
 
     /**
-     * @param adminMenuForm $form
+     * @param FormInterface $form
+     * @param \Zend\Http\Request $request
+     * @param AdminMenu $adminMenu
      *
-     * @return object|void
+     * @return \Zend\Http\Response|null
      */
-    private function processFormData($form)
+    private function processFormData(FormInterface $form, \Zend\Http\Request $request, AdminMenu $adminMenu)
     {
         $form->setInputFilter($form->getInputFilter());
         $form->setData($request->getPost());
@@ -190,8 +192,8 @@ final class AdminMenuController extends BaseController
             $this->adminMenuTable->saveAdminMenu($adminMenu);
 
             $this->setLayoutMessages('&laquo;'.$adminMenu->getCaption().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
-
-            return $this->redirect()->toUrl('/admin/admin-menu');
         }
+
+        return $this->redirect()->toUrl('/admin/admin-menu');
     }
 }

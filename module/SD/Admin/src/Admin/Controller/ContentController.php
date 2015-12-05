@@ -4,7 +4,7 @@
  * @copyright  2015 (c) Stanimir Dimitrov.
  * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
  *
- * @version    0.0.23
+ * @version    0.0.25
  *
  * @link       https://github.com/Stanimirdim92/unnamed
  */
@@ -13,7 +13,6 @@ namespace SD\Admin\Controller;
 use FilesystemIterator;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
-use SD\Admin\Entity\ContentInterface;
 use SD\Admin\Entity\Content;
 use Zend\Form\FormInterface;
 use Zend\File\Transfer\Adapter\Http;
@@ -22,8 +21,7 @@ use Zend\Validator\File\Extension;
 use Zend\Validator\File\IsImage;
 use Zend\Validator\File\Size;
 use Zend\View\Model\JsonModel;
-use Zend\Authentication\Adapter\AdapterInterface;
-use Zend\Stdlib\RequestInterface;
+use Zend\Http\Request;
 
 /**
  * @method object getTable($tableName)
@@ -116,7 +114,10 @@ final class ContentController extends BaseController
      */
     public function getMenuContent()
     {
-        return $this->contentTable->queryBuilder()->getEntityManager()->createQuery('SELECT c FROM SD\Admin\Entity\Content AS c LEFT JOIN SD\Admin\Entity\Menu AS m WITH c.menu=m.id WHERE c.type = 0 AND c.language = :language ORDER BY m.parent ASC, m.menuOrder ASC, c.date DESC')->setParameter(':language', $this->language());
+        return $this->contentTable->queryBuilder()
+                                ->getEntityManager()
+                                ->createQuery('SELECT c FROM SD\Admin\Entity\Content AS c LEFT JOIN SD\Admin\Entity\Menu AS m WITH c.menu=m.id WHERE c.type = 0 AND c.language = :language ORDER BY m.parent ASC, m.menuOrder ASC, c.date DESC')
+                                ->setParameter(':language', $this->language());
     }
 
     /**
@@ -190,11 +191,11 @@ final class ContentController extends BaseController
     /**
      * This is common function used by add and edit actions.
      *
-     * @param null|ContentInterface $content
+     * @param null|Content $content
      *
      * @return object|null
      */
-    private function initForm(ContentInterface $content = null)
+    private function initForm(Content $content = null)
     {
         if (!$content instanceof Content) {
             $content = new Content([]);
@@ -207,16 +208,16 @@ final class ContentController extends BaseController
         $form->bind($content);
         $this->getView()->setVariable('form', $form);
 
-        /* @var RequestInterface */
+        /* @var Request */
         $this->processFormRequest($this->getRequest(), $form, $content);
     }
 
     /**
-     * @param RequestInterface $request
+     * @param Request $request
      * @param FormInterface    $form
-     * @param ContentInterface $content
+     * @param Content $content
      */
-    private function processFormRequest(RequestInterface $request, FormInterface $form, ContentInterface $content)
+    private function processFormRequest(Request $request, FormInterface $form, Content $content)
     {
         if ($request->isPost()) {
             $data = array_merge_recursive(
@@ -230,12 +231,12 @@ final class ContentController extends BaseController
 
     /**
      * @param FormInterface $form
-     * @param ContentInterface     $content
+     * @param Content     $content
      * @param array       $data
      *
      * @return void
      */
-    private function processFormData(FormInterface $form, ContentInterface $content, array $data)
+    private function processFormData(FormInterface $form, Content $content, array $data)
     {
         $form->setInputFilter($form->getInputFilter());
         $form->setData($data);
@@ -245,11 +246,11 @@ final class ContentController extends BaseController
 
     /**
      * @param FormInterface $form
-     * @param ContentInterface     $content
+     * @param Content     $content
      *
      * @return object|null
      */
-    private function saveFormData(FormInterface $form, ContentInterface $content)
+    private function saveFormData(FormInterface $form, Content $content)
     {
         if (!$form->isValid()) {
             return $this->setLayoutMessages($form->getMessages(), 'error');
@@ -273,7 +274,7 @@ final class ContentController extends BaseController
      */
     protected function uploadAction()
     {
-        /** @var RequestInterface $request */
+        /** @var Request $request */
         $request = $this->getRequest();
         $data = [];
 
@@ -291,7 +292,7 @@ final class ContentController extends BaseController
      */
     protected function deleteImageAction()
     {
-        /** @var RequestInterface $request */
+        /** @var Request $request */
         $request = $this->getRequest();
         $status = false;
 
@@ -386,11 +387,11 @@ final class ContentController extends BaseController
     }
 
     /**
-     * @param AdapterInterface $adapter
+     * @param Http $adapter
      *
      * @return array
      */
-    private function uploadFiles(AdapterInterface $adapter)
+    private function uploadFiles(Http $adapter)
     {
         $uploadStatus = [];
 
@@ -411,12 +412,12 @@ final class ContentController extends BaseController
     /**
      * See if file has been received and uploaded.
      *
-     * @param AdapterInterface   $adapter
+     * @param Http   $adapter
      * @param string $fileName
      *
      * @return array
      */
-    private function validateUploadedFile(AdapterInterface $adapter, $fileName)
+    private function validateUploadedFile(Http $adapter, $fileName)
     {
         $uploadStatus = [];
         $adapter->receive($fileName);
@@ -433,12 +434,12 @@ final class ContentController extends BaseController
     /**
      * See if file name is valid and it not return alll messages.
      *
-     * @param AdapterInterface   $adapter
+     * @param Http   $adapter
      * @param string             $fileName
      *
      * @return array
      */
-    private function validateUploadedFileName(AdapterInterface $adapter, $fileName)
+    private function validateUploadedFileName(Http $adapter, $fileName)
     {
         $uploadStatus = [];
 

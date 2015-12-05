@@ -4,7 +4,7 @@
  * @copyright  2015 (c) Stanimir Dimitrov.
  * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
  *
- * @version    0.0.23
+ * @version    0.0.25
  *
  * @link       https://github.com/Stanimirdim92/unnamed
  */
@@ -213,50 +213,37 @@ final class UserController extends BaseController
     {
         $search = (string) $this->getParam('ajaxsearch');
 
-        return $this->ajaxUserSearch($search, $this->htmlButtons());
-    }
+        return $this->ajaxUserSearch($search, function ($id = 0, $fullName = '', $userStatus = 1)
+        {
+            $action = 'disable';
+            $class = 'delete';
+            $i18n = 'DISABLE';
+            if ($userStatus === 1) {
+                $action = 'enable';
+                $class = 'enable';
+                $i18n = 'ENABLE';
+            }
 
-    /**
-     * Used to generate buttons for every user row.
-     *
-     * @method htmlButtons
-     *
-     * @param int    $id
-     * @param string $fullName
-     * @param int    $userStatus
-     *
-     * @return string
-     */
-    private function htmlButtons($id = 0, $fullName = '', $userStatus = 1)
-    {
-        $action = 'disable';
-        $class = 'delete';
-        $i18n = 'DISABLE';
-        if ($userStatus === 1) {
-            $action = 'enable';
-            $class = 'enable';
-            $i18n = 'ENABLE';
-        }
-
-        return "<li class='table-cell flex-b'>
-                <a title='".$this->translate('DETAILS')."' class='btn blue btn-sm' href='/admin/user/detail/".$id."'><i class='fa fa-info'></i></a>
-            </li>
-            <li class='table-cell flex-b'>
-                <a title='".$this->translate('EDIT_USER')."' href='/admin/user/edit/".$id."' class='btn btn-sm orange'><i class='fa fa-pencil'></i></a>
-            </li>
-            <li class='table-cell flex-b'>
-                <button role='button' aria-pressed='false' aria-label='".$this->translate($i18n)."' id='".$id."' type='button' class='btn btn-sm ".$class." dialog_delete' title='".$this->translate($i18n)."'><i class='fa fa-times'></i></button>
-                <div role='alertdialog' aria-labelledby='dialog".$id."Title' class='delete_".$id." dialog_hide'>
-                   <p id='dialog".$id."Title'>".$this->translate($i18n.'_CONFIRM_TEXT').' &laquo;'.$fullName."&raquo;</p>
-                    <ul>
-                        <li>
-                            <a class='btn ".$class."' href='/admin/user/".$action.'/'.$id."'><i class='fa fa-times'></i> ".$this->translate($i18n)."</a>
-                        </li>
-                        <li>
-                            <button role='button' aria-pressed='false' aria-label='".$this->translate('CANCEL')."' type='button' title='".$this->translate('CANCEL')."' class='btn btn-default cancel'><i class='fa fa-times'></i> ".$this->translate('CANCEL').'</button>
-                        </li>
-                    </ul>
-                </div>
-            </li>';
+            return "<li class='table-cell flex-b'>
+                    <a title='".$this->translate('DETAILS')."' class='btn blue btn-sm' href='/admin/user/detail/".$id."'><i class='fa fa-info'></i></a>
+                </li>
+                <li class='table-cell flex-b'>
+                    <a title='".$this->translate('EDIT_USER')."' href='/admin/user/edit/".$id."' class='btn btn-sm orange'><i class='fa fa-pencil'></i></a>
+                </li>
+                <li class='table-cell flex-b'>
+                    <button role='button' aria-pressed='false' aria-label='".$this->translate($i18n)."' id='".$id."' type='button' class='btn btn-sm ".$class." dialog_delete' title='".$this->translate($i18n)."'><i class='fa fa-times'></i></button>
+                    <div role='alertdialog' aria-labelledby='dialog".$id."Title' class='delete_".$id." dialog_hide'>
+                       <p id='dialog".$id."Title'>".$this->translate($i18n.'_CONFIRM_TEXT').' &laquo;'.$fullName."&raquo;</p>
+                        <ul>
+                            <li>
+                                <a class='btn ".$class."' href='/admin/user/".$action.'/'.$id."'><i class='fa fa-times'></i> ".$this->translate($i18n)."</a>
+                            </li>
+                            <li>
+                                <button role='button' aria-pressed='false' aria-label='".$this->translate('CANCEL')."' type='button' title='".$this->translate('CANCEL')."' class='btn btn-default cancel'><i class='fa fa-times'></i> ".$this->translate('CANCEL').'</button>
+                            </li>
+                        </ul>
+                    </div>
+                </li>';
+        });
     }
 }

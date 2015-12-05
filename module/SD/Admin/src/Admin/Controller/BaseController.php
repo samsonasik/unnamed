@@ -4,7 +4,7 @@
  * @copyright  2015 (c) Stanimir Dimitrov.
  * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
  *
- * @version    0.0.23
+ * @version    0.0.25
  *
  * @link       https://github.com/Stanimirdim92/unnamed
  */
@@ -71,7 +71,7 @@ class BaseController extends AbstractActionController
     /**
      * Initialize menus and their sub menus. 1 query to rule them all!
      *
-     * @return \Zend\View\Model\ViewModel
+     * @return ViewModel
      */
     private function initMenus()
     {
@@ -225,7 +225,7 @@ class BaseController extends AbstractActionController
 
             $results = $queryBuilder->select(['u'])
                 ->from('SD\Admin\Entity\User', 'u')
-                ->where('u.name = :name')
+                ->where('u.name LIKE :name')
                 ->orWhere('u.surname LIKE :surname')
                 ->orWhere('u.email LIKE :email')
                 ->setParameter(':name', (string) $search)
@@ -240,8 +240,7 @@ class BaseController extends AbstractActionController
                  */
                 foreach ($results as $key => $result) {
                     $json[$key]['id'] = $result->getId();
-                    $json[$key]['name'] = $result->getName();
-                    $json[$key]['surname'] = $result->getSurname();
+                    $json[$key]['name'] = $result->getFullName();
                     $json[$key]['email'] = $result->getEmail();
 
                     if (is_callable($buttons)) {

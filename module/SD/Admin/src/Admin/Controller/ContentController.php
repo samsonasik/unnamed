@@ -14,14 +14,14 @@ use FilesystemIterator;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use SD\Admin\Entity\Content;
-use Zend\Form\FormInterface;
 use Zend\File\Transfer\Adapter\Http;
+use Zend\Form\FormInterface;
+use Zend\Http\Request;
 use Zend\Mvc\MvcEvent;
 use Zend\Validator\File\Extension;
 use Zend\Validator\File\IsImage;
 use Zend\Validator\File\Size;
 use Zend\View\Model\JsonModel;
-use Zend\Http\Request;
 
 /**
  * @method object getTable($tableName)
@@ -213,9 +213,9 @@ final class ContentController extends BaseController
     }
 
     /**
-     * @param Request $request
-     * @param FormInterface    $form
-     * @param Content $content
+     * @param Request       $request
+     * @param FormInterface $form
+     * @param Content       $content
      */
     private function processFormRequest(Request $request, FormInterface $form, Content $content)
     {
@@ -231,8 +231,8 @@ final class ContentController extends BaseController
 
     /**
      * @param FormInterface $form
-     * @param Content     $content
-     * @param array       $data
+     * @param Content       $content
+     * @param array         $data
      *
      * @return void
      */
@@ -246,7 +246,7 @@ final class ContentController extends BaseController
 
     /**
      * @param FormInterface $form
-     * @param Content     $content
+     * @param Content       $content
      *
      * @return object|null
      */
@@ -435,7 +435,7 @@ final class ContentController extends BaseController
      * See if file name is valid and it not return alll messages.
      *
      * @param Http   $adapter
-     * @param string             $fileName
+     * @param string $fileName
      *
      * @return array
      */

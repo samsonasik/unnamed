@@ -177,9 +177,9 @@ final class AdminMenuController extends BaseController
     }
 
     /**
-     * @param FormInterface $form
+     * @param FormInterface      $form
      * @param \Zend\Http\Request $request
-     * @param AdminMenu $adminMenu
+     * @param AdminMenu          $adminMenu
      *
      * @return \Zend\Http\Response|null
      */

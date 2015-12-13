@@ -131,7 +131,7 @@ class BaseController extends AbstractActionController
      *
      * @param string $offset
      *
-     * @return int|string
+     * @return null|string|int
      */
     final protected function language($offset = 'language')
     {
@@ -139,7 +139,7 @@ class BaseController extends AbstractActionController
             return $this->getTranslation()->offSetGet($offset);
         }
 
-        return 1;
+        return;
     }
 
     /**

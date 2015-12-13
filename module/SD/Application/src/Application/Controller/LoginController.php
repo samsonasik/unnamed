@@ -150,7 +150,6 @@ final class LoginController extends BaseController
     protected function logoutAction()
     {
         $this->getTranslation()->getManager()->forgetMe();
-        // $this->getTranslation()->getManager()->getStorage()->clear();
         $this->authService->clearIdentity();
 
         return $this->redirect()->toUrl('/');

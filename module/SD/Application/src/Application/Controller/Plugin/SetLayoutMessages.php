@@ -52,6 +52,7 @@ final class SetLayoutMessages extends AbstractPlugin
 
         $iterator = new RecursiveArrayIterator((array) $message);
         $trans = new Container('translations');
+        $arr = [];
 
         while ($iterator->valid()) {
             if ($iterator->hasChildren()) {

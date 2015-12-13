@@ -25,8 +25,8 @@ final class TranslateHelperFactory
     public function __invoke(ServiceLocatorInterface $serviceLocator)
     {
         $serviceLocator = $serviceLocator->getServiceLocator();
-        $controllerPluginManager = $serviceLocator->get('ControllerPluginManager');
-        $translate = $controllerPluginManager->get('translate');
+        $pluginManager = $serviceLocator->get('ControllerPluginManager');
+        $translate = $pluginManager->get('translate');
 
         $plugin = new TranslateHelper($translate);
 

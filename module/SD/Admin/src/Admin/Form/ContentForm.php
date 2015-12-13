@@ -211,6 +211,26 @@ final class ContentForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
+            'type'    => 'DoctrineModule\Form\Element\ObjectSelect',
+            'name'    => 'category',
+            'options' => [
+                'label'                     => 'CATEGORY',
+                'disable_inarray_validator' => true,
+                'object_manager'            => $this->objectManager,
+                'target_class'              => 'SD\Admin\Entity\Category',
+                'property'                  => 'title',
+                'display_empty_item'        => true,
+                'empty_item_label'          => 'CATEGORY',
+                'is_method'                 => true,
+                'find_method'               => [
+                    'name' => 'getCategories',
+                ],
+            ],
+            ]
+        );
+
+        $this->add(
+            [
             'type'    => 'Zend\Form\Element\Csrf',
             'name'    => 's',
             'options' => [

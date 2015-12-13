@@ -10,15 +10,7 @@
  */
 namespace SD\Admin\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
-/**
- * Administrator.
- *
- * @ORM\Entity
- * @ORM\Table(name="administrator")
- */
-final class Administrator
+class Role
 {
     /**
      * @var int
@@ -30,11 +22,25 @@ final class Administrator
     private $id = 0;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", lenght="100", nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", lenght="100", nullable=false)
+     */
+    private $type;
+
+    /**
      * @var int
      *
-     * @ORM\Column(name="user", type="integer", nullable=false)
+     * @ORM\Column(name="level", type="integer", nullable=false)
      */
-    private $user = 0;
+    private $level = 0;
 
     /**
      * @param array $data
@@ -77,30 +83,70 @@ final class Administrator
     }
 
     /**
-     * @param int
+     * @param string
      */
-    public function setId($id = 0)
+    public function setId($id)
     {
         $this->id = $id;
     }
 
     /**
-     * Set user id.
+     * Set name.
      *
-     * @param int $user
+     * @param string $name
      */
-    public function setUser($user = 0)
+    public function setName($name)
     {
-        $this->user = $user;
+        $this->name = $name;
     }
 
     /**
-     * Get user id.
+     * Get name.
      *
-     * @return int
+     * @return string
      */
-    public function getUser()
+    public function getName()
     {
-        return $this->user;
+        return $this->name;
+    }
+
+    /**
+     * Set type.
+     *
+     * @param string $type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * Get type.
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set level.
+     *
+     * @param string $level
+     */
+    public function setLevel($level)
+    {
+        $this->level = $level;
+    }
+
+    /**
+     * Get level.
+     *
+     * @return string
+     */
+    public function getLevel()
+    {
+        return $this->level;
     }
 }

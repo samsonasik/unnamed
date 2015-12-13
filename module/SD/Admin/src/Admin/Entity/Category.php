@@ -13,12 +13,13 @@ namespace SD\Admin\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Administrator.
+ * Category.
  *
  * @ORM\Entity
- * @ORM\Table(name="administrator")
+ * @ORM\Table(name="category")
+ * @ORM\Entity(repositoryClass="SD\Admin\Repository\CategoryRepository")
  */
-final class Administrator
+final class Category
 {
     /**
      * @var int
@@ -30,11 +31,18 @@ final class Administrator
     private $id = 0;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="user", type="integer", nullable=false)
+     * @ORM\Column(name="title", type="string", length=255, nullable=false)
      */
-    private $user = 0;
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=255, nullable=false)
+     */
+    private $slug;
 
     /**
      * @param array $data
@@ -85,22 +93,42 @@ final class Administrator
     }
 
     /**
-     * Set user id.
+     * Set title.
      *
-     * @param int $user
+     * @param string $title
      */
-    public function setUser($user = 0)
+    public function setTitle($title)
     {
-        $this->user = $user;
+        $this->title = $title;
     }
 
     /**
-     * Get user id.
+     * Get title.
      *
-     * @return int
+     * @return string
      */
-    public function getUser()
+    public function getTitle()
     {
-        return $this->user;
+        return $this->title;
+    }
+
+    /**
+     * Set slug.
+     *
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    /**
+     * Get slug.
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

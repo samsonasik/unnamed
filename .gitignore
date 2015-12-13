@@ -9,5 +9,4 @@ data/test-html-report/
 vendor/
 composerInstalation
 node_modules
-phpcs.log
-phplog.log
+*.log

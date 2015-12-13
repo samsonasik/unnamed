@@ -1,0 +1,47 @@
+<section>
+    <div class="table-style">
+        <ul class="table-header">
+              <li class="table-cell"><?=$this->translate("NAME")?></li>
+              <li class="table-cell"><?=$this->translate("TYPE")?></li>
+              <li class="table-cell flex-b"><?=$this->translate("LEVEL")?></li>
+              <li class="table-cell flex-b"><?=$this->translate("EDIT")?></li>
+              <li class="table-cell flex-b"><?=$this->translate("DELETE")?></li>
+        </ul>
+<?php
+        /**
+         * @var $role \SD\Admin\Entity\Role
+         */
+        foreach($this->paginator as $role) {
+?>
+        <ul class="table-row">
+            <li class="table-cell"><?=$role->getName()?></li>
+            <li class="table-cell"><?=$role->getType()?></li>
+            <li class="table-cell"><?=$role->getLevel()?></li>
+            <li class="table-cell flex-b">
+                <a title='<?=$this->translate("EDIT_ROLE");?>' href='<?=$this->url("admin/default", ["controller" => "role", "action" => "edit", "id" => $role->getId()])?>' class='btn btn-sm orange'>
+                    <i class='fa fa-pencil'></i>
+                </a>
+            </li>
+
+            <li class="table-cell flex-b">
+                <button role="button" aria-pressed="false" aria-label="<?=$this->translate("DELETE")?>" id='<?=$role->getId()?>' type="button" class='btn btn-sm delete dialog_delete'><i class='fa fa-trash-o'></i></button>
+                <div role="alertdialog" aria-labelledby="dialog<?=$role->getId()?>Title" class='delete_<?=$role->getId()?> dialog_hide'>
+                    <p id="dialog<?=$role->getId()?>Title"><?=$this->translate("DELETE_CONFIRM_TEXT")?> &laquo;<?=$role->getName()?>&raquo;</p>
+                    <ul>
+                        <li>
+                            <a class='btn delete' href='<?=$this->url("admin/default", ["controller" => "role", "action" => "delete", "id" => $role->getId()])?>'><i class='fa fa-trash-o'></i>&nbsp; <?=$this->translate("DELETE")?></a>
+                        </li>
+                        <li>
+                            <button role="button" aria-pressed="false" aria-label="<?=$this->translate("CANCEL")?>" type="button" title='<?=$this->translate("CANCEL")?>' class='btn btn-default cancel'><i class='fa fa-times'></i> <?=$this->translate("CANCEL")?></button>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+<?php
+        }
+?>
+    </div>
+</section>
+<?php
+    // echo $this->paginationControl($this->paginator, 'sliding', 'admin/pagination', ['route' => 'admin/default']);

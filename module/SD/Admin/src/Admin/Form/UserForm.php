@@ -390,7 +390,7 @@ final class UserForm extends Form implements InputFilterProviderInterface
                     ['name' => 'StringTrim'],
                 ],
                 'validators' => [
-                    // ['name' => 'NotEmpty'],
+                    ['name' => 'NotEmpty'],
                     [
                         'name'    => 'StringLength',
                         'options' => [

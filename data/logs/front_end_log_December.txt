@@ -36,3 +36,248 @@ Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\OR
 #31 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
 #32 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
 #33 {main}
+2015-12-12T19:43:04+00:00 ERR (3): 
+Exception: An abstract factory could not create an instance of sdadminmodelcategorytable(alias: SD\Admin\Model\CategoryTable).
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(645): Zend\ServiceManager\ServiceManager->createFromAbstractFactory('sdadminmodelcat...', 'SD\\Admin\\Model\\...')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('SD\\Admin\\Model\\...', 'sdadminmodelcat...')
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\Plugin\GetTableModel.php(38): Zend\ServiceManager\ServiceManager->get('SD\\Admin\\Model\\...')
+#4 [internal function]: SD\Application\Controller\Plugin\GetTableModel->__invoke('SD\\Admin\\Model\\...')
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(309): call_user_func_array(Object(SD\Application\Controller\Plugin\GetTableModel), Array)
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(53): Zend\Mvc\Controller\AbstractController->__call('getTable', Array)
+#7 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(53): SD\Admin\Controller\CategoryController->getTable('SD\\Admin\\Model\\...')
+#8 [internal function]: SD\Admin\Controller\CategoryController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#13 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#18 {main}
+2015-12-12T19:43:40+00:00 ERR (3): 
+Exception: An abstract factory could not create an instance of sdadminmodelcategorytable(alias: SD\Admin\Model\CategoryTable).
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(645): Zend\ServiceManager\ServiceManager->createFromAbstractFactory('sdadminmodelcat...', 'SD\\Admin\\Model\\...')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('SD\\Admin\\Model\\...', 'sdadminmodelcat...')
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\Plugin\GetTableModel.php(38): Zend\ServiceManager\ServiceManager->get('SD\\Admin\\Model\\...')
+#4 [internal function]: SD\Application\Controller\Plugin\GetTableModel->__invoke('SD\\Admin\\Model\\...')
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(309): call_user_func_array(Object(SD\Application\Controller\Plugin\GetTableModel), Array)
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(53): Zend\Mvc\Controller\AbstractController->__call('getTable', Array)
+#7 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(53): SD\Admin\Controller\CategoryController->getTable('SD\\Admin\\Model\\...')
+#8 [internal function]: SD\Admin\Controller\CategoryController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#13 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#18 {main}
+2015-12-12T19:44:08+00:00 ERR (3): 
+Exception: An abstract factory could not create an instance of sdadminmodelcategorytable(alias: SD\Admin\Model\CategoryTable).
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(645): Zend\ServiceManager\ServiceManager->createFromAbstractFactory('sdadminmodelcat...', 'SD\\Admin\\Model\\...')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('SD\\Admin\\Model\\...', 'sdadminmodelcat...')
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\Plugin\GetTableModel.php(38): Zend\ServiceManager\ServiceManager->get('SD\\Admin\\Model\\...')
+#4 [internal function]: SD\Application\Controller\Plugin\GetTableModel->__invoke('SD\\Admin\\Model\\...')
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(309): call_user_func_array(Object(SD\Application\Controller\Plugin\GetTableModel), Array)
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(53): Zend\Mvc\Controller\AbstractController->__call('getTable', Array)
+#7 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(53): SD\Admin\Controller\CategoryController->getTable('SD\\Admin\\Model\\...')
+#8 [internal function]: SD\Admin\Controller\CategoryController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#13 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#18 {main}
+2015-12-12T20:04:00+00:00 ERR (3): 
+Exception: An abstract factory could not create an instance of sdadminmodelcategorytable(alias: SD\Admin\Model\CategoryTable).
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(645): Zend\ServiceManager\ServiceManager->createFromAbstractFactory('sdadminmodelcat...', 'SD\\Admin\\Model\\...')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('SD\\Admin\\Model\\...', 'sdadminmodelcat...')
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\Plugin\GetTableModel.php(38): Zend\ServiceManager\ServiceManager->get('SD\\Admin\\Model\\...')
+#4 [internal function]: SD\Application\Controller\Plugin\GetTableModel->__invoke('SD\\Admin\\Model\\...')
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(309): call_user_func_array(Object(SD\Application\Controller\Plugin\GetTableModel), Array)
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(53): Zend\Mvc\Controller\AbstractController->__call('getTable', Array)
+#7 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(53): SD\Admin\Controller\CategoryController->getTable('SD\\Admin\\Model\\...')
+#8 [internal function]: SD\Admin\Controller\CategoryController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#13 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#18 {main}
+2015-12-12T20:04:23+00:00 ERR (3): 
+Exception: An abstract factory could not create an instance of sdadminmodelcategorytable(alias: SD\Admin\Model\CategoryTable).
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(645): Zend\ServiceManager\ServiceManager->createFromAbstractFactory('sdadminmodelcat...', 'SD\\Admin\\Model\\...')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('SD\\Admin\\Model\\...', 'sdadminmodelcat...')
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\Plugin\GetTableModel.php(38): Zend\ServiceManager\ServiceManager->get('SD\\Admin\\Model\\...')
+#4 [internal function]: SD\Application\Controller\Plugin\GetTableModel->__invoke('SD\\Admin\\Model\\...')
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(309): call_user_func_array(Object(SD\Application\Controller\Plugin\GetTableModel), Array)
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(53): Zend\Mvc\Controller\AbstractController->__call('getTable', Array)
+#7 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(53): SD\Admin\Controller\CategoryController->getTable('SD\\Admin\\Model\\...')
+#8 [internal function]: SD\Admin\Controller\CategoryController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#13 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#18 {main}
+2015-12-12T20:06:01+00:00 ERR (3): 
+Exception: An abstract factory could not create an instance of sdadminmodelcategorytable(alias: SD\Admin\Model\CategoryTable).
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(645): Zend\ServiceManager\ServiceManager->createFromAbstractFactory('sdadminmodelcat...', 'SD\\Admin\\Model\\...')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('SD\\Admin\\Model\\...', 'sdadminmodelcat...')
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\Plugin\GetTableModel.php(38): Zend\ServiceManager\ServiceManager->get('SD\\Admin\\Model\\...')
+#4 [internal function]: SD\Application\Controller\Plugin\GetTableModel->__invoke('SD\\Admin\\Model\\...')
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(309): call_user_func_array(Object(SD\Application\Controller\Plugin\GetTableModel), Array)
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(53): Zend\Mvc\Controller\AbstractController->__call('getTable', Array)
+#7 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(53): SD\Admin\Controller\CategoryController->getTable('SD\\Admin\\Model\\...')
+#8 [internal function]: SD\Admin\Controller\CategoryController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#13 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#18 {main}
+2015-12-12T20:06:37+00:00 ERR (3): 
+Exception: An exception occurred while executing 'INSERT INTO categories (title, slug) VALUES (?, ?)' with params [null, "n-a"]:
+
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'title' cannot be null
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\AbstractMySQLDriver.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Statement.php(175): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'INSERT INTO cat...', Array)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Persisters\Entity\BasicEntityPersister.php(281): Doctrine\DBAL\Statement->execute()
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(1018): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->executeInserts()
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(378): Doctrine\ORM\UnitOfWork->executeInserts(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Model\CategoryTable.php(111): Doctrine\ORM\EntityManager->flush()
+#7 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(143): SD\Admin\Model\CategoryTable->saveCategory(Object(SD\Admin\Entity\Category))
+#8 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(82): SD\Admin\Controller\CategoryController->initForm(NULL)
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\CategoryController->addAction()
+#10 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(55): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#12 [internal function]: SD\Admin\Controller\CategoryController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#17 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#19 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#20 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#21 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#22 {main}
+2015-12-12T20:10:19+00:00 ERR (3): 
+Exception: An exception occurred while executing 'INSERT INTO categories (title, slug) VALUES (?, ?)' with params [null, "n-a"]:
+
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'title' cannot be null
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\AbstractMySQLDriver.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Statement.php(175): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'INSERT INTO cat...', Array)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Persisters\Entity\BasicEntityPersister.php(281): Doctrine\DBAL\Statement->execute()
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(1018): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->executeInserts()
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(378): Doctrine\ORM\UnitOfWork->executeInserts(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Model\CategoryTable.php(111): Doctrine\ORM\EntityManager->flush()
+#7 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(143): SD\Admin\Model\CategoryTable->saveCategory(Object(SD\Admin\Entity\Category))
+#8 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(82): SD\Admin\Controller\CategoryController->initForm(NULL)
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\CategoryController->addAction()
+#10 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(55): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#12 [internal function]: SD\Admin\Controller\CategoryController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#17 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#19 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#20 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#21 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#22 {main}
+2015-12-12T20:15:55+00:00 ERR (3): 
+Exception: An exception occurred while executing 'INSERT INTO categories (title, slug) VALUES (?, ?)' with params [null, null]:
+
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'title' cannot be null
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\AbstractMySQLDriver.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Statement.php(175): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'INSERT INTO cat...', Array)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\Persisters\Entity\BasicEntityPersister.php(281): Doctrine\DBAL\Statement->execute()
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(1018): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->executeInserts()
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(378): Doctrine\ORM\UnitOfWork->executeInserts(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Model\CategoryTable.php(111): Doctrine\ORM\EntityManager->flush()
+#7 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(144): SD\Admin\Model\CategoryTable->saveCategory(Object(SD\Admin\Entity\Category))
+#8 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(82): SD\Admin\Controller\CategoryController->initForm(NULL)
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\CategoryController->addAction()
+#10 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoriesController.php(55): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#12 [internal function]: SD\Admin\Controller\CategoryController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#17 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#19 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#20 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#21 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#22 {main}
+2015-12-13T10:17:06+00:00 ERR (3): 
+Exception: Couldn't find admin menu
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Model\AdminMenuTable.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Model\AdminMenuTable.php(95): SD\Admin\Model\AdminMenuTable->getAdminMenu(21)
+#1 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\AdminMenuController.php(134): SD\Admin\Model\AdminMenuTable->deleteAdminMenu(21)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\AdminMenuController->deleteAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\AdminMenuController.php(55): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: SD\Admin\Controller\AdminMenuController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}

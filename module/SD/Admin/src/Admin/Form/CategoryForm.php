@@ -14,7 +14,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Zend\Form\Form;
 use Zend\InputFilter\InputFilterProviderInterface;
 
-final class AdministratorForm extends Form implements InputFilterProviderInterface
+final class CategoryForm extends Form implements InputFilterProviderInterface
 {
     /*
      * @var ObjectManager
@@ -23,7 +23,7 @@ final class AdministratorForm extends Form implements InputFilterProviderInterfa
 
     public function __construct()
     {
-        parent::__construct('administrator');
+        parent::__construct('category');
     }
 
     /**
@@ -42,19 +42,18 @@ final class AdministratorForm extends Form implements InputFilterProviderInterfa
         $this->add(
             [
             'type'    => 'Zend\Form\Element\Text',
-            'name'    => 'user',
+            'name'    => 'title',
             'options' => [
-                'label'          => 'CAPTION',
+                'label'          => 'CATEGORY',
                 'object_manager' => $this->objectManager,
-                'target_class'   => 'SD\Admin\Entity\Administrator',
-                'property'       => 'caption',
+                'target_class'   => 'SD\Admin\Entity\Category',
+                'property'       => 'title',
             ],
             'attributes' => [
                 'required'     => 'true',
                 'size'         => '40',
-                'class'        => 'administrator-user ajax-search',
-                'placeholder'  => 'USER_ID',
-                'autocomplete' => 'off',
+                'class'        => 'category-title',
+                'placeholder'  => 'CATEGORY',
             ],
             ]
         );
@@ -88,7 +87,7 @@ final class AdministratorForm extends Form implements InputFilterProviderInterfa
             'name'    => 'id',
             'options' => [
                 'object_manager' => $this->objectManager,
-                'target_class'   => 'SD\Admin\Entity\Administrator',
+                'target_class'   => 'SD\Admin\Entity\Category',
                 'property'       => 'id',
             ],
             ]
@@ -106,18 +105,31 @@ final class AdministratorForm extends Form implements InputFilterProviderInterfa
                 ],
             ],
             [
-                'name'     => 'user',
+                'name'     => 'title',
                 'required' => true,
                 'filters'  => [
-                    ['name' => 'Int'],
+                    ['name' => 'StripTags'],
+                    ['name' => 'StringTrim'],
                 ],
                 'validators' => [
+                    ['name' => 'NotEmpty'],
                     [
-                        'name'    => 'Regex',
+                        'name'    => 'StringLength',
                         'options' => [
-                            'pattern' => '/^[0-9]+$/',
+                            'encoding' => 'UTF-8',
+                            'min'      => 1,
+                            'max'      => 255,
                         ],
                     ],
+                ],
+            ],
+            [
+                'name'     => 'slug',
+                'required' => false, // will be filled from title on save
+                'filters'  => [
+                    ['name' => 'StripTags'],
+                    ['name' => 'StringTrim'],
+                    ['name' => 'StringToLower'],
                 ],
             ],
         ];

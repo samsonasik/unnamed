@@ -163,8 +163,9 @@ final class User
         // We need to extract all default values defined for this entity
         // and make a comparsion between both arrays
         $arrayCopy = $this->getArrayCopy();
+
         foreach ($data as $key => $value) {
-            if (isset($arrayCopy[$key])) {
+            if (in_array($key, $arrayCopy)) {
                 $this->{$key} = $value;
             }
         }

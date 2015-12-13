@@ -116,7 +116,7 @@ final class Content
         $arrayCopy = $this->getArrayCopy();
 
         foreach ($data as $key => $value) {
-            if (isset($arrayCopy[$key])) {
+            if (in_array($key, $arrayCopy)) {
                 $this->{$key} = $value;
             }
         }

@@ -25,7 +25,7 @@ final class AdminMenuController extends BaseController
     /*
      * @var FormInterface
      */
-    private $adminMenuForm;
+    private $FormInterface;
 
     /**
      * @var \SD\Admin\Model\AdminMenuTable
@@ -33,13 +33,13 @@ final class AdminMenuController extends BaseController
     private $adminMenuTable;
 
     /**
-     * @param FormInterface $adminMenuForm
+     * @param FormInterface $FormInterface
      */
-    public function __construct(FormInterface $adminMenuForm)
+    public function __construct(FormInterface $FormInterface)
     {
         parent::__construct();
 
-        $this->adminMenuForm = $adminMenuForm;
+        $this->FormInterface = $FormInterface;
     }
 
     /**
@@ -65,7 +65,7 @@ final class AdminMenuController extends BaseController
                         ->getEntityRepository()
                         ->findAll();
 
-        $menus = $this->getAdminMenus($menu);
+        $menus = $this->prepareAdminMenus($menu);
         $this->getView()->setVariable('menus', $menus['menus']);
         $this->getView()->setVariable('submenus', $menus['submenus']);
 
@@ -77,18 +77,17 @@ final class AdminMenuController extends BaseController
      *
      * @return array<string,array>
      */
-    private function getAdminMenus(array $menu)
+    private function prepareAdminMenus(array $menu)
     {
         $menus = ['menus' => [], 'submenus' => []];
 
         if (count($menu) > 0) {
             /** @var AdminMenu $submenus */
             foreach ($menu as $submenus) {
-                if ($submenus->getParent() > 0) {
-                    $menus['submenus'][$submenus->getParent()][] = $submenus;
-                } else {
+                if ($submenus->getParent() == 0) {
                     $menus['menus'][$submenus->getId()] = $submenus;
                 }
+                $menus['submenus'][$submenus->getParent()][] = $submenus;
             }
         }
 
@@ -133,6 +132,7 @@ final class AdminMenuController extends BaseController
     {
         $this->adminMenuTable->deleteAdminMenu((int) $this->getParam('id'));
         $this->setLayoutMessages($this->translate('DELETE_ADMINMENU_SUCCESS'), 'success');
+        $this->redirect()->toUrl('/admin/admin-menu');
     }
 
     /**
@@ -161,7 +161,7 @@ final class AdminMenuController extends BaseController
             $adminMenu = new AdminMenu([]);
         }
 
-        $form = $this->adminMenuForm;
+        $form = $this->FormInterface;
         $form->bind($adminMenu);
         $this->getView()->setVariable('form', $form);
 
@@ -181,7 +181,7 @@ final class AdminMenuController extends BaseController
      * @param \Zend\Http\Request $request
      * @param AdminMenu $adminMenu
      *
-     * @return \Zend\Http\Response|null
+     * @return \Zend\Http\Response
      */
     private function processFormData(FormInterface $form, \Zend\Http\Request $request, AdminMenu $adminMenu)
     {

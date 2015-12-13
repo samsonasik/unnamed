@@ -192,4 +192,12 @@ return  [
   'PHONE'                              => 'Phone',
   'ENTER_CITY'                         => 'Enter your city',
   'CITY'                               => 'City',
+  'ROLE'                               => 'Role',
+  'ROLES'                              => 'Roles',
+  'CATEGORIES'                         => 'Categories',
+  'CATEGORY'                           => 'Category',
+  'ADD_CATEGORY'                       => 'Add category',
+  'DELETE_CATEGORY_SUCCESS'            => 'Category has been deleted',
+  'SLUG'                               => 'Slug',
+  'EDIT_CATEGORY'                      => 'Edit category',
 ];

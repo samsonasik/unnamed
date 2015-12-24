@@ -63,10 +63,8 @@ final class CategoryController extends BaseController
     public function indexAction()
     {
         $this->getView()->setTemplate('admin/category/index');
-        $query = $this->categoryTable
-                        ->getEntityRepository()
-                        ->findAll();
-        $this->getView()->setVariable('paginator', $query);
+
+        $this->getView()->setVariable('paginator', $this->categoryTable->getEntityRepository()->findAll());
 
         return $this->getView();
     }
@@ -109,6 +107,7 @@ final class CategoryController extends BaseController
         $id = (int) $this->getParam('id');
         $this->categoryTable->deleteCategory($id);
         $this->setLayoutMessages($this->translate('DELETE_CATEGORY_SUCCESS'), 'success');
+        $this->redirect()->toUrl('/admin/category');
     }
 
     /**
@@ -128,8 +127,9 @@ final class CategoryController extends BaseController
          * @var CategoryForm
          */
         $form = $this->categoryForm;
+        $form->bind($category);
         $this->getView()->setVariable('form', $form);
-        $this->getView()->setVariable('category', $category);
+        $this->getView()->setVariable('categoryEdit', $category);
 
         /** @var \Zend\Http\Request $request */
         $request = $this->getRequest();
@@ -138,18 +138,11 @@ final class CategoryController extends BaseController
             $form->setData($request->getPost());
 
             if ($form->isValid()) {
-                $formData = $form->getData();
-                $hasCategory = $this->categoryTable->getEntityRepository()->findBy(['title' => $formData['title']]);
-
-                if (count($hasCategory) > 0) {
-                    return $this->setLayoutMessages('&laquo;'.$formData['title'].'&raquo; '.$this->translate('ALREADY_EXIST'), 'warning');
-                }
-
-                $category->setTitle($formData['title']);
-                $category->setSlug($this->slugify($formData['title']));
+                $category->setTitle($request->getPost()['title']); // workaround
+                $category->setSlug($this->slugify($request->getPost()['title'])); // workaround
                 $this->categoryTable->saveCategory($category);
+                $this->setLayoutMessages('&laquo;'.$category->getTitle().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
 
-                $this->setLayoutMessages('&laquo;'.$formData['title'].'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');
                 return $this->redirect()->toUrl('/admin/category');
             }
 
@@ -159,29 +152,28 @@ final class CategoryController extends BaseController
         return;
     }
 
-    // http://stackoverflow.com/a/2955878/2855530
+    // http://stackoverflow.com/a/2955878/2855530 - with small changes
     private function slugify($text)
     {
-      // replace non letter or digits by -
-      $text = preg_replace('~[^\\pL\d]+~u', '-', $text);
+        // replace non letter or digits by -
+        $text = preg_replace('~[^\\pL\d]+~u', '-', $text);
 
-      // trim
-      $text = trim($text, '-');
+        // trim
+        $text = trim($text, '-');
 
-      // transliterate
-      // $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+        // transliterate
+        $text = iconv('utf-8', 'ASCII//TRANSLIT', $text);
 
-      // lowercase
-      $text = strtolower($text);
+        // lowercase
+        $text = strtolower($text);
 
-      // remove unwanted characters
-      $text = preg_replace('~[^-\w]+~', '', $text);
+        // remove unwanted characters
+        $text = preg_replace('~[^-\w]+~', '', $text);
 
-      if (empty($text))
-      {
-        return 'n-a';
-      }
+        if (empty($text)) {
+            $text = null;
+        }
 
-      return $text;
+        return $text;
     }
 }

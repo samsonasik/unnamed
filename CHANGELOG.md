@@ -1,8 +1,10 @@
 # CHANGELOG #
 DD.MM.YYYY
-## 0.0.25 (05.12.2015) - Stable Alpha ##
+## 0.0.25 (05.12.2015 - 23.12.2015) - Stable Alpha ##
 - Removed some Zend unused zend packages
 - Small bug fixes
+- Added category controller
+- Drafts of ACL controller
 
 DD.MM.YYYY
 ## 0.0.24 (22.11.2015) - Stable Alpha ##
@@ -221,7 +223,6 @@ DD.MM.YYYY
 # TODO
  - Comments controller
  - Acl controller
- - Catageries controller
  - Groups controller
  - Tags controller
  - ElasticSearch

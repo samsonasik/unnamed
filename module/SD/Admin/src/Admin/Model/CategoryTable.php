@@ -93,7 +93,7 @@ final class CategoryTable implements CategoryTableInterface
         $category = $this->getCategory($catId);
 
         if ($category) {
-            $this->objectManager->remove($category[0]);
+            $this->objectManager->remove($category);
             $this->objectManager->flush();
         }
     }

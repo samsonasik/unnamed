@@ -123,15 +123,6 @@ final class CategoryForm extends Form implements InputFilterProviderInterface
                     ],
                 ],
             ],
-            [
-                'name'     => 'slug',
-                'required' => false, // will be filled from title on save
-                'filters'  => [
-                    ['name' => 'StripTags'],
-                    ['name' => 'StringTrim'],
-                    ['name' => 'StringToLower'],
-                ],
-            ],
         ];
     }
 }

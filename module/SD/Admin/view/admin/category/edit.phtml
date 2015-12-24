@@ -10,7 +10,7 @@
              * @var \SD\Admin\Form\CategoryForm $form
              */
             $form = $this->form;
-            $form->setAttribute('action', $this->url('admin/default', ['controller' =>'category', 'action' => 'edit', 'id'=> $this->category->getId()]));
+            $form->setAttribute('action', $this->url('admin/default', ['controller' =>'category', 'action' => 'edit', 'id'=> $this->categoryEdit->getId()]));
             $form->prepare();
             echo $this->form()->openTag($form);
             echo $this->formCollection($form);

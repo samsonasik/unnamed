@@ -281,3 +281,63 @@ Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Model\Adm
 #13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
 #14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
 #15 {main}
+2015-12-20T17:16:16+00:00 ERR (3): 
+Exception: No result was found for query although at least one row was expected.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\AbstractQuery.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Model\MenuTable.php(86): Doctrine\ORM\AbstractQuery->getSingleResult()
+#1 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\MenuController.php(167): SD\Admin\Model\MenuTable->getMenu(1, 1)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\MenuController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\MenuController.php(55): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: SD\Admin\Controller\MenuController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-12-20T18:17:31+00:00 ERR (3): 
+Exception: Couldn't find category
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Model\CategoryTable.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Model\CategoryTable.php(93): SD\Admin\Model\CategoryTable->getCategory(2)
+#1 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoryController.php(108): SD\Admin\Model\CategoryTable->deleteCategory(2)
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\CategoryController->deleteAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoryController.php(55): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: SD\Admin\Controller\CategoryController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}
+2015-12-24T08:00:40+00:00 ERR (3): 
+Exception: Zend\Form\Form::setData expects an array or Traversable argument; received "string"
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-form\src\Form.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoryController.php(138): Zend\Form\Form->setData('nene nene')
+#1 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoryController.php(97): SD\Admin\Controller\CategoryController->initForm(Object(SD\Admin\Entity\Category))
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\CategoryController->editAction()
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\CategoryController.php(55): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 [internal function]: SD\Admin\Controller\CategoryController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#15 {main}

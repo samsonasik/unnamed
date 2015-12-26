@@ -42,7 +42,7 @@ final class RoleTable extends Acl implements RoleTableInterface
         $this->objectManager = $objectManager;
         $this->objectRepository = $objectRepository;
 
-        /**
+        /*
          * Default roles.
          */
         $this->addRole(new AclRole('Guest'));

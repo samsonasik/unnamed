@@ -18,7 +18,6 @@ use Zend\Validator\File\Extension;
 use Zend\Validator\File\IsImage;
 use Zend\Validator\File\Size;
 use Zend\View\Model\JsonModel;
-use Zend\Mvc\MvcEvent;
 
 final class AjaxGalleryController extends BaseController
 {

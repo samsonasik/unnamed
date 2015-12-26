@@ -153,6 +153,7 @@ final class CategoryController extends BaseController
     }
 
     // http://stackoverflow.com/a/2955878/2855530
+
     private function slugify($text)
     {
         // replace non letter or digits by -

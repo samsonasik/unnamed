@@ -68,10 +68,10 @@ final class RoleForm extends Form implements InputFilterProviderInterface
             'options' => [
                 'object_manager'            => $this->objectManager,
                 'disable_inarray_validator' => true,
-                'label'          => 'LEVEL',
-                'target_class'   => 'SD\Admin\Entity\Role',
-                'property'       => 'level',
-                'value_options'  => $valueOptions,
+                'label'                     => 'LEVEL',
+                'target_class'              => 'SD\Admin\Entity\Role',
+                'property'                  => 'level',
+                'value_options'             => $valueOptions,
             ],
             'attributes' => [
                 'required'     => 'true',
@@ -91,10 +91,10 @@ final class RoleForm extends Form implements InputFilterProviderInterface
             'options' => [
                 'object_manager'            => $this->objectManager,
                 'disable_inarray_validator' => true,
-                'label'          => 'TYPE',
-                'target_class'   => 'SD\Admin\Entity\Role',
-                'property'       => 'type',
-                'value_options'  => $valueOptions,
+                'label'                     => 'TYPE',
+                'target_class'              => 'SD\Admin\Entity\Role',
+                'property'                  => 'type',
+                'value_options'             => $valueOptions,
             ],
             'attributes' => [
                 'required'     => 'true',

@@ -10,8 +10,8 @@
  */
 namespace SD\Admin\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Content.
@@ -107,7 +107,7 @@ final class Content
      */
     private $author = 0;
 
-     /**
+    /**
      * @ORM\ManyToMany(targetEntity="Category", inversedBy="contents")
      * @ORM\JoinTable(name="contents_categories",
      *      joinColumns={@ORM\JoinColumn(name="content_id", referencedColumnName="id")},

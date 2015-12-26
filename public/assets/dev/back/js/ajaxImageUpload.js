@@ -194,7 +194,7 @@
                 delete response["lang"];
                 $(elementAppend).append($("<div class='dinamicly-div-append-wrapper'></div>"));
                 $.each(response, function (className, text) {
-                    if (text.length > 1) {
+                    if (text && text.length > 1) {
                         $.each(text, function (i, t) {
                             ajaxImageUpload.showMessages(t, elementCreate, 'div.dinamicly-div-append-wrapper', "image-upload-message " + className);
                         });
@@ -220,7 +220,7 @@
 
             ajaxImageUpload.abortXHR(request);
 
-            request = $.get("/admin/content/files", function (files) {
+            request = $.get("/admin/ajaxgallery/files", function (files) {
                 $(".ajax-loader").hide();
                 $(".large-image").show();
                 if (files["files"]) {
@@ -262,7 +262,7 @@
             ajaxImageUpload.abortXHR(request);
 
             $(".deleteimg").on("click", function () {
-                request = $.post("/admin/content/deleteimage", {"img": $(this).next("img").attr("src")}, function () {
+                request = $.post("/admin/ajaxgallery/deleteimage", {"img": $(this).next("img").attr("src")}, function () {
                     ajaxImageUpload.showFiles();
                 });
             });

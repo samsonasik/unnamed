@@ -55,8 +55,6 @@ final class RoleController extends BaseController
     {
         $this->getView()->setTemplate('admin/role/index');
         $paginator = [];
-        // $paginator->setCurrentPageNumber((int) $this->getParam('page'));
-        // $paginator->setItemCountPerPage($this->systemSettings('posts', 'language'));
         $this->getView()->setVariable('paginator', $paginator);
 
         return $this->getView();

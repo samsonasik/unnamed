@@ -11,6 +11,7 @@
 namespace SD\Admin\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Category.
@@ -45,17 +46,24 @@ final class Category
     private $slug;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Content", mappedBy="categories")
+     */
+    private $contents;
+
+    /**
      * @param array $data
      */
     public function exchangeArray(array $data = [])
     {
-        // We need to extract all default values defined for this entity
-        // and make a comparsion between both arrays
-        $arrayCopy = $this->getArrayCopy();
+        if (!empty($data)) {
+            // We need to extract all default values defined for this entity
+            // and make a comparsion between both arrays
+            $arrayCopy = $this->getArrayCopy();
 
-        foreach ($data as $key => $value) {
-            if (in_array($key, $arrayCopy)) {
-                $this->{$key} = $value;
+            foreach ($data as $key => $value) {
+                if (in_array($key, $arrayCopy)) {
+                    $this->{$key} = $value;
+                }
             }
         }
     }
@@ -74,6 +82,12 @@ final class Category
     public function __construct(array $options = [])
     {
         $this->exchangeArray($options);
+        $this->contents = new ArrayCollection();
+    }
+
+    public function addContent(Entity\Content $content)
+    {
+        $this->contents[] = $content;
     }
 
     /**

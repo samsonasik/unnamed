@@ -84,13 +84,15 @@ final class AdminMenu
      */
     public function exchangeArray(array $data = [])
     {
-        // We need to extract all default values defined for this entity
-        // and make a comparsion between both arrays
-        $arrayCopy = $this->getArrayCopy();
+        if (!empty($data)) {
+            // We need to extract all default values defined for this entity
+            // and make a comparsion between both arrays
+            $arrayCopy = $this->getArrayCopy();
 
-        foreach ($data as $key => $value) {
-            if (in_array($key, $arrayCopy)) {
-                $this->{$key} = $value;
+            foreach ($data as $key => $value) {
+                if (in_array($key, $arrayCopy)) {
+                    $this->{$key} = $value;
+                }
             }
         }
     }

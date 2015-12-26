@@ -152,7 +152,7 @@ final class CategoryController extends BaseController
         return;
     }
 
-    // http://stackoverflow.com/a/2955878/2855530 - with small changes
+    // http://stackoverflow.com/a/2955878/2855530
     private function slugify($text)
     {
         // replace non letter or digits by -

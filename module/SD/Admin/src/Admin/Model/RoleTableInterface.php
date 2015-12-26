@@ -73,5 +73,5 @@ interface RoleTableInterface
      *
      * @return array
      */
-    public function getRightLists($roleId = null)
+    public function getRightLists($roleId = null);
 }

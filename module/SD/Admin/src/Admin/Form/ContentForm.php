@@ -211,16 +211,13 @@ final class ContentForm extends Form implements InputFilterProviderInterface
 
         $this->add(
             [
-            'type'    => 'DoctrineModule\Form\Element\ObjectSelect',
-            'name'    => 'category',
+            'type'    => 'DoctrineModule\Form\Element\ObjectMultiCheckbox',
+            'name'    => 'categories',
             'options' => [
                 'label'                     => 'CATEGORY',
-                'disable_inarray_validator' => true,
                 'object_manager'            => $this->objectManager,
                 'target_class'              => 'SD\Admin\Entity\Category',
                 'property'                  => 'title',
-                'display_empty_item'        => true,
-                'empty_item_label'          => 'CATEGORY',
                 'is_method'                 => true,
                 'find_method'               => [
                     'name' => 'getCategories',
@@ -384,6 +381,13 @@ final class ContentForm extends Form implements InputFilterProviderInterface
                             'pattern' => '/^[0-1]+$/',
                         ],
                     ],
+                ],
+            ],
+            [
+                'name'     => 'categories',
+                'required' => false,
+                'filters'  => [
+                    ['name' => 'Int'],
                 ],
             ],
             [

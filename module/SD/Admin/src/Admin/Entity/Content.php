@@ -11,6 +11,7 @@
 namespace SD\Admin\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Content.
@@ -106,18 +107,29 @@ final class Content
      */
     private $author = 0;
 
+     /**
+     * @ORM\ManyToMany(targetEntity="Category", inversedBy="contents")
+     * @ORM\JoinTable(name="contents_categories",
+     *      joinColumns={@ORM\JoinColumn(name="content_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="category_id", referencedColumnName="id")}
+     *      )
+     */
+    private $categories;
+
     /**
      * @param array $data
      */
     public function exchangeArray(array $data = [])
     {
-        // We need to extract all default values defined for this entity
-        // and make a comparsion between both arrays
-        $arrayCopy = $this->getArrayCopy();
+        if (!empty($data)) {
+            // We need to extract all default values defined for this entity
+            // and make a comparsion between both arrays
+            $arrayCopy = $this->getArrayCopy();
 
-        foreach ($data as $key => $value) {
-            if (in_array($key, $arrayCopy)) {
-                $this->{$key} = $value;
+            foreach ($data as $key => $value) {
+                if (in_array($key, $arrayCopy)) {
+                    $this->{$key} = $value;
+                }
             }
         }
     }
@@ -138,6 +150,7 @@ final class Content
     public function __construct(array $options = [])
     {
         $this->exchangeArray($options);
+        $this->categories = new ArrayCollection();
     }
 
     /**
@@ -218,6 +231,27 @@ final class Content
     public function getTitleLink()
     {
         return $this->titleLink;
+    }
+
+    /**
+     * Set category id.
+     *
+     * @param int $category
+     */
+    public function setCategory(Entity\Category $category)
+    {
+        $category->addContent($this); // synchronously updating inverse side
+        $this->categories[] = $category;
+    }
+
+    /**
+     * Get category id.
+     *
+     * @return int
+     */
+    public function getCategory()
+    {
+        return $this->categories;
     }
 
     /**

@@ -10,18 +10,11 @@
  */
 namespace SD\Admin\Controller;
 
-use FilesystemIterator;
-use RecursiveDirectoryIterator;
-use RecursiveIteratorIterator;
 use SD\Admin\Entity\Content;
-use Zend\File\Transfer\Adapter\Http;
 use Zend\Form\FormInterface;
 use Zend\Http\Request;
 use Zend\Mvc\MvcEvent;
-use Zend\Validator\File\Extension;
-use Zend\Validator\File\IsImage;
-use Zend\Validator\File\Size;
-use Zend\View\Model\JsonModel;
+use SD\Admin\Controller\AjaxGalleryController;
 
 /**
  * @method object getTable($tableName)
@@ -51,12 +44,18 @@ final class ContentController extends BaseController
     private $contentTable;
 
     /**
+     * @var AjaxGalleryController
+     */
+    private $ajaxGallery;
+
+    /**
      * @param FormInterface $contentForm
      */
     public function __construct(FormInterface $contentForm)
     {
         parent::__construct();
 
+        $this->ajaxGallery = new AjaxGalleryController();
         $this->contentForm = $contentForm;
     }
 
@@ -83,9 +82,9 @@ final class ContentController extends BaseController
         $this->getView()->setTemplate('admin/content/index');
 
         if ((int) $this->getParam('id') === 1) {
-            $paginator = $this->contentTable->preparePagination($this->getNewsContent(), false);
+            $paginator = $this->contentTable->preparePagination($this->contentTable->getNewsContent($this->language()), false);
         } else {
-            $paginator = $this->contentTable->preparePagination($this->getMenuContent(), true);
+            $paginator = $this->contentTable->preparePagination($this->contentTable->getMenuContent($this->language()), true);
         }
 
         $paginator->setCurrentPageNumber((int) $this->getParam('page'));
@@ -93,31 +92,6 @@ final class ContentController extends BaseController
         $this->getView()->setVariable('paginator', $paginator);
 
         return $this->getView();
-    }
-
-    /**
-     * @return object
-     */
-    private function getNewsContent()
-    {
-        $query = $this->contentTable->queryBuilder()->select(['c'])
-                    ->from('SD\Admin\Entity\Content', 'c')
-                    ->where('c.type = 1 AND c.language = :language')
-                    ->setParameter(':language', (int) $this->language())
-                    ->orderBy('c.date DESC');
-
-        return $query;
-    }
-
-    /**
-     * @return object
-     */
-    public function getMenuContent()
-    {
-        return $this->contentTable->queryBuilder()
-                                ->getEntityManager()
-                                ->createQuery('SELECT c FROM SD\Admin\Entity\Content AS c LEFT JOIN SD\Admin\Entity\Menu AS m WITH c.menu=m.id WHERE c.type = 0 AND c.language = :language ORDER BY m.parent ASC, m.menuOrder ASC, c.date DESC')
-                                ->setParameter(':language', $this->language());
     }
 
     /**
@@ -170,6 +144,8 @@ final class ContentController extends BaseController
     {
         $this->contentTable->deleteContent((int) $this->getParam('id'), $this->language());
         $this->setLayoutMessages($this->translate('DELETE_CONTENT_SUCCESS'), 'success');
+
+        return $this->redirect()->toUrl('/admin/content');
     }
 
     protected function deactivateAction()
@@ -208,7 +184,6 @@ final class ContentController extends BaseController
         $form->bind($content);
         $this->getView()->setVariable('form', $form);
 
-        /* @var Request */
         $this->processFormRequest($this->getRequest(), $form, $content);
     }
 
@@ -274,181 +249,8 @@ final class ContentController extends BaseController
      */
     protected function uploadAction()
     {
-        /** @var Request $request */
-        $request = $this->getRequest();
-        $data = [];
-
-        if ($request->isXmlHttpRequest()) {
-            $data = $this->prepareImages();
+        if ($this->getRequest()->isXmlHttpRequest()) {
+            return $this->ajaxGallery->prepareImages();
         }
-
-        return new JsonModel($data);
-    }
-
-    /**
-     * Deleted image with from a given src.
-     *
-     * @return bool
-     */
-    protected function deleteImageAction()
-    {
-        /** @var Request $request */
-        $request = $this->getRequest();
-        $status = false;
-
-        if ($request->isPost()) {
-            $data = $request->getPost()->toArray();
-
-            if ($request->isXmlHttpRequest()) {
-                if (is_file('public'.$data['img'])) {
-                    unlink('public'.$data['img']);
-                    $status = true;
-                }
-            }
-        }
-
-        return $status;
-    }
-
-    /**
-     * Get all files from all folders and list them in the gallery
-     * getcwd() is there to make the work with images path easier.
-     *
-     * @return JsonModel
-     */
-    protected function filesAction()
-    {
-        chdir(getcwd().'/public/');
-        $this->makeDir();
-        $this->getView()->setTerminal(true);
-        $dir = new RecursiveDirectoryIterator('userfiles/', FilesystemIterator::SKIP_DOTS);
-        $iterator = new RecursiveIteratorIterator($dir, RecursiveIteratorIterator::SELF_FIRST);
-        $iterator->setMaxDepth(50);
-        $files = $this->extractImages($iterator);
-
-        chdir(dirname(getcwd()));
-        $model = new JsonModel();
-        $model->setVariables(['files' => $files]);
-
-        return $model;
-    }
-
-    /**
-     * @param RecursiveIteratorIterator $iterator
-     *
-     * @return array
-     */
-    private function extractImages($iterator)
-    {
-        $files = [];
-        $index = 0;
-
-        foreach ($iterator as $file) {
-            if ($file->isFile()) {
-                $files[$index]['filelink'] = DIRECTORY_SEPARATOR.$file->getPath().DIRECTORY_SEPARATOR.$file->getFilename();
-                $files[$index]['filename'] = $file->getFilename();
-                $index = $index + 1;
-            }
-        }
-
-        return $files;
-    }
-
-    /**
-     * @param string $publicFolder
-     *
-     * @return void
-     */
-    private function makeDir($publicFolder = 'public/')
-    {
-        if (!is_dir($publicFolder.'userfiles/'.date('Y_M').'/images/')) {
-            mkdir($publicFolder.'userfiles/'.date('Y_M').'/images/', 0750, true);
-        }
-    }
-
-    /**
-     * Upload all images async.
-     *
-     * @return array
-     */
-    private function prepareImages()
-    {
-        $adapter = new Http();
-        $size = new Size(['min' => '10kB', 'max' => '5MB', 'useByteString' => true]);
-        $extension = new Extension(['jpg', 'gif', 'png', 'jpeg', 'bmp', 'webp', 'svg'], true);
-
-        $adapter->setValidators([$size, new IsImage(), $extension]);
-
-        $this->makeDir('public/');
-
-        $adapter->setDestination('public/userfiles/'.date('Y_M').'/images/');
-
-        return $this->uploadFiles($adapter);
-    }
-
-    /**
-     * @param Http $adapter
-     *
-     * @return array
-     */
-    private function uploadFiles(Http $adapter)
-    {
-        $uploadStatus = [];
-
-        foreach ($adapter->getFileInfo() as $key => $file) {
-            if ($key !== 'preview') {
-                // @codeCoverageIgnoreStart
-                $arr1 = $this->validateUploadedFileName($adapter, $file['name']);
-
-                $arr2 = $this->validateUploadedFile($adapter, $file['name']);
-                $uploadStatus = array_merge_recursive($arr1, $arr2);
-                // @codeCoverageIgnoreEnd
-            }
-        }
-
-        return $uploadStatus;
-    }
-
-    /**
-     * See if file has been received and uploaded.
-     *
-     * @param Http   $adapter
-     * @param string $fileName
-     *
-     * @return array
-     */
-    private function validateUploadedFile(Http $adapter, $fileName)
-    {
-        $uploadStatus = [];
-        $adapter->receive($fileName);
-
-        if (!$adapter->isReceived($fileName) && $adapter->isUploaded($fileName)) {
-            $uploadStatus['errorFiles'][] = $fileName.' was not uploaded';
-        } else {
-            $uploadStatus['successFiles'][] = $fileName.' was successfully uploaded';
-        }
-
-        return $uploadStatus;
-    }
-
-    /**
-     * See if file name is valid and it not return alll messages.
-     *
-     * @param Http   $adapter
-     * @param string $fileName
-     *
-     * @return array
-     */
-    private function validateUploadedFileName(Http $adapter, $fileName)
-    {
-        $uploadStatus = [];
-
-        if (!$adapter->isValid($fileName)) {
-            foreach ($adapter->getMessages() as $msg) {
-                $uploadStatus['errorFiles'][] = $fileName.' '.strtolower($msg);
-            }
-        }
-
-        return $uploadStatus;
     }
 }

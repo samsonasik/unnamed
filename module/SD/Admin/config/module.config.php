@@ -52,8 +52,9 @@ return [
             'SD\Admin\Controller\Settings' => Factory\Controller\SettingsControllerFactory::class,
         ],
         'invokables' => [
-            'SD\Admin\Controller\Base'  => Controller\BaseController::class,
-            'SD\Admin\Controller\Index' => Controller\IndexController::class,
+            'SD\Admin\Controller\Base'        => Controller\BaseController::class,
+            'SD\Admin\Controller\Index'       => Controller\IndexController::class,
+            'SD\Admin\Controller\AjaxGallery' => Controller\AjaxGalleryController::class,
         ],
     ],
     'form_elements' => [

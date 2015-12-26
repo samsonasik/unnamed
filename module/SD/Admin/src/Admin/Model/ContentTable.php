@@ -108,6 +108,29 @@ final class ContentTable implements ContentTableInterface
     }
 
     /**
+     * @return object
+     */
+    public function getNewsContent($languageId = 1)
+    {
+        return $this->queryBuilder()->select(['c'])
+                                ->from('SD\Admin\Entity\Content', 'c')
+                                ->where('c.type = 1 AND c.language = :language')
+                                ->setParameter(':language', (int) $languageId)
+                                ->orderBy('c.date DESC');
+    }
+
+    /**
+     * @return object
+     */
+    public function getMenuContent($languageId = 1)
+    {
+        return $this->queryBuilder()
+                    ->getEntityManager()
+                    ->createQuery('SELECT c FROM SD\Admin\Entity\Content AS c LEFT JOIN SD\Admin\Entity\Menu AS m WITH c.menu=m.id WHERE c.type = 0 AND c.language = :language ORDER BY m.parent ASC, m.menuOrder ASC, c.date DESC')
+                    ->setParameter(':language', $languageId);
+    }
+
+    /**
      * Save or update content based on the provided id and language.
      *
      * @param Content $content

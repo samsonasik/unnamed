@@ -10,7 +10,15 @@
  */
 namespace SD\Admin\Entity;
 
-class Role
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Role.
+ *
+ * @ORM\Entity
+ * @ORM\Table(name="roles")
+ */
+final class Role
 {
     /**
      * @var int
@@ -24,14 +32,14 @@ class Role
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", lenght="100", nullable=false)
+     * @ORM\Column(name="name", type="string", length=100, nullable=false)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="type", type="string", lenght="100", nullable=false)
+     * @ORM\Column(name="type", type="string", length=100, nullable=false)
      */
     private $type;
 
@@ -47,13 +55,15 @@ class Role
      */
     public function exchangeArray(array $data = [])
     {
-        // We need to extract all default values defined for this entity
-        // and make a comparsion between both arrays
-        $arrayCopy = $this->getArrayCopy();
+        if (!empty($data)) {
+            // We need to extract all default values defined for this entity
+            // and make a comparsion between both arrays
+            $arrayCopy = $this->getArrayCopy();
 
-        foreach ($data as $key => $value) {
-            if (in_array($key, $arrayCopy)) {
-                $this->{$key} = $value;
+            foreach ($data as $key => $value) {
+                if (in_array($key, $arrayCopy)) {
+                    $this->{$key} = $value;
+                }
             }
         }
     }

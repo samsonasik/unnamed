@@ -1,10 +1,11 @@
 # CHANGELOG #
 DD.MM.YYYY
-## 0.0.25 (05.12.2015 - 23.12.2015) - Stable Alpha ##
-- Removed some Zend unused zend packages
-- Small bug fixes
+## 0.0.25 (05.12.2015 - 26.12.2015) - Stable Alpha ##
+- Removed some unused zend packages
+- Small bug fixes and improvements
 - Added category controller
 - Drafts of ACL controller
+- Decoupled AjaxGallery from ContentController.
 
 DD.MM.YYYY
 ## 0.0.24 (22.11.2015) - Stable Alpha ##

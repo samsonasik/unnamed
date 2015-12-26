@@ -25,7 +25,7 @@ final class AdminMenuController extends BaseController
     /*
      * @var FormInterface
      */
-    private $FormInterface;
+    private $formInterface;
 
     /**
      * @var \SD\Admin\Model\AdminMenuTable
@@ -33,13 +33,13 @@ final class AdminMenuController extends BaseController
     private $adminMenuTable;
 
     /**
-     * @param FormInterface $FormInterface
+     * @param FormInterface $formInterface
      */
-    public function __construct(FormInterface $FormInterface)
+    public function __construct(FormInterface $formInterface)
     {
         parent::__construct();
 
-        $this->FormInterface = $FormInterface;
+        $this->formInterface = $formInterface;
     }
 
     /**
@@ -161,7 +161,7 @@ final class AdminMenuController extends BaseController
             $adminMenu = new AdminMenu([]);
         }
 
-        $form = $this->FormInterface;
+        $form = $this->formInterface;
         $form->bind($adminMenu);
         $this->getView()->setVariable('form', $form);
 

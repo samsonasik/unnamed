@@ -53,6 +53,16 @@ interface ContentTableInterface
     public function deleteContent($contentId = 0, $language = 1);
 
     /**
+     * @return object
+     */
+    public function getNewsContent($languageId = 1);
+
+    /**
+     * @return object
+     */
+    public function getMenuContent($languageId = 1);
+
+    /**
      * Save or update content based on the provided id and language.
      *
      * @param Content $content

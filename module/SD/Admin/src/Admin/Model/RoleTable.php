@@ -42,21 +42,30 @@ final class RoleTable extends Acl implements RoleTableInterface
         $this->objectManager = $objectManager;
         $this->objectRepository = $objectRepository;
 
-        // $this->addRole(new AclRole('Guest'));
-        // $this->addRole(new AclRole('User'), 'Guest');
-        // $this->addRole(new AclRole('Admin'), 'User');
+        /**
+         * Default roles.
+         */
+        $this->addRole(new AclRole('Guest'));
+        $this->addRole(new AclRole('User'), 'Guest');
+        $this->addRole(new AclRole('Admin'), 'User');
 
-        // $this->addResource(new AclResource('HomeController'));
-        // $this->addResource(new AclResource('UserController'));
-        // $this->addResource(new AclResource('AdminController'));
+        $this->addResource(new AclResource('Home')); // home / front page
+        $this->addResource(new AclResource('Registration')); // home / front page
+        $this->addResource(new AclResource('Login')); // home / front page
+        $this->addResource(new AclResource('Admin')); // admin route
 
-        // $this->allow('Guest', 'HomeController', 'ViewHome');
-        // $this->allow('Guest', 'UserController', ['ViewUser', 'RegisterUser']);
+        $this->allow('Guest', 'Home', 'Home');
+        $this->allow('Guest', 'Registration', ['Registration']);
+        $this->allow('Guest', 'Login', ['Login']);
+        $this->deny('Guest', 'Profile', ['ViewProfile']);
+        $this->deny('Guest', 'Admin', ['AllowAll']);
 
-        // $this->allow('User', 'UserController', 'EditUser');
-        // $this->deny('User', 'UserController', 'RegisterUser');
+        $this->allow('User', 'Profile', ['ViewProfile', 'EditProfile']);
+        $this->deny('User', 'Registration', 'Registration');
+        $this->deny('User', 'Admin', ['AllowAll']);
 
-        // $this->allow('Admin', 'AdminController', ['DeleteUser', 'AddUser']);
+        $this->allow('Admin', 'Admin', ['AllowAll']);
+        $this->allow('Admin', 'Home', ['AllowAll']);
     }
 
     /**

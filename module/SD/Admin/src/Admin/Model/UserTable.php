@@ -105,7 +105,7 @@ final class UserTable implements UserTableInterface
      *
      * @return User
      */
-    public function saveUser(User $user)
+    public function saveUser(User $user = null)
     {
         $this->objectManager->persist($user);
         $this->objectManager->flush();

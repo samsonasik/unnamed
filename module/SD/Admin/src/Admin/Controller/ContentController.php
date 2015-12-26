@@ -14,7 +14,6 @@ use SD\Admin\Entity\Content;
 use Zend\Form\FormInterface;
 use Zend\Http\Request;
 use Zend\Mvc\MvcEvent;
-use SD\Admin\Controller\AjaxGalleryController;
 
 /**
  * @method object getTable($tableName)

@@ -42,7 +42,7 @@ final class SetLayoutMessages extends AbstractPlugin
      * @param array|string|RecursiveArrayIterator $message
      * @param string                              $namespace determinate the message layout and color.
      *
-     * @return Container|SplQueue
+     * @return Container
      */
     public function __invoke($message = [], $namespace = 'default')
     {

@@ -105,7 +105,7 @@ final class AjaxGalleryController extends BaseController
     /**
      * Upload all images async.
      *
-     * @return array
+     * @return JsonModel
      */
     public function prepareImages()
     {

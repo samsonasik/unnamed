@@ -244,10 +244,11 @@ final class ContentController extends BaseController
     }
 
     /**
-     * @return JsonModel
+     * @return \Zend\View\Model\JsonModel|null
      */
     protected function uploadAction()
     {
+        /** @var \Zend\Http\Request */
         if ($this->getRequest()->isXmlHttpRequest()) {
             return $this->ajaxGallery->prepareImages();
         }

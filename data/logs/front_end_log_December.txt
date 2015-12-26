@@ -1474,3 +1474,26 @@ Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\OR
 #22 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
 #23 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
 #24 {main}
+2015-12-26T11:02:25+00:00 ERR (3): 
+Exception: An abstract factory could not create an instance of sdadminmodelroletable(alias: SD\Admin\Model\RoleTable).
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(645): Zend\ServiceManager\ServiceManager->createFromAbstractFactory('sdadminmodelrol...', 'SD\\Admin\\Model\\...')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('SD\\Admin\\Model\\...', 'sdadminmodelrol...')
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\Plugin\GetTableModel.php(38): Zend\ServiceManager\ServiceManager->get('SD\\Admin\\Model\\...')
+#4 [internal function]: SD\Application\Controller\Plugin\GetTableModel->__invoke('SD\\Admin\\Model\\...')
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(309): call_user_func_array(Object(SD\Application\Controller\Plugin\GetTableModel), Array)
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\RoleController.php(46): Zend\Mvc\Controller\AbstractController->__call('getTable', Array)
+#7 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\RoleController.php(46): SD\Admin\Controller\RoleController->getTable('SD\\Admin\\Model\\...')
+#8 [internal function]: SD\Admin\Controller\RoleController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#13 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
+#18 {main}

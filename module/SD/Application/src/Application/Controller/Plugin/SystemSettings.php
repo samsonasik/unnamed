@@ -38,18 +38,7 @@ final class SystemSettings extends AbstractPlugin
      */
     public function __invoke($option = 'general', $value = 'site_name')
     {
-        switch ($option) {
-            case 'general':
-            case 'mail':
-            case 'registration':
-            case 'posts':
-            case 'discussion':
-            case 'theme':
-                return $this->getOption($option, $value);
-
-            default:
-                throw new InvalidArgumentException("Option doesn't exists");
-        }
+        return $this->getOption($option, $value);
     }
 
     /**

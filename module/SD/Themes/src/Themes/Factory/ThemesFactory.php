@@ -15,15 +15,20 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 final class ThemesFactory
 {
     /**
+     * @var string
+     */
+    private $publicDir;
+
+    /**
      * {@inheritdoc}
      */
     public function __invoke(ServiceLocatorInterface $serviceLocator)
     {
         $themesConfig = $serviceLocator->get('getThemesFromDir');
         $config = $serviceLocator->get('Config');
-        $headScript = $serviceLocator->get('ViewHelperManager')->get('HeadScript');
+        $headScript = $serviceLocator->get('ViewHelperManager')->get('headScript');
         $headLink = $serviceLocator->get('ViewHelperManager')->get('headLink');
-        $publicDir = '/layouts/'.$config['theme']['name'].'/';
+        $this->publicDir = '/layouts/'.$config['theme']['name'].'/';
 
         /*
          * Get theme name from config and load it.
@@ -34,6 +39,21 @@ final class ThemesFactory
         $viewTemplate = $serviceLocator->get('ViewTemplatePathStack');
         $themes = $themesConfig['themes'][$config['theme']['name']];
 
+        $this->loadTemplateFiles($themes, $viewTemplate, $serviceLocator);
+        $this->loadCss($themes, $headLink);
+        $this->loadJs($themes, $headScript);
+
+        return $viewTemplate;
+    }
+
+    /**
+     * @method loadTemplateFiles
+     *
+     * @param array $themes
+     * @param object $viewTemplate
+     * @param ServiceLocatorInterface $serviceLocator
+     */
+    private function loadTemplateFiles($themes, $viewTemplate, ServiceLocatorInterface $serviceLocator) {
         if (isset($themes['template_path_stack'])) {
             $viewTemplate->addPaths($themes['template_path_stack']);
         }
@@ -42,15 +62,31 @@ final class ThemesFactory
             $viewTemplate = $serviceLocator->get('ViewTemplateMapResolver');
             $viewTemplate->merge($themes['template_map']);
         }
+    }
 
+    /**
+     * @method loadCss
+     *
+     * @param array $themes
+     * @param object $headLink
+     */
+    private function loadCss($themes, $headLink)
+    {
         foreach ($themes['css'] as $key => $file) {
-            $headLink->prependStylesheet($publicDir.$file);
+            $headLink->prependStylesheet($this->publicDir.$file);
         }
+    }
 
+    /**
+     * @method loadCss
+     *
+     * @param array $themes
+     * @param object $headLink
+     */
+    private function loadJs($themes, $headScript)
+    {
         foreach ($themes['js'] as $key => $file) {
-            $headScript->prependFile($publicDir.$file);
+            $headScript->prependFile($this->publicDir.$file);
         }
-
-        return $viewTemplate;
     }
 }

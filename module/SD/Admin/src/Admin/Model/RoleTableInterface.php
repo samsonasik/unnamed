@@ -56,22 +56,4 @@ interface RoleTableInterface
      * @return Role
      */
     public function saveRole(Role $role);
-
-    /**
-     * Get Resource by Role.
-     *
-     * @param int $roleId
-     *
-     * @return array
-     */
-    public function getResourceByRole($roleId);
-
-    /**
-     * Get Right lists.
-     *
-     * @param int $roleId
-     *
-     * @return array
-     */
-    public function getRightLists($roleId = null);
 }

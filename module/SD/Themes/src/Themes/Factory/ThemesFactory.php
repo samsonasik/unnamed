@@ -49,11 +49,12 @@ final class ThemesFactory
     /**
      * @method loadTemplateFiles
      *
-     * @param array $themes
-     * @param object $viewTemplate
+     * @param array                   $themes
+     * @param object                  $viewTemplate
      * @param ServiceLocatorInterface $serviceLocator
      */
-    private function loadTemplateFiles($themes, $viewTemplate, ServiceLocatorInterface $serviceLocator) {
+    private function loadTemplateFiles($themes, $viewTemplate, ServiceLocatorInterface $serviceLocator)
+    {
         if (isset($themes['template_path_stack'])) {
             $viewTemplate->addPaths($themes['template_path_stack']);
         }
@@ -67,7 +68,7 @@ final class ThemesFactory
     /**
      * @method loadCss
      *
-     * @param array $themes
+     * @param array  $themes
      * @param object $headLink
      */
     private function loadCss($themes, $headLink)
@@ -80,7 +81,7 @@ final class ThemesFactory
     /**
      * @method loadCss
      *
-     * @param array $themes
+     * @param array  $themes
      * @param object $headLink
      */
     private function loadJs($themes, $headScript)

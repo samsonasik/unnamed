@@ -17,6 +17,7 @@ use Zend\Mvc\MvcEvent;
 use Zend\Validator\File\Extension;
 use Zend\Validator\File\IsImage;
 use Zend\Validator\File\Size;
+use SD\Application\Excepion\AuthorizationException;
 
 /**
  * @method object getTable($tableName)

@@ -73,7 +73,7 @@ final class ThemesFactory
      */
     private function loadCss($themes, $headLink)
     {
-        foreach ($themes['css'] as $key => $file) {
+        foreach ($themes['css'] as $file) {
             $headLink->prependStylesheet($this->publicDir.$file);
         }
     }
@@ -86,7 +86,7 @@ final class ThemesFactory
      */
     private function loadJs($themes, $headScript)
     {
-        foreach ($themes['js'] as $key => $file) {
+        foreach ($themes['js'] as $file) {
             $headScript->prependFile($this->publicDir.$file);
         }
     }

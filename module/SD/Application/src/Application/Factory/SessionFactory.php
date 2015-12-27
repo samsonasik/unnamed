@@ -43,10 +43,9 @@ class SessionFactory
     private function isSsl()
     {
         $stats = false;
-        if (isset($_SERVER['HTTPS'])) {
-            if ('on' === strtolower($_SERVER['HTTPS']) || '1' === $_SERVER['HTTPS']) {
-                $stats = true;
-            }
+
+        if (in_array($_SERVER['HTTPS'], ['on', '1', 'ON', 'On', 1, 'oN'])) {
+            $stats = true;
         } elseif (isset($_SERVER['SERVER_PORT']) && ('443' === $_SERVER['SERVER_PORT'])) {
             $stats = true;
         }

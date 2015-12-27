@@ -12,7 +12,6 @@ namespace SD\Admin\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use SD\Admin\Entity\Content;
 
 /**
  * Category.

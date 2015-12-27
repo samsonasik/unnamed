@@ -68,7 +68,7 @@ final class ThemesFactory
     /**
      * @method loadCss
      *
-     * @param array $themes
+     * @param array        $themes
      * @param object|array $headLink
      */
     private function loadCss($themes, $headLink)
@@ -81,7 +81,7 @@ final class ThemesFactory
     /**
      * @method loadCss
      *
-     * @param array $themes
+     * @param array        $themes
      * @param object|array $headScript
      */
     private function loadJs($themes, $headScript)

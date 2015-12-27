@@ -50,7 +50,7 @@ final class ThemesFactory
      * @method loadTemplateFiles
      *
      * @param array $themes
-     * @param object $viewTemplate
+     * @param object|array $viewTemplate
      * @param ServiceLocatorInterface $serviceLocator
      */
     private function loadTemplateFiles($themes, $viewTemplate, ServiceLocatorInterface $serviceLocator) {
@@ -68,7 +68,7 @@ final class ThemesFactory
      * @method loadCss
      *
      * @param array $themes
-     * @param object $headLink
+     * @param object|array $headLink
      */
     private function loadCss($themes, $headLink)
     {
@@ -81,7 +81,7 @@ final class ThemesFactory
      * @method loadCss
      *
      * @param array $themes
-     * @param object $headLink
+     * @param object|array $headScript
      */
     private function loadJs($themes, $headScript)
     {

@@ -30,7 +30,7 @@ final class ProfileController extends BaseController
          * If user is logged and tries to access one of the given actions
          * he will be redirected to the root url of the website.
          */
-        if (APP_ENV !== 'development') {
+        if (getenv('APPLICATION_ENV') !== 'development') {
             if (!$this->UserData()->hasIdentity()) {
                 $this->redirect()->toUrl('/');
             }

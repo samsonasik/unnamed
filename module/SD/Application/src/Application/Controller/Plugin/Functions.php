@@ -18,7 +18,7 @@ use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 final class Functions extends AbstractPlugin
 {
     /**
-     * Never set the salt parameter for this function unless you are not a security expert who knows what he is doing.
+     * Never set the salt parameter for this function unless you are not a security expert who knows what he/she is doing.
      *
      * @link http://blog.ircmaxell.com/2015/03/security-issue-combining-bcrypt-with.html
      *
@@ -66,24 +66,5 @@ final class Functions extends AbstractPlugin
     public static function generateToken()
     {
         return base64_encode(Rand::getString(mt_rand(1, 100), null, true));
-    }
-
-    /**
-     * Detect SSL/TLS protocol. If true activate cookie_secure key.
-     *
-     * @return bool
-     */
-    public static function isSSL()
-    {
-        $stats = false;
-        if (isset($_SERVER['HTTPS'])) {
-            if ('on' === strtolower($_SERVER['HTTPS']) || '1' === $_SERVER['HTTPS']) {
-                $stats = true;
-            }
-        } elseif (isset($_SERVER['SERVER_PORT']) && ('443' === $_SERVER['SERVER_PORT'])) {
-            $stats = true;
-        }
-
-        return $stats;
     }
 }

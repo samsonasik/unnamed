@@ -90,14 +90,14 @@ return [
                     'options' => [],
                 ],
                 'exception_handler' => [
-                    'throw_exceptions' => (APP_ENV === 'development'),
+                    'throw_exceptions' => (getenv('APPLICATION_ENV') === 'development'),
                 ],
             ],
         ],
     ],
     'view_manager' => [
-        'display_not_found_reason' => (APP_ENV === 'development'),
-        'display_exceptions'       => (APP_ENV === 'development'),
+        'display_not_found_reason' => (getenv('APPLICATION_ENV') === 'development'),
+        'display_exceptions'       => (getenv('APPLICATION_ENV') === 'development'),
         'doctype'                  => 'HTML5',
         'not_found_template'       => 'error/index',
         'exception_template'       => 'error/index',

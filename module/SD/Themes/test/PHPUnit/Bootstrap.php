@@ -27,9 +27,6 @@ class Bootstrap
 
     public static function init()
     {
-        if (!defined('APP_ENV')) {
-            define('APP_ENV', getenv('APPLICATION_ENV'));
-        }
 
         date_default_timezone_set('UTC');
         $zf2ModulePaths = [dirname(dirname(__DIR__))];

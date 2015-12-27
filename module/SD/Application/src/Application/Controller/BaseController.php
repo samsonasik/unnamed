@@ -76,7 +76,7 @@ class BaseController extends AbstractActionController
          *
          * These controllers should be only accesed if the user is NOT logged in.
          */
-        if (APP_ENV !== 'development') {
+        if (getenv('APPLICATION_ENV') !== 'development') {
             $controllersArray = [
                 'SD\Application\Controller\Login',
                 'SD\Application\Controller\ResetPassword',

@@ -58,7 +58,7 @@ class BaseController extends AbstractActionController
      */
     public function onDispatch(MvcEvent $event)
     {
-        if (APP_ENV !== 'development') {
+        if (getenv('APPLICATION_ENV') !== 'development') {
             $this->isAdmin();
         }
 

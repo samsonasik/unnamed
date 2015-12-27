@@ -24,18 +24,11 @@ if (!extension_loaded('Zend OPcache') || !extension_loaded('mcrypt') || !extensi
 }
 
 /*
- * Set global ENV. Used for debugging.
- */
-if (!defined('APP_ENV')) {
-    define('APP_ENV', getenv('APPLICATION_ENV'));
-}
-
-/*
  * Handle errors
  */
-error_reporting((APP_ENV === 'development' ? E_ALL : 0));
-ini_set('display_errors', (APP_ENV === 'development'));
-ini_set('display_startup_errors', (APP_ENV === 'development'));
+error_reporting((getenv('APPLICATION_ENV') === 'development' ? E_ALL : 0));
+ini_set('display_errors', (getenv('APPLICATION_ENV') === 'development'));
+ini_set('display_startup_errors', (getenv('APPLICATION_ENV') === 'development'));
 
 /*
  * Fixes files and server encoding.

@@ -97,7 +97,7 @@ final class User
      *
      * @ORM\Column(name="hideEmail", type="smallint", nullable=false)
      */
-    private $hideEmail = 0;
+    private $hideEmail = false;
 
     /**
      * @var string

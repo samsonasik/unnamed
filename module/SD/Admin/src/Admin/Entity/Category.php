@@ -12,6 +12,7 @@ namespace SD\Admin\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use SD\Admin\Entity\Content;
 
 /**
  * Category.
@@ -46,6 +47,8 @@ final class Category
     private $slug;
 
     /**
+     * @var ArrayCollection
+     *
      * @ORM\ManyToMany(targetEntity="Content", mappedBy="categories")
      */
     private $contents;
@@ -85,7 +88,10 @@ final class Category
         $this->contents = new ArrayCollection();
     }
 
-    public function addContent(Entity\Content $content)
+    /**
+     * @param Content $content [description]
+     */
+    public function addContent(Content $content)
     {
         $this->contents[] = $content;
     }

@@ -92,7 +92,6 @@ final class Module implements ConfigProviderInterface, BootstrapListenerInterfac
          */
         $msg = $lang->offsetGet('flashMessages');
         $viewModel->setVariable('flashMessages', $msg);
-        // $lang->offsetUnset('flashMessages');
 
         /*
          * Load page title

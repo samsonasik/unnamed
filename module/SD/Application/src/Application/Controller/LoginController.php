@@ -55,12 +55,14 @@ final class LoginController extends BaseController
      */
     private function getAuthAdapter(array $options = [])
     {
-        /** @var \DoctrineModule\Authentication\Adapter\ObjectRepository $authAdapter */
-        $authAdapter = $this->authService->getAdapter();
-        $authAdapter->setIdentity((string) $options['email']);
-        $authAdapter->setCredential((string) $options['password']);
+        if (!empty($options)) {
+            /** @var \DoctrineModule\Authentication\Adapter\ObjectRepository $authAdapter */
+            $authAdapter = $this->authService->getAdapter();
+            $authAdapter->setIdentity((string) $options['email']);
+            $authAdapter->setCredential((string) $options['password']);
 
-        return $authAdapter;
+            return $authAdapter;
+        }
     }
 
     /**
@@ -69,7 +71,6 @@ final class LoginController extends BaseController
     public function indexAction()
     {
         $this->getView()->setTemplate('application/login/index');
-
         $this->getView()->setVariable('form', $this->loginForm);
 
         return $this->getView();

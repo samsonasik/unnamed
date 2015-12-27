@@ -143,9 +143,9 @@ final class Role
     /**
      * Set level.
      *
-     * @param string $level
+     * @param int $level
      */
-    public function setLevel($level)
+    public function setLevel($level = 0)
     {
         $this->level = $level;
     }
@@ -153,7 +153,7 @@ final class Role
     /**
      * Get level.
      *
-     * @return string
+     * @return int
      */
     public function getLevel()
     {

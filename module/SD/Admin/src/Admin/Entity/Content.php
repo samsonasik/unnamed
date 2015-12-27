@@ -12,6 +12,7 @@ namespace SD\Admin\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use SD\Admin\Entity\Category;
 
 /**
  * Content.
@@ -108,6 +109,8 @@ final class Content
     private $author = 0;
 
     /**
+     * @var ArrayCollection
+     *
      * @ORM\ManyToMany(targetEntity="Category", inversedBy="contents")
      * @ORM\JoinTable(name="contents_categories",
      *      joinColumns={@ORM\JoinColumn(name="content_id", referencedColumnName="id")},
@@ -234,20 +237,20 @@ final class Content
     }
 
     /**
-     * Set category id.
+     * Set category.
      *
-     * @param int $category
+     * @param Category $category
      */
-    public function setCategory(Entity\Category $category)
+    public function setCategory(Category $category)
     {
         $category->addContent($this); // synchronously updating inverse side
         $this->categories[] = $category;
     }
 
     /**
-     * Get category id.
+     * Get category.
      *
-     * @return int
+     * @return ArrayCollection
      */
     public function getCategory()
     {

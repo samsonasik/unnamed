@@ -101,15 +101,17 @@ final class UserTable implements UserTableInterface
     /**
      * Update user based on the provided id.
      *
-     * @param User $user
+     * @param User|null $user
      *
-     * @return User
+     * @return User|null
      */
     public function saveUser(User $user = null)
     {
-        $this->objectManager->persist($user);
-        $this->objectManager->flush();
+        if ($user != null) {
+            $this->objectManager->persist($user);
+            $this->objectManager->flush();
 
-        return $user;
+            return $user;
+        }
     }
 }

@@ -26,7 +26,7 @@ class SessionFactory
             'cookie_path'             => '/',
             'cookie_httponly'         => true,
             'name'                    => 'zpc',
-            'cookie_secure'           => $this->isSSL(),
+            'cookie_secure'           => $this->isSsl(),
             'hash_bits_per_character' => 6,
             'hash_function'           => 1,
         ]);
@@ -37,11 +37,10 @@ class SessionFactory
 
     /**
      * Detect SSL/TLS protocol. If true activate cookie_secure key.
-     * Same code as the one from Functions.php, but this way it's skips the call to SM. It saves 3 function calls.
      *
      * @return bool
      */
-    private function isSSL()
+    private function isSsl()
     {
         $stats = false;
         if (isset($_SERVER['HTTPS'])) {

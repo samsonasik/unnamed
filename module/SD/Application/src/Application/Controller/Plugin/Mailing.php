@@ -31,8 +31,8 @@ final class Mailing extends AbstractPlugin
     private $settings;
 
     /**
-     * @param FlashMessenger $flashMessenger
-     * @param SystemSettings $settings
+     * @param FlashMessenger|object|array $flashMessenger
+     * @param SystemSettings|object|array $settings
      */
     public function __construct(FlashMessenger $flashMessenger, SystemSettings $settings)
     {

@@ -10,7 +10,6 @@
  */
 namespace SD\Application\Controller\Plugin;
 
-use SD\Application\Exception\InvalidArgumentException;
 use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 
 final class SystemSettings extends AbstractPlugin

@@ -248,7 +248,7 @@ final class ContentController extends BaseController
      */
     protected function uploadAction()
     {
-        /** @var \Zend\Http\Request */
+        /* @var \Zend\Http\Request */
         if ($this->getRequest()->isXmlHttpRequest()) {
             return $this->ajaxGallery->prepareImages();
         }

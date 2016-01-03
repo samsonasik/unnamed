@@ -60,7 +60,7 @@ chdir(dirname(__DIR__));
  * Setup autoloading.
  */
 if (!is_file('vendor/autoload.php')) {
-    throw new \Exception("Please run composer install && composer -o update");
+    throw new \Exception('Please run composer install && composer -o update');
 }
 require_once 'vendor/autoload.php';
 

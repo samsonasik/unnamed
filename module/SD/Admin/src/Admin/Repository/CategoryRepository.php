@@ -21,7 +21,7 @@ class CategoryRepository extends EntityRepository
     public function getCategories()
     {
         $rsm = new ResultSetMapping();
-        $qb =  $this->createQueryBuilder('ca')
+        $qb = $this->createQueryBuilder('ca')
                     ->select(['ca', 'cc', 'c'])
                     ->leftJoin('cats', 'cc', 'ON', 'cc.category_id = ca.id')
                     ->leftJoin('content', 'c', 'ON', 'cc.content_id = c.id')->getQuery()->getResult();

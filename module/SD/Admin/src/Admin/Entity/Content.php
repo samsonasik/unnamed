@@ -107,7 +107,6 @@ final class Content
      */
     private $author = 0;
 
-
     private $categories;
 
     /**

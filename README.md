@@ -14,7 +14,6 @@
 
 ### Current features ###
 
-* Installation script in 2 steps!
 * Login with reset password.
 * Registration.
 * Menu creations for front end and back end with font icons attachements.
@@ -43,19 +42,38 @@
     - pdo_X for database driver
     - Zend OPcache for caching
 * Apache 2.4.4+ or nginx
-* Zend Framework 2.5+ will be installed from script
+* Modules:
+    - expires
+    - rewrite
+    - headers
+    - setenvif
+    - mime
+    - autoindex
+    - deflate
+    - filter
 
 ### Requirements for development ###
 
-* APPLICATION_ENV must be set to development via .htaccess
+* APPLICATION_ENV must be set to development via .htaccess or apache2.conf (Linux) or httpd.conf (Windows)
 * ZendDeveloperTools (built in via composer)
-* BjyProfiler (built in via composer)
 * SanSessionToolbar (built in via composer)
 * PHP CodeSniffer (built in via composer)
 * PHP Unit (built in via composer)
-* Codeception (built in via composer)
-* PHP Coveralls (built in via composer)
 * Gulp (requires NodeJS 0.12.7 or later). node_modules folder is not included. You will have to run **npm install** and **npm install gulp** from the root directory
+
+### Installation ###
+
+if you have composer installed, run:
+
+`composer install`
+`composer -o update`
+
+else
+
+`php composer.phar install`
+`php composer.phar -o update`
+
+Copy `config/autoload/doctrine.local.php.dist` to `config/autoload/doctrine.local.php` and configure it with your current environment.
 
 ### LICENSE ###
 

@@ -9,7 +9,7 @@ return [
     'screenshot'  => 'default.png',
     'author'      => 'Stanimir Dimitrov',
     'version'     => '1.0',
-    'date'        => '15.10.2015',
+    'date'        => '15.10.2015 - 2016',
     'website'     => '',
 
     /*

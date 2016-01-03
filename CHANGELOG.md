@@ -1,5 +1,9 @@
 # CHANGELOG #
 DD.MM.YYYY
+## 0.0.26 (02.01.2016) - Stable Alpha ##
+- Removed installation script
+
+DD.MM.YYYY
 ## 0.0.25 (05.12.2015 - 26.12.2015) - Stable Alpha ##
 - Removed some unused zend packages
 - Small bug fixes and improvements
@@ -226,7 +230,6 @@ DD.MM.YYYY
  - Acl controller
  - Groups controller
  - Tags controller
- - ElasticSearch
  - After/In Beta version start creating the first PHPUnit and Selenium tests
  - Social networks controller or module
  - Voice Search

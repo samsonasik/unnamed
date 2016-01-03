@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright  2015 (c) Stanimir Dimitrov.
+ * @copyright  2015 - 2016 (c) Stanimir Dimitrov.
  * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
  *
  * @version    0.0.25
@@ -60,7 +60,7 @@ chdir(dirname(__DIR__));
  * Setup autoloading.
  */
 if (!is_file('vendor/autoload.php')) {
-    header('Location: /install.php');
+    throw new \Exception("Please run composer install && composer -o update");
 }
 require_once 'vendor/autoload.php';
 

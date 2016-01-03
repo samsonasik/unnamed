@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright  2015 (c) Stanimir Dimitrov.
+ * @copyright  2015 - 2016 (c) Stanimir Dimitrov.
  * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
  *
  * @version    0.0.25
@@ -20,7 +20,7 @@ final class Functions extends AbstractPlugin
     /**
      * Never set the salt parameter for this function unless you are not a security expert who knows what he/she is doing.
      *
-     * @link http://blog.ircmaxell.com/2015/03/security-issue-combining-bcrypt-with.html
+     * @link http://blog.ircmaxell.com/2015 - 2016/03/security-issue-combining-bcrypt-with.html
      *
      * @param string $password the user password in plain text
      *

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright  2015 (c) Stanimir Dimitrov.
+ * @copyright  2015 - 2016 (c) Stanimir Dimitrov.
  * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
  *
  * @version    0.0.25
@@ -132,6 +132,7 @@ final class ErrorHandling
         Full URL: '.$sm->get('Request')->getRequestUri().',
         Method used: '.$sm->get('Request')->getMethod()."\n";
 
+        chmod($this->destination.date('F').'.txt', 0777, true);
         $writer = new Stream($this->destination.date('F').'.txt');
         $this->logger->addWriter($writer);
         $this->logger->info($errorMsg);

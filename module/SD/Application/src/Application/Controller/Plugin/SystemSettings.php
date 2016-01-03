@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright  2015 (c) Stanimir Dimitrov.
+ * @copyright  2015 - 2016 (c) Stanimir Dimitrov.
  * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
  *
  * @version    0.0.25
@@ -24,6 +24,12 @@ final class SystemSettings extends AbstractPlugin
      */
     public function __construct(array $options = [])
     {
+        $filename = 'config/autoload/system.local.php';
+        if (!is_file($filename)) {
+            chmod('config', 0755);
+            copy('config/autoload/system_default.php', $filename);
+        }
+
         $this->options = $options;
     }
 
@@ -50,7 +56,7 @@ final class SystemSettings extends AbstractPlugin
      *
      * @return mixed
      */
-    private function getOption($key, $value)
+    private function getOption($key = 'general', $value = 'site_name')
     {
         return array_key_exists($value, $this->options[$key]) ? $this->options[$key][$value] : null;
     }

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright  2015 (c) Stanimir Dimitrov.
+ * @copyright  2015 - 2016 (c) Stanimir Dimitrov.
  * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
  *
  * @version    0.0.25
@@ -42,9 +42,9 @@ final class AbstractTableFactory implements AbstractFactoryInterface
      */
     public function createServiceWithName(ServiceLocatorInterface $serviceLocator, $name, $requestedName)
     {
-        $entity = substr($requestedName, 0, -5);
+        $entity = substr($requestedName, 0, -5); // remove Table from name
         $entity = str_replace('Model', 'Entity', $entity);
-        $entityManager = $serviceLocator->get('Doctrine\ORM\EntityManager');
+        $entityManager = $serviceLocator->get('doctrine.entitymanager.orm_default');
         $repository = $entityManager->getRepository($entity);
 
         return new $requestedName($entityManager, $repository);

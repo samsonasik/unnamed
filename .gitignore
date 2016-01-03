@@ -3,10 +3,9 @@
 auth.json
 .project
 .settings/
-data/cache/frontend/
-data/cache/modules/
+data/cache/frontend/*
+data/cache/modules/*
 data/test-html-report/
 vendor/
-composerInstalation
 node_modules
 *.log

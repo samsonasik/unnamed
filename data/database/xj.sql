@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Време на генериране: 
+-- Време на генериране:
 -- Версия на сървъра: 5.5.32-log
 -- Версия на PHP: 5.5.28
 
@@ -487,10 +487,10 @@ CREATE TABLE IF NOT EXISTS `resetpassword` (
 --
 
 INSERT INTO `resetpassword` (`id`, `user`, `token`, `date`, `ip`) VALUES
-(1, 21, '9rdDUDKgyVx2Gr2MUjre3gv1RrjNJh2/PfLlt/2LQX1GUaGso0PFK4QPfmejZRPXJ/EVmH0qcJZQVDE4/uSCRMIZyP+Crt1Y97fT', '2015-11-06 10:00:28', '::1'),
-(2, 21, 'ukZJ4deIxw6P8Ls0gIg0le+5dKlcllOIRytNsPY/hi5pM0UT0paQ9FgicxZa52qgqVyRnK0vOrJu5vNCz/U5OmrxTSSRN802Cmz8', '2015-11-06 10:02:49', '::1'),
-(3, 21, 'KrhxwQ86FEDP96Cu3qYlJTIwTNIbwAvgIwQrCIiHqMhsajpEkW/wlZilOrwD+LkCS7QfYZ7zj03aVIGgzW0pLqc3ecEPrPtEYqET', '2015-11-06 10:05:03', '::1'),
-(4, 21, '71gwsGCyLoUvpCjyhwQnvwCvXsbvdtW5XxSqXeUTHGes1LKg7ennzpWdd0C/cRg++qRgECKRwtbojE9YvZOxHIlY7IY/jm3yp9ED', '2015-11-06 10:05:20', '::1');
+(1, 21, '9rdDUDKgyVx2Gr2MUjre3gv1RrjNJh2/PfLlt/2LQX1GUaGso0PFK4QPfmejZRPXJ/EVmH0qcJZQVDE4/uSCRMIZyP+Crt1Y97fT', '2015 - 2016-11-06 10:00:28', '::1'),
+(2, 21, 'ukZJ4deIxw6P8Ls0gIg0le+5dKlcllOIRytNsPY/hi5pM0UT0paQ9FgicxZa52qgqVyRnK0vOrJu5vNCz/U5OmrxTSSRN802Cmz8', '2015 - 2016-11-06 10:02:49', '::1'),
+(3, 21, 'KrhxwQ86FEDP96Cu3qYlJTIwTNIbwAvgIwQrCIiHqMhsajpEkW/wlZilOrwD+LkCS7QfYZ7zj03aVIGgzW0pLqc3ecEPrPtEYqET', '2015 - 2016-11-06 10:05:03', '::1'),
+(4, 21, '71gwsGCyLoUvpCjyhwQnvwCvXsbvdtW5XxSqXeUTHGes1LKg7ennzpWdd0C/cRg++qRgECKRwtbojE9YvZOxHIlY7IY/jm3yp9ED', '2015 - 2016-11-06 10:05:20', '::1');
 
 -- --------------------------------------------------------
 
@@ -527,13 +527,13 @@ INSERT INTO `user` (`id`, `name`, `surname`, `password`, `email`, `birthDate`, `
 (5, 'ivancho22222222', '', '$2y$13$ck1RZG5Ga0NWdFJKclZHde6QexNCWoAWeRY6OyxsZ3jQGvPhZeRTW', 'ppp@gmail.com', '0000-00-00', '2014-12-07 11:13:34', 0, '', '2014-12-07 11:13:11', 0, '127.0.0.1', 0, 1),
 (6, 'Stanimir', '', '$2y$13$aXYwTE9ZQ29YZXBuWXhpMun1/KZf.On/r47yQoCgxB2D6QrFWSUKK', 'aaa@gmail.com', '0000-00-00', '2014-12-07 12:00:16', 0, '', '2014-12-07 11:59:53', 0, '127.0.0.1', 0, 1),
 (7, 'Stanimir', '', '$2y$13$WXBVVXhsMFY2T0RQaVo0NeF7/9COOsHStAiTtln7Hq/VwxjNaa6dO', 'bbb@gmail.com', '0000-00-00', '2014-12-07 12:05:14', 0, '', '2014-12-07 12:04:35', 0, '127.0.0.1', 0, 1),
-(18, 'StanimirCrypt', '', '$2y$13$0BALuGf4iK3WzpYo57naOOb1p/VPJBVYjSZ5IJhEf1CkLuWFV55bi', 'stanimirdim@gmail.com', '0000-00-00', '2015-06-08 11:33:23', 0, '', '2015-03-12 21:34:42', 0, '::1', 0, 1),
+(18, 'StanimirCrypt', '', '$2y$13$0BALuGf4iK3WzpYo57naOOb1p/VPJBVYjSZ5IJhEf1CkLuWFV55bi', 'stanimirdim@gmail.com', '0000-00-00', '2015 - 2016-06-08 11:33:23', 0, '', '2015 - 2016-03-12 21:34:42', 0, '::1', 0, 1),
 (19, 'Stanimir2', 'dimitrov', '', 'standim92@gmail.com', '0000-00-00', '0000-00-00 00:00:00', 0, '', '0000-00-00 00:00:00', 0, '', 1, 0),
-(20, 'alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//-- "''alert(String.from', '', '$2y$13$OJ.Juvg5KSZnwO0PCEYyc./qYMR4hcoW7XZq9.RZJHocZqvVwMun.', 'sgsfgsfxh@gmail.com', '0000-00-00', '0000-00-00 00:00:00', 1, '', '2015-04-13 18:19:00', 0, '127.0.0.1', 0, 1),
-(21, 'Stanimir', 'Dimitrov', '$2y$13$ob9xD1VcLpJxu8mdnQXOLuieF7RKMww3MsAfZlnlHznoquMUDFlci', 'stanimirdim92@gmail.com', '1992-03-06', '2015-11-16 12:50:16', 0, '21.jpg', '2015-06-27 17:31:27', 0, '::1', 0, 1),
-(22, 'mack', '', '$2y$13$vbwB7mYjbIC7qEj10BACEODhFklIlVFFZiYabtXObKs0ax3lss/g6', 'mack@gmail.com', '0000-00-00', '2015-09-10 19:37:37', 0, '', '2015-09-10 19:37:24', 0, '::1', 0, 1),
-(23, 'mitko', '', '$2y$13$i/vgN8t2Aax6p1btko2vU.Sw7ffs59dIlTHKR9owLOcPZMPCrRDrC', 'mitkodim@gmail.com', '0000-00-00', '2015-10-10 17:19:25', 0, '', '2015-10-10 17:19:02', 0, '::1', 0, 1),
-(24, 'stan4o', NULL, '$2y$13$dm/pMvRhVMEls8ymQHfOoeMBvhGhvz7NroijFjVI8REJcyuoQhzJG', 'stan4o123@gmail.com', '0000-00-00', '0000-00-00 00:00:00', 0, NULL, '2015-11-02 11:47:31', 0, '::1', 0, 1);
+(20, 'alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//-- "''alert(String.from', '', '$2y$13$OJ.Juvg5KSZnwO0PCEYyc./qYMR4hcoW7XZq9.RZJHocZqvVwMun.', 'sgsfgsfxh@gmail.com', '0000-00-00', '0000-00-00 00:00:00', 1, '', '2015 - 2016-04-13 18:19:00', 0, '127.0.0.1', 0, 1),
+(21, 'Stanimir', 'Dimitrov', '$2y$13$ob9xD1VcLpJxu8mdnQXOLuieF7RKMww3MsAfZlnlHznoquMUDFlci', 'stanimirdim92@gmail.com', '1992-03-06', '2015 - 2016-11-16 12:50:16', 0, '21.jpg', '2015 - 2016-06-27 17:31:27', 0, '::1', 0, 1),
+(22, 'mack', '', '$2y$13$vbwB7mYjbIC7qEj10BACEODhFklIlVFFZiYabtXObKs0ax3lss/g6', 'mack@gmail.com', '0000-00-00', '2015 - 2016-09-10 19:37:37', 0, '', '2015 - 2016-09-10 19:37:24', 0, '::1', 0, 1),
+(23, 'mitko', '', '$2y$13$i/vgN8t2Aax6p1btko2vU.Sw7ffs59dIlTHKR9owLOcPZMPCrRDrC', 'mitkodim@gmail.com', '0000-00-00', '2015 - 2016-10-10 17:19:25', 0, '', '2015 - 2016-10-10 17:19:02', 0, '::1', 0, 1),
+(24, 'stan4o', NULL, '$2y$13$dm/pMvRhVMEls8ymQHfOoeMBvhGhvz7NroijFjVI8REJcyuoQhzJG', 'stan4o123@gmail.com', '0000-00-00', '0000-00-00 00:00:00', 0, NULL, '2015 - 2016-11-02 11:47:31', 0, '::1', 0, 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

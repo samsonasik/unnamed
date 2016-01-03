@@ -13,14 +13,14 @@ namespace SD\Admin\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Cats
+ * Cats.
  *
  * @ORM\Entity
  * @ORM\Table(name="contents_categories")
  */
 final class Cats
 {
-        /**
+    /**
      * @var int
      *
      * @ORM\Id
@@ -76,6 +76,7 @@ final class Cats
     {
         $this->exchangeArray($options);
     }
+
     /**
      * Get id.
      *
@@ -95,6 +96,7 @@ final class Cats
     {
         $this->id = $id;
     }
+
     /**
      * Set content_id.
      *

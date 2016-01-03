@@ -247,7 +247,7 @@ final class ContentController extends BaseController
             foreach ($contentCategories as $key => $cat) {
                 $str[] = "('".$id."','".$cat."')";
             }
-            $str = implode(", ", $str);
+            $str = implode(', ', $str);
 
             $this->contentTable->queryBuilder()
                         ->getEntityManager()

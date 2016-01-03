@@ -11,13 +11,13 @@
 namespace SD\Application\Controller;
 
 use SD\Admin\Entity\User;
+use SD\Application\Excepion\AuthorizationException;
 use SD\Application\Form\SettingsForm;
 use Zend\File\Transfer\Adapter\Http;
 use Zend\Mvc\MvcEvent;
 use Zend\Validator\File\Extension;
 use Zend\Validator\File\IsImage;
 use Zend\Validator\File\Size;
-use SD\Application\Excepion\AuthorizationException;
 
 /**
  * @method object getTable($tableName)

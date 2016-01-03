@@ -27,7 +27,6 @@ class Bootstrap
 
     public static function init()
     {
-
         date_default_timezone_set('UTC');
         $zf2ModulePaths = [dirname(dirname(__DIR__))];
         if (($path = static::findParentPath('vendor'))) {

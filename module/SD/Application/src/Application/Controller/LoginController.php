@@ -51,7 +51,7 @@ final class LoginController extends BaseController
      *
      * @param array $options
      *
-     * @return \DoctrineModule\Authentication\Adapter\ObjectRepository
+     * @return \DoctrineModule\Authentication\Adapter\ObjectRepository|null
      */
     private function getAuthAdapter(array $options = [])
     {

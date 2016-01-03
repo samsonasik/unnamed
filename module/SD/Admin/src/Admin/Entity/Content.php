@@ -108,15 +108,7 @@ final class Content
      */
     private $author = 0;
 
-    /**
-     * @var ArrayCollection
-     *
-     * @ORM\ManyToMany(targetEntity="Category", inversedBy="contents")
-     * @ORM\JoinTable(name="contents_categories",
-     *      joinColumns={@ORM\JoinColumn(name="content_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="category_id", referencedColumnName="id")}
-     *      )
-     */
+
     private $categories;
 
     /**
@@ -153,7 +145,7 @@ final class Content
     public function __construct(array $options = [])
     {
         $this->exchangeArray($options);
-        $this->categories = new ArrayCollection();
+        // $this->categories = new ArrayCollection();
     }
 
     /**
@@ -241,9 +233,9 @@ final class Content
      *
      * @param Category $category
      */
-    public function setCategory(Category $category)
+    public function setCategory(array $category = [])
     {
-        $category->addContent($this); // synchronously updating inverse side
+        // $category->addContent($this); // synchronously updating inverse side
         $this->categories[] = $category;
     }
 

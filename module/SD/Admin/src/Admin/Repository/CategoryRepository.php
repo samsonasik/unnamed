@@ -11,6 +11,7 @@
 namespace SD\Admin\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Query\ResultSetMapping;
 
 class CategoryRepository extends EntityRepository
 {
@@ -19,8 +20,21 @@ class CategoryRepository extends EntityRepository
      */
     public function getCategories()
     {
-        return $this->createQueryBuilder('c')->select('c')
-                    ->orderBy('c.id', 'ASC')
+        $rsm = new ResultSetMapping();
+        $qb =  $this->createQueryBuilder('ca')
+                    ->select(['ca', 'cc', 'c'])
+                    ->leftJoin('cats', 'cc', 'ON', 'cc.category_id = ca.id')
+                    ->leftJoin('content', 'c', 'ON', 'cc.content_id = c.id')->getQuery()->getResult();
+        // $em = $this->getEntityManager()->createQuery("SELECT * FROM SD\Admin\Entity\Category", $rsm);
+
+        echo \Zend\Debug\Debug::dump($qb, null, false);
+        exit;
+        $qb = $this->createQueryBuilder('p');
+
+        return $this->createQueryBuilder(['ca'])
+                    ->select('ca')
+                    ->leftJoin('c')
+                    ->orderBy('ca.id', 'ASC')
                     ->getQuery()->getResult();
     }
 }

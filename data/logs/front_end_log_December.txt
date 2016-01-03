@@ -1497,3 +1497,415 @@ Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicema
 #16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
 #17 C:\xampp\htdocs\stan_files\unnamed\public\index.php(77): Zend\Mvc\Application->run()
 #18 {main}
+2015-12-27T16:28:20+00:00 ERR (3): 
+Exception: Expected value of type "Doctrine\Common\Collections\Collection|array" for association field "SD\Admin\Entity\Content#$categories", got "string" instead.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\ORMInvalidArgumentException.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(844): Doctrine\ORM\ORMInvalidArgumentException::invalidAssociation(Object(Doctrine\ORM\Mapping\ClassMetadata), Array, '1')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(741): Doctrine\ORM\UnitOfWork->computeAssociationChanges(Array, Object(Doctrine\ORM\PersistentCollection))
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(803): Doctrine\ORM\UnitOfWork->computeChangeSet(Object(Doctrine\ORM\Mapping\ClassMetadata), Object(SD\Admin\Entity\Content))
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(340): Doctrine\ORM\UnitOfWork->computeChangeSets()
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Model\ContentTable.php(143): Doctrine\ORM\EntityManager->flush()
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(239): SD\Admin\Model\ContentTable->saveContent(Object(SD\Admin\Entity\Content))
+#7 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(218): SD\Admin\Controller\ContentController->saveFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#8 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(202): SD\Admin\Controller\ContentController->processFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content), Array)
+#9 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(186): SD\Admin\Controller\ContentController->processFormRequest(Object(Zend\Http\PhpEnvironment\Request), Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#10 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(124): SD\Admin\Controller\ContentController->initForm(Object(SD\Admin\Entity\Content))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\ContentController->editAction()
+#12 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(71): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#14 [internal function]: SD\Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#19 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#20 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#21 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#22 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#23 C:\xampp\htdocs\stan_files\unnamed\public\index.php(70): Zend\Mvc\Application->run()
+#24 {main}
+2015-12-27T16:33:20+00:00 ERR (3): 
+Exception: Expected value of type "Doctrine\Common\Collections\Collection|array" for association field "SD\Admin\Entity\Content#$categories", got "string" instead.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\ORMInvalidArgumentException.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(844): Doctrine\ORM\ORMInvalidArgumentException::invalidAssociation(Object(Doctrine\ORM\Mapping\ClassMetadata), Array, '1')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(741): Doctrine\ORM\UnitOfWork->computeAssociationChanges(Array, Object(Doctrine\ORM\PersistentCollection))
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(803): Doctrine\ORM\UnitOfWork->computeChangeSet(Object(Doctrine\ORM\Mapping\ClassMetadata), Object(SD\Admin\Entity\Content))
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(340): Doctrine\ORM\UnitOfWork->computeChangeSets()
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Model\ContentTable.php(143): Doctrine\ORM\EntityManager->flush()
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(239): SD\Admin\Model\ContentTable->saveContent(Object(SD\Admin\Entity\Content))
+#7 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(218): SD\Admin\Controller\ContentController->saveFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#8 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(202): SD\Admin\Controller\ContentController->processFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content), Array)
+#9 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(186): SD\Admin\Controller\ContentController->processFormRequest(Object(Zend\Http\PhpEnvironment\Request), Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#10 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(124): SD\Admin\Controller\ContentController->initForm(Object(SD\Admin\Entity\Content))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\ContentController->editAction()
+#12 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(71): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#14 [internal function]: SD\Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#19 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#20 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#21 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#22 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#23 C:\xampp\htdocs\stan_files\unnamed\public\index.php(70): Zend\Mvc\Application->run()
+#24 {main}
+2015-12-27T16:34:10+00:00 ERR (3): 
+Exception: An abstract factory could not create an instance of sdadminmodelcontenttable(alias: SD\Admin\Model\ContentTable).
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(645): Zend\ServiceManager\ServiceManager->createFromAbstractFactory('sdadminmodelcon...', 'SD\\Admin\\Model\\...')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('SD\\Admin\\Model\\...', 'sdadminmodelcon...')
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Application\src\Application\Controller\Plugin\GetTableModel.php(38): Zend\ServiceManager\ServiceManager->get('SD\\Admin\\Model\\...')
+#4 [internal function]: SD\Application\Controller\Plugin\GetTableModel->__invoke('SD\\Admin\\Model\\...')
+#5 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(309): call_user_func_array(Object(SD\Application\Controller\Plugin\GetTableModel), Array)
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(69): Zend\Mvc\Controller\AbstractController->__call('getTable', Array)
+#7 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(69): SD\Admin\Controller\ContentController->getTable('SD\\Admin\\Model\\...')
+#8 [internal function]: SD\Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#13 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\public\index.php(70): Zend\Mvc\Application->run()
+#18 {main}
+2015-12-27T16:34:31+00:00 ERR (3): 
+Exception: Expected value of type "Doctrine\Common\Collections\Collection|array" for association field "SD\Admin\Entity\Content#$categories", got "string" instead.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\ORMInvalidArgumentException.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(844): Doctrine\ORM\ORMInvalidArgumentException::invalidAssociation(Object(Doctrine\ORM\Mapping\ClassMetadata), Array, '1')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(741): Doctrine\ORM\UnitOfWork->computeAssociationChanges(Array, Object(Doctrine\ORM\PersistentCollection))
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(803): Doctrine\ORM\UnitOfWork->computeChangeSet(Object(Doctrine\ORM\Mapping\ClassMetadata), Object(SD\Admin\Entity\Content))
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(340): Doctrine\ORM\UnitOfWork->computeChangeSets()
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Model\ContentTable.php(143): Doctrine\ORM\EntityManager->flush()
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(239): SD\Admin\Model\ContentTable->saveContent(Object(SD\Admin\Entity\Content))
+#7 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(218): SD\Admin\Controller\ContentController->saveFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#8 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(202): SD\Admin\Controller\ContentController->processFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content), Array)
+#9 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(186): SD\Admin\Controller\ContentController->processFormRequest(Object(Zend\Http\PhpEnvironment\Request), Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#10 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(124): SD\Admin\Controller\ContentController->initForm(Object(SD\Admin\Entity\Content))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\ContentController->editAction()
+#12 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(71): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#14 [internal function]: SD\Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#19 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#20 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#21 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#22 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#23 C:\xampp\htdocs\stan_files\unnamed\public\index.php(70): Zend\Mvc\Application->run()
+#24 {main}
+2015-12-27T16:37:58+00:00 ERR (3): 
+Exception: Found entity of type  on association SD\Admin\Entity\Content#categories, but expecting SD\Admin\Entity\Category
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\ORMException.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(850): Doctrine\ORM\ORMException::unexpectedAssociationValue('SD\\Admin\\Entity...', 'categories', false, 'SD\\Admin\\Entity...')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(741): Doctrine\ORM\UnitOfWork->computeAssociationChanges(Array, Object(Doctrine\ORM\PersistentCollection))
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(803): Doctrine\ORM\UnitOfWork->computeChangeSet(Object(Doctrine\ORM\Mapping\ClassMetadata), Object(SD\Admin\Entity\Content))
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(340): Doctrine\ORM\UnitOfWork->computeChangeSets()
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Model\ContentTable.php(143): Doctrine\ORM\EntityManager->flush()
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(239): SD\Admin\Model\ContentTable->saveContent(Object(SD\Admin\Entity\Content))
+#7 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(218): SD\Admin\Controller\ContentController->saveFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#8 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(202): SD\Admin\Controller\ContentController->processFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content), Array)
+#9 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(186): SD\Admin\Controller\ContentController->processFormRequest(Object(Zend\Http\PhpEnvironment\Request), Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#10 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(124): SD\Admin\Controller\ContentController->initForm(Object(SD\Admin\Entity\Content))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\ContentController->editAction()
+#12 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(71): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#14 [internal function]: SD\Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#19 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#20 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#21 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#22 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#23 C:\xampp\htdocs\stan_files\unnamed\public\index.php(70): Zend\Mvc\Application->run()
+#24 {main}
+2015-12-27T16:39:35+00:00 ERR (3): 
+Exception: Expected value of type "Doctrine\Common\Collections\Collection|array" for association field "SD\Admin\Entity\Content#$categories", got "string" instead.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\ORMInvalidArgumentException.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(844): Doctrine\ORM\ORMInvalidArgumentException::invalidAssociation(Object(Doctrine\ORM\Mapping\ClassMetadata), Array, '1')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(741): Doctrine\ORM\UnitOfWork->computeAssociationChanges(Array, Object(Doctrine\ORM\PersistentCollection))
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(803): Doctrine\ORM\UnitOfWork->computeChangeSet(Object(Doctrine\ORM\Mapping\ClassMetadata), Object(SD\Admin\Entity\Content))
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(340): Doctrine\ORM\UnitOfWork->computeChangeSets()
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Model\ContentTable.php(143): Doctrine\ORM\EntityManager->flush()
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(239): SD\Admin\Model\ContentTable->saveContent(Object(SD\Admin\Entity\Content))
+#7 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(218): SD\Admin\Controller\ContentController->saveFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#8 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(202): SD\Admin\Controller\ContentController->processFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content), Array)
+#9 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(186): SD\Admin\Controller\ContentController->processFormRequest(Object(Zend\Http\PhpEnvironment\Request), Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#10 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(124): SD\Admin\Controller\ContentController->initForm(Object(SD\Admin\Entity\Content))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\ContentController->editAction()
+#12 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(71): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#14 [internal function]: SD\Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#19 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#20 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#21 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#22 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#23 C:\xampp\htdocs\stan_files\unnamed\public\index.php(70): Zend\Mvc\Application->run()
+#24 {main}
+2015-12-27T16:39:48+00:00 ERR (3): 
+Exception: Expected value of type "Doctrine\Common\Collections\Collection|array" for association field "SD\Admin\Entity\Content#$categories", got "string" instead.
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\ORMInvalidArgumentException.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(844): Doctrine\ORM\ORMInvalidArgumentException::invalidAssociation(Object(Doctrine\ORM\Mapping\ClassMetadata), Array, '1')
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(741): Doctrine\ORM\UnitOfWork->computeAssociationChanges(Array, Object(Doctrine\ORM\PersistentCollection))
+#2 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(803): Doctrine\ORM\UnitOfWork->computeChangeSet(Object(Doctrine\ORM\Mapping\ClassMetadata), Object(SD\Admin\Entity\Content))
+#3 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\UnitOfWork.php(340): Doctrine\ORM\UnitOfWork->computeChangeSets()
+#4 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\orm\lib\Doctrine\ORM\EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Model\ContentTable.php(143): Doctrine\ORM\EntityManager->flush()
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(239): SD\Admin\Model\ContentTable->saveContent(Object(SD\Admin\Entity\Content))
+#7 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(218): SD\Admin\Controller\ContentController->saveFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#8 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(202): SD\Admin\Controller\ContentController->processFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content), Array)
+#9 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(186): SD\Admin\Controller\ContentController->processFormRequest(Object(Zend\Http\PhpEnvironment\Request), Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#10 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(124): SD\Admin\Controller\ContentController->initForm(Object(SD\Admin\Entity\Content))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\ContentController->editAction()
+#12 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(71): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#14 [internal function]: SD\Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#19 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#20 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#21 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#22 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#23 C:\xampp\htdocs\stan_files\unnamed\public\index.php(70): Zend\Mvc\Application->run()
+#24 {main}
+2015-12-28T09:54:55+00:00 ERR (3): 
+Exception: An exception occurred while executing 'INSERT INTO contents_categories (content_id, category_id)
+                                            VALUES 
+                                            ON DUPLICATE KEY
+                                            UPDATE content_id = VALUES(content_id), category_id = VALUES(category_id)':
+
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ON DUPLICATE KEY
+                                            UPDATE content_id =' at line 3
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\AbstractMySQLDriver.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(1027): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'INSERT INTO con...')
+#2 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(252): Doctrine\DBAL\Connection->exec('INSERT INTO con...')
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(218): SD\Admin\Controller\ContentController->saveFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(202): SD\Admin\Controller\ContentController->processFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content), Array)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(186): SD\Admin\Controller\ContentController->processFormRequest(Object(Zend\Http\PhpEnvironment\Request), Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(124): SD\Admin\Controller\ContentController->initForm(Object(SD\Admin\Entity\Content))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\ContentController->editAction()
+#8 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(71): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 [internal function]: SD\Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#15 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#19 C:\xampp\htdocs\stan_files\unnamed\public\index.php(70): Zend\Mvc\Application->run()
+#20 {main}
+2015-12-28T10:20:47+00:00 ERR (3): 
+Exception: An exception occurred while executing 'INSERT INTO contents_categories (content_id, category_id)
+                                                VALUES ('11','1')
+                                                WHEN NOT MATCHED BY SOURCE
+                                                AND 2 IN(SELECT category_id FROM contents_categories) THEN DELETE;':
+
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHEN NOT MATCHED BY SOURCE
+                                                AND 2' at line 3
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\AbstractMySQLDriver.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(1027): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'INSERT INTO con...')
+#2 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(263): Doctrine\DBAL\Connection->exec('INSERT INTO con...')
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(218): SD\Admin\Controller\ContentController->saveFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(202): SD\Admin\Controller\ContentController->processFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content), Array)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(186): SD\Admin\Controller\ContentController->processFormRequest(Object(Zend\Http\PhpEnvironment\Request), Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(124): SD\Admin\Controller\ContentController->initForm(Object(SD\Admin\Entity\Content))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\ContentController->editAction()
+#8 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(71): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 [internal function]: SD\Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#15 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#19 C:\xampp\htdocs\stan_files\unnamed\public\index.php(70): Zend\Mvc\Application->run()
+#20 {main}
+2015-12-28T10:21:00+00:00 ERR (3): 
+Exception: An exception occurred while executing 'INSERT INTO contents_categories (content_id, category_id)
+                                                VALUES ('11','1')
+                                                WHEN NOT MATCHED BY SOURCE
+                                                AND '2' IN(SELECT category_id FROM contents_categories) THEN DELETE;':
+
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHEN NOT MATCHED BY SOURCE
+                                                AND '' at line 3
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\AbstractMySQLDriver.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(1027): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'INSERT INTO con...')
+#2 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(263): Doctrine\DBAL\Connection->exec('INSERT INTO con...')
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(218): SD\Admin\Controller\ContentController->saveFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(202): SD\Admin\Controller\ContentController->processFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content), Array)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(186): SD\Admin\Controller\ContentController->processFormRequest(Object(Zend\Http\PhpEnvironment\Request), Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(124): SD\Admin\Controller\ContentController->initForm(Object(SD\Admin\Entity\Content))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\ContentController->editAction()
+#8 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(71): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 [internal function]: SD\Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#15 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#19 C:\xampp\htdocs\stan_files\unnamed\public\index.php(70): Zend\Mvc\Application->run()
+#20 {main}
+2015-12-28T10:21:10+00:00 ERR (3): 
+Exception: An exception occurred while executing 'INSERT INTO contents_categories (content_id, category_id)
+                                                VALUES ('11','1')
+                                                WHEN NOT MATCHED BY SOURCE
+                                                AND '2' IN(SELECT category_id FROM contents_categories) THEN DELETE':
+
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHEN NOT MATCHED BY SOURCE
+                                                AND '' at line 3
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\AbstractMySQLDriver.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(1027): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'INSERT INTO con...')
+#2 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(263): Doctrine\DBAL\Connection->exec('INSERT INTO con...')
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(218): SD\Admin\Controller\ContentController->saveFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(202): SD\Admin\Controller\ContentController->processFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content), Array)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(186): SD\Admin\Controller\ContentController->processFormRequest(Object(Zend\Http\PhpEnvironment\Request), Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(124): SD\Admin\Controller\ContentController->initForm(Object(SD\Admin\Entity\Content))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\ContentController->editAction()
+#8 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(71): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 [internal function]: SD\Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#15 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#19 C:\xampp\htdocs\stan_files\unnamed\public\index.php(70): Zend\Mvc\Application->run()
+#20 {main}
+2015-12-28T10:21:48+00:00 ERR (3): 
+Exception: An exception occurred while executing 'INSERT INTO contents_categories (content_id, category_id)
+                                                VALUES ('11','1')
+                                                WHEN NOT MATCHED BY SOURCE
+                                                AND contents_categories.category_id IN(SELECT category_id FROM contents_categories) THEN DELETE':
+
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHEN NOT MATCHED BY SOURCE
+                                                AND c' at line 3
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\AbstractMySQLDriver.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(1027): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'INSERT INTO con...')
+#2 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(263): Doctrine\DBAL\Connection->exec('INSERT INTO con...')
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(218): SD\Admin\Controller\ContentController->saveFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(202): SD\Admin\Controller\ContentController->processFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content), Array)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(186): SD\Admin\Controller\ContentController->processFormRequest(Object(Zend\Http\PhpEnvironment\Request), Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(124): SD\Admin\Controller\ContentController->initForm(Object(SD\Admin\Entity\Content))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\ContentController->editAction()
+#8 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(71): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 [internal function]: SD\Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#15 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#19 C:\xampp\htdocs\stan_files\unnamed\public\index.php(70): Zend\Mvc\Application->run()
+#20 {main}
+2015-12-28T10:21:58+00:00 ERR (3): 
+Exception: An exception occurred while executing 'INSERT INTO contents_categories (content_id, category_id)
+                                                VALUES ('11','1')
+                                                WHEN NOT MATCHED BY TARGET
+                                                AND contents_categories.category_id IN(SELECT category_id FROM contents_categories) THEN DELETE':
+
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHEN NOT MATCHED BY TARGET
+                                                AND c' at line 3
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\AbstractMySQLDriver.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(1027): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'INSERT INTO con...')
+#2 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(263): Doctrine\DBAL\Connection->exec('INSERT INTO con...')
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(218): SD\Admin\Controller\ContentController->saveFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(202): SD\Admin\Controller\ContentController->processFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content), Array)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(186): SD\Admin\Controller\ContentController->processFormRequest(Object(Zend\Http\PhpEnvironment\Request), Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(124): SD\Admin\Controller\ContentController->initForm(Object(SD\Admin\Entity\Content))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\ContentController->editAction()
+#8 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(71): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 [internal function]: SD\Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#15 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#19 C:\xampp\htdocs\stan_files\unnamed\public\index.php(70): Zend\Mvc\Application->run()
+#20 {main}
+2015-12-28T10:22:06+00:00 ERR (3): 
+Exception: An exception occurred while executing 'INSERT INTO contents_categories (content_id, category_id)
+                                                VALUES ('11','1')
+                                                WHEN NOT MATCHED BY TARGET AND contents_categories.category_id IN(SELECT category_id FROM contents_categories) THEN DELETE':
+
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHEN NOT MATCHED BY TARGET AND contents_categories.category_id IN(SELECT categor' at line 3
+Code: 0
+File: C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\AbstractMySQLDriver.php
+Trace: #0 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 C:\xampp\htdocs\stan_files\unnamed\vendor\doctrine\dbal\lib\Doctrine\DBAL\Connection.php(1027): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'INSERT INTO con...')
+#2 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(262): Doctrine\DBAL\Connection->exec('INSERT INTO con...')
+#3 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(218): SD\Admin\Controller\ContentController->saveFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#4 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(202): SD\Admin\Controller\ContentController->processFormData(Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content), Array)
+#5 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(186): SD\Admin\Controller\ContentController->processFormRequest(Object(Zend\Http\PhpEnvironment\Request), Object(SD\Admin\Form\ContentForm), Object(SD\Admin\Entity\Content))
+#6 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(124): SD\Admin\Controller\ContentController->initForm(Object(SD\Admin\Entity\Content))
+#7 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractActionController.php(82): SD\Admin\Controller\ContentController->editAction()
+#8 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\BaseController.php(65): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\stan_files\unnamed\module\SD\Admin\src\Admin\Controller\ContentController.php(71): SD\Admin\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 [internal function]: SD\Admin\Controller\ContentController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#15 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#16 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#17 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-eventmanager\src\EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 C:\xampp\htdocs\stan_files\unnamed\vendor\zendframework\zend-mvc\src\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#19 C:\xampp\htdocs\stan_files\unnamed\public\index.php(70): Zend\Mvc\Application->run()
+#20 {main}

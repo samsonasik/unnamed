@@ -44,7 +44,7 @@ class SessionFactory
     {
         $stats = false;
 
-        if (in_array($_SERVER['HTTPS'], ['on', '1', 'ON', 'On', 1, 'oN'])) {
+        if (isset($_SERVER['HTTPS']) && in_array($_SERVER['HTTPS'], ['on', '1', 'ON', 'On', 1, 'oN'])) {
             $stats = true;
         } elseif (isset($_SERVER['SERVER_PORT']) && ('443' === $_SERVER['SERVER_PORT'])) {
             $stats = true;

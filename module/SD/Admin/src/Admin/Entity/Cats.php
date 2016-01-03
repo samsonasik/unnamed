@@ -10,20 +10,17 @@
  */
 namespace SD\Admin\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use SD\Admin\Entity\Content;
 
 /**
- * Category.
+ * Cats
  *
  * @ORM\Entity
- * @ORM\Table(name="category")
- * @ORM\Entity(repositoryClass="SD\Admin\Repository\CategoryRepository")
+ * @ORM\Table(name="contents_categories")
  */
-final class Category
+final class Cats
 {
-    /**
+        /**
      * @var int
      *
      * @ORM\Id
@@ -33,25 +30,18 @@ final class Category
     private $id = 0;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="title", type="string", length=255, nullable=false)
+     * @ORM\Column(name="content_id", type="integer", nullable=false)
      */
-    private $title;
+    private $content_id;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="slug", type="string", length=255, nullable=false)
+     * @ORM\Column(name="category_id", type="integer", nullable=false)
      */
-    private $slug;
-
-    /**
-     * @var ArrayCollection
-     *
-     * @ORM\ManyToMany(targetEntity="SD\Admin\Entity\Content", mappedBy="categories")
-     */
-    // private $contents;
+    private $category_id;
 
     /**
      * @param array $data
@@ -85,18 +75,10 @@ final class Category
     public function __construct(array $options = [])
     {
         $this->exchangeArray($options);
-        // $this->contents = new ArrayCollection();
     }
-
-    // /**
-    //  * @param Content $content [description]
-    //  */
-    // public function addContent(Content $content)
-    // {
-    //     $this->contents[] = $content;
-    // }
-
     /**
+     * Get id.
+     *
      * @return int
      */
     public function getId()
@@ -105,50 +87,51 @@ final class Category
     }
 
     /**
+     * Set id.
+     *
      * @param int
      */
     public function setId($id = 0)
     {
         $this->id = $id;
     }
-
     /**
-     * Set title.
+     * Set content_id.
      *
-     * @param string $title
+     * @param int $content_id
      */
-    public function setTitle($title)
+    public function setContentId($content_id)
     {
-        $this->title = $title;
+        $this->content_id = $content_id;
     }
 
     /**
-     * Get title.
+     * Get content_id.
      *
-     * @return string
+     * @return int
      */
-    public function getTitle()
+    public function getContentId()
     {
-        return $this->title;
+        return $this->content_id;
     }
 
     /**
-     * Set slug.
+     * Set category_id.
      *
-     * @param string $slug
+     * @param int $category_id
      */
-    public function setSlug($slug)
+    public function setCategoryId($category_id)
     {
-        $this->slug = $slug;
+        $this->category_id = $category_id;
     }
 
     /**
-     * Get slug.
+     * Get category_id.
      *
-     * @return string
+     * @return int
      */
-    public function getSlug()
+    public function getCategoryId()
     {
-        return $this->slug;
+        return $this->category_id;
     }
 }

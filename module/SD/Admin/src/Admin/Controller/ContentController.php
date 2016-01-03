@@ -236,6 +236,27 @@ final class ContentController extends BaseController
          * We only need the name. All images ar stored in the same folder, based on the month and year
          */
         $content->setPreview($form->getData()->getPreview()['name']);
+
+        /*
+         * Insert categories
+         */
+        $contentCategories = $content->getCategory();
+        if (count($contentCategories) > 0) {
+            $id = $content->getId();
+            $str = [];
+            foreach ($contentCategories as $key => $cat) {
+                $str[] = "('".$id."','".$cat."')";
+            }
+            $str = implode(", ", $str);
+
+            $this->contentTable->queryBuilder()
+                        ->getEntityManager()
+                        ->getConnection()->exec("INSERT INTO contents_categories (content_id, category_id)
+                                                VALUES {$str}
+                                                ON DUPLICATE KEY
+                                                UPDATE content_id = VALUES(content_id), category_id = VALUES(category_id)");
+        }
+
         $this->contentTable->saveContent($content);
 
         $this->setLayoutMessages('&laquo;'.$content->getTitle().'&raquo; '.$this->translate('SAVE_SUCCESS'), 'success');

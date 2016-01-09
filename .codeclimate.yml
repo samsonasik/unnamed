@@ -1,0 +1,39 @@
+engines:
+  csslint:
+    enabled: false
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+      - php
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+  phpmd:
+    enabled: true
+ratings:
+  paths:
+  - "**.css"
+  - "**.inc"
+  - "**.js"
+  - "**.jsx"
+  - "**.php"
+exclude_paths:
+  - config/**/*
+  - data/**/*
+  - public/assets/**/*
+  - gulpfile.js
+  - test/**/*
+  - test/*
+  - .editorconfig
+  - .codeclimate.yml
+  - LICENSE.md
+  - README.md
+  - package.json
+  - .*.json
+  - .*.yml
+  - .*rc
+--exclude-exts=.min.css
+--ignore=adjoining-classes,box-model,ids,order-alphabetical,unqualified-attributes

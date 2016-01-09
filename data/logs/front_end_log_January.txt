@@ -286,3 +286,136 @@ Trace: #0 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/Ser
 #17 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
 #18 /var/www/html/unnamed/public/index.php(70): Zend\Mvc\Application->run()
 #19 {main}
+2016-01-03T11:55:55+00:00 ERR (3): 
+Exception: An exception was raised while creating "translate"; no instance returned
+Code: 0
+File: /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/ServiceManager.php
+Trace: #0 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/AbstractPluginManager.php(283): Zend\ServiceManager\ServiceManager->createServiceViaCallback(Object(SD\Application\Controller\Plugin\Factory\TranslateFactory), 'translate', 'translate')
+#1 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/AbstractPluginManager.php(243): Zend\ServiceManager\AbstractPluginManager->createServiceViaCallback(Object(SD\Application\Controller\Plugin\Factory\TranslateFactory), 'translate', 'translate')
+#2 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/ServiceManager.php(637): Zend\ServiceManager\AbstractPluginManager->createFromFactory('translate', 'translate')
+#3 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('translate', 'translate')
+#4 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#5 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/AbstractPluginManager.php(115): Zend\ServiceManager\ServiceManager->get('translate', true)
+#6 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Controller/PluginManager.php(84): Zend\ServiceManager\AbstractPluginManager->get('translate', NULL, true)
+#7 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Controller/AbstractController.php(292): Zend\Mvc\Controller\PluginManager->get('translate', NULL)
+#8 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Controller/AbstractController.php(307): Zend\Mvc\Controller\AbstractController->plugin('translate')
+#9 /var/www/html/unnamed/module/SD/Application/src/Application/Controller/BaseController.php(112): Zend\Mvc\Controller\AbstractController->__call('translate', Array)
+#10 /var/www/html/unnamed/module/SD/Application/src/Application/Controller/BaseController.php(112): SD\Application\Controller\IndexController->translate('HOME')
+#11 /var/www/html/unnamed/module/SD/Application/src/Application/Controller/BaseController.php(58): SD\Application\Controller\BaseController->initMenus()
+#12 [internal function]: SD\Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Controller/AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#17 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#18 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#19 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#20 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#21 /var/www/html/unnamed/public/index.php(70): Zend\Mvc\Application->run()
+#22 {main}
+2016-01-03T11:56:23+00:00 ERR (3): 
+Exception: An exception was raised while creating "translate"; no instance returned
+Code: 0
+File: /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/ServiceManager.php
+Trace: #0 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/AbstractPluginManager.php(283): Zend\ServiceManager\ServiceManager->createServiceViaCallback(Object(SD\Application\Controller\Plugin\Factory\TranslateFactory), 'translate', 'translate')
+#1 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/AbstractPluginManager.php(243): Zend\ServiceManager\AbstractPluginManager->createServiceViaCallback(Object(SD\Application\Controller\Plugin\Factory\TranslateFactory), 'translate', 'translate')
+#2 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/ServiceManager.php(637): Zend\ServiceManager\AbstractPluginManager->createFromFactory('translate', 'translate')
+#3 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('translate', 'translate')
+#4 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#5 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/AbstractPluginManager.php(115): Zend\ServiceManager\ServiceManager->get('translate', true)
+#6 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Controller/PluginManager.php(84): Zend\ServiceManager\AbstractPluginManager->get('translate', NULL, true)
+#7 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Controller/AbstractController.php(292): Zend\Mvc\Controller\PluginManager->get('translate', NULL)
+#8 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Controller/AbstractController.php(307): Zend\Mvc\Controller\AbstractController->plugin('translate')
+#9 /var/www/html/unnamed/module/SD/Application/src/Application/Controller/BaseController.php(112): Zend\Mvc\Controller\AbstractController->__call('translate', Array)
+#10 /var/www/html/unnamed/module/SD/Application/src/Application/Controller/BaseController.php(112): SD\Application\Controller\IndexController->translate('HOME')
+#11 /var/www/html/unnamed/module/SD/Application/src/Application/Controller/BaseController.php(58): SD\Application\Controller\BaseController->initMenus()
+#12 [internal function]: SD\Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Controller/AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#17 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#18 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#19 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#20 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#21 /var/www/html/unnamed/public/index.php(70): Zend\Mvc\Application->run()
+#22 {main}
+2016-01-03T11:56:24+00:00 ERR (3): 
+Exception: An exception was raised while creating "translate"; no instance returned
+Code: 0
+File: /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/ServiceManager.php
+Trace: #0 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/AbstractPluginManager.php(283): Zend\ServiceManager\ServiceManager->createServiceViaCallback(Object(SD\Application\Controller\Plugin\Factory\TranslateFactory), 'translate', 'translate')
+#1 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/AbstractPluginManager.php(243): Zend\ServiceManager\AbstractPluginManager->createServiceViaCallback(Object(SD\Application\Controller\Plugin\Factory\TranslateFactory), 'translate', 'translate')
+#2 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/ServiceManager.php(637): Zend\ServiceManager\AbstractPluginManager->createFromFactory('translate', 'translate')
+#3 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/ServiceManager.php(600): Zend\ServiceManager\ServiceManager->doCreate('translate', 'translate')
+#4 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/ServiceManager.php(532): Zend\ServiceManager\ServiceManager->create(Array)
+#5 /var/www/html/unnamed/vendor/zendframework/zend-servicemanager/src/AbstractPluginManager.php(115): Zend\ServiceManager\ServiceManager->get('translate', true)
+#6 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Controller/PluginManager.php(84): Zend\ServiceManager\AbstractPluginManager->get('translate', NULL, true)
+#7 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Controller/AbstractController.php(292): Zend\Mvc\Controller\PluginManager->get('translate', NULL)
+#8 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Controller/AbstractController.php(307): Zend\Mvc\Controller\AbstractController->plugin('translate')
+#9 /var/www/html/unnamed/module/SD/Application/src/Application/Controller/BaseController.php(112): Zend\Mvc\Controller\AbstractController->__call('translate', Array)
+#10 /var/www/html/unnamed/module/SD/Application/src/Application/Controller/BaseController.php(112): SD\Application\Controller\IndexController->translate('HOME')
+#11 /var/www/html/unnamed/module/SD/Application/src/Application/Controller/BaseController.php(58): SD\Application\Controller\BaseController->initMenus()
+#12 [internal function]: SD\Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Controller/AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#17 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#18 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#19 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#20 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#21 /var/www/html/unnamed/public/index.php(70): Zend\Mvc\Application->run()
+#22 {main}
+2016-01-03T12:06:16+00:00 ERR (3): 
+Exception: An exception occurred while executing 'SELECT t0.id AS id_1, t0.name AS name_2, t0.surname AS surname_3, t0.password AS password_4, t0.email AS email_5, t0.birthDate AS birthDate_6, t0.lastLogin AS lastLogin_7, t0.isDisabled AS isDisabled_8, t0.image AS image_9, t0.registered AS registered_10, t0.hideEmail AS hideEmail_11, t0.ip AS ip_12, t0.admin AS admin_13, t0.language AS language_14, t0.city AS city_15, t0.phone AS phone_16, t0.website AS website_17, t0.country AS country_18, t0.interests AS interests_19 FROM user t0 WHERE t0.email = ? LIMIT 1' with params ["stanimirdim92@gmail.com"]:
+
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 't0.city' in 'field list'
+Code: 0
+File: /var/www/html/unnamed/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php
+Trace: #0 /var/www/html/unnamed/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www/html/unnamed/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(836): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'SELECT t0.id AS...', Array)
+#2 /var/www/html/unnamed/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(712): Doctrine\DBAL\Connection->executeQuery('SELECT t0.id AS...', Array, Array)
+#3 /var/www/html/unnamed/vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php(196): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->load(Array, NULL, NULL, Array, NULL, 1, NULL)
+#4 /var/www/html/unnamed/vendor/doctrine/doctrine-module/src/DoctrineModule/Authentication/Adapter/ObjectRepository.php(135): Doctrine\ORM\EntityRepository->findOneBy(Array)
+#5 /var/www/html/unnamed/vendor/zendframework/zend-authentication/src/AuthenticationService.php(110): DoctrineModule\Authentication\Adapter\ObjectRepository->authenticate()
+#6 /var/www/html/unnamed/module/SD/Application/src/Application/Controller/LoginController.php(111): Zend\Authentication\AuthenticationService->authenticate(Object(DoctrineModule\Authentication\Adapter\ObjectRepository))
+#7 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Controller/AbstractActionController.php(82): SD\Application\Controller\LoginController->processloginAction()
+#8 /var/www/html/unnamed/module/SD/Application/src/Application/Controller/BaseController.php(55): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 [internal function]: SD\Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#11 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Controller/AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#14 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#15 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#16 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 /var/www/html/unnamed/public/index.php(70): Zend\Mvc\Application->run()
+#19 {main}
+2016-01-09T11:34:01+00:00 ERR (3): 
+Exception: An exception occurred while executing 'SELECT t0.id AS id_1, t0.name AS name_2, t0.surname AS surname_3, t0.password AS password_4, t0.email AS email_5, t0.birthDate AS birthDate_6, t0.lastLogin AS lastLogin_7, t0.isDisabled AS isDisabled_8, t0.image AS image_9, t0.registered AS registered_10, t0.hideEmail AS hideEmail_11, t0.ip AS ip_12, t0.admin AS admin_13, t0.language AS language_14, t0.city AS city_15, t0.phone AS phone_16, t0.website AS website_17, t0.country AS country_18, t0.interests AS interests_19 FROM user t0 WHERE t0.email = ? LIMIT 1' with params ["stanimirdim92@gmail.com"]:
+
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 't0.city' in 'field list'
+Code: 0
+File: /var/www/html/unnamed/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php
+Trace: #0 /var/www/html/unnamed/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www/html/unnamed/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(836): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'SELECT t0.id AS...', Array)
+#2 /var/www/html/unnamed/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(712): Doctrine\DBAL\Connection->executeQuery('SELECT t0.id AS...', Array, Array)
+#3 /var/www/html/unnamed/vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php(196): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->load(Array, NULL, NULL, Array, NULL, 1, NULL)
+#4 /var/www/html/unnamed/vendor/doctrine/doctrine-module/src/DoctrineModule/Authentication/Adapter/ObjectRepository.php(135): Doctrine\ORM\EntityRepository->findOneBy(Array)
+#5 /var/www/html/unnamed/vendor/zendframework/zend-authentication/src/AuthenticationService.php(110): DoctrineModule\Authentication\Adapter\ObjectRepository->authenticate()
+#6 /var/www/html/unnamed/module/SD/Application/src/Application/Controller/LoginController.php(111): Zend\Authentication\AuthenticationService->authenticate(Object(DoctrineModule\Authentication\Adapter\ObjectRepository))
+#7 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Controller/AbstractActionController.php(82): SD\Application\Controller\LoginController->processloginAction()
+#8 /var/www/html/unnamed/module/SD/Application/src/Application/Controller/BaseController.php(55): Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 [internal function]: SD\Application\Controller\BaseController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#11 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Controller/AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#14 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#15 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(490): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#16 /var/www/html/unnamed/vendor/zendframework/zend-eventmanager/src/EventManager.php(214): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 /var/www/html/unnamed/vendor/zendframework/zend-mvc/src/Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#18 /var/www/html/unnamed/public/index.php(70): Zend\Mvc\Application->run()
+#19 {main}

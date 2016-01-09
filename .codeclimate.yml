@@ -13,6 +13,9 @@ engines:
     enabled: true
   phpmd:
     enabled: true
+    checks:
+      Design/LongMethod:
+        enabled: false
 ratings:
   paths:
   - "**.css"
@@ -24,6 +27,7 @@ exclude_paths:
   - config/**/*
   - data/**/*
   - public/assets/**/*
+  - public/layouts/**/*
   - gulpfile.js
   - test/**/*
   - test/*
